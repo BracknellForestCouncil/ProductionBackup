@@ -1,0 +1,58 @@
+<?php
+/**
+ * @file
+ * localgov_base_cookies.module
+ * Code for the LocalGov Base: Cookies module.
+ *
+ * @package   localgov_base_cookies
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+/**
+ * Include all files in 'includes/'.
+ */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+/**
+ * Include features code.
+ */
+include_once 'localgov_base_cookies.features.inc';
+
+/**
+ * Implements hook_html_head_alter
+ */
+function localgov_base_cookies_html_head_alter(&$head_elements) {
+
+  $head_elements['cookie_notice'] = array(
+    '#type' => 'markup',
+    '#markup' => '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#336633",
+          "text": "#ffffff"
+        },
+        "button": {
+          "background": "#ffffff",
+          "text": "#070510"
+        }
+      },
+      "content": {
+        "message": "We use cookies to improve your visit to this site. By viewing our content you are accepting the use of cookies.",
+        "dismiss": "Continue",
+        "link": "Find out more about how we use cookies",
+        "href": "/smallprint/cookies"
+      }
+    })});
+    </script>',
+    '#weight' => 9999,
+  );
+}

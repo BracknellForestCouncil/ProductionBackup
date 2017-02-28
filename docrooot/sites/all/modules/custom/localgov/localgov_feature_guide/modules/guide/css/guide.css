@@ -1,0 +1,58 @@
+ /**
+  * @file
+  * Styling for the guide module.
+  */
+
+.guide-navigation .menu {
+  border-top: 1px solid #888;
+  padding: 1em 0 0 3em; /* LTR */
+}
+.guide-navigation .page-links {
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  text-align: center;
+  padding: 0.5em;
+}
+.guide-navigation .page-previous {
+  text-align: left;
+  width: 42%;
+  display: block;
+  float: left; /* LTR */
+}
+.guide-navigation .page-up {
+  margin: 0 5%;
+  width: 4%;
+  display: block;
+  float: left; /* LTR */
+}
+.guide-navigation .page-next {
+  text-align: right;
+  width: 42%;
+  display: block;
+  float: right;
+}
+#guide-structure {
+  min-width: 56em;
+}
+.guide-structure-form .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+html.js #edit-guide-pick-guide {
+  display: none;
+}
+.form-item-guide-gid .description {
+  clear: both;
+}
+#guide-admin-edit select {
+  margin-right: 24px;
+}
+#guide-admin-edit select.progress-disabled {
+  margin-right: 0;
+}
+#guide-admin-edit tr.ajax-new-content {
+  background-color: #ffd;
+}
+#guide-admin-edit .form-item {
+  float: left;
+}

@@ -1,0 +1,15 @@
+diff --git a/paragraphs.field_widget.inc b/paragraphs.field_widget.inc
+index ef219f1..0e0dd87 100644
+--- a/paragraphs.field_widget.inc
++++ b/paragraphs.field_widget.inc
+@@ -140,8 +140,8 @@ function paragraphs_field_multiple_value_form($field, $instance, $langcode, $ite
+       '#title' => $title,
+       '#required' => $instance['required'],
+       '#description' => $description,
+-      '#prefix' => '<div id="' . $wrapper_id . '">',
+-      '#suffix' => '</div>',
++      '#prefix' => '<fieldset id="' . $wrapper_id . '"><legend><span class="fieldset-legend">' . $title . '</span></legend>',
++      '#suffix' => '</fieldset>',
+       '#max_delta' => $max,
+       '#instance' => $instance,
+     );

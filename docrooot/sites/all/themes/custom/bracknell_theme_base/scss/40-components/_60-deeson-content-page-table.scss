@@ -1,0 +1,42 @@
+/*
+*	Content page custom table
+*/
+
+.table__yes-no {
+	border: 1px solid $bracknellBlack;
+
+	thead {
+		background: $tableHead;
+
+		tr>th {
+			border-bottom: 1px solid $bracknellBlack;
+
+			&:first-child {
+				border-right: 1px solid $bracknellBlack;
+			}
+		}
+	}
+	tbody>tr>td {
+		border-top: 0;
+		padding: 5px 10px 5px 35px;
+		font-size: $font-size-03;
+
+		&:first-child {
+			border-right: 1px solid $bracknellBlack;
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABuklEQVQ4jY3UO2gUURQG4G+GrK0WWsluBC0WLKcJFkYSBYlIUCQBH8WqBB9pBCG26WxsBDGFEPDRiFgooiC+EEUM1m4hvrWyUAtRo8TintXJsJH9ixnuPef/7z2vmxVFoQuGMB7/Ruy9xV1cxp0qoa+ybuIsNuFLEK6HrRHiE7iPw2h3ExoM0nccxTn8rBy0DAcwjafYjgeQRWhNPMEHbMPrbvGWsAY3sBoDaOfIMIt5jPQgInxGgjOLLMdwqE7hTQ8iR7A2fE8EdzjHGD7hQg8ix3AGk7E+H9yxXCrxvbjm/zCJU1L5j8fefHCHctTxskRYjs0VkQmcxlXswe+S7RXqOX6gVjKclCoyHusWZnANu/Grckhf5/MR/SXDFNbjUtyshVtSLqt9Jbjvc6mxBku3+oqtEftBqbt3LiFSw0Y8yuPkldhXcvgmde00dkjd3g17sQoXs6IoMjzGOhTScPaCBp7hBTbkWJDyUMNNi/O1FPrDt4b9WMjD0Mao1ApzOGRxJTuohW0ufEfxnH9D20FTmp0BfJYS3Qm1IY3TCmnAW0rPSFWINMRbsCuIdali7/AQV3BbSslf/AHrFGQStNJztgAAAABJRU5ErkJggg==') 10px 9px no-repeat;
+		}
+		&:last-child {
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAACC0lEQVQ4jXXUXWiOYRgH8N+evdGYkyG1A+ZjK0W23hMHage+ylpZKYqyYb7TTp2QIyUnFhOjjRw4o0QJUVokCyVCNBzJR45W7MvBfb3t9fa+19Hz3Pf//7/u67Mqn88rY4uwDZuwDPPwAx9xG9fxuZRUXV9fX/xfg1O4ho34g1d4gt9owFYcQh0eY6xAzhUJzcddtOAmTuBlmVc34zh60BpOv0MWgBm4hZXhtaOCkDjvwEGsCN7M4jBPYwt2ox+zMF5BrBq1GMLXcF6LuxkW4jDuYBBz8Ai9qCojNIj7mB3ft4PfkGGXlLtjQRjFmwCcLRKsxiXswLPAkfKXQ1cO6zCC4biciHAnIy9ZCPejE+dxBFOBHw7++hyW4GlJOBPYE4T9WItGXIgcTZXgX6A1w1ypIUttEt14H0IfKggJfl2Gn1KHl1oV+tAUQo0RanUZ7Dz8yvBJasRSoXPYhwEsx0V04XIZwRa8y/AAi5EvEjqDA1Lpu6Uc7o+X7sSVIsG8NGb3svA0Lo0PqWFX46pUhIk4nzLdLk2BE7xxDOTwJQA9UukHpeqNFgkVbEpqi5q470RbRDJSGKeH2IC9UmWGlK9awcYiDX14ju2YKAz6X7TjdQBuYFUFoea47wt8u7Sq/ltB37EGJ6XO3yz12Ft8wwKpqk2Ro14cNT1Wqips2gZp07ZhqfKbdqSU9A8s04T8TSJW2AAAAABJRU5ErkJggg==') 10px 9px no-repeat;
+		}
+	}
+}
+body.page-node-39 #tablefield-0,
+body.page-node-34 #tablefield-0,
+body.page-node-68 #tablefield-0 {
+@extend .table__yes-no;
+}
+body.page-node-39 #tablefield-0 td:empty,
+body.page-node-34 #tablefield-0 td:empty,
+body.page-node-68 #tablefield-0 td:empty    {
+   background: none!important;
+}

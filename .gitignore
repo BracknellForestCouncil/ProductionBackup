@@ -1,0 +1,11 @@
+# Ignore paths that contain user-generated content.
+docroot/files
+docroot/sites/*/files
+docroot/sites/*/private
+acquia-files
+
+config/databases/*
+docroot/sites/default/settings.local.php
+.idea
+**/node_modules/*
+**/bower_components/*

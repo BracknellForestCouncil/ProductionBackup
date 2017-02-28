@@ -1,0 +1,10 @@
+name = Uploading Taxonomy Paths
+description = Custom paths for uploading documents - based on a taxonomy
+core = 7.x
+dependencies[] = file_entity_revisions
+; Information added by Drupal.org packaging script on 2016-03-04
+version = "7.x-2.x-dev"
+core = "7.x"
+project = "file_entity_revisions"
+datestamp = "1457124840"
+

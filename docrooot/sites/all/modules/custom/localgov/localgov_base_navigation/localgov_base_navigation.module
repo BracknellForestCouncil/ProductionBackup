@@ -1,0 +1,131 @@
+<?php
+/**
+ * @file
+ * localgov_base_navigation.module
+ * Code for the LocalGov Base: Navigation module.
+ *
+ * @package   localgov_base_navigation
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+/**
+ * Include all files in 'includes/'.
+ */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+/**
+ * Include features code.
+ */
+include_once 'localgov_base_navigation.features.inc';
+
+
+/**
+ * Implements hook_block_info().
+ *
+ * This hook declares what blocks are provided by the module.
+ */
+function localgov_base_navigation_block_info() {
+  $blocks = array();
+
+  $blocks['navigation_main'] = array(
+    'info' => t('Main Navigation'),
+    'status' => TRUE,
+    'region' => 'navigation',
+  );
+
+  $blocks['navigation_homepage'] = array(
+    'info' => t('Home Page Navigation'),
+    'status' => FALSE,
+    'region' => 'page_header',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function localgov_base_navigation_block_view($delta = '') {
+  // The $delta parameter tells us which block is being requested.
+
+  $block = array();
+
+  switch ($delta) {
+    case 'navigation_main':
+      $block['subject'] = '<none>';
+      $block['content'] = array(
+        '#markup' => localgov_base_navigation_block_content_navigation_main(),
+        '#attached' => array(
+          'css' => array(
+            // libraries_get_path('gridder') . '/dist/css/jquery.gridder.min.css',
+            drupal_get_path('module', 'localgov_base_navigation') . '/css/localgov_base_navigation.navigation_main.css',
+          )
+        ),
+      );
+      break;
+
+    case 'navigation_homepage':
+      $block['subject'] = '<none>';
+      $block['content'] = array(
+        '#markup' => localgov_base_navigation_block_content_navigation_home(),
+        '#attached' => array(
+          'libraries_load' => array(
+            array('gridder'),
+          ),
+          'js' => array(
+            // libraries_get_path('gridder') . '/dist/js/jquery.gridder.min.js',
+            drupal_get_path('module', 'localgov_base_navigation') . '/js/localgov_base_navigation.navigation_home.js'  => array('type' => 'file', 'group' => JS_DEFAULT, 'scope' => 'footer'),
+          ),
+          'css' => array(
+            // libraries_get_path('gridder') . '/dist/css/jquery.gridder.min.css',
+            drupal_get_path('module', 'localgov_base_navigation') . '/css/localgov_base_navigation.navigation_home.css',
+          )
+        ),
+      );
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_libraries_info().
+ *
+ * For defining external libraries.
+ */
+
+function localgov_base_navigation_libraries_info() {
+
+  // A very simple library. No changing APIs (hence, no versions), no variants.
+  // Expected to be extracted into 'sites/all/libraries/simple'.
+  $libraries['gridder'] = array(
+    'name' => 'Gridder',
+    'vendor url' => 'https://github.com/oriongunning/gridder',
+    'download url' => 'https://github.com/oriongunning/gridder/releases',
+    'version arguments' => array(
+      'file' => 'package.json',
+      'pattern' => '/"version": "([0-9\.]+)"/',
+      'lines' => 5,
+    ),
+    'files' => array(
+      'js' => array('dist/js/jquery.gridder.js'), //this can be a path to the file location like array('lib/simple.js')
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_enable().
+ */
+function localgov_base_navigation_enable() {
+  localgov_base_navigation_add_menu_links();
+}

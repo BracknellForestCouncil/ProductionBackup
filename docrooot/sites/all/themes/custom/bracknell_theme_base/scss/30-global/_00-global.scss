@@ -1,0 +1,42 @@
+html, body {
+  overflow: hidden;//fixed the horizontal scroll when use full-width 100%.
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  overflow-y: auto;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 120px;
+
+  @media (max-width: 480px) {
+    margin-bottom: 160px;
+}
+}
+.page-header {
+    margin: 0 0;
+    @extend.green-base;
+    @media (max-width: 768px) {
+    padding-top:20px;
+  }
+}
+/*body.node-type-guide-section .page-header, .page-news .page-header {
+    margin-bottom: 0px;
+}*/
+body.node-type-guide-section #page-header.col-md-8 {
+    box-sizing: content-box!important;
+}
+body.page-taxonomy-term .page-header {
+  border-bottom:0!important;
+}
+
+.img-right {
+  float: right;
+  margin-left: 1em;
+}
+.img-left {
+  float: left;
+  margin-right: 1em;
+}

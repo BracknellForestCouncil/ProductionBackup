@@ -1,0 +1,16 @@
+name = LocalGov Feature: EasyRead
+description = TODO: Add description for localgov_feature_easyread module.
+core = 7.x
+package = localgov
+project = localgov_feature_easyread
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = localgov_content_easyread
+dependencies[] = strongarm
+configure = admin/localgov/modules/localgov/localgov_feature_easyread/admin
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[user_permission][] = access localgov_feature_easyread
+features[user_permission][] = administer localgov_feature_easyread
+features_exclude[dependencies][localgov_feature_easyread] = localgov_feature_easyread
+files[] = migrate/localgov_feature_easyread.migrate.inc

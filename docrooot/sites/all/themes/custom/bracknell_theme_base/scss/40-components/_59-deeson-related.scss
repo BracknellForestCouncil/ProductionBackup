@@ -1,0 +1,16 @@
+/*
+*	Related pages <aside> specific styling
+*/
+
+aside.related-aside {
+	padding-bottom: $commonSpacing;
+	//@extend .green-top;
+
+	img {
+		margin-bottom: $commonSpacing/2;
+	}
+	@media (min-width: 990px){
+		margin-top: -5px;
+}
+@extend .block_no-pad;
+}

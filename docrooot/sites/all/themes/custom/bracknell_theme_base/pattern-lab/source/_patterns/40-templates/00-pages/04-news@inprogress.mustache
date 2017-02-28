@@ -1,0 +1,59 @@
+{{> organisms-global-header}}
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			{{> atoms-button-listen}}
+		</div>
+	</div>
+</div>
+
+<div class="container" id="main-content" role="main">
+	<div class="row">
+		<section class="col-sm-12 col-md-8">
+			<h1>News</h1>
+			<ul class="list-unstyled news-listings">
+        <li>
+	        {{> molecules-media-block-leader}}
+				</li>
+				<li>
+					{{> molecules-media-block}}
+				</li>
+				<li>
+					{{> molecules-media-block-archive}}
+				</li>
+			</ul>
+
+			{{> molecules-pagination}}
+
+			<div class="row">
+				{{> molecules-contact-info-general-block}}
+			</div>
+
+		</section>
+		<aside class="col-md-3 col-md-offset-1 news-aside">
+			<article>
+				<h3 class="margin-top-none">News Categories</h3>
+				<ul class="list-unstyled">
+					<li><a href="#">Consectetur adipiscing</a></li>
+					<li><a href="#">Laoreet proin</a></li>
+					<li><a href="#">bibendum</a></li>
+					<li><a href="#">Aenean euismode</a></li>
+					<li><a href="#">Adipiscing elitenor</a></li>
+					<li><a href="#">Archive</a></li>
+				</ul>
+			</article>
+
+			{{> molecules-side-promotion}}
+
+			{{> molecules-embed-twitter}}
+
+		</aside>
+
+		<!--Page related footer-->
+		{{> organisms-landing-page-footer}}
+
+	</div>
+</div>
+
+{{> organisms-global-footer}}

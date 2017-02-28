@@ -1,0 +1,20 @@
+{
+  "fontWeights": [
+    {
+      "name": "$font-weight-light",
+      "value": "300"
+    },
+    {
+      "name": "$font-weight-base",
+      "value": "400"
+    },
+    {
+      "name": "$font-weight-heading",
+      "value": "700"
+    },
+    {
+      "name": "$font-weight-headinglight",
+      "value": "600"
+    }
+  ]
+}

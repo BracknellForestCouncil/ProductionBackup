@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * localgov_content_guidesection.module
+ * Code for the LocalGov Content: GuideSection module.
+ *
+ * @package   localgov_content_guidesection
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+/**
+ * Include all files in 'includes/'.
+ */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+/**
+ * Include features code.
+ */
+include_once 'localgov_content_guidesection.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function localgov_content_guidesection_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__guide_section'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--guide_section',
+    'path' => drupal_get_path('module', 'localgov_content_guidesection') . '/templates',
+   );
+  return $theme;
+}

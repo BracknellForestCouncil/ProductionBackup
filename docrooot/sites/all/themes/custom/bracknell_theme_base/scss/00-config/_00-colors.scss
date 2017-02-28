@@ -1,0 +1,59 @@
+/*
+*	Site specific colours
+*/
+
+// Primary
+$white: #ffffff;
+$black: #000000;
+
+$bracknellBlack: #000010;
+$textBlack: #333333;
+$greyMid: #545454;
+$greyLight: #adadad;
+$greyExtraLight: #f2f2f2;
+$footerGrey: #484848;
+
+$brandGreen: #336633;
+$deepBlue: #0033a1;
+$slateBlue: #003b4c;
+
+// Secondary
+$oliveGreen: #899065;
+$brightGreen: #62a00f;
+$brightRed: #d62828;
+
+//Palette B
+$turquoise: #00a4a6;
+$limeGreen: #a39707;
+$coralreefBlue: #009fd4;
+$sandhurstOrange: #e65722;
+$plum: #87364e;
+$magenta: #b42371;
+$downshirePurple: #702277;
+$darkOrange: #d35400;
+$purple: #c126b8;
+$leisureBlue: #055fad;
+$edgbarrowRed: #ed2600;
+$discoveryGreen: #00aa55;
+
+// Services menu related
+$servicesMenuSelected: #8a946d;
+$servicesIconGreen: #566b21;
+$servicesMenuLinks: #484848;
+
+// Social icons:
+$twitterIconBlue: #55acee;
+$facebookIconBlue: #3b5998;
+
+// Form elements
+$formWarning: #fbead4;
+$formFeedback: #09456a;
+$formDefault: #f7f7f7;
+
+// MISC - in PS visuals but not in Palettes
+$greenXLight: lighten($oliveGreen, 30%);
+$borderGrey: lighten($black, 50%);
+$greenBorder: $brandGreen;
+$greyBorderLight: #e7e7e7;
+$archiveGreen: #566b21;
+$tableHead: #e7e7e7;

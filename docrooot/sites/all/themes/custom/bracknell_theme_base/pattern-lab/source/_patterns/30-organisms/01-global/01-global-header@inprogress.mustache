@@ -1,0 +1,98 @@
+<a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
+{{> atoms-bracknell-forest-logo-print}}
+
+<nav class="navbar navbar-default" role="navigation">
+
+  <!--Nav branding and tools-->
+  <div class="container">
+    <div class="row masthead">
+      <!--Branding-->
+      {{> atoms-bracknell-forest-logo}}
+      <!--Nav Tools-->
+      <div class="col-sm-12 col-md-10 col-md-offset-2 nav-tools">
+        <div class="row">
+          <div class="col-sm-8 col-md-5 col-sm-offset-2 nav-tools__search">
+             {{> molecules-header-global-searchbox}}
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-3 text-center hidden-xs hidden-sm nav-tools__account">
+             {{> molecules-buttongroup-my-account}}
+          </div>
+          <div class="col-xs-12 col-sm-2 text-right nav-tools__menu">
+             {{> molecules-hamburger-navigation}}
+            <!--Mobile-->
+            <button type="button" id="mobile-search-trigger" class="navbar-toggle search-toggle collapsed visible-xs" data-toggle="collapse" data-target="#search-toggle" aria-expanded="false">
+              <span class="glyphicon glyphicon-search visible-xs-inline" aria-hidden="true"></span>
+              <span class="sr-only">Toggle Search</span>
+              <span class="search-text"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--search mobile-->
+      <div class="col-sm-6 col-sm-offset-2 nav-tools__search--mobile-search">
+        <form class="navbar-form visible-xs-block hidden-xs" id="search-toggle" role="search">
+          <!--<form class="navbar-form visible-xs-block" id="search-toggle" role="search">-->
+          <div class="input-group">
+            <input type="text" class="form-control title-search" placeholder="Search the website" id="title-search">
+            <span class="input-group-btn">
+              <button class="btn btn-primary btn-glyph" type="button">
+                <span class="hide">Search</span>
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <!--Breadcrumbs here-->
+    </div>
+  </div>
+
+  <!--Nav items-->
+  <div class="container-fluid topnav-wrapper">
+    <!-- Content for toggling -->
+    <div class="container">
+      <div class="collapse navbar-collapse" id="bracknell-topnav">
+        <div class="row">
+          <ul class="col-md-4 col-sm-6">
+            <li role="presentation" class="visible-sm-block visible-xs-block nav-tools__account">
+              <a href="#">
+                <span class="icon-bfc-icon-font-08"></span>
+                <span>My Account</span>
+                <!--<span class="q-mark">?</span>-->
+              </a>
+            </li>
+            <li role="presentation"><a href="#">Benefits</a></li>
+            <li role="presentation"><a href="recycling-rubbish-waste.php">Bins and recycling</a></li>
+            <li role="presentation"><a href="#">Births, marriages and deaths</a></li>
+            <li role="presentation"><a href="#">Business information</a></li>
+            <li role="presentation"><a href="#">Children and family services</a></li>
+            <li role="presentation"><a href="#">Consultations</a></li>
+            <li role="presentation"><a href="#">The council and democracy</a></li>
+          </ul>
+          <ul class="col-md-4 col-sm-6">
+            <li role="presentation"><a href="council-tax.php">Council tax</a></li>
+            <li role="presentation"><a href="#">Elections and voting</a></li>
+            <li role="presentation"><a href="#">Environmental issues</a></li>
+            <li role="presentation"><a href="#">Events</a></li>
+            <li role="presentation"><a href="#">Health and social care</a></li>
+            <li role="presentation"><a href="#">Housing</a></li>
+            <li role="presentation"><a href="#">Jobs</a></li>
+          </ul>
+          <ul class="col-md-4 col-sm-6">
+            <li role="presentation"><a href="#">Leisure facilities</a></li>
+            <li role="presentation"><a href="#">Libraries</a></li>
+            <li role="presentation"><a href="news.html">News</a></li>
+            <li role="presentation"><a href="#">Parks and countryside</a></li>
+            <li role="presentation"><a href="#">Planning and building control</a></li>
+            <li role="presentation"><a href="#">Roads, parking and transport</a></li>
+            <li role="presentation"><a href="#">Schools and learning</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</nav>

@@ -1,0 +1,6 @@
+{
+  "name": "localgov_feature_contactinfo",
+  "title": "LocalGov Feature: Contact Information",
+  "drupalversion": "7",
+  "repository": "git@gitlab.web-dev.bracknell-forest.gov.uk:drupal-modules/localgov_feature_contactinfo.git"
+}

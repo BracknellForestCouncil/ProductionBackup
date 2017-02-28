@@ -1,0 +1,95 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the guide module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function guide_install() {
+  // Add the node type.
+  _guide_install_type_create();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function guide_uninstall() {
+  variable_del('guide_allowed_types');
+  variable_del('guide_child_type');
+  variable_del('guide_block_mode');
+
+  // Delete menu links.
+  db_delete('menu_links')
+    ->condition('module', 'guide')
+    ->execute();
+  menu_cache_clear_all();
+}
+
+/**
+ * Creates the guide content type.
+ */
+function _guide_install_type_create() {
+  // // Create an additional node type.
+  // $guide_node_type = array(
+  //   'type' => 'guide',
+  //   'name' => t('Guide page'),
+  //   'base' => 'node_content',
+  //   'description' => t('<em>guides</em> have a built-in hierarchical navigation. Use for handguides or tutorials.'),
+  //   'custom' => 1,
+  //   'modified' => 1,
+  //   'locked' => 0,
+  // );
+  //
+  // $guide_node_type = node_type_set_defaults($guide_node_type);
+  // node_type_save($guide_node_type);
+  // node_add_body_field($guide_node_type);
+  // // Default to not promoted.
+  // variable_set('node_options_guide', array('status'));
+  // Use this default type for adding content to guides.
+  variable_set('guide_allowed_types', array('guide', 'guide_section'));
+  variable_set('guide_child_type', 'guide_section');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function guide_schema() {
+  $schema['guide'] = array(
+  'description' => 'Stores guide structure information. Uniquely connects each node in the structure to a link in {menu_links}',
+    'fields' => array(
+      'mlid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "The guide page's {menu_links}.mlid.",
+      ),
+      'nid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "The guide page's {node}.nid.",
+      ),
+      'gid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => "The guide ID is the {guide}.nid of the top-level page.",
+      ),
+    ),
+    'primary key' => array('mlid'),
+    'unique keys' => array(
+      'nid' => array('nid'),
+    ),
+    'indexes' => array(
+      'gid' => array('gid'),
+    ),
+  );
+
+  return $schema;
+}
