@@ -24,7 +24,7 @@ function localgov_base_navigation_block_content_navigation_home() {
 
    $count = 0;
    foreach ($tree as $item) {
-     // dpm($item);
+     dsm($item);
      $count++;
      $name = $item['link']['link_title'];
      $name_safe =  str_replace(',', '', str_replace(' ', '-', strtolower($name)));
@@ -47,7 +47,7 @@ function localgov_base_navigation_block_content_navigation_home() {
 
    $content .= '</ul>';
 
-   $content .= '<button type="button" id="navigation-home-button-show-hide" class="btn btn-primary button-show" data-toggle="collapse" data-target=".nav-link-collapse,.nav-content-collapse" aria-expanded="false" aria-controls="homepage-nav"></button></div></div>';
+   $content .= '</div></div>';
 
 
    // Process links for each section (gridder-content)
