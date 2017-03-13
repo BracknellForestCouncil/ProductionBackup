@@ -1,24 +1,48 @@
 {
   "name": "bracknell_theme_base",
-  "description": "Bracknell Base Theme (bracknell_theme_base) module for Drupal 7.x.",
-  "version": "7.1.0",
+  "description": "Bracknell Base Theme for Drupal 7.x.",
+  "version": "1.0.0",
   "private": true,
-  "main": "Gruntfile.js",
   "author": {
-    "name": "Craig Gardener",
-    "email": "craig.gardener@bracknell-forest.gov.uk"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.web-dev.bracknell-forest.gov.uk:drupal-themes/bracknell_theme_base.git"
+    "name": "Microserve",
+    "email": "hello@microserve.io"
   },
   "license": "GPL-2.0+",
+  "sasslintConfig": ".sass-lint.yml",
+  "config": {
+    "scssPath": "./scss",
+    "outputCss": "./css",
+    "outputJs": "./js",
+    "outputFonts": "./fonts/",
+    "browsersyncConfig": "./.bs-config.js"
+  },
+  "scripts": {
+    "postinstall": "npm-run-all -p rminfo copy",
+    "autoprefixer": "postcss -u autoprefixer -r $npm_package_config_outputCss/*.css",
+    "scss": "node-sass $npm_package_config_scssPath --source-map true --output-style nested -o $npm_package_config_outputCss ",
+    "postscss": "browser-sync reload --files='*.css, *.map'",
+    "serve": "browser-sync start --config $npm_package_config_browsersyncConfig --no-open",
+    "lint": "sass-lint -v -q || true",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "copy": "npm-run-all -p copy:Js",
+    "copy:Js": "cp -R ./node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js $npm_package_config_outputJs",
+    "rminfo": "find node_modules/ -name '*.info' -type f -delete",
+    "watch:css": "onchange $npm_package_config_scssPath -v -- npm-run-all -p lint build:css",
+    "dev": "npm run build:css && npm-run-all -p serve watch:css"
+  },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-drupal-theme": "git+https://gitlab.web-dev.bracknell-forest.gov.uk/tools/grunt-drupal-theme.git#master",
-    "bourbon": "^4.2.3",
+    "autoprefixer": "^6.3.6",
+    "bootstrap-sass": "^3.3.6",
     "breakpoint-sass": "^2.6.1",
-    "normalize.scss": "^0.1.0",
-    "singularitygs": "^1.6.2"
+    "browser-sync": "^2.13.0",
+    "csscomb": "^3.1.7",
+    "node-sass": "^3.7.0",
+    "npm-run-all": "^2.1.1",
+    "onchange": "^2.4.0",
+    "postcss-cli": "^2.5.2",
+    "sass-lint": "^1.8.2"
+  },
+  "engines": {
+    "node": ">=4 <6"
   }
 }

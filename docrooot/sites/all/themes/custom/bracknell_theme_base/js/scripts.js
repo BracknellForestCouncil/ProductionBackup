@@ -43,4 +43,4 @@
 		$('[data-toggle="tooltip-my-account"]').tooltip();
 	});
 })(jQuery);
-//# sourceMappingURL=bracknell_theme_base.scripts.js.map
+//# sourceMappingURL=scripts.js.map

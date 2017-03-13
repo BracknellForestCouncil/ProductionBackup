@@ -1,5 +1,5 @@
 name = Bracknell Base Theme
-description = TODO: Add description for bracknell_theme_base theme.
+description = The theme for Bracknell Forest Council.
 
 package = Custom Themes
 project = bracknell_theme_base
@@ -14,16 +14,14 @@ screenshot = screenshot.png
 ; ========================================
 ; Stylesheets
 ; ========================================
-exclude[css][] = bootstrap.css
-stylesheets[all][] = css/bootstrap.custom.css
-stylesheets[all][] = css/bracknell_theme_base.styles.css
-stylesheets[print][] = css/bracknell_theme_base.print.css
+stylesheets[all][] = css/styles.css
+stylesheets[print][] = css/print.css
 
 ; ========================================
 ; Scripts
 ; ========================================
 scripts[] = js/bootstrap.js
-scripts[] = js/bracknell_theme_base.scripts.js
+scripts[] = js/scripts.js
 
 ; ========================================
 ; Regions
