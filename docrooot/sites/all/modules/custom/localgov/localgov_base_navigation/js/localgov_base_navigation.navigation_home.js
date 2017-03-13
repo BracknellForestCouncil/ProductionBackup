@@ -2,6 +2,22 @@
 
   Drupal.behaviors.localgovBaseNavigationNavigationHomeBehavior = {
     attach: function (context, settings) {
+      // Hide additional services.
+      $('#homepage-nav').find('.collapse').hide().attr('aria-hidden', 'true');
+
+      // Create services button.
+      servicesButton = $('<button />');
+      servicesButton.attr({
+        'class': 'btn btn-primary button-show',
+        'id': 'navigation-home-button-show-hide',
+        'data-toggle': 'collapse',
+        'data-target': '.nav-link-collapse, .nav-content-collapse',
+        'aria-expanded': 'false',
+        'aria-controls': 'homepage-nav'
+      });
+      servicesButton.html(Drupal.t('More services') + ' <span class="icon theme-icon-triangle-down"></span>');
+      servicesButton.insertAfter('#homepage-nav');
+
       // Call Gridder
       $('.gridder').gridderExpander({
           scroll: true,
@@ -15,7 +31,6 @@
           closeText: '<span class="icon theme-icon-cross"></span><span class="sr-only" aria-hidden="true">Close</span>',                 // Close button text
           onStart: function(){
               //Gridder Inititialized
-              $('#navigation-home-button-show-hide').html("More services " + '<span class="icon theme-icon-triangle-down"></span>');
           },
           onContent: function(){
               //Gridder Content Loaded
@@ -27,23 +42,23 @@
 
       $('#navigation-home-button-show-hide').on('click', function(){
 
-        if ($('#navigation-home-button-show-hide').hasClass("button-hide")) {
+        if ($('#navigation-home-button-show-hide').hasClass('button-hide')) {
           // Close open gridder-content when show/hide button is clicked
-          $(".gridder").removeClass("hasSelectedItem");
-          $(".gridder").find(".selectedItem").removeClass("selectedItem");
-          $(".gridder").find(".gridder-show").slideUp(400, "easeInOutExpo", function() {
-              $(".gridder").find(".gridder-show").remove();
+          $('#homepage-nav').removeClass('hasSelectedItem');
+          $('#homepage-nav').find('.selectedItem').removeClass('selectedItem');
+          $('#homepage-nav').find('.gridder-show').slideUp(400, 'easeInOutExpo', function() {
+            $('#homepage-nav').find('.gridder-show').remove();
           });
-          $(".currentGridder").removeClass("currentGridder");
+          $('.currentGridder').removeClass('currentGridder');
 
-          $('#navigation-home-button-show-hide').removeClass("button-hide");
-          $('#navigation-home-button-show-hide').addClass("button-show");
-          $(this).html("More services " + '<span class="icon theme-icon-triangle-down"></span>');
+          $('#navigation-home-button-show-hide').removeClass('button-hide').addClass('button-show');
+          $('#homepage-nav').find('.collapse').hide().attr('aria-hidden', 'true');
+          $(this).html('More services ' + '<span class="icon theme-icon-triangle-down"></span>');
 
         } else {
-          $('#navigation-home-button-show-hide').removeClass("button-show");
-          $('#navigation-home-button-show-hide').addClass("button-hide");
-          $(this).html("View less " + '<span class="icon theme-icon-triangle-up"></span>');
+          $('#navigation-home-button-show-hide').removeClass('button-show').addClass('button-hide');
+          $('#homepage-nav').find('.collapse').show().attr('aria-hidden', 'false');
+          $(this).html('View less ' + '<span class="icon theme-icon-triangle-up"></span>');
         }
       });
     }
