@@ -7,10 +7,5 @@ node_modules
 # SASS
 .sass-cache
 
-# Bundler
-Gemfile.lock
-bin/*
-.bundle/*
-
 # Local config
 .bs-config.local.js

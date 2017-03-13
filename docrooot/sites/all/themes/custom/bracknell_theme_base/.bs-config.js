@@ -21,5 +21,5 @@ module.exports = {
     "proxy": {
         "target": mydevurl
     },
-    "files": "css/*.css, js/*.js, templates/*.html.twig, !node_modules/**/*.html"
+    "files": "css/*.css, js/*.js, !node_modules/**/*.html"
 };
