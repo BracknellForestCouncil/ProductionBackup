@@ -15,7 +15,7 @@
  * Returns block content for the "navigation_home" block.
  */
 function localgov_base_navigation_block_content_navigation_home() {
-  $tree = menu_tree_all_data('main-menu');
+  $tree = menu_tree_all_data('navigation');
 
   $content = '<h1 class="margin-top-zero">Services</h1>';
   // Process Top Level links (gridder-list)
