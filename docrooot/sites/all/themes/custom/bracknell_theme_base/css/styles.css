@@ -6783,8 +6783,8 @@ legend {
  */
 @font-face {
   font-family: bracknell_theme_base-icons;
-  src: url("../fonts/icons/bracknell_theme_base-icons.eot");
-  src: url("../fonts/icons/bracknell_theme_base-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/bracknell_theme_base-icons.woff") format("woff"), url("../fonts/icons/bracknell_theme_base-icons.ttf") format("truetype");
+  src: url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.eot");
+  src: url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.eot?#iefix") format("embedded-opentype"), url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.woff") format("woff"), url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -8188,12 +8188,6 @@ ol.menu.nav {
   margin: 0px;
   padding: 0px;
   list-style-type: none; }
-
-.gridder-list.nav-link-collapse {
-  display: none; }
-
-.gridder-list.nav-link-collapse.in {
-  display: inline-block; }
 
 .gridder-content,
 .gridder-content.collapse.in {

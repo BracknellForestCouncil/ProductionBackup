@@ -24,8 +24,8 @@ function localgov_base_navigation_block_content_navigation_home() {
 
    $count = 0;
    foreach ($tree as $item) {
-     // dpm($item);
      $count++;
+     $link_path = $item['link']['href'];
      $name = $item['link']['link_title'];
      $name_safe =  str_replace(',', '', str_replace(' ', '-', strtolower($name)));
 
@@ -35,7 +35,7 @@ function localgov_base_navigation_block_content_navigation_home() {
      }
      $item_content .= '" data-griddercontent="#homepage-nav-' . $name_safe . '">';
 
-     $item_content .= '<a href="#homepage-nav-' . $name_safe . '">';
+     $item_content .= '<a href="'. $link_path .'">';
      $item_content .= $name;
      $item_content .= '<span class="icon nav-icon-' . $name_safe . '"></span>';
      $item_content .= '</a>';
@@ -47,13 +47,12 @@ function localgov_base_navigation_block_content_navigation_home() {
 
    $content .= '</ul>';
 
-   $content .= '<button type="button" id="navigation-home-button-show-hide" class="btn btn-primary button-show" data-toggle="collapse" data-target=".nav-link-collapse,.nav-content-collapse" aria-expanded="false" aria-controls="homepage-nav"></button></div></div>';
+   $content .= '</div></div>';
 
 
    // Process links for each section (gridder-content)
    $count = 0;
    foreach ($tree as $item) {
-     // dpm($item);
      $count++;
      $name = $item['link']['link_title'];
      $name_safe =  str_replace(',', '', str_replace(' ', '-', strtolower($name)));
