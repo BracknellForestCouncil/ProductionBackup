@@ -20,6 +20,8 @@ You will also need to setup Pattern Lab for first time use. In the 'pattern-lab'
 
 - composer install
 
+To ensure browser sync works correctly, copy .bs-config.local.example.js to .bs-config.local.js and change the settings as required.
+
 The following tasks are available:
 
 - 'npm run dev': runs and watches SCSS and JS files.
