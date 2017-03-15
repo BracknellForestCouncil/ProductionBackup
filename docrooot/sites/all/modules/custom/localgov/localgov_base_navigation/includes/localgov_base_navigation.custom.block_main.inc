@@ -20,12 +20,12 @@ function localgov_base_navigation_block_content_navigation_main() {
   $content = '<nav id="main-nav" role="navigation"><ul>';
   $content .= '<li class="visible-sm-inline-block visible-xs-inline-block nav-tools__account nav-item nav-item-my-account"><a href="https://bracknell-forest.achieveservice.com/module/home"><span class="icon theme-icon-user"></span> <span>My Account</span></a></li><li class=" nav-item nav-item-home"><a href="/">Home</a></li>';
   foreach ($tree as $item) {
-    $shown_in_nav = $item['link']['hidden'];
+    $menu_item_enabled = $item['link']['hidden'];
     $url = $item['link']['href'];
     $name = $item['link']['link_title'];
     $name_safe =  str_replace(',', '', str_replace(' ', '-', strtolower($name)));
 
-    if ($shown_in_nav == '0') {
+    if (!$menu_item_enabled) {
       $content .= '<li class="nav-item nav-item-' . $name_safe . '"><a href="' . $url . '">' . $name . '</a></li>';
     }
   }
