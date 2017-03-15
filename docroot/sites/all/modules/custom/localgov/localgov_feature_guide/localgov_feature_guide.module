@@ -1,0 +1,90 @@
+<?php
+/**
+ * @file
+ * localgov_feature_guide.module
+ * Code for the LocalGov Feature: Guide module.
+ *
+ * @package   localgov_feature_guide
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+/**
+ * Include all files in 'includes/'.
+ */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+/**
+ * Include features code.
+ */
+include_once 'localgov_feature_guide.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function localgov_feature_guide_theme($existing, $type, $theme, $path) {
+  return array(
+    'node__guide' => array(
+      'render element' => 'content',
+      'base hook' => 'node',
+      'template' => 'node--guide',
+      'path' => drupal_get_path('module', 'localgov_feature_guide') . '/templates',
+    ),
+    'node__guide_section' => array(
+      'render element' => 'content',
+      'base hook' => 'node',
+      'template' => 'node--guide_section',
+      'path' => drupal_get_path('module', 'localgov_feature_guide') . '/templates',
+    ),
+  );
+}
+
+
+/**
+ * Implements preprocess_html().
+ */
+function localgov_feature_guide_preprocess_html(&$variables) {
+  // TODO: Fix <title> for guide page. Possibly use Metatag module.
+}
+
+/**
+ * Implements preprocess_page().
+ */
+function localgov_feature_guide_preprocess_page(&$variables) {
+  // Alter the title to on content type guide_section.
+  if (isset($variables['node']) && $variables['node']->type == "guide_section") {
+
+    $parent = menu_link_load($variables['node']->guide['plid']);
+
+    $old_title = $variables['node']->title;
+    $new_title = $parent['link_title'];
+
+    // Set the page $title and <title> tag
+    // TODO: Fix <title> for guide page. Possibly use Metatag module. 
+
+
+    // Temporarily remove long page title to fix breadcrumbs.
+    // drupal_set_title($new_title . " - " . $old_title);
+
+    // Set the page $title
+    $variables['title'] = $new_title;
+  }
+
+  if (isset($variables['node']) && $variables['node']->type == "guide") {
+    $guide_link = menu_link_load($variables['node']->guide['mlid']);
+    if ($guide_link['mlid']) {
+      if ($next = guide_next($guide_link)) {
+        $next_href = url($next['href']);
+        drupal_add_html_head_link(array('rel' => 'next', 'href' => $next_href));
+        $variables['node']->guide['next_url'] = $next_href;
+        $variables['node']->guide['next_title'] = check_plain($next['title']);
+      }
+    }
+  }
+
+
+}

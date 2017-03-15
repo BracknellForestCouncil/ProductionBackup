@@ -1,0 +1,162 @@
+<?php
+/**
+ * @file
+ * localgov_profile_base.install
+ * TODO: Add file description
+ *
+ * @package   localgov_profile_base
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+/**
+ * Include all files in 'includes/'.
+ */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  require_once $filename;
+}
+
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function localgov_profile_base_install() {
+  // Allow account creation by administrators only.
+  variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
+
+  // Define the themes.
+  variable_set('theme_default', 'localgov_theme_example');
+  $default_theme = variable_get('theme_default', 'localgov_theme_example');
+  $admin_theme = 'seven';
+  // Enable the default theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', $default_theme)
+    ->execute();
+  // Enable the admin theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', $admin_theme)
+    ->execute();
+  variable_set('admin_theme', 'seven');
+  variable_set('node_admin_theme', '1');
+
+  // Enable some standard blocks.
+  $blocks = array(
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'visibility' => 0,
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'visibility' => 0,
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'localgov_base_navigation',
+      'delta' => 'navigation_main',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'navigation',
+      'visibility' => 0,
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'visibility' => 0,
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'visibility' => 0,
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'user',
+      'delta' => 'login',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 10,
+      'region' => 'content',
+      'visibility' => 0,
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'visibility', 'pages', 'cache'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+
+
+  $menus = array(
+    array(
+      'menu_name' => 'footer-menu',
+      'title' => 'Footer Menu',
+      'description' => 'This menu will be displayed in the footer on all pages of the website.',
+    ),
+  );
+  // Save menu group into menu_custom table
+  foreach ($menus as $menu) {
+    // Look the table first if the data does exist
+    $exists = db_query("SELECT title FROM {menu_custom} WHERE menu_name=:menu_name", array(':menu_name' => $menu['menu_name']))->fetchField();
+    // Save the record if the data does not exist
+    if (!$exists) {
+      menu_save($menu);
+    }
+  }
+
+  features_rebuild();
+
+}
+
+
+/**
+ * Implements hook_install_tasks().
+ *
+ * @see system_install()
+ */
+function localgov_profile_base_install_tasks() {
+  // Ensure translations don't break during installation.
+  $t = get_t();
+
+  $tasks = array();
+
+  return $tasks;
+}

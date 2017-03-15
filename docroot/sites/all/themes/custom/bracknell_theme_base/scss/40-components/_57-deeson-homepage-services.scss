@@ -1,0 +1,192 @@
+// /*
+// *	Homepage - Services
+// */
+//
+// // Gridder anchor list
+// ul.gridder {
+//
+// 	@media (max-width: 550px) {
+// 		margin: 0 -15px;
+// 	}
+//
+// 	ul {
+// 		padding-left: 0;
+// 	}
+//
+// 	&.gridder--wrap {
+// 		margin-top: $commonSpacing;
+// 		margin-bottom: $commonSpacing/3;
+// 	}
+//
+// 	&.collapse {
+// 		margin-top: 0;
+// 	}
+// }
+// li.gridder-list {
+// 	background: $white;
+// 	border-radius: 3px;
+// 	min-height: 118px;
+// 	position: relative;
+// 	padding: 8px 11px 0;
+// 	border: 1px solid $greyLight;
+//
+// 	@media (min-width: 550px) and (max-width: 768px) {
+// 		width: 48%!important;
+// 	}
+//
+// 	a {
+// 		font-size: $font-size-07;
+// 		line-height: 1.1;
+// 	}
+//
+// 	&:hover {
+// 		cursor: pointer;
+//
+// 		a {
+// 			text-decoration: underline;
+// 		}
+// 	}
+//
+// 	&.selectedItem {
+// 		background: $servicesMenuSelected;
+//
+// 		a {
+// 			color: $white;
+// 			text-decoration: none;
+// 		}
+//
+// 		span[class^="icon-"] {
+// 			color: $white;
+// 		}
+//
+// 		&::after {
+// 			position: absolute;
+// 			width: 57px;
+// 			height: 22px;
+// 			bottom: -22px;
+// 			left: 39%;
+// 			z-index: 10;
+// 			content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAWCAYAAAB64jRmAAAB1ElEQVRYhd3X24dVYRjH8U/7qn+no0onqRiKFEUSc1U3mySSmJtIhiRGlCiSqIsSiaJuorkYmhQNQyl100kno8xM08WzVmqb3azDu/bQ93K963nW77v22t7nXTA41O7HGSz0//Ed7RYuYCWez2+e5LzAKpxvZRdGsQQ35y1SWm5hMR5B64+FT9iGI5jufa4kTOMotgof/C0JMziBTXjbs2hpeIfNOC48ftMpmXNf/NwPms2VjIdYhHuzLXaThDfYgFMNhErJaawTeWflX5IwiYPYia/pciXhG3bhgMjZlbkkc65hOZ7Wy5WMZ1iGq0VuLioJY2I/vVwhVEquiBc+VrSgjCTxiexBGz9K1tZlMnvu7ixHYcpK5gxhPV5VrC/La6zNnluaqpIwLKakOzV6FOGu2M6GqzaoIwnv0Ydj+FmzVyczWd8+sdFXpq4kITeALfiQoB98FKPZgAQjZgrJnNvi8x2p2WcES8WQnYSUkvASq3G2Yv05rBHHpGSkliS2lv3Yi4mCNRPoxz5x0E1KE5I5l7AC43PcNy4OtxebCtKkJDwR/6/rXdZviPHscZMhmpaEL9iBQ5jKrk3hMLbjc9MBeiFJ7HknxdFtFBsxqONw2xS/ALkSXOg0/as5AAAAAElFTkSuQmCC');
+// 		}
+// 	}
+//
+// 	a {
+// 		color: $servicesMenuLinks;
+// 		text-decoration: none;
+// 	}
+//
+// 	span[class^="icon-"] {
+// 		position: absolute;
+// 		right: 15px;
+// 		bottom: 17px;
+// 		font-size: $font-size-15;
+// 		color: $servicesIconGreen;
+// 		@media (min-width: 552px) and (max-width: 768px) {
+// 			font-size: $font-size-18;
+// 		}
+// 		@media (min-width: 769px) and (max-width: 991px) {
+// 			font-size: $font-size-11;
+// 		}
+//
+// 	}
+// }
+//
+// // More Services button
+// button#btn_more-services {
+// 	transition: all 0.2s;
+// 	//padding: 12px 20px;
+// 	//margin-bottom: $commonSpacing - 10;
+//
+// 	span.icon-bfc-icon-font-11 {
+// 		font-size: $font-size-19;
+// 		position: relative;
+// 		left: 3px;
+// 	}
+//
+// 	&.reversed {
+//
+// 		span.icon-bfc-icon-font-11 {
+// 			transform: rotate(180deg);
+// 			display: inline-block;
+// 			bottom: 1px;
+// 		}
+// 	}
+// }
+//
+// // Gridder 'revealed' content
+// .gridder-show {
+// 	background: $greenXLight;
+// 	margin-bottom: $commonSpacing / 3;
+// 	width: 200%;
+// 	margin-left: -50%;
+// }
+// .gridder-expanded-content {
+// 	padding-top: $commonSpacing / 3;
+// 	padding-bottom: $commonSpacing / 1;
+// 	overflow: auto;
+// }
+//
+// //	Sub menu items
+// ul.gridder-listwrap {
+// 	padding: 0;
+// 	list-style-type: none;
+//
+// 	// This pulls in the sub menu level with parent element
+// 	.services-sub {
+// 		margin: 0 10px;
+//
+// 		@media (min-width: 480px) and (max-width: 768px) {
+// 			margin: 0 -2px;
+// 		}
+// 		@media (max-width: 480px) {
+// 			margin: 0 -5px;
+// 		}
+// 	}
+//
+// 	div.col-md-3 {
+// 		padding: 0;
+// 	}
+// 	a {
+// 		background: $white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8U/ykkND1NAVtDi/QwRtodDkFC1Bi02BeSdpazkGlrtLOQZ1AzXUNSg0CIZgg+eF49EeOMPv4cvvz3M28jy/wSUGaODHGpVwgS2c4g37/4HnUZcK3lFdBw5wiO/g7QavmYLwgQO8hDpDB3fYjEEY4QS3kdfAEHsxCDNcW6TwG7wjDFOw0Dy8lR0LZWjjHuXgveI4i6AdPFqOposrTIuOaX4ztMIx02JUDU/YDtAYZ3hOd+pF0Cfq+EqvK+EBE/QtfmgFgj/QtCj9XFzRVQAAAABJRU5ErkJggg==') 12px 11px no-repeat;
+// 		margin: 0 5px 10px;
+// 		min-height: 70px;
+// 		font-size: $font-size-04;
+// 		border-radius: 3px;
+// 		color: $servicesMenuLinks;
+// 		text-decoration: none;
+// 		display: block;
+// 		padding: 7px 0 0 30px;
+//
+// 		&:hover {
+// 			text-decoration: underline;
+// 		}
+// 	}
+// }
+//
+// // Close button
+// .gridder-navigation {
+//
+// 	a.gridder-close {
+// 		color: $bracknellBlack;
+// 		text-decoration: none;
+// 		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABcUlEQVQ4jY3Tv2pUURDH8c/ds4FbyXkBEQQrCw3a5EGClf86MVpILASfQAiJS1wshARjXIOEFLERfQILS8HKF9G4FneSnD1e4w4cuGfmOz/mzMxtyLCMa3hifhtiBwfYH4bIOyQsYHUOkYRJ5C6jSbRPcSWAJV2Jn/4jsosbcR/gB3IiT8jT4ozITac5cxL5bcWuRXtOgN0K2KzEEvlNxayfxmfBnQoch1gib1ex52W1w+LtR7iL37gdvvsxnQXcKdhNPCobF6X/1cxXIdpnYzzEtEpqa3CKDziPxSr2Eg9qEbrR9dkUP3v87b9y+ipqdOXf6+EXcSEqPvNpDUZYKXxb+ILrcb+KizisxE5G2MRIyxFvkQcRG1exSayFeo82KnB7FsxNLGnJ7J0yHbReAa8rkVJsVLHvycNE+wyPi7dOdMt31NNs+Ihzuh8cLuPSAF+LpD3cOkPk2FaxFt+/cJBov+F7OG7OIXJsn3Ujf4H9P9cVaP7d9P3TAAAAAElFTkSuQmCC') right 2px no-repeat;
+// 		padding: 0 25px 3px 0;
+// 		position: absolute;
+// 		bottom: 5px;
+// 		right: 25.25%;
+// 		&:hover {
+// 			text-decoration: underline;
+// 		}
+// 	}
+// }
+//
+// @media (max-width: 768px) {
+// 	.gridder-show ul.gridder-listwrap.container {
+// 		width: 50%;
+// 	}
+//
+// 	li.gridder-list {
+// 		width: 100%;
+// 		@include rowMachine(0,2%);
+// 	}
+// }

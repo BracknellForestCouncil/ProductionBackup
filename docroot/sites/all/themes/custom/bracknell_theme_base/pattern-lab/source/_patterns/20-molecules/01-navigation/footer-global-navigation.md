@@ -1,0 +1,3 @@
+---
+title: Footer global navigation
+---

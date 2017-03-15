@@ -1,0 +1,6 @@
+{
+  "name": "bracknell_feature_beta",
+  "title": "Bracknell Feature: Beta",
+  "drupalversion": "7",
+  "repository": "git@gitlab.web-dev.bracknell-forest.gov.uk:drupal-modules/bracknell_feature_beta.git"
+}

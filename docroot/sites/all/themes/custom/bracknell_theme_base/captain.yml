@@ -1,0 +1,3 @@
+gitlab:
+  build: Dockerfile
+  image: docker-registry.web-dev.bracknell-forest.gov.uk/drupal-themes/bracknell_theme_base 

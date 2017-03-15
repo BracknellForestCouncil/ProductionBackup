@@ -1,0 +1,66 @@
+<?php
+/**
+ * @file
+ * localgov_feature_news.module
+ * Code for the LocalGov Feature: News module.
+ *
+ * @package   localgov_feature_news
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+/**
+ * Include all files in 'includes/'.
+ */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+/**
+ * Include features code.
+ */
+include_once 'localgov_feature_news.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function localgov_feature_news_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__article'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--article',
+    'path' => drupal_get_path('module', 'localgov_feature_news') . '/templates',
+   );
+
+  $theme['field__field_image__article'] = array(
+    'render element' => 'content',
+    'base hook' => 'field',
+    'template' => 'field--field-image--article',
+    'path' => drupal_get_path('module', 'localgov_feature_news') . '/templates',
+  );
+
+  return $theme;
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function localgov_feature_news_preprocess_node(&$variables) {
+  if ($variables['node']->type == "article") {
+    $file = file_load(1);
+    $image = image_load($file->uri);
+    $content = array(
+      'file' => array(
+        '#theme' => 'image_style',
+        '#style_name' => 'medium',
+        '#path' => $image->source,
+        '#width' => $image->info['width'],
+        '#height' => $image->info['height'],
+      ),
+    );
+    $variables['default_image'] = $content;
+  }
+}

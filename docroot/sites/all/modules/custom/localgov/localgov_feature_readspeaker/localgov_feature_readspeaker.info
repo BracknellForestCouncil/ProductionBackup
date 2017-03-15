@@ -1,0 +1,15 @@
+name = LocalGov Feature: ReadSpeaker
+description = TODO: Add description for localgov_feature_readspeaker module.
+core = 7.x
+package = localgov
+project = localgov_feature_readspeaker
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = strongarm
+configure = admin/localgov/modules/localgov/localgov_feature_readspeaker/admin
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[user_permission][] = access localgov_feature_readspeaker
+features[user_permission][] = administer localgov_feature_readspeaker
+features_exclude[dependencies][localgov_feature_readspeaker] = localgov_feature_readspeaker
+files[] = migrate/localgov_feature_readspeaker.migrate.inc

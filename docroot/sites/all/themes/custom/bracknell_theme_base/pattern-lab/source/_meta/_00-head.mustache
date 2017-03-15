@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="{{ htmlClass }}">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <style>
+      @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700';
+    </style>
+
+
+    <!-- CSS files from Bower dependencies will be added here -->
+    <!-- bower:css -->
+    <!-- endbower -->
+
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../../../css/pattern-lab.css?{{ cacheBuster }}" media="all" />
+
+    <style>
+		  @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700';
+	  </style>
+
+    <!-- CSS files from pattern-lab-assets.yml will be added here -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="../../../../css/bootstrap.custom.css" media="all" />
+    <link rel="stylesheet" href="../../../../css/bracknell_theme_base.styles.css" media="all" />
+    <!-- endinjector -->
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    {{{ patternLabHead }}}
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="{{ bodyClass }}">

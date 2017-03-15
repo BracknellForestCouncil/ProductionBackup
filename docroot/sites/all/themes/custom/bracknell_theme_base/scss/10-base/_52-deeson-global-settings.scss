@@ -1,0 +1,285 @@
+/*
+*	Global site settings here.
+*	Includes @extend-ed classes
+*	Includes some Bootstrap specific overrides.
+*/
+
+/**
+*	Grid and related:
+*	===============================
+*/
+
+// Full width wrapping elements - bg colour
+&.grey-x-light {
+	@include fullwidth-bg($greyExtraLight);
+}
+&.green-olive {
+	@include fullwidth-bg($oliveGreen);
+}
+&.green-x-light {
+	@include fullwidth-bg($greenXLight);
+}
+
+// Common spacing
+.block-30 {
+	margin-bottom: $commonSpacing;
+}
+.pad-30-top {
+	padding-top: $commonSpacing;
+}
+// Remove margin/padding from gutters: http://www.bootply.com/Ae3xTyAW5D
+.row.no-pad {
+	margin-right:0;
+	margin-left:0;
+}
+.row.no-pad > [class*='col-'] {
+	padding-right:0;
+	padding-left:0;
+
+	// Address elements inside no-pad blocks
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-right: $commonSpacing / 3;
+	}
+}
+.block_no-pad {
+	@media (min-width: 768px){
+		padding-left: 0!important;
+		padding-right: 0!important;
+	}
+}
+
+/*
+* Common/generic and bespoke pod setting tweaks/additions
+*	=====================================================
+*/
+
+.paddingLR {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.margin-top-zero {
+	margin-top: 0;
+}
+.margin-bot-small {
+	margin-bottom: $commonSpacing / 2;
+}
+.overflow-hidden {
+	overflow: hidden;
+}
+.common-pod {}
+.pod-inner {
+	padding: 20px 0;
+}
+.pod-emphasise {
+	background: $greyExtraLight;
+	//@extend .paddingLR;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.green-top {
+	border-top: 5px solid $greenBorder;
+}
+
+.green-base {
+	border-bottom: 5px solid $greenBorder;
+}
+.green-top-twopx {
+	border-top: 2px solid $greenBorder;
+}
+.inline-block {
+	display: inline-block;
+}
+
+footer {
+	.footer-small {
+		font-size: $font-size-01;
+	}
+}
+
+/**
+*	Misc elements
+*	===============================
+*/
+
+// Buttons - override BS default
+.btn {
+	border: 0;
+	text-decoration: none;
+	padding: 12px 15px;
+	margin-bottom: $commonSpacing - 10;
+	background: $slateBlue;
+	color: $white;
+
+	&:hover {
+		background: $slateBlue;
+		color: $white;
+	}
+	&:focus {
+		background: $slateBlue;
+		color: $white;
+	}
+	}
+	.btn:active, .btn.active {
+	    box-shadow: none!important;
+	}
+
+	&.btn-default {}
+	&.btn-primary {
+		padding: 12px 20px;
+	}
+	&.key-task {
+		text-align: left;
+		font-size: $font-size-08;
+		font-weight: $font-weight-headinglight;
+		display: block;
+		border: 1px solid $borderGrey;
+		margin: 20px 0;
+		padding: 12px 10px 35px 40px;
+		background: $white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAATCAYAAACgADyUAAABNElEQVQ4jY3TPyjuURjA8Q9eZbghyUR3ee8kiy7KnwxKb0Z0s9zl7qQkZotS8mcWpUSWW3eQ8qbbLWUgyWqgO4pBBooYTm/9Op0Xz/h9zrdznj+nolAojGAJtdjALJ58EJVYQwvqMIl/aP6MeB6xTpyi/yNxGMWIN+EAE++JdyhgAa+ZXDVWsImalAgvmMEYHqIzP3GErymxFLvoxmXE23GCgXIiXKADexFvxD6moCqfzydcj9hBDn2oyFw0iIZyIqFRh2hAV5RrTT01W8YcxhO59VwZqR5bGIr4i7CSiymxFb/xLeK3wriKpedkYxTHCekM32U2rCRWYV6Y45dI2kIvrrIwJ3RtW2hzNp4xjeVEOXL4g56I3+AH/qakktgWsRPhx/wvJxFq/IVr3GNV2JR3JXgDcII3V0Lh5ZkAAAAASUVORK5CYII=') 20px 20px no-repeat;
+		color: $textBlack;
+		@extend .word-wrapping;
+		@extend .line-wrapping;
+	}
+	&.sub-task {
+		@extend .key-task;
+		font-size: $font-size-05;
+		margin: 0 0 $commonSpacing 0;
+		padding: 6px 10px 30px 30px;
+		background: $white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8Y/yYkND5OAVtHQFErRF8TY1RUvgolNQ3kl/1moMKneXchTqBnKwa0hwEBQhB88Lp6M9cIbfw5ffn+eU8jy/RgtdNDG2RmU0sIlTfGDnP/A86rKLTxyuA7vYw3fwqsG7TEH4Qh3voc5wi3tUYhB+cIy7yGuih1oMwhxXlinMgrePXgoW+g1vZcdCGW7wgI3g9XGQRdA2XvyN5hEXmBYd0/zmaIdjpsWoI7xiK0AjnOEt3ek5ggY4wTC9rownTNCx/KEVCBZdhyk8nZDqagAAAABJRU5ErkJggg==') 14px 14px no-repeat;
+		@extend .word-wrapping;
+		@extend .line-wrapping;
+	}
+	&.button-prev,
+	&.button-next {
+		span[class^="icon-"] {
+			font-size: $font-size-17;
+		}
+}
+
+.btn-beta {
+	border: 0;
+	text-decoration: none;
+	padding: 8px 15px;
+	background: $darkOrange;
+	color: $white;
+	border-radius: $border-radius-base;
+	float: left;
+	margin-right: 10px;
+}
+#beta-message {
+	vertical-align: middle;
+}
+#beta-message:after {
+	content: "";
+  display: table;
+  clear: both;
+     }
+
+.block-30.call-to-actions {
+	@media (max-width: 550px) {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	.sub-task {
+		margin: 0 0 10px;
+	}
+}
+
+.sub-grid-categories {
+	padding-bottom: 20px;
+	.row {
+		margin-left: -4px;
+		margin-right: -4px;
+	}
+	.col-sm-4 {
+		padding: 0 5px;
+	}
+}
+
+// Accessibility misc:
+// Add visual :focus to given element - accessibility requirement
+.link-focus {
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+// == Wells
+$well-bg: $greyExtraLight;
+$well-border: 0;
+.well {
+	box-shadow: none;
+	border-radius: 0;
+	border: 0;
+}
+
+//== Labels
+//
+//##
+.label {
+	border-radius: 0;
+	padding: 7px 15px;
+	margin-bottom: $commonSpacing/2;
+	display: inline-block;
+	font-weight: $font-weight-headinglight;
+
+	&.label-archive {
+		background: $archiveGreen;
+	}
+}
+
+// Ordered list
+ol {
+	padding-left: 15px;
+	margin-bottom: $commonSpacing;
+
+	li {
+		line-height: 2;
+	}
+}
+
+// Carets
+.caret {
+	&.up {
+		content: "";
+		border-top: 0;
+		border-bottom: 4px dashed;
+	}
+}
+
+// Alerts
+.alert {
+	font-weight: $font-weight-headinglight;
+	&.alert-success {
+		@include alertStatus($brandGreen, 50%);
+		color: $textBlack;
+	}
+	&.alert-info {
+		@include alertStatus($formFeedback, 60%);
+	}
+	&.alert-warning {
+		@include alertStatus($formWarning, 0%);
+	}
+	&.alert-danger {
+		@include alertStatus($brightRed, 40%);
+	}
+}
+
+.show-ie8 {
+	display: none;
+}
+
+.lt-ie9 {
+	.hide-ie8 {
+		display: none;
+	}
+	.show-ie8 {
+		display: block;
+	}
+}

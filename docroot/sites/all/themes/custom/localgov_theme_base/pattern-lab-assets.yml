@@ -1,0 +1,6 @@
+# Add file paths here to get added to Pattern Lab.
+css:
+  - css/localgov_theme_base.styles.css
+js:
+  - js/localgov_theme_base.scripts-es6.js
+  - js/localgov_theme_base.scripts.js
