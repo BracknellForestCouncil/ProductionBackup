@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * localgov_base_weight.module
+ * Code for the LocalGov Base: Weight module.
+ *
+ * @package   localgov_base_weight
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+/**
+ * Include all files in 'includes/'.
+ */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function localgov_base_weight_views_api($module, $api) {
+  if ($module == 'views' && $api == 'views_default') {
+    return array(
+      'version' => 2
+    );
+  }
+}

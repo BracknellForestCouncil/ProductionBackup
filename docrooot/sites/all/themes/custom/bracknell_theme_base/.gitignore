@@ -1,0 +1,13 @@
+# Libraries
+libraries/*
+
+# Node
+node_modules
+
+# SASS
+.sass-cache
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*

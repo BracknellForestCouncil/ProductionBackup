@@ -1,0 +1,49 @@
+image: docker-registry.web-dev.bracknell-forest.gov.uk/docker/drupal-build:master
+services:
+- docker:dind
+
+stages:
+- build
+- deploy
+
+variables:
+  CONTAINER_IMAGE_GITLAB: docker-registry.web-dev.bracknell-forest.gov.uk/drupal-themes/bracknell_theme_base
+
+build:
+  stage: build
+  only:
+    - master
+    - 7.x-1.x
+    - 7.x-1.x-dev
+  image: docker-registry.web-dev.bracknell-forest.gov.uk/docker/drupal-build:master
+  script:
+    - npm install
+    - cd pattern-lab && composer install && cd ../
+    - grunt icons-build
+    - grunt compile
+    - docker login -u jenkins -p Pa55w0rd docker-registry.web-dev.bracknell-forest.gov.uk
+    - docker build --pull -t $CONTAINER_IMAGE_GITLAB:$CI_BUILD_REF .
+    - docker push $CONTAINER_IMAGE_GITLAB:$CI_BUILD_REF
+    - docker tag $CONTAINER_IMAGE_GITLAB:$CI_BUILD_REF $CONTAINER_IMAGE_GITLAB:$CI_BUILD_REF_NAME
+    - docker push $CONTAINER_IMAGE_GITLAB:$CI_BUILD_REF_NAME
+
+deploy to dev:
+  image: docker-registry.web-dev.bracknell-forest.gov.uk/docker/gitlab-deploy-rancher:master
+  stage: deploy
+  environment: dev
+  only:
+    - develop
+    - 7.x-1.x-dev
+  script:
+    - upgrade --environment local-prod --stack 10-design --service bracknell-theme-dev --new-image $CONTAINER_IMAGE_GITLAB:$CI_BUILD_REF
+
+deploy to prod:
+  image: docker-registry.web-dev.bracknell-forest.gov.uk/docker/gitlab-deploy-rancher:master
+  stage: deploy
+  environment: prod
+  only:
+    - master
+    - 7.x-1.x
+  when: manual
+  script:
+    - upgrade --environment local-prod --stack 10-design --service bracknell-theme --new-image $CONTAINER_IMAGE_GITLAB:$CI_BUILD_REF

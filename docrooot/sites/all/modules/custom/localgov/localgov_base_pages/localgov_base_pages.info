@@ -1,0 +1,13 @@
+name = LocalGov Base: Pages
+description = TODO: Add description for localgov_base_pages module.
+
+package = localgov
+project = localgov_base_pages
+
+core = 7.x
+
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = panels
+
+files[] = localgov_base_pages.module

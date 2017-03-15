@@ -1,0 +1,104 @@
+<?php
+/**
+ * @file
+ * localgov_base_export.module
+ * Code for the LocalGov Base: Export module.
+ *
+ * @package   localgov_base_export
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+ /**
+  * Include all files in 'includes/'.
+  */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+ /**
+  * Include features code.
+  */
+include_once 'localgov_base_export.features.inc';
+
+/**
+ * Implements hook_help().
+ */
+function localgov_base_export_help($path, $arg) {
+  switch ($path) {
+    // Help text for the localgov_base_export module.
+    case 'admin/help#localgov_base_export':
+      return '<p>' . t('TODO: Add help text for the LocalGov Base: Export module.', array()) . '</p>';
+    // Help for the localgov_base_export module page.
+    case 'admin/localgov/modules/localgov/localgov_base_export':
+      return '<p>' . t('TODO: Add help text for the LocalGov Base: Export module tasks page.', array()) . '</p>';
+    // Help for the localgov_base_export module admin page.
+    case 'admin/localgov/modules/localgov/localgov_base_export/admin':
+      return '<p>' . t('TODO: Add help text for the LocalGov Base: Export module administrative tasks page.', array()) . '</p>';
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function localgov_base_export_menu() {
+  $items = array();
+
+  $items['admin/localgov/modules/localgov/localgov_base_export'] = array(
+    'title' => 'LocalGov Base: Export',
+    'description' => 'LocalGov Base: Export tasks',
+    'menu_name' => 'localgov',
+    'access arguments' => array('access localgov_base_export'),
+    'page callback' => 'system_admin_menu_block_page',
+    'file path' => drupal_get_path('module', 'system'),
+    'file' => 'system.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/localgov/modules/localgov/localgov_base_export/admin'] = array(
+    'title' => 'Configuration',
+    'description' => 'LocalGov Base: Export administrative tasks',
+    'menu_name' => 'localgov',
+    'access arguments' => array('administer localgov_base_export'),
+    'page callback' => 'system_admin_menu_block_page',
+    'file path' => drupal_get_path('module', 'system'),
+    'file' => 'system.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function localgov_base_export_permission() {
+  $items = array();
+
+  $items['access localgov_base_export'] = array(
+    'title' => t('Access LocalGov Base: Export'),
+    'description' => t('Access functionality provided by LocalGov Base: Export.'),
+    'restrict access' => FALSE,
+  );
+
+  $items['administer localgov_base_export'] = array(
+    'title' => t('Administer LocalGov Base: Export'),
+    'description' => t('Perform administration tasks for LocalGov Base: Export.'),
+    'restrict access' => FALSE,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function localgov_base_export_views_api($module, $api) {
+  if ($module == 'views' && $api == 'views_default') {
+    return array(
+      'version' => 2
+    );
+  }
+}

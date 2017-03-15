@@ -1,0 +1,7 @@
+name = Bracknell Site: Main
+description = TODO: Add description for bracknell_site_main module.
+
+package = bracknell
+project = bracknell_site_main
+
+core = 7.x

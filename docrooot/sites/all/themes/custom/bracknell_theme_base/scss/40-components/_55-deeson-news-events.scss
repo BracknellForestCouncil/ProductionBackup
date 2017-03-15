@@ -1,0 +1,18 @@
+/*
+*	News/Events - micro adjustments
+*/
+
+.news-events {
+
+	h3 {
+		margin: 0;
+	}
+	p {
+		&:first-child {
+			margin-bottom: 0;
+		}
+	}
+	.btn {
+		margin-top: 10px;
+	}
+}

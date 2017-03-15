@@ -1,0 +1,62 @@
+name = Bracknell Base Theme
+description = TODO: Add description for bracknell_theme_base theme.
+
+package = Custom Themes
+project = bracknell_theme_base
+
+core = 7.x
+
+base theme = bootstrap
+engine = phptemplate
+logo = logo.png
+screenshot = screenshot.png
+
+; ========================================
+; Stylesheets
+; ========================================
+exclude[css][] = bootstrap.css
+stylesheets[all][] = css/bootstrap.custom.css
+stylesheets[all][] = css/bracknell_theme_base.styles.css
+stylesheets[print][] = css/bracknell_theme_base.print.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = js/bootstrap.js
+scripts[] = js/bracknell_theme_base.scripts.js
+
+; ========================================
+; Regions
+; ========================================
+regions[header] = Site Header
+regions[branding] = Branding
+regions[search] = Search
+regions[menu] = Menu
+regions[navigation] = Navigation
+regions[page_header] = Page Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Left sidebar
+regions[sidebar_second] = Right sidebar
+regions[page_footer] = Page Footer
+regions[footer] = Site Footer
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+
+; ========================================
+; Settings
+; ========================================
+settings[toggle_logo] = 1
+settings[toggle_name] = 1
+settings[toggle_slogan] = 1
+settings[toggle_node_user_picture] = 1
+settings[toggle_comment_user_picture] = 1
+settings[toggle_comment_user_verification] = 1
+settings[toggle_favicon] = 0
+settings[toggle_main_menu] = 1
+settings[toggle_secondary_menu] = 1
+settings[bootstrap_cdn_provider] = 'none'
+settings[bootstrap_breadcrumb] = 1
+settings[bootstrap_breadcrumb_home] = 1
+settings[bootstrap_breadcrumb_title] = 1

@@ -1,0 +1,164 @@
+{
+  "colors": [
+    {
+      "name": "$white",
+      "value": "#ffffff"
+    },
+    {
+      "name": "$black",
+      "value": "#000000"
+    },
+    {
+      "name": "$bracknellBlack",
+      "value": "#000010"
+    },
+    {
+      "name": "$textBlack",
+      "value": "#333333"
+    },
+    {
+      "name": "$greyMid",
+      "value": "#545454"
+    },
+    {
+      "name": "$greyLight",
+      "value": "#adadad"
+    },
+    {
+      "name": "$greyExtraLight",
+      "value": "#f2f2f2"
+    },
+    {
+      "name": "$footerGrey",
+      "value": "#484848"
+    },
+    {
+      "name": "$brandGreen",
+      "value": "#336633"
+    },
+    {
+      "name": "$deepBlue",
+      "value": "#0033a1"
+    },
+    {
+      "name": "$slateBlue",
+      "value": "#003b4c"
+    },
+    {
+      "name": "$oliveGreen",
+      "value": "#899065"
+    },
+    {
+      "name": "$brightGreen",
+      "value": "#62a00f"
+    },
+    {
+      "name": "$brightRed",
+      "value": "#d62828"
+    },
+    {
+      "name": "$turquoise",
+      "value": "#00a4a6"
+    },
+    {
+      "name": "$limeGreen",
+      "value": "#a39707"
+    },
+    {
+      "name": "$coralreefBlue",
+      "value": "#009fd4"
+    },
+    {
+      "name": "$sandhurstOrange",
+      "value": "#e65722"
+    },
+    {
+      "name": "$plum",
+      "value": "#87364e"
+    },
+    {
+      "name": "$magenta",
+      "value": "#b42371"
+    },
+    {
+      "name": "$downshirePurple",
+      "value": "#702277"
+    },
+    {
+      "name": "$darkOrange",
+      "value": "#d35400"
+    },
+    {
+      "name": "$purple",
+      "value": "#c126b8"
+    },
+    {
+      "name": "$leisureBlue",
+      "value": "#055fad"
+    },
+    {
+      "name": "$edgbarrowRed",
+      "value": "#ed2600"
+    },
+    {
+      "name": "$discoveryGreen",
+      "value": "#00aa55"
+    },
+    {
+      "name": "$servicesMenuSelected",
+      "value": "#8a946d"
+    },
+    {
+      "name": "$servicesIconGreen",
+      "value": "#566b21"
+    },
+    {
+      "name": "$servicesMenuLinks",
+      "value": "#484848"
+    },
+    {
+      "name": "$twitterIconBlue",
+      "value": "#55acee"
+    },
+    {
+      "name": "$facebookIconBlue",
+      "value": "#3b5998"
+    },
+    {
+      "name": "$formWarning",
+      "value": "#fbead4"
+    },
+    {
+      "name": "$formFeedback",
+      "value": "#09456a"
+    },
+    {
+      "name": "$formDefault",
+      "value": "#f7f7f7"
+    },
+    {
+      "name": "$greenXLight",
+      "value": "lighten($oliveGreen, 30%)"
+    },
+    {
+      "name": "$borderGrey",
+      "value": "lighten($black, 50%)"
+    },
+    {
+      "name": "$greenBorder",
+      "value": "$brandGreen"
+    },
+    {
+      "name": "$greyBorderLight",
+      "value": "#e7e7e7"
+    },
+    {
+      "name": "$archiveGreen",
+      "value": "#566b21"
+    },
+    {
+      "name": "$tableHead",
+      "value": "#e7e7e7"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "fontSizes": [
+    {
+      "name": "$font-size-base",
+      "value": "18px"
+    },
+    {
+      "name": "$font-size-19",
+      "value": "10px"
+    },
+    {
+      "name": "$font-size-17",
+      "value": "13px"
+    },
+    {
+      "name": "$font-size-16",
+      "value": "15px"
+    },
+    {
+      "name": "$font-size-01",
+      "value": "16px"
+    },
+    {
+      "name": "$font-size-02",
+      "value": "17px"
+    },
+    {
+      "name": "$font-size-03",
+      "value": "18px"
+    },
+    {
+      "name": "$font-size-04",
+      "value": "19px"
+    },
+    {
+      "name": "$font-size-05",
+      "value": "20px//h6"
+    },
+    {
+      "name": "$font-size-06",
+      "value": "22px//h5"
+    },
+    {
+      "name": "$font-size-07",
+      "value": "23px"
+    },
+    {
+      "name": "$font-size-08",
+      "value": "24px//h4"
+    },
+    {
+      "name": "$font-size-09",
+      "value": "25px"
+    },
+    {
+      "name": "$font-size-10",
+      "value": "28px//h3"
+    },
+    {
+      "name": "$font-size-11",
+      "value": "30px"
+    },
+    {
+      "name": "$font-size-12",
+      "value": "34px"
+    },
+    {
+      "name": "$font-size-20",
+      "value": "35px"
+    },
+    {
+      "name": "$font-size-22",
+      "value": "36px"
+    },
+    {
+      "name": "$font-size-13",
+      "value": "37px//h2"
+    },
+    {
+      "name": "$font-size-18",
+      "value": "40px"
+    },
+    {
+      "name": "$font-size-21",
+      "value": "46px//h1"
+    },
+    {
+      "name": "$font-size-14",
+      "value": "50px"
+    },
+    {
+      "name": "$font-size-15",
+      "value": "52px"
+    }
+  ]
+}

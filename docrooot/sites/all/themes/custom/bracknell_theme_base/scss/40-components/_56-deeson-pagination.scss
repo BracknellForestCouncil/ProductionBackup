@@ -1,0 +1,88 @@
+/*
+*	Pagination
+*/
+
+// @xtended settings:
+.pagination-anchors {
+	padding: 1px 10px;
+	border-radius: 3px;
+	position: relative;
+	font-weight: $font-weight-headinglight;
+	//transition: all 0.1s ease;
+}
+.pagination-active,
+
+.pagination > .active > a,
+ .pagination > .active > a:hover,
+  .pagination > .active > a:focus,
+	 .pagination > .active > span,
+	  .pagination > .active > span:hover,
+		 .pagination > .active > span:focus  {
+	background: $slateBlue;
+}
+
+.pagination {
+
+	li {
+		a {
+			@extend .pagination-anchors;
+
+			@media (max-width: 768px) {
+				padding: 1px 5px;
+			}
+
+			&:hover {
+				@extend .pagination-active;
+				text-decoration: none;
+			}
+		}
+		&.active {
+			a,
+			a:hover {
+				@extend .pagination-active;
+				top: 0;
+			}
+		}
+	}
+
+	a.previous,
+	a.previous:hover,
+	a.previous:focus {
+		padding: 5px 20px 0 23px;
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAALCAYAAABPhbxiAAAAlUlEQVQokZXSMQ4BURQF0DOTaWWsQKmwARJLQGiU1iESEbEMneg0mok1UOkUeq3EBkSjmPD9iVu+l/Nzf/IS3b5A6phiFlpCGpi1cELvFwrBEY5oxhBkpQeWmCN5z3KMYzDHFoOPXQO7WNUQqkyKCYp/YYYHhr7/eMMqBuGJBc7YoIY71rGq5ezRwbWqaugALmjjEIMvxCUU9RSoFsAAAAAASUVORK5CYII=') 0 13px no-repeat;
+
+		@media (max-width: 768px) {
+			padding-left: 18px;
+			padding-right: 10px;
+		}
+	}
+	a.next,
+	a.next:hover,
+	a.next:focus {
+		padding: 5px 23px 0 20px;
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAALCAYAAABPhbxiAAAAmUlEQVQokZ3PPQ4BYRCH8d/KtuIAeoVEq9kbyEoolBulW6AgcQ+1KIgz0Co0LiHRW81KNlu8ln8ymcnMPPMRSVIBbQp7VAuNEIUBLuj+CkIHZ4zLyRiTANQqfBM7rLDEK5KkeY2tZR2Q1Tm1qiG2/4BHZDFmgaY52kWcY42F4sfQ9Ct6eGKK/acQ1zjtjhFu5eS3H0/oVyF4Az13GB+cEsjvAAAAAElFTkSuQmCC') 100% 13px no-repeat;
+
+		@media (max-width: 768px) {
+			padding-left: 10px;
+			padding-right: 18px;
+		}
+	}
+	a.previous,
+	a.next {
+		top: -5px;
+
+		&:hover,
+		&:focus {
+			color: $deepBlue;
+			text-decoration: underline;
+		}
+	}
+}
+
+.pagination > li > a, .pagination > li > span {
+    padding: 2px 10px 3px 10px;
+    color: #0033a1;
+    background-color: #fff;
+    border: 1px solid #fff;
+		border-radius:3px;
+}

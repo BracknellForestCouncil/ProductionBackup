@@ -1,0 +1,55 @@
+/*
+*	Global footer specific styling here
+*/
+
+$common-footer-spacing: $commonSpacing / 6;
+
+.global-footer {
+	background: $footerGrey;
+	color: $white;
+	padding: 20px 0 5px;
+
+	a {
+		color: $white;
+		text-decoration: none;
+		font-weight: $font-weight-headinglight;
+	}
+	p.copyright {
+		position: relative;
+		top: -15px;
+	}
+	@media (max-width: 480px) {
+		p.copyright {
+			margin: 20px 0 10px;
+			font-size: $font-size-02;
+		}
+	}
+}
+
+ul.global-footer-links {
+	margin-bottom: $commonSpacing / 2;
+	list-style-type: none;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		padding-right: 20px;
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAQElEQVQImV3IsQ1AABBA0ediDnOgZg8JY1GY4ho1FtIraHjNT36RmRVmNDgwlVjQefRYA7WvNnD+5h4YseF6O9yEHwtGvI/mTAAAAABJRU5ErkJggg==') 96% 12px no-repeat;
+
+		&:last-child {
+			margin-right: 0;
+			background: none;
+		}
+	}
+
+	@media (max-width: 480px) {
+		border-bottom: 1px solid $white;
+
+		li {
+			margin: 0 0 $common-footer-spacing;
+		}
+		a {
+			font-size: $font-size-03;
+		}
+	}
+}

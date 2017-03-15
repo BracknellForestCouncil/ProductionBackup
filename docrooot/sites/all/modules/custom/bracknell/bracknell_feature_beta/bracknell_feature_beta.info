@@ -1,0 +1,15 @@
+name = Bracknell Feature: Beta
+description = TODO: Add description for bracknell_feature_beta module.
+core = 7.x
+package = bracknell
+project = bracknell_feature_beta
+dependencies[] = ctools
+dependencies[] = fe_block
+dependencies[] = features
+dependencies[] = strongarm
+configure = admin/localgov/modules/bracknell/bracknell_feature_beta/admin
+features[ctools][] = strongarm:strongarm:1
+features[fe_block_boxes][] = beta_message
+features[fe_block_settings][] = block-beta_message
+features[features_api][] = api:2
+files[] = migrate/bracknell_feature_beta.migrate.inc

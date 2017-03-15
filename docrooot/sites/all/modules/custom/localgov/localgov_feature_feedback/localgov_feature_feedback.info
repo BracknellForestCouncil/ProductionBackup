@@ -1,0 +1,15 @@
+name = LocalGov Feature: Feedback
+description = TODO: Add description for localgov_feature_feedback module.
+core = 7.x
+package = localgov
+project = localgov_feature_feedback
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = strongarm
+configure = admin/localgov/modules/localgov/localgov_feature_feedback/admin
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[user_permission][] = access localgov_feature_feedback
+features[user_permission][] = administer localgov_feature_feedback
+features_exclude[dependencies][localgov_feature_feedback] = localgov_feature_feedback
+files[] = migrate/localgov_feature_feedback.migrate.inc

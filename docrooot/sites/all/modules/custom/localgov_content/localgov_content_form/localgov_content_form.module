@@ -1,0 +1,56 @@
+<?php
+/**
+ * @file
+ * localgov_content_form.module
+ * Code for the LocalGov Content: Form module.
+ *
+ * @package   localgov_content_form
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+/**
+ * Include all files in 'includes/'.
+ */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+/**
+ * Include features code.
+ */
+include_once 'localgov_content_form.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function localgov_content_form_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__form'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--form',
+    'path' => drupal_get_path('module', 'localgov_content_form') . '/templates',
+   );
+   $theme['field__field_form_url'] = array(
+     'render element' => 'content',
+     'base hook' => 'field',
+     'template' => 'field--field-form-url',
+     'path' => drupal_get_path('module', 'localgov_content_form') . '/templates',
+    );
+    $theme['field__field_form_additional'] = array(
+      'render element' => 'content',
+      'base hook' => 'field',
+      'template' => 'field--field-form-additional',
+      'path' => drupal_get_path('module', 'localgov_content_form') . '/templates',
+     );
+     $theme['field__body__form'] = array(
+       'render element' => 'content',
+       'base hook' => 'field',
+       'template' => 'field--body--form',
+       'path' => drupal_get_path('module', 'localgov_content_form') . '/templates',
+      );
+  return $theme;
+}

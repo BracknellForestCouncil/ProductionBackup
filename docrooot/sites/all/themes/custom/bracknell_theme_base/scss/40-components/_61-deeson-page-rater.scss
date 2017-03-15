@@ -1,0 +1,43 @@
+/*
+*	Was this page useful?
+*/
+
+.page-rater {
+	position: relative;
+	padding: 15px;
+	background: $greyExtraLight;
+
+	h4 {
+		font-size: $font-size-05;
+		margin: 10px 0;
+		font-weight: $font-weight-headinglight;
+	}
+	.page-rater-button {
+		display: inline-block;
+		margin-right: 15px;
+		text-decoration: none;
+		font-size: $font-size-20;
+		line-height: 1.1;
+		color: $slateBlue;
+
+		&:hover {
+			text-decoration: none;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		span[class^="icon-"]{
+			&:before {
+				background: $white;
+				border-radius: 50%;
+			}
+		}
+	}
+	#page-rater-feedback {
+		width: 100%;
+		margin: 10px 0;
+	}
+	#page-rater-submit {
+		margin-bottom: 5px;
+	}
+}

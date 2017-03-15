@@ -1,0 +1,16 @@
+<table class="sg-font-weights">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Example</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#fontWeights}}
+    <tr class="sg-font-weight">
+      <td><code>{{name}}</code> at {{value}}</td>
+      <td style="font-weight: {{value}};">Lorem ipsum dolor sit amet.</td>
+    </tr>
+  {{/fontWeights}}
+  </tbody>
+</table>

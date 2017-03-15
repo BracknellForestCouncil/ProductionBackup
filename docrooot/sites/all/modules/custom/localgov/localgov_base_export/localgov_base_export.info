@@ -1,0 +1,17 @@
+name = LocalGov Base: Export
+description = TODO: Add description for localgov_base_export module.
+
+package = localgov
+project = localgov_base_export
+
+core = 7.x
+
+configure = admin/localgov/modules/localgov/localgov_base_export/admin
+
+dependencies[] = features
+dependencies[] = views
+dependencies[] = views_data_export
+
+features[features_api][] = api:2
+features[user_permission][] = access localgov_base_export
+features[user_permission][] = administer localgov_base_export

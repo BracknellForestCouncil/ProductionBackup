@@ -1,0 +1,117 @@
+diff --git a/token.module b/token.module
+index 269f376..937ccac 100644
+--- a/token.module
++++ b/token.module
+@@ -45,7 +45,7 @@ function token_system_info_alter(&$info, $file, $type) {
+  * Return an array of the core modules supported by token.module.
+  */
+ function _token_core_supported_modules() {
+-  return array('book', 'field', 'menu', 'profile');
++  return array('book', 'guide', 'field', 'menu', 'profile');
+ }
+ 
+ /**
+@@ -364,6 +364,7 @@ function token_clear_cache() {
+   drupal_static_reset('_token_profile_fields');
+   drupal_static_reset('token_menu_link_load');
+   drupal_static_reset('token_book_link_load');
++  drupal_static_reset('token_guide_link_load');
+   drupal_static_reset('token_node_menu_link_load');
+   drupal_static_reset('_token_field_info');
+ }
+@@ -1133,6 +1134,40 @@ function _token_menu_link_translate(&$item) {
+ }
+ 
+ /**
++ * Get a translated guide menu link by its mlid, without access checking.
++ *
++ * This function is a copy of guide_link_load() but with its own cache and a
++ * simpler query to load the link. This also skips normal menu link access
++ * checking by using _token_menu_link_translate().
++ *
++ * @param $mlid
++ *   The mlid of the guide menu item.
++ *
++ * @return
++ *   A guide menu link translated for rendering.
++ *
++ * @see guide_link_load()
++ * @see _token_menu_link_translate()
++ */
++function token_guide_link_load($mlid) {
++  $cache = &drupal_static(__FUNCTION__, array());
++
++  if (!is_numeric($mlid)) {
++    return FALSE;
++  }
++
++  if (!isset($cache[$mlid])) {
++    $item = db_query("SELECT * FROM {menu_links} ml INNER JOIN {guide} b ON b.mlid = ml.mlid LEFT JOIN {menu_router} m ON m.path = ml.router_path WHERE ml.mlid = :mlid", array(':mlid' => $mlid))->fetchAssoc();
++    if (!empty($item)) {
++      _token_menu_link_translate($item);
++    }
++    $cache[$mlid] = $item;
++  }
++
++  return $cache[$mlid];
++}
++
++/**
+  * Prepare a string for use as a valid token name.
+  *
+  * @param $name
+diff --git a/token.tokens.inc b/token.tokens.inc
+index e0c0b5e..a8c04f8 100644
+--- a/token.tokens.inc
++++ b/token.tokens.inc
+@@ -1032,6 +1032,50 @@ function book_tokens($type, $tokens, array $data = array(), array $options = arr
+ }
+ 
+ /**
++ * Implements hook_token_info() on behalf of guide.module.
++ */
++function guide_token_info() {
++  $info['tokens']['node']['guide'] = array(
++    'name' => t('guide'),
++    'description' => t('The guide page associated with the node.'),
++    'type' => 'menu-link',
++  );
++  return $info;
++}
++
++/**
++ * Implements hook_tokens() on behalf of guide.module.
++ */
++function guide_tokens($type, $tokens, array $data = array(), array $options = array()) {
++  $replacements = array();
++  $sanitize = !empty($options['sanitize']);
++
++  // Node tokens.
++  if ($type == 'node' && !empty($data['node'])) {
++    $node = $data['node'];
++
++    if (!empty($node->guide['mlid'])) {
++      $link = token_guide_link_load($node->guide['mlid']);
++
++      foreach ($tokens as $name => $original) {
++        switch ($name) {
++          case 'guide':
++            $replacements[$original] = $sanitize ? check_plain($link['title']) : $link['title'];
++            break;
++        }
++      }
++
++      // Chained token relationships.
++      if ($guide_tokens = token_find_with_prefix($tokens, 'guide')) {
++        $replacements += token_generate('menu-link', $guide_tokens, array('menu-link' => $link), $options);
++      }
++    }
++  }
++
++  return $replacements;
++}
++
++/**
+  * Implements hook_token_info() on behalf of menu.module.
+  */
+ function menu_token_info() {
