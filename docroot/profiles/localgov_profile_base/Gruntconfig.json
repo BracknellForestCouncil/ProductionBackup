@@ -1,6 +1,0 @@
-{
-  "name": "localgov_profile_base",
-  "title": "LocalGov Base Profile",
-  "drupalversion": "7",
-  "repository": "git@gitlab.web-dev.bracknell-forest.gov.uk:drupal-profiles/localgov_profile_base.git"
-}

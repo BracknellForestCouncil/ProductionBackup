@@ -1,7 +1,0 @@
-name = Bracknell Site: Common
-description = TODO: Add description for bracknell_site_common module.
-
-package = bracknell
-project = bracknell_site_common
-
-core = 7.x
