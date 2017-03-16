@@ -213,6 +213,11 @@
  * @endcode
  */
 $databases = array();
+// Get database settings from config dir.
+$msconfig = '../config/default/settings.microserve.database.php';
+if (file_exists($msconfig)) {
+  require_once $msconfig;
+}
 
 /**
  * Access control for update.php script.
