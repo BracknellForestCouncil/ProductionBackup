@@ -166,6 +166,8 @@ $databases = array(
     'default' =>
     array(
       'database' => 'www_default',
+      // 'database' => 'prod_bracknell_main',
+      // 'database' => 'prod_bracknell_beta',
       'username' => 'p_microserve',
       'password' => 'HBX1u3ji5KaclWbWg9Xat06GNnF7Tapzp3i0eQkboHAElMMpcQGZsCbUjprY5uWR',
       'host' => 'db-production.clek3aputm3u.eu-west-1.rds.amazonaws.com',
