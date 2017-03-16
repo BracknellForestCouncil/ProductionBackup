@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ * Code for the Bracknell Feature: Search feature.
+ */
+
+/**
+ * Standard Features include.
+ */
+include_once 'bracknell_feature_search.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function bracknell_feature_search_form_alter(&$form, &$form_state, $form_id) {
+  // Add the custom JS file to the Search page.
+  if ($form_id == 'views_exposed_form') {
+    $form['#attached']['js'][] = drupal_get_path('module', 'bracknell_feature_search') . '/js/searchFunctions.js';
+  }
+}
