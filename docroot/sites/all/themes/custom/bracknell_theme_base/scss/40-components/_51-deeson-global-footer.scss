@@ -5,12 +5,12 @@
 $common-footer-spacing: $commonSpacing / 6;
 
 .global-footer {
-  background: $footerGrey;
-  color: $white;
+  background: $footerBgColor;
+  color: $footerTextColor;
   padding: 20px 0 5px;
 
   a {
-    color: $white;
+    color: $footerLinkTextColor;
     text-decoration: none;
     font-weight: $font-weight-headinglight;
   }
@@ -45,7 +45,7 @@ ul.global-footer-links {
   }
 
   @media (max-width: 480px) {
-    border-bottom: 1px solid $white;
+    border-bottom: 1px solid $footerListBorderColor;
 
     li {
       margin: 0 0 $common-footer-spacing;

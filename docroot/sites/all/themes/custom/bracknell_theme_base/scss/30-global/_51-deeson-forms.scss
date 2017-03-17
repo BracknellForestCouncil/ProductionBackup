@@ -31,7 +31,7 @@
   }
 
   &.has-warning {
-    @include showFormStatus($textBlack, $textBlack, $formWarning, 0%, $textBlack);
+    @include showFormStatus($textBlack, $textBlack, $beige1, 0%, $textBlack);
   }
 
   &.has-error {
@@ -39,11 +39,11 @@
   }
 
   &.has-feedback {
-    @include showFormStatus($bracknellBlack, $formFeedback, $formFeedback, 60%, $bracknellBlack);
+    @include showFormStatus($bracknellBlack, $blue1, $blue1, 60%, $bracknellBlack);
   }
 
   &.has-default {
-    @include showFormStatus($bracknellBlack, $bracknellBlack, $formDefault, 0%, $bracknellBlack);
+    @include showFormStatus($bracknellBlack, $bracknellBlack, $grey2, 0%, $bracknellBlack);
   }
 }
 

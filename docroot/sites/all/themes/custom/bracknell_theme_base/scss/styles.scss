@@ -17,7 +17,8 @@
 '10-base/50-deeson-icons',
 '10-base/51-deeson-typography',
 '10-base/52-deeson-global-settings',
-'10-base/bracknell-typograpy',
+'10-base/buttons',
+'10-base/headings',
 '10-base/icons-base';
 
 // Global.
@@ -29,6 +30,7 @@
 
 // Components.
 @import
+'40-components/beta',
 '40-components/50-deeson-topbar',
 '40-components/51-deeson-global-footer',
 '40-components/52-deeson-breadcrumbs',

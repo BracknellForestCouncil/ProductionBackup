@@ -6,9 +6,9 @@
   display: inline-block;
   margin: 0 10px 15px 0;
   padding: 0;
-  background: $white;
+  background: $button-prompt-bg-color;
   border-radius: 3px;
-  border: 1px solid $slateBlue;
+  border: 1px solid $button-prompt-border-color;
   width: 240px;
 
   @media (max-width: 480px) {
@@ -26,7 +26,7 @@
   span.prompt-text {
     display: inline-block;
     padding: 10px 15px 0;
-    color: $slateBlue;
+    color: $button-prompt-text-color;
     width: 75%;
     white-space: nowrap;
   }
@@ -34,8 +34,8 @@
   span[class^="icon-"] {
     float: left;
     padding: 15px 10px;
-    border-right: 1px solid $slateBlue;
-    color: $slateBlue;
+    border-right: 1px solid $button-prompt-icon-border-color;
+    color: $button-prompt-icon-text-color;
     width: 25%;
   }
 }

@@ -6084,7 +6084,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: #333333; }
+  color: #333; }
 
 a,
 p a,
@@ -6187,7 +6187,7 @@ h3 a, body.page-news .view-content .views-row .node-teaser h2 a, body.page-news 
 h4 a,
 h5 a,
 h6 a {
-  color: #333333;
+  color: #333;
   text-decoration: none; }
   h1 a:hover,
   h2 a:hover, span.lge a:hover,
@@ -6330,73 +6330,10 @@ aside h5, .news-leader, aside.news-aside article, body.page-taxonomy #block-view
 .inline-block {
   display: inline-block; }
 
-footer .footer-small {
-  font-size: 16px; }
-
 /**
 * Misc elements
 * ===============================
 */
-.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a {
-  border: 0;
-  text-decoration: none;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  background: #003b4c;
-  color: #ffffff; }
-  .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-subcategories a:hover {
-    background: #003b4c;
-    color: #ffffff; }
-  .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus {
-    background: #003b4c;
-    color: #ffffff; }
-  .btn .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .btn:active, body.page-taxonomy #list-of-pages a .btn:active, body.page-taxonomy #list-of-subcategories a .btn:active, .btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a a:active, .btn body.page-taxonomy #list-of-pages a:active, body.page-taxonomy #list-of-pages .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-pages a:active, body.page-taxonomy #list-of-pages a a:active, .btn body.page-taxonomy #list-of-subcategories a:active, body.page-taxonomy #list-of-subcategories .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-subcategories a:active, body.page-taxonomy #list-of-subcategories a a:active,
-  .btn .btn.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .btn.active, body.page-taxonomy #list-of-pages a .btn.active, body.page-taxonomy #list-of-subcategories a .btn.active,
-  .btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
-  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a a.active,
-  .btn body.page-taxonomy #list-of-pages a.active, body.page-taxonomy #list-of-pages
-  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-pages a.active, body.page-taxonomy #list-of-pages a a.active,
-  .btn body.page-taxonomy #list-of-subcategories a.active, body.page-taxonomy #list-of-subcategories
-  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-subcategories a.active, body.page-taxonomy #list-of-subcategories a a.active {
-    box-shadow: none !important; }
-  .btn.btn-primary, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.btn-primary, body.page-taxonomy #list-of-pages a.btn-primary, body.page-taxonomy #list-of-subcategories a.btn-primary {
-    padding: 12px 20px; }
-  .btn.key-task, .btn.sub-task, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a {
-    text-align: left;
-    font-size: 24px;
-    font-weight: 600;
-    display: block;
-    border: 1px solid gray;
-    margin: 20px 0;
-    padding: 12px 10px 35px 40px;
-    background: #ffffff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAATCAYAAACgADyUAAABNElEQVQ4jY3TPyjuURjA8Q9eZbghyUR3ee8kiy7KnwxKb0Z0s9zl7qQkZotS8mcWpUSWW3eQ8qbbLWUgyWqgO4pBBooYTm/9Op0Xz/h9zrdznj+nolAojGAJtdjALJ58EJVYQwvqMIl/aP6MeB6xTpyi/yNxGMWIN+EAE++JdyhgAa+ZXDVWsImalAgvmMEYHqIzP3GErymxFLvoxmXE23GCgXIiXKADexFvxD6moCqfzydcj9hBDn2oyFw0iIZyIqFRh2hAV5RrTT01W8YcxhO59VwZqR5bGIr4i7CSiymxFb/xLeK3wriKpedkYxTHCekM32U2rCRWYV6Y45dI2kIvrrIwJ3RtW2hzNp4xjeVEOXL4g56I3+AH/qakktgWsRPhx/wvJxFq/IVr3GNV2JR3JXgDcII3V0Lh5ZkAAAAASUVORK5CYII=") 20px 20px no-repeat;
-    color: #333333; }
-  .btn.sub-task, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.sub-task, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a {
-    font-size: 20px;
-    margin: 0 0 30px 0;
-    padding: 6px 10px 30px 30px;
-    background: #ffffff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8Y/yYkND5OAVtHQFErRF8TY1RUvgolNQ3kl/1moMKneXchTqBnKwa0hwEBQhB88Lp6M9cIbfw5ffn+eU8jy/RgtdNDG2RmU0sIlTfGDnP/A86rKLTxyuA7vYw3fwqsG7TEH4Qh3voc5wi3tUYhB+cIy7yGuih1oMwhxXlinMgrePXgoW+g1vZcdCGW7wgI3g9XGQRdA2XvyN5hEXmBYd0/zmaIdjpsWoI7xiK0AjnOEt3ek5ggY4wTC9rownTNCx/KEVCBZdhyk8nZDqagAAAABJRU5ErkJggg==") 14px 14px no-repeat; }
-  .btn.button-prev span[class^="icon-"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.button-prev span[class^="icon-"], body.page-taxonomy #list-of-pages a.button-prev span[class^="icon-"], body.page-taxonomy #list-of-subcategories a.button-prev span[class^="icon-"], .btn.button-next span[class^="icon-"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.button-next span[class^="icon-"], body.page-taxonomy #list-of-pages a.button-next span[class^="icon-"], body.page-taxonomy #list-of-subcategories a.button-next span[class^="icon-"] {
-    font-size: 13px; }
-
-.btn-beta {
-  border: 0;
-  text-decoration: none;
-  padding: 8px 15px;
-  background: #d35400;
-  color: #ffffff;
-  border-radius: 3px;
-  float: left;
-  margin-right: 10px; }
-
-#beta-message {
-  vertical-align: middle; }
-
-#beta-message:after {
-  content: '';
-  display: table;
-  clear: both; }
-
 @media (max-width: 550px) {
   .block-30.call-to-actions, #block-views-related-links-taxonomy-block .call-to-actions.view-content, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-pages, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-pages, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-subcategories, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-subcategories, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content, body.page-taxonomy .block-30#list-of-pages, body.page-taxonomy #list-of-additional-pages #list-of-pages.view-content, body.page-taxonomy .block-30#list-of-subcategories, body.page-taxonomy #list-of-additional-pages #list-of-subcategories.view-content, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content {
     margin-left: -15px;
@@ -6444,19 +6381,6 @@ ol {
   border-top: 0;
   border-bottom: 4px dashed; }
 
-.alert {
-  font-weight: 600; }
-  .alert.alert-success {
-    color: #333333; }
-    .alert.alert-success div.alert[class^="alert-*"] {
-      background: #bbddbb; }
-  .alert.alert-info div.alert[class^="alert-*"] {
-    background: #addbf8; }
-  .alert.alert-warning div.alert[class^="alert-*"] {
-    background: #fbead4; }
-  .alert.alert-danger div.alert[class^="alert-*"] {
-    background: #f7d3d3; }
-
 .show-ie8 {
   display: none; }
 
@@ -6465,6 +6389,58 @@ ol {
 
 .lt-ie9 .show-ie8 {
   display: block; }
+
+.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a {
+  border: 0;
+  text-decoration: none;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  background: #003b4c;
+  color: #fff; }
+  .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-subcategories a:hover {
+    background: #003b4c;
+    color: #fff; }
+  .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus {
+    background: #003b4c;
+    color: #fff; }
+  .btn .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .btn:active, body.page-taxonomy #list-of-pages a .btn:active, body.page-taxonomy #list-of-subcategories a .btn:active, .btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a a:active, .btn body.page-taxonomy #list-of-pages a:active, body.page-taxonomy #list-of-pages .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-pages a:active, body.page-taxonomy #list-of-pages a a:active, .btn body.page-taxonomy #list-of-subcategories a:active, body.page-taxonomy #list-of-subcategories .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-subcategories a:active, body.page-taxonomy #list-of-subcategories a a:active,
+  .btn .btn.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .btn.active, body.page-taxonomy #list-of-pages a .btn.active, body.page-taxonomy #list-of-subcategories a .btn.active,
+  .btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
+  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a a.active,
+  .btn body.page-taxonomy #list-of-pages a.active, body.page-taxonomy #list-of-pages
+  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-pages a.active, body.page-taxonomy #list-of-pages a a.active,
+  .btn body.page-taxonomy #list-of-subcategories a.active, body.page-taxonomy #list-of-subcategories
+  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-subcategories a.active, body.page-taxonomy #list-of-subcategories a a.active {
+    box-shadow: none !important; }
+  .btn.btn-primary, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.btn-primary, body.page-taxonomy #list-of-pages a.btn-primary, body.page-taxonomy #list-of-subcategories a.btn-primary {
+    padding: 12px 20px; }
+  .btn.key-task, .btn.sub-task, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a {
+    text-align: left;
+    font-size: 24px;
+    font-weight: 600;
+    display: block;
+    border: 1px solid gray;
+    margin: 20px 0;
+    padding: 12px 10px 35px 40px;
+    background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAATCAYAAACgADyUAAABNElEQVQ4jY3TPyjuURjA8Q9eZbghyUR3ee8kiy7KnwxKb0Z0s9zl7qQkZotS8mcWpUSWW3eQ8qbbLWUgyWqgO4pBBooYTm/9Op0Xz/h9zrdznj+nolAojGAJtdjALJ58EJVYQwvqMIl/aP6MeB6xTpyi/yNxGMWIN+EAE++JdyhgAa+ZXDVWsImalAgvmMEYHqIzP3GErymxFLvoxmXE23GCgXIiXKADexFvxD6moCqfzydcj9hBDn2oyFw0iIZyIqFRh2hAV5RrTT01W8YcxhO59VwZqR5bGIr4i7CSiymxFb/xLeK3wriKpedkYxTHCekM32U2rCRWYV6Y45dI2kIvrrIwJ3RtW2hzNp4xjeVEOXL4g56I3+AH/qakktgWsRPhx/wvJxFq/IVr3GNV2JR3JXgDcII3V0Lh5ZkAAAAASUVORK5CYII=") 20px 20px no-repeat;
+    color: #333; }
+  .btn.sub-task, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.sub-task, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a {
+    font-size: 20px;
+    margin: 0 0 30px 0;
+    padding: 6px 10px 30px 30px;
+    background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8Y/yYkND5OAVtHQFErRF8TY1RUvgolNQ3kl/1moMKneXchTqBnKwa0hwEBQhB88Lp6M9cIbfw5ffn+eU8jy/RgtdNDG2RmU0sIlTfGDnP/A86rKLTxyuA7vYw3fwqsG7TEH4Qh3voc5wi3tUYhB+cIy7yGuih1oMwhxXlinMgrePXgoW+g1vZcdCGW7wgI3g9XGQRdA2XvyN5hEXmBYd0/zmaIdjpsWoI7xiK0AjnOEt3ek5ggY4wTC9rownTNCx/KEVCBZdhyk8nZDqagAAAABJRU5ErkJggg==") 14px 14px no-repeat; }
+  .btn.button-prev span[class^="icon-"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.button-prev span[class^="icon-"], body.page-taxonomy #list-of-pages a.button-prev span[class^="icon-"], body.page-taxonomy #list-of-subcategories a.button-prev span[class^="icon-"], .btn.button-next span[class^="icon-"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.button-next span[class^="icon-"], body.page-taxonomy #list-of-pages a.button-next span[class^="icon-"], body.page-taxonomy #list-of-subcategories a.button-next span[class^="icon-"] {
+    font-size: 13px; }
+
+.btn-beta {
+  border: 0;
+  text-decoration: none;
+  padding: 8px 15px;
+  background: #d35400;
+  color: #fff;
+  border-radius: 3px;
+  float: left;
+  margin-right: 10px; }
 
 h1 {
   font-size: 46px; }
@@ -6541,7 +6517,7 @@ body.page-taxonomy-term .page-header {
   display: inline-block;
   margin: 0 10px 15px 0;
   padding: 0;
-  background: #ffffff;
+  background: #fff;
   border-radius: 3px;
   border: 1px solid #003b4c;
   width: 240px; }
@@ -6607,20 +6583,20 @@ body.page-taxonomy-term .page-header {
       cursor: pointer; }
 
 .form-group.has-success .help-block {
-  color: #333333; }
+  color: #333; }
 
 .form-group.has-warning label {
-  color: #333333; }
+  color: #333; }
 
 .form-group.has-warning input {
-  border-color: #333333;
+  border-color: #333;
   margin-bottom: 15px; }
 
 .form-group.has-warning .help-block {
   position: relative;
   padding: 10px 15px;
   background: #fbead4;
-  color: #333333;
+  color: #333;
   border: 0; }
   .form-group.has-warning .help-block button.close {
     opacity: 1;
@@ -6629,7 +6605,7 @@ body.page-taxonomy-term .page-header {
     top: -8px;
     right: -5px; }
   .form-group.has-warning .help-block span[class^="icon-"] {
-    color: #333333;
+    color: #333;
     font-size: 16px; }
     .form-group.has-warning .help-block span[class^="icon-"]:hover {
       cursor: pointer; }
@@ -6721,7 +6697,7 @@ body.page-taxonomy-term .page-header {
 
 .glyphicon.glyphicon-search {
   font-size: 23px;
-  color: #ffffff; }
+  color: #fff; }
 
 @media (max-width: 768px) {
   #search-toggle.collapse.in {
@@ -6907,6 +6883,14 @@ legend {
 .theme-icon-youtube:before {
   content: ""; }
 
+#beta-message {
+  vertical-align: middle; }
+
+#beta-message:after {
+  content: '';
+  display: table;
+  clear: both; }
+
 /*
 * Topbar specific styling
 */
@@ -6914,7 +6898,7 @@ legend {
   position: relative; }
 
 .navbar-default {
-  background: #ffffff;
+  background: #fff;
   border: 0; }
 
 .navbar-brand-wrap {
@@ -6948,14 +6932,14 @@ legend {
     padding: 0 30px; } }
 
 .nav-tools {
-  border-bottom: 3px solid #333333;
+  border-bottom: 3px solid #333;
   padding-top: 13px;
   padding-bottom: 0 !important;
   min-height: 95px; }
   @media (max-width: 480px) {
     .nav-tools {
       padding: 10px 0;
-      border-bottom: 2px solid #333333;
+      border-bottom: 2px solid #333;
       position: relative;
       left: 10px; } }
   @media (min-width: 990px) and (max-width: 1170px) {
@@ -6972,7 +6956,7 @@ legend {
         right: -55px;
         top: 60px; } }
     .nav-tools .nav-tools__account a {
-      color: #333333;
+      color: #333;
       text-decoration: none;
       font-weight: 600;
       font-size: 18px; }
@@ -6996,7 +6980,7 @@ legend {
         padding-right: 15px; } }
     .nav-tools .nav-tools__menu .navbar-toggle {
       display: inline-block;
-      background: #333333;
+      background: #333;
       margin: 0;
       padding: 0;
       letter-spacing: 0.01em;
@@ -7024,11 +7008,11 @@ legend {
             -webkit-transform: rotate(0);
                     transform: rotate(0); }
       .nav-tools .nav-tools__menu .navbar-toggle .menu-icon {
-        color: #ffffff; }
+        color: #fff; }
       .nav-tools .nav-tools__menu .navbar-toggle .icon-bars-wrap {
         padding: 7px 0 0 10px; }
       .nav-tools .nav-tools__menu .navbar-toggle .icon-bar {
-        background: #ffffff;
+        background: #fff;
         -webkit-transition: all 0.2s;
         transition: all 0.2s; }
         .nav-tools .nav-tools__menu .navbar-toggle .icon-bar.top {
@@ -7050,7 +7034,7 @@ legend {
   .nav-tools .nav-tools__search .navbar-form {
     padding-bottom: 5px; }
   .nav-tools .nav-tools__search .btn.btn-primary.btn-glyph, .nav-tools .nav-tools__search body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.btn-primary.btn-glyph, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .nav-tools .nav-tools__search a.btn-primary.btn-glyph, .nav-tools .nav-tools__search body.page-taxonomy #list-of-pages a.btn-primary.btn-glyph, body.page-taxonomy #list-of-pages .nav-tools .nav-tools__search a.btn-primary.btn-glyph, .nav-tools .nav-tools__search body.page-taxonomy #list-of-subcategories a.btn-primary.btn-glyph, body.page-taxonomy #list-of-subcategories .nav-tools .nav-tools__search a.btn-primary.btn-glyph {
-    background: #333333;
+    background: #333;
     height: 45px;
     width: 45px;
     padding: 10px 12px 8px; }
@@ -7068,7 +7052,7 @@ legend {
     margin-bottom: 0; }
 
 .topnav-wrapper {
-  background: #333333;
+  background: #333;
   position: relative;
   top: -5px;
   z-index: 100; }
@@ -7087,7 +7071,7 @@ legend {
   .navbar-collapse li {
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAALCAYAAABCm8wlAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MEI1QkIwODFGMjE2ODExODIyQTgyODE3REM2Q0RCQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3Q0Y0QUQ3QTYwN0MxMUU2ODJEM0ZBMzlFQzQ4NTgzRCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3Q0Y0QUQ3OTYwN0MxMUU2ODJEM0ZBMzlFQzQ4NTgzRCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmJkZmU4ODMwLTE1ODAtNDRkYy1iZGUwLTkzZjhhNTNhMTQ2NCIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmJhMGVjZDg0LThmYmUtMTE3OS1hMTczLTllZjA5NjgzMTM3MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/41YEAAACBSURBVHjaYjx9+vQqBgaGDCB+x4AFMAFxKBBfAWIvXApAQBKItwDxTCDmxqYABBiBOA2ILwKxNTYFMKAMxAeBuAOI2VkYsANmIC4HYikmHAr+AnEnEKdiM+EuECcA8RF0N/wH4llAbACTBAGYCc+BOAWIt2ELh9VArINNEgQAAgwA1MMU4m7yvHAAAAAASUVORK5CYII=") 0 17px no-repeat; }
   .navbar-collapse a {
-    color: #ffffff;
+    color: #fff;
     padding: 10px 10px 10px 17px;
     text-decoration: none;
     display: block; }
@@ -7115,10 +7099,10 @@ legend {
 */
 .global-footer {
   background: #484848;
-  color: #ffffff;
+  color: #fff;
   padding: 20px 0 5px; }
   .global-footer a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     font-weight: 600; }
   .global-footer p.copyright {
@@ -7142,7 +7126,7 @@ ul.global-footer-links {
       background: none; }
   @media (max-width: 480px) {
     ul.global-footer-links {
-      border-bottom: 1px solid #ffffff; }
+      border-bottom: 1px solid #fff; }
       ul.global-footer-links li {
         margin: 0 0 5px; }
       ul.global-footer-links a {
@@ -7165,7 +7149,7 @@ ol.breadcrumb {
     font-size: 13px;
     padding: 0 8px 0 0; }
   ol.breadcrumb li.active {
-    color: #333333; }
+    color: #333; }
   @media (min-width: 990px) and (max-width: 1200px) {
     ol.breadcrumb {
       left: 20px; } }
@@ -7505,13 +7489,16 @@ body.page-node-68 #tablefield-0 td:empty {
     .page-rater .page-rater-button:last-child {
       margin-right: 0; }
     .page-rater .page-rater-button span[class^="icon-"]:before {
-      background: #ffffff;
+      background: #fff;
       border-radius: 50%; }
   .page-rater #page-rater-feedback {
     width: 100%;
     margin: 10px 0; }
   .page-rater #page-rater-submit {
     margin-bottom: 5px; }
+
+footer .footer-small {
+  font-size: 16px; }
 
 .global-footer {
   position: absolute;
@@ -7548,6 +7535,19 @@ body.page-node-68 #tablefield-0 td:empty {
   .global-footer {
     height: 170px; } }
 
+.alert {
+  font-weight: 600; }
+  .alert.alert-success {
+    color: #333; }
+    .alert.alert-success div.alert[class^="alert-*"] {
+      background: #bbddbb; }
+  .alert.alert-info div.alert[class^="alert-*"] {
+    background: #addbf8; }
+  .alert.alert-warning div.alert[class^="alert-*"] {
+    background: #fbead4; }
+  .alert.alert-danger div.alert[class^="alert-*"] {
+    background: #f7d3d3; }
+
 .theme-icon-circle-dark-exclamation:before {
   display: inline;
   vertical-align: top;
@@ -7570,7 +7570,7 @@ span.theme-icon-circle-dark-exclamation {
 
 .content-section-link.well {
   display: block;
-  padding: 0 0;
+  padding: 0;
   background-color: #fff !important; }
 
 .region-sidebar-second ul {
@@ -8006,7 +8006,7 @@ body.page-help .view-help {
   line-height: 1em;
   vertical-align: top;
   display: block !important;
-  color: #333333 !important; }
+  color: #333 !important; }
 
 .guide-navigation-primary .nav > li > a {
   padding-left: 0px !important;
@@ -8022,7 +8022,7 @@ body.page-help .view-help {
   border-radius: 3px; }
 
 .guide-navigation-secondary .page-links .btn, .guide-navigation-secondary .page-links body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .guide-navigation-secondary .page-links a, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .guide-navigation-secondary .page-links a, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .guide-navigation-secondary .page-links a {
-  background-color: #ffffff;
+  background-color: #fff;
   color: #003b4c; }
   .guide-navigation-secondary .page-links .btn:hover, .guide-navigation-secondary .page-links body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .guide-navigation-secondary .page-links a:hover, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-pages .guide-navigation-secondary .page-links a:hover, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-subcategories a:hover, body.page-taxonomy #list-of-subcategories .guide-navigation-secondary .page-links a:hover {
     background-color: #f2f2f2;
@@ -8152,7 +8152,7 @@ ul.gridder {
     margin-top: 0; }
 
 li.gridder-list {
-  background: #ffffff;
+  background: #fff;
   border-radius: 3px;
   min-height: 118px;
   position: relative;
@@ -8168,10 +8168,10 @@ li.gridder-list {
   li.gridder-list.selectedItem {
     background: #8a946d; }
     li.gridder-list.selectedItem a {
-      color: #ffffff;
+      color: #fff;
       text-decoration: none; }
     li.gridder-list.selectedItem .icon {
-      color: #ffffff; }
+      color: #fff; }
     li.gridder-list.selectedItem::after {
       position: absolute;
       width: 57px;
@@ -8240,7 +8240,7 @@ a.gridder-close {
           margin-right: 0;
           margin-bottom: 0; } }
   .gridder-show li > a {
-    background: #ffffff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8U/ykkND1NAVtDi/QwRtodDkFC1Bi02BeSdpazkGlrtLOQZ1AzXUNSg0CIZgg+eF49EeOMPv4cvvz3M28jy/wSUGaODHGpVwgS2c4g37/4HnUZcK3lFdBw5wiO/g7QavmYLwgQO8hDpDB3fYjEEY4QS3kdfAEHsxCDNcW6TwG7wjDFOw0Dy8lR0LZWjjHuXgveI4i6AdPFqOposrTIuOaX4ztMIx02JUDU/YDtAYZ3hOd+pF0Cfq+EqvK+EBE/QtfmgFgj/QtCj9XFzRVQAAAABJRU5ErkJggg==") 12px 11px no-repeat;
+    background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8U/ykkND1NAVtDi/QwRtodDkFC1Bi02BeSdpazkGlrtLOQZ1AzXUNSg0CIZgg+eF49EeOMPv4cvvz3M28jy/wSUGaODHGpVwgS2c4g37/4HnUZcK3lFdBw5wiO/g7QavmYLwgQO8hDpDB3fYjEEY4QS3kdfAEHsxCDNcW6TwG7wjDFOw0Dy8lR0LZWjjHuXgveI4i6AdPFqOposrTIuOaX4ztMIx02JUDU/YDtAYZ3hOd+pF0Cfq+EqvK+EBE/QtfmgFgj/QtCj9XFzRVQAAAABJRU5ErkJggg==") 12px 11px no-repeat;
     margin: 0 0px 10px;
     min-height: 70px;
     font-size: 19px;

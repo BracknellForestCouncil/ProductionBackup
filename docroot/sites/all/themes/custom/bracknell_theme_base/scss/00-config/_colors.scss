@@ -3,30 +3,27 @@
 */
 
 // Primary.
-$white: #ffffff;
-$black: #000000;
+$white: #fff;
+$black: #000;
 
+// Palette A.
+$brandGreen: #336633;
 $bracknellBlack: #000010;
-$textBlack: #333333;
+$deepBlue: #0033a1;
+$textBlack: #333;
 $greyMid: #545454;
 $greyLight: #adadad;
 $greyExtraLight: #f2f2f2;
-$footerGrey: #484848;
-
-$brandGreen: #336633;
-$deepBlue: #0033a1;
-$slateBlue: #003b4c;
-
-// Secondary.
-$oliveGreen: #899065;
-$brightGreen: #62a00f;
-$brightRed: #d62828;
 
 // Palette B.
 $turquoise: #00a4a6;
 $limeGreen: #a39707;
+$oliveGreen: #899065;
+$slateBlue: #003b4c;
 $coralreefBlue: #009fd4;
 $sandhurstOrange: #e65722;
+$brightGreen: #62a00f;
+$brightRed: #d62828;
 $plum: #87364e;
 $magenta: #b42371;
 $downshirePurple: #702277;
@@ -35,6 +32,85 @@ $purple: #c126b8;
 $leisureBlue: #055fad;
 $edgbarrowRed: #ed2600;
 $discoveryGreen: #00aa55;
+
+// Greys.
+$grey1: #484848;
+$grey2: #f7f7f7;
+
+// Beige.
+$beige1: #fbead4;
+
+// Blue.
+$blue1: #09456a;
+
+// MISC - in PS visuals but not in Palettes.
+$greenXLight: lighten($oliveGreen, 30%);
+$borderGrey: lighten($black, 50%);
+$greenBorder: $brandGreen;
+$greyBorderLight: #e7e7e7;
+$archiveGreen: #566b21;
+$tableHead: #e7e7e7;
+
+
+// Typography.
+$global-text-color: $textBlack;
+$global-link-text-color: $deepBlue;
+$global-text-alert-boxout-bg-color: $greyExtraLight;
+$global-heading-link-text-color: $textBlack;
+$global-heading-link-hover-text-color: $deepBlue;
+
+// Settings.
+$pod-emphasise-bg-color: $greyExtraLight;
+$green-top-border-color: $greenBorder;
+$green-base-border-color: $greenBorder;
+$green-top-twopx-border-color: $greenBorder;
+$label-archive-bg-color: $archiveGreen;
+
+$helper-grey-extra-light-bg-color: $greyExtraLight;
+$helper-olive-green-bg-color: $oliveGreen;
+$helper-green-extra-light-bg-color: $greenXLight;
+
+// Buttons.
+$button-bg-color: $slateBlue;
+$button-text-color: $white;
+$button-bg-hover-color: $slateBlue;
+$button-text-hover-color: $white;
+$button-bg-focus-color: $slateBlue;
+$button-text-focus-color: $white;
+
+// Buttons - Key Task.
+$button-key-task-border-color: $borderGrey;
+$button-key-task-bg-color: $white;
+$button-key-task-text-color: $textBlack;
+
+// Buttons - Sub Task.
+$button-sub-task-bg-color: $white;
+
+// Buttons - Beta.
+$button-beta-bg-color: $darkOrange;
+$button-beta-text-color: $white;
+
+// Buttons - Prompt.
+$button-prompt-bg-color: $white;
+$button-prompt-border-color: $slateBlue;
+$button-prompt-text-color: $slateBlue;
+$button-prompt-icon-text-color: $slateBlue;
+$button-prompt-icon-border-color: $slateBlue;
+
+// Alerts.
+$alert-success-bg-color: $brandGreen;
+$alert-success-text-color: $textBlack;
+$alert-info-bg-color: $blue1;
+$alert-warning-bg-color: $beige1;
+$alert-danger-bg-color: $brightRed;
+$icon-circle-dark-text-color: $brandGreen;
+$alert-content-section-link-bg-color: $white;
+
+// Footer.
+$footerBgColor: $grey1;
+$footerTextColor: $white;
+$footerLinkTextColor: $white;
+$footerListBorderColor: $white;
 
 // Services menu related.
 $servicesMenuSelected: #8a946d;
@@ -45,15 +121,4 @@ $servicesMenuLinks: #484848;
 $twitterIconBlue: #55acee;
 $facebookIconBlue: #3b5998;
 
-// Form elements.
-$formWarning: #fbead4;
-$formFeedback: #09456a;
-$formDefault: #f7f7f7;
 
-// MISC - in PS visuals but not in Palettes.
-$greenXLight: lighten($oliveGreen, 30%);
-$borderGrey: lighten($black, 50%);
-$greenBorder: $brandGreen;
-$greyBorderLight: #e7e7e7;
-$archiveGreen: #566b21;
-$tableHead: #e7e7e7;
