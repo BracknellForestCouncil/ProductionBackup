@@ -1,16 +1,17 @@
 /*
-*	Related pages <aside> specific styling
+* Related pages <aside> specific styling.
 */
 
 aside.related-aside {
-	padding-bottom: $commonSpacing;
-	//@extend .green-top;
+  padding-bottom: $commonSpacing;
 
-	img {
-		margin-bottom: $commonSpacing/2;
-	}
-	@media (min-width: 990px){
-		margin-top: -5px;
-}
-@extend .block_no-pad;
+  img {
+    margin-bottom: $commonSpacing/2;
+  }
+
+  @media (min-width: 990px){
+    margin-top: -5px;
+  }
+
+  @extend .block_no-pad;
 }

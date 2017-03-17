@@ -1,18 +1,19 @@
 /*
-*	Topbar specific styling
+* Topbar specific styling
 */
 
 // Set to pos:relative for Brand logo pos:absolute
 // This is so the .topnav-wrapper menu flows behind the logo without large relative positioning
 .masthead {
-	position: relative;
+  position: relative;
 }
 
 // Navbar Branding and tools strip
 .navbar-default {
-	background: $white;
-	border: 0;
+  background: $white;
+  border: 0;
 }
+
 // Brand logo
 $widthLge: 162px;
 $heightLge: 120px;
@@ -20,280 +21,277 @@ $widthSml: 100px;
 $heightSml: 77px;
 
 .navbar-brand-wrap {
-	z-index: 10;
-	position: absolute;
-	top: 7px;
-	left: 0px;
-	width: 162px;
-	height: $heightLge;
-	//background: $white;
-	transition: all .4s ease-in-out;
+  z-index: 10;
+  position: absolute;
+  top: 7px;
+  left: 0px;
+  width: 162px;
+  height: $heightLge;
+  transition: all .4s ease-in-out;
 
-	&.menu-open {
-		@media (min-width: 991px) {
-			width: $widthSml;
-			height: $heightSml;
-			top: 7px;
-			left: 25px;
-		}
+  &.menu-open {
+    @media (min-width: 991px) {
+      width: $widthSml;
+      height: $heightSml;
+      top: 7px;
+      left: 25px;
+    }
+  }
 
-	}
+  @media (max-width: 991px) {
+    width: $widthSml;
+    height: $heightSml;
+    top: 7px;
+    left: 0px;
+  }
 
-	@media (max-width: 991px) {
-		width: $widthSml;
-		height: $heightSml;
-		top: 7px;
-		left: 0px;
-	}
-	@media (max-width: 768px) {
-		width: 95px;
-		left: 15px;
-	}
+  @media (max-width: 768px) {
+    width: 95px;
+    left: 15px;
+  }
 }
 
 .navbar {
-	.container {
-		@media (min-width: 768px) {
-			padding: 0 30px;
-		}
-	}
+  .container {
+    @media (min-width: 768px) {
+      padding: 0 30px;
+    }
+  }
 }
 
 // Navbar tools
 .nav-tools {
-	$navbar-padding: 13px;
-	border-bottom: 3px solid $textBlack;
-	padding-top: $navbar-padding;
-	padding-bottom: 0 !important;
-	min-height: 95px;
+  $navbar-padding: 13px;
+  border-bottom: 3px solid $textBlack;
+  padding-top: $navbar-padding;
+  padding-bottom: 0 !important;
+  min-height: 95px;
 
-	@media (max-width: 480px) {
-		padding: 10px 0;
-		border-bottom: 2px solid $textBlack;
-		position: relative;
-		left: 10px;
-	}
-	@media (min-width: 990px) and (max-width: 1170px) {
-		padding-bottom: $navbar-padding/4;
-	}
-	@media (min-width: 768px) and (max-width: 990px) {
-		padding-bottom: $navbar-padding/4;
-	}
+  @media (max-width: 480px) {
+    padding: 10px 0;
+    border-bottom: 2px solid $textBlack;
+    position: relative;
+    left: 10px;
+  }
 
-	.nav-tools__account {
-		margin-top: 25px;
-		@media (min-width: 768px) and (max-width: 991px) {
-			position: absolute;
-			right: -55px;
-			top: 60px;
-		}
+  @media (min-width: 990px) and (max-width: 1170px) {
+    padding-bottom: $navbar-padding/4;
+  }
 
-		a {
-			color: $textBlack;
-			text-decoration: none;
-			font-weight: $font-weight-headinglight;
-			font-size: $font-size-03;
+  @media (min-width: 768px) and (max-width: 990px) {
+    padding-bottom: $navbar-padding/4;
+  }
 
-			// span.icon-bfc-icon-font-08 {
-			// 	font-size: $font-size-16;
-			// }
+  .nav-tools__account {
+    margin-top: 25px;
+    @media (min-width: 768px) and (max-width: 991px) {
+      position: absolute;
+      right: -55px;
+      top: 60px;
+    }
 
-			span.q-mark {
-				background: #eaeaea;
-				padding: 4px 7px;//used to be 0 7px
-				border-radius: 50%;
-				font-size: $font-size-01;
-			}
-		}
-	}
+    a {
+      color: $textBlack;
+      text-decoration: none;
+      font-weight: $font-weight-headinglight;
+      font-size: $font-size-03;
 
-	.nav-tools__menu {
-		padding-right: 0;
+      span.q-mark {
+        background: #eaeaea;
+        padding: 4px 7px;
+        border-radius: 50%;
+        font-size: $font-size-01;
+      }
+    }
+  }
 
-		@media (min-width: 768px) and (max-width: 991px) {
-			padding-bottom: 0px;
-		}
+  .nav-tools__menu {
+    padding-right: 0;
 
-		@media (max-width: 480px) {
-			padding: 0;
-			position: relative;
-			left: -25px;
-		}
+    @media (min-width: 768px) and (max-width: 991px) {
+      padding-bottom: 0px;
+    }
 
-		@media (max-width: 768px) {
-			padding-right: 15px;
-		}
+    @media (max-width: 480px) {
+      padding: 0;
+      position: relative;
+      left: -25px;
+    }
 
-		.navbar-toggle {
-			display: inline-block;
-			background: $textBlack;
-			margin: 0;
-			padding: 0;
-			letter-spacing: 0.01em;
-			border: 0;
-			position: relative;
-			top: 10px;
-			width: 100px;
-			height: 75px!important;
+    @media (max-width: 768px) {
+      padding-right: 15px;
+    }
 
-			@media (max-width: 768px) {
+    .navbar-toggle {
+      display: inline-block;
+      background: $textBlack;
+      margin: 0;
+      padding: 0;
+      letter-spacing: 0.01em;
+      border: 0;
+      position: relative;
+      top: 10px;
+      width: 100px;
+      height: 75px!important;
 
-			}
+      &:focus {
+        @extend .link-focus;
+      }
 
-			&:focus {
-				@extend .link-focus;
-			}
+      .navbar-toggle-inner {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
 
-			.navbar-toggle-inner {
-				position: absolute;
-				top: 10px;
-				left: 10px;
-			}
+      &.collapsed {
+        width: 100px;
+        height: 45px!important;
 
-			&.collapsed {
-				width: 100px;
-				height: 45px!important;
+        .icon-bar {
+          transition: all 0.2s;
 
-				.icon-bar {
-					transition: all 0.2s;
+          &.top {
+            transform: rotate(0);
+          }
 
-					&.top {
-						transform: rotate(0);
-					}
-					&.centre {
-						opacity: 1;
-					}
-					&.bottom {
-						transform: rotate(0);
-					}
-				}
-			}
+          &.centre {
+            opacity: 1;
+          }
 
-			.menu-icon {
-				color: $white;
-			}
-			.icon-bars-wrap {
-				padding: 7px 0 0 10px;
-			}
-			.icon-bar {
-				background: $white;
-				transition: all 0.2s;
+          &.bottom {
+            transform: rotate(0);
+          }
+        }
+      }
 
-				&.top {
-					transform: translate(3px, 6px)rotate(45deg);
-				}
-				&.centre {
-					opacity: 0;
-				}
-				&.bottom {
-					transform: translate(3px, -6px)rotate(-45deg);
-				}
-			}
-		}
+      .menu-icon {
+        color: $white;
+      }
 
-		#mobile-search-trigger {
-			width: 45px;
-			height: 45px!important;
-			margin-right: 5px;
-		}
-	}
+      .icon-bars-wrap {
+        padding: 7px 0 0 10px;
+      }
 
-	.nav-tools__search {
+      .icon-bar {
+        background: $white;
+        transition: all 0.2s;
 
-		@media (max-width: 768px) {
-			//margin-left: 100px;
-		}
+        &.top {
+          transform: translate(3px, 6px)rotate(45deg);
+        }
 
-		input.title-search {
-			border-top-left-radius: 3px;
-			border-bottom-left-radius: 3px;
-			height: 45px;
-		}
-		.navbar-form {
-			padding-bottom: 5px;
-		}
-		.btn.btn-primary.btn-glyph {
-			background: $textBlack;
-			height: 45px;
-			width: 45px;
-			padding: 10px 12px 8px;
-		}
-	}
+        &.centre {
+          opacity: 0;
+        }
+
+        &.bottom {
+          transform: translate(3px, -6px)rotate(-45deg);
+        }
+      }
+    }
+
+    #mobile-search-trigger {
+      width: 45px;
+      height: 45px!important;
+      margin-right: 5px;
+    }
+  }
+
+  .nav-tools__search {
+    input.title-search {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      height: 45px;
+    }
+
+    .navbar-form {
+      padding-bottom: 5px;
+    }
+
+    .btn.btn-primary.btn-glyph {
+      background: $textBlack;
+      height: 45px;
+      width: 45px;
+      padding: 10px 12px 8px;
+    }
+  }
 }
 
 .nav-tools__search--mobile-search {
-	padding-top: 0px;
-	@media (max-width: 768px) {
-		padding-top: 6px;
-	}
-	@media (min-width: 480px) and (max-width: 980px) {
-		padding-top: 2px;
-	}
-	.input-group-btn .btn {
-		background: #333;
-		margin-bottom: 0;
-	}
+  padding-top: 0px;
+
+  @media (max-width: 768px) {
+    padding-top: 6px;
+  }
+
+  @media (min-width: 480px) and (max-width: 980px) {
+    padding-top: 2px;
+  }
+
+  .input-group-btn .btn {
+    background: #333;
+    margin-bottom: 0;
+  }
 }
 
 // Navbar dropdown elements
 .topnav-wrapper {
-	background: $textBlack;
-	position: relative;
-	top: -5px;
-	z-index:100;
+  background: $textBlack;
+  position: relative;
+  top: -5px;
+  z-index:100;
 
-	@media (max-width: 765px) {
-		top: -5px;
-	}
-	@media (max-width: 480px) {
-		top: -5px;
-	}
+  @media (max-width: 765px) {
+    top: -5px;
+  }
+  @media (max-width: 480px) {
+    top: -5px;
+  }
 }
+
 .navbar-collapse {
-	border: 0;
+  border: 0;
 
-	&.in {}
+  ul {
+    list-style-type: none;
+    padding-top: 20px;
+  }
 
-	ul {
-		list-style-type: none;
-		padding-top: 20px;
-	//	padding-bottom: 60px;
-	}
-	li {
-		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAALCAYAAABCm8wlAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MEI1QkIwODFGMjE2ODExODIyQTgyODE3REM2Q0RCQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3Q0Y0QUQ3QTYwN0MxMUU2ODJEM0ZBMzlFQzQ4NTgzRCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3Q0Y0QUQ3OTYwN0MxMUU2ODJEM0ZBMzlFQzQ4NTgzRCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmJkZmU4ODMwLTE1ODAtNDRkYy1iZGUwLTkzZjhhNTNhMTQ2NCIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmJhMGVjZDg0LThmYmUtMTE3OS1hMTczLTllZjA5NjgzMTM3MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/41YEAAACBSURBVHjaYjx9+vQqBgaGDCB+x4AFMAFxKBBfAWIvXApAQBKItwDxTCDmxqYABBiBOA2ILwKxNTYFMKAMxAeBuAOI2VkYsANmIC4HYikmHAr+AnEnEKdiM+EuECcA8RF0N/wH4llAbACTBAGYCc+BOAWIt2ELh9VArINNEgQAAgwA1MMU4m7yvHAAAAAASUVORK5CYII=') 0 17px no-repeat;
-	}
-	a {
-		color: $white;
-		padding: 10px 10px 10px 17px;
-		text-decoration: none;
-		display: block;
+  li {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAALCAYAAABCm8wlAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4JpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1MEI1QkIwODFGMjE2ODExODIyQTgyODE3REM2Q0RCQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3Q0Y0QUQ3QTYwN0MxMUU2ODJEM0ZBMzlFQzQ4NTgzRCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3Q0Y0QUQ3OTYwN0MxMUU2ODJEM0ZBMzlFQzQ4NTgzRCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmJkZmU4ODMwLTE1ODAtNDRkYy1iZGUwLTkzZjhhNTNhMTQ2NCIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOmJhMGVjZDg0LThmYmUtMTE3OS1hMTczLTllZjA5NjgzMTM3MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/41YEAAACBSURBVHjaYjx9+vQqBgaGDCB+x4AFMAFxKBBfAWIvXApAQBKItwDxTCDmxqYABBiBOA2ILwKxNTYFMKAMxAeBuAOI2VkYsANmIC4HYikmHAr+AnEnEKdiM+EuECcA8RF0N/wH4llAbACTBAGYCc+BOAWIt2ELh9VArINNEgQAAgwA1MMU4m7yvHAAAAAASUVORK5CYII=') 0 17px no-repeat;
+  }
 
-		&:hover {
-			text-decoration: underline;
-		}
-	}
+  a {
+    color: $white;
+    padding: 10px 10px 10px 17px;
+    text-decoration: none;
+    display: block;
 
-	@media (max-width: 768px) {
-		padding-top: 10px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
-		ul {
-			margin: 0;
-			padding: 0;
+  @media (max-width: 768px) {
+    padding-top: 10px;
 
-			li {}
-		}
-	}
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+  }
 }
 
 .t-sm {
-	position: relative;
-	top: 3px;
+  position: relative;
+  top: 3px;
 }
 
 .text-left  {
-	text-align: left;
+  text-align: left;
 }
 
 .print-logo {
-	display: none!important;
+  display: none!important;
 }

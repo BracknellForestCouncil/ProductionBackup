@@ -1,11 +1,11 @@
-.sg-pattern-category {
-  clear: both; }
-
 /**
  * This stylesheet is for styles you want to include only when displaying demo
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
+.sg-pattern-category {
+  clear: both; }
+
 #sg-patterns {
   box-sizing: border-box !important;
   max-width: 100%;

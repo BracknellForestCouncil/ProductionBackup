@@ -11,7 +11,8 @@
 
 files:
   include: 'scss/**/*.scss'
-  ignore: 'scss/component/*.scss'
+  ignore:
+    - 'scss/pattern-lab.scss'
 options:
   formatter: stylish
   merge-default-rules: false
@@ -67,7 +68,7 @@ rules:
     - 1
     - allow-leading-underscore: true
       convention: hyphenatedlowercase
-  property-sort-order: 1
+  property-sort-order: false
   quotes:
     - 1
     - style: single

@@ -1,41 +1,39 @@
 /*
-*	Breadcrumb specific styling
+* Breadcrumb specific styling.
 */
 ol.breadcrumb {
-	margin: 0;
-	padding: 0;
-	background: none;
-	font-size: $font-size-01;
+  margin: 0;
+  padding: 0;
+  background: none;
+  font-size: $font-size-01;
 
-	@media (max-width: 480px) {
-		margin-left: 10px;
-	}
+  @media (max-width: 480px) {
+    margin-left: 10px;
+  }
 
-	li+li:before {
-		// background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAOCAYAAAASVl2WAAAAvUlEQVQYlW3RP0tCcRTG8Y9XExLBF9KLaGkQLF3EQUICcWhove/EwakGa8jJP4iLUzQHLr2QoEARG7w/+HG5ZzrwfDnnec4ppWm6wxdG2MtVgm8MMEO1CLjHO9qY4zIPHNDHFE0sUIsBOOIBz7jBGvUYCNAQE1xjg0Yl5+mExyzNE1aJ4jqFJj+hhHE25RO3MVDO9g/xgRZ+KpH44nyTrfNNfkOKC7xl4gZ3QQzAFD0s0cFfbCrBFV7RVfCsf2IIJh300Ol7AAAAAElFTkSuQmCC') 7px 6px no-repeat;
-		content: $font-icon-next;
-		font-family: $icon-font-base-name;
-		font-size: $font-size-17;
-		padding: 0 8px 0 0;
-	}
-	li {
-		&.active {
-			color: $textBlack;
-		}
-	}
+  li+li:before {
+    content: $font-icon-next;
+    font-family: $icon-font-base-name;
+    font-size: $font-size-17;
+    padding: 0 8px 0 0;
+  }
 
-	@media (max-width: 768px) {
+  li {
+    &.active {
+      color: $textBlack;
+    }
+  }
 
-	}
+  @media (min-width: 990px) and (max-width: 1200px) {
+    left: 20px;
+  }
 
-	@media (min-width: 990px) and (max-width: 1200px) {
-		left: 20px;
-	}
-	@media (min-width: 480px) and (max-width: 768px) {
-		left: 20px;
-	}
-	@media (max-width: 480px) {
-		top: 5px;
-		left: 10px;
-	}
+  @media (min-width: 480px) and (max-width: 768px) {
+    left: 20px;
+  }
+
+  @media (max-width: 480px) {
+    top: 5px;
+    left: 10px;
+  }
 }
