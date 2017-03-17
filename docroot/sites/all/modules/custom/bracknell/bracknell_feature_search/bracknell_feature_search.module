@@ -10,11 +10,11 @@
 include_once 'bracknell_feature_search.features.inc';
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_FORM_ID_alter().
  */
-function bracknell_feature_search_form_alter(&$form, &$form_state, $form_id) {
-  // Add the custom JS file to the Search page.
-  if ($form_id == 'views_exposed_form') {
+function bracknell_feature_search_form_views_exposed_form_alter(&$form, &$form_state) {
+  // Add the custom JS file to the Search page only.
+  if ($form['#id'] == 'views-exposed-form-search-page-page') {
     $form['#attached']['js'][] = drupal_get_path('module', 'bracknell_feature_search') . '/js/searchFunctions.js';
   }
 }
