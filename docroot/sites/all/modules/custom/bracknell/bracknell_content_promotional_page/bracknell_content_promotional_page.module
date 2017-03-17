@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Code for the Bracknell Content: Promotional Page feature.
+ */
+
+include_once 'bracknell_content_promotional_page.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function bracknell_content_promotional_page_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__promotional_page'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--promotional-page',
+    'path' => drupal_get_path('module', 'bracknell_content_promotional_page') . '/templates',
+   );
+  return $theme;
+}
+
