@@ -1,14 +1,12 @@
-.sg-pattern-category {
-  clear: both;
-}
-// body {
-//   margin: 0 30px;
-// }
 /**
  * This stylesheet is for styles you want to include only when displaying demo
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
+.sg-pattern-category {
+  clear: both;
+}
+
 #sg-patterns {
   -webkit-box-sizing: border-box !important;
   box-sizing: border-box !important;
@@ -30,7 +28,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-     flex-wrap: wrap;
+  flex-wrap: wrap;
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;

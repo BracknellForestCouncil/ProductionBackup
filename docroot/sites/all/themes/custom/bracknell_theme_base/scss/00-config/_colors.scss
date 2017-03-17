@@ -1,8 +1,8 @@
 /*
-*	Site specific colours
+* Site specific colours.
 */
 
-// Primary
+// Primary.
 $white: #ffffff;
 $black: #000000;
 
@@ -17,26 +17,40 @@ $brandGreen: #336633;
 $deepBlue: #0033a1;
 $slateBlue: #003b4c;
 
-// Secondary
+// Secondary.
 $oliveGreen: #899065;
 $brightGreen: #62a00f;
 $brightRed: #d62828;
 
-// Services menu related
+// Palette B.
+$turquoise: #00a4a6;
+$limeGreen: #a39707;
+$coralreefBlue: #009fd4;
+$sandhurstOrange: #e65722;
+$plum: #87364e;
+$magenta: #b42371;
+$downshirePurple: #702277;
+$darkOrange: #d35400;
+$purple: #c126b8;
+$leisureBlue: #055fad;
+$edgbarrowRed: #ed2600;
+$discoveryGreen: #00aa55;
+
+// Services menu related.
 $servicesMenuSelected: #8a946d;
 $servicesIconGreen: #566b21;
 $servicesMenuLinks: #484848;
 
-// Social icons:
+// Social icons.
 $twitterIconBlue: #55acee;
 $facebookIconBlue: #3b5998;
 
-// Form elements
+// Form elements.
 $formWarning: #fbead4;
 $formFeedback: #09456a;
 $formDefault: #f7f7f7;
 
-// MISC - in PS visuals but not in Palettes
+// MISC - in PS visuals but not in Palettes.
 $greenXLight: lighten($oliveGreen, 30%);
 $borderGrey: lighten($black, 50%);
 $greenBorder: $brandGreen;

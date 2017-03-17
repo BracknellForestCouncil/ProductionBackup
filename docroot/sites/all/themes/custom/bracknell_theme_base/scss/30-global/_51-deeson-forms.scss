@@ -69,6 +69,7 @@
 // This is to force visibility of the toggled search input.
 #search-toggle {
   @media (max-width: 768px) {
+
     &.collapse.in {
       display: block !important;
     }

@@ -4,6 +4,7 @@
   padding: 0!important;
   margin: 0!important;
 }
+
 .carousel-inner {
   background-color: $greyExtraLight;
   width: 100%;
@@ -130,11 +131,11 @@ hr {
 
 .carousel-control:hover,
 .carousel-control:focus {
-   outline: 0;
-   color: $greyLight;
-   text-decoration: none;
-   opacity: 0.9;
-   filter: alpha(opacity=90);
+  outline: 0;
+  color: $greyLight;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
 }
 
 .carousel-control.left {
