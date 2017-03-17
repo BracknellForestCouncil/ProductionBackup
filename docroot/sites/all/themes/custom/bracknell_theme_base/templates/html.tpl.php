@@ -96,6 +96,8 @@
   <link rel="icon" href="/favicon-32.png" sizes="32x32">
   <!-- END - Favicons -->
 
+  <!-- Microserve Development server addition only! -->
+  <meta name="robots" content="noindex,nofollow" />
 </head>
 <body<?php print $body_attributes; ?>>
   <a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
