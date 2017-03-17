@@ -1,4 +1,4 @@
-.node-type-guide-section section.col-sm-12{
+.node-type-guide-section section.col-sm-12 {
   padding-left: 0px;
 }
 
@@ -7,6 +7,7 @@
   @extend .full-width;
   @extend .grey-x-light;
 }
+
 @media only screen and (min-width: 768px) {
   .guide-navigation-primary ol.menu.nav, .guide-nav {
     column-count: 2;
@@ -18,27 +19,29 @@
   list-style-type:decimal!important;
   list-style-position: inside!important;
 }
+
 .guide-navigation-primary .nav li {
-    line-height: 1em;
-    vertical-align: top;
-    display: block!important;
-    color: $textBlack!important;
-
+  line-height: 1em;
+  vertical-align: top;
+  display: block!important;
+  color: $textBlack!important;
 }
+
 .guide-navigation-primary .nav > li > a {
-    padding-left: 0px!important;
-    display: list-item;
+  padding-left: 0px!important;
+  display: list-item;
 
 }
+
 .guide-navigation-primary .nav > li > a:after {
-    clear: both;
-
+  clear: both;
 }
+
 .guide-navigation-primary .nav > li > a:hover,
 .guide-navigation-primary .nav > li > a:focus {
-    text-decoration: none;
-    background-color: $greyExtraLight;
-    border-radius: $border-radius-base;
+  text-decoration: none;
+  background-color: $greyExtraLight;
+  border-radius: $border-radius-base;
 }
 
 .guide-navigation-secondary .page-links .btn {
@@ -50,6 +53,7 @@
     color: $bracknellBlack;
   }
 }
+
 .guide-navigation-secondary .page-links {
   width:100%;
   display: inline-block;
@@ -58,9 +62,11 @@
     width: 100%;
     display: block;
   }
+
   &.page-previous {
     float: left;
   }
+
   &.page-next {
     float: right;
   }
@@ -72,15 +78,16 @@
 
   @media (max-width: 768px) {
     width: 100%;
-    }
+  }
 }
+
 .guide-navigation-secondary .page-links .page-next {
   text-align: right;
   float: right;
 
   @media (max-width: 768px) {
     width: 100%;
-    }
+  }
 }
 
 .guide-navigation-secondary .page-links .page-previous .theme-icon-previous:before,
@@ -90,22 +97,26 @@
   line-height: 0.7!important;
   font-size: $font-size-13;
 }
+
 .guide-navigation-secondary .page-links .page-previous .theme-icon-previous{
   padding:0;
 }
+
 .guide-navigation-secondary .page-links .page-next .theme-icon-next {
   margin:0 0;
 }
+
 .guide-navigation-secondary .page-links span.pagination-label{
   font-size: $font-size-20;
 }
+
 .guide-navigation-secondary .page-links span.pagination-title-pre {
   padding-left: 40px;
 }
+
 .guide-navigation-secondary .page-links span.pagination-title-next {
   padding-right: 40px;
 }
-
 
 body.node-type-guide-section {
   #page-header {
@@ -114,24 +125,22 @@ body.node-type-guide-section {
   }
 }
 
-
 ol.menu.nav {
-    counter-reset: item;
+  counter-reset: item;
 }
 
 .guide-navigation-primary ol.menu.nav > li.leaf {
-    list-style: decimal inside none;
-    display:inline-block;
+  list-style: decimal inside none;
+  display:inline-block;
 }
 
 .guide-navigation-primary ol.menu.nav > li.leaf:before {
-    display: inline-block;
-    content: counter(item);
-    counter-increment: item;
+  display: inline-block;
+  content: counter(item);
+  counter-increment: item;
 }
 
-.guide-navigation-primary .nav > li > a
-{
-display: inline-block;
-margin-left: 10px;
+.guide-navigation-primary .nav > li > a {
+  display: inline-block;
+  margin-left: 10px;
 }

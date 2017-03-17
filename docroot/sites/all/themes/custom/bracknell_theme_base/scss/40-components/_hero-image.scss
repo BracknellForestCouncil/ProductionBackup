@@ -1,65 +1,61 @@
 .block-hero {
-    display: block;
-    position: relative;
-    /*height: 400px;*/
-    background:url("/images/sample/hero/fostering.jpg") center center;
-    background-repeat:no-repeat;
-    background-size:cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+  display: block;
+  position: relative;
+  background: url('/images/sample/hero/fostering.jpg') center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .block-hero-headline {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 1.2rem 3rem 1.2rem 2rem;
-    transition: all 0.2s ease;
-    position: absolute;
-    top: 3rem;
-    left: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.2rem 3rem 1.2rem 2rem;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 3rem;
+  left: 1rem;
 }
+
 .gallery {
-    padding: 1rem;
-    margin: 200px 0 55px 0;
-    position: relative;
+  padding: 1rem;
+  margin: 200px 0 55px 0;
+  position: relative;
 }
 
-.myBack-lg
-{
-    background-image:url(/images/sample/hero/fostering.jpg);
-    background-size:1200px 400px;
-    height:400px;
-    background-repeat:no-repeat;
-    padding:20px;
-    object-fit: cover;
+.myBack-lg {
+  background-image: url(/images/sample/hero/fostering.jpg);
+  background-size: 1200px 400px;
+  height: 400px;
+  background-repeat: no-repeat;
+  padding: 20px;
+  object-fit: cover;
 }
 
-.myBack-md
-{
-    background-image:url(http://i.imgur.com/azV93IL.png);
-    background-size:1000px 400px;
-    height:400px;
-    background-repeat:no-repeat;
-    color:#555;
-    padding:15px
+.myBack-md {
+  background-image: url(http://i.imgur.com/azV93IL.png);
+  background-size: 1000px 400px;
+  height: 400px;
+  background-repeat:no-repeat;
+  color: #555;
+  padding: 15px
 }
 
-.myBack-sm
-{
-    background-image:url(http://i.imgur.com/ltN41AF.png);
-    background-size:800px 400px;
-    height:400px;
-    background-repeat:no-repeat;
-    color:#555;
-    padding:10px
+.myBack-sm {
+  background-image: url(http://i.imgur.com/ltN41AF.png);
+  background-size: 800px 400px;
+  height: 400px;
+  background-repeat: no-repeat;
+  color: #555;
+  padding: 10px
 }
 
-.myBack-xs
-{
-    background-image:url(http://i.imgur.com/4eZgZYG.png);
-    background-size:500px 125px;
-    height:125px;
-    background-repeat:no-repeat;
-    color:#555;
-    padding:5px
+.myBack-xs {
+  background-image: url(http://i.imgur.com/4eZgZYG.png);
+  background-size: 500px 125px;
+  height: 125px;
+  background-repeat: no-repeat;
+  color: #555;
+  padding: 5px
 }

@@ -1,75 +1,81 @@
 /*
-*	Bespoke form element styling
+* Bespoke form element styling
 */
 
 .navbar-form {
-	border: 0;
-	margin: 0;
+  border: 0;
+  margin: 0;
 }
+
 .input-group {
-	width: 100%;
+  width: 100%;
 }
+
 .form-group {
-	.div-required {
-		position: relative;
-		top:40px;
-		right: 10px;
-		@media (min-width: 768px) {
-			//position: relative;
-			//top:40px;
-		}
-	}
-	.help-block {
-		border-radius: 0;
-	}
+  .div-required {
+    position: relative;
+    top:40px;
+    right: 10px;
+  }
 
-	&.has-success {
-		@include showFormStatus($brandGreen, $brandGreen, $brandGreen, 50%, $brandGreen);
-		.help-block {
-			color: $textBlack;
-		}
-	}
-	&.has-warning {
-		@include showFormStatus($textBlack, $textBlack, $formWarning, 0%, $textBlack);
-	}
-	&.has-error {
-		@include showFormStatus($brightRed, $brightRed, $brightRed, 40%, $brightRed);
-	}
-	&.has-feedback {
-		@include showFormStatus($bracknellBlack, $formFeedback, $formFeedback, 60%, $bracknellBlack);
-	}
-	&.has-default {
-		@include showFormStatus($bracknellBlack, $bracknellBlack, $formDefault, 0%, $bracknellBlack);
-	}
+  .help-block {
+    border-radius: 0;
+  }
+
+  &.has-success {
+    @include showFormStatus($brandGreen, $brandGreen, $brandGreen, 50%, $brandGreen);
+
+    .help-block {
+      color: $textBlack;
+    }
+  }
+
+  &.has-warning {
+    @include showFormStatus($textBlack, $textBlack, $formWarning, 0%, $textBlack);
+  }
+
+  &.has-error {
+    @include showFormStatus($brightRed, $brightRed, $brightRed, 40%, $brightRed);
+  }
+
+  &.has-feedback {
+    @include showFormStatus($bracknellBlack, $formFeedback, $formFeedback, 60%, $bracknellBlack);
+  }
+
+  &.has-default {
+    @include showFormStatus($bracknellBlack, $bracknellBlack, $formDefault, 0%, $bracknellBlack);
+  }
 }
+
 .form-control {
-	height: 49px;
-	box-shadow: 0;
-	border: 1px solid $bracknellBlack;
+  height: 49px;
+  box-shadow: 0;
+  border: 1px solid $bracknellBlack;
 }
-.input-group-btn {
-	.btn {
-		padding: 12px 12px 8px;
-		border: 0;
-		background: $bracknellBlack;
-	}
-}
-.glyphicon.glyphicon-search {
-	font-size: $font-size-07;
-	color: $white;
-}
-// This is to force visibility of the toggled search input
-//
-#search-toggle {
-	@media (max-width: 768px) {
-		&.collapse.in {
-			display: block !important;
-		}
-	}
 
+.input-group-btn {
+  .btn {
+    padding: 12px 12px 8px;
+    border: 0;
+    background: $bracknellBlack;
+  }
 }
-fieldset {}
+
+.glyphicon.glyphicon-search {
+  font-size: $font-size-07;
+  color: $white;
+}
+
+// This is to force visibility of the toggled search input.
+#search-toggle {
+  @media (max-width: 768px) {
+    &.collapse.in {
+      display: block !important;
+    }
+  }
+}
+
 legend {
-	color: $bracknellBlack;
-	border-bottom: 2px solid $bracknellBlack;
+  color: $bracknellBlack;
+  border-bottom: 2px solid $bracknellBlack;
 }

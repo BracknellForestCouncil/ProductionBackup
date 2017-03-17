@@ -10,8 +10,8 @@
 
 $icon-font-source-1: url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.eot");
 $icon-font-source-2: url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.eot?#iefix") format("embedded-opentype"),
-		url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.woff") format("woff"),
-		url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.ttf") format("truetype");
+    url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.woff") format("woff"),
+    url("https://files.bracknell-forest.gov.uk/sites/bracknell/public/icons/bracknell_theme_base-icons.ttf") format("truetype");
 $icon-font-base-name: bracknell_theme_base-icons;
 
 $font-icons: (
@@ -67,7 +67,6 @@ $font-icons: (
   wallet: "\f132",
   youtube: "\f133",
 );
-
 
 $font-icon-arrow-left: "\f101";
 $font-icon-arrow-right: "\f102";

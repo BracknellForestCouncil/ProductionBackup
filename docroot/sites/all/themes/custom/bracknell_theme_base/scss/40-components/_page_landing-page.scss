@@ -4,33 +4,35 @@ body.page-taxonomy {
     @extend .full-width;
     @extend .green-x-light;
     @extend .call-to-actions;
+
     &:after {
       clear:both;
       content: " ";
       display: table;
     }
+
     .pane-content {
       margin-left: -5px;
       margin-right: -5px;
     }
+
     .field-name-field-category-tasks {
       div{
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
-
         display: flex;
         -webkit-box-align: stretch;
         -webkit-align-items: stretch;
         -ms-flex-align: stretch;
         align-items: stretch;
-
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
       }
+
       div {
-        div{
+        div {
           position: relative;
           min-height: 1px;
           padding-left: 15px;
@@ -39,26 +41,26 @@ body.page-taxonomy {
 
           @media (min-width: 992px) {
             float: left;
-            //width: 25%!important;
           }
+
           @media (min-width: 768px) {
             float: left;
             width: 33.3333333333%;
           }
+
           @media (max-width:$screen-sm) {
             width: 100%;
           }
         }
       }
+
       a {
        @extend .btn;
        @extend .key-task;
        border-radius: 3px;
        width: 100%!important;
-       //height: 100px;
       }
     }
-
   } // END .pane-taxonomy-term-field-category-tasks
 
   #list-of-pages {
@@ -69,42 +71,38 @@ body.page-taxonomy {
     @extend .grey-x-light;
     @extend .call-to-actions;
     @extend .sub-grid-categories;
+
     &:after {
       clear:both;
-      content: " ";
+      content: '';
       display: table;
     }
+
     .view-content {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
-
       display: flex!important;
       -webkit-box-align: stretch;
       -webkit-align-items: stretch;
       -ms-flex-align: stretch;
       align-items: stretch!important;
-
       -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap!important;
-      //padding: 0 5px;
 
       div {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
-
         display: flex!important;
         -webkit-box-align: stretch;
         -webkit-align-items: stretch;
         -ms-flex-align: stretch;
         align-items: stretch!important;
-
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap!important;
-
         padding: 0 5px;
         margin-bottom: 10px;
         float: left;
@@ -116,24 +114,23 @@ body.page-taxonomy {
           float: left;
            width: 33%;
         }
+
         @media (max-width:$screen-sm)  {
           width: 100%;
         }
       }
     }
+
     a {
       @extend .btn;
       @extend .sub-task;
       border-radius: 3px;
       margin: 0 0 10px;
-      width: 100%!important;
-      @media (min-width: 768px) {
-        //height: 80px!important;
-      }
+      width: 100% !important;
     }
   } // END #list-of-pages
 
-  #list-of-subcategories{
+  #list-of-subcategories {
     clear: both;
     padding-top: 30px;
     margin-bottom: 30px;
@@ -141,19 +138,23 @@ body.page-taxonomy {
     @extend .grey-x-light;
     @extend .call-to-actions;
     @extend .sub-grid-categories;
+
     &:after {
       clear:both;
-      content: " ";
+      content: ' ';
       display: table;
     }
+
     .view-content {
       padding: 0 5px;
+
       div {
         padding: 0 5px;
         float: left;
         position: relative;
         min-height: 1px;
         width: 25%;
+
         @media (max-width:$screen-md) {
           float: left;
            width: 33%;
@@ -163,14 +164,12 @@ body.page-taxonomy {
         }
       }
     }
+
     a {
       @extend .btn;
       @extend .sub-task;
       border-radius: 3px;
       margin: 0 0 10px;
-      @media (min-width: 768px) {
-        //height: 80px!important;
-      }
     }
   } // END #list-of-subcategories
 
@@ -178,20 +177,24 @@ body.page-taxonomy {
     .view-content {
       @extend .block-30;
       clear:both;
-      content: " ";
+      content: ' ';
       display: table;
       width: 100%;
+
       div {
         float: left;
         width: 25%;
+
         @media (max-width:$screen-md) {
           float: left;
           width: 33%;
         }
+
         @media (max-width:$screen-sm)  {
           width: 100%;
         }
       }
+
       h2 {
         @extend .h2-small;
         @extend .green-top;

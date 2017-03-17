@@ -1,106 +1,108 @@
 /*
-*	Social icons
-*	This can change on a location basis - e.g. in-page and global footer
+* Social icons
+* This can change on a location basis - e.g. in-page and global footer
 */
 
 .socials {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
-	li {
-		display: inline-block;
-		margin: 0 5px;
+  li {
+    display: inline-block;
+    margin: 0 5px;
 
-		&:last-child {
-			margin-right: 0;
-		}
-	}
-	a {
-		text-decoration: none;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 
-		&:hover {
-			text-decoration: none;
-		}
-	}
+  a {
+    text-decoration: none;
 
-	&.socials-in-page {
-		margin-top: 5px;
-		padding: 25px 0 20px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
-		@media (max-width: 768px) {
-			margin-left: 15px;
-			margin-right: 15px;
-		}
+  &.socials-in-page {
+    margin-top: 5px;
+    padding: 25px 0 20px;
 
-		ul {
-			position: relative;
-			left: 20px;
-			top: -2px;
+    @media (max-width: 768px) {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
 
-			@media (max-width: 768px) {
-				left: 10px;
-			}
-		}
-		p.share-page {
-			margin: 0;
-			font-size: $font-size-08;
-			font-weight: $font-weight-base;
-		}
-		a {
-			color: $slateBlue;
-			font-size: $font-size-11;
+    ul {
+      position: relative;
+      left: 20px;
+      top: -2px;
 
-			&.icon-twitter {
-				color: $twitterIconBlue;
-			}
-			&.icon-facebook {
-				color: $facebookIconBlue;
-			}
+      @media (max-width: 768px) {
+        left: 10px;
+      }
+    }
 
-			@media (max-width: 768px) {
-				font-size: $font-size-09;
-			}
-		}
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			margin: 0;
-		}
+    p.share-page {
+      margin: 0;
+      font-size: $font-size-08;
+      font-weight: $font-weight-base;
+    }
 
-		h4 {
-			// TBC
-			@media (max-width: 768px) {}
-		}
-	}
+    a {
+      color: $slateBlue;
+      font-size: $font-size-11;
 
-	// Footer level
-	&.socials-global-footer {
-		ul {
-			float: right;
-		}
-		// Instagram icon
-		li:first-child {
-			a {
-				position: relative;
-				top: 2px;
-			}
-		}
-		a {
-			font-size: $font-size-12;
-		}
-	}
+      &.icon-twitter {
+        color: $twitterIconBlue;
+      }
 
-	@media (max-width: 480px) {
-		float: none;
-		margin: 10px 0;
+      &.icon-facebook {
+        color: $facebookIconBlue;
+      }
 
-		li {
-			margin: $common-footer-spacing 0 $common-footer-spacing * 3;
-		}
-	}
+      @media (max-width: 768px) {
+        font-size: $font-size-09;
+      }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+  }
+
+  // Footer level
+  &.socials-global-footer {
+    ul {
+      float: right;
+    }
+
+    // Instagram icon
+    li:first-child {
+      a {
+        position: relative;
+        top: 2px;
+      }
+    }
+
+    a {
+      font-size: $font-size-12;
+    }
+  }
+
+  @media (max-width: 480px) {
+    float: none;
+    margin: 10px 0;
+
+    li {
+      margin: $common-footer-spacing 0 $common-footer-spacing * 3;
+    }
+  }
 }

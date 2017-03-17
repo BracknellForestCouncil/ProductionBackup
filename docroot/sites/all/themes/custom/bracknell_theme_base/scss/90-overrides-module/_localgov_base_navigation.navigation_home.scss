@@ -1,9 +1,11 @@
 @mixin gridRows($numPerRow, $margin) {
   width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+
   &:nth-child(n) {
     margin-bottom: $margin;
     margin-right: $margin;
   }
+
   &:nth-of-type(#{$numPerRow}n) {
     margin-right: 0;
     margin-bottom: 0;
@@ -30,8 +32,8 @@
 }
 
 .gridder{
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 
@@ -46,6 +48,7 @@
   display: inline-block;
   vertical-align: top;
   @include gridRows(4,1%);
+
   @media (max-width: $screen-sm) {
     width: 100%;
     @include rowMachine(0,2%);
@@ -54,6 +57,7 @@
 
 #navigation-home-button-show-hide {
   @include gridWidthSingleCenter(4,1%);
+
   @media (max-width: $screen-sm) {
     width: auto;
   }
@@ -63,126 +67,130 @@
 ul.gridder {
   margin-top: $commonSpacing;
   margin-bottom: $commonSpacing/3;
-	ul {
-		padding-left: 0;
-	}
 
-	&.collapse {
-		margin-top: 0;
-	}
+  ul {
+    padding-left: 0;
+  }
+
+  &.collapse {
+    margin-top: 0;
+  }
 }
-
 
 li.gridder-list {
-	background: $white;
-	border-radius: 3px;
-	min-height: 118px;
-	position: relative;
-	padding: 8px 11px 0;
-	border: 1px solid $greyLight;
+  background: $white;
+  border-radius: 3px;
+  min-height: 118px;
+  position: relative;
+  padding: 8px 11px 0;
+  border: 1px solid $greyLight;
 
-	a {
-		font-size: $font-size-07;
-		line-height: 1.1;
-	}
+  a {
+    font-size: $font-size-07;
+    line-height: 1.1;
+  }
 
-	&:hover {
-		cursor: pointer;
+  &:hover {
+    cursor: pointer;
 
-		a {
-			text-decoration: underline;
-		}
-	}
+    a {
+      text-decoration: underline;
+    }
+  }
 
-	&.selectedItem {
-		background: $servicesMenuSelected;
+  &.selectedItem {
+    background: $servicesMenuSelected;
 
-		a {
-			color: $white;
-			text-decoration: none;
-		}
+    a {
+      color: $white;
+      text-decoration: none;
+    }
 
-		.icon {
-			color: $white;
-		}
+    .icon {
+      color: $white;
+    }
 
-		&::after {
-			position: absolute;
-			width: 57px;
-			height: 22px;
-			bottom: -22px;
-			left: 39%;
-			z-index: 10;
-			content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAWCAYAAAB64jRmAAAB1ElEQVRYhd3X24dVYRjH8U/7qn+no0onqRiKFEUSc1U3mySSmJtIhiRGlCiSqIsSiaJuorkYmhQNQyl100kno8xM08WzVmqb3azDu/bQ93K963nW77v22t7nXTA41O7HGSz0//Ed7RYuYCWez2+e5LzAKpxvZRdGsQQ35y1SWm5hMR5B64+FT9iGI5jufa4kTOMotgof/C0JMziBTXjbs2hpeIfNOC48ftMpmXNf/NwPms2VjIdYhHuzLXaThDfYgFMNhErJaawTeWflX5IwiYPYia/pciXhG3bhgMjZlbkkc65hOZ7Wy5WMZ1iGq0VuLioJY2I/vVwhVEquiBc+VrSgjCTxiexBGz9K1tZlMnvu7ixHYcpK5gxhPV5VrC/La6zNnluaqpIwLKakOzV6FOGu2M6GqzaoIwnv0Ydj+FmzVyczWd8+sdFXpq4kITeALfiQoB98FKPZgAQjZgrJnNvi8x2p2WcES8WQnYSUkvASq3G2Yv05rBHHpGSkliS2lv3Yi4mCNRPoxz5x0E1KE5I5l7AC43PcNy4OtxebCtKkJDwR/6/rXdZviPHscZMhmpaEL9iBQ5jKrk3hMLbjc9MBeiFJ7HknxdFtFBsxqONw2xS/ALkSXOg0/as5AAAAAElFTkSuQmCC');
-		}
-	}
+    &::after {
+      position: absolute;
+      width: 57px;
+      height: 22px;
+      bottom: -22px;
+      left: 39%;
+      z-index: 10;
+      content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAWCAYAAAB64jRmAAAB1ElEQVRYhd3X24dVYRjH8U/7qn+no0onqRiKFEUSc1U3mySSmJtIhiRGlCiSqIsSiaJuorkYmhQNQyl100kno8xM08WzVmqb3azDu/bQ93K963nW77v22t7nXTA41O7HGSz0//Ed7RYuYCWez2+e5LzAKpxvZRdGsQQ35y1SWm5hMR5B64+FT9iGI5jufa4kTOMotgof/C0JMziBTXjbs2hpeIfNOC48ftMpmXNf/NwPms2VjIdYhHuzLXaThDfYgFMNhErJaawTeWflX5IwiYPYia/pciXhG3bhgMjZlbkkc65hOZ7Wy5WMZ1iGq0VuLioJY2I/vVwhVEquiBc+VrSgjCTxiexBGz9K1tZlMnvu7ixHYcpK5gxhPV5VrC/La6zNnluaqpIwLKakOzV6FOGu2M6GqzaoIwnv0Ydj+FmzVyczWd8+sdFXpq4kITeALfiQoB98FKPZgAQjZgrJnNvi8x2p2WcES8WQnYSUkvASq3G2Yv05rBHHpGSkliS2lv3Yi4mCNRPoxz5x0E1KE5I5l7AC43PcNy4OtxebCtKkJDwR/6/rXdZviPHscZMhmpaEL9iBQ5jKrk3hMLbjc9MBeiFJ7HknxdFtFBsxqONw2xS/ALkSXOg0/as5AAAAAElFTkSuQmCC');
+    }
+  }
 
-	a {
-		color: $servicesMenuLinks;
-		text-decoration: none;
-	}
+  a {
+    color: $servicesMenuLinks;
+    text-decoration: none;
+  }
 
  .icon  {
-		position: absolute;
-		right: 15px;
-		bottom: 17px;
-		font-size: $font-size-15;
-		color: $servicesIconGreen;
-	}
+    position: absolute;
+    right: 15px;
+    bottom: 17px;
+    font-size: $font-size-15;
+    color: $servicesIconGreen;
+  }
 }
 
-
 .gridder-show {
-	margin-bottom: $commonSpacing / 3;
+  margin-bottom: $commonSpacing / 3;
 }
 
 .gridder-expanded-content {
-	padding-top: $commonSpacing / 3;
-	padding-bottom: $commonSpacing / 1;
+  padding-top: $commonSpacing / 3;
+  padding-bottom: $commonSpacing / 1;
 
 }
 
 .gridder-navigation {
   float: right;
+
   a {
     color: $bracknellBlack;
   }
 }
+
 a.gridder-close {
    font-size: 1.5em;
    text-decoration: none;
 }
 
 .gridder-show {
-  .gridder-padding{
+  float: left;
+  width: 100%;
+
+  .gridder-padding {
     @extend .full-width;
     background: $greenXLight;
   }
+
   .gridder-expanded-content {
     clear: both;
-    	margin-bottom: $commonSpacing / 3;
-      padding-top: 0;
-    	padding-bottom: $commonSpacing;
-    }
+    margin-bottom: $commonSpacing / 3;
+    padding-top: 0;
+    padding-bottom: $commonSpacing;
+  }
 
-    ul {
-      display: block;
-    }
-
-  float: left;
-  width: 100%;
+  ul {
+    display: block;
+  }
 
   li {
     display:inline-block;
     vertical-align: top;
     @include gridRows(4,1%);
+
     @media (max-width: $screen-md) {
-  		width: 100%;
-  		@include rowMachine(0,0%);
+      width: 100%;
+      @include rowMachine(0,0%);
       margin-right: 0;
     }
   }
-  li > a{
+
+  li > a {
     background: $white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8U/ykkND1NAVtDi/QwRtodDkFC1Bi02BeSdpazkGlrtLOQZ1AzXUNSg0CIZgg+eF49EeOMPv4cvvz3M28jy/wSUGaODHGpVwgS2c4g37/4HnUZcK3lFdBw5wiO/g7QavmYLwgQO8hDpDB3fYjEEY4QS3kdfAEHsxCDNcW6TwG7wjDFOw0Dy8lR0LZWjjHuXgveI4i6AdPFqOposrTIuOaX4ztMIx02JUDU/YDtAYZ3hOd+pF0Cfq+EqvK+EBE/QtfmgFgj/QtCj9XFzRVQAAAABJRU5ErkJggg==') 12px 11px no-repeat;
     margin: 0 0px 10px;
     min-height: 70px;
@@ -192,7 +200,6 @@ a.gridder-close {
     text-decoration: none;
     display: block;
     padding: 7px 10px 0 30px;
-
 
     &:hover {
       text-decoration: underline;
@@ -213,65 +220,85 @@ a.gridder-close {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   // Set a default icon for new homepage nav items
   .icon:before {
     content: quote-workaround($font-icon-question);
   }
+
   // Define icons for homepage nav icons
   .nav-icon-leisure-services:before {
     content: quote-workaround($font-icon-swimming);
   }
+
   .nav-icon-planning-and-building-control:before {
     content: quote-workaround($font-icon-builder);
   }
+
   .nav-icon-council-tax:before {
     content: quote-workaround($font-icon-council-tax);
   }
+
   .nav-icon-schools-and-learning:before {
     content: quote-workaround($font-icon-mortarboard);
   }
+
   .nav-icon-housing:before {
     content: quote-workaround($font-icon-house);
   }
+
   .nav-icon-bins-and-recycling:before {
     content: quote-workaround($font-icon-recycling-bin);
   }
+
   .nav-icon-births-marriages-and-deaths:before {
     content: quote-workaround($font-icon-certificate);
   }
+
   .nav-icon-the-council-and-democracy:before {
     content: quote-workaround($font-icon-council-building);
   }
-.nav-icon-roads-parking-and-transport:before {
+
+  .nav-icon-roads-parking-and-transport:before {
     content: quote-workaround($font-icon-car);
   }
+
   .nav-icon-health-and-social-care:before {
     content: quote-workaround($font-icon-heart);
   }
+
   .nav-icon-children-and-family-services:before {
     content: quote-workaround($font-icon-family);
   }
+
   .nav-icon-business-information:before {
     content: quote-workaround($font-icon-statistics);
   }
+
   .nav-icon-jobs:before {
     content: quote-workaround($font-icon-briefcase);
   }
+
   .nav-icon-environmental-issues:before {
     content: quote-workaround($font-icon-leaves);
   }
+
   .nav-icon-libraries:before {
     content: quote-workaround($font-icon-book);
   }
+
   .nav-icon-elections-and-voting:before {
     content: quote-workaround($font-icon-voting);
   }
+
   .nav-icon-benefits:before {
     content: quote-workaround($font-icon-wallet);
   }
+
   .nav-icon-parks-and-countryside:before {
     content: quote-workaround($font-icon-trees);
   }
+
   .nav-icon-licensing:before {
     content: quote-workaround($font-icon-certificate);
   }
@@ -279,6 +306,7 @@ a.gridder-close {
   .nav-icon-street-cleaning:before {
     content: quote-workaround($font-icon-rubbish);
   }
+
   .nav-icon-consultations:before {
     content: quote-workaround($font-icon-speech-bubbles);
   }
