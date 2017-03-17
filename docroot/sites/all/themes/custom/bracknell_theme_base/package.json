@@ -8,8 +8,9 @@
     "email": "hello@microserve.io"
   },
   "license": "GPL-2.0+",
-  "sasslintConfig": ".sass-lint.yml",
   "config": {
+    "sasslintConfig": ".sass-lint.yml",
+    "sassIgnoreFiles": "./scss/pattern-lab.scss",
     "scssPath": "./scss",
     "outputCss": "./css",
     "outputJs": "./js",
@@ -19,10 +20,10 @@
   "scripts": {
     "postinstall": "npm-run-all -p rminfo copy",
     "autoprefixer": "postcss -u autoprefixer -r $npm_package_config_outputCss/*.css",
-    "scss": "node-sass $npm_package_config_scssPath --source-map true --output-style nested -o $npm_package_config_outputCss ",
+    "scss": "node-sass $npm_package_config_scssPath --source-map true --output-style nested -o $npm_package_config_outputCss",
     "postscss": "browser-sync reload --files='*.css, *.map'",
     "serve": "browser-sync start --config $npm_package_config_browsersyncConfig --no-open",
-    "lint": "sass-lint -v -q || true",
+    "lint": "sass-lint --config $npm_package_config_sasslintConfig --ignore $npm_package_config_sassIgnoreFiles --verbose --no-exit",
     "build:css": "npm run scss && npm run autoprefixer",
     "copy": "npm-run-all -p copy:Js",
     "copy:Js": "cp -R ./node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js $npm_package_config_outputJs",
