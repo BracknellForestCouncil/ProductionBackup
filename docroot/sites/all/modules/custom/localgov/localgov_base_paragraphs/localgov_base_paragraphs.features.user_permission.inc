@@ -37,6 +37,9 @@ function localgov_base_paragraphs_user_default_permissions() {
   $permissions['administer paragraphs bundles'] = array(
     'name' => 'administer paragraphs bundles',
     'roles' => array(
+      'content administrator' => 'content administrator',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'paragraphs',
