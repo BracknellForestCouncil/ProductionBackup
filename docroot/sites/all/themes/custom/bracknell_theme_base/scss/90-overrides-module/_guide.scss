@@ -17,7 +17,6 @@
 .guide-navigation-primary .nav {
   list-style-type:decimal!important;
   list-style-position: inside!important;
-  /*display: block;*/
 }
 .guide-navigation-primary .nav li {
     line-height: 1em;
@@ -27,7 +26,6 @@
 
 }
 .guide-navigation-primary .nav > li > a {
-    /*position: relative;*/
     padding-left: 0px!important;
     display: list-item;
 
@@ -67,12 +65,6 @@
     float: right;
   }
 }
-/*.guide-navigation-secondary .page-links.previous {
-  float: left;
-}
-.guide-navigation-secondary .page-links.next {
-  float: right;
-}*/
 
 .guide-navigation-secondary .page-links .page-previous {
   text-align: left;

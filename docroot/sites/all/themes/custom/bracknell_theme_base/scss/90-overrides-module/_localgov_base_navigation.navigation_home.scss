@@ -29,10 +29,6 @@
   padding-right: 9999rem !important;
 }
 
-#homepage-nav-wrapper {
-  // @extend .full-width;
-}
-
 .gridder{
   margin: 0px;
   padding: 0px;
@@ -137,10 +133,7 @@ li.gridder-list {
 
 
 .gridder-show {
-	// background: $greenXLight;
 	margin-bottom: $commonSpacing / 3;
-	// width: 200%;
-	// margin-left: -50%;
 }
 
 .gridder-expanded-content {
@@ -160,20 +153,6 @@ a.gridder-close {
    text-decoration: none;
 }
 
-// a.gridder-close {
-//   color: $bracknellBlack;
-//   text-decoration: none;
-//   // background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABcUlEQVQ4jY3Tv2pUURDH8c/ds4FbyXkBEQQrCw3a5EGClf86MVpILASfQAiJS1wshARjXIOEFLERfQILS8HKF9G4FneSnD1e4w4cuGfmOz/mzMxtyLCMa3hifhtiBwfYH4bIOyQsYHUOkYRJ5C6jSbRPcSWAJV2Jn/4jsosbcR/gB3IiT8jT4ozITac5cxL5bcWuRXtOgN0K2KzEEvlNxayfxmfBnQoch1gib1ex52W1w+LtR7iL37gdvvsxnQXcKdhNPCobF6X/1cxXIdpnYzzEtEpqa3CKDziPxSr2Eg9qEbrR9dkUP3v87b9y+ipqdOXf6+EXcSEqPvNpDUZYKXxb+ILrcb+KizisxE5G2MRIyxFvkQcRG1exSayFeo82KnB7FsxNLGnJ7J0yHbReAa8rkVJsVLHvycNE+wyPi7dOdMt31NNs+Ihzuh8cLuPSAF+LpD3cOkPk2FaxFt+/cJBov+F7OG7OIXJsn3Ujf4H9P9cVaP7d9P3TAAAAAElFTkSuQmCC') right 2px no-repeat;
-//   // padding: 0 25px 3px 0;
-//   // position: static;
-//   // bottom: 5px;
-//   // right: 25.25%;
-//   float: right;
-//   &:hover {
-//     text-decoration: underline;
-//   }
-// }
-
 .gridder-show {
   .gridder-padding{
     @extend .full-width;
@@ -183,21 +162,16 @@ a.gridder-close {
     clear: both;
     	margin-bottom: $commonSpacing / 3;
       padding-top: 0;
-    	//padding-top: $commonSpacing;
     	padding-bottom: $commonSpacing;
-  }
-  // @extend .full-width;
-  ul {
-    display: block;
-		// @media (min-width: 480px) and (max-width: 768px) {
-		// 	margin: 0 -2px;
-		// }
-		// @media (max-width: 480px) {
-		// 	margin: 0 -5px;
-		// }
-  }
+    }
+
+    ul {
+      display: block;
+    }
+
   float: left;
   width: 100%;
+
   li {
     display:inline-block;
     vertical-align: top;
@@ -225,24 +199,6 @@ a.gridder-close {
     }
   }
 }
-
-
-//
-// @media (max-width: 768px) {
-//
-// 	.gridder-list,
-//   .gridder-list.collapse.in {
-// 		width: 100%;
-// 		@include rowMachine(0,2%);
-// 	}
-//   .gridder-show {
-//     li {
-//     		width: 100%;
-//     		@include rowMachine(0,0%);
-//         margin-right: 0;
-//     }
-//   }
-// }
 
 .homepage-nav-item {
   .icon {
