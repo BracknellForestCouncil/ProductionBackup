@@ -36,7 +36,7 @@ function bracknell_feature_search_default_search_api_autocomplete_search() {
       "suggester_configuration" : { "fields" : [] },
       "min_length" : "1",
       "results" : 0,
-      "custom" : { "display" : "page" },
+      "custom" : { "display" : "default" },
       "submit_button_selector" : ":submit",
       "autosubmit" : 1
     },
@@ -77,10 +77,10 @@ function bracknell_feature_search_default_search_api_index() {
           }
         },
         "search_api_attachments_entityreference_alter_settings" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "0",
           "settings" : {
-            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv",
+            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv pdf",
             "number_indexed" : "0",
             "max_file_size" : "0",
             "excluded_private" : 1
@@ -107,14 +107,65 @@ function bracknell_feature_search_default_search_api_index() {
         "search_api_case_ignore" : {
           "status" : 1,
           "weight" : "0",
-          "settings" : { "fields" : { "title" : true, "field_content" : true, "body:value" : true } }
+          "settings" : { "fields" : {
+              "type" : true,
+              "title" : true,
+              "promote" : true,
+              "sticky" : true,
+              "created" : true,
+              "changed" : true,
+              "author" : true,
+              "field_tags" : true,
+              "field_contactinfo" : true,
+              "field_category" : true,
+              "field_content" : true,
+              "field_contact_email" : true,
+              "field_contact_telephone" : true,
+              "search_api_language" : true,
+              "attachments_field_video" : true,
+              "attachments_field_paragraph_document" : true,
+              "body:value" : true,
+              "body:summary" : true,
+              "field_contactinfo:field_content" : true,
+              "field_form_additional:value" : true,
+              "field_description:value" : true,
+              "field_contact_additional:value" : true,
+              "field_contactinfo:field_contact_additional:value" : true,
+              "field_content:field_paragraph_body:value" : true
+            }
+          }
         },
         "search_api_html_filter" : {
           "status" : 1,
           "weight" : "10",
           "settings" : {
-            "fields" : { "title" : true, "body:value" : true },
-            "title" : 0,
+            "fields" : {
+              "type" : true,
+              "title" : true,
+              "promote" : true,
+              "sticky" : true,
+              "created" : true,
+              "changed" : true,
+              "author" : true,
+              "field_tags" : true,
+              "field_contactinfo" : true,
+              "field_category" : true,
+              "field_content" : true,
+              "field_contact_email" : true,
+              "field_contact_telephone" : true,
+              "search_api_language" : true,
+              "attachments_field_video" : true,
+              "attachments_field_paragraph_document" : true,
+              "body:value" : true,
+              "body:summary" : true,
+              "field_contactinfo:field_content" : true,
+              "field_form_additional:value" : true,
+              "field_description:value" : true,
+              "field_contact_additional:value" : true,
+              "field_contactinfo:field_contact_additional:value" : true,
+              "field_content:field_paragraph_body:value" : true
+            },
+            "title" : 1,
             "alt" : 1,
             "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
           }
@@ -123,7 +174,20 @@ function bracknell_feature_search_default_search_api_index() {
           "status" : 1,
           "weight" : "20",
           "settings" : {
-            "fields" : { "title" : true, "body:value" : true },
+            "fields" : {
+              "title" : true,
+              "field_contact_email" : true,
+              "field_contact_telephone" : true,
+              "attachments_field_video" : true,
+              "attachments_field_paragraph_document" : true,
+              "body:value" : true,
+              "body:summary" : true,
+              "field_form_additional:value" : true,
+              "field_description:value" : true,
+              "field_contact_additional:value" : true,
+              "field_contactinfo:field_contact_additional:value" : true,
+              "field_content:field_paragraph_body:value" : true
+            },
             "spaces" : "[^\\\\p{L}\\\\p{N}]",
             "ignorable" : "[-]"
           }
