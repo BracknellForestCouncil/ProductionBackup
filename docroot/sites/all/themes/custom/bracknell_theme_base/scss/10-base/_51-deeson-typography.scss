@@ -189,3 +189,12 @@ blockquote {
   font-size: $font-size-base;
   border-left: 0;
 }
+
+hr {
+  margin-top: 1em;
+  margin-right:1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  border: 0;
+  border-top: 1px solid $global-horizontal-rule-border-color;
+}

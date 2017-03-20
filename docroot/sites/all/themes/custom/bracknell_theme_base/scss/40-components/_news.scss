@@ -2,13 +2,13 @@ body.page-news {
   .view-content {
     .views-row {
       .node-teaser {
-        border-bottom: 1px solid $greyBorderLight;
-        margin-bottom: $commonSpacing/2;
+        border-bottom: 1px solid $news-teaser-border-color;
+        margin-bottom: $commonSpacing / 2;
         padding: 20px 0;
 
         h2 {
           @extend h3;
-          margin-top: 0!important;
+          margin-top: 0 !important;
         }
       }
     }
@@ -21,8 +21,8 @@ body.page-news {
 
     li {
       list-style-type: none;
-      margin-left: 0!important;
-      padding-left: 0!important;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
     }
   }
 }
