@@ -3,30 +3,27 @@
 */
 
 // Primary.
-$white: #ffffff;
-$black: #000000;
+$white: #fff;
+$black: #000;
 
+// Palette A.
+$brandGreen: #336633;
 $bracknellBlack: #000010;
-$textBlack: #333333;
+$deepBlue: #0033a1;
+$textBlack: #333;
 $greyMid: #545454;
 $greyLight: #adadad;
 $greyExtraLight: #f2f2f2;
-$footerGrey: #484848;
-
-$brandGreen: #336633;
-$deepBlue: #0033a1;
-$slateBlue: #003b4c;
-
-// Secondary.
-$oliveGreen: #899065;
-$brightGreen: #62a00f;
-$brightRed: #d62828;
 
 // Palette B.
 $turquoise: #00a4a6;
 $limeGreen: #a39707;
+$oliveGreen: #899065;
+$slateBlue: #003b4c;
 $coralreefBlue: #009fd4;
 $sandhurstOrange: #e65722;
+$brightGreen: #62a00f;
+$brightRed: #d62828;
 $plum: #87364e;
 $magenta: #b42371;
 $downshirePurple: #702277;
@@ -36,24 +33,187 @@ $leisureBlue: #055fad;
 $edgbarrowRed: #ed2600;
 $discoveryGreen: #00aa55;
 
-// Services menu related.
-$servicesMenuSelected: #8a946d;
-$servicesIconGreen: #566b21;
-$servicesMenuLinks: #484848;
-
-// Social icons.
-$twitterIconBlue: #55acee;
-$facebookIconBlue: #3b5998;
-
-// Form elements.
-$formWarning: #fbead4;
-$formFeedback: #09456a;
-$formDefault: #f7f7f7;
-
-// MISC - in PS visuals but not in Palettes.
-$greenXLight: lighten($oliveGreen, 30%);
+// Greys.
+$grey1: #484848;
+$grey2: #f7f7f7;
+$grey3: #e7e7e7;
+$grey4: #555;
 $borderGrey: lighten($black, 50%);
-$greenBorder: $brandGreen;
-$greyBorderLight: #e7e7e7;
-$archiveGreen: #566b21;
-$tableHead: #e7e7e7;
+
+// Beige.
+$beige1: #fbead4;
+
+// Blue.
+$blue1: #09456a;
+$blue2: #55acee;
+$blue3: #3b5998;
+
+// Green.
+$oliveGreenLight: lighten($oliveGreen, 30%);
+
+// Typography.
+$global-text-color: $textBlack;
+$global-link-text-color: $deepBlue;
+$global-text-alert-boxout-bg-color: $greyExtraLight;
+$global-heading-link-text-color: $textBlack;
+$global-heading-link-hover-text-color: $deepBlue;
+$global-horizontal-rule-border-color: $greyLight;
+
+// Settings.
+$pod-emphasise-bg-color: $greyExtraLight;
+$green-top-border-color: $brandGreen;
+$green-base-border-color: $brandGreen;
+$green-top-twopx-border-color: $brandGreen;
+$label-archive-bg-color: $brandGreen;
+
+$helper-grey-extra-light-bg-color: $greyExtraLight;
+$helper-olive-green-bg-color: $oliveGreen;
+$helper-green-extra-light-bg-color: $oliveGreenLight;
+
+// Buttons.
+$button-bg-color: $slateBlue;
+$button-text-color: $white;
+$button-bg-hover-color: $slateBlue;
+$button-text-hover-color: $white;
+$button-bg-focus-color: $slateBlue;
+$button-text-focus-color: $white;
+
+// Buttons - Key Task.
+$button-key-task-border-color: $borderGrey;
+$button-key-task-bg-color: $white;
+$button-key-task-text-color: $textBlack;
+
+// Buttons - Sub Task.
+$button-sub-task-bg-color: $white;
+
+// Buttons - Beta.
+$button-beta-bg-color: $darkOrange;
+$button-beta-text-color: $white;
+
+// Buttons - Prompt.
+$button-prompt-bg-color: $white;
+$button-prompt-border-color: $slateBlue;
+$button-prompt-text-color: $slateBlue;
+$button-prompt-icon-text-color: $slateBlue;
+$button-prompt-icon-border-color: $slateBlue;
+
+// Forms.
+$form-has-success-text-color: $textBlack;
+$form-control-border-color: $bracknellBlack;
+$form-input-group-button-bg-color: $bracknellBlack;
+$form-search-icon-text-color: $white;
+$form-legend-text-color: $bracknellBlack;
+$form-legend-border-color: $bracknellBlack;
+
+$form-has-warning-label-color: $textBlack;
+$form-has-warning-input-border-color: $textBlack;
+$form-has-warning-status-color: $beige1;
+$form-has-warning-close-icon-color: $textBlack;
+
+$form-has-error-label-color: $brightRed;
+$form-has-error-input-border-color: $brightRed;
+$form-has-error-status-color: $brightRed;
+$form-has-error-close-icon-color: $brightRed;
+
+$form-has-feedback-label-color: $bracknellBlack;
+$form-has-feedback-input-border-color: $blue1;
+$form-has-feedback-status-color: $blue1;
+$form-has-feedback-close-icon-color: $bracknellBlack;
+
+$form-has-default-label-color: $bracknellBlack;
+$form-has-default-input-border-color: $bracknellBlack;
+$form-has-default-status-color: $grey2;
+$form-has-default-close-icon-color: $bracknellBlack;
+
+// Alerts.
+$alert-success-bg-color: $brandGreen;
+$alert-success-text-color: $textBlack;
+$alert-info-bg-color: $blue1;
+$alert-warning-bg-color: $beige1;
+$alert-danger-bg-color: $brightRed;
+$icon-circle-dark-text-color: $brandGreen;
+$alert-content-section-link-bg-color: $white;
+
+// NavBar.
+$navbar-bg-color: $white;
+$nav-tools-border-color: $textBlack;
+$nav-tools-account-link-text-color: $textBlack;
+$nav-tools-account-link-q-mark-bg-color: $grey3;
+$nav-tools-menu-toggle-bg-color: $textBlack;
+$nav-tools-menu-toggle-menu-icon-text-color: $white;
+$nav-tools-menu-toggle-icon-bar-bg-color: $white;
+$nav-tools-search-button-primary-bg-color: $textBlack;
+$nav-top-nav-wrapper-bg-color: $textBlack;
+$nav-bar-collapse-link-text-color: $white;
+
+// Breadcrumbs.
+$breadcrumb-li-text-color: $textBlack;
+
+// Socials.
+$twitterIconBlue: $blue2;
+$facebookIconBlue: $blue3;
+$socials-share-page-link-text-color: $slateBlue;
+$socials-share-page-twitter-link-text-color: $twitterIconBlue;
+$socials-share-page-facebook-link-text-color: $facebookIconBlue;
+
+// Pagination.
+$pagination-controls-link-hover-text-color: $deepBlue;
+$pagination-list-link-text-color: $deepBlue;
+$pagination-list-link-bg-color: $white;
+$pagination-list-link-border-color: $white;
+
+// News.
+$news-list-border-color: $grey3;
+$news-teaser-border-color: $grey3;
+
+// Tables.
+$table-border-color: $bracknellBlack;
+$table-thead-bg-color: $grey3;
+$table-heading-border-color: $bracknellBlack;
+$table-cell-border-color: $bracknellBlack;
+
+// Page Rater.
+$page-rater-bg-color: $greyExtraLight;
+$page-rater-button-text-color: $slateBlue;
+$page-rater-icon-bg-color: $white;
+
+// Carousel.
+$carousel-bg-color: $greyExtraLight;
+$carousel-inner-bg-color: $greyExtraLight;
+$carousel-caption-text-color: $bracknellBlack;
+$carousel-caption-bg-color: $greyExtraLight;
+$carousel-caption-quote-text-color: $greyMid;
+$carousel-control-text-color: $greyLight;
+$carousel-control-hover-text-color: $greyLight;
+
+// Contact Info.
+$contact-info-bg-color: $greyLight;
+
+// Hero.
+$hero-my-back-text-color: $grey4;
+
+// Guide.
+$guide-nav-primary-list-text-color: $textBlack;
+$guide-nav-primary-list-link-hover-bg-color: $greyExtraLight;
+$guide-nav-secondary-button-bg-color: $white;
+$guide-nav-secondary-button-text-color: $slateBlue;
+$guide-nav-secondary-button-hover-bg-color: $greyExtraLight;
+$guide-nav-secondary-button-hover-text-color: $bracknellBlack;
+
+// Gridder.
+$gridder-list-bg-color: $white;
+$gridder-list-border-color: $greyLight;
+$gridder-selected-item-bg-color: $oliveGreen;
+$gridder-selected-item-link-text-color: $white;
+$gridder-selected-item-icon-text-color: $white;
+$gridder-list-link-text-color: $grey1;
+$gridder-show-link-text-color: $grey1;
+$gridder-list-icon-text-color: $brandGreen;
+$gridder-navigation-link-text-color: $bracknellBlack;
+$gridder-show-padding-bg-color: $oliveGreenLight;
+
+// Footer.
+$footer-bg-color: $grey1;
+$footer-text-color: $white;
+$footer-link-text-color: $white;
+$footer-list-border-color: $white;
