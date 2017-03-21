@@ -120,7 +120,11 @@
           <?php
           // Render out all the promotional hero images as a slideshow.
           foreach ($hero_images as $key => $hero_image): ?>
-            <a href="<?php print file_create_url($hero_image['#item']['uri']); ?>" rel="lightbox[hero_image]" title="" class="hero-image <?php print $key > 0 ? 'hidden' : 'first-image'; ?>">
+            <a
+              href="<?php print file_create_url($hero_image['#item']['uri']); ?>"
+              rel="lightbox[hero_image]"
+              title=""
+              class="hero-image <?php print $key > 0 ? 'hidden' : 'first-image'; ?>">
               <?php print render($hero_image); ?>
             </a>
           <?php endforeach; ?>
