@@ -1,0 +1,147 @@
+
+
+.main-menu {
+  background: $nav-top-nav-wrapper-bg-color;
+  position: relative;
+  z-index: 100;
+
+  .js & {
+    left: 0;
+    position: absolute;
+    top: 4em;
+    width: 100%;
+  }
+
+  .nav-item {
+    @include gridRows(1, 1%);
+    display: inline-block;
+    vertical-align: top;
+
+    @include breakpoint($screen-xs) {
+      @include gridRows(2, 1%);
+    }
+
+    @include breakpoint($screen-md) {
+      @include gridRows(3, 1%);
+    }
+  }
+
+  .navbar-collapse {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 20px 0;
+    }
+
+    .js & {
+      ul {
+        padding-top: 50px;
+
+        @include breakpoint($screen-md) {
+          padding-bottom: 40px;
+          padding-top: 90px;
+        }
+      }
+    }
+
+    li {
+      background: url('../images/main-menu-arrow-white.png') 0 17px no-repeat;
+    }
+
+    a {
+      color: $nav-bar-collapse-link-text-color;
+      display: block;
+      padding: 10px 10px 10px 17px;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.main-menu-btn {
+  background: $main-menu-button-bg-color;
+  border: {
+    radius: 3px;
+    width: 0;
+  }
+  color: $main-menu-button-text-color;
+  display: inline-block;
+  margin: 5px 0 0;
+  padding: 10px;
+  position: absolute;
+  top: 25px;
+  right: 15px;
+
+  @include breakpoint($screen-md) {
+    margin-top: 15px;
+    position: static;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.expanded {
+    padding-bottom: 45px;
+
+    .icon-bar {
+      transition: all 0.2s;
+
+      &.top {
+        transform: translate(3px, 6px)rotate(45deg);
+      }
+
+      &.centre {
+        opacity: 0;
+      }
+
+      &.bottom {
+        transform: translate(3px, -6px)rotate(-45deg);
+      }
+
+    }
+  }
+
+  &.collapsed {
+    .icon-bar {
+
+      transition: all 0.2s;
+
+      &.top {
+        transform: rotate(0);
+      }
+
+      &.centre {
+        opacity: 1;
+      }
+
+      &.bottom {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  .icon-bar {
+    background: $nav-tools-menu-toggle-icon-bar-bg-color;
+    border-radius: 2px;
+    display: block;
+    height: 2px;
+    width: 22px;
+
+    &.centre {
+      margin-top: 4px;
+    }
+
+    &.bottom {
+      margin-top: 4px;
+    }
+  }
+
+  .icon-bars-wrap {
+    padding: 7px 0 0 10px;
+  }
+}
