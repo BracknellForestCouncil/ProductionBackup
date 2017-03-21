@@ -1,0 +1,5 @@
+@each $class, $color in $themes {
+  .theme-#{$class} .field-name-field-promotional-slogan {
+    background-color: $color;
+  }
+}
