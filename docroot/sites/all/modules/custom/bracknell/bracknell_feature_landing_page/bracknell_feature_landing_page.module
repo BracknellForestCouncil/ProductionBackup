@@ -35,3 +35,38 @@ function bracknell_feature_landing_page_form_node_form_alter(&$form) {
     $form['field_theme'][LANGUAGE_NONE]['#default_value'] = 'default';
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bracknell_feature_landing_page_preprocess_html(&$variables) {
+  if (path_is_admin(current_path())) {
+    return;
+  }
+
+  if ($node = menu_get_object()) {
+    $wrapper = entity_metadata_wrapper('node', $node);
+
+    if (!empty($node->field_theme)) {
+      _bracknell_feature_landing_page_add_theme_class_to_page($wrapper, $variables);
+    }
+    else {
+      // TODO: Apply class to sub-pages once the sections have been re-structured.
+    }
+  }
+}
+
+/**
+ * Add a theme class to pages.
+ *
+ * @param \EntityDrupalWrapper $wrapper
+ *   The metadata wrapper of the node being viewed.
+ * @param array $variables
+ *   The variables from the preprocess function.
+ *
+ * @internal param \stdClass $node The node being viewed.*   The node being viewed.
+ * @see bracknell_feature_landing_page_preprocess_html()
+ */
+function _bracknell_feature_landing_page_add_theme_class_to_page(EntityDrupalWrapper $wrapper, array &$variables) {
+  $variables['classes_array'][] = 'theme-' . $wrapper->get('field_theme')->value();
+}
