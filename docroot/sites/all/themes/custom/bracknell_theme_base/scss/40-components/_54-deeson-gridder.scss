@@ -1,16 +1,17 @@
 // VITAL CSS.
-.gridder{
-  margin: 0px;
-  padding: 0px;
+
+.gridder {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 
 .gridder-list,
-.gridder-show{
-  font-size:$font-size-01;
+.gridder-show {
+  font-size: $font-size-01;
 }
 
-.gridder-list{
+.gridder-list {
   display: inline-block;
   vertical-align: top;
 }
@@ -22,10 +23,10 @@
   position: relative;
 }
 
-.gridder-content{
+.gridder-content {
   display: none;
 }
 
-.gridder-list{
+.gridder-list {
   @include rowMachine(4,1%);
 }

@@ -21,17 +21,18 @@ body {
 .page-header {
   margin: 0 0;
   @extend.green-base;
+
   @media (max-width: 768px) {
     padding-top:20px;
   }
 }
 
 body.node-type-guide-section #page-header.col-md-8 {
-  box-sizing: content-box!important;
+  box-sizing: content-box !important;
 }
 
 body.page-taxonomy-term .page-header {
-  border-bottom:0!important;
+  border-bottom:0 !important;
 }
 
 .img-right {

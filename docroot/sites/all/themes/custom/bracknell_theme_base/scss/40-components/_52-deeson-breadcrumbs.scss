@@ -20,7 +20,7 @@ ol.breadcrumb {
 
   li {
     &.active {
-      color: $textBlack;
+      color: $breadcrumb-li-text-color;
     }
   }
 

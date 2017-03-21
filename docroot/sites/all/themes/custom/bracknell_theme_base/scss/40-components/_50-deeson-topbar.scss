@@ -10,7 +10,7 @@
 
 // Navbar Branding and tools strip
 .navbar-default {
-  background: $white;
+  background: $navbar-bg-color;
   border: 0;
 }
 
@@ -62,14 +62,14 @@ $heightSml: 77px;
 // Navbar tools
 .nav-tools {
   $navbar-padding: 13px;
-  border-bottom: 3px solid $textBlack;
+  border-bottom: 3px solid $nav-tools-border-color;
   padding-top: $navbar-padding;
   padding-bottom: 0 !important;
   min-height: 95px;
 
   @media (max-width: 480px) {
     padding: 10px 0;
-    border-bottom: 2px solid $textBlack;
+    border-bottom-width: 2px;
     position: relative;
     left: 10px;
   }
@@ -84,6 +84,7 @@ $heightSml: 77px;
 
   .nav-tools__account {
     margin-top: 25px;
+
     @media (min-width: 768px) and (max-width: 991px) {
       position: absolute;
       right: -55px;
@@ -91,13 +92,13 @@ $heightSml: 77px;
     }
 
     a {
-      color: $textBlack;
+      color: $nav-tools-account-link-text-color;
       text-decoration: none;
       font-weight: $font-weight-headinglight;
       font-size: $font-size-03;
 
       span.q-mark {
-        background: #eaeaea;
+        background: $nav-tools-account-link-q-mark-bg-color;
         padding: 4px 7px;
         border-radius: 50%;
         font-size: $font-size-01;
@@ -124,7 +125,7 @@ $heightSml: 77px;
 
     .navbar-toggle {
       display: inline-block;
-      background: $textBlack;
+      background: $nav-tools-menu-toggle-bg-color;
       margin: 0;
       padding: 0;
       letter-spacing: 0.01em;
@@ -132,7 +133,7 @@ $heightSml: 77px;
       position: relative;
       top: 10px;
       width: 100px;
-      height: 75px!important;
+      height: 75px !important;
 
       &:focus {
         @extend .link-focus;
@@ -146,7 +147,7 @@ $heightSml: 77px;
 
       &.collapsed {
         width: 100px;
-        height: 45px!important;
+        height: 45px !important;
 
         .icon-bar {
           transition: all 0.2s;
@@ -166,7 +167,7 @@ $heightSml: 77px;
       }
 
       .menu-icon {
-        color: $white;
+        color: $nav-tools-menu-toggle-menu-icon-text-color;
       }
 
       .icon-bars-wrap {
@@ -174,7 +175,7 @@ $heightSml: 77px;
       }
 
       .icon-bar {
-        background: $white;
+        background: $nav-tools-menu-toggle-icon-bar-bg-color;
         transition: all 0.2s;
 
         &.top {
@@ -193,7 +194,7 @@ $heightSml: 77px;
 
     #mobile-search-trigger {
       width: 45px;
-      height: 45px!important;
+      height: 45px !important;
       margin-right: 5px;
     }
   }
@@ -210,7 +211,7 @@ $heightSml: 77px;
     }
 
     .btn.btn-primary.btn-glyph {
-      background: $textBlack;
+      background: $nav-tools-search-button-primary-bg-color;
       height: 45px;
       width: 45px;
       padding: 10px 12px 8px;
@@ -237,7 +238,7 @@ $heightSml: 77px;
 
 // Navbar dropdown elements
 .topnav-wrapper {
-  background: $textBlack;
+  background: $nav-top-nav-wrapper-bg-color;
   position: relative;
   top: -5px;
   z-index:100;
@@ -263,7 +264,7 @@ $heightSml: 77px;
   }
 
   a {
-    color: $white;
+    color: $nav-bar-collapse-link-text-color;
     padding: 10px 10px 10px 17px;
     text-decoration: none;
     display: block;
@@ -293,5 +294,5 @@ $heightSml: 77px;
 }
 
 .print-logo {
-  display: none!important;
+  display: none !important;
 }

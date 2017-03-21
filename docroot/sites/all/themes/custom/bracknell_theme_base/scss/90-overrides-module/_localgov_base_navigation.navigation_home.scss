@@ -22,6 +22,7 @@
   cursor: pointer;
   display: inline-block;
   vertical-align: top;
+
   @include gridRows(4,1%);
 
   @media (max-width: $screen-sm) {
@@ -53,12 +54,12 @@ ul.gridder {
 }
 
 li.gridder-list {
-  background: $white;
+  background: $gridder-list-bg-color;
   border-radius: 3px;
   min-height: 118px;
   position: relative;
   padding: 8px 11px 0;
-  border: 1px solid $greyLight;
+  border: 1px solid $gridder-list-border-color;
 
   a {
     font-size: $font-size-07;
@@ -74,15 +75,15 @@ li.gridder-list {
   }
 
   &.selectedItem {
-    background: $servicesMenuSelected;
+    background: $gridder-selected-item-bg-color;
 
     a {
-      color: $white;
+      color: $gridder-selected-item-link-text-color;
       text-decoration: none;
     }
 
     .icon {
-      color: $white;
+      color: $gridder-selected-item-icon-text-color;
     }
 
     &::after {
@@ -97,7 +98,7 @@ li.gridder-list {
   }
 
   a {
-    color: $servicesMenuLinks;
+    color: $gridder-list-link-text-color;
     text-decoration: none;
   }
 
@@ -106,7 +107,7 @@ li.gridder-list {
     right: 15px;
     bottom: 17px;
     font-size: $font-size-15;
-    color: $servicesIconGreen;
+    color: $gridder-list-icon-text-color;
   }
 }
 
@@ -124,7 +125,7 @@ li.gridder-list {
   float: right;
 
   a {
-    color: $bracknellBlack;
+    color: $gridder-navigation-link-text-color;
   }
 }
 
@@ -139,7 +140,7 @@ a.gridder-close {
 
   .gridder-padding {
     @extend .full-width;
-    background: $greenXLight;
+    background: $gridder-show-padding-bg-color;
   }
 
   .gridder-expanded-content {
@@ -167,11 +168,11 @@ a.gridder-close {
 
   li > a {
     background: $white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8U/ykkND1NAVtDi/QwRtodDkFC1Bi02BeSdpazkGlrtLOQZ1AzXUNSg0CIZgg+eF49EeOMPv4cvvz3M28jy/wSUGaODHGpVwgS2c4g37/4HnUZcK3lFdBw5wiO/g7QavmYLwgQO8hDpDB3fYjEEY4QS3kdfAEHsxCDNcW6TwG7wjDFOw0Dy8lR0LZWjjHuXgveI4i6AdPFqOposrTIuOaX4ztMIx02JUDU/YDtAYZ3hOd+pF0Cfq+EqvK+EBE/QtfmgFgj/QtCj9XFzRVQAAAABJRU5ErkJggg==') 12px 11px no-repeat;
-    margin: 0 0px 10px;
+    margin: 0 0 10px;
     min-height: 70px;
     font-size: $font-size-04;
     border-radius: 3px;
-    color: $servicesMenuLinks;
+    color: $gridder-show-link-text-color;
     text-decoration: none;
     display: block;
     padding: 7px 10px 0 30px;

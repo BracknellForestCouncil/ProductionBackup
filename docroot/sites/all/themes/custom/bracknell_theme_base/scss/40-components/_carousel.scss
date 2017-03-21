@@ -1,12 +1,12 @@
 .carousel {
-  background-color: $greyExtraLight;
-  width: 100%!important;
-  padding: 0!important;
-  margin: 0!important;
+  background-color: $carousel-bg-color;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .carousel-inner {
-  background-color: $greyExtraLight;
+  background-color: $carousel-inner-bg-color;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -16,11 +16,11 @@
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  max-width: 49%!important;
-  float: left!important;
+  max-width: 49% !important;
+  float: left !important;
 
   @media (max-width: 767px) {
-    max-width: 100%!important;
+    max-width: 100% !important;
   }
 }
 
@@ -32,37 +32,37 @@ img {
 .carousel-caption {
   left: 0;
   right: 0;
-  bottom: 0px;
+  bottom: 0 ;
   z-index: 10;
-  position: relative!important;
-  max-width: 48%!important;
-  float: left!important;
+  position: relative !important;
+  max-width: 48% !important;
+  float: left !important;
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 25px;
   padding-right: 25px;
-  color: $bracknellBlack;
+  color: $carousel-caption-text-color;
   text-align: left;
-  text-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-  background-color: $greyExtraLight;
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  background-color: $carousel-caption-bg-color;
 }
 
 @media (max-width: 767px) {
   .carousel-caption {
     left: 0;
     right: 0;
-    bottom: 0px;
+    bottom: 0;
     z-index: 10;
-    position: relative!important;
-    max-width: 1000%!important;
-    float: left!important;
+    position: relative !important;
+    max-width: 1000% !important;
+    float: left !important;
     padding-top: 25px;
     padding-bottom: 25px;
     padding-left: 25px;
-    color: $bracknellBlack;
+    color: $carousel-caption-text-color;
     text-align: left;
-    text-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-    background-color: $greyExtraLight;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    background-color: $carousel-caption-bg-color;
   }
 }
 
@@ -75,7 +75,7 @@ img {
 }
 
 .carousel-caption > blockquote:before {
-  color: $greyMid;
+  color: $carousel-caption-quote-text-color;
   content: "\201C";
   font-size: $font-size-20;
   position:absolute;
@@ -85,7 +85,7 @@ img {
 }
 
 .carousel-caption > blockquote:after {
-  color: $greyMid;
+  color: $carousel-caption-quote-text-color;
   content: "\201D";
   font-size: $font-size-20;
   position:absolute;
@@ -93,19 +93,10 @@ img {
   line-height: 0.1em;
 }
 
-hr {
-  margin-top: 1em;
-  margin-right:1em;
-  margin-bottom: 1em;
-  margin-left: 1em;
-  border: 0;
-  border-top: 1px solid $greyLight;
-}
-
 .carousel-caption > p {
   margin: 0 0;
   padding: 0 0 1em 1em;
-  position:relative;
+  position: relative;
   font-size: $font-size-base;
   border-left: 0;
 }
@@ -123,7 +114,7 @@ hr {
   width: 10%;
   opacity: 1.0;
   filter: alpha(opacity=100);
-  color: $greyLight;
+  color: $carousel-control-text-color;
   text-align: left;
   text-shadow: none;
   background-color: transparent;
@@ -132,7 +123,7 @@ hr {
 .carousel-control:hover,
 .carousel-control:focus {
   outline: 0;
-  color: $greyLight;
+  color: $carousel-control-hover-text-color;
   text-decoration: none;
   opacity: 0.9;
   filter: alpha(opacity=90);
