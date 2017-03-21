@@ -8085,6 +8085,33 @@ body.page-taxonomy #list-of-additional-pages .view-content {
     body.page-taxonomy #list-of-additional-pages .view-content h2, body.page-taxonomy #list-of-additional-pages .view-content span.lge {
       width: 50%; } }
 
+.theme-business .field-name-field-promotional-slogan {
+  background-color: #009fd4; }
+
+.theme-coral-reef-blue .field-name-field-promotional-slogan {
+  background-color: #009fd4; }
+
+.theme-default .field-name-field-promotional-slogan {
+  background-color: #336633; }
+
+.theme-discovery-green .field-name-field-promotional-slogan {
+  background-color: #00aa55; }
+
+.theme-downshire-purple .field-name-field-promotional-slogan {
+  background-color: #702277; }
+
+.theme-forestcare .field-name-field-promotional-slogan {
+  background-color: #b42371; }
+
+.theme-fostering .field-name-field-promotional-slogan {
+  background-color: #00a4a6; }
+
+.theme-leisure-blue .field-name-field-promotional-slogan {
+  background-color: #055fad; }
+
+.theme-parks-green .field-name-field-promotional-slogan {
+  background-color: #62a00f; }
+
 body.node-type-promotional-page .node-promotional-page .paragraphs-items {
   position: relative;
   margin: 0 auto;
