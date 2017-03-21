@@ -38,7 +38,7 @@
   background-size: 1000px 400px;
   height: 400px;
   background-repeat:no-repeat;
-  color: #555;
+  color: $hero-my-back-text-color;
   padding: 15px
 }
 
@@ -47,7 +47,7 @@
   background-size: 800px 400px;
   height: 400px;
   background-repeat: no-repeat;
-  color: #555;
+  color: $hero-my-back-text-color;
   padding: 10px
 }
 
@@ -56,6 +56,6 @@
   background-size: 500px 125px;
   height: 125px;
   background-repeat: no-repeat;
-  color: #555;
+  color: $hero-my-back-text-color;
   padding: 5px
 }

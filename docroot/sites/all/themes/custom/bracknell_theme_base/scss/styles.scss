@@ -17,20 +17,21 @@
 '10-base/50-deeson-icons',
 '10-base/51-deeson-typography',
 '10-base/52-deeson-global-settings',
-'10-base/bracknell-typograpy',
+'10-base/buttons',
+'10-base/headings',
 '10-base/icons-base';
 
 // Global.
 @import
 '30-global/00-global',
-'30-global/50-deeson-prompt-button',
-'30-global/51-deeson-forms',
+'30-global/prompt-button',
+'30-global/forms',
 '30-global/icons-application';
 
 // Components.
 @import
+'40-components/beta',
 '40-components/50-deeson-topbar',
-'40-components/51-deeson-global-footer',
 '40-components/52-deeson-breadcrumbs',
 '40-components/53-deeson-socials-icons',
 '40-components/54-deeson-gridder',
@@ -40,7 +41,7 @@
 '40-components/59-deeson-related',
 '40-components/60-deeson-content-page-table',
 '40-components/61-deeson-page-rater',
-'40-components/70-global-footer',
+'40-components/footer',
 '40-components/alerts',
 '40-components/block_related-links',
 '40-components/carousel',

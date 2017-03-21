@@ -1,0 +1,68 @@
+// Buttons - override BS default.
+.btn {
+  border: 0;
+  text-decoration: none;
+  padding: 12px 15px;
+  margin-bottom: $commonSpacing - 10;
+  background: $button-bg-color;
+  color: $button-text-color;
+
+  &:hover {
+    background: $button-bg-hover-color;
+    color: $button-text-hover-color;
+  }
+
+  &:focus {
+    background: $button-bg-focus-color;
+    color: $button-text-focus-color;
+  }
+
+  .btn:active,
+  .btn.active {
+    box-shadow: none !important;
+  }
+
+  &.btn-primary {
+    padding: 12px 20px;
+  }
+
+  &.key-task {
+    @extend .line-wrapping;
+    text-align: left;
+    font-size: $font-size-08;
+    font-weight: $font-weight-headinglight;
+    display: block;
+    border: 1px solid $button-key-task-border-color;
+    margin: 20px 0;
+    padding: 12px 10px 35px 40px;
+    background: $button-key-task-bg-color url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAATCAYAAACgADyUAAABNElEQVQ4jY3TPyjuURjA8Q9eZbghyUR3ee8kiy7KnwxKb0Z0s9zl7qQkZotS8mcWpUSWW3eQ8qbbLWUgyWqgO4pBBooYTm/9Op0Xz/h9zrdznj+nolAojGAJtdjALJ58EJVYQwvqMIl/aP6MeB6xTpyi/yNxGMWIN+EAE++JdyhgAa+ZXDVWsImalAgvmMEYHqIzP3GErymxFLvoxmXE23GCgXIiXKADexFvxD6moCqfzydcj9hBDn2oyFw0iIZyIqFRh2hAV5RrTT01W8YcxhO59VwZqR5bGIr4i7CSiymxFb/xLeK3wriKpedkYxTHCekM32U2rCRWYV6Y45dI2kIvrrIwJ3RtW2hzNp4xjeVEOXL4g56I3+AH/qakktgWsRPhx/wvJxFq/IVr3GNV2JR3JXgDcII3V0Lh5ZkAAAAASUVORK5CYII=') 20px 20px no-repeat;
+    color: $button-key-task-text-color;
+  }
+
+  &.sub-task {
+    @extend .key-task;
+    font-size: $font-size-05;
+    margin: 0 0 $commonSpacing 0;
+    padding: 6px 10px 30px 30px;
+    background: $button-sub-task-bg-color url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8Y/yYkND5OAVtHQFErRF8TY1RUvgolNQ3kl/1moMKneXchTqBnKwa0hwEBQhB88Lp6M9cIbfw5ffn+eU8jy/RgtdNDG2RmU0sIlTfGDnP/A86rKLTxyuA7vYw3fwqsG7TEH4Qh3voc5wi3tUYhB+cIy7yGuih1oMwhxXlinMgrePXgoW+g1vZcdCGW7wgI3g9XGQRdA2XvyN5hEXmBYd0/zmaIdjpsWoI7xiK0AjnOEt3ek5ggY4wTC9rownTNCx/KEVCBZdhyk8nZDqagAAAABJRU5ErkJggg==') 14px 14px no-repeat;
+    @extend .line-wrapping;
+  }
+
+  &.button-prev,
+  &.button-next {
+    span[class^="icon-"] {
+      font-size: $font-size-17;
+    }
+  }
+}
+
+.btn-beta {
+  border: 0;
+  text-decoration: none;
+  padding: 8px 15px;
+  background: $button-beta-bg-color;
+  color: $button-beta-text-color;
+  border-radius: $border-radius-base;
+  float: left;
+  margin-right: 10px;
+}
