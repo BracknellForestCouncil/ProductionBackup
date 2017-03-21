@@ -239,14 +239,13 @@ $heightSml: 77px;
 .topnav-wrapper {
   background: $textBlack;
   position: relative;
-  top: -5px;
-  z-index:100;
+  z-index: 100;
 
   @media (max-width: 765px) {
-    top: -5px;
+    // ...
   }
   @media (max-width: 480px) {
-    top: -5px;
+    // ...
   }
 }
 

@@ -25,11 +25,12 @@
     "serve": "browser-sync start --config $npm_package_config_browsersyncConfig --no-open",
     "lint": "sass-lint --config $npm_package_config_sasslintConfig --ignore $npm_package_config_sassIgnoreFiles --verbose --no-exit",
     "build:css": "npm run scss && npm run autoprefixer",
+    "build": "npm-run-all -p build:css",
     "copy": "npm-run-all -p copy:Js",
     "copy:Js": "cp -R ./node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js $npm_package_config_outputJs",
     "rminfo": "find node_modules/ -name '*.info' -type f -delete",
-    "watch:css": "onchange $npm_package_config_scssPath -v -- npm-run-all -p lint build:css",
-    "dev": "npm run build:css && npm-run-all -p serve watch:css"
+    "watch:css": "onchange $npm_package_config_scssPath -v -- npm-run-all -p build:css",
+    "dev": "npm run build:css && npm-run-all -p watch:css"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",

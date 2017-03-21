@@ -12,24 +12,38 @@
  *            GNU General Public License, version 2 or later
  */
 
-function bracknell_theme_base_preprocess(&$variables, $hook) {
-  $variables['theme_directory']=drupal_get_path('theme',$GLOBALS['theme']);
-  // dpm($variables);
+/**
+ * Implements HOOK_preprocess().
+ */
+function bracknell_theme_base_preprocess(&$vars, $hook) {
+  $vars['theme_directory'] = drupal_get_path('theme', $GLOBALS['theme']);
 }
 
-function bracknell_theme_base_preprocess_page(&$variables) {
+/**
+ * Implements HOOK_preprocess_page().
+ */
+function bracknell_theme_base_preprocess_page(&$vars) {
   $header = drupal_get_http_header('X-UA-Compatible');
   if (empty($header)) {
     drupal_add_http_header('X-UA-Compatible', 'IE=Edge');
   }
   // Add information about the number of sidebars.
-  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-    $variables['content_column_class'] = ' class="col-md-4 col-md-offset-1"';
+  if (!empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second'])) {
+    $vars['content_column_class'] = ' class="col-md-4 col-md-offset-1"';
   }
-  elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['sidebar_second'])) {
-    $variables['content_column_class'] = ' class="col-md-8 col-sm-12"';
+  elseif (!empty($vars['page']['sidebar_first']) || !empty($vars['page']['sidebar_second'])) {
+    $vars['content_column_class'] = ' class="col-md-8 col-sm-12"';
   }
   else {
-    $variables['content_column_class'] = ' class="col-sm-12"';
+    $vars['content_column_class'] = ' class="col-sm-12"';
   }
+  // Add theme hook suggestions for page.tpl.php files representing different
+  // node types. Will come out as page--proomotional-page.tpl.php, for example.
+  if (isset($vars['node'])) {
+    $args = arg();
+    unset($args[0]);
+    $type = "page__{$vars['node']->type}";
+    $vars['theme_hook_suggestions'] = array_merge($vars['theme_hook_suggestions'], array($type), theme_get_suggestions($args, $type));
+  }
+
 }

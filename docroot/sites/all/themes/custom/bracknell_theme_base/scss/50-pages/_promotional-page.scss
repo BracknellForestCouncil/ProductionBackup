@@ -1,0 +1,59 @@
+body.node-type-promotional-page {
+  background-color: #a94442 !important;
+  #page-content {
+    position: relative;
+  }
+  #page-header {
+    width: $container-lg;
+    margin: 0 auto;
+    float: none;
+    min-height: auto;
+    .page-header {
+      position: absolute;
+      top: 55px;
+      z-index: 2;
+      width: auto;
+      background: rgba(255, 255, 255, 0.8);
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: -32px;
+      border-bottom: 0;
+      font-size: 2.45em; // AKA 44px
+      letter-spacing: -1px;
+      padding: 20px 30px 26px;
+      color: #333;
+    }
+  }
+  .tabs--primary.nav.nav-tabs {
+    position: absolute;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0;
+    li {
+      display: inline-block;
+      font-size: 0.9em;
+      padding: 5px;
+    }
+  }
+  .main-container.container {
+    width: auto;
+    padding: 0;
+  }
+  #page-content {
+    background: #faa;
+    .region-content {
+      .field-name-field-promotional-hero .field-item, .promotional-hero {
+        height: 480px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        img {
+          width: 100%;
+          *height: auto;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
