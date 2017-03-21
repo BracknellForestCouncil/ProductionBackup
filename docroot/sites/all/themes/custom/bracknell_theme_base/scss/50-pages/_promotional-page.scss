@@ -1,13 +1,15 @@
 body.node-type-promotional-page {
-  background-color: #a94442 !important;
+  .node-promotional-page {
+    .paragraphs-items {
+      @include constrained;
+      padding: 40px 0;
+    }
+  }
   #page-content {
     position: relative;
   }
   #page-header {
-    width: $container-lg;
-    margin: 0 auto;
-    float: none;
-    min-height: auto;
+    @include constrained;
     .page-header {
       position: absolute;
       top: 55px;
@@ -23,17 +25,31 @@ body.node-type-promotional-page {
       letter-spacing: -1px;
       padding: 20px 30px 26px;
       color: #333;
+      @media (max-width: $screen-xs-max) {
+        margin-left: 0;
+        font-size: 1.8em;
+        padding: 13px 17px 15px;
+      }
     }
   }
   .tabs--primary.nav.nav-tabs {
     position: absolute;
     right: 10px;
+    top: 55px;
     background: rgba(255, 255, 255, 0.8);
     padding: 0;
+    z-index: 1;
     li {
       display: inline-block;
       font-size: 0.9em;
-      padding: 5px;
+      padding: 0;
+      a {
+        border-radius: 0;
+        border: 0;
+        &.active {
+          background-color: rgba(255, 255, 255, 0.8);
+        }
+      }
     }
   }
   .main-container.container {
@@ -41,17 +57,50 @@ body.node-type-promotional-page {
     padding: 0;
   }
   #page-content {
-    background: #faa;
     .region-content {
       .field-name-field-promotional-hero .field-item, .promotional-hero {
-        height: 480px;
+        max-height: 480px;
         overflow: hidden;
         margin-bottom: 10px;
-        img {
-          width: 100%;
-          *height: auto;
-          height: 100%;
-          object-fit: cover;
+        position: relative;
+        min-height: 200px;
+        background: #f3f3f3;
+        .hero-buttons {
+          position: absolute;
+          bottom: 20px;
+          pointer-events: none;
+          @media (min-width: $screen-lg-min) {
+            width: $container-lg;
+            margin-left: -($container-lg / 2);
+          }
+          @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            width: $container-md;
+            margin-left: -($container-md / 2);
+          }
+          @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            width: $container-md;
+            margin-left: -($container-sm / 2);
+          }
+          @media (min-width: $screen-sm-min) {
+            left: 50%;
+          }
+          @media (max-width: $screen-xs-max) {
+            left: 20px;
+          }
+          .hero-button {
+            @extend .btn;
+            font-size: 0.8em;
+            padding: 8px 16px 10px;
+            font-weight: 700;
+          }
+        }
+        .hero-images {
+          img {
+            width: 100%;
+            *height: auto;
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
     }
