@@ -20,3 +20,88 @@ function bracknell_feature_landing_page_theme($existing, $type, $theme, $path) {
   return $theme;
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function bracknell_feature_landing_page_form_node_form_alter(&$form) {
+  if (empty($form['field_theme'])) {
+    return;
+  }
+
+  $element = &$form['field_theme'][LANGUAGE_NONE];
+
+  // Ensure that the "default" option is pre-selected.
+  if (empty($element['#value_key'])) {
+    $form['field_theme'][LANGUAGE_NONE]['#default_value'] = 'default';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bracknell_feature_landing_page_preprocess_html(&$variables) {
+  if (path_is_admin(current_path())) {
+    return;
+  }
+
+  if ($node = menu_get_object()) {
+    $wrapper = entity_metadata_wrapper('node', $node);
+
+    $class = !empty($node->field_theme)
+      ? _bracknell_feature_landing_page_get_theme_class($wrapper)
+      : _bracknell_feature_landing_page_get_theme_class_for_child_page($wrapper);
+
+    if (!$class) {
+      return;
+    }
+
+    // Add the theme class to the body.
+    $variables['classes_array'][] = "theme-{$class}";
+  }
+}
+
+/**
+ * Get the theme class from a landing page.
+ *
+ * @param EntityDrupalWrapper $wrapper
+ *   The metadata wrapper for the landing page.
+ *
+ * @return string
+ *   The class to add.
+ */
+function _bracknell_feature_landing_page_get_theme_class(EntityDrupalWrapper $wrapper) {
+  return $wrapper->get('field_theme')->value();
+}
+
+/**
+ * Get the theme class to sub-pages.
+ *
+ * @param \EntityDrupalWrapper $wrapper
+ *   The wrapper for the child page.
+ *
+ * @return string
+ *   The theme class to add.
+ */
+function _bracknell_feature_landing_page_get_theme_class_for_child_page(EntityDrupalWrapper $wrapper) {
+  // Find the path parent menu item based on the path of the child and it’s
+  // "p1" value.
+  $query = db_select('menu_links', 'ml_child')
+    ->condition('ml_child.link_path', 'node/' . $wrapper->getIdentifier());
+
+  $query->join('menu_links', 'ml_parent', 'ml_parent.mlid = ml_child.p1');
+  $query->fields('ml_parent', array('link_path'));
+
+  $parent_path = $query->execute()->fetchField();
+
+  $position = strpos($parent_path, 'node/');
+  if ($position === FALSE) {
+    return NULL;
+  }
+
+  // Find the parent node ID by truncating the menu path.
+  $parent_node_id = substr($parent_path, $position + 5);
+
+  $parent_node_wrapper = entity_metadata_wrapper('node', node_load($parent_node_id));
+
+  return _bracknell_feature_landing_page_get_theme_class($parent_node_wrapper);
+}

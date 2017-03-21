@@ -217,3 +217,16 @@ $footer-bg-color: $grey1;
 $footer-text-color: $white;
 $footer-link-text-color: $white;
 $footer-list-border-color: $white;
+
+// Colour schemes/themes.
+$themes: (
+  business: #009fd4,
+  coral-reef-blue: #009fd4,
+  default: $brandGreen,
+  discovery-green: #00aa55,
+  downshire-purple: #702277,
+  forestcare: #b42371,
+  fostering: #00a4a6,
+  leisure-blue: #055fad,
+  parks-green: #62a00f,
+);
