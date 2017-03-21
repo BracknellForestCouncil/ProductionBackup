@@ -49,23 +49,6 @@
         }
       });
 
-      // * Brand logo resize on Menu open/close *
-      // Click the Menu button, add .menu-open class to Brand logo wrapper
-      // $('#open-menu').click(function () {
-      //   $(".navbar-form").removeClass("in");
-      //   $('#branding').addClass('menu-open');
-      // });
-      // $('#mobile-search-trigger').click(function () {
-      //   $('.topnav-wrapper .navbar-collapse').removeClass('in');
-      //   $('#open-menu').addClass('collapsed');
-      // });
-      // // When the menu finishes collapsing, remove .menu-open class
-      // $('#bracknell-topnav').on('hidden.bs.collapse', function () {
-      //   $('#branding').removeClass('menu-open');
-      // });
-
-
-
       // Fix related links location on guide pages
       // media query checking for minimum 992px  event handler
       if (matchMedia) {
