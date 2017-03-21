@@ -61,6 +61,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
+  <script type="text/javascript">
+    document.write('<style type="text/css">.main-menu {display:none;}</style>');
+  </script>
   <?php print $styles; ?>
   <!-- HTML5 element support for IE6-8 -->
   <!--[if lt IE 9]>
@@ -100,9 +103,11 @@
   <meta name="robots" content="noindex,nofollow" />
 </head>
 <body<?php print $body_attributes; ?>>
-  <a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
-  <?php print $page_top; ?>
-  <?php print $page; ?>
-  <?php print $page_bottom; ?>
+  <div class="page-wrapper">
+    <a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
+    <?php print $page_top; ?>
+    <?php print $page; ?>
+    <?php print $page_bottom; ?>
+  </div>
 </body>
 </html>
