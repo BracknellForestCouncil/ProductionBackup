@@ -22,5 +22,6 @@ function _bracknell_content_testimonial_add_carousel_slide_classes(array &$varia
 
   $layout = $wrapper->get('field_carousel_slide_layout')->value();
 
-  $variables['classes_array'][] = "media-{$layout}";
+  $variables['classes_array'][] = 'carousel-slide';
+  $variables['classes_array'][] = "carousel-slide-media-{$layout}";
 }

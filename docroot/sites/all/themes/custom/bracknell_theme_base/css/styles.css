@@ -7978,6 +7978,91 @@ body.page-taxonomy #list-of-additional-pages .view-content {
 .theme-parks-green .field-name-field-promotional-slogan {
   background-color: #62a00f; }
 
+.carousel-slide .node-testimonial {
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #f2f2f2; }
+  .carousel-slide .node-testimonial:before, .carousel-slide .node-testimonial:after {
+    content: " ";
+    display: table; }
+  .carousel-slide .node-testimonial:after {
+    clear: both; }
+
+.carousel-slide-media,
+.carousel-slide-content {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (min-width: 992px) {
+    .carousel-slide-media,
+    .carousel-slide-content {
+      float: left;
+      width: 50%; } }
+
+.carousel-slide-media {
+  padding: 0; }
+
+.carousel-slide-content {
+  padding: 60px; }
+  .carousel-slide-content .field-name-body .field-items p {
+    position: relative; }
+  .carousel-slide-content .field-name-body .field-items p:first-child:before {
+    content: "\201C";
+    position: absolute;
+    left: -11px; }
+  .carousel-slide-content .field-name-body .field-items p:last-child {
+    display: inline; }
+    .carousel-slide-content .field-name-body .field-items p:last-child:after {
+      content: "\201D";
+      position: absolute;
+      right: -10px; }
+  .carousel-slide-content .btn, .carousel-slide-content body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .carousel-slide-content a, .carousel-slide-content body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .carousel-slide-content a, .carousel-slide-content body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .carousel-slide-content a {
+    margin-top: 35px; }
+
+@media (min-width: 992px) {
+  .carousel-slide-media-right .carousel-slide-content {
+    right: 50%; } }
+
+@media (min-width: 992px) {
+  .carousel-slide-media-right .carousel-slide-media {
+    left: 50%; } }
+
+.field-name-field-testimonial-job-title {
+  margin-top: .5em; }
+
+.field-name-field-testimonial-author {
+  font-weight: 600;
+  margin-top: 65px; }
+
+.flexslider .flex-direction-nav .flex-next,
+.flexslider .flex-direction-nav .flex-next:hover,
+.flexslider .flex-direction-nav .flex-prev,
+.flexslider .flex-direction-nav .flex-prev:hover,
+.flexslider:hover .flex-direction-nav .flex-next,
+.flexslider:hover .flex-direction-nav .flex-next:hover,
+.flexslider:hover .flex-direction-nav .flex-prev,
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
+  opacity: 1; }
+
+.flexslider .flex-direction-nav .flex-next,
+.flexslider .flex-direction-nav .flex-next:hover,
+.flexslider:hover .flex-direction-nav .flex-next,
+.flexslider:hover .flex-direction-nav .flex-next:hover {
+  right: 30px; }
+
+.flexslider .flex-direction-nav .flex-prev,
+.flexslider .flex-direction-nav .flex-prev:hover,
+.flexslider:hover .flex-direction-nav .flex-prev,
+.flexslider:hover .flex-direction-nav .flex-prev:hover {
+  left: 30px; }
+
+.flexslider .flex-direction-nav .flex-next,
+.flexslider .flex-direction-nav .flex-prev,
+.flexslider:hover .flex-direction-nav .flex-next,
+.flexslider:hover .flex-direction-nav .flex-prev {
+  height: 43px; }
+
 .row:after {
   clear: both; }
 
