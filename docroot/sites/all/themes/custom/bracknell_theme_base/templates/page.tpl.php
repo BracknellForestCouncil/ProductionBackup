@@ -73,83 +73,49 @@
  * @ingroup templates
  */
 ?>
-<div class="container print-logo show-print">
-	<img class="img-responsive hide-ie8" src="https://files.bracknell-forest.gov.uk/sites/bracknell/images/logo/Bracknell-logo_B.svg" alt="Bracknell Forest Council" width="100">
-</div>
-<nav class="navbar navbar-default">
+<header class="header" role="banner">
+  <div class="container">
+    <div class="row masthead">
+      <a href="<?php print $front_page; ?>" id="branding" class="logo">
+        <img class="img-responsive" src="<?php print base_path() . path_to_theme(); ?>/images/logo/Bracknell-logo_B.png" alt="Bracknell Forest Council">
+      </a>
+      <div class="col-sm-12 col-md-10 col-md-offset-2 header-tools" data-js="header-tools">
+        <div class="row">
+          <div class="col-sm-8 col-md-5 col-sm-offset-2 nav-tools__search">
+            <!-- Placeholder for search form -->
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-3 text-center hidden-xs hidden-sm nav-tools__account">
+            <a href="https://bracknell-forest.achieveservice.com/module/home" title="Register for a self service account to save yourself time, or login if you already have an account.">
+              <span class="icon theme-icon-user"></span>
+              <span>My account</span>
+              <span class="q-mark icon theme-icon-question" data-toggle="tooltip-my-account" data-placement="bottom" title="Register for a self service account to save yourself time, or login if you already have an account."></span>
+            </a>
+          </div>
+          <div class="col-xs-12 col-sm-2 text-right header-menu-tools" data-js="main-menu-trigger">
+          </div>
+        </div><!-- end ./row -->
+      </div><!-- end ./header-tools -->
 
-	<!--Nav branding and tools-->
-	<div class="container">
-		<div class="row masthead">
-			<!--Branding-->
-			<a href="<?php print $front_page; ?>" id="branding" class="navbar-brand-wrap">
-				<span class="sr-only">Bracknell Forest Council</span>
-				<img class="img-responsive hide-ie8" src="https://files.bracknell-forest.gov.uk/sites/bracknell/images/logo/Bracknell-logo_B.svg" alt="Bracknell Forest Council">
-				<img class="img-responsive show-ie8" src="https://files.bracknell-forest.gov.uk/sites/bracknell/images/logo/Bracknell-logo_B.png" alt="Bracknell Forest Council">
-			</a>
+        <?php if (!drupal_is_front_page()) { ?>
+        <div class="row no-pad">
+          <nav id="breadcrumb" class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-2">
+            <?php if (!empty($breadcrumb)) : print $breadcrumb; endif; ?>
+          </nav>
+        </div>
+        <?php } ?>
+    </div><!-- end ./masthead -->
+  </div><!-- end ./container -->
 
-			<!--Nav Tools-->
-			<div class="col-sm-12 col-md-10 col-md-offset-2 nav-tools">
-				<div class="row">
-					<div class="col-sm-8 col-md-5 col-sm-offset-2 nav-tools__search">
-						<!-- Placeholder for search form -->
-					</div>
-					<div class="col-xs-4 col-sm-4 col-md-3 text-center hidden-xs hidden-sm nav-tools__account">
-						<a href="https://bracknell-forest.achieveservice.com/module/home" title="Register for a self service account to save yourself time, or login if you already have an account.">
-							<span class="icon theme-icon-user"></span>
-							<span>My account</span>
-							<span class="q-mark icon theme-icon-question" data-toggle="tooltip-my-account" data-placement="bottom" title="Register for a self service account to save yourself time, or login if you already have an account."></span>
-						</a>
-					</div>
-					<div class="col-xs-12 col-sm-2 text-right nav-tools__menu">
-						<button type="button" id="open-menu" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bracknell-topnav" aria-expanded="false">
-							<span class="navbar-toggle-inner">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="menu-icon pull-left">Menu</span>
-								<span class="icon-bars-wrap pull-left">
-									<span class="icon-bar top"></span>
-									<span class="icon-bar centre"></span>
-									<span class="icon-bar bottom"></span>
-								</span>
-							</span>
-						</button>
-						<!--Mobile-->
-						<!-- Placeholder for search button (expand/collapse) -->
-					</div>
-				</div>
-			</div>
-
-			<!--search mobile-->
-			<div class="col-sm-6 col-sm-offset-2 nav-tools__search--mobile-search">
-				<!-- Placeholder for search form -->
-			</div>
-
-			<!--Breadcrumbs here-->
-			<?php if (!drupal_is_front_page()) { ?>
-				<div class="row no-pad">
-	        <nav id="breadcrumb" class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-2">
-	          <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-	        </nav>
-				</div>
-			<?php } ?>
-
-		</div>
-	</div>
-
-	<!--Nav items-->
-	<div class="container-fluid topnav-wrapper">
-		<!-- Content for toggling -->
-		<div class="container">
-			<div class="collapse navbar-collapse" id="bracknell-topnav">
-				<div class="row">
+  <div class="container-fluid main-menu" data-js="main-menu">
+    <div class="container">
+      <div class="navbar-collapse" id="bracknell-topnav">
+        <div class="row">
           <?php print render($page['navigation']); ?>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-</nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <div class="main-container <?php print $container_class; ?>">
 
@@ -159,16 +125,16 @@
 
   <div class="row" id="page-content">
 
-    <header role="banner" id="page-header" class="col-sm-12<?php if (!$is_front): print(' col-md-8'); endif ?>">
-			<?php if (!drupal_is_front_page()) { ?>
+    <div id="page-header" class="col-sm-12<?php if (!$is_front): print(' col-md-8'); endif ?>">
+      <?php if (!drupal_is_front_page()) { ?>
       <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
         <h1 class="page-header"><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
-			<?php } ?>
+      <?php } ?>
       <?php print render($page['page_header']); ?>
-    </header>
+    </div>
 
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="col-md-3 col-sm-12" role="complementary">
@@ -193,11 +159,11 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
-			<?php if (!empty($page['page_footer'])): ?>
-				<footer class="footer">
-					<?php print render($page['page_footer']); ?>
-				</footer>
-			<?php endif; ?>
+      <?php if (!empty($page['page_footer'])): ?>
+        <footer class="footer">
+          <?php print render($page['page_footer']); ?>
+        </footer>
+      <?php endif; ?>
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
@@ -227,37 +193,37 @@
       </div>
       <div class="col-xs-12 col-sm-4 socials socials-global-footer">
         <ul>
-  				<li>
-  					<a href="https://www.instagram.com/bracknellforest" target="_blank">
-  						<span class="sr-only sr-only-focusable">Instagram</span>
-  						<span class="icon theme-icon-instagram"></span>
-  					</a>
-  				</li>
-  				<li>
-  					<a href="https://twitter.com/BracknellForest" target="_blank">
-  						<span class="sr-only sr-only-focusable">Twitter</span>
-  						<span class="icon theme-icon-twitter"></span>
-  					</a>
-  				</li>
-  				<li>
-  					<a href="https://www.facebook.com/bracknellforestcouncil" target="_blank">
-  						<span class="sr-only sr-only-focusable">Facebook</span>
-  						<span class="icon theme-icon-facebook"></span>
-  					</a>
-  				</li>
-  				<li>
-  					<a href="https://www.youtube.com/user/BracknellForestC?gl=GB&hl=en-GB" target="_blank">
-  						<span class="sr-only sr-only-focusable">Youtube</span>
-  						<span class="icon theme-icon-youtube"></span>
-  					</a>
-  				</li>
-  			</ul>
+          <li>
+            <a href="https://www.instagram.com/bracknellforest" target="_blank">
+              <span class="sr-only sr-only-focusable">Instagram</span>
+              <span class="icon theme-icon-instagram"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/BracknellForest" target="_blank">
+              <span class="sr-only sr-only-focusable">Twitter</span>
+              <span class="icon theme-icon-twitter"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/bracknellforestcouncil" target="_blank">
+              <span class="sr-only sr-only-focusable">Facebook</span>
+              <span class="icon theme-icon-facebook"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/user/BracknellForestC?gl=GB&hl=en-GB" target="_blank">
+              <span class="sr-only sr-only-focusable">Youtube</span>
+              <span class="icon theme-icon-youtube"></span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-  			<p class="copyright"><small>© Bracknell Forest Council</small></p>
-  		</div>
+        <p class="copyright"><small>© Bracknell Forest Council</small></p>
+      </div>
     </div>
   </footer>
 </div>
