@@ -6084,7 +6084,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: #333; }
+  color: #333;
+  -webkit-font-smoothing: antialiased; }
 
 a,
 p a,
@@ -7950,6 +7951,24 @@ body.page-taxonomy #list-of-additional-pages .view-content {
   @media (min-width: 768px) {
     body.page-taxonomy #list-of-additional-pages .view-content h2, body.page-taxonomy #list-of-additional-pages .view-content span.lge {
       width: 50%; } }
+
+blockquote.content-section-blockquote {
+  background: #f2f2f2;
+  border-left: 5px solid #00a4a6;
+  padding: 25px 23px; }
+  blockquote.content-section-blockquote .blockquote-quote {
+    line-height: 1.4em;
+    margin-bottom: 10px; }
+    blockquote.content-section-blockquote .blockquote-quote p {
+      hanging-punctuation: first; }
+  blockquote.content-section-blockquote footer {
+    font-size: 1em;
+    color: inherit;
+    font-weight: 600; }
+    blockquote.content-section-blockquote footer:before {
+      display: none; }
+    blockquote.content-section-blockquote footer cite {
+      font-style: normal; }
 
 .theme-business .field-name-field-promotional-slogan {
   background-color: #009fd4; }
