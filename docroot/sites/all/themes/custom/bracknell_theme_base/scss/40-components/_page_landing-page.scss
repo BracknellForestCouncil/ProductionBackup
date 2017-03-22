@@ -60,7 +60,7 @@ body.page-taxonomy {
        width: 100% !important;
       }
     }
-  } // END .pane-taxonomy-term-field-category-tasks
+  }
 
   #list-of-pages {
     clear: both;
@@ -127,7 +127,7 @@ body.page-taxonomy {
       margin: 0 0 10px;
       width: 100% !important;
     }
-  } // END #list-of-pages
+  }
 
   #list-of-subcategories {
     clear: both;
@@ -170,7 +170,7 @@ body.page-taxonomy {
       border-radius: 3px;
       margin: 0 0 10px;
     }
-  } // END #list-of-subcategories
+  }
 
   #list-of-additional-pages {
     .view-content {
@@ -204,5 +204,62 @@ body.page-taxonomy {
         }
       }
     }
-  } // END #list-of-additional-pages
+  }
+}
+
+.top-tasks, .related-pages {
+  @extend .full-width;
+  @extend .call-to-actions;
+  @extend .sub-grid-categories;
+  .field-items {
+    display: flex;
+    flex-wrap: wrap;
+    .field-item {
+      display: flex;
+      margin: 0 0 10px;
+      a {
+        @extend .btn;
+        border-radius: 3px;
+        width: 100% !important;
+        margin: 0;
+      }
+      @media (max-width: $screen-sm)  {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.top-tasks {
+  background: $oliveGreenLight;
+  padding: 40px 0 30px;
+  .field-items {
+    margin: 0 -10px;
+    .field-item {
+      padding: 0 10px;
+      width: 33.333333%;
+      a {
+        @extend .key-task;
+      }
+    }
+  }
+}
+
+.related-pages {
+  background: $greyExtraLight;
+  padding: 30px 0 20px;
+  .field-items {
+    margin: 0 -5px;
+    .field-item {
+      padding: 0 5px;
+      width: 25%;
+      a {
+        @extend .sub-task;
+      }
+    }
+  }
+}
+
+.landing-page-content {
+  padding: 30px 0;
 }

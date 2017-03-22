@@ -85,6 +85,19 @@
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_tags']);
-    print render($content);
+    hide($content['field_top_tasks']);
+    hide($content['field_related_pages']);
   ?>
+
+  <section class='top-tasks'>
+    <?php print render($content['field_top_tasks']); ?>
+  </section>
+
+  <section class='related-pages'>
+    <?php print render($content['field_related_pages']); ?>
+  </section>
+
+  <section class='landing-page-content'>
+    <?php print render($content); ?>
+  </section>
 </article>

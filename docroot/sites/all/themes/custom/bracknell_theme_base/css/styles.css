@@ -238,10 +238,12 @@ th {
     page-break-after: avoid; }
   .navbar {
     display: none; }
-  .btn > .caret, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a > .caret, body.page-taxonomy #list-of-pages a > .caret, body.page-taxonomy #list-of-subcategories a > .caret,
+  .btn > .caret, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a > .caret, body.page-taxonomy #list-of-pages a > .caret, body.page-taxonomy #list-of-subcategories a > .caret, .top-tasks .field-items .field-item a > .caret, .related-pages .field-items .field-item a > .caret,
   .dropup > .btn > .caret, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
   .dropup > a > .caret, body.page-taxonomy #list-of-pages
   .dropup > a > .caret, body.page-taxonomy #list-of-subcategories
+  .dropup > a > .caret, .top-tasks .field-items .field-item
+  .dropup > a > .caret, .related-pages .field-items .field-item
   .dropup > a > .caret {
     border-top-color: #000 !important; }
   .label {
@@ -2490,11 +2492,15 @@ fieldset[disabled]
   .input-group-lg > .input-group-btn > .form-control-static.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
   .input-group-lg > .input-group-btn > a.form-control-static, body.page-taxonomy #list-of-pages
   .input-group-lg > .input-group-btn > a.form-control-static, body.page-taxonomy #list-of-subcategories
+  .input-group-lg > .input-group-btn > a.form-control-static, .top-tasks .field-items .field-item
+  .input-group-lg > .input-group-btn > a.form-control-static, .related-pages .field-items .field-item
   .input-group-lg > .input-group-btn > a.form-control-static, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
   .input-group-sm > .form-control-static.input-group-addon,
   .input-group-sm > .input-group-btn > .form-control-static.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
   .input-group-sm > .input-group-btn > a.form-control-static, body.page-taxonomy #list-of-pages
   .input-group-sm > .input-group-btn > a.form-control-static, body.page-taxonomy #list-of-subcategories
+  .input-group-sm > .input-group-btn > a.form-control-static, .top-tasks .field-items .field-item
+  .input-group-sm > .input-group-btn > a.form-control-static, .related-pages .field-items .field-item
   .input-group-sm > .input-group-btn > a.form-control-static {
     padding-left: 0;
     padding-right: 0; }
@@ -2504,6 +2510,8 @@ fieldset[disabled]
 .input-group-sm > .input-group-btn > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-sm > .input-group-btn > a, body.page-taxonomy #list-of-pages
 .input-group-sm > .input-group-btn > a, body.page-taxonomy #list-of-subcategories
+.input-group-sm > .input-group-btn > a, .top-tasks .field-items .field-item
+.input-group-sm > .input-group-btn > a, .related-pages .field-items .field-item
 .input-group-sm > .input-group-btn > a {
   height: 36px;
   padding: 5px 10px;
@@ -2553,6 +2561,8 @@ select[multiple].input-sm,
 .input-group-lg > .input-group-btn > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-lg > .input-group-btn > a, body.page-taxonomy #list-of-pages
 .input-group-lg > .input-group-btn > a, body.page-taxonomy #list-of-subcategories
+.input-group-lg > .input-group-btn > a, .top-tasks .field-items .field-item
+.input-group-lg > .input-group-btn > a, .related-pages .field-items .field-item
 .input-group-lg > .input-group-btn > a {
   height: 53px;
   padding: 10px 16px;
@@ -2619,6 +2629,8 @@ select[multiple].input-lg,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-lg > .input-group-btn > a + .form-control-feedback, body.page-taxonomy #list-of-pages
 .input-group-lg > .input-group-btn > a + .form-control-feedback, body.page-taxonomy #list-of-subcategories
+.input-group-lg > .input-group-btn > a + .form-control-feedback, .top-tasks .field-items .field-item
+.input-group-lg > .input-group-btn > a + .form-control-feedback, .related-pages .field-items .field-item
 .input-group-lg > .input-group-btn > a + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
@@ -2631,6 +2643,8 @@ select[multiple].input-lg,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-sm > .input-group-btn > a + .form-control-feedback, body.page-taxonomy #list-of-pages
 .input-group-sm > .input-group-btn > a + .form-control-feedback, body.page-taxonomy #list-of-subcategories
+.input-group-sm > .input-group-btn > a + .form-control-feedback, .top-tasks .field-items .field-item
+.input-group-sm > .input-group-btn > a + .form-control-feedback, .related-pages .field-items .field-item
 .input-group-sm > .input-group-btn > a + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
@@ -2810,7 +2824,7 @@ select[multiple].input-lg,
     padding-top: 6px;
     font-size: 16px; } }
 
-.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a {
+.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, .top-tasks .field-items .field-item a, .related-pages .field-items .field-item a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2830,36 +2844,44 @@ select[multiple].input-lg,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus, .btn.focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.focus, body.page-taxonomy #list-of-pages a.focus, body.page-taxonomy #list-of-subcategories a.focus, .btn:active:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active:focus, body.page-taxonomy #list-of-pages a:active:focus, body.page-taxonomy #list-of-subcategories a:active:focus, .btn:active.focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active.focus, body.page-taxonomy #list-of-pages a:active.focus, body.page-taxonomy #list-of-subcategories a:active.focus, .btn.active:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.active:focus, body.page-taxonomy #list-of-pages a.active:focus, body.page-taxonomy #list-of-subcategories a.active:focus, .btn.active.focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.active.focus, body.page-taxonomy #list-of-pages a.active.focus, body.page-taxonomy #list-of-subcategories a.active.focus {
+  .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus, .top-tasks .field-items .field-item a:focus, .related-pages .field-items .field-item a:focus, .btn.focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.focus, body.page-taxonomy #list-of-pages a.focus, body.page-taxonomy #list-of-subcategories a.focus, .top-tasks .field-items .field-item a.focus, .related-pages .field-items .field-item a.focus, .btn:active:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active:focus, body.page-taxonomy #list-of-pages a:active:focus, body.page-taxonomy #list-of-subcategories a:active:focus, .top-tasks .field-items .field-item a:active:focus, .related-pages .field-items .field-item a:active:focus, .btn:active.focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active.focus, body.page-taxonomy #list-of-pages a:active.focus, body.page-taxonomy #list-of-subcategories a:active.focus, .top-tasks .field-items .field-item a:active.focus, .related-pages .field-items .field-item a:active.focus, .btn.active:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.active:focus, body.page-taxonomy #list-of-pages a.active:focus, body.page-taxonomy #list-of-subcategories a.active:focus, .top-tasks .field-items .field-item a.active:focus, .related-pages .field-items .field-item a.active:focus, .btn.active.focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.active.focus, body.page-taxonomy #list-of-pages a.active.focus, body.page-taxonomy #list-of-subcategories a.active.focus, .top-tasks .field-items .field-item a.active.focus, .related-pages .field-items .field-item a.active.focus {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-subcategories a:hover, .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus, .btn.focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.focus, body.page-taxonomy #list-of-pages a.focus, body.page-taxonomy #list-of-subcategories a.focus {
+  .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-subcategories a:hover, .top-tasks .field-items .field-item a:hover, .related-pages .field-items .field-item a:hover, .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus, .top-tasks .field-items .field-item a:focus, .related-pages .field-items .field-item a:focus, .btn.focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.focus, body.page-taxonomy #list-of-pages a.focus, body.page-taxonomy #list-of-subcategories a.focus, .top-tasks .field-items .field-item a.focus, .related-pages .field-items .field-item a.focus {
     color: #333;
     text-decoration: none; }
-  .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active, body.page-taxonomy #list-of-pages a:active, body.page-taxonomy #list-of-subcategories a:active, .btn.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.active, body.page-taxonomy #list-of-pages a.active, body.page-taxonomy #list-of-subcategories a.active {
+  .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active, body.page-taxonomy #list-of-pages a:active, body.page-taxonomy #list-of-subcategories a:active, .top-tasks .field-items .field-item a:active, .related-pages .field-items .field-item a:active, .btn.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.active, body.page-taxonomy #list-of-pages a.active, body.page-taxonomy #list-of-subcategories a.active, .top-tasks .field-items .field-item a.active, .related-pages .field-items .field-item a.active {
     outline: 0;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.disabled, body.page-taxonomy #list-of-pages a.disabled, body.page-taxonomy #list-of-subcategories a.disabled, .btn[disabled], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a[disabled], body.page-taxonomy #list-of-pages a[disabled], body.page-taxonomy #list-of-subcategories a[disabled],
+  .btn.disabled, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.disabled, body.page-taxonomy #list-of-pages a.disabled, body.page-taxonomy #list-of-subcategories a.disabled, .top-tasks .field-items .field-item a.disabled, .related-pages .field-items .field-item a.disabled, .btn[disabled], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a[disabled], body.page-taxonomy #list-of-pages a[disabled], body.page-taxonomy #list-of-subcategories a[disabled], .top-tasks .field-items .field-item a[disabled], .related-pages .field-items .field-item a[disabled],
   fieldset[disabled] .btn,
   fieldset[disabled] body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
   fieldset[disabled] a,
   fieldset[disabled] body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages
   fieldset[disabled] a,
   fieldset[disabled] body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories
+  fieldset[disabled] a,
+  fieldset[disabled] .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item
+  fieldset[disabled] a,
+  fieldset[disabled] .related-pages .field-items .field-item a, .related-pages .field-items .field-item
   fieldset[disabled] a {
     cursor: not-allowed;
     opacity: 0.65;
     filter: alpha(opacity=65);
     box-shadow: none; }
 
-a.btn.disabled, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.disabled, body.page-taxonomy #list-of-pages a.disabled, body.page-taxonomy #list-of-subcategories a.disabled,
+a.btn.disabled, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.disabled, body.page-taxonomy #list-of-pages a.disabled, body.page-taxonomy #list-of-subcategories a.disabled, .top-tasks .field-items .field-item a.disabled, .related-pages .field-items .field-item a.disabled,
 fieldset[disabled] a.btn,
 fieldset[disabled] body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 fieldset[disabled] a,
 fieldset[disabled] body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages
 fieldset[disabled] a,
 fieldset[disabled] body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories
+fieldset[disabled] a,
+fieldset[disabled] .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item
+fieldset[disabled] a,
+fieldset[disabled] .related-pages .field-items .field-item a, .related-pages .field-items .field-item
 fieldset[disabled] a {
   pointer-events: none; }
 
@@ -3105,19 +3127,19 @@ fieldset[disabled] a {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-lg > a, body.page-taxonomy #list-of-pages .btn-group-lg > a, body.page-taxonomy #list-of-subcategories .btn-group-lg > a {
+.btn-lg, .btn-group-lg > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-lg > a, body.page-taxonomy #list-of-pages .btn-group-lg > a, body.page-taxonomy #list-of-subcategories .btn-group-lg > a, .top-tasks .field-items .field-item .btn-group-lg > a, .related-pages .field-items .field-item .btn-group-lg > a {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
   border-radius: 6px; }
 
-.btn-sm, .btn-group-sm > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-sm > a, body.page-taxonomy #list-of-pages .btn-group-sm > a, body.page-taxonomy #list-of-subcategories .btn-group-sm > a {
+.btn-sm, .btn-group-sm > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-sm > a, body.page-taxonomy #list-of-pages .btn-group-sm > a, body.page-taxonomy #list-of-subcategories .btn-group-sm > a, .top-tasks .field-items .field-item .btn-group-sm > a, .related-pages .field-items .field-item .btn-group-sm > a {
   padding: 5px 10px;
   font-size: 16px;
   line-height: 1.5;
   border-radius: 3px; }
 
-.btn-xs, .btn-group-xs > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-xs > a, body.page-taxonomy #list-of-pages .btn-group-xs > a, body.page-taxonomy #list-of-subcategories .btn-group-xs > a {
+.btn-xs, .btn-group-xs > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-xs > a, body.page-taxonomy #list-of-pages .btn-group-xs > a, body.page-taxonomy #list-of-subcategories .btn-group-xs > a, .top-tasks .field-items .field-item .btn-group-xs > a, .related-pages .field-items .field-item .btn-group-xs > a {
   padding: 1px 5px;
   font-size: 16px;
   line-height: 1.5;
@@ -3299,33 +3321,43 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle; }
-  .btn-group > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a, body.page-taxonomy #list-of-pages .btn-group > a, body.page-taxonomy #list-of-subcategories .btn-group > a,
+  .btn-group > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a, body.page-taxonomy #list-of-pages .btn-group > a, body.page-taxonomy #list-of-subcategories .btn-group > a, .top-tasks .field-items .field-item .btn-group > a, .related-pages .field-items .field-item .btn-group > a,
   .btn-group-vertical > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
   .btn-group-vertical > a, body.page-taxonomy #list-of-pages
   .btn-group-vertical > a, body.page-taxonomy #list-of-subcategories
+  .btn-group-vertical > a, .top-tasks .field-items .field-item
+  .btn-group-vertical > a, .related-pages .field-items .field-item
   .btn-group-vertical > a {
     position: relative;
     float: left; }
-    .btn-group > .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:hover, body.page-taxonomy #list-of-pages .btn-group > a:hover, body.page-taxonomy #list-of-subcategories .btn-group > a:hover, .btn-group > .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:focus, body.page-taxonomy #list-of-pages .btn-group > a:focus, body.page-taxonomy #list-of-subcategories .btn-group > a:focus, .btn-group > .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:active, body.page-taxonomy #list-of-pages .btn-group > a:active, body.page-taxonomy #list-of-subcategories .btn-group > a:active, .btn-group > .btn.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a.active, body.page-taxonomy #list-of-pages .btn-group > a.active, body.page-taxonomy #list-of-subcategories .btn-group > a.active,
+    .btn-group > .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:hover, body.page-taxonomy #list-of-pages .btn-group > a:hover, body.page-taxonomy #list-of-subcategories .btn-group > a:hover, .top-tasks .field-items .field-item .btn-group > a:hover, .related-pages .field-items .field-item .btn-group > a:hover, .btn-group > .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:focus, body.page-taxonomy #list-of-pages .btn-group > a:focus, body.page-taxonomy #list-of-subcategories .btn-group > a:focus, .top-tasks .field-items .field-item .btn-group > a:focus, .related-pages .field-items .field-item .btn-group > a:focus, .btn-group > .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:active, body.page-taxonomy #list-of-pages .btn-group > a:active, body.page-taxonomy #list-of-subcategories .btn-group > a:active, .top-tasks .field-items .field-item .btn-group > a:active, .related-pages .field-items .field-item .btn-group > a:active, .btn-group > .btn.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a.active, body.page-taxonomy #list-of-pages .btn-group > a.active, body.page-taxonomy #list-of-subcategories .btn-group > a.active, .top-tasks .field-items .field-item .btn-group > a.active, .related-pages .field-items .field-item .btn-group > a.active,
     .btn-group-vertical > .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
     .btn-group-vertical > a:hover, body.page-taxonomy #list-of-pages
     .btn-group-vertical > a:hover, body.page-taxonomy #list-of-subcategories
+    .btn-group-vertical > a:hover, .top-tasks .field-items .field-item
+    .btn-group-vertical > a:hover, .related-pages .field-items .field-item
     .btn-group-vertical > a:hover,
     .btn-group-vertical > .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
     .btn-group-vertical > a:focus, body.page-taxonomy #list-of-pages
     .btn-group-vertical > a:focus, body.page-taxonomy #list-of-subcategories
+    .btn-group-vertical > a:focus, .top-tasks .field-items .field-item
+    .btn-group-vertical > a:focus, .related-pages .field-items .field-item
     .btn-group-vertical > a:focus,
     .btn-group-vertical > .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
     .btn-group-vertical > a:active, body.page-taxonomy #list-of-pages
     .btn-group-vertical > a:active, body.page-taxonomy #list-of-subcategories
+    .btn-group-vertical > a:active, .top-tasks .field-items .field-item
+    .btn-group-vertical > a:active, .related-pages .field-items .field-item
     .btn-group-vertical > a:active,
     .btn-group-vertical > .btn.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
     .btn-group-vertical > a.active, body.page-taxonomy #list-of-pages
     .btn-group-vertical > a.active, body.page-taxonomy #list-of-subcategories
+    .btn-group-vertical > a.active, .top-tasks .field-items .field-item
+    .btn-group-vertical > a.active, .related-pages .field-items .field-item
     .btn-group-vertical > a.active {
       z-index: 2; }
 
-.btn-group .btn + .btn, .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group a + .btn, .btn-group body.page-taxonomy #list-of-pages a + .btn, body.page-taxonomy #list-of-pages .btn-group a + .btn, .btn-group body.page-taxonomy #list-of-subcategories a + .btn, body.page-taxonomy #list-of-subcategories .btn-group a + .btn, .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group .btn + a, .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group a + a, body.page-taxonomy #list-of-pages .btn-group .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy #list-of-subcategories .btn-group .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, .btn-group body.page-taxonomy #list-of-pages .btn + a, body.page-taxonomy #list-of-pages .btn-group .btn + a, .btn-group body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group #list-of-pages a + a, .btn-group body.page-taxonomy #list-of-pages a + a, body.page-taxonomy #list-of-pages .btn-group a + a, body.page-taxonomy #list-of-subcategories .btn-group #list-of-pages a + a, .btn-group body.page-taxonomy #list-of-subcategories .btn + a, body.page-taxonomy #list-of-subcategories .btn-group .btn + a, .btn-group body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group #list-of-subcategories a + a, body.page-taxonomy #list-of-pages .btn-group #list-of-subcategories a + a, .btn-group body.page-taxonomy #list-of-subcategories a + a, body.page-taxonomy #list-of-subcategories .btn-group a + a,
+.btn-group .btn + .btn, .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group a + .btn, .btn-group body.page-taxonomy #list-of-pages a + .btn, body.page-taxonomy #list-of-pages .btn-group a + .btn, .btn-group body.page-taxonomy #list-of-subcategories a + .btn, body.page-taxonomy #list-of-subcategories .btn-group a + .btn, .btn-group .top-tasks .field-items .field-item a + .btn, .top-tasks .field-items .field-item .btn-group a + .btn, .btn-group .related-pages .field-items .field-item a + .btn, .related-pages .field-items .field-item .btn-group a + .btn, .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group .btn + a, .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group a + a, body.page-taxonomy #list-of-pages .btn-group .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy #list-of-subcategories .btn-group .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, .btn-group body.page-taxonomy #list-of-pages .btn + a, body.page-taxonomy #list-of-pages .btn-group .btn + a, .btn-group body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group #list-of-pages a + a, .btn-group body.page-taxonomy #list-of-pages a + a, body.page-taxonomy #list-of-pages .btn-group a + a, body.page-taxonomy #list-of-subcategories .btn-group #list-of-pages a + a, .btn-group body.page-taxonomy #list-of-subcategories .btn + a, body.page-taxonomy #list-of-subcategories .btn-group .btn + a, .btn-group body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group #list-of-subcategories a + a, body.page-taxonomy #list-of-pages .btn-group #list-of-subcategories a + a, .btn-group body.page-taxonomy #list-of-subcategories a + a, body.page-taxonomy #list-of-subcategories .btn-group a + a, .btn-group .top-tasks .field-items .field-item .btn + a, .top-tasks .field-items .field-item .btn-group .btn + a, .btn-group body.page-taxonomy #list-of-pages .top-tasks .field-items .field-item a + a, body.page-taxonomy #list-of-pages .btn-group .top-tasks .field-items .field-item a + a, .btn-group body.page-taxonomy #list-of-subcategories .top-tasks .field-items .field-item a + a, body.page-taxonomy #list-of-subcategories .btn-group .top-tasks .field-items .field-item a + a, .btn-group .top-tasks .field-items .field-item a + a, .top-tasks .field-items .field-item .btn-group a + a, .btn-group .related-pages .field-items .field-item .btn + a, .related-pages .field-items .field-item .btn-group .btn + a, .btn-group body.page-taxonomy #list-of-pages .related-pages .field-items .field-item a + a, body.page-taxonomy #list-of-pages .btn-group .related-pages .field-items .field-item a + a, .btn-group body.page-taxonomy #list-of-subcategories .related-pages .field-items .field-item a + a, body.page-taxonomy #list-of-subcategories .btn-group .related-pages .field-items .field-item a + a, .btn-group .related-pages .field-items .field-item a + a, .related-pages .field-items .field-item .btn-group a + a,
 .btn-group .btn + .btn-group,
 .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + .btn-group, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .btn-group a + .btn-group,
@@ -3333,12 +3365,20 @@ tbody.collapse.in {
 .btn-group a + .btn-group,
 .btn-group body.page-taxonomy #list-of-subcategories a + .btn-group, body.page-taxonomy #list-of-subcategories
 .btn-group a + .btn-group,
+.btn-group .top-tasks .field-items .field-item a + .btn-group, .top-tasks .field-items .field-item
+.btn-group a + .btn-group,
+.btn-group .related-pages .field-items .field-item a + .btn-group, .related-pages .field-items .field-item
+.btn-group a + .btn-group,
 .btn-group .btn-group + .btn,
 .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .btn-group .btn-group + a,
 .btn-group body.page-taxonomy #list-of-pages .btn-group + a, body.page-taxonomy #list-of-pages
 .btn-group .btn-group + a,
 .btn-group body.page-taxonomy #list-of-subcategories .btn-group + a, body.page-taxonomy #list-of-subcategories
+.btn-group .btn-group + a,
+.btn-group .top-tasks .field-items .field-item .btn-group + a, .top-tasks .field-items .field-item
+.btn-group .btn-group + a,
+.btn-group .related-pages .field-items .field-item .btn-group + a, .related-pages .field-items .field-item
 .btn-group .btn-group + a,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
@@ -3350,25 +3390,25 @@ tbody.collapse.in {
     display: table; }
   .btn-toolbar:after {
     clear: both; }
-  .btn-toolbar .btn, .btn-toolbar body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-toolbar a, .btn-toolbar body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .btn-toolbar a, .btn-toolbar body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .btn-toolbar a,
+  .btn-toolbar .btn, .btn-toolbar body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-toolbar a, .btn-toolbar body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .btn-toolbar a, .btn-toolbar body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .btn-toolbar a, .btn-toolbar .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item .btn-toolbar a, .btn-toolbar .related-pages .field-items .field-item a, .related-pages .field-items .field-item .btn-toolbar a,
   .btn-toolbar .btn-group,
   .btn-toolbar .input-group {
     float: left; }
-  .btn-toolbar > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-toolbar > a, body.page-taxonomy #list-of-pages .btn-toolbar > a, body.page-taxonomy #list-of-subcategories .btn-toolbar > a,
+  .btn-toolbar > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-toolbar > a, body.page-taxonomy #list-of-pages .btn-toolbar > a, body.page-taxonomy #list-of-subcategories .btn-toolbar > a, .top-tasks .field-items .field-item .btn-toolbar > a, .related-pages .field-items .field-item .btn-toolbar > a,
   .btn-toolbar > .btn-group,
   .btn-toolbar > .input-group {
     margin-left: 5px; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-pages .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-subcategories .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-pages .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-subcategories .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .top-tasks .field-items .field-item .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .related-pages .field-items .field-item .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:first-child, body.page-taxonomy #list-of-pages .btn-group > a:first-child, body.page-taxonomy #list-of-subcategories .btn-group > a:first-child {
+.btn-group > .btn:first-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:first-child, body.page-taxonomy #list-of-pages .btn-group > a:first-child, body.page-taxonomy #list-of-subcategories .btn-group > a:first-child, .top-tasks .field-items .field-item .btn-group > a:first-child, .related-pages .field-items .field-item .btn-group > a:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-pages .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-subcategories .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-pages .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-subcategories .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .top-tasks .field-items .field-item .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .related-pages .field-items .field-item .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:last-child:not(:first-child), body.page-taxonomy #list-of-pages .btn-group > a:last-child:not(:first-child), body.page-taxonomy #list-of-subcategories .btn-group > a:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a:last-child:not(:first-child), body.page-taxonomy #list-of-pages .btn-group > a:last-child:not(:first-child), body.page-taxonomy #list-of-subcategories .btn-group > a:last-child:not(:first-child), .top-tasks .field-items .field-item .btn-group > a:last-child:not(:first-child), .related-pages .field-items .field-item .btn-group > a:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -3376,15 +3416,15 @@ tbody.collapse.in {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > .btn-group:not(:first-child):not(:last-child) > a, body.page-taxonomy #list-of-pages .btn-group > .btn-group:not(:first-child):not(:last-child) > a, body.page-taxonomy #list-of-subcategories .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > .btn-group:not(:first-child):not(:last-child) > a, body.page-taxonomy #list-of-pages .btn-group > .btn-group:not(:first-child):not(:last-child) > a, body.page-taxonomy #list-of-subcategories .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .top-tasks .field-items .field-item .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .related-pages .field-items .field-item .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, body.page-taxonomy #list-of-pages .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, body.page-taxonomy #list-of-subcategories .btn-group > .btn-group:first-child:not(:last-child) > a:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, body.page-taxonomy #list-of-pages .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, body.page-taxonomy #list-of-subcategories .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, .top-tasks .field-items .field-item .btn-group > .btn-group:first-child:not(:last-child) > a:last-child, .related-pages .field-items .field-item .btn-group > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, body.page-taxonomy #list-of-pages .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, body.page-taxonomy #list-of-subcategories .btn-group > .btn-group:last-child:not(:first-child) > a:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, body.page-taxonomy #list-of-pages .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, body.page-taxonomy #list-of-subcategories .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, .top-tasks .field-items .field-item .btn-group > .btn-group:last-child:not(:first-child) > a:first-child, .related-pages .field-items .field-item .btn-group > .btn-group:last-child:not(:first-child) > a:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3392,11 +3432,11 @@ tbody.collapse.in {
 .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-.btn-group > .btn + .dropdown-toggle, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a + .dropdown-toggle, body.page-taxonomy #list-of-pages .btn-group > a + .dropdown-toggle, body.page-taxonomy #list-of-subcategories .btn-group > a + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group > a + .dropdown-toggle, body.page-taxonomy #list-of-pages .btn-group > a + .dropdown-toggle, body.page-taxonomy #list-of-subcategories .btn-group > a + .dropdown-toggle, .top-tasks .field-items .field-item .btn-group > a + .dropdown-toggle, .related-pages .field-items .field-item .btn-group > a + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-lg.btn-group > a + .dropdown-toggle, body.page-taxonomy #list-of-pages .btn-group-lg.btn-group > a + .dropdown-toggle, body.page-taxonomy #list-of-subcategories .btn-group-lg.btn-group > a + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-lg.btn-group > a + .dropdown-toggle, body.page-taxonomy #list-of-pages .btn-group-lg.btn-group > a + .dropdown-toggle, body.page-taxonomy #list-of-subcategories .btn-group-lg.btn-group > a + .dropdown-toggle, .top-tasks .field-items .field-item .btn-group-lg.btn-group > a + .dropdown-toggle, .related-pages .field-items .field-item .btn-group-lg.btn-group > a + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
 
@@ -3405,21 +3445,23 @@ tbody.collapse.in {
   .btn-group.open .dropdown-toggle.btn-link {
     box-shadow: none; }
 
-.btn .caret, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .caret, body.page-taxonomy #list-of-pages a .caret, body.page-taxonomy #list-of-subcategories a .caret {
+.btn .caret, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .caret, body.page-taxonomy #list-of-pages a .caret, body.page-taxonomy #list-of-subcategories a .caret, .top-tasks .field-items .field-item a .caret, .related-pages .field-items .field-item a .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-lg > a .caret, body.page-taxonomy #list-of-pages .btn-group-lg > a .caret, body.page-taxonomy #list-of-subcategories .btn-group-lg > a .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-lg > a .caret, body.page-taxonomy #list-of-pages .btn-group-lg > a .caret, body.page-taxonomy #list-of-subcategories .btn-group-lg > a .caret, .top-tasks .field-items .field-item .btn-group-lg > a .caret, .related-pages .field-items .field-item .btn-group-lg > a .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-lg > a .caret, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .dropup .btn-group-lg > a .caret, .dropup body.page-taxonomy #list-of-pages .btn-group-lg > a .caret, body.page-taxonomy #list-of-pages .dropup .btn-group-lg > a .caret, .dropup body.page-taxonomy #list-of-subcategories .btn-group-lg > a .caret, body.page-taxonomy #list-of-subcategories .dropup .btn-group-lg > a .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-lg > a .caret, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .dropup .btn-group-lg > a .caret, .dropup body.page-taxonomy #list-of-pages .btn-group-lg > a .caret, body.page-taxonomy #list-of-pages .dropup .btn-group-lg > a .caret, .dropup body.page-taxonomy #list-of-subcategories .btn-group-lg > a .caret, body.page-taxonomy #list-of-subcategories .dropup .btn-group-lg > a .caret, .dropup .top-tasks .field-items .field-item .btn-group-lg > a .caret, .top-tasks .field-items .field-item .dropup .btn-group-lg > a .caret, .dropup .related-pages .field-items .field-item .btn-group-lg > a .caret, .related-pages .field-items .field-item .dropup .btn-group-lg > a .caret {
   border-width: 0 5px 5px; }
 
-.btn-group-vertical > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a, body.page-taxonomy #list-of-pages .btn-group-vertical > a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > a,
+.btn-group-vertical > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a, body.page-taxonomy #list-of-pages .btn-group-vertical > a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > a, .top-tasks .field-items .field-item .btn-group-vertical > a, .related-pages .field-items .field-item .btn-group-vertical > a,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .btn-group-vertical > .btn-group > a, body.page-taxonomy #list-of-pages
 .btn-group-vertical > .btn-group > a, body.page-taxonomy #list-of-subcategories
+.btn-group-vertical > .btn-group > a, .top-tasks .field-items .field-item
+.btn-group-vertical > .btn-group > a, .related-pages .field-items .field-item
 .btn-group-vertical > .btn-group > a {
   display: block;
   float: none;
@@ -3433,46 +3475,50 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both; }
 
-.btn-group-vertical > .btn-group > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn-group > a, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn-group > a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn-group > a {
+.btn-group-vertical > .btn-group > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn-group > a, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn-group > a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn-group > a, .top-tasks .field-items .field-item .btn-group-vertical > .btn-group > a, .related-pages .field-items .field-item .btn-group-vertical > .btn-group > a {
   float: none; }
 
-.btn-group-vertical > .btn + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a + .btn, body.page-taxonomy #list-of-pages .btn-group-vertical > a + .btn, body.page-taxonomy #list-of-subcategories .btn-group-vertical > a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a + a, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn + a, body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a + a, body.page-taxonomy #list-of-pages .btn-group-vertical > a + a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn + a, body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a + a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > a + a,
+.btn-group-vertical > .btn + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a + .btn, body.page-taxonomy #list-of-pages .btn-group-vertical > a + .btn, body.page-taxonomy #list-of-subcategories .btn-group-vertical > a + .btn, .top-tasks .field-items .field-item .btn-group-vertical > a + .btn, .related-pages .field-items .field-item .btn-group-vertical > a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a + a, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn + a, body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a + a, body.page-taxonomy #list-of-pages .btn-group-vertical > a + a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn + a, body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a + a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > a + a, .top-tasks .field-items .field-item .btn-group-vertical > .btn + a, body.page-taxonomy #list-of-pages .top-tasks .field-items .field-item .btn-group-vertical > a + a, body.page-taxonomy #list-of-subcategories .top-tasks .field-items .field-item .btn-group-vertical > a + a, .top-tasks .field-items .field-item .btn-group-vertical > a + a, .related-pages .field-items .field-item .btn-group-vertical > .btn + a, body.page-taxonomy #list-of-pages .related-pages .field-items .field-item .btn-group-vertical > a + a, body.page-taxonomy #list-of-subcategories .related-pages .field-items .field-item .btn-group-vertical > a + a, .related-pages .field-items .field-item .btn-group-vertical > a + a,
 .btn-group-vertical > .btn + .btn-group, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .btn-group-vertical > a + .btn-group, body.page-taxonomy #list-of-pages
 .btn-group-vertical > a + .btn-group, body.page-taxonomy #list-of-subcategories
+.btn-group-vertical > a + .btn-group, .top-tasks .field-items .field-item
+.btn-group-vertical > a + .btn-group, .related-pages .field-items .field-item
 .btn-group-vertical > a + .btn-group,
 .btn-group-vertical > .btn-group + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .btn-group-vertical > .btn-group + a, body.page-taxonomy #list-of-pages
 .btn-group-vertical > .btn-group + a, body.page-taxonomy #list-of-subcategories
+.btn-group-vertical > .btn-group + a, .top-tasks .field-items .field-item
+.btn-group-vertical > .btn-group + a, .related-pages .field-items .field-item
 .btn-group-vertical > .btn-group + a,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a:not(:first-child):not(:last-child), body.page-taxonomy #list-of-pages .btn-group-vertical > a:not(:first-child):not(:last-child), body.page-taxonomy #list-of-subcategories .btn-group-vertical > a:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a:not(:first-child):not(:last-child), body.page-taxonomy #list-of-pages .btn-group-vertical > a:not(:first-child):not(:last-child), body.page-taxonomy #list-of-subcategories .btn-group-vertical > a:not(:first-child):not(:last-child), .top-tasks .field-items .field-item .btn-group-vertical > a:not(:first-child):not(:last-child), .related-pages .field-items .field-item .btn-group-vertical > a:not(:first-child):not(:last-child) {
   border-radius: 0; }
 
-.btn-group-vertical > .btn:first-child:not(:last-child), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a:first-child:not(:last-child), body.page-taxonomy #list-of-pages .btn-group-vertical > a:first-child:not(:last-child), body.page-taxonomy #list-of-subcategories .btn-group-vertical > a:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a:first-child:not(:last-child), body.page-taxonomy #list-of-pages .btn-group-vertical > a:first-child:not(:last-child), body.page-taxonomy #list-of-subcategories .btn-group-vertical > a:first-child:not(:last-child), .top-tasks .field-items .field-item .btn-group-vertical > a:first-child:not(:last-child), .related-pages .field-items .field-item .btn-group-vertical > a:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn:last-child:not(:first-child), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a:last-child:not(:first-child), body.page-taxonomy #list-of-pages .btn-group-vertical > a:last-child:not(:first-child), body.page-taxonomy #list-of-subcategories .btn-group-vertical > a:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > a:last-child:not(:first-child), body.page-taxonomy #list-of-pages .btn-group-vertical > a:last-child:not(:first-child), body.page-taxonomy #list-of-subcategories .btn-group-vertical > a:last-child:not(:first-child), .top-tasks .field-items .field-item .btn-group-vertical > a:last-child:not(:first-child), .related-pages .field-items .field-item .btn-group-vertical > a:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .top-tasks .field-items .field-item .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .related-pages .field-items .field-item .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .top-tasks .field-items .field-item .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .related-pages .field-items .field-item .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, body.page-taxonomy #list-of-pages .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, body.page-taxonomy #list-of-subcategories .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .top-tasks .field-items .field-item .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .related-pages .field-items .field-item .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
@@ -3481,28 +3527,34 @@ tbody.collapse.in {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate; }
-  .btn-group-justified > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-justified > a, body.page-taxonomy #list-of-pages .btn-group-justified > a, body.page-taxonomy #list-of-subcategories .btn-group-justified > a,
+  .btn-group-justified > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-justified > a, body.page-taxonomy #list-of-pages .btn-group-justified > a, body.page-taxonomy #list-of-subcategories .btn-group-justified > a, .top-tasks .field-items .field-item .btn-group-justified > a, .related-pages .field-items .field-item .btn-group-justified > a,
   .btn-group-justified > .btn-group {
     float: none;
     display: table-cell;
     width: 1%; }
-  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .btn-group-justified > .btn-group a {
+  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group .related-pages .field-items .field-item a, .related-pages .field-items .field-item .btn-group-justified > .btn-group a {
     width: 100%; }
   .btn-group-justified > .btn-group .dropdown-menu {
     left: auto; }
 
-[data-toggle="buttons"] > .btn input[type="radio"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks [data-toggle="buttons"] > a input[type="radio"], body.page-taxonomy #list-of-pages [data-toggle="buttons"] > a input[type="radio"], body.page-taxonomy #list-of-subcategories [data-toggle="buttons"] > a input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks [data-toggle="buttons"] > a input[type="radio"], body.page-taxonomy #list-of-pages [data-toggle="buttons"] > a input[type="radio"], body.page-taxonomy #list-of-subcategories [data-toggle="buttons"] > a input[type="radio"], .top-tasks .field-items .field-item [data-toggle="buttons"] > a input[type="radio"], .related-pages .field-items .field-item [data-toggle="buttons"] > a input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 [data-toggle="buttons"] > a input[type="checkbox"], body.page-taxonomy #list-of-pages
 [data-toggle="buttons"] > a input[type="checkbox"], body.page-taxonomy #list-of-subcategories
+[data-toggle="buttons"] > a input[type="checkbox"], .top-tasks .field-items .field-item
+[data-toggle="buttons"] > a input[type="checkbox"], .related-pages .field-items .field-item
 [data-toggle="buttons"] > a input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 [data-toggle="buttons"] > .btn-group > a input[type="radio"], body.page-taxonomy #list-of-pages
 [data-toggle="buttons"] > .btn-group > a input[type="radio"], body.page-taxonomy #list-of-subcategories
+[data-toggle="buttons"] > .btn-group > a input[type="radio"], .top-tasks .field-items .field-item
+[data-toggle="buttons"] > .btn-group > a input[type="radio"], .related-pages .field-items .field-item
 [data-toggle="buttons"] > .btn-group > a input[type="radio"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 [data-toggle="buttons"] > .btn-group > a input[type="checkbox"], body.page-taxonomy #list-of-pages
 [data-toggle="buttons"] > .btn-group > a input[type="checkbox"], body.page-taxonomy #list-of-subcategories
+[data-toggle="buttons"] > .btn-group > a input[type="checkbox"], .top-tasks .field-items .field-item
+[data-toggle="buttons"] > .btn-group > a input[type="checkbox"], .related-pages .field-items .field-item
 [data-toggle="buttons"] > .btn-group > a input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -3555,6 +3607,8 @@ tbody.collapse.in {
   .input-group-sm > .input-group-btn > .input-group-addon.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
   .input-group-sm > .input-group-btn > a.input-group-addon, body.page-taxonomy #list-of-pages
   .input-group-sm > .input-group-btn > a.input-group-addon, body.page-taxonomy #list-of-subcategories
+  .input-group-sm > .input-group-btn > a.input-group-addon, .top-tasks .field-items .field-item
+  .input-group-sm > .input-group-btn > a.input-group-addon, .related-pages .field-items .field-item
   .input-group-sm > .input-group-btn > a.input-group-addon {
     padding: 5px 10px;
     font-size: 16px;
@@ -3564,6 +3618,8 @@ tbody.collapse.in {
   .input-group-lg > .input-group-btn > .input-group-addon.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
   .input-group-lg > .input-group-btn > a.input-group-addon, body.page-taxonomy #list-of-pages
   .input-group-lg > .input-group-btn > a.input-group-addon, body.page-taxonomy #list-of-subcategories
+  .input-group-lg > .input-group-btn > a.input-group-addon, .top-tasks .field-items .field-item
+  .input-group-lg > .input-group-btn > a.input-group-addon, .related-pages .field-items .field-item
   .input-group-lg > .input-group-btn > a.input-group-addon {
     padding: 10px 16px;
     font-size: 23px;
@@ -3577,19 +3633,27 @@ tbody.collapse.in {
 .input-group-btn:first-child > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-btn:first-child > a, body.page-taxonomy #list-of-pages
 .input-group-btn:first-child > a, body.page-taxonomy #list-of-subcategories
+.input-group-btn:first-child > a, .top-tasks .field-items .field-item
+.input-group-btn:first-child > a, .related-pages .field-items .field-item
 .input-group-btn:first-child > a,
 .input-group-btn:first-child > .btn-group > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-btn:first-child > .btn-group > a, body.page-taxonomy #list-of-pages
 .input-group-btn:first-child > .btn-group > a, body.page-taxonomy #list-of-subcategories
+.input-group-btn:first-child > .btn-group > a, .top-tasks .field-items .field-item
+.input-group-btn:first-child > .btn-group > a, .related-pages .field-items .field-item
 .input-group-btn:first-child > .btn-group > a,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-pages
 .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle), body.page-taxonomy #list-of-subcategories
+.input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle), .top-tasks .field-items .field-item
+.input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle), .related-pages .field-items .field-item
 .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-btn:last-child > .btn-group:not(:last-child) > a, body.page-taxonomy #list-of-pages
 .input-group-btn:last-child > .btn-group:not(:last-child) > a, body.page-taxonomy #list-of-subcategories
+.input-group-btn:last-child > .btn-group:not(:last-child) > a, .top-tasks .field-items .field-item
+.input-group-btn:last-child > .btn-group:not(:last-child) > a, .related-pages .field-items .field-item
 .input-group-btn:last-child > .btn-group:not(:last-child) > a {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
@@ -3602,19 +3666,27 @@ tbody.collapse.in {
 .input-group-btn:last-child > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-btn:last-child > a, body.page-taxonomy #list-of-pages
 .input-group-btn:last-child > a, body.page-taxonomy #list-of-subcategories
+.input-group-btn:last-child > a, .top-tasks .field-items .field-item
+.input-group-btn:last-child > a, .related-pages .field-items .field-item
 .input-group-btn:last-child > a,
 .input-group-btn:last-child > .btn-group > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-btn:last-child > .btn-group > a, body.page-taxonomy #list-of-pages
 .input-group-btn:last-child > .btn-group > a, body.page-taxonomy #list-of-subcategories
+.input-group-btn:last-child > .btn-group > a, .top-tasks .field-items .field-item
+.input-group-btn:last-child > .btn-group > a, .related-pages .field-items .field-item
 .input-group-btn:last-child > .btn-group > a,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child), body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-btn:first-child > a:not(:first-child), body.page-taxonomy #list-of-pages
 .input-group-btn:first-child > a:not(:first-child), body.page-taxonomy #list-of-subcategories
+.input-group-btn:first-child > a:not(:first-child), .top-tasks .field-items .field-item
+.input-group-btn:first-child > a:not(:first-child), .related-pages .field-items .field-item
 .input-group-btn:first-child > a:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
 .input-group-btn:first-child > .btn-group:not(:first-child) > a, body.page-taxonomy #list-of-pages
 .input-group-btn:first-child > .btn-group:not(:first-child) > a, body.page-taxonomy #list-of-subcategories
+.input-group-btn:first-child > .btn-group:not(:first-child) > a, .top-tasks .field-items .field-item
+.input-group-btn:first-child > .btn-group:not(:first-child) > a, .related-pages .field-items .field-item
 .input-group-btn:first-child > .btn-group:not(:first-child) > a {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -3626,16 +3698,16 @@ tbody.collapse.in {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a, body.page-taxonomy #list-of-pages .input-group-btn > a, body.page-taxonomy #list-of-subcategories .input-group-btn > a {
+  .input-group-btn > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a, body.page-taxonomy #list-of-pages .input-group-btn > a, body.page-taxonomy #list-of-subcategories .input-group-btn > a, .top-tasks .field-items .field-item .input-group-btn > a, .related-pages .field-items .field-item .input-group-btn > a {
     position: relative; }
-    .input-group-btn > .btn + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a + .btn, body.page-taxonomy #list-of-pages .input-group-btn > a + .btn, body.page-taxonomy #list-of-subcategories .input-group-btn > a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a + a, body.page-taxonomy #list-of-pages .input-group-btn > .btn + a, body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a + a, body.page-taxonomy #list-of-pages .input-group-btn > a + a, body.page-taxonomy #list-of-subcategories .input-group-btn > .btn + a, body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a + a, body.page-taxonomy #list-of-subcategories .input-group-btn > a + a {
+    .input-group-btn > .btn + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a + .btn, body.page-taxonomy #list-of-pages .input-group-btn > a + .btn, body.page-taxonomy #list-of-subcategories .input-group-btn > a + .btn, .top-tasks .field-items .field-item .input-group-btn > a + .btn, .related-pages .field-items .field-item .input-group-btn > a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a + a, body.page-taxonomy #list-of-pages .input-group-btn > .btn + a, body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a + a, body.page-taxonomy #list-of-pages .input-group-btn > a + a, body.page-taxonomy #list-of-subcategories .input-group-btn > .btn + a, body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a + a, body.page-taxonomy #list-of-subcategories .input-group-btn > a + a, .top-tasks .field-items .field-item .input-group-btn > .btn + a, body.page-taxonomy #list-of-pages .top-tasks .field-items .field-item .input-group-btn > a + a, body.page-taxonomy #list-of-subcategories .top-tasks .field-items .field-item .input-group-btn > a + a, .top-tasks .field-items .field-item .input-group-btn > a + a, .related-pages .field-items .field-item .input-group-btn > .btn + a, body.page-taxonomy #list-of-pages .related-pages .field-items .field-item .input-group-btn > a + a, body.page-taxonomy #list-of-subcategories .related-pages .field-items .field-item .input-group-btn > a + a, .related-pages .field-items .field-item .input-group-btn > a + a {
       margin-left: -1px; }
-    .input-group-btn > .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a:hover, body.page-taxonomy #list-of-pages .input-group-btn > a:hover, body.page-taxonomy #list-of-subcategories .input-group-btn > a:hover, .input-group-btn > .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a:focus, body.page-taxonomy #list-of-pages .input-group-btn > a:focus, body.page-taxonomy #list-of-subcategories .input-group-btn > a:focus, .input-group-btn > .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a:active, body.page-taxonomy #list-of-pages .input-group-btn > a:active, body.page-taxonomy #list-of-subcategories .input-group-btn > a:active {
+    .input-group-btn > .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a:hover, body.page-taxonomy #list-of-pages .input-group-btn > a:hover, body.page-taxonomy #list-of-subcategories .input-group-btn > a:hover, .top-tasks .field-items .field-item .input-group-btn > a:hover, .related-pages .field-items .field-item .input-group-btn > a:hover, .input-group-btn > .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a:focus, body.page-taxonomy #list-of-pages .input-group-btn > a:focus, body.page-taxonomy #list-of-subcategories .input-group-btn > a:focus, .top-tasks .field-items .field-item .input-group-btn > a:focus, .related-pages .field-items .field-item .input-group-btn > a:focus, .input-group-btn > .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn > a:active, body.page-taxonomy #list-of-pages .input-group-btn > a:active, body.page-taxonomy #list-of-subcategories .input-group-btn > a:active, .top-tasks .field-items .field-item .input-group-btn > a:active, .related-pages .field-items .field-item .input-group-btn > a:active {
       z-index: 2; }
-  .input-group-btn:first-child > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn:first-child > a, body.page-taxonomy #list-of-pages .input-group-btn:first-child > a, body.page-taxonomy #list-of-subcategories .input-group-btn:first-child > a,
+  .input-group-btn:first-child > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn:first-child > a, body.page-taxonomy #list-of-pages .input-group-btn:first-child > a, body.page-taxonomy #list-of-subcategories .input-group-btn:first-child > a, .top-tasks .field-items .field-item .input-group-btn:first-child > a, .related-pages .field-items .field-item .input-group-btn:first-child > a,
   .input-group-btn:first-child > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:last-child > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn:last-child > a, body.page-taxonomy #list-of-pages .input-group-btn:last-child > a, body.page-taxonomy #list-of-subcategories .input-group-btn:last-child > a,
+  .input-group-btn:last-child > .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn:last-child > a, body.page-taxonomy #list-of-pages .input-group-btn:last-child > a, body.page-taxonomy #list-of-subcategories .input-group-btn:last-child > a, .top-tasks .field-items .field-item .input-group-btn:last-child > a, .related-pages .field-items .field-item .input-group-btn:last-child > a,
   .input-group-btn:last-child > .btn-group {
     z-index: 2;
     margin-left: -1px; }
@@ -4012,10 +4084,10 @@ tbody.collapse.in {
 .navbar-btn {
   margin-top: 5.5px;
   margin-bottom: 5.5px; }
-  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-sm > a.navbar-btn, body.page-taxonomy #list-of-pages .btn-group-sm > a.navbar-btn, body.page-taxonomy #list-of-subcategories .btn-group-sm > a.navbar-btn {
+  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-sm > a.navbar-btn, body.page-taxonomy #list-of-pages .btn-group-sm > a.navbar-btn, body.page-taxonomy #list-of-subcategories .btn-group-sm > a.navbar-btn, .top-tasks .field-items .field-item .btn-group-sm > a.navbar-btn, .related-pages .field-items .field-item .btn-group-sm > a.navbar-btn {
     margin-top: 7px;
     margin-bottom: 7px; }
-  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-xs > a.navbar-btn, body.page-taxonomy #list-of-pages .btn-group-xs > a.navbar-btn, body.page-taxonomy #list-of-subcategories .btn-group-xs > a.navbar-btn {
+  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-xs > a.navbar-btn, body.page-taxonomy #list-of-pages .btn-group-xs > a.navbar-btn, body.page-taxonomy #list-of-subcategories .btn-group-xs > a.navbar-btn, .top-tasks .field-items .field-item .btn-group-xs > a.navbar-btn, .related-pages .field-items .field-item .btn-group-xs > a.navbar-btn {
     margin-top: 14px;
     margin-bottom: 14px; }
 
@@ -4308,7 +4380,7 @@ tbody.collapse.in {
   border-radius: .25em; }
   .label:empty {
     display: none; }
-  .btn .label, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .label, body.page-taxonomy #list-of-pages a .label, body.page-taxonomy #list-of-subcategories a .label {
+  .btn .label, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .label, body.page-taxonomy #list-of-pages a .label, body.page-taxonomy #list-of-subcategories a .label, .top-tasks .field-items .field-item a .label, .related-pages .field-items .field-item a .label {
     position: relative;
     top: -1px; }
 
@@ -4362,13 +4434,15 @@ a.label:hover, a.label:focus {
   border-radius: 10px; }
   .badge:empty {
     display: none; }
-  .btn .badge, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .badge, body.page-taxonomy #list-of-pages a .badge, body.page-taxonomy #list-of-subcategories a .badge {
+  .btn .badge, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .badge, body.page-taxonomy #list-of-pages a .badge, body.page-taxonomy #list-of-subcategories a .badge, .top-tasks .field-items .field-item a .badge, .related-pages .field-items .field-item a .badge {
     position: relative;
     top: -1px; }
-  .btn-xs .badge, .btn-group-xs > .btn .badge, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-xs > a .badge, body.page-taxonomy #list-of-pages .btn-group-xs > a .badge, body.page-taxonomy #list-of-subcategories .btn-group-xs > a .badge,
+  .btn-xs .badge, .btn-group-xs > .btn .badge, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn-group-xs > a .badge, body.page-taxonomy #list-of-pages .btn-group-xs > a .badge, body.page-taxonomy #list-of-subcategories .btn-group-xs > a .badge, .top-tasks .field-items .field-item .btn-group-xs > a .badge, .related-pages .field-items .field-item .btn-group-xs > a .badge,
   .btn-group-xs > .btn .badge, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
   .btn-group-xs > a .badge, body.page-taxonomy #list-of-pages
   .btn-group-xs > a .badge, body.page-taxonomy #list-of-subcategories
+  .btn-group-xs > a .badge, .top-tasks .field-items .field-item
+  .btn-group-xs > a .badge, .related-pages .field-items .field-item
   .btn-group-xs > a .badge {
     top: 0;
     padding: 1px 5px; }
@@ -5242,10 +5316,10 @@ button.close {
     display: table; }
   .modal-footer:after {
     clear: both; }
-  .modal-footer .btn + .btn, .modal-footer body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer a + .btn, .modal-footer body.page-taxonomy #list-of-pages a + .btn, body.page-taxonomy #list-of-pages .modal-footer a + .btn, .modal-footer body.page-taxonomy #list-of-subcategories a + .btn, body.page-taxonomy #list-of-subcategories .modal-footer a + .btn, .modal-footer body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn + a, .modal-footer body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer a + a, body.page-taxonomy #list-of-pages .modal-footer .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy #list-of-subcategories .modal-footer .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, .modal-footer body.page-taxonomy #list-of-pages .btn + a, body.page-taxonomy #list-of-pages .modal-footer .btn + a, .modal-footer body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer #list-of-pages a + a, .modal-footer body.page-taxonomy #list-of-pages a + a, body.page-taxonomy #list-of-pages .modal-footer a + a, body.page-taxonomy #list-of-subcategories .modal-footer #list-of-pages a + a, .modal-footer body.page-taxonomy #list-of-subcategories .btn + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn + a, .modal-footer body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer #list-of-subcategories a + a, body.page-taxonomy #list-of-pages .modal-footer #list-of-subcategories a + a, .modal-footer body.page-taxonomy #list-of-subcategories a + a, body.page-taxonomy #list-of-subcategories .modal-footer a + a {
+  .modal-footer .btn + .btn, .modal-footer body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer a + .btn, .modal-footer body.page-taxonomy #list-of-pages a + .btn, body.page-taxonomy #list-of-pages .modal-footer a + .btn, .modal-footer body.page-taxonomy #list-of-subcategories a + .btn, body.page-taxonomy #list-of-subcategories .modal-footer a + .btn, .modal-footer .top-tasks .field-items .field-item a + .btn, .top-tasks .field-items .field-item .modal-footer a + .btn, .modal-footer .related-pages .field-items .field-item a + .btn, .related-pages .field-items .field-item .modal-footer a + .btn, .modal-footer body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn + a, .modal-footer body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer a + a, body.page-taxonomy #list-of-pages .modal-footer .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy #list-of-subcategories .modal-footer .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, .modal-footer body.page-taxonomy #list-of-pages .btn + a, body.page-taxonomy #list-of-pages .modal-footer .btn + a, .modal-footer body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer #list-of-pages a + a, .modal-footer body.page-taxonomy #list-of-pages a + a, body.page-taxonomy #list-of-pages .modal-footer a + a, body.page-taxonomy #list-of-subcategories .modal-footer #list-of-pages a + a, .modal-footer body.page-taxonomy #list-of-subcategories .btn + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn + a, .modal-footer body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer #list-of-subcategories a + a, body.page-taxonomy #list-of-pages .modal-footer #list-of-subcategories a + a, .modal-footer body.page-taxonomy #list-of-subcategories a + a, body.page-taxonomy #list-of-subcategories .modal-footer a + a, .modal-footer .top-tasks .field-items .field-item .btn + a, .top-tasks .field-items .field-item .modal-footer .btn + a, .modal-footer body.page-taxonomy #list-of-pages .top-tasks .field-items .field-item a + a, body.page-taxonomy #list-of-pages .modal-footer .top-tasks .field-items .field-item a + a, .modal-footer body.page-taxonomy #list-of-subcategories .top-tasks .field-items .field-item a + a, body.page-taxonomy #list-of-subcategories .modal-footer .top-tasks .field-items .field-item a + a, .modal-footer .top-tasks .field-items .field-item a + a, .top-tasks .field-items .field-item .modal-footer a + a, .modal-footer .related-pages .field-items .field-item .btn + a, .related-pages .field-items .field-item .modal-footer .btn + a, .modal-footer body.page-taxonomy #list-of-pages .related-pages .field-items .field-item a + a, body.page-taxonomy #list-of-pages .modal-footer .related-pages .field-items .field-item a + a, .modal-footer body.page-taxonomy #list-of-subcategories .related-pages .field-items .field-item a + a, body.page-taxonomy #list-of-subcategories .modal-footer .related-pages .field-items .field-item a + a, .modal-footer .related-pages .field-items .field-item a + a, .related-pages .field-items .field-item .modal-footer a + a {
     margin-left: 5px;
     margin-bottom: 0; }
-  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group a + .btn, .modal-footer .btn-group body.page-taxonomy #list-of-pages a + .btn, body.page-taxonomy #list-of-pages .modal-footer .btn-group a + .btn, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories a + .btn, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group a + .btn, .modal-footer .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group .btn + a, .modal-footer .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group a + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, .modal-footer .btn-group body.page-taxonomy #list-of-pages .btn + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group .btn + a, .modal-footer .btn-group body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group #list-of-pages a + a, .modal-footer .btn-group body.page-taxonomy #list-of-pages a + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group a + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group #list-of-pages a + a, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories .btn + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group .btn + a, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group #list-of-subcategories a + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group #list-of-subcategories a + a, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories a + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group a + a {
+  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + .btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group a + .btn, .modal-footer .btn-group body.page-taxonomy #list-of-pages a + .btn, body.page-taxonomy #list-of-pages .modal-footer .btn-group a + .btn, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories a + .btn, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group a + .btn, .modal-footer .btn-group .top-tasks .field-items .field-item a + .btn, .top-tasks .field-items .field-item .modal-footer .btn-group a + .btn, .modal-footer .btn-group .related-pages .field-items .field-item a + .btn, .related-pages .field-items .field-item .modal-footer .btn-group a + .btn, .modal-footer .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group .btn + a, .modal-footer .btn-group body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group a + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, .modal-footer .btn-group body.page-taxonomy #list-of-pages .btn + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group .btn + a, .modal-footer .btn-group body.page-taxonomy #list-of-pages .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group #list-of-pages a + a, .modal-footer .btn-group body.page-taxonomy #list-of-pages a + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group a + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group #list-of-pages a + a, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories .btn + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group .btn + a, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a + a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .modal-footer .btn-group #list-of-subcategories a + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group #list-of-subcategories a + a, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories a + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group a + a, .modal-footer .btn-group .top-tasks .field-items .field-item .btn + a, .top-tasks .field-items .field-item .modal-footer .btn-group .btn + a, .modal-footer .btn-group body.page-taxonomy #list-of-pages .top-tasks .field-items .field-item a + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group .top-tasks .field-items .field-item a + a, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories .top-tasks .field-items .field-item a + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group .top-tasks .field-items .field-item a + a, .modal-footer .btn-group .top-tasks .field-items .field-item a + a, .top-tasks .field-items .field-item .modal-footer .btn-group a + a, .modal-footer .btn-group .related-pages .field-items .field-item .btn + a, .related-pages .field-items .field-item .modal-footer .btn-group .btn + a, .modal-footer .btn-group body.page-taxonomy #list-of-pages .related-pages .field-items .field-item a + a, body.page-taxonomy #list-of-pages .modal-footer .btn-group .related-pages .field-items .field-item a + a, .modal-footer .btn-group body.page-taxonomy #list-of-subcategories .related-pages .field-items .field-item a + a, body.page-taxonomy #list-of-subcategories .modal-footer .btn-group .related-pages .field-items .field-item a + a, .modal-footer .btn-group .related-pages .field-items .field-item a + a, .related-pages .field-items .field-item .modal-footer .btn-group a + a {
     margin-left: -1px; }
   .modal-footer .btn-block + .btn-block {
     margin-left: 0; }
@@ -5660,7 +5734,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn, .carousel-caption body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .carousel-caption a, .carousel-caption body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .carousel-caption a, .carousel-caption body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .carousel-caption a {
+  .carousel-caption .btn, .carousel-caption body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .carousel-caption a, .carousel-caption body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .carousel-caption a, .carousel-caption body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .carousel-caption a, .carousel-caption .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item .carousel-caption a, .carousel-caption .related-pages .field-items .field-item a, .related-pages .field-items .field-item .carousel-caption a {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -6077,7 +6151,7 @@ button.close {
 /*
 * Typographical settings.
 */
-.line-wrapping, .btn.key-task, .btn.sub-task, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a {
+.line-wrapping, .btn.key-task, .btn.sub-task, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, .related-pages .field-items .field-item a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, .top-tasks .field-items .field-item a {
   white-space: pre-line; }
 
 body {
@@ -6213,7 +6287,7 @@ h6 a {
       -o-column-gap: 2em;
       column-gap: 3em; } }
 
-.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a {
+.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, .top-tasks .field-items .field-item a, .related-pages .field-items .field-item a {
   padding: 12px; }
 
 .text-light-lg {
@@ -6254,7 +6328,7 @@ hr {
   background: #899065; }
 
 .green-x-light, body.page-taxonomy .pane-taxonomy-term-field-category-tasks {
-  background: #ced1bd; }
+  background: #b3bc9d; }
 
 .block-30, #block-views-related-links-taxonomy-block .view-content, body.page-taxonomy #list-of-additional-pages .view-content {
   margin-bottom: 30px; }
@@ -6343,19 +6417,19 @@ aside h5, .news-leader, aside.news-aside article, body.page-taxonomy #block-view
 * ===============================
 */
 @media (max-width: 550px) {
-  .block-30.call-to-actions, #block-views-related-links-taxonomy-block .call-to-actions.view-content, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-pages, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-pages, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-subcategories, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-subcategories, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content, body.page-taxonomy .block-30#list-of-pages, body.page-taxonomy #list-of-additional-pages #list-of-pages.view-content, body.page-taxonomy .block-30#list-of-subcategories, body.page-taxonomy #list-of-additional-pages #list-of-subcategories.view-content, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content {
+  .block-30.call-to-actions, #block-views-related-links-taxonomy-block .call-to-actions.view-content, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-pages, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-pages, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-subcategories, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-subcategories, #block-views-related-links-taxonomy-block .view-content.top-tasks, #block-views-related-links-taxonomy-block .view-content.related-pages, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content, body.page-taxonomy .block-30#list-of-pages, body.page-taxonomy #list-of-additional-pages #list-of-pages.view-content, body.page-taxonomy .block-30#list-of-subcategories, body.page-taxonomy #list-of-additional-pages #list-of-subcategories.view-content, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content, body.page-taxonomy #list-of-additional-pages .view-content.top-tasks, body.page-taxonomy #list-of-additional-pages .view-content.related-pages, .block-30.top-tasks, .block-30.related-pages {
     margin-left: -15px;
     margin-right: -15px; } }
 
-.block-30.call-to-actions .sub-task, #block-views-related-links-taxonomy-block .call-to-actions.view-content .sub-task, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks .sub-task, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks .sub-task, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-pages .sub-task, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-pages .sub-task, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-subcategories .sub-task, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-subcategories .sub-task, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks .sub-task, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content .sub-task, body.page-taxonomy .block-30#list-of-pages .sub-task, body.page-taxonomy #list-of-additional-pages #list-of-pages.view-content .sub-task, body.page-taxonomy .block-30#list-of-subcategories .sub-task, body.page-taxonomy #list-of-additional-pages #list-of-subcategories.view-content .sub-task, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content .sub-task, .block-30.call-to-actions body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .block-30.call-to-actions a, #block-views-related-links-taxonomy-block .call-to-actions.view-content body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages #block-views-related-links-taxonomy-block .call-to-actions.view-content a, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks #list-of-pages a, #block-views-related-links-taxonomy-block body.page-taxonomy #list-of-pages .view-content.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks #list-of-pages a, body.page-taxonomy #list-of-pages #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks a, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-pages a, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-pages a, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks #list-of-pages a, body.page-taxonomy #list-of-pages .block-30.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content #list-of-pages a, body.page-taxonomy #list-of-pages #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content a, body.page-taxonomy .block-30#list-of-pages a, body.page-taxonomy #list-of-additional-pages #list-of-pages.view-content a, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content #list-of-pages a, body.page-taxonomy #list-of-pages #list-of-additional-pages .call-to-actions.view-content a, .block-30.call-to-actions body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .block-30.call-to-actions a, #block-views-related-links-taxonomy-block .call-to-actions.view-content body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #block-views-related-links-taxonomy-block .call-to-actions.view-content a, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks #list-of-subcategories a, #block-views-related-links-taxonomy-block body.page-taxonomy #list-of-subcategories .view-content.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks a, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-subcategories a, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-subcategories a, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .block-30.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content a, body.page-taxonomy .block-30#list-of-subcategories a, body.page-taxonomy #list-of-additional-pages #list-of-subcategories.view-content a, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #list-of-additional-pages .call-to-actions.view-content a {
+.block-30.call-to-actions .sub-task, #block-views-related-links-taxonomy-block .call-to-actions.view-content .sub-task, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks .sub-task, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks .sub-task, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-pages .sub-task, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-pages .sub-task, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-subcategories .sub-task, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-subcategories .sub-task, #block-views-related-links-taxonomy-block .view-content.top-tasks .sub-task, #block-views-related-links-taxonomy-block .view-content.related-pages .sub-task, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks .sub-task, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content .sub-task, body.page-taxonomy .block-30#list-of-pages .sub-task, body.page-taxonomy #list-of-additional-pages #list-of-pages.view-content .sub-task, body.page-taxonomy .block-30#list-of-subcategories .sub-task, body.page-taxonomy #list-of-additional-pages #list-of-subcategories.view-content .sub-task, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content .sub-task, body.page-taxonomy #list-of-additional-pages .view-content.top-tasks .sub-task, body.page-taxonomy #list-of-additional-pages .view-content.related-pages .sub-task, .block-30.top-tasks .sub-task, .block-30.related-pages .sub-task, .block-30.call-to-actions body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .block-30.call-to-actions a, #block-views-related-links-taxonomy-block .call-to-actions.view-content body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages #block-views-related-links-taxonomy-block .call-to-actions.view-content a, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks #list-of-pages a, #block-views-related-links-taxonomy-block body.page-taxonomy #list-of-pages .view-content.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks #list-of-pages a, body.page-taxonomy #list-of-pages #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks a, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-pages a, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-pages a, #block-views-related-links-taxonomy-block .view-content.top-tasks body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages #block-views-related-links-taxonomy-block .view-content.top-tasks a, #block-views-related-links-taxonomy-block .view-content.related-pages body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages #block-views-related-links-taxonomy-block .view-content.related-pages a, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks #list-of-pages a, body.page-taxonomy #list-of-pages .block-30.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content #list-of-pages a, body.page-taxonomy #list-of-pages #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content a, body.page-taxonomy .block-30#list-of-pages a, body.page-taxonomy #list-of-additional-pages #list-of-pages.view-content a, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content #list-of-pages a, body.page-taxonomy #list-of-pages #list-of-additional-pages .call-to-actions.view-content a, body.page-taxonomy #list-of-additional-pages .view-content.top-tasks #list-of-pages a, body.page-taxonomy #list-of-pages #list-of-additional-pages .view-content.top-tasks a, body.page-taxonomy #list-of-additional-pages .view-content.related-pages #list-of-pages a, body.page-taxonomy #list-of-pages #list-of-additional-pages .view-content.related-pages a, .block-30.top-tasks body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .block-30.top-tasks a, .block-30.related-pages body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .block-30.related-pages a, .block-30.call-to-actions body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .block-30.call-to-actions a, #block-views-related-links-taxonomy-block .call-to-actions.view-content body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #block-views-related-links-taxonomy-block .call-to-actions.view-content a, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks #list-of-subcategories a, #block-views-related-links-taxonomy-block body.page-taxonomy #list-of-subcategories .view-content.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks a, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content#list-of-subcategories a, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content#list-of-subcategories a, #block-views-related-links-taxonomy-block .view-content.top-tasks body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #block-views-related-links-taxonomy-block .view-content.top-tasks a, #block-views-related-links-taxonomy-block .view-content.related-pages body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #block-views-related-links-taxonomy-block .view-content.related-pages a, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .block-30.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content a, body.page-taxonomy .block-30#list-of-subcategories a, body.page-taxonomy #list-of-additional-pages #list-of-subcategories.view-content a, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #list-of-additional-pages .call-to-actions.view-content a, body.page-taxonomy #list-of-additional-pages .view-content.top-tasks #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #list-of-additional-pages .view-content.top-tasks a, body.page-taxonomy #list-of-additional-pages .view-content.related-pages #list-of-subcategories a, body.page-taxonomy #list-of-subcategories #list-of-additional-pages .view-content.related-pages a, .block-30.top-tasks body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .block-30.top-tasks a, .block-30.related-pages body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .block-30.related-pages a, .block-30.call-to-actions .related-pages .field-items .field-item a, .related-pages .field-items .field-item .block-30.call-to-actions a, #block-views-related-links-taxonomy-block .call-to-actions.view-content .related-pages .field-items .field-item a, .related-pages .field-items .field-item #block-views-related-links-taxonomy-block .call-to-actions.view-content a, #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks .related-pages .field-items .field-item a, .related-pages .field-items .field-item #block-views-related-links-taxonomy-block body.page-taxonomy .view-content.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks .related-pages .field-items .field-item a, .related-pages .field-items .field-item body.page-taxonomy #block-views-related-links-taxonomy-block .view-content.pane-taxonomy-term-field-category-tasks a, #block-views-related-links-taxonomy-block .view-content.top-tasks .related-pages .field-items .field-item a, .related-pages .field-items .field-item #block-views-related-links-taxonomy-block .view-content.top-tasks a, #block-views-related-links-taxonomy-block .view-content.related-pages .field-items .field-item a, body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks .related-pages .field-items .field-item a, .related-pages .field-items .field-item body.page-taxonomy .block-30.pane-taxonomy-term-field-category-tasks a, body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content .related-pages .field-items .field-item a, .related-pages .field-items .field-item body.page-taxonomy #list-of-additional-pages .pane-taxonomy-term-field-category-tasks.view-content a, body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content .related-pages .field-items .field-item a, .related-pages .field-items .field-item body.page-taxonomy #list-of-additional-pages .call-to-actions.view-content a, body.page-taxonomy #list-of-additional-pages .view-content.top-tasks .related-pages .field-items .field-item a, .related-pages .field-items .field-item body.page-taxonomy #list-of-additional-pages .view-content.top-tasks a, body.page-taxonomy #list-of-additional-pages .view-content.related-pages .field-items .field-item a, .block-30.top-tasks .related-pages .field-items .field-item a, .related-pages .field-items .field-item .block-30.top-tasks a, .block-30.related-pages .field-items .field-item a {
   margin: 0 0 10px; }
 
-.sub-grid-categories, body.page-taxonomy #list-of-pages, body.page-taxonomy #list-of-subcategories {
+.sub-grid-categories, body.page-taxonomy #list-of-pages, body.page-taxonomy #list-of-subcategories, .top-tasks, .related-pages {
   padding-bottom: 20px; }
-  .sub-grid-categories .row, body.page-taxonomy #list-of-pages .row, body.page-taxonomy #list-of-subcategories .row {
+  .sub-grid-categories .row, body.page-taxonomy #list-of-pages .row, body.page-taxonomy #list-of-subcategories .row, .top-tasks .row, .related-pages .row {
     margin-left: -4px;
     margin-right: -4px; }
-  .sub-grid-categories .col-sm-4, body.page-taxonomy #list-of-pages .col-sm-4, body.page-taxonomy #list-of-subcategories .col-sm-4 {
+  .sub-grid-categories .col-sm-4, body.page-taxonomy #list-of-pages .col-sm-4, body.page-taxonomy #list-of-subcategories .col-sm-4, .top-tasks .col-sm-4, .related-pages .col-sm-4 {
     padding: 0 5px; }
 
 .link-focus, a:focus,
@@ -6398,46 +6472,66 @@ ol {
 .lt-ie9 .show-ie8 {
   display: block; }
 
-.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a {
+.btn, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, .top-tasks .field-items .field-item a, .related-pages .field-items .field-item a {
   border: 0;
   text-decoration: none;
   padding: 12px 15px;
   margin-bottom: 20px;
   background: #003b4c;
   color: #fff; }
-  .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-subcategories a:hover {
-    background: #003b4c;
+  .btn:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-subcategories a:hover, .top-tasks .field-items .field-item a:hover, .related-pages .field-items .field-item a:hover {
+    background-color: #003b4c;
     color: #fff; }
-  .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus {
-    background: #003b4c;
+  .btn:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus, .top-tasks .field-items .field-item a:focus, .related-pages .field-items .field-item a:focus {
+    background-color: #003b4c;
     color: #fff; }
-  .btn .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .btn:active, body.page-taxonomy #list-of-pages a .btn:active, body.page-taxonomy #list-of-subcategories a .btn:active, .btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a a:active, .btn body.page-taxonomy #list-of-pages a:active, body.page-taxonomy #list-of-pages .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-pages a:active, body.page-taxonomy #list-of-pages a a:active, .btn body.page-taxonomy #list-of-subcategories a:active, body.page-taxonomy #list-of-subcategories .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-subcategories a:active, body.page-taxonomy #list-of-subcategories a a:active,
-  .btn .btn.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .btn.active, body.page-taxonomy #list-of-pages a .btn.active, body.page-taxonomy #list-of-subcategories a .btn.active,
+  .btn .btn:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .btn:active, body.page-taxonomy #list-of-pages a .btn:active, body.page-taxonomy #list-of-subcategories a .btn:active, .top-tasks .field-items .field-item a .btn:active, .related-pages .field-items .field-item a .btn:active, .btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a a:active, .btn body.page-taxonomy #list-of-pages a:active, body.page-taxonomy #list-of-pages .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-pages a:active, body.page-taxonomy #list-of-pages a a:active, .top-tasks .field-items .field-item a body.page-taxonomy #list-of-pages a:active, .related-pages .field-items .field-item a body.page-taxonomy #list-of-pages a:active, .btn body.page-taxonomy #list-of-subcategories a:active, body.page-taxonomy #list-of-subcategories .btn a:active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-subcategories a:active, body.page-taxonomy #list-of-subcategories a a:active, .top-tasks .field-items .field-item a body.page-taxonomy #list-of-subcategories a:active, .related-pages .field-items .field-item a body.page-taxonomy #list-of-subcategories a:active, .btn .top-tasks .field-items .field-item a:active, .top-tasks .field-items .field-item .btn a:active, .top-tasks .field-items .field-item a a:active, .btn .related-pages .field-items .field-item a:active, .related-pages .field-items .field-item .btn a:active, .related-pages .field-items .field-item a a:active,
+  .btn .btn.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a .btn.active, body.page-taxonomy #list-of-pages a .btn.active, body.page-taxonomy #list-of-subcategories a .btn.active, .top-tasks .field-items .field-item a .btn.active, .related-pages .field-items .field-item a .btn.active,
   .btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks
   .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a a.active,
   .btn body.page-taxonomy #list-of-pages a.active, body.page-taxonomy #list-of-pages
-  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-pages a.active, body.page-taxonomy #list-of-pages a a.active,
+  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-pages a.active, body.page-taxonomy #list-of-pages a a.active, .top-tasks .field-items .field-item a body.page-taxonomy #list-of-pages a.active, .related-pages .field-items .field-item a body.page-taxonomy #list-of-pages a.active,
   .btn body.page-taxonomy #list-of-subcategories a.active, body.page-taxonomy #list-of-subcategories
-  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-subcategories a.active, body.page-taxonomy #list-of-subcategories a a.active {
+  .btn a.active, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a #list-of-subcategories a.active, body.page-taxonomy #list-of-subcategories a a.active, .top-tasks .field-items .field-item a body.page-taxonomy #list-of-subcategories a.active, .related-pages .field-items .field-item a body.page-taxonomy #list-of-subcategories a.active,
+  .btn .top-tasks .field-items .field-item a.active, .top-tasks .field-items .field-item
+  .btn a.active, .top-tasks .field-items .field-item a a.active,
+  .btn .related-pages .field-items .field-item a.active, .related-pages .field-items .field-item
+  .btn a.active, .related-pages .field-items .field-item a a.active {
     box-shadow: none !important; }
-  .btn.btn-primary, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.btn-primary, body.page-taxonomy #list-of-pages a.btn-primary, body.page-taxonomy #list-of-subcategories a.btn-primary {
+  .btn.btn-primary, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.btn-primary, body.page-taxonomy #list-of-pages a.btn-primary, body.page-taxonomy #list-of-subcategories a.btn-primary, .top-tasks .field-items .field-item a.btn-primary, .related-pages .field-items .field-item a.btn-primary {
     padding: 12px 20px; }
-  .btn.key-task, .btn.sub-task, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a {
+  .btn.key-task, .btn.sub-task, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, .related-pages .field-items .field-item a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, .top-tasks .field-items .field-item a {
+    box-sizing: border-box;
     text-align: left;
-    font-size: 24px;
+    font-size: 1.3em;
     font-weight: 600;
     display: block;
-    border: 1px solid gray;
-    margin: 20px 0;
-    padding: 12px 10px 35px 40px;
-    background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAATCAYAAACgADyUAAABNElEQVQ4jY3TPyjuURjA8Q9eZbghyUR3ee8kiy7KnwxKb0Z0s9zl7qQkZotS8mcWpUSWW3eQ8qbbLWUgyWqgO4pBBooYTm/9Op0Xz/h9zrdznj+nolAojGAJtdjALJ58EJVYQwvqMIl/aP6MeB6xTpyi/yNxGMWIN+EAE++JdyhgAa+ZXDVWsImalAgvmMEYHqIzP3GErymxFLvoxmXE23GCgXIiXKADexFvxD6moCqfzydcj9hBDn2oyFw0iIZyIqFRh2hAV5RrTT01W8YcxhO59VwZqR5bGIr4i7CSiymxFb/xLeK3wriKpedkYxTHCekM32U2rCRWYV6Y45dI2kIvrrIwJ3RtW2hzNp4xjeVEOXL4g56I3+AH/qakktgWsRPhx/wvJxFq/IVr3GNV2JR3JXgDcII3V0Lh5ZkAAAAASUVORK5CYII=") 20px 20px no-repeat;
+    border: 1px solid #959580;
+    padding: 15px 30px 25px 42px;
+    min-height: 4.2em;
+    line-height: 1.15em;
+    background: #f8f8f6 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAATCAYAAACgADyUAAABNElEQVQ4jY3TPyjuURjA8Q9eZbghyUR3ee8kiy7KnwxKb0Z0s9zl7qQkZotS8mcWpUSWW3eQ8qbbLWUgyWqgO4pBBooYTm/9Op0Xz/h9zrdznj+nolAojGAJtdjALJ58EJVYQwvqMIl/aP6MeB6xTpyi/yNxGMWIN+EAE++JdyhgAa+ZXDVWsImalAgvmMEYHqIzP3GErymxFLvoxmXE23GCgXIiXKADexFvxD6moCqfzydcj9hBDn2oyFw0iIZyIqFRh2hAV5RrTT01W8YcxhO59VwZqR5bGIr4i7CSiymxFb/xLeK3wriKpedkYxTHCekM32U2rCRWYV6Y45dI2kIvrrIwJ3RtW2hzNp4xjeVEOXL4g56I3+AH/qakktgWsRPhx/wvJxFq/IVr3GNV2JR3JXgDcII3V0Lh5ZkAAAAASUVORK5CYII=") 21px 20px no-repeat;
     color: #333; }
-  .btn.sub-task, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.sub-task, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a {
-    font-size: 20px;
-    margin: 0 0 30px 0;
-    padding: 6px 10px 30px 30px;
-    background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8Y/yYkND5OAVtHQFErRF8TY1RUvgolNQ3kl/1moMKneXchTqBnKwa0hwEBQhB88Lp6M9cIbfw5ffn+eU8jy/RgtdNDG2RmU0sIlTfGDnP/A86rKLTxyuA7vYw3fwqsG7TEH4Qh3voc5wi3tUYhB+cIy7yGuih1oMwhxXlinMgrePXgoW+g1vZcdCGW7wgI3g9XGQRdA2XvyN5hEXmBYd0/zmaIdjpsWoI7xiK0AjnOEt3ek5ggY4wTC9rownTNCx/KEVCBZdhyk8nZDqagAAAABJRU5ErkJggg==") 14px 14px no-repeat; }
-  .btn.button-prev span[class^="icon-"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.button-prev span[class^="icon-"], body.page-taxonomy #list-of-pages a.button-prev span[class^="icon-"], body.page-taxonomy #list-of-subcategories a.button-prev span[class^="icon-"], .btn.button-next span[class^="icon-"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.button-next span[class^="icon-"], body.page-taxonomy #list-of-pages a.button-next span[class^="icon-"], body.page-taxonomy #list-of-subcategories a.button-next span[class^="icon-"] {
+    .btn.key-task:hover, .btn.sub-task:hover, body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-subcategories a:hover, .related-pages .field-items .field-item a:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, .top-tasks .field-items .field-item a:hover {
+      border-color: #002f3d;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAATCAYAAACgADyUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxRDlCNzA3OTA3MjUxMUU3OTI1N0M5MzY3NjJCOUZDMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxRDlCNzA3QTA3MjUxMUU3OTI1N0M5MzY3NjJCOUZDMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjFEOUI3MDc3MDcyNTExRTc5MjU3QzkzNjc2MkI5RkMwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFEOUI3MDc4MDcyNTExRTc5MjU3QzkzNjc2MkI5RkMwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+P3UrswAAATJJREFUeNqE07FLw0AUx/G0KjgUERH/AyfpUmqHqnQQRBxVpHP3dhFBHF0EQbTubUEQwUVwEEEHR5Faka4Oim6iggihYNHvgwscj0vu4EPIu/yay91rKgzDlSAI9jGCFjbRCzwjRfCL66hVu4P82FtSMI1HVSvgHiVfcBnXqj6BK9SSgp9YxC7+rLkh1HGEYdc32vdraCCjnuuYlb3Yb7THKYp4UvUc2piPC8roYhoXqj6OS6y7lqq/fxtb8pyaO0wKRqPu2N2ftOeo5I1Vx1xzMCYknXSMJVXvm5bccwWncIZJVf9AOWoWvdRV3DpCD8jbHRYFB7BjzlEfvix5Fs92UZY6hhMsqMAvNnDg2gQJnmNG1d9N+93EbbkEs6rWNn356vtbVUzzfktHYM4XkvEvwABF+EMaf0HVWQAAAABJRU5ErkJggg=="); }
+    .btn.key-task:focus, .btn.sub-task:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus, .related-pages .field-items .field-item a:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:focus, .top-tasks .field-items .field-item a:focus {
+      border-color: #002f3d;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxRDlCNzA3RDA3MjUxMUU3OTI1N0M5MzY3NjJCOUZDMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxRDlCNzA3RTA3MjUxMUU3OTI1N0M5MzY3NjJCOUZDMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjFEOUI3MDdCMDcyNTExRTc5MjU3QzkzNjc2MkI5RkMwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFEOUI3MDdDMDcyNTExRTc5MjU3QzkzNjc2MkI5RkMwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+y/Y5iwAAAM9JREFUeNqE0T8LQVEYx/FzbzdGMXgPXoHMoiyMFiOTknfiT5kwGrBbMBrsYrheA+WWUorvU486XUee+nS7p1/nPOc5XhRFPWNMCys0cTOO8ghe+Kb1/4QqzvGgj4a1Sw57lFxBObJg7ZLRtU48KHVEHhv9DzDAGAk7KCW9VjC01uRyW2TlMq5LSmD02Y06+MZdL/XVo7F662OCpK7tUAyskMxyHhvNFG08/B/ze6KrvT4+R5WxQEpDV9Sx/veENYSul5nhjqW+UOgaw1uAAQCxUzNwKukbDgAAAABJRU5ErkJggg=="); }
+  .btn.sub-task, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.sub-task, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .related-pages .field-items .field-item a, .related-pages .field-items .field-item body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-subcategories a, .top-tasks .field-items .field-item a.sub-task, .related-pages .field-items .field-item a {
+    box-sizing: border-box;
+    font-size: 1.1em;
+    padding: 12px 24px 18px 32px;
+    min-height: 3em;
+    background: #fff url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8Y/yYkND5OAVtHQFErRF8TY1RUvgolNQ3kl/1moMKneXchTqBnKwa0hwEBQhB88Lp6M9cIbfw5ffn+eU8jy/RgtdNDG2RmU0sIlTfGDnP/A86rKLTxyuA7vYw3fwqsG7TEH4Qh3voc5wi3tUYhB+cIy7yGuih1oMwhxXlinMgrePXgoW+g1vZcdCGW7wgI3g9XGQRdA2XvyN5hEXmBYd0/zmaIdjpsWoI7xiK0AjnOEt3ek5ggY4wTC9rownTNCx/KEVCBZdhyk8nZDqagAAAABJRU5ErkJggg==") 16px 17px no-repeat;
+    border-color: #b7b7b7; }
+    .btn.sub-task:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.sub-task:hover, body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-subcategories a:hover, .top-tasks .field-items .field-item a.sub-task:hover, .related-pages .field-items .field-item a:hover {
+      border-color: #002f3d;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxRDlCNzA3RDA3MjUxMUU3OTI1N0M5MzY3NjJCOUZDMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxRDlCNzA3RTA3MjUxMUU3OTI1N0M5MzY3NjJCOUZDMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjFEOUI3MDdCMDcyNTExRTc5MjU3QzkzNjc2MkI5RkMwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFEOUI3MDdDMDcyNTExRTc5MjU3QzkzNjc2MkI5RkMwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+y/Y5iwAAAM9JREFUeNqE0T8LQVEYx/FzbzdGMXgPXoHMoiyMFiOTknfiT5kwGrBbMBrsYrheA+WWUorvU486XUee+nS7p1/nPOc5XhRFPWNMCys0cTOO8ghe+Kb1/4QqzvGgj4a1Sw57lFxBObJg7ZLRtU48KHVEHhv9DzDAGAk7KCW9VjC01uRyW2TlMq5LSmD02Y06+MZdL/XVo7F662OCpK7tUAyskMxyHhvNFG08/B/ze6KrvT4+R5WxQEpDV9Sx/veENYSul5nhjqW+UOgaw1uAAQCxUzNwKukbDgAAAABJRU5ErkJggg=="); }
+    .btn.sub-task:focus, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.sub-task:focus, body.page-taxonomy #list-of-pages a:focus, body.page-taxonomy #list-of-subcategories a:focus, .top-tasks .field-items .field-item a.sub-task:focus, .related-pages .field-items .field-item a:focus {
+      border-color: #002f3d;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxRDlCNzA3RDA3MjUxMUU3OTI1N0M5MzY3NjJCOUZDMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxRDlCNzA3RTA3MjUxMUU3OTI1N0M5MzY3NjJCOUZDMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjFEOUI3MDdCMDcyNTExRTc5MjU3QzkzNjc2MkI5RkMwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFEOUI3MDdDMDcyNTExRTc5MjU3QzkzNjc2MkI5RkMwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+y/Y5iwAAAM9JREFUeNqE0T8LQVEYx/FzbzdGMXgPXoHMoiyMFiOTknfiT5kwGrBbMBrsYrheA+WWUorvU486XUee+nS7p1/nPOc5XhRFPWNMCys0cTOO8ghe+Kb1/4QqzvGgj4a1Sw57lFxBObJg7ZLRtU48KHVEHhv9DzDAGAk7KCW9VjC01uRyW2TlMq5LSmD02Y06+MZdL/XVo7F662OCpK7tUAyskMxyHhvNFG08/B/ze6KrvT4+R5WxQEpDV9Sx/veENYSul5nhjqW+UOgaw1uAAQCxUzNwKukbDgAAAABJRU5ErkJggg=="); }
+  .btn.button-prev span[class^="icon-"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.button-prev span[class^="icon-"], body.page-taxonomy #list-of-pages a.button-prev span[class^="icon-"], body.page-taxonomy #list-of-subcategories a.button-prev span[class^="icon-"], .top-tasks .field-items .field-item a.button-prev span[class^="icon-"], .related-pages .field-items .field-item a.button-prev span[class^="icon-"], .btn.button-next span[class^="icon-"], body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.button-next span[class^="icon-"], body.page-taxonomy #list-of-pages a.button-next span[class^="icon-"], body.page-taxonomy #list-of-subcategories a.button-next span[class^="icon-"], .top-tasks .field-items .field-item a.button-next span[class^="icon-"], .related-pages .field-items .field-item a.button-next span[class^="icon-"] {
     font-size: 13px; }
 
 .btn-beta {
@@ -6698,7 +6792,7 @@ body.page-taxonomy-term .page-header {
   box-shadow: 0;
   height: 49px; }
 
-.input-group-btn .btn, .input-group-btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn a, .input-group-btn body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .input-group-btn a, .input-group-btn body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .input-group-btn a {
+.input-group-btn .btn, .input-group-btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .input-group-btn a, .input-group-btn body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .input-group-btn a, .input-group-btn body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .input-group-btn a, .input-group-btn .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item .input-group-btn a, .input-group-btn .related-pages .field-items .field-item a, .related-pages .field-items .field-item .input-group-btn a {
   background: #000010;
   border: 0;
   padding: 12px 12px 8px; }
@@ -7041,7 +7135,7 @@ legend {
     height: 45px; }
   .nav-tools .nav-tools__search .navbar-form {
     padding-bottom: 5px; }
-  .nav-tools .nav-tools__search .btn.btn-primary.btn-glyph, .nav-tools .nav-tools__search body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.btn-primary.btn-glyph, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .nav-tools .nav-tools__search a.btn-primary.btn-glyph, .nav-tools .nav-tools__search body.page-taxonomy #list-of-pages a.btn-primary.btn-glyph, body.page-taxonomy #list-of-pages .nav-tools .nav-tools__search a.btn-primary.btn-glyph, .nav-tools .nav-tools__search body.page-taxonomy #list-of-subcategories a.btn-primary.btn-glyph, body.page-taxonomy #list-of-subcategories .nav-tools .nav-tools__search a.btn-primary.btn-glyph {
+  .nav-tools .nav-tools__search .btn.btn-primary.btn-glyph, .nav-tools .nav-tools__search body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.btn-primary.btn-glyph, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .nav-tools .nav-tools__search a.btn-primary.btn-glyph, .nav-tools .nav-tools__search body.page-taxonomy #list-of-pages a.btn-primary.btn-glyph, body.page-taxonomy #list-of-pages .nav-tools .nav-tools__search a.btn-primary.btn-glyph, .nav-tools .nav-tools__search body.page-taxonomy #list-of-subcategories a.btn-primary.btn-glyph, body.page-taxonomy #list-of-subcategories .nav-tools .nav-tools__search a.btn-primary.btn-glyph, .nav-tools .nav-tools__search .top-tasks .field-items .field-item a.btn-primary.btn-glyph, .top-tasks .field-items .field-item .nav-tools .nav-tools__search a.btn-primary.btn-glyph, .nav-tools .nav-tools__search .related-pages .field-items .field-item a.btn-primary.btn-glyph, .related-pages .field-items .field-item .nav-tools .nav-tools__search a.btn-primary.btn-glyph {
     background: #333;
     height: 45px;
     width: 45px;
@@ -7055,7 +7149,7 @@ legend {
   @media (min-width: 480px) and (max-width: 980px) {
     .nav-tools__search--mobile-search {
       padding-top: 2px; } }
-  .nav-tools__search--mobile-search .input-group-btn .btn, .nav-tools__search--mobile-search .input-group-btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .nav-tools__search--mobile-search .input-group-btn a, .nav-tools__search--mobile-search .input-group-btn body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .nav-tools__search--mobile-search .input-group-btn a, .nav-tools__search--mobile-search .input-group-btn body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .nav-tools__search--mobile-search .input-group-btn a {
+  .nav-tools__search--mobile-search .input-group-btn .btn, .nav-tools__search--mobile-search .input-group-btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .nav-tools__search--mobile-search .input-group-btn a, .nav-tools__search--mobile-search .input-group-btn body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .nav-tools__search--mobile-search .input-group-btn a, .nav-tools__search--mobile-search .input-group-btn body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .nav-tools__search--mobile-search .input-group-btn a, .nav-tools__search--mobile-search .input-group-btn .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item .nav-tools__search--mobile-search .input-group-btn a, .nav-tools__search--mobile-search .input-group-btn .related-pages .field-items .field-item a, .related-pages .field-items .field-item .nav-tools__search--mobile-search .input-group-btn a {
     background: #333;
     margin-bottom: 0; }
 
@@ -7251,7 +7345,7 @@ ol.breadcrumb {
 .news-events p:first-child {
   margin-bottom: 0; }
 
-.news-events .btn, .news-events body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .news-events a, .news-events body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .news-events a, .news-events body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .news-events a {
+.news-events .btn, .news-events body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .news-events a, .news-events body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .news-events a, .news-events body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .news-events a, .news-events .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item .news-events a, .news-events .related-pages .field-items .field-item a, .related-pages .field-items .field-item .news-events a {
   margin-top: 10px; }
 
 /*
@@ -7380,7 +7474,7 @@ aside.news-aside article {
   aside.news-aside article img {
     margin-bottom: 15px; }
 
-.btn.enquiry, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.enquiry, body.page-taxonomy #list-of-pages a.enquiry, body.page-taxonomy #list-of-subcategories a.enquiry {
+.btn.enquiry, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.enquiry, body.page-taxonomy #list-of-pages a.enquiry, body.page-taxonomy #list-of-subcategories a.enquiry, .top-tasks .field-items .field-item a.enquiry, .related-pages .field-items .field-item a.enquiry {
   float: right;
   position: relative;
   top: 7px; }
@@ -7702,7 +7796,7 @@ img {
   font-size: 18px;
   border-left: 0; }
 
-.carousel-caption .btn, .carousel-caption body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .carousel-caption a, .carousel-caption body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .carousel-caption a, .carousel-caption body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .carousel-caption a {
+.carousel-caption .btn, .carousel-caption body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .carousel-caption a, .carousel-caption body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .carousel-caption a, .carousel-caption body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .carousel-caption a, .carousel-caption .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item .carousel-caption a, .carousel-caption .related-pages .field-items .field-item a, .related-pages .field-items .field-item .carousel-caption a {
   margin: 0 0 1em 1em; }
 
 .carousel-control {
@@ -7969,6 +8063,46 @@ body.page-taxonomy #list-of-additional-pages .view-content {
     body.page-taxonomy #list-of-additional-pages .view-content h2, body.page-taxonomy #list-of-additional-pages .view-content span.lge {
       width: 50%; } }
 
+.top-tasks .field-items, .related-pages .field-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .top-tasks .field-items .field-item, .related-pages .field-items .field-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0 10px; }
+    .top-tasks .field-items .field-item a, .related-pages .field-items .field-item a {
+      border-radius: 3px;
+      width: 100% !important;
+      margin: 0; }
+    @media (max-width: 768px) {
+      .top-tasks .field-items .field-item, .related-pages .field-items .field-item {
+        width: 100%; } }
+
+.top-tasks {
+  background: #b3bc9d;
+  padding: 40px 0 30px; }
+  .top-tasks .field-items {
+    margin: 0 -10px; }
+    .top-tasks .field-items .field-item {
+      padding: 0 10px;
+      width: 33.333333%; }
+
+.related-pages {
+  background: #f2f2f2;
+  padding: 30px 0 20px; }
+  .related-pages .field-items {
+    margin: 0 -5px; }
+    .related-pages .field-items .field-item {
+      padding: 0 5px;
+      width: 25%; }
+
+.landing-page-content {
+  padding: 30px 0; }
+
 .theme-business .field-name-field-promotional-slogan {
   background-color: #009fd4; }
 
@@ -7985,7 +8119,7 @@ body.page-taxonomy #list-of-additional-pages .view-content {
   background-color: #702277; }
 
 .theme-forestcare .field-name-field-promotional-slogan {
-  background-color: #b42272; }
+  background-color: #b42371; }
 
 .theme-fostering .field-name-field-promotional-slogan {
   background-color: #00a4a6; }
@@ -8046,10 +8180,10 @@ body.page-help .view-help {
   background-color: #f2f2f2;
   border-radius: 3px; }
 
-.guide-navigation-secondary .page-links .btn, .guide-navigation-secondary .page-links body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .guide-navigation-secondary .page-links a, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .guide-navigation-secondary .page-links a, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .guide-navigation-secondary .page-links a {
+.guide-navigation-secondary .page-links .btn, .guide-navigation-secondary .page-links body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .guide-navigation-secondary .page-links a, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .guide-navigation-secondary .page-links a, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .guide-navigation-secondary .page-links a, .guide-navigation-secondary .page-links .top-tasks .field-items .field-item a, .top-tasks .field-items .field-item .guide-navigation-secondary .page-links a, .guide-navigation-secondary .page-links .related-pages .field-items .field-item a, .related-pages .field-items .field-item .guide-navigation-secondary .page-links a {
   background-color: #fff;
   color: #003b4c; }
-  .guide-navigation-secondary .page-links .btn:hover, .guide-navigation-secondary .page-links body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .guide-navigation-secondary .page-links a:hover, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-pages .guide-navigation-secondary .page-links a:hover, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-subcategories a:hover, body.page-taxonomy #list-of-subcategories .guide-navigation-secondary .page-links a:hover {
+  .guide-navigation-secondary .page-links .btn:hover, .guide-navigation-secondary .page-links body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a:hover, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .guide-navigation-secondary .page-links a:hover, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-pages a:hover, body.page-taxonomy #list-of-pages .guide-navigation-secondary .page-links a:hover, .guide-navigation-secondary .page-links body.page-taxonomy #list-of-subcategories a:hover, body.page-taxonomy #list-of-subcategories .guide-navigation-secondary .page-links a:hover, .guide-navigation-secondary .page-links .top-tasks .field-items .field-item a:hover, .top-tasks .field-items .field-item .guide-navigation-secondary .page-links a:hover, .guide-navigation-secondary .page-links .related-pages .field-items .field-item a:hover, .related-pages .field-items .field-item .guide-navigation-secondary .page-links a:hover {
     background-color: #f2f2f2;
     color: #000010; }
 
@@ -8117,7 +8251,7 @@ ol.menu.nav {
   display: inline-block;
   margin-left: 10px; }
 
-.full-width, body.page-taxonomy .pane-taxonomy-term-field-category-tasks, body.page-taxonomy #list-of-pages, body.page-taxonomy #list-of-subcategories, .guide-navigation-primary, body.node-type-guide-section #page-header, .gridder-show .gridder-padding {
+.full-width, body.page-taxonomy .pane-taxonomy-term-field-category-tasks, body.page-taxonomy #list-of-pages, body.page-taxonomy #list-of-subcategories, .top-tasks, .related-pages, .guide-navigation-primary, body.node-type-guide-section #page-header, .gridder-show .gridder-padding {
   margin-left: -9999rem !important;
   margin-right: -9999rem !important;
   padding-left: 9999rem !important;
@@ -8235,7 +8369,7 @@ a.gridder-close {
   float: left;
   width: 100%; }
   .gridder-show .gridder-padding {
-    background: #ced1bd; }
+    background: #b3bc9d; }
   .gridder-show .gridder-expanded-content {
     clear: both;
     margin-bottom: 10px;
