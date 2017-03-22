@@ -54,10 +54,19 @@ function bracknell_feature_search_default_search_api_index() {
     "name" : "Default node index",
     "machine_name" : "default_node_index",
     "description" : "An automatically created search index for indexing node data. Might be configured to specific needs.",
-    "server" : "local_solr_server",
+    "server" : "bracknell_solr_default",
     "item_type" : "node",
     "options" : {
-      "datasource" : { "bundles" : [ "basic", "form", "guide_section", "miscellaneous", "article", "promo" ] },
+      "datasource" : { "bundles" : [
+          "basic",
+          "form",
+          "guide_section",
+          "miscellaneous",
+          "article",
+          "promo",
+          "promotional_page"
+        ]
+      },
       "index_directly" : 1,
       "cron_limit" : "50",
       "data_alter_callbacks" : {
