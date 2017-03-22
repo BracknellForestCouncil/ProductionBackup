@@ -5,3 +5,16 @@
  */
 
 include_once 'bracknell_content_testimonial.features.inc';
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bracknell_content_testimonial_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] != 'field_carousel_slide_content') {
+    return;
+  }
+
+  module_load_include('inc', 'bracknell_content_testimonial', 'bracknell_content_testimonial.helpers');
+
+  _bracknell_content_testimonial_add_carousel_slide_classes($variables);
+}
