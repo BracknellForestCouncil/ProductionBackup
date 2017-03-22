@@ -1,0 +1,44 @@
+
+
+
+
+
+
+
+.key-facts {
+  .key-facts-title {
+    h5 {
+      font-size: 1em;
+    }
+    margin-bottom: 15px;
+  }
+  .key-facts-items {
+    .key-fact-item {
+      position: relative;
+      margin-bottom: 20px;
+      .key-fact-item-title {
+        position: absolute;
+        left: 0;
+        top: 15px;
+        display: inline-block;
+        background: $turquoise;
+        border-radius: 3px;
+        padding: 8px 15px 10px;
+        margin: 0;
+        color: white;
+        h5 {
+          margin: 0;
+          padding: 0;
+          font-size: 1em;
+          font-weight: 600;
+        }
+      }
+      .key-fact-item-body {
+        padding: 60px 20px 25px;
+        margin-left: 15px;
+        border: 1px solid $greyExtraLight;
+        border-radius: 3px;
+      }
+    }
+  }
+}
