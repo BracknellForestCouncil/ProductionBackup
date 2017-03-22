@@ -18,6 +18,10 @@ body {
   }
 }
 
+.page-wrapper {
+  position: relative;
+}
+
 .page-header {
   margin: 0 0;
   @extend.green-base;

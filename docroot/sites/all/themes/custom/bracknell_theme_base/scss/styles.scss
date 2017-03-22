@@ -4,6 +4,7 @@
 
 // Config.
 @import
+'../libraries/breakpoint-sass/stylesheets/_breakpoint.scss',
 '00-config/colors',
 '00-config/fonts',
 '../libraries/bootstrap-sass/assets/stylesheets/bootstrap',
@@ -31,7 +32,9 @@
 // Components.
 @import
 '40-components/beta',
-'40-components/50-deeson-topbar',
+'40-components/header',
+'40-components/main-menu',
+'40-components/search',
 '40-components/52-deeson-breadcrumbs',
 '40-components/53-deeson-socials-icons',
 '40-components/54-deeson-gridder',
@@ -48,7 +51,6 @@
 '40-components/contact-info',
 '40-components/cookieconsent',
 '40-components/hero-image',
-'40-components/navbar',
 '40-components/news',
 '40-components/page_landing-page',
 '40-components/sidebars',
@@ -59,7 +61,6 @@
 '90-overrides-module/general',
 '90-overrides-module/guide',
 '90-overrides-module/localgov_base_navigation.navigation_home',
-'90-overrides-module/localgov_base_navigation.navigation_main',
 '90-overrides-module/navbar',
 '90-overrides-module/small-print',
 '90-overrides-module/tablefield';

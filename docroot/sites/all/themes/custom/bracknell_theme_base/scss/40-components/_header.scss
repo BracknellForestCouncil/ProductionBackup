@@ -1,0 +1,63 @@
+/*
+* Header.
+*/
+
+.masthead {
+  min-height: 160px;
+  position: relative;
+}
+
+.logo {
+  display: block;
+  height: 120px;
+  position: relative;
+  width: 120px;
+  z-index: 200;
+
+  @include breakpoint($screen-md) {
+    left: 0;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    width: 16.66667%;
+  }
+}
+
+.header-tools {
+  border-bottom: 3px solid $nav-tools-border-color;
+  padding-bottom: 0;
+  padding-top: 0;
+  position: static;
+
+  @include breakpoint($screen-md) {
+    padding: 10px 0;
+  }
+
+  .nav-tools__account {
+    margin-top: 25px;
+
+    a {
+      color: $nav-tools-account-link-text-color;
+      font: {
+        size: $font-size-03;
+        weight: $font-weight-headinglight;
+      }
+      text-decoration: none;
+
+      span.q-mark {
+        background: $nav-tools-account-link-q-mark-bg-color;
+        border-radius: 50%;
+        font-size: $font-size-01;
+        padding: 4px 7px;
+      }
+    }
+  }
+}
+
+.header-menu-tools {
+  position: static;
+
+  @include breakpoint($screen-md) {
+    position: relative;
+  }
+}

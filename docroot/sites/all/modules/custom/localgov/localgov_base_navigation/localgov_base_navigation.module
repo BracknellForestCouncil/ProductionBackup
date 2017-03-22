@@ -64,12 +64,6 @@ function localgov_base_navigation_block_view($delta = '') {
       $block['subject'] = '<none>';
       $block['content'] = array(
         '#markup' => localgov_base_navigation_block_content_navigation_main(),
-        '#attached' => array(
-          'css' => array(
-            // libraries_get_path('gridder') . '/dist/css/jquery.gridder.min.css',
-            drupal_get_path('module', 'localgov_base_navigation') . '/css/localgov_base_navigation.navigation_main.css',
-          )
-        ),
       );
       break;
 
