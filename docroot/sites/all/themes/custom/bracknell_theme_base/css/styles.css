@@ -6847,27 +6847,34 @@ legend {
   min-height: 160px;
   position: relative; }
 
-.logo {
-  display: block;
-  height: 120px;
-  position: relative;
+.logo-container {
+  background: white;
   width: 120px;
-  z-index: 200; }
-  @media (min-width: 992px) {
-    .logo {
-      left: 0;
-      height: 160px;
+  height: 120px; }
+  @media (min-width: 768px) {
+    .logo-container {
       position: absolute;
       top: 0;
-      width: 16.66667%; } }
+      left: 0;
+      width: 140px;
+      height: auto;
+      padding: 20px 25px 18px 20px;
+      margin-left: -20px;
+      z-index: 150;
+      box-sizing: content-box;
+      border-radius: 3px; } }
+
+.logo {
+  display: block;
+  position: relative; }
 
 .header-tools {
   border-bottom: 3px solid #333;
   padding-bottom: 0;
   padding-top: 0;
-  position: static;
+  position: relative;
   text-align: right; }
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .header-tools {
       padding: 25px 15px 23px; } }
   .header-tools .header-section {
@@ -6899,6 +6906,9 @@ legend {
       display: none; }
     .header-tools .header-section.header-section-account {
       margin-left: 60px; }
+      @media (max-width: 991px) {
+        .header-tools .header-section.header-section-account {
+          display: none; } }
       .header-tools .header-section.header-section-account .header-account-section {
         display: inline-block;
         vertical-align: middle; }
@@ -6926,11 +6936,10 @@ legend {
           text-align: center;
           padding-right: 1px; }
     .header-tools .header-section.header-section-menu-tools {
-      position: static;
-      margin-left: 80px; }
+      position: relative; }
       @media (min-width: 992px) {
         .header-tools .header-section.header-section-menu-tools {
-          position: relative; } }
+          margin-left: 80px; } }
 
 .main-menu {
   background: #333;
@@ -6939,7 +6948,7 @@ legend {
   .js .main-menu {
     left: 0;
     position: absolute;
-    top: 4em;
+    top: 96px;
     width: 100%; }
   .main-menu .nav-item {
     width: 100%;
@@ -6996,15 +7005,10 @@ legend {
   color: #fff;
   display: inline-block;
   padding: 10px 15px 12px;
-  position: absolute;
-  top: 25px;
-  right: 15px;
+  position: relative;
   box-sizing: border-box;
   height: 48px;
   font-weight: 600; }
-  @media (min-width: 992px) {
-    .main-menu-btn {
-      position: static; } }
   .main-menu-btn:focus {
     outline: none; }
   .main-menu-btn.expanded .icon-bar {

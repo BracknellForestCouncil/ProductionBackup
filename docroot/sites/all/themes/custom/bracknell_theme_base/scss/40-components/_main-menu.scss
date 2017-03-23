@@ -5,7 +5,7 @@
   .js & {
     left: 0;
     position: absolute;
-    top: 4em;
+    top: 96px;
     width: 100%;
   }
   .nav-item {
@@ -58,15 +58,10 @@
   color: $main-menu-button-text-color;
   display: inline-block;
   padding: 10px 15px 12px;
-  position: absolute;
-  top: 25px;
-  right: 15px;
+  position: relative;
   box-sizing: border-box;
   height: 48px;
   font-weight: 600;
-  @include breakpoint($screen-md) {
-    position: static;
-  }
   &:focus {
     outline: none;
   }

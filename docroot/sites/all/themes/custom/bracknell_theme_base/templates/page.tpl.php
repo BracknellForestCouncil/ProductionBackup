@@ -76,10 +76,12 @@
 <header class="header" role="banner">
   <div class="container">
     <div class="row masthead">
-      <a href="<?php print $front_page; ?>" id="branding" class="logo">
-        <img class="img-responsive" src="<?php print base_path() . path_to_theme(); ?>/images/logo/Bracknell-logo_B.png" alt="Bracknell Forest Council">
-      </a>
-      <div class="col-sm-12 col-md-10 col-md-offset-2 header-tools" data-js="header-tools">
+      <div class='logo-container'>
+        <a href="<?php print $front_page; ?>" id="branding" class="logo">
+          <img class="img-responsive" src="<?php print base_path() . path_to_theme(); ?>/images/logo/Bracknell-logo_B.png" alt="Bracknell Forest Council">
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 header-tools" data-js="header-tools">
         <div class="row">
           <div class='header-section header-section-search'>
             <?php print render($page['search']); ?>
