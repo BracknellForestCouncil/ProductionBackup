@@ -68,7 +68,8 @@ rules:
     - 1
     - allow-leading-underscore: true
       convention: hyphenatedlowercase
-  property-sort-order: false
+  property-sort-order:
+   - 0
   quotes:
     - 1
     - style: single

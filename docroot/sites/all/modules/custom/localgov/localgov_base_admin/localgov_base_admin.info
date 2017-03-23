@@ -17,7 +17,6 @@ dependencies[] = image
 dependencies[] = localgov_base_admin
 dependencies[] = menu
 dependencies[] = module_filter
-dependencies[] = navbar
 dependencies[] = path
 dependencies[] = pathauto
 dependencies[] = shortcut
