@@ -13,6 +13,7 @@ body {
   font-weight: $font-weight-base;
   font-size: $font-size-base;
   color: $global-text-color;
+  -webkit-font-smoothing: antialiased;
 }
 
 // Anchors.
