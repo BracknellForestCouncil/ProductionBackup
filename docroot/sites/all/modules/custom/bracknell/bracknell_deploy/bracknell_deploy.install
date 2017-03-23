@@ -17,3 +17,12 @@ function bracknell_deploy_install() {
     }
   }
 }
+
+/**
+ * Enable and configure node_display_title module.
+ */
+function bracknell_deploy_update_7000() {
+  module_enable(array('node_display_title'));
+
+  variable_set('node_display_title_settings', array('guide_section'));
+}
