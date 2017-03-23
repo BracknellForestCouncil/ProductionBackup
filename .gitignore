@@ -9,3 +9,7 @@ docroot/sites/default/settings.local.php
 .idea
 **/node_modules/*
 **/bower_components/*
+
+# Ignore certain CSS files as we will complile on the server.
+**/css/styles.css
+**/css/styles.css.map
