@@ -1,7 +1,21 @@
 <?php
+
 /**
  * @file
  * Code for the Bracknell Entity External Link feature.
  */
 
 include_once 'bracknell_entity_external_link.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function bracknell_entity_external_link_theme() {
+  $theme = array();
+  $theme['external_link__external_link'] = array(
+    'render element' => 'elements',
+    'template' => 'external_link--external_link',
+    'path' => drupal_get_path('module', 'bracknell_entity_external_link') . '/templates',
+  );
+  return $theme;
+}
