@@ -52,6 +52,31 @@
       }
     }
   }
+  .block-search {
+    margin: 15px 0;
+    form.form-search {
+      .form-text {
+        border-color: $grey1;
+        padding: 6px 18px;
+        // This will only work with autoprefixer; the standardised CSS is
+        // vendorific.
+        &::placeholder {
+          color: $greyMid;
+        }
+      }
+      .input-group-btn {
+        .btn-primary {
+          background-color: $charcoal;
+          margin-bottom: 0;
+          min-width: 49px;
+          min-height: 49px;
+        }
+      }
+      .form-actions {
+        display: none;
+      }
+    }
+  }
 }
 
 .header-menu-tools {

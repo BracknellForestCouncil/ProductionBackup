@@ -82,7 +82,7 @@
       <div class="col-sm-12 col-md-10 col-md-offset-2 header-tools" data-js="header-tools">
         <div class="row">
           <div class="col-sm-8 col-md-5 col-sm-offset-2 nav-tools__search">
-            <!-- Placeholder for search form -->
+            <?php print render($page['search']); ?>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-3 text-center hidden-xs hidden-sm nav-tools__account">
             <a href="https://bracknell-forest.achieveservice.com/module/home" title="Register for a self service account to save yourself time, or login if you already have an account.">

@@ -6084,7 +6084,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: #333; }
+  color: #333;
+  -webkit-font-smoothing: antialiased; }
 
 a,
 p a,
@@ -6943,6 +6944,26 @@ legend {
         border-radius: 50%;
         font-size: 16px;
         padding: 4px 7px; }
+  .header-tools .block-search {
+    margin: 15px 0; }
+    .header-tools .block-search form.form-search .form-text {
+      border-color: #484848;
+      padding: 6px 18px; }
+      .header-tools .block-search form.form-search .form-text::-webkit-input-placeholder {
+        color: #545454; }
+      .header-tools .block-search form.form-search .form-text::-moz-placeholder {
+        color: #545454; }
+      .header-tools .block-search form.form-search .form-text:-ms-input-placeholder {
+        color: #545454; }
+      .header-tools .block-search form.form-search .form-text::placeholder {
+        color: #545454; }
+    .header-tools .block-search form.form-search .input-group-btn .btn-primary {
+      background-color: #333;
+      margin-bottom: 0;
+      min-width: 49px;
+      min-height: 49px; }
+    .header-tools .block-search form.form-search .form-actions {
+      display: none; }
 
 .header-menu-tools {
   position: static; }
