@@ -123,11 +123,6 @@ function localgov_base_paragraphs_paragraphs_info() {
       'bundle' => 'link',
       'locked' => '1',
     ),
-    'map' => array(
-      'name' => 'Map',
-      'bundle' => 'map',
-      'locked' => '1',
-    ),
     'promotional_area' => array(
       'name' => 'Promotional Area',
       'bundle' => 'promotional_area',
