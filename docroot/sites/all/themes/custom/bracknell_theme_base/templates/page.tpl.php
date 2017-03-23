@@ -81,17 +81,17 @@
       </a>
       <div class="col-sm-12 col-md-10 col-md-offset-2 header-tools" data-js="header-tools">
         <div class="row">
-          <div class="col-sm-8 col-md-5 col-sm-offset-2 nav-tools__search">
+          <div class='header-section header-section-search'>
             <?php print render($page['search']); ?>
           </div>
-          <div class="col-xs-4 col-sm-4 col-md-3 text-center hidden-xs hidden-sm nav-tools__account">
+          <div class='header-section header-section-account'>
             <a href="https://bracknell-forest.achieveservice.com/module/home" title="Register for a self service account to save yourself time, or login if you already have an account.">
-              <span class="icon theme-icon-user"></span>
-              <span>My account</span>
-              <span class="q-mark icon theme-icon-question" data-toggle="tooltip-my-account" data-placement="bottom" title="Register for a self service account to save yourself time, or login if you already have an account."></span>
+              <span class='header-account-section header-account-section-user-icon icon theme-icon-user'></span>
+              <span class='header-account-section header-account-section-account'>My account</span>
+              <span class='header-account-section header-account-section-tooltip q-mark icon theme-icon-question' data-toggle="tooltip-my-account" data-placement="bottom" title="Register for a self service account to save yourself time, or login if you already have an account."></span>
             </a>
           </div>
-          <div class="col-xs-12 col-sm-2 text-right header-menu-tools" data-js="main-menu-trigger">
+          <div class='header-section header-section-menu-tools' data-js='main-menu-trigger'>
           </div>
         </div><!-- end ./row -->
       </div><!-- end ./header-tools -->

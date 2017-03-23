@@ -24,74 +24,82 @@
   padding-bottom: 0;
   padding-top: 0;
   position: static;
+  text-align: right;
   @include breakpoint($screen-md) {
-    padding: 10px 0 8px;
+    padding: 25px 15px 23px;
   }
-  .nav-tools__account {
-    margin-top: 25px;
-    .nav-account-section {
-      display: inline-block;
-      vertical-align: middle;
-      &.nav-account-section-account {
-        font-size: $font-size-03;
-        font-weight: $font-weight-headinglight;
-        line-height: 1;
-        margin: 0 5px;
-      }
-      &.nav-account-section-user-icon {
-        font-size: 15px;
-        padding-top: 1px;
-      }
-    }
-    a {
-      color: $nav-tools-account-link-text-color;
-      text-decoration: none;
-      span.q-mark {
-        background: $nav-tools-account-link-q-mark-bg-color;
-        border-radius: 50%;
-        font-size: 12px;
-        box-sizing: border-box;
-        width: 22px;
-        height: 22px;
-        line-height: 23px;
-        text-align: center;
-        padding-right: 1px;
-      }
-    }
-  }
-  .block-search {
-    margin: 15px 0;
-    form.form-search {
-      .form-text {
-        border-color: $grey1;
-        padding: 6px 18px;
-        // This will only work with autoprefixer; the standardised CSS is
-        // vendorific.
-        &::placeholder {
-          color: $greyMid;
-        }
-      }
-      .input-group-btn {
-        .btn-primary {
-          background-color: $charcoal;
-          margin-bottom: 0;
-          min-width: 49px;
-          min-height: 49px;
-          transition: 0.1s ease-in-out background-color;
-          &:hover {
-            background-color: $turquoise;
+  .header-section {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 360px;
+    &.header-section-search {
+      form.form-search {
+        .form-text {
+          border-color: $grey1;
+          padding: 6px 18px;
+          height: 48px;
+          // This will only work with autoprefixer.
+          &::placeholder {
+            color: $greyMid;
           }
         }
-      }
-      .form-actions {
-        display: none;
+        .input-group-btn {
+          .btn-primary {
+            background-color: $charcoal;
+            margin-bottom: 0;
+            min-width: 48px;
+            height: 48px;
+            transition: 0.1s ease-in-out background-color;
+            &:hover {
+              background-color: $turquoise;
+            }
+          }
+        }
+        .form-actions {
+          display: none;
+        }
       }
     }
-  }
-}
-.header-menu-tools {
-  position: static;
-  @include breakpoint($screen-md) {
-    position: relative;
+    &.header-section-account {
+      margin-left: 60px;
+      .header-account-section {
+        display: inline-block;
+        vertical-align: middle;
+        &.header-account-section-account {
+          font-size: $font-size-03;
+          font-weight: $font-weight-headinglight;
+          line-height: 1;
+          margin: 0 5px;
+        }
+        &.header-account-section-user-icon {
+          font-size: 15px;
+          padding-top: 1px;
+        }
+      }
+      a {
+        display: block;
+        color: $nav-tools-account-link-text-color;
+        text-decoration: none;
+        line-height: 1;
+        span.q-mark {
+          background: $nav-tools-account-link-q-mark-bg-color;
+          border-radius: 50%;
+          font-size: 12px;
+          box-sizing: border-box;
+          width: 22px;
+          height: 22px;
+          line-height: 23px;
+          text-align: center;
+          padding-right: 1px;
+        }
+      }
+    }
+    &.header-section-menu-tools {
+      position: static;
+      margin-left: 80px;
+      @include breakpoint($screen-md) {
+        position: relative;
+      }
+    }
   }
 }

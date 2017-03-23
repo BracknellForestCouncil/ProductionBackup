@@ -6865,66 +6865,72 @@ legend {
   border-bottom: 3px solid #333;
   padding-bottom: 0;
   padding-top: 0;
-  position: static; }
+  position: static;
+  text-align: right; }
   @media (min-width: 992px) {
     .header-tools {
-      padding: 10px 0 8px; } }
-  .header-tools .nav-tools__account {
-    margin-top: 25px; }
-    .header-tools .nav-tools__account .nav-account-section {
-      display: inline-block;
-      vertical-align: middle; }
-      .header-tools .nav-tools__account .nav-account-section.nav-account-section-account {
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 1;
-        margin: 0 5px; }
-      .header-tools .nav-tools__account .nav-account-section.nav-account-section-user-icon {
-        font-size: 15px;
-        padding-top: 1px; }
-    .header-tools .nav-tools__account a {
-      color: #333;
-      text-decoration: none; }
-      .header-tools .nav-tools__account a span.q-mark {
-        background: #e7e7e7;
-        border-radius: 50%;
-        font-size: 12px;
-        box-sizing: border-box;
-        width: 22px;
-        height: 22px;
-        line-height: 23px;
-        text-align: center;
-        padding-right: 1px; }
-  .header-tools .block-search {
-    margin: 15px 0; }
-    .header-tools .block-search form.form-search .form-text {
+      padding: 25px 15px 23px; } }
+  .header-tools .header-section {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 360px; }
+    .header-tools .header-section.header-section-search form.form-search .form-text {
       border-color: #484848;
-      padding: 6px 18px; }
-      .header-tools .block-search form.form-search .form-text::-webkit-input-placeholder {
+      padding: 6px 18px;
+      height: 48px; }
+      .header-tools .header-section.header-section-search form.form-search .form-text::-webkit-input-placeholder {
         color: #545454; }
-      .header-tools .block-search form.form-search .form-text::-moz-placeholder {
+      .header-tools .header-section.header-section-search form.form-search .form-text::-moz-placeholder {
         color: #545454; }
-      .header-tools .block-search form.form-search .form-text:-ms-input-placeholder {
+      .header-tools .header-section.header-section-search form.form-search .form-text:-ms-input-placeholder {
         color: #545454; }
-      .header-tools .block-search form.form-search .form-text::placeholder {
+      .header-tools .header-section.header-section-search form.form-search .form-text::placeholder {
         color: #545454; }
-    .header-tools .block-search form.form-search .input-group-btn .btn-primary {
+    .header-tools .header-section.header-section-search form.form-search .input-group-btn .btn-primary {
       background-color: #333;
       margin-bottom: 0;
-      min-width: 49px;
-      min-height: 49px;
+      min-width: 48px;
+      height: 48px;
       -webkit-transition: 0.1s ease-in-out background-color;
       transition: 0.1s ease-in-out background-color; }
-      .header-tools .block-search form.form-search .input-group-btn .btn-primary:hover {
+      .header-tools .header-section.header-section-search form.form-search .input-group-btn .btn-primary:hover {
         background-color: #00a4a6; }
-    .header-tools .block-search form.form-search .form-actions {
+    .header-tools .header-section.header-section-search form.form-search .form-actions {
       display: none; }
-
-.header-menu-tools {
-  position: static; }
-  @media (min-width: 992px) {
-    .header-menu-tools {
-      position: relative; } }
+    .header-tools .header-section.header-section-account {
+      margin-left: 60px; }
+      .header-tools .header-section.header-section-account .header-account-section {
+        display: inline-block;
+        vertical-align: middle; }
+        .header-tools .header-section.header-section-account .header-account-section.header-account-section-account {
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 1;
+          margin: 0 5px; }
+        .header-tools .header-section.header-section-account .header-account-section.header-account-section-user-icon {
+          font-size: 15px;
+          padding-top: 1px; }
+      .header-tools .header-section.header-section-account a {
+        display: block;
+        color: #333;
+        text-decoration: none;
+        line-height: 1; }
+        .header-tools .header-section.header-section-account a span.q-mark {
+          background: #e7e7e7;
+          border-radius: 50%;
+          font-size: 12px;
+          box-sizing: border-box;
+          width: 22px;
+          height: 22px;
+          line-height: 23px;
+          text-align: center;
+          padding-right: 1px; }
+    .header-tools .header-section.header-section-menu-tools {
+      position: static;
+      margin-left: 80px; }
+      @media (min-width: 992px) {
+        .header-tools .header-section.header-section-menu-tools {
+          position: relative; } }
 
 .main-menu {
   background: #333;
@@ -6989,7 +6995,6 @@ legend {
   border-width: 0;
   color: #fff;
   display: inline-block;
-  margin: 5px 0 0;
   padding: 10px 15px 12px;
   position: absolute;
   top: 25px;
@@ -6999,7 +7004,6 @@ legend {
   font-weight: 600; }
   @media (min-width: 992px) {
     .main-menu-btn {
-      margin-top: 15px;
       position: static; } }
   .main-menu-btn:focus {
     outline: none; }
@@ -7038,29 +7042,29 @@ legend {
   .main-menu-btn .icon-bars-wrap {
     padding: 4px 0 0 10px; }
 
-.nav-tools__search input.title-search {
+.header-section-search input.title-search {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   height: 45px; }
 
-.nav-tools__search .navbar-form {
+.header-section-search .navbar-form {
   padding-bottom: 5px; }
 
-.nav-tools__search .btn.btn-primary.btn-glyph, .nav-tools__search body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.btn-primary.btn-glyph, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .nav-tools__search a.btn-primary.btn-glyph, .nav-tools__search body.page-taxonomy #list-of-pages a.btn-primary.btn-glyph, body.page-taxonomy #list-of-pages .nav-tools__search a.btn-primary.btn-glyph, .nav-tools__search body.page-taxonomy #list-of-subcategories a.btn-primary.btn-glyph, body.page-taxonomy #list-of-subcategories .nav-tools__search a.btn-primary.btn-glyph {
+.header-section-search .btn.btn-primary.btn-glyph, .header-section-search body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a.btn-primary.btn-glyph, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .header-section-search a.btn-primary.btn-glyph, .header-section-search body.page-taxonomy #list-of-pages a.btn-primary.btn-glyph, body.page-taxonomy #list-of-pages .header-section-search a.btn-primary.btn-glyph, .header-section-search body.page-taxonomy #list-of-subcategories a.btn-primary.btn-glyph, body.page-taxonomy #list-of-subcategories .header-section-search a.btn-primary.btn-glyph {
   background: #333;
   height: 45px;
   width: 45px;
   padding: 10px 12px 8px; }
 
-.nav-tools__search--mobile-search {
+.header-section-search-mobile-search {
   padding-top: 0px; }
   @media (max-width: 768px) {
-    .nav-tools__search--mobile-search {
+    .header-section-search-mobile-search {
       padding-top: 6px; } }
   @media (min-width: 480px) and (max-width: 980px) {
-    .nav-tools__search--mobile-search {
+    .header-section-search-mobile-search {
       padding-top: 2px; } }
-  .nav-tools__search--mobile-search .input-group-btn .btn, .nav-tools__search--mobile-search .input-group-btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .nav-tools__search--mobile-search .input-group-btn a, .nav-tools__search--mobile-search .input-group-btn body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .nav-tools__search--mobile-search .input-group-btn a, .nav-tools__search--mobile-search .input-group-btn body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .nav-tools__search--mobile-search .input-group-btn a {
+  .header-section-search-mobile-search .input-group-btn .btn, .header-section-search-mobile-search .input-group-btn body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks a, body.page-taxonomy .pane-taxonomy-term-field-category-tasks .field-name-field-category-tasks .header-section-search-mobile-search .input-group-btn a, .header-section-search-mobile-search .input-group-btn body.page-taxonomy #list-of-pages a, body.page-taxonomy #list-of-pages .header-section-search-mobile-search .input-group-btn a, .header-section-search-mobile-search .input-group-btn body.page-taxonomy #list-of-subcategories a, body.page-taxonomy #list-of-subcategories .header-section-search-mobile-search .input-group-btn a {
     background: #333;
     margin-bottom: 0; }
 
