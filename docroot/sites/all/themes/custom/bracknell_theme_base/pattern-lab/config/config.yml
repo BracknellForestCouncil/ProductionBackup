@@ -22,7 +22,7 @@ defaultPattern: all
 defaultShowPatternInfo: false
 plugins:
     reload:
-        enabled: false
+        enabled: true
 ishMinimum: '240'
 ishMaximum: '2600'
 ishControlsHide:

@@ -9,3 +9,4 @@ docroot/sites/default/settings.local.php
 .idea
 **/node_modules/*
 **/bower_components/*
+**/pattern-lab/config/*
