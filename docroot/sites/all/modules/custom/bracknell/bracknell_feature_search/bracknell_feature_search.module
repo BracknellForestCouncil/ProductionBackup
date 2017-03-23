@@ -11,10 +11,23 @@ include_once 'bracknell_feature_search.features.inc';
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
+ * Add custom JS to the search page.
  */
 function bracknell_feature_search_form_views_exposed_form_alter(&$form, &$form_state) {
   // Add the custom JS file to the Search page only.
   if ($form['#id'] == 'views-exposed-form-search-page-page') {
     $form['#attached']['js'][] = drupal_get_path('module', 'bracknell_feature_search') . '/js/searchFunctions.js';
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adjust the form for the header search bar.
+ *
+ * @todo: Make this work...
+ */
+function bracknell_feature_search_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+  $form['search_block_form']['#attributes']['placeholder'] = t('Search this site');
 }
