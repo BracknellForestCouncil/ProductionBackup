@@ -26,6 +26,29 @@
  * @see template_process()
  */
 ?>
-<blockquote class="content-section-blockquote clearfix">
+
+<?php
+  // Please note that the "autho" isn't a typo on my part, it's the field being
+  // truncated because it got too long.
+  hide($content['field_paragraph_body']);
+  hide($content['field_paragraph_blockquote_autho']);
+  hide($content['field_paragraph_blockquote_title']);
+
+  $citations = array_filter(array(
+    '<cite>' . $content['field_paragraph_blockquote_autho']['#items'][0]['value'] . '</cite>',
+    $content['field_paragraph_blockquote_title']['#items'][0]['value'],
+  ));
+?>
+
+<blockquote
+  class='content-section-blockquote clearfix'
+  <?php if ($custom_colour): ?>style='border-left-color: <?php print $custom_colour; ?>'<?php endif; ?>
+>
+  <div class='blockquote-quote'>
+    <?php print render($content['field_paragraph_body']); ?>
+  </div>
+  <footer>
+    <?php print join($citations, ', '); ?>
+  </footer>
   <?php print render($content); ?>
 </blockquote>

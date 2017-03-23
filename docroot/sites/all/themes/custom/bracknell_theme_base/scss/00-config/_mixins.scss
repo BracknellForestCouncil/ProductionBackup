@@ -105,3 +105,19 @@
 @function quote-workaround($input) {
   @return '"' + $input + '"';
 }
+
+@mixin constrained {
+  position: relative;
+  margin: 0 auto;
+  float: none;
+  min-height: auto;
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-xs-min) and (max-width: $screen-sm-max) {
+    width: $container-sm;
+  }
+}
