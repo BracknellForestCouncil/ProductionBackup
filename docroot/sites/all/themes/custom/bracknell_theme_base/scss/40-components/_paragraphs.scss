@@ -1,9 +1,43 @@
+// Extends localgov_base_paragraphs/scss/localgov_base_paragraphs.scss
 
+blockquote.content-section-blockquote {
+  background: $greyExtraLight;
+  border-left: 5px solid $turquoise;
+  padding: 25px 23px;
+  .blockquote-quote {
+    line-height: 1.4em;
+    margin-bottom: 10px;
+    p {
+      // This will only work on Safari, but there's no point doing something
+      // like text-indent: -5em because, although it will work in many
+      // situations, there are also many which will break it.
+      hanging-punctuation: first;
+    }
+  }
+  footer {
+    font-size: 1em;
+    color: inherit;
+    font-weight: 600;
+    &:before {
+      display: none;
+    }
+    cite {
+      font-style: normal;
+    }
+  }
+}
 
+.content-section-document {
+}
 
+.content-section-highlighted {
+}
 
+.content-section-link {
+}
 
-
+.content-section-table {
+}
 
 .key-facts {
   .key-facts-title {
