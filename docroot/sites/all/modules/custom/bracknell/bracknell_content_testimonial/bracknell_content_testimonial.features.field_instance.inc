@@ -17,6 +17,13 @@ function bracknell_content_testimonial_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => -9,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -61,6 +68,12 @@ function bracknell_content_testimonial_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Select the team responsible for editing/moderating this content.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -10,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -102,6 +115,13 @@ function bracknell_content_testimonial_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => -8,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -149,6 +169,16 @@ function bracknell_content_testimonial_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => -5,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -211,6 +241,13 @@ function bracknell_content_testimonial_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => -7,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -258,6 +295,16 @@ function bracknell_content_testimonial_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => -6,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -312,6 +359,23 @@ function bracknell_content_testimonial_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'hidden',
+        'module' => 'youtube',
+        'settings' => array(
+          'youtube_autohide' => 0,
+          'youtube_autoplay' => 0,
+          'youtube_controls' => 0,
+          'youtube_height' => '',
+          'youtube_iv_load_policy' => 0,
+          'youtube_loop' => 0,
+          'youtube_showinfo' => 1,
+          'youtube_size' => '420x315',
+          'youtube_width' => '',
+        ),
+        'type' => 'youtube_video',
+        'weight' => -4,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'youtube',

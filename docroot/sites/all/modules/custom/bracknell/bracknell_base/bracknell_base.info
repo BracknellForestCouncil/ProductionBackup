@@ -1,0 +1,11 @@
+name = Bracknell Base
+core = 7.x
+package = bracknell
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = entity_view_mode
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = entity_view_modes
+project path = sites/all/modules/custom/bracknell
