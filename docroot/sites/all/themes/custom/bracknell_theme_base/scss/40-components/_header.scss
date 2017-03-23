@@ -1,19 +1,16 @@
 /*
 * Header.
 */
-
 .masthead {
   min-height: 160px;
   position: relative;
 }
-
 .logo {
   display: block;
   height: 120px;
   position: relative;
   width: 120px;
   z-index: 200;
-
   @include breakpoint($screen-md) {
     left: 0;
     height: 160px;
@@ -22,33 +19,43 @@
     width: 16.66667%;
   }
 }
-
 .header-tools {
   border-bottom: 3px solid $nav-tools-border-color;
   padding-bottom: 0;
   padding-top: 0;
   position: static;
-
   @include breakpoint($screen-md) {
-    padding: 10px 0;
+    padding: 10px 0 8px;
   }
-
   .nav-tools__account {
     margin-top: 25px;
-
+    .nav-account-section {
+      display: inline-block;
+      vertical-align: middle;
+      &.nav-account-section-account {
+        font-size: $font-size-03;
+        font-weight: $font-weight-headinglight;
+        line-height: 1;
+        margin: 0 5px;
+      }
+      &.nav-account-section-user-icon {
+        font-size: 15px;
+        padding-top: 1px;
+      }
+    }
     a {
       color: $nav-tools-account-link-text-color;
-      font: {
-        size: $font-size-03;
-        weight: $font-weight-headinglight;
-      }
       text-decoration: none;
-
       span.q-mark {
         background: $nav-tools-account-link-q-mark-bg-color;
         border-radius: 50%;
-        font-size: $font-size-01;
-        padding: 4px 7px;
+        font-size: 12px;
+        box-sizing: border-box;
+        width: 22px;
+        height: 22px;
+        line-height: 23px;
+        text-align: center;
+        padding-right: 1px;
       }
     }
   }
@@ -70,6 +77,10 @@
           margin-bottom: 0;
           min-width: 49px;
           min-height: 49px;
+          transition: 0.1s ease-in-out background-color;
+          &:hover {
+            background-color: $turquoise;
+          }
         }
       }
       .form-actions {
@@ -78,10 +89,8 @@
     }
   }
 }
-
 .header-menu-tools {
   position: static;
-
   @include breakpoint($screen-md) {
     position: relative;
   }
