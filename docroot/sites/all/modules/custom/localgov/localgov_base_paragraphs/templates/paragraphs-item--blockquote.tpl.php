@@ -34,15 +34,22 @@
   hide($content['field_paragraph_blockquote_autho']);
   hide($content['field_paragraph_blockquote_title']);
 
+  // Create an array of citation fields, array filtered to strip out blank values.
   $citations = array_filter(array(
-    '<cite>' . $content['field_paragraph_blockquote_autho']['#items'][0]['value'] . '</cite>',
-    $content['field_paragraph_blockquote_title']['#items'][0]['value'],
+    // Add author name if set.
+    isset($content['field_paragraph_blockquote_autho']['#items'][0]['value']) ?
+      '<cite>' . $content['field_paragraph_blockquote_autho']['#items'][0]['value'] . '</cite>'
+      : FALSE,
+    // Add author title if set.
+    isset($content['field_paragraph_blockquote_title']['#items'][0]['value']) ?
+      $content['field_paragraph_blockquote_title']['#items'][0]['value']
+      : FALSE,
   ));
 ?>
 
 <blockquote
   class='content-section-blockquote clearfix'
-  <?php if ($custom_colour): ?>style='border-left-color: <?php print $custom_colour; ?>'<?php endif; ?>
+  <?php if (isset($custom_colour)): ?>style='border-left-color: <?php print $custom_colour; ?>'<?php endif; ?>
 >
   <div class='blockquote-quote'>
     <?php print render($content['field_paragraph_body']); ?>

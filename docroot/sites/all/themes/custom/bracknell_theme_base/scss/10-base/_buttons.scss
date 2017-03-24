@@ -1,4 +1,5 @@
 // Buttons - override BS default.
+
 .btn {
   border: 0;
   text-decoration: none;
@@ -8,12 +9,11 @@
   color: $button-text-color;
 
   &:hover {
-    background: $button-bg-hover-color;
+    background-color: $button-bg-hover-color;
     color: $button-text-hover-color;
   }
-
   &:focus {
-    background: $button-bg-focus-color;
+    background-color: $button-bg-focus-color;
     color: $button-text-focus-color;
   }
 
@@ -28,24 +28,43 @@
 
   &.key-task {
     @extend .line-wrapping;
+    box-sizing: border-box;
     text-align: left;
-    font-size: $font-size-08;
+    font-size: 1.3em;
     font-weight: $font-weight-headinglight;
     display: block;
     border: 1px solid $button-key-task-border-color;
-    margin: 20px 0;
-    padding: 12px 10px 35px 40px;
-    background: $button-key-task-bg-color url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAATCAYAAACgADyUAAABNElEQVQ4jY3TPyjuURjA8Q9eZbghyUR3ee8kiy7KnwxKb0Z0s9zl7qQkZotS8mcWpUSWW3eQ8qbbLWUgyWqgO4pBBooYTm/9Op0Xz/h9zrdznj+nolAojGAJtdjALJ58EJVYQwvqMIl/aP6MeB6xTpyi/yNxGMWIN+EAE++JdyhgAa+ZXDVWsImalAgvmMEYHqIzP3GErymxFLvoxmXE23GCgXIiXKADexFvxD6moCqfzydcj9hBDn2oyFw0iIZyIqFRh2hAV5RrTT01W8YcxhO59VwZqR5bGIr4i7CSiymxFb/xLeK3wriKpedkYxTHCekM32U2rCRWYV6Y45dI2kIvrrIwJ3RtW2hzNp4xjeVEOXL4g56I3+AH/qakktgWsRPhx/wvJxFq/IVr3GNV2JR3JXgDcII3V0Lh5ZkAAAAASUVORK5CYII=') 20px 20px no-repeat;
+    padding: 15px 30px 25px 42px;
+    min-height: 4.2em;
+    line-height: 1.15em;
+    background: $button-key-task-bg-color $large-arrow-black 21px 20px no-repeat;
     color: $button-key-task-text-color;
+    &:hover {
+      border-color: darken($button-bg-hover-color, 3);
+      background-image: $large-arrow-white;
+    }
+    &:focus {
+      border-color: darken($button-bg-focus-color, 3);
+      background-image: $small-arrow-white;
+    }
   }
 
   &.sub-task {
     @extend .key-task;
-    font-size: $font-size-05;
-    margin: 0 0 $commonSpacing 0;
-    padding: 6px 10px 30px 30px;
-    background: $button-sub-task-bg-color url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8Y/yYkND5OAVtHQFErRF8TY1RUvgolNQ3kl/1moMKneXchTqBnKwa0hwEBQhB88Lp6M9cIbfw5ffn+eU8jy/RgtdNDG2RmU0sIlTfGDnP/A86rKLTxyuA7vYw3fwqsG7TEH4Qh3voc5wi3tUYhB+cIy7yGuih1oMwhxXlinMgrePXgoW+g1vZcdCGW7wgI3g9XGQRdA2XvyN5hEXmBYd0/zmaIdjpsWoI7xiK0AjnOEt3ek5ggY4wTC9rownTNCx/KEVCBZdhyk8nZDqagAAAABJRU5ErkJggg==') 14px 14px no-repeat;
-    @extend .line-wrapping;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    padding: 12px 24px 18px 32px;
+    min-height: 3em;
+    background: $button-sub-task-bg-color $small-arrow-black 16px 17px no-repeat;
+    border-color: $button-sub-task-border-color;
+    &:hover {
+      border-color: darken($button-bg-hover-color, 3);
+      background-image: $small-arrow-white;
+    }
+    &:focus {
+      border-color: darken($button-bg-focus-color, 3);
+      background-image: $small-arrow-white;
+    }
   }
 
   &.button-prev,

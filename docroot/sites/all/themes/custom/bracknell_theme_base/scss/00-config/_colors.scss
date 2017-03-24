@@ -39,7 +39,7 @@ $grey1: #484848;
 $grey2: #f7f7f7;
 $grey3: #e7e7e7;
 $grey4: #555;
-$borderGrey: lighten($black, 50%);
+$borderGrey: #b7b7b7;
 
 // Beige.
 $beige1: #fbead4;
@@ -50,7 +50,9 @@ $blue2: #55acee;
 $blue3: #3b5998;
 
 // Green.
-$oliveGreenLight: lighten($oliveGreen, 30%);
+$oliveGreenLight: #b3bc9d;
+$oliveGreenOffWhite: #f8f8f6;
+$oliveGreenBorder: #959580;
 
 // Typography.
 $global-text-color: $textBlack;
@@ -80,12 +82,13 @@ $button-bg-focus-color: $slateBlue;
 $button-text-focus-color: $white;
 
 // Buttons - Key Task.
-$button-key-task-border-color: $borderGrey;
-$button-key-task-bg-color: $white;
+$button-key-task-border-color: $oliveGreenBorder;
+$button-key-task-bg-color: $oliveGreenOffWhite;
 $button-key-task-text-color: $textBlack;
 
 // Buttons - Sub Task.
 $button-sub-task-bg-color: $white;
+$button-sub-task-border-color: $borderGrey;
 
 // Buttons - Beta.
 $button-beta-bg-color: $darkOrange;
