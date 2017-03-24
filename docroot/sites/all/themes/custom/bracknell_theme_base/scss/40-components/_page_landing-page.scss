@@ -211,10 +211,10 @@ body.page-taxonomy {
   @extend .full-width;
   @extend .call-to-actions;
   @extend .sub-grid-categories;
-  .field-items {
+  .field-items, .view-content {
     display: flex;
     flex-wrap: wrap;
-    .field-item {
+    .field-item, > div {
       display: flex;
       margin: 0 0 10px;
       a {
@@ -233,9 +233,9 @@ body.page-taxonomy {
 .top-tasks {
   background: $oliveGreenLight;
   padding: 40px 0 30px;
-  .field-items {
+  .field-items, .view-content {
     margin: 0 -10px;
-    .field-item {
+    .field-item, > div {
       padding: 0 10px;
       width: 33.333333%;
       a {
@@ -248,9 +248,9 @@ body.page-taxonomy {
 .related-pages {
   background: $greyExtraLight;
   padding: 30px 0 20px;
-  .field-items {
+  .field-items, .view-content {
     margin: 0 -5px;
-    .field-item {
+    .field-item, > div {
       padding: 0 5px;
       width: 25%;
       a {

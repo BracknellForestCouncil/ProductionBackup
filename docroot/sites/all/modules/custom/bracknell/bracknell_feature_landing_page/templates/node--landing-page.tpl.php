@@ -87,6 +87,8 @@
     hide($content['field_tags']);
     hide($content['field_top_tasks']);
     hide($content['field_related_pages']);
+
+    $entity = entity_metadata_wrapper('node', $node);
   ?>
 
   <section class='top-tasks'>
@@ -94,7 +96,7 @@
   </section>
 
   <section class='related-pages'>
-    <?php print render($content['field_related_pages']); ?>
+    <?php print views_embed_view('localgov_base_taxonomy_node', 'panel_pane_1', $entity->field_category->getIdentifier()); ?>
   </section>
 
   <section class='landing-page-content'>
