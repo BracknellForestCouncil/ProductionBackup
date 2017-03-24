@@ -87,6 +87,7 @@
     hide($content['field_tags']);
     hide($content['field_top_tasks']);
     hide($content['field_related_pages']);
+    hide($content['field_related_links']);
 
     $entity = entity_metadata_wrapper('node', $node);
   ?>
@@ -102,4 +103,13 @@
   <section class='landing-page-content'>
     <?php print render($content); ?>
   </section>
+
+  <section class='related-links'>
+    <?php $view = views_get_view('related_links_taxonomy_'); ?>
+    <h3 class='related-links-title'>
+      <?php print $view->get_title(); ?>
+    </h3>
+    <?php print views_embed_view('related_links_taxonomy_', 'block', $entity->field_category->getIdentifier()); ?>
+  </section>
+
 </article>
