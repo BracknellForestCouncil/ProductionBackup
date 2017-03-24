@@ -6,7 +6,6 @@ version = 7.x-1.5
 dependencies[] = entity
 dependencies[] = fe_block
 dependencies[] = features
-dependencies[] = search
 dependencies[] = search_api
 dependencies[] = search_api_attachments
 dependencies[] = search_api_attachments_entityreference
