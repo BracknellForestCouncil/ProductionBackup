@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall hooks for bracknell_deploy.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function bracknell_deploy_install() {
+  // Search for any existing update hooks.
+  for ($i = 7000; $i < 8000; $i++) {
+    if (function_exists($function_name = "bracknell_deploy_update_{$i}")) {
+      // Run the function.
+      $function_name();
+    }
+  }
+}
+
+/**
+ * Enable and configure node_display_title module.
+ */
+function bracknell_deploy_update_7000() {
+  module_enable(array('node_display_title'));
+
+  variable_set('node_display_title_settings', array('guide_section'));
+}

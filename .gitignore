@@ -10,3 +10,6 @@ docroot/sites/default/settings.local.php
 **/node_modules/*
 **/bower_components/*
 **/pattern-lab/config/*
+# Ignore certain CSS files as we will complile on the server.
+**/css/styles.css
+**/css/styles.css.map

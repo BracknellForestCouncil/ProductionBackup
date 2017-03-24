@@ -65,16 +65,15 @@
  * Afterbuild function
  */
  function _localgov_base_moderation_form_organize($form, $form_state){
-   // Create fieldset
-   $form['moderation']  = array(
-     '#type' => 'fieldset',
-     '#title' => t('Moderation'),
-     '#description' => t('Add a log message and set moderation state.'),
-     '#weight' => '99',
-     '#collapsible' => TRUE,
-     '#collapsed' => FALSE
-   );
-
+  // Create fieldset
+  $form['moderation']  = array(
+    '#type' => 'fieldset',
+    '#title' => t('Moderation'),
+    '#description' => t('Add a log message and set moderation state.'),
+    '#weight' => '99',
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE
+  );
 
   //
   // $current_state = $form['#node']->workbench_moderation['current'];
@@ -88,12 +87,15 @@
 
   //  Move the revision log into the publishing options to make things pretty.
   if ($form['options']['#access']) {
-    $form['moderation']['log'] = $form['options']['log'];
+    if (isset($form['options']['log'])) {
+      $form['moderation']['log'] = $form['options']['log'];
+    }
     $form['moderation']['state'] = isset($form['options']['workbench_moderation_state_new']) ? $form['options']['workbench_moderation_state_new'] : '';
 
     // Unset the old placement of the Revision log.
     unset($form['options']['workbench_moderation_state_new']);
-  } else {
+  }
+  else {
     $form['moderation']['log'] = $form['revision_information']['log'];
     $form['moderation']['state'] = isset($form['revision_information']['workbench_moderation_state_new']) ? $form['revision_information']['workbench_moderation_state_new'] : '';
 
