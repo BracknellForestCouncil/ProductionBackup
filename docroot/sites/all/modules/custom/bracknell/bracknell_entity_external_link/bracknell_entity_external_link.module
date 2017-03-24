@@ -33,7 +33,8 @@ function bracknell_entity_external_link_preprocess_field(&$variables) {
     return;
   }
 
-  if ($variables['element']['#field_name'] == 'field_top_tasks') {
+  // Find and alter field_top_tasks only at this stage.
+  if ($variables['element']['#field_name'] === 'field_top_tasks') {
     // Get the accompanying object - node assumed.
     $node_wrapper = entity_metadata_wrapper('node', $variables['element']['#object']);
     if (!empty($node_wrapper)) {
