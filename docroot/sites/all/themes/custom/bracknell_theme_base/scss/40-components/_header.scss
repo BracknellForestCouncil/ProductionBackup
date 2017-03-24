@@ -13,13 +13,17 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 140px;
+    width: 14%;
     height: auto;
     padding: 20px 25px 18px 20px;
     margin-left: -20px;
     z-index: 150;
     box-sizing: content-box;
     border-radius: 3px;
+  }
+  @include breakpoint($screen-md) {
+    padding: 10px 0 0;
+    width: 13%;
   }
 }
 .logo {
