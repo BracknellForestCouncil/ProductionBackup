@@ -12,11 +12,11 @@ function bracknell_feature_search_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['search-form'] = array(
+  $export['views--exp-search_page-page'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'form',
-    'module' => 'search',
+    'delta' => '-exp-search_page-page',
+    'module' => 'views',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
