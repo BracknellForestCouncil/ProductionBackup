@@ -1,8 +1,9 @@
-name = Bracknell Directory
+name = Bracknell Feature: Directory
 core = 7.x
 package = bracknell
 version = 7.x-1.0
 dependencies[] = addressfield
+dependencies[] = bracknell_base
 dependencies[] = ctools
 dependencies[] = eck
 dependencies[] = entityreference
