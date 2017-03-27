@@ -26,3 +26,12 @@ function bracknell_deploy_update_7000() {
 
   variable_set('node_display_title_settings', array('guide_section'));
 }
+
+/**
+ * Enable and revert bracknell_feature_directory.
+ */
+function bracknell_deploy_update_7001() {
+  features_install_modules(array('bracknell_feature_directory'));
+
+  features_revert_module('bracknell_feature_directory');
+}
