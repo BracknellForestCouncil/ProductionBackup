@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function bracknell_feature_search_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -257,10 +260,10 @@ function bracknell_feature_search_default_search_api_index() {
         "field_contactinfo:field_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
         "field_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
         "field_content:field_paragraph_body:value" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_promotional_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
-        "field_promotional_slogan" : { "type" : "integer", "entity_type" : "slogan" },
         "field_description:value" : { "type" : "text" },
         "field_form_additional:value" : { "type" : "text" },
+        "field_promotional_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
+        "field_promotional_slogan" : { "type" : "integer", "entity_type" : "slogan" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "promote" : { "type" : "boolean" },
         "search_api_language" : { "type" : "string" },
