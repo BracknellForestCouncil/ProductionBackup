@@ -31,7 +31,7 @@ function bracknell_deploy_update_7000() {
  * Create landing page nodes for existing taxonomy terms.
  */
 function bracknell_deploy_update_7001() {
-  foreach (taxonomy_get_tree(2, 0, 1) as $term) {
+  foreach (taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('category')->vid) as $term) {
     $node = entity_create('node', array(
       'status' => NODE_PUBLISHED,
       'title' => $term->name,
