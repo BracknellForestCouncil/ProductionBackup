@@ -48,16 +48,19 @@
         .views-exposed-widgets {
           display: table;
           margin-bottom: 0;
-        }
-        .views-exposed-widget {
-          padding: 0;
-          display: table-cell;
-        }
-        .views-widget-sort-by, .views-widget-sort-order {
-          display: none;
-        }
-        label {
-          display: none;
+          .views-exposed-widget {
+            padding: 0;
+            display: table-cell;
+            &.views-widget-sort-by, &.views-widget-sort-order {
+              display: none;
+            }
+          }
+          .input-group-addon {
+            display: none;
+          }
+          label {
+            display: none;
+          }
         }
         .form-text {
           border-color: $grey1;
