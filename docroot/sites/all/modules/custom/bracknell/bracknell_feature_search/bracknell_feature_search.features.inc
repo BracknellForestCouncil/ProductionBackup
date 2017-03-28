@@ -195,7 +195,9 @@ function bracknell_feature_search_default_search_api_index() {
               "field_description:value" : true,
               "field_contact_additional:value" : true,
               "field_contactinfo:field_contact_additional:value" : true,
-              "field_content:field_paragraph_body:value" : true
+              "field_content:field_paragraph_body:value" : true,
+              "field_promotional_content" : true,
+              "field_promotional_slogan" : true
             },
             "spaces" : "[^\\\\p{L}\\\\p{N}]",
             "ignorable" : "[-]"
@@ -255,6 +257,8 @@ function bracknell_feature_search_default_search_api_index() {
         "field_contactinfo:field_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
         "field_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
         "field_content:field_paragraph_body:value" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_promotional_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
+        "field_promotional_slogan" : { "type" : "integer", "entity_type" : "slogan" },
         "field_description:value" : { "type" : "text" },
         "field_form_additional:value" : { "type" : "text" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
