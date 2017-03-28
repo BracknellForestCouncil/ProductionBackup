@@ -26,3 +26,31 @@ function bracknell_deploy_update_7000() {
 
   variable_set('node_display_title_settings', array('guide_section'));
 }
+
+/**
+ * Create landing page nodes for existing taxonomy terms.
+ */
+function bracknell_deploy_update_7001() {
+  foreach (taxonomy_get_tree(2, 0, 1) as $term) {
+    $node = entity_create('node', array(
+      'status' => NODE_PUBLISHED,
+      'title' => $term->name,
+      'type' => 'landing_page',
+      'uid' => 1,
+    ));
+
+    node_save($node);
+
+    // Update the menu link.
+    $menu_link = db_query("SELECT * FROM {menu_links} WHERE menu_name = 'main-menu' AND link_title = :title", array(':title' => $term->name))->fetchAssoc();
+    $menu_link['link_path'] = "node/{$node->nid}";
+    $menu_link['router_path'] = 'node/%';
+
+    db_update('menu_links')
+      ->fields($menu_link)
+      ->condition('mlid', $menu_link['mlid'])
+      ->execute();
+  }
+
+  menu_cache_clear('main-menu');
+}
