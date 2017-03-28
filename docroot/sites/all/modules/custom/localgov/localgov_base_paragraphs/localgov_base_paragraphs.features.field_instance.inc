@@ -3692,7 +3692,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -3739,7 +3739,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 0,
+      'weight' => 1,
     ),
     'workbench_access_field' => 0,
   );
@@ -3831,7 +3831,50 @@ function localgov_base_paragraphs_field_default_field_instances() {
       'module' => 'tablefield',
       'settings' => array(),
       'type' => 'tablefield',
-      'weight' => 1,
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'paragraphs_item-table-field_table_theme'.
+  $field_instances['paragraphs_item-table-field_table_theme'] = array(
+    'bundle' => 'table',
+    'default_value' => array(
+      0 => array(
+        'value' => 'minimal',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Choose a theme for the table.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_key',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_table_theme',
+    'is_property' => 0,
+    'label' => 'Table theme',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
     ),
     'workbench_access_field' => 0,
   );
@@ -4087,6 +4130,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Additional');
   t('Author');
   t('Author Title');
+  t('Choose a theme for the table.');
   t('Content');
   t('Content (Narrow)');
   t('Content (Narrow) 1');
@@ -4114,6 +4158,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Slide Layout');
   t('TODO: Add help text.');
   t('Table');
+  t('Table theme');
   t('Title');
 
   return $field_instances;
