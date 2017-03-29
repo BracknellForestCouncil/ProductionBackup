@@ -237,3 +237,17 @@ $themes: (
   leisure-blue: #055fad,
   parks-green: #62a00f,
 );
+
+// Mixin to apply colour hexes to a list of attributes, based on the body's
+// .theme-THEMENAME class.
+// Usage:
+//    @include applyColour((background-color, border-color));
+@mixin applyColour($attributes: ('background-color')) {
+  @each $class, $color in $themes {
+    body.theme-#{$class} & {
+      @each $attribute in $attributes {
+        #{$attribute}: $color;
+      }
+    }
+  }
+}
