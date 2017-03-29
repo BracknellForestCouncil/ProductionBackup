@@ -3496,7 +3496,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'enable' => 0,
         'profile' => '',
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3515,6 +3515,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   // 'paragraphs_item-promotional_area-field_promotional_area_image'.
   $field_instances['paragraphs_item-promotional_area-field_promotional_area_image'] = array(
     'bundle' => 'promotional_area',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3554,7 +3555,10 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'widget' => array(
       'active' => 0,
       'module' => 's3fs_cors',
-      'settings' => array(),
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
       'type' => 's3fs_cors',
       'weight' => 2,
     ),
@@ -3575,8 +3579,9 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_key',
         'weight' => 5,
       ),
       'paragraphs_editor_preview' => array(
