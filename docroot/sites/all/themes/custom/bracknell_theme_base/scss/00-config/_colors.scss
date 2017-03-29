@@ -238,14 +238,19 @@ $themes: (
   parks-green: #62a00f,
 );
 
-// Mixin to apply colour hexes to a list of attributes, based on the body's
-// .theme-THEMENAME class.
+// Mixin to apply colour hexes to a list of CSS properties, based on the body's
+// theme-THEMENAME class. It takes a single parameter of either a parameter
+// or a list of parameters. Ensure you put parentheses around the properties if
+// supplying multiple ones.
+//
 // Usage:
-//    @include applyColour((background-color, border-color));
-@mixin applyColour($attributes: ('background-color')) {
+//   @include applyColour(color);
+//   @include applyColour((background-color, border-color));
+//
+@mixin applyColour($properties: ('background-color')) {
   @each $class, $color in $themes {
     body.theme-#{$class} & {
-      @each $attribute in $attributes {
+      @each $attribute in $properties {
         #{$attribute}: $color;
       }
     }
