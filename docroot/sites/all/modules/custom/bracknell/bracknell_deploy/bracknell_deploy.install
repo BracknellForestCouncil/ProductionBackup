@@ -70,3 +70,12 @@ function bracknell_deploy_update_7001() {
 
   menu_cache_clear('main-menu');
 }
+
+/**
+ * Enable and revert bracknell_feature_directory.
+ */
+function bracknell_deploy_update_7002() {
+  features_install_modules(array('bracknell_feature_directory'));
+
+  features_revert_module('bracknell_feature_directory');
+}
