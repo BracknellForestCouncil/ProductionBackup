@@ -61,6 +61,18 @@ function localgov_base_paragraphs_libraries_info() {
     ),
   );
 
+  $libraries['jquery_accessible_accordion'] = array(
+    'name' => 'jQuery Accessible Accordion',
+    'vendor url' => 'https://github.com/nomensa/jquery.accessible-accordion',
+    'download url' => 'https://github.com/nomensa/jquery.accessible-accordionachive/master.zip',
+    'version callback' => 'localgov_base_paragraphs_version',
+    'files' => array(
+      'js' => array(
+        'jquery.accAccordion.js',
+      ),
+    ),
+  );
+
   return $libraries;
 }
 
@@ -68,8 +80,14 @@ function localgov_base_paragraphs_libraries_info() {
  * Implements hook_preprocess_entity().
  */
 function localgov_base_paragraphs_preprocess_entity(&$variables) {
+	drupal_add_js(drupal_get_path('module', 'localgov_base_paragraphs') . '/js/localgov_base_paragraphs.js');
+
   if ($variables['elements']['#bundle'] == 'tabs' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
     libraries_load('jquery_accessible_tabs');
+  }
+
+  if ($variables['elements']['#bundle'] == 'accordion' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    libraries_load('jquery_accessible_accordion');
   }
 }
 
