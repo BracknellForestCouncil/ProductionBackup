@@ -53,7 +53,7 @@ function localgov_base_paragraphs_libraries_info() {
     'name' => 'jQuery Accessible Tabs',
     'vendor url' => 'https://github.com/nomensa/jquery.accessible-tabs',
     'download url' => 'https://github.com/nomensa/jquery.accessible-tabs/achive/master.zip',
-    'version callback' => 'short_circuit_version',
+    'version callback' => 'localgov_base_paragraphs_version',
     'files' => array(
       'js' => array(
         'jquery.accTabs.js',
@@ -76,6 +76,6 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
 /**
  * Short-circuit the version argument.
  */
-function short_circuit_version() {
+function localgov_base_paragraphs_version() {
   return TRUE;
 }
