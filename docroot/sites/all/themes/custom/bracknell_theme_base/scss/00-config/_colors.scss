@@ -235,6 +235,14 @@ $footer-text-color: $white;
 $footer-link-text-color: $white;
 $footer-list-border-color: $white;
 
+// Tabs.
+$acc-tabs-control-border-color: $greyLight;
+$acc-tabs-control-button-border-color: transparent;
+$acc-tabs-control-item-active-border-color: $greyLight;
+$acc-tabs-control-item-active-bottom-border-color: $white;
+$acc-tabs-control-button-text-color: $deepBlue;
+$acc-tabs-control-active-button-text-color: $textBlack;
+
 // Colour schemes/themes.
 $themes: (
   business: (#009fd4, white),
