@@ -44,51 +44,7 @@
     vertical-align: middle;
     max-width: 360px;
     &.header-section-search {
-      .views-exposed-form {
-        .views-exposed-widgets {
-          display: table;
-          margin-bottom: 0;
-        }
-        .views-exposed-widget {
-          padding: 0;
-          display: table-cell;
-        }
-        .views-widget-sort-by, .views-widget-sort-order {
-          display: none;
-        }
-        label {
-          display: none;
-        }
-        .form-text {
-          border-color: $grey1;
-          padding: 6px 18px;
-          height: 48px;
-          @include border-right-radius(0);
-          // This will only work with autoprefixer.
-          &::placeholder {
-            color: $greyMid;
-          }
-        }
-        .input-group-btn, .views-submit-button {
-          .btn {
-            background-color: $charcoal;
-            margin: 0;
-            margin-bottom: 0;
-            width: 48px;
-            height: 48px;
-            transition: 0.1s ease-in-out background-color;
-            padding: 5px 12px;
-            top: 0;
-            @include border-left-radius(0);
-            &:hover {
-              background-color: $turquoise;
-            }
-          }
-        }
-        .form-actions {
-          display: none;
-        }
-      }
+      // ...
     }
     &.header-section-account {
       margin-left: 60px;

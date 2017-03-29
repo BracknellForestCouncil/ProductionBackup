@@ -34,8 +34,8 @@ function bracknell_feature_search_default_fe_block_settings() {
         'weight' => 0,
       ),
       'bracknell_theme_base' => array(
-        'region' => 'search',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'bracknell_theme_base',
         'weight' => 0,
       ),
