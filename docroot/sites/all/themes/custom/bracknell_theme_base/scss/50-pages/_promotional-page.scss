@@ -9,8 +9,11 @@ body.node-type-promotional-page {
     position: relative;
   }
   #page-header {
+    display: none;
+  }
+  .promotional-hero-title {
     @include constrained;
-    .page-header {
+    .promotional-hero-title-inner {
       position: absolute;
       top: 55px;
       z-index: 2;
@@ -61,7 +64,6 @@ body.node-type-promotional-page {
       .field-name-field-promotional-hero .field-item, .promotional-hero {
         max-height: 480px;
         overflow: hidden;
-        margin-bottom: 10px;
         position: relative;
         min-height: 200px;
         background: #f3f3f3;
