@@ -26,6 +26,4 @@
  * @see template_process()
  */
 ?>
-<div class="tab-panel">
-  <?php print render($content); ?>
-</div>
+<?php print render($content); ?>

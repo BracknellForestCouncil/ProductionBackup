@@ -45,5 +45,5 @@
  */
 ?>
 <?php foreach ($items as $delta => $item): ?>
-  <h3 class="tab-panel-title"><?php print render($item); ?></h3>
+  <h3 class="acc-tab-panel-title"><?php print render($item); ?></h3>
 <?php endforeach; ?>

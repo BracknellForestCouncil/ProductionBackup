@@ -26,6 +26,6 @@
  * @see template_process()
  */
 ?>
-<div class="tabs">
+<div class="acc-tabs-container">
   <?php print render($content); ?>
 </div>
