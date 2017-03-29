@@ -1,0 +1,69 @@
+// Acc Tabs.
+
+.acc-tabs-container {
+  margin-bottom: 1.5em;
+  margin-top: 1em;
+}
+
+.acc-tab-title {
+  margin-bottom: 1em;
+}
+
+.acc-tab-panel {
+  margin-bottom: 30px;
+}
+
+// Styling for tabs with JavaScript enabled.
+.js-acc-tabs-control {
+  @include clearfix;
+  border: {
+    color: $acc-tabs-control-border-color;
+    style: solid;
+    width: 0 0 1px 0;
+  }
+  list-style-type: none;
+  margin-bottom: 15px;
+  padding-left: 0;
+
+  button {
+    background: transparent;
+    border: {
+      color: $acc-tabs-control-button-border-color;
+      width: 1px;
+    }
+    color: $acc-tabs-control-button-text-color;
+    cursor: pointer;
+    outline: none;
+    padding: 8px 15px 10px;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  li {
+    float: left;
+    margin-bottom: -1px;
+    margin-right: 15px;
+    position: relative;
+  }
+
+  &-item-active {
+    button {
+      border: {
+        color: $acc-tabs-control-item-active-border-color;
+        style: solid;
+        radius: 5px 5px 0 0;
+        width: 1px 1px 1px 1px;
+      }
+      border-bottom-color: $acc-tabs-control-item-active-bottom-border-color;
+      color: $acc-tabs-control-active-button-text-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+

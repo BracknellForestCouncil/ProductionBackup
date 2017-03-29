@@ -2,7 +2,6 @@ body.node-type-promotional-page {
   .node-promotional-page {
     .paragraphs-items {
       @include constrained;
-      padding: 40px 0;
     }
   }
   #page-content {
