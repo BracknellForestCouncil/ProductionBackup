@@ -28,9 +28,53 @@ function bracknell_deploy_update_7000() {
 }
 
 /**
- * Enable and revert bracknell_feature_directory.
+ * Create landing page nodes for existing taxonomy terms.
  */
 function bracknell_deploy_update_7001() {
+  foreach (taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('category')->vid) as $term) {
+    watchdog('bracknell_deploy', 'Converting ":name" to a landing page.', array(':name' => $term->name));
+
+    if (function_exists('drush_log')) {
+      drush_log(dt('Converting "!name" to a landing page.', array(
+        '!name' => $term->name,
+      )), 'ok');
+    }
+
+    $node = entity_create('node', array(
+      'status' => NODE_PUBLISHED,
+      'title' => $term->name,
+      'type' => 'landing_page',
+      'uid' => 1,
+    ));
+
+    node_save($node);
+
+    // Update the menu link.
+    watchdog('bracknell_deploy', 'Updating the menu link for ":name".', array(':name' => $term->name));
+
+    if (function_exists('drush_log')) {
+      drush_log(dt('Updating the menu link for "!name".', array(
+        '!name' => $term->name,
+      )), 'ok');
+    }
+
+    $menu_link = db_query("SELECT * FROM {menu_links} WHERE menu_name = 'main-menu' AND link_title = :title", array(':title' => $term->name))->fetchAssoc();
+    $menu_link['link_path'] = "node/{$node->nid}";
+    $menu_link['router_path'] = 'node/%';
+
+    db_update('menu_links')
+      ->fields($menu_link)
+      ->condition('mlid', $menu_link['mlid'])
+      ->execute();
+  }
+
+  menu_cache_clear('main-menu');
+}
+
+/**
+ * Enable and revert bracknell_feature_directory.
+ */
+function bracknell_deploy_update_7002() {
   features_install_modules(array('bracknell_feature_directory'));
 
   features_revert_module('bracknell_feature_directory');
