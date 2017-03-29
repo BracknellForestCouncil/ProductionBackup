@@ -10,5 +10,6 @@ dependencies[] = text
 dependencies[] = viewfield
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
+features[field_base][] = field_related_links_view
 features[field_base][] = field_related_pages_view
 features[variable][] = entity_view_modes

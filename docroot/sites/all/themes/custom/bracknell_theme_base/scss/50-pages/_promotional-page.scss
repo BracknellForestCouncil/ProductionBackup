@@ -105,6 +105,11 @@ body.node-type-promotional-page {
           }
         }
       }
+      .related-pages {
+        .related-pages-inner {
+          @include constrained;
+        }
+      }
     }
   }
 }

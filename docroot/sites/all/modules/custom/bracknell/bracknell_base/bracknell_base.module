@@ -13,6 +13,12 @@ function bracknell_base_theme($existing, $type, $theme, $path) {
     'template' => 'field--field-related-pages-view',
     'path' => drupal_get_path('module', 'bracknell_base') . '/templates',
   );
+  $theme['field__field_related_links_view'] = array(
+    'render element' => 'content',
+    'base hook' => 'field',
+    'template' => 'field--field-related-links-view',
+    'path' => drupal_get_path('module', 'bracknell_base') . '/templates',
+  );
   $theme['field__field_promotional_hero'] = array(
     'render element' => 'content',
     'base hook' => 'field',
