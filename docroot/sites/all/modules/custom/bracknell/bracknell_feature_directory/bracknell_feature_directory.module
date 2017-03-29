@@ -1,0 +1,15 @@
+<?php
+/**
+ * @file
+ * Code for the Bracknell Directory feature.
+ */
+
+include_once 'bracknell_feature_directory.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function bracknell_feature_directory_form_eck__entity__form_add_directory_entry_directory_entry_alter(&$form, $form_state) {
+  // Ensure that the title field is at the top of the form.
+  $form['title']['#weight'] = -1;
+}
