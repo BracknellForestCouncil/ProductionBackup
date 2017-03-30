@@ -39,6 +39,7 @@ $grey1: #484848;
 $grey2: #f7f7f7;
 $grey3: #e7e7e7;
 $grey4: #555;
+$grey5: #ddd;
 $borderGrey: #b7b7b7;
 
 // Beige.
@@ -181,7 +182,8 @@ $news-teaser-border-color: $grey3;
 
 // Tables.
 $table-border-color: $bracknellBlack;
-$table-thead-bg-color: $grey3;
+$table-grey-border-color: $grey5;
+$table-thead-bg-color: $greyExtraLight;
 $table-heading-border-color: $bracknellBlack;
 $table-cell-border-color: $bracknellBlack;
 
@@ -204,6 +206,10 @@ $contact-info-bg-color: $greyLight;
 
 // Hero.
 $hero-my-back-text-color: $grey4;
+
+// Slogan.
+$slogan-button-background-color: $grey2;
+$slogan-button-text-color: $slateBlue;
 
 // Guide.
 $guide-nav-primary-list-text-color: $textBlack;
@@ -249,15 +255,15 @@ $accordion-control-hover-text-color: $white;
 
 // Colour schemes/themes.
 $themes: (
-  business: #009fd4,
-  coral-reef-blue: #009fd4,
-  default: $brandGreen,
-  discovery-green: #00aa55,
-  downshire-purple: #702277,
-  forestcare: #b42371,
-  fostering: #00a4a6,
-  leisure-blue: #055fad,
-  parks-green: #62a00f,
+  business: (#009fd4, white),
+  coral-reef-blue: (#009fd4, white),
+  default: ($brandGreen, white),
+  discovery-green: (#00aa55, white),
+  downshire-purple: (#702277, white),
+  forestcare: (#b42371, white),
+  fostering: (#00a4a6, white),
+  leisure-blue: (#055fad, white),
+  parks-green: (#62a00f, white),
 );
 
 // Mixin to apply colour hexes to a list of CSS properties, based on the body's
@@ -269,11 +275,14 @@ $themes: (
 //   @include applyColour(color);
 //   @include applyColour((background-color, border-color));
 //
-@mixin applyColour($properties: ('background-color')) {
-  @each $class, $color in $themes {
+@mixin applyColour($primary_props: 'background-color', $secondary_props: 'color') {
+  @each $class, $colours in $themes {
     body.theme-#{$class} & {
-      @each $attribute in $properties {
-        #{$attribute}: $color;
+      @each $attribute in $primary_props {
+        #{$attribute}: nth($colours, 1);
+      }
+      @each $attribute in $secondary_props {
+        #{$attribute}: nth($colours, 2);
       }
     }
   }

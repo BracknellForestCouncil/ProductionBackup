@@ -26,18 +26,12 @@
  * @see template_process()
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php if (!empty($content['field_paragraph_body'])) : ?>
-      <?php print render($content['field_paragraph_body']); ?>
-    <?php endif; ?>
-    <?php if (!empty($content['field_paragraph_table'])) : ?>
-    <div class="table <?php print render($content['field_table_theme']['#items'][0]['value']); ?>">
-      <?php print render($content['field_paragraph_table']); ?>
-    </div>
-    <?php endif; ?>
-    <?php if (!empty($content['field_paragraph_additional'])) : ?>
-      <?php print render($content['field_paragraph_additional']); ?>
-    <?php endif; ?>
+<div class="row">
+  <div class="col-sm-6">
+    <?php print render($content['field_component_2_6_6__6']); ?>
+  </div>
+  <div class="col-sm-6">
+    <?php print render($content['field_component_2_6_6__6']); ?>
   </div>
 </div>
+
