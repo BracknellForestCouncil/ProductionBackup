@@ -19,4 +19,3 @@ function bracknell_content_promotional_page_theme($existing, $type, $theme, $pat
    );
   return $theme;
 }
-

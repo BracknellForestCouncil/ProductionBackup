@@ -16,7 +16,13 @@ function bracknell_feature_landing_page_theme($existing, $type, $theme, $path) {
     'base hook' => 'node',
     'template' => 'node--landing-page',
     'path' => drupal_get_path('module', 'bracknell_feature_landing_page') . '/templates',
-   );
+  );
+  $theme['field__field_top_tasks'] = array(
+    'render element' => 'content',
+    'base hook' => 'field',
+    'template' => 'field--field-top-tasks',
+    'path' => drupal_get_path('module', 'bracknell_feature_landing_page') . '/templates',
+  );
   return $theme;
 }
 

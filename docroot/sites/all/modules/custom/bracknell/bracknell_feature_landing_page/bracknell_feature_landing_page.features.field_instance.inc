@@ -50,7 +50,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -90,7 +90,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -195,7 +195,81 @@ function bracknell_feature_landing_page_field_default_field_instances() {
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-landing_page-field_related_links_view'.
+  $field_instances['node-landing_page-field_related_links_view'] = array(
+    'bundle' => 'landing_page',
+    'default_value' => array(
+      0 => array(
+        'vname' => 'related_links_taxonomy_|block',
+        'vargs' => '[node:field-category:tid]',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'viewfield',
+        'settings' => array(),
+        'type' => 'viewfield_default',
+        'weight' => -3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_links_view',
+    'is_property' => 0,
+    'label' => 'Related Links View',
+    'required' => 0,
+    'settings' => array(
+      'allowed_views' => array(
+        'admin_views_file' => 0,
+        'admin_views_node' => 0,
+        'admin_views_user' => 0,
+        'administration_external_links' => 0,
+        'administration_slogans' => 0,
+        'contactinfo' => 0,
+        'help' => 0,
+        'home_feature' => 0,
+        'home_keyfact' => 0,
+        'localgov_base_admin_node' => 0,
+        'localgov_base_file_administration' => 0,
+        'localgov_base_moderation_content' => 0,
+        'localgov_base_taxonomy_children' => 0,
+        'localgov_base_taxonomy_node' => 0,
+        'localgov_base_weight_node' => 0,
+        'localgov_base_weight_taxonomy' => 0,
+        'media_default' => 0,
+        'news' => 0,
+        'news_archive' => 0,
+        'related_links_node' => 0,
+        'related_links_taxonomy_' => 'related_links_taxonomy_',
+        'search_page' => 0,
+        'workbench_access_content' => 0,
+        'workbench_current_user' => 0,
+        'workbench_edited' => 0,
+        'workbench_moderation' => 0,
+        'workbench_recent_content' => 0,
+      ),
+      'force_default' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'viewfield',
+      'settings' => array(),
+      'type' => 'viewfield_select',
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -245,6 +319,80 @@ function bracknell_feature_landing_page_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-landing_page-field_related_pages_view'.
+  $field_instances['node-landing_page-field_related_pages_view'] = array(
+    'bundle' => 'landing_page',
+    'default_value' => array(
+      0 => array(
+        'vname' => 'localgov_base_taxonomy_node|block_1',
+        'vargs' => '[node:field-category:tid]',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'viewfield',
+        'settings' => array(),
+        'type' => 'viewfield_default',
+        'weight' => -4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_pages_view',
+    'is_property' => 0,
+    'label' => 'Related Pages View',
+    'required' => 0,
+    'settings' => array(
+      'allowed_views' => array(
+        'admin_views_file' => 0,
+        'admin_views_node' => 0,
+        'admin_views_user' => 0,
+        'administration_external_links' => 0,
+        'administration_slogans' => 0,
+        'contactinfo' => 0,
+        'help' => 0,
+        'home_feature' => 0,
+        'home_keyfact' => 0,
+        'localgov_base_admin_node' => 0,
+        'localgov_base_file_administration' => 0,
+        'localgov_base_moderation_content' => 0,
+        'localgov_base_taxonomy_children' => 0,
+        'localgov_base_taxonomy_node' => 'localgov_base_taxonomy_node',
+        'localgov_base_weight_node' => 0,
+        'localgov_base_weight_taxonomy' => 0,
+        'media_default' => 0,
+        'news' => 0,
+        'news_archive' => 0,
+        'related_links_node' => 0,
+        'related_links_taxonomy_' => 0,
+        'search_page' => 0,
+        'workbench_access_content' => 0,
+        'workbench_current_user' => 0,
+        'workbench_edited' => 0,
+        'workbench_moderation' => 0,
+        'workbench_recent_content' => 0,
+      ),
+      'force_default' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'viewfield',
+      'settings' => array(),
+      'type' => 'viewfield_select',
+      'weight' => 6,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-landing_page-field_theme'.
   $field_instances['node-landing_page-field_theme'] = array(
     'bundle' => 'landing_page',
@@ -282,7 +430,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -339,7 +487,9 @@ function bracknell_feature_landing_page_field_default_field_instances() {
   t('Colour scheme');
   t('Editorial Group');
   t('Related Links');
+  t('Related Links View');
   t('Related Pages');
+  t('Related Pages View');
   t('Select the team responsible for editing/moderating this content.');
   t('Top Tasks');
 
