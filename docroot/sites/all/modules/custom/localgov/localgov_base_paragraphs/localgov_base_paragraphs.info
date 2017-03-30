@@ -14,7 +14,6 @@ dependencies[] = link
 dependencies[] = list
 dependencies[] = localgov_base_content
 dependencies[] = localgov_base_file
-dependencies[] = localgov_base_paragraphs
 dependencies[] = media
 dependencies[] = options
 dependencies[] = paragraphs

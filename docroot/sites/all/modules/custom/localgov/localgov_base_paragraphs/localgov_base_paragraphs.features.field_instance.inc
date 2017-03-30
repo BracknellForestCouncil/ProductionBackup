@@ -744,11 +744,11 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'entity_reference_multiple',
+        'module' => 'paragraphs',
         'settings' => array(
-          'link' => 1,
+          'view_mode' => 'full',
         ),
-        'type' => 'entity_reference_multiple_label',
+        'type' => 'paragraphs_view',
         'weight' => 1,
       ),
       'paragraphs_editor_preview' => array(
@@ -761,20 +761,78 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'entity_type' => 'paragraphs_item',
     'field_name' => 'field_paragraph_showcase_items',
     'is_property' => 0,
-    'label' => 'Items',
-    'required' => 1,
+    'label' => 'Showcase Items',
+    'required' => 0,
     'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'accordion' => -1,
+        'accordion_pane' => -1,
+        'basic' => -1,
+        'blockquote' => -1,
+        'carousel' => -1,
+        'carousel_slide' => -1,
+        'category_showcase' => -1,
+        'category_showcase_item' => 'category_showcase_item',
+        'document' => -1,
+        'featured_box' => -1,
+        'highlighted' => -1,
+        'image' => -1,
+        'key_fact' => -1,
+        'key_fact_item' => -1,
+        'layout_1_col_12' => -1,
+        'layout_2_col_4_8' => -1,
+        'layout_2_col_6_6' => -1,
+        'layout_2_col_8_4' => -1,
+        'layout_3_col_3_3_6' => -1,
+        'layout_3_col_4_4_4' => -1,
+        'layout_3_col_6_3_3' => -1,
+        'link' => -1,
+        'promotional_area' => -1,
+        'tab_panel' => -1,
+        'table' => -1,
+        'tabs' => -1,
+        'video' => -1,
+      ),
+      'bundle_weights' => array(
+        'accordion' => 2,
+        'accordion_pane' => 3,
+        'basic' => 4,
+        'blockquote' => 5,
+        'carousel' => 6,
+        'carousel_slide' => 7,
+        'category_showcase' => 8,
+        'category_showcase_item' => 9,
+        'document' => 10,
+        'featured_box' => 11,
+        'highlighted' => 12,
+        'image' => 13,
+        'key_fact' => 14,
+        'key_fact_item' => 15,
+        'layout_1_col_12' => 16,
+        'layout_2_col_4_8' => 17,
+        'layout_2_col_6_6' => 18,
+        'layout_2_col_8_4' => 19,
+        'layout_3_col_3_3_6' => 20,
+        'layout_3_col_4_4_4' => 21,
+        'layout_3_col_6_3_3' => 22,
+        'link' => 23,
+        'promotional_area' => 24,
+        'tab_panel' => 27,
+        'table' => 25,
+        'tabs' => 26,
+        'video' => 28,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'entity_reference_multiple',
-      'settings' => array(
-        'autocomplete_limit' => 15,
-        'autocomplete_path' => '',
-        'autocomplete_query_like_type' => 'STARTS_WITH',
-      ),
-      'type' => 'entity_reference_multiple_autocomplete',
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
       'weight' => 2,
     ),
     'workbench_access_field' => 0,
@@ -4363,13 +4421,13 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Image');
   t('Image Position');
   t('Introduction');
-  t('Items');
   t('Link');
   t('Paragraph Accordion Panes');
   t('Promotional Area Layout');
   t('Related Content');
   t('Select an icon from the list or select "- None -" if you do not wish to display an icon.');
   t('Select an icon from the list.');
+  t('Showcase Items');
   t('Slide Content');
   t('Slide Layout');
   t('TODO: Add help text.');
