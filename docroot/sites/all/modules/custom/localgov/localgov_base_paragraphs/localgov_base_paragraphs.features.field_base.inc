@@ -963,6 +963,25 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_paragraph_video_video'.
+  $field_bases['field_paragraph_video_video'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_paragraph_video_video',
+    'indexes' => array(
+      'video_id' => array(
+        0 => 'video_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'youtube',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'youtube',
+  );
+
   // Exported field_base: 'field_promotional_area_descripti'.
   $field_bases['field_promotional_area_descripti'] = array(
     'active' => 1,
