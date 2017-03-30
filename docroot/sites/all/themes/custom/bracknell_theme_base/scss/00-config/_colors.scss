@@ -39,6 +39,7 @@ $grey1: #484848;
 $grey2: #f7f7f7;
 $grey3: #e7e7e7;
 $grey4: #555;
+$grey5: #ddd;
 $borderGrey: #b7b7b7;
 
 // Beige.
@@ -181,7 +182,8 @@ $news-teaser-border-color: $grey3;
 
 // Tables.
 $table-border-color: $bracknellBlack;
-$table-thead-bg-color: $grey3;
+$table-grey-border-color: $grey5;
+$table-thead-bg-color: $greyExtraLight;
 $table-heading-border-color: $bracknellBlack;
 $table-cell-border-color: $bracknellBlack;
 
