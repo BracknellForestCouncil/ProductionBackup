@@ -7978,6 +7978,18 @@ body.page-taxonomy #list-of-additional-pages .view-content {
 .theme-parks-green .field-name-field-promotional-slogan {
   background-color: #62a00f; }
 
+.field-name-field-paragraph-video-video {
+  padding: 56.25% 0 0;
+  position: relative;
+  width: 100%; }
+  .field-name-field-paragraph-video-video iframe,
+  .field-name-field-paragraph-video-video embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+
 .row:after {
   clear: both; }
 
