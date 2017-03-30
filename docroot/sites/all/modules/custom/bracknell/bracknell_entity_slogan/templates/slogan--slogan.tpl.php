@@ -30,7 +30,9 @@
 ?>
 <section class='slogan'>
   <div class='slogan-inner'>
-    <div class='slogan-image'><?php print render($content['field_slogan_image']); ?></div>
+    <div class='slogan-image'>
+      <?php print render($content['field_slogan_image']); ?>
+    </div>
     <div class='slogan-text'>
       <div class='slogan-title'>
         <?php print $title; ?>
