@@ -222,6 +222,36 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'type' => 'paragraphs',
   );
 
+  // Exported field_base: 'field_component_3_4_4_4__4_2'.
+  $field_bases['field_component_3_4_4_4__4_2'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_component_3_4_4_4__4_2',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'paragraphs',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'paragraphs',
+  );
+
+  // Exported field_base: 'field_component_3_4_4_4__4_3'.
+  $field_bases['field_component_3_4_4_4__4_3'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_component_3_4_4_4__4_3',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'paragraphs',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'paragraphs',
+  );
+
   // Exported field_base: 'field_component_3_6_3_3__3_1'.
   $field_bases['field_component_3_6_3_3__3_1'] = array(
     'active' => 1,

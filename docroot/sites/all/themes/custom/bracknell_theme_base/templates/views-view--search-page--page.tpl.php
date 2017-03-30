@@ -39,11 +39,6 @@
     </div>
   <?php endif; ?>
 
-  <?php
-    $block = module_invoke('views', 'block_view', '-exp-search_page-page');
-    print render($block['content']);
-  ?>
-
   <?php if ($exposed): ?>
     <div class="view-filters">
       <?php print $exposed; ?>

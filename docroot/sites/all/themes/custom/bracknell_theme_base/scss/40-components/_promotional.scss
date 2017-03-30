@@ -1,0 +1,17 @@
+.paragraphs-item-promotional-area {
+  .promo-text {
+    border-top: 5px solid #000;
+    @include applyColour(border-top-color);
+  }
+  .promo-description {
+    margin-bottom: 20px;
+  }
+  .promo-image {
+    &.right {
+      padding-left: 0;
+    }
+    &.left {
+      padding-right: 0;
+    }
+  }
+}
