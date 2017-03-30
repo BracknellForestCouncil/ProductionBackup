@@ -62,8 +62,7 @@ footer {
 
 .global-footer {
   //Leyla
-  position: absolute;
-  bottom: 0;
+  margin-top: 40px;
   width: 100%;
   height: 120px;
   padding-bottom: 0;
@@ -73,20 +72,6 @@ footer {
     .global-footer {
       height: 160px;
     }
-  }
-}
-
-body {
-  @media (min-width: 990px) and (max-width: 1200px) {
-    margin-bottom: 120px;
-  }
-
-  @media (min-width: 480px) and (max-width: 768px) {
-    margin-bottom: 140px;
-  }
-
-  @media (max-width: 480px) {
-    margin-bottom: 170px;
   }
 }
 

@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall hooks for bracknell_deploy.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function bracknell_deploy_install() {
+  // Search for any existing update hooks.
+  for ($i = 7000; $i < 8000; $i++) {
+    if (function_exists($function_name = "bracknell_deploy_update_{$i}")) {
+      // Run the function.
+      $function_name();
+    }
+  }
+}
+
+/**
+ * Enable and configure node_display_title module.
+ */
+function bracknell_deploy_update_7000() {
+  module_enable(array('node_display_title'));
+
+  variable_set('node_display_title_settings', array('guide_section'));
+}
+
+/**
+ * Create landing page nodes for existing taxonomy terms.
+ */
+function bracknell_deploy_update_7001() {
+  foreach (taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('category')->vid) as $term) {
+    watchdog('bracknell_deploy', 'Converting ":name" to a landing page.', array(':name' => $term->name));
+
+    if (function_exists('drush_log')) {
+      drush_log(dt('Converting "!name" to a landing page.', array(
+        '!name' => $term->name,
+      )), 'ok');
+    }
+
+    $node = entity_create('node', array(
+      'status' => NODE_PUBLISHED,
+      'title' => $term->name,
+      'type' => 'landing_page',
+      'uid' => 1,
+    ));
+
+    node_save($node);
+
+    // Update the menu link.
+    watchdog('bracknell_deploy', 'Updating the menu link for ":name".', array(':name' => $term->name));
+
+    if (function_exists('drush_log')) {
+      drush_log(dt('Updating the menu link for "!name".', array(
+        '!name' => $term->name,
+      )), 'ok');
+    }
+
+    $menu_link = db_query("SELECT * FROM {menu_links} WHERE menu_name = 'main-menu' AND link_title = :title", array(':title' => $term->name))->fetchAssoc();
+    $menu_link['link_path'] = "node/{$node->nid}";
+    $menu_link['router_path'] = 'node/%';
+
+    db_update('menu_links')
+      ->fields($menu_link)
+      ->condition('mlid', $menu_link['mlid'])
+      ->execute();
+  }
+
+  menu_cache_clear('main-menu');
+}
+
+/**
+ * Enable and revert bracknell_feature_directory.
+ */
+function bracknell_deploy_update_7002() {
+  features_install_modules(array('bracknell_feature_directory'));
+
+  features_revert_module('bracknell_feature_directory');
+}

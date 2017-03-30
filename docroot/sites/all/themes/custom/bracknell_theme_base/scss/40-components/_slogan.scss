@@ -1,5 +1,38 @@
-@each $class, $color in $themes {
-  .theme-#{$class} .field-name-field-promotional-slogan {
-    background-color: $color;
+.field-name-field-promotional-slogan {
+  @include applyColour();
+  .entity-slogan {
+    @include constrained;
+    padding: 30px 0;
+    h2 {
+      display: none;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .content {
+      display: flex;
+      align-items: center;
+      > :not(:last-child) {
+        margin-right: 30px;
+      }
+      .field-name-field-slogan-image {
+        min-width: 120px;
+      }
+      .field-name-field-slogan-strapline {
+        flex: 1;
+        font-size: 2.4em;
+        line-height: 1.2em;
+        font-weight: 300;
+      }
+      .field-name-field-slogan-call-to-action {
+        a {
+          @extend .btn;
+          background-color: $slogan-button-background-color;
+          color: $slogan-button-text-color;
+          font-weight: 600;
+        }
+      }
+    }
   }
 }

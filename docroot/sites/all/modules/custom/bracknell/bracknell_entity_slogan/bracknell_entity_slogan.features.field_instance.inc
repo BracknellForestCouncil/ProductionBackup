@@ -22,7 +22,7 @@ function bracknell_entity_slogan_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -88,7 +88,7 @@ function bracknell_entity_slogan_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -115,9 +115,17 @@ function bracknell_entity_slogan_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 's3fs_cors',
-      'settings' => array(),
-      'type' => 's3fs_cors',
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
+      ),
+      'type' => 'media_generic',
       'weight' => 33,
     ),
     'workbench_access_field' => 0,
@@ -135,7 +143,7 @@ function bracknell_entity_slogan_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',

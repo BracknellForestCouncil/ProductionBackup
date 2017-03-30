@@ -6,6 +6,7 @@ dependencies[] = advanced_link
 dependencies[] = eck
 dependencies[] = features
 dependencies[] = image
+dependencies[] = media
 dependencies[] = s3fs_cors
 dependencies[] = text
 dependencies[] = views

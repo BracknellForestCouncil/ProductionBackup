@@ -126,19 +126,32 @@ function bracknell_feature_landing_page_field_default_field_bases() {
     'module' => 'entity_reference_multiple',
     'settings' => array(
       'target_entities_bundles' => array(
+        'external_link' => array(
+          'target_bundles' => array(
+            'external_link' => 'external_link',
+          ),
+        ),
         'node' => array(
           'target_bundles' => array(
             'basic' => 'basic',
+            'form' => 'form',
             'guide' => 'guide',
             'landing_page' => 'landing_page',
+            'miscellaneous' => 'miscellaneous',
+            'promotional_page' => 'promotional_page',
           ),
         ),
       ),
       'target_types' => array(
+        'external_link' => 'external_link',
         'file' => 0,
         'node' => 'node',
         'paragraphs_item' => 0,
         'redirect' => 0,
+        'search_api_autocomplete_search' => 0,
+        'search_api_index' => 0,
+        'search_api_server' => 0,
+        'slogan' => 0,
         'taxonomy_term' => 0,
         'taxonomy_vocabulary' => 0,
         'user' => 0,

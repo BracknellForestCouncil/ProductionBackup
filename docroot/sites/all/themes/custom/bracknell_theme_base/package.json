@@ -10,32 +10,28 @@
   "license": "GPL-2.0+",
   "config": {
     "sasslintConfig": ".sass-lint.yml",
-    "sassIgnoreFiles": "./scss/pattern-lab.scss",
     "scssPath": "./scss",
     "outputCss": "./css",
     "outputJs": "./js",
-    "outputFonts": "./fonts/",
-    "browsersyncConfig": "./.bs-config.js"
+    "outputFonts": "./fonts/"
   },
   "scripts": {
     "postinstall": "npm-run-all -p rminfo copy",
     "autoprefixer": "postcss -u autoprefixer -r $npm_package_config_outputCss/*.css",
     "scss": "node-sass $npm_package_config_scssPath --source-map true --output-style nested -o $npm_package_config_outputCss",
-    "postscss": "browser-sync reload --files='*.css, *.map'",
-    "serve": "browser-sync start --config $npm_package_config_browsersyncConfig --no-open",
     "lint": "sass-lint --config $npm_package_config_sasslintConfig --ignore $npm_package_config_sassIgnoreFiles --verbose --no-exit",
     "build:css": "npm run scss && npm run autoprefixer",
+    "build": "npm-run-all -p build:css",
     "copy": "npm-run-all -p copy:Js",
     "copy:Js": "cp -R ./node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js $npm_package_config_outputJs",
     "rminfo": "find node_modules/ -name '*.info' -type f -delete",
-    "watch:css": "onchange $npm_package_config_scssPath -v -- npm-run-all -p lint build:css",
-    "dev": "npm run build:css && npm-run-all -p serve watch:css"
+    "watch:css": "onchange $npm_package_config_scssPath -v -- npm-run-all -p build:css",
+    "dev": "npm run build:css && npm-run-all -p watch:css"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "bootstrap-sass": "^3.3.6",
     "bower": "^1.8.0",
-    "browser-sync": "^2.13.0",
     "csscomb": "^3.1.7",
     "node-sass": "^3.7.0",
     "npm-run-all": "^2.1.1",
@@ -44,6 +40,6 @@
     "sass-lint": "^1.8.2"
   },
   "engines": {
-    "node": ">=4 <6"
+    "node": ">=4"
   }
 }
