@@ -45,9 +45,9 @@
  */
 ?>
 <section class='top-tasks'>
-  <div class='view-content'>
+  <ul class='task-list'>
     <?php foreach ($items as $delta => $item): ?>
-      <div><?php print render($item); ?></div>
+      <li class='task-list-item'><?php print render($item); ?></li>
     <?php endforeach; ?>
-  </div>
+  </ul>
 </section>

@@ -6,12 +6,3 @@ node_modules
 
 # SASS
 .sass-cache
-
-# Local config
-.bs-config.local.js
-
-# Npm log files
-npm-debug.log*
-
-# Merge detritus
-*.orig
