@@ -4090,7 +4090,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'youtube',
         'settings' => array(
           'youtube_autohide' => FALSE,
