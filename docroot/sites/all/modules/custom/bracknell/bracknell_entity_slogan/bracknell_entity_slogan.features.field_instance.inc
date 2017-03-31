@@ -22,7 +22,7 @@ function bracknell_entity_slogan_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -69,7 +69,7 @@ function bracknell_entity_slogan_field_default_field_instances() {
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 32,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -126,7 +126,7 @@ function bracknell_entity_slogan_field_default_field_instances() {
         'browser_plugins' => array(),
       ),
       'type' => 'media_generic',
-      'weight' => 33,
+      'weight' => 1,
     ),
     'workbench_access_field' => 0,
   );
@@ -143,7 +143,7 @@ function bracknell_entity_slogan_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -173,7 +173,7 @@ function bracknell_entity_slogan_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 31,
+      'weight' => 1,
     ),
     'workbench_access_field' => 0,
   );
