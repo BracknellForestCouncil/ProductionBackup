@@ -1,25 +1,22 @@
 html,
 body {
   overflow: hidden; //fixed the horizontal scroll when use full-width 100%.
+  overflow-y: auto;
 }
 
 html {
   position: relative;
-  min-height: 100%;
-  overflow-y: auto;
-}
-
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 120px;
-
-  @media (max-width: 480px) {
-    margin-bottom: 160px;
-  }
+  // overflow-y: auto;
 }
 
 .page-wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .main-container {
+    flex: 1;
+  }
 }
 
 .page-header {
@@ -37,6 +34,14 @@ body.node-type-guide-section #page-header.col-md-8 {
 
 body.page-taxonomy-term .page-header {
   border-bottom:0 !important;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }
 
 .img-right {

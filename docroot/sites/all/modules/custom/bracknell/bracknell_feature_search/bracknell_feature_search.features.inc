@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function bracknell_feature_search_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -195,19 +198,27 @@ function bracknell_feature_search_default_search_api_index() {
               "field_description:value" : true,
               "field_contact_additional:value" : true,
               "field_contactinfo:field_contact_additional:value" : true,
-              "field_content:field_paragraph_body:value" : true
+              "field_content:field_paragraph_body:value" : true,
+              "field_promotional_content" : true,
+              "field_promotional_slogan" : true
             },
             "spaces" : "[^\\\\p{L}\\\\p{N}]",
             "ignorable" : "[-]"
           }
         },
         "search_api_stopwords" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "30",
           "settings" : {
-            "fields" : { "title" : true, "body:value" : true },
+            "fields" : {
+              "title" : true,
+              "field_content" : true,
+              "field_promotional_content" : true,
+              "field_promotional_slogan" : true,
+              "body:value" : true
+            },
             "file" : "",
-            "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
+            "stopwords" : "a\\r\\nan\\r\\nand\\r\\nare\\r\\nas\\r\\nat\\r\\nbe\\r\\nbut\\r\\nby\\r\\ndid\\r\\netc\\r\\nfor\\r\\nif\\r\\nin\\r\\ninto\\r\\nis\\r\\nit\\r\\nno\\r\\nnot\\r\\nof\\r\\non\\r\\nor\\r\\ns\\r\\nsuch\\r\\nt\\r\\nthat\\r\\nthe\\r\\ntheir\\r\\nthen\\r\\nthere\\r\\nthese\\r\\nthey\\r\\nthose\\r\\nthis\\r\\nthrough\\r\\nto\\r\\nwas\\r\\nwill\\r\\nwith"
           }
         },
         "search_api_porter_stemmer" : {
@@ -225,10 +236,10 @@ function bracknell_feature_search_default_search_api_index() {
             "prefix" : "\\u003Cstrong\\u003E",
             "suffix" : "\\u003C\\/strong\\u003E",
             "excerpt" : 1,
-            "excerpt_length" : "500",
-            "exclude_fields" : { "title" : "title" },
+            "excerpt_length" : "256",
+            "exclude_fields" : [],
             "highlight" : "always",
-            "highlight_partial" : 1
+            "highlight_partial" : 0
           }
         }
       },
@@ -251,11 +262,13 @@ function bracknell_feature_search_default_search_api_index() {
         "field_content:field_paragraph_body:value" : { "type" : "list\\u003Ctext\\u003E" },
         "field_description:value" : { "type" : "text" },
         "field_form_additional:value" : { "type" : "text" },
+        "field_promotional_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
+        "field_promotional_slogan" : { "type" : "integer", "entity_type" : "slogan" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "promote" : { "type" : "boolean" },
         "search_api_language" : { "type" : "string" },
         "sticky" : { "type" : "boolean" },
-        "title" : { "type" : "text" },
+        "title" : { "type" : "text", "boost" : "5.0" },
         "type" : { "type" : "string" }
       }
     },

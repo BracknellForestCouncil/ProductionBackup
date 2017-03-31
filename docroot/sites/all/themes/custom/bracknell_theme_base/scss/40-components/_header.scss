@@ -1,63 +1,93 @@
 /*
 * Header.
 */
-
 .masthead {
   min-height: 160px;
   position: relative;
 }
-
-.logo {
-  display: block;
-  height: 120px;
-  position: relative;
+.logo-container {
+  background: white;
   width: 120px;
-  z-index: 200;
-
-  @include breakpoint($screen-md) {
-    left: 0;
-    height: 160px;
+  height: 120px;
+  @include breakpoint($screen-sm) {
     position: absolute;
     top: 0;
-    width: 16.66667%;
+    left: 0;
+    width: 14%;
+    height: auto;
+    padding: 20px 25px 18px 20px;
+    margin-left: -20px;
+    z-index: 150;
+    box-sizing: content-box;
+    border-radius: 3px;
+  }
+  @include breakpoint($screen-md) {
+    padding: 10px 0 0;
+    width: 13%;
   }
 }
-
+.logo {
+  display: block;
+  position: relative;
+}
 .header-tools {
   border-bottom: 3px solid $nav-tools-border-color;
   padding-bottom: 0;
   padding-top: 0;
-  position: static;
-
-  @include breakpoint($screen-md) {
-    padding: 10px 0;
+  position: relative;
+  text-align: right;
+  @include breakpoint($screen-sm) {
+    padding: 25px 15px 23px;
   }
-
-  .nav-tools__account {
-    margin-top: 25px;
-
-    a {
-      color: $nav-tools-account-link-text-color;
-      font: {
-        size: $font-size-03;
-        weight: $font-weight-headinglight;
+  .header-section {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 360px;
+    &.header-section-search {
+      // ...
+    }
+    &.header-section-account {
+      margin-left: 60px;
+      @media (max-width: $screen-sm-max) {
+        display: none;
       }
-      text-decoration: none;
-
-      span.q-mark {
-        background: $nav-tools-account-link-q-mark-bg-color;
-        border-radius: 50%;
-        font-size: $font-size-01;
-        padding: 4px 7px;
+      .header-account-section {
+        display: inline-block;
+        vertical-align: middle;
+        &.header-account-section-account {
+          font-size: $font-size-03;
+          font-weight: $font-weight-headinglight;
+          line-height: 1;
+          margin: 0 5px;
+        }
+        &.header-account-section-user-icon {
+          font-size: 15px;
+          padding-top: 1px;
+        }
+      }
+      a {
+        display: block;
+        color: $nav-tools-account-link-text-color;
+        text-decoration: none;
+        line-height: 1;
+        span.q-mark {
+          background: $nav-tools-account-link-q-mark-bg-color;
+          border-radius: 50%;
+          font-size: 12px;
+          box-sizing: border-box;
+          width: 22px;
+          height: 22px;
+          line-height: 23px;
+          text-align: center;
+          padding-right: 1px;
+        }
       }
     }
-  }
-}
-
-.header-menu-tools {
-  position: static;
-
-  @include breakpoint($screen-md) {
-    position: relative;
+    &.header-section-menu-tools {
+      position: relative;
+      @include breakpoint($screen-md) {
+        margin-left: 80px;
+      }
+    }
   }
 }

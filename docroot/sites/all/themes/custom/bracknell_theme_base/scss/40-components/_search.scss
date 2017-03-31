@@ -1,14 +1,64 @@
-.nav-tools__search {
-  input.title-search {
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    height: 45px;
+@mixin search-exposed-form {
+  .views-exposed-widgets {
+    display: table;
+    margin-bottom: 0;
+    .views-exposed-widget {
+      padding: 0;
+      display: table-cell;
+    }
   }
+  .form-text {
+    border-color: $search-text-border-color;
+    padding: 6px 18px;
+    min-height: 48px;
+    height: auto;
+    // This will only work with autoprefixer.
+    &::placeholder {
+      color: $search-text-placeholder-text-color;
+    }
+  }
+  .input-group-btn, .views-submit-button {
+    .btn {
+      background-color: $search-button-background-color;
+      margin: 0;
+      margin-bottom: 0;
+      min-width: 48px;
+      min-height: 48px;
+      height: auto;
+      transition: 0.1s ease-in-out background-color;
+      padding: 5px 12px;
+      top: 0;
+      &:hover {
+        background-color: $search-button-hover-background-color;
+      }
+    }
+  }
+  .form-actions {
+    display: none;
+  }
+}
 
+.header-section-search {
+  .views-exposed-form {
+    @include search-exposed-form();
+    .views-exposed-widget {
+      &.views-widget-sort-by, &.views-widget-sort-order {
+        display: none;
+      }
+      .input-group-addon, label {
+        display: none;
+      }
+      .form-text {
+        @include border-right-radius(0);
+      }
+      .btn {
+        @include border-left-radius(0);
+      }
+    }
+  }
   .navbar-form {
     padding-bottom: 5px;
   }
-
   .btn.btn-primary.btn-glyph {
     background: $nav-tools-search-button-primary-bg-color;
     height: 45px;
@@ -16,23 +66,31 @@
     padding: 10px 12px 8px;
   }
 }
-
-
-.nav-tools__search--mobile-search {
+.header-section-search-mobile-search {
   padding-top: 0px;
-
   @media (max-width: 768px) {
     padding-top: 6px;
   }
-
   @media (min-width: 480px) and (max-width: 980px) {
     padding-top: 2px;
   }
-
   .input-group-btn .btn {
     background: #333;
     margin-bottom: 0;
   }
 }
 
-
+body.page-search .main-container {
+  .views-exposed-form {
+    @include search-exposed-form();
+    .views-exposed-widget {
+      margin-right: 20px;
+      &.views-submit-button {
+        margin-top: 1.7em;
+        .btn {
+          padding: 0 30px;
+        }
+      }
+    }
+  }
+}

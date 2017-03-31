@@ -6,6 +6,3 @@ node_modules
 
 # SASS
 .sass-cache
-
-# Local config
-.bs-config.local.js

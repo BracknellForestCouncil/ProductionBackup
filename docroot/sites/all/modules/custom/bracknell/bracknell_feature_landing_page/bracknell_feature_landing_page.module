@@ -16,7 +16,13 @@ function bracknell_feature_landing_page_theme($existing, $type, $theme, $path) {
     'base hook' => 'node',
     'template' => 'node--landing-page',
     'path' => drupal_get_path('module', 'bracknell_feature_landing_page') . '/templates',
-   );
+  );
+  $theme['field__field_top_tasks'] = array(
+    'render element' => 'content',
+    'base hook' => 'field',
+    'template' => 'field--field-top-tasks',
+    'path' => drupal_get_path('module', 'bracknell_feature_landing_page') . '/templates',
+  );
   return $theme;
 }
 
@@ -100,8 +106,12 @@ function _bracknell_feature_landing_page_get_theme_class_for_child_page(EntityDr
 
   // Find the parent node ID by truncating the menu path.
   $parent_node_id = substr($parent_path, $position + 5);
-
-  $parent_node_wrapper = entity_metadata_wrapper('node', node_load($parent_node_id));
-
-  return _bracknell_feature_landing_page_get_theme_class($parent_node_wrapper);
+  
+  // Preload the parent node for checking purposes.
+  $parent_node = node_load($parent_node_id);
+  $parent_node_wrapper = entity_metadata_wrapper('node', $parent_node);
+  
+  return !empty($parent_node->field_theme) 
+    ?_bracknell_feature_landing_page_get_theme_class($parent_node_wrapper)
+    : NULL;
 }

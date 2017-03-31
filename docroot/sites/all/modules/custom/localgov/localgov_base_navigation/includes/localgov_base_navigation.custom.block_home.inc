@@ -2,7 +2,6 @@
 /**
  * @file
  * localgov_base_navigation.inc
- * TODO: Add file description
  *
  * @package   localgov_base_navigation
  * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
@@ -29,16 +28,15 @@ function localgov_base_navigation_block_content_navigation_home() {
      $name = $item['link']['link_title'];
      $name_safe =  str_replace(',', '', str_replace(' ', '-', strtolower($name)));
 
+     $icon = '<span class="icon nav-icon-' . $name_safe . '"></span>';
+
      $item_content = '<li class="gridder-list homepage-nav-item';
      if ($count > 12) {
        $item_content .= ' nav-link-collapse collapse';
      }
      $item_content .= '" data-griddercontent="#homepage-nav-' . $name_safe . '">';
 
-     $item_content .= '<a href="'. $link_path .'">';
-     $item_content .= $name;
-     $item_content .= '<span class="icon nav-icon-' . $name_safe . '"></span>';
-     $item_content .= '</a>';
+     $item_content .= l($name . $icon, $link_path, array('html' => TRUE));
 
      $item_content .= '</li>';
 
@@ -83,10 +81,10 @@ function localgov_base_navigation_block_content_navigation_home() {
        $child_name = $child_item['link']['link_title'];;
        $child_name_safe =  str_replace(',', '', str_replace(' ', '-', strtolower($child_name)));
 
-       $item_content .= '<li class="nav-link"><a href="' . $child_url . '">' . $child_name . '</a></li>';
+       $item_content .= '<li class="nav-link">' . l($child_name, $child_url) . '</li>';
      }
 
-     $item_content .= '<li class="nav-link nav-link-primary"><a href="' . $url . '">All of <strong>' . $name . '</strong></a></li>';
+     $item_content .= '<li class="nav-link nav-link-primary">' . l('All of <strong>' . $name . '</strong>', $url, array('html' => TRUE)) . '</li>';
 
      $item_content .= '</ul>';
      $item_content .= '</div>';

@@ -2665,7 +2665,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'entity_type' => 'paragraphs_item',
     'field_name' => 'field_component_3_4_4_4__4',
     'is_property' => 0,
-    'label' => 'Content',
+    'label' => 'Content (Left)',
     'required' => 1,
     'settings' => array(
       'add_mode' => 'select',
@@ -2738,6 +2738,214 @@ function localgov_base_paragraphs_field_default_field_instances() {
       'settings' => array(),
       'type' => 'paragraphs_embed',
       'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-layout_3_col_4_4_4-field_component_3_4_4_4__4_2'.
+  $field_instances['paragraphs_item-layout_3_col_4_4_4-field_component_3_4_4_4__4_2'] = array(
+    'bundle' => 'layout_3_col_4_4_4',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_component_3_4_4_4__4_2',
+    'is_property' => 0,
+    'label' => 'Content (Middle)',
+    'required' => 1,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'accordion' => -1,
+        'accordion_pane' => -1,
+        'basic' => 'basic',
+        'blockquote' => -1,
+        'carousel' => -1,
+        'carousel_slide' => -1,
+        'category_showcase' => -1,
+        'document' => -1,
+        'featured_box' => -1,
+        'highlighted' => -1,
+        'image' => 'image',
+        'key_fact' => -1,
+        'key_fact_item' => -1,
+        'layout_1_col_12' => -1,
+        'layout_2_col_4_8' => -1,
+        'layout_2_col_6_6' => -1,
+        'layout_2_col_8_4' => -1,
+        'layout_3_col_3_3_6' => -1,
+        'layout_3_col_4_4_4' => -1,
+        'layout_3_col_6_3_3' => -1,
+        'link' => -1,
+        'map' => -1,
+        'promotional_area' => -1,
+        'tab_panel' => -1,
+        'table' => -1,
+        'tabs' => -1,
+        'video' => -1,
+      ),
+      'bundle_weights' => array(
+        'accordion' => 2,
+        'accordion_pane' => 3,
+        'basic' => 4,
+        'blockquote' => 5,
+        'carousel' => 6,
+        'carousel_slide' => 7,
+        'category_showcase' => 8,
+        'document' => 9,
+        'featured_box' => 10,
+        'highlighted' => 11,
+        'image' => 12,
+        'key_fact' => 13,
+        'key_fact_item' => 14,
+        'layout_1_col_12' => 15,
+        'layout_2_col_4_8' => 16,
+        'layout_2_col_6_6' => 17,
+        'layout_2_col_8_4' => 18,
+        'layout_3_col_3_3_6' => 19,
+        'layout_3_col_4_4_4' => 20,
+        'layout_3_col_6_3_3' => 21,
+        'link' => 22,
+        'map' => 23,
+        'promotional_area' => 24,
+        'tab_panel' => 27,
+        'table' => 25,
+        'tabs' => 26,
+        'video' => 28,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-layout_3_col_4_4_4-field_component_3_4_4_4__4_3'.
+  $field_instances['paragraphs_item-layout_3_col_4_4_4-field_component_3_4_4_4__4_3'] = array(
+    'bundle' => 'layout_3_col_4_4_4',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_component_3_4_4_4__4_3',
+    'is_property' => 0,
+    'label' => 'Content (Right)',
+    'required' => 1,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'accordion' => -1,
+        'accordion_pane' => -1,
+        'basic' => 'basic',
+        'blockquote' => -1,
+        'carousel' => -1,
+        'carousel_slide' => -1,
+        'category_showcase' => -1,
+        'document' => -1,
+        'featured_box' => -1,
+        'highlighted' => -1,
+        'image' => 'image',
+        'key_fact' => -1,
+        'key_fact_item' => -1,
+        'layout_1_col_12' => -1,
+        'layout_2_col_4_8' => -1,
+        'layout_2_col_6_6' => -1,
+        'layout_2_col_8_4' => -1,
+        'layout_3_col_3_3_6' => -1,
+        'layout_3_col_4_4_4' => -1,
+        'layout_3_col_6_3_3' => -1,
+        'link' => -1,
+        'map' => -1,
+        'promotional_area' => -1,
+        'tab_panel' => -1,
+        'table' => -1,
+        'tabs' => -1,
+        'video' => -1,
+      ),
+      'bundle_weights' => array(
+        'accordion' => 2,
+        'accordion_pane' => 3,
+        'basic' => 4,
+        'blockquote' => 5,
+        'carousel' => 6,
+        'carousel_slide' => 7,
+        'category_showcase' => 8,
+        'document' => 9,
+        'featured_box' => 10,
+        'highlighted' => 11,
+        'image' => 12,
+        'key_fact' => 13,
+        'key_fact_item' => 14,
+        'layout_1_col_12' => 15,
+        'layout_2_col_4_8' => 16,
+        'layout_2_col_6_6' => 17,
+        'layout_2_col_8_4' => 18,
+        'layout_3_col_3_3_6' => 19,
+        'layout_3_col_4_4_4' => 20,
+        'layout_3_col_6_3_3' => 21,
+        'link' => 22,
+        'map' => 23,
+        'promotional_area' => 24,
+        'tab_panel' => 27,
+        'table' => 25,
+        'tabs' => 26,
+        'video' => 28,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -3288,7 +3496,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'enable' => 0,
         'profile' => '',
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3307,6 +3515,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   // 'paragraphs_item-promotional_area-field_promotional_area_image'.
   $field_instances['paragraphs_item-promotional_area-field_promotional_area_image'] = array(
     'bundle' => 'promotional_area',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3346,7 +3555,10 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'widget' => array(
       'active' => 0,
       'module' => 's3fs_cors',
-      'settings' => array(),
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
       'type' => 's3fs_cors',
       'weight' => 2,
     ),
@@ -3367,8 +3579,9 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_key',
         'weight' => 5,
       ),
       'paragraphs_editor_preview' => array(
@@ -3692,7 +3905,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -3739,7 +3952,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 0,
+      'weight' => 1,
     ),
     'workbench_access_field' => 0,
   );
@@ -3831,7 +4044,50 @@ function localgov_base_paragraphs_field_default_field_instances() {
       'module' => 'tablefield',
       'settings' => array(),
       'type' => 'tablefield',
-      'weight' => 1,
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'paragraphs_item-table-field_table_theme'.
+  $field_instances['paragraphs_item-table-field_table_theme'] = array(
+    'bundle' => 'table',
+    'default_value' => array(
+      0 => array(
+        'value' => 'minimal',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Choose a theme for the table.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_key',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_table_theme',
+    'is_property' => 0,
+    'label' => 'Table theme',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
     ),
     'workbench_access_field' => 0,
   );
@@ -4081,16 +4337,70 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance:
+  // 'paragraphs_item-video-field_paragraph_video_video'.
+  $field_instances['paragraphs_item-video-field_paragraph_video_video'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'youtube',
+        'settings' => array(
+          'youtube_autohide' => FALSE,
+          'youtube_autoplay' => FALSE,
+          'youtube_controls' => FALSE,
+          'youtube_height' => NULL,
+          'youtube_iv_load_policy' => FALSE,
+          'youtube_loop' => FALSE,
+          'youtube_showinfo' => FALSE,
+          'youtube_size' => '420x315',
+          'youtube_width' => NULL,
+        ),
+        'type' => 'youtube_video',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_paragraph_video_video',
+    'is_property' => 0,
+    'label' => 'Video',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'youtube',
+      'settings' => array(),
+      'type' => 'youtube',
+      'weight' => 4,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Add a table.');
   t('Additional');
   t('Author');
   t('Author Title');
+  t('Choose a theme for the table.');
   t('Content');
+  t('Content (Left)');
+  t('Content (Middle)');
   t('Content (Narrow)');
   t('Content (Narrow) 1');
   t('Content (Narrow) 2');
+  t('Content (Right)');
   t('Content (Wide)');
   t('Document');
   t('Enter an introduction for this document (or list of documents). This should include any text relevant to the document(s) and in most cases will start from the heading tag prior to the document(s). ');
@@ -4114,7 +4424,9 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Slide Layout');
   t('TODO: Add help text.');
   t('Table');
+  t('Table theme');
   t('Title');
+  t('Video');
 
   return $field_instances;
 }
