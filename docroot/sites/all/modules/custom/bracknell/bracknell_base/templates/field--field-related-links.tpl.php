@@ -49,7 +49,9 @@
   <h3 class='related-links-title'>
     <?php print $view->get_title(); ?>
   </h3>
-  <?php foreach ($items as $delta => $item): ?>
-    <?php print render($item); ?>
-  <?php endforeach; ?>
+  <ul class='related-links-list'>
+    <?php foreach ($items as $delta => $item): ?>
+      <li class='related-links-list-item'><?php print render($item); ?></li>
+    <?php endforeach; ?>
+  </ul>
 </section>
