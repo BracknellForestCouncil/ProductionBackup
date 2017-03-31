@@ -85,8 +85,6 @@
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_tags']);
-    hide($content['field_related_pages']);
-    hide($content['field_related_links']);
   ?>
 
   <?php print render($content); ?>
