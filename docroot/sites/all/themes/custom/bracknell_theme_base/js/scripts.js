@@ -67,21 +67,6 @@
     }
   };
 
-  Drupal.behaviors.bracknellTabs = {
-    attach: function (context, settings) {
-      if ($('.acc-tabs-panel').length > 1) {
-        $('.acc-tabs').accTabs({
-          containerClass: 'js-acc-tabs',
-          controlActiveClass: 'js-acc-tabs-control-item-active',
-          tabPanelClass: 'js-acc-tabs-panel',
-          panelActiveClass: 'js-tabs-panel-active',
-          controlsTextClass: 'element-invisible',
-          tabControlsClass: 'js-acc-tabs-control'
-        });
-      }
-    }
-  };
-
 })(jQuery);
 
 // Tooltip for My account

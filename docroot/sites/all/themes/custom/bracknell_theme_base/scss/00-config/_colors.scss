@@ -245,6 +245,14 @@ $acc-tabs-control-item-active-bottom-border-color: $white;
 $acc-tabs-control-button-text-color: $deepBlue;
 $acc-tabs-control-active-button-text-color: $textBlack;
 
+// Accordion.
+$accordion-pane-title-bg-color: $greyExtraLight;
+$accordion-pane-title-border-color: $greyLight;
+$accordion-pane-bg-color: $white;
+$accordion-pane-border-color: $greyLight;
+$accordion-control-hover-bg-color: $deepBlue;
+$accordion-control-hover-text-color: $white;
+
 // Colour schemes/themes.
 $themes: (
   business: (#009fd4, white),
