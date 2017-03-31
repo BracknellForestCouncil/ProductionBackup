@@ -60,6 +60,7 @@ function bracknell_feature_landing_page_field_default_field_bases() {
             'basic' => 'basic',
             'guide' => 'guide',
             'landing_page' => 'landing_page',
+            'promotional_page' => 'promotional_page',
           ),
         ),
       ),
