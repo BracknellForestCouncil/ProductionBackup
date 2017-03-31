@@ -1,0 +1,50 @@
+.showcase-item {
+  margin-bottom: 30px;
+
+  .showcase-image-wrap {
+    .showcase-image {
+      height: 235px;
+      overflow-y: hidden;
+      position: relative;
+    }
+  }
+  .showcase-overlay {
+    background: rgba($slateBlue, 0.75);
+    bottom: 0;
+    color: white;
+    left: 0;
+    margin: 0 15px;
+    overflow: hidden;
+    padding: 0 20px;
+    position: absolute;
+    right: 0;
+    top: 75%;
+    -webkit-transition: top .9s ease;
+    transition: top .9s ease;
+
+    &:hover, &:focus {
+      top: 0%;
+
+      .showcase-content {
+        display: block;
+        overflow: hidden;
+      }
+    }
+  }
+  .showcase-title {
+    font-weight: 600;
+    height: auto;
+    margin: 0;
+    padding: 15px 0px;
+  }
+  .showcase-content {
+    display: none;
+  }
+  .showcase-summary {
+    margin-bottom: 15px;
+  }
+  .btn.field-name-field-showcase-link {
+    background: $white;
+    color: $slateBlue;
+  }
+}

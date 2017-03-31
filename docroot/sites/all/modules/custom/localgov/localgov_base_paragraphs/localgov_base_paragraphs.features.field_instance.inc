@@ -735,8 +735,8 @@ function localgov_base_paragraphs_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-category_showcase-field_paragraph_showcase_items'.
-  $field_instances['paragraphs_item-category_showcase-field_paragraph_showcase_items'] = array(
+  // 'paragraphs_item-category_showcase-field_paragraph_showcase_item'.
+  $field_instances['paragraphs_item-category_showcase-field_paragraph_showcase_item'] = array(
     'bundle' => 'category_showcase',
     'default_value' => NULL,
     'deleted' => 0,
@@ -759,9 +759,9 @@ function localgov_base_paragraphs_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_paragraph_showcase_items',
+    'field_name' => 'field_paragraph_showcase_item',
     'is_property' => 0,
-    'label' => 'Showcase Items',
+    'label' => 'Showcase Item',
     'required' => 0,
     'settings' => array(
       'add_mode' => 'select',
@@ -834,54 +834,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
       'settings' => array(),
       'type' => 'paragraphs_embed',
       'weight' => 2,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance:
-  // 'paragraphs_item-category_showcase-field_paragraph_showcase_title'.
-  $field_instances['paragraphs_item-category_showcase-field_paragraph_showcase_title'] = array(
-    'bundle' => 'category_showcase',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'paragraphs_editor_preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_paragraph_showcase_title',
-    'is_property' => 0,
-    'label' => 'Title',
-    'required' => 1,
-    'settings' => array(
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
     ),
     'workbench_access_field' => 0,
   );
@@ -1241,6 +1193,74 @@ function localgov_base_paragraphs_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'paragraphs_item-image-field_image'.
+  $field_instances['paragraphs_item-image-field_image'] = array(
+    'bundle' => 'image',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_image',
+    'is_property' => 0,
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          's3' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'localgov_document' => 0,
+          'localgov_image' => 0,
+          'localgov_image_header' => 0,
+          'localgov_video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -4427,7 +4447,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Related Content');
   t('Select an icon from the list or select "- None -" if you do not wish to display an icon.');
   t('Select an icon from the list.');
-  t('Showcase Items');
+  t('Showcase Item');
   t('Slide Content');
   t('Slide Layout');
   t('TODO: Add help text.');
