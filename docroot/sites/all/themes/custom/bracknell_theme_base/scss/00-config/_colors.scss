@@ -275,7 +275,7 @@ $themes: (
 //   @include applyColour(color);
 //   @include applyColour((background-color, border-color));
 //
-@mixin applyColour($primary_props: 'background-color', $secondary_props: 'color') {
+@mixin applyColour($primary_props: 'background-color', $secondary_props: ()) {
   @each $class, $colours in $themes {
     body.theme-#{$class} & {
       @each $attribute in $primary_props {
