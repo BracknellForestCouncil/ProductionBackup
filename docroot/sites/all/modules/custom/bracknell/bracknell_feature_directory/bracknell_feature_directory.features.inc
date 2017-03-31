@@ -68,3 +68,85 @@ function bracknell_feature_directory_eck_entity_type_info() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_node_info().
+ */
+function bracknell_feature_directory_node_info() {
+  $items = array(
+    'location_car_park' => array(
+      'name' => t('Location - Car park'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'location_community' => array(
+      'name' => t('Location - Community venue'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'location_council' => array(
+      'name' => t('Location - Town or Parish council'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'location_leisure' => array(
+      'name' => t('Location - Leisure site'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'location_library' => array(
+      'name' => t('Location - Library'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'location_main' => array(
+      'name' => t('Location - Main'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'location_park' => array(
+      'name' => t('Location - Park'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'location_playground' => array(
+      'name' => t('Location - Playground'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'location_school' => array(
+      'name' => t('Location - School'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  drupal_alter('node_info', $items);
+  return $items;
+}

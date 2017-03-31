@@ -79,3 +79,12 @@ function bracknell_deploy_update_7002() {
 
   features_revert_module('bracknell_feature_directory');
 }
+
+/**
+ * Enable content_type_groups and content_type_groups_theme.
+ */
+function bracknell_deploy_update_7003() {
+  module_enable(array('content_type_groups', 'content_type_groups_theme'));
+
+  features_revert_module('bracknell_feature_directory');
+}
