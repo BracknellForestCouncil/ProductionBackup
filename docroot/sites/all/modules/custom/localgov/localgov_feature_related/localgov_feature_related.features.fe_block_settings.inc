@@ -38,28 +38,5 @@ function localgov_feature_related_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['views-related_links_taxonomy-block'] = array(
-    'cache' => -1,
-    'delta' => 'related_links_taxonomy-block',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => 0,
-      ),
-      'bracknell_theme_base' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'bracknell_theme_base',
-        'weight' => 15,
-      ),
-    ),
-  );
-
   return $export;
 }

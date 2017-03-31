@@ -19,11 +19,6 @@ function localgov_base_moderation_workbench_moderation_export_transitions() {
       'to_name' => 'needs_review',
       'name' => 'Resubmit for review',
     ),
-    'needs_review:draft' => array(
-      'from_name' => 'needs_review',
-      'to_name' => 'draft',
-      'name' => 'Remove from review queue',
-    ),
     'needs_review:needs_editing' => array(
       'from_name' => 'needs_review',
       'to_name' => 'needs_editing',

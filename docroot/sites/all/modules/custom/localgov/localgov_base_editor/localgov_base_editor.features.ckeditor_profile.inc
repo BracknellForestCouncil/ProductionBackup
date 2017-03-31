@@ -360,6 +360,7 @@ function localgov_base_editor_ckeditor_profile_defaults() {
         ),
       ),
       'input_formats' => array(
+        'html_basic' => 'Basic HTML',
         'html_full' => 'Full HTML',
       ),
     ),
