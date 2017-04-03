@@ -26,4 +26,5 @@
  * @see template_process()
  */
 ?>
+<?php print render($content['field_carousel_slide_layout']); ?>
 <?php print render($content['field_carousel_slide_content']); ?>

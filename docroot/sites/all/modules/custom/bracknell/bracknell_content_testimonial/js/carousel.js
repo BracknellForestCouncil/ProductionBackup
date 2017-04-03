@@ -1,11 +1,11 @@
 (function ($) {
-  Drupal.behaviors.brackNellTestimonialCarousel = {
+  Drupal.behaviors.bracknellTestimonialCarousel = {
     attach: function (context, settings) {
-      $('.paragraphs-item-carousel', context).flexslider({
+      $('.carousel-slides', context).flexslider({
         animation: 'slide',
         animationLoop: false,
         controlNav: false,
-        selector: '.field-name-field-paragraph-carousel-content > div.field-items > div.field-item',
+        selector: '.carousel-slide > .carousel-slide-inner',
         slideshow: false
       });
     }

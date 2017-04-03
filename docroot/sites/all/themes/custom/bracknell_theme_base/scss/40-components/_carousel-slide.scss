@@ -1,65 +1,84 @@
-.carousel-slide .node-testimonial {
-  @include make-row(0);
-  background-color: $carousel-bg-color;
+.carousel-slides {
+  // ...
 }
-
-.carousel-slide-media,
-.carousel-slide-content {
-  @include make-md-column(6);
-}
-
-.carousel-slide-media {
-  padding: 0;
-}
-
-.carousel-slide-content {
-  padding: 60px;
-
-  .field-name-body .field-items {
-    p {
-      //display: inline;
-      position: relative;
+.carousel-slide {
+  .carousel-slide-inner {
+    @include make-row(0);
+    background-color: $carousel-bg-color;
+    .carousel-slide-flex-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      > * {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
-
-    p:first-child:before {
-      content: "\201C";
-      position: absolute;
-      left: -11px;
+    .carousel-slide-media, .carousel-slide-content {
+      // flex: 1;
+      @include make-md-column(6);
     }
-
-    p:last-child {
-      display: inline;
-
-      &:after {
-        content: "\201D";
-        position: absolute;
-        right: -10px;
+    // Delete this
+    .field-name-field-testimonial-image {
+      display: none;
+    }
+    .carousel-slide-media {
+      padding: 0;
+      background: $carousel-video-bg-color;
+      .youtube-field-player {
+        width: 100%;
+      }
+    }
+    .carousel-slide-content {
+      padding: 60px 65px;
+      .field-name-body {
+        padding-bottom: 20px;
+        border-bottom: 1px solid $carousel-caption-line-color;
+        margin-bottom: 20px;
+        .field-items {
+          p {
+            position: relative;
+          }
+          p:first-child:before {
+            content: "\201C";
+            position: absolute;
+            left: -11px;
+          }
+          p:last-child {
+            display: inline;
+            &:after {
+              content: "\201D";
+              position: absolute;
+              right: -10px;
+            }
+          }
+        }
+      }
+      .field-name-field-testimonial-author {
+        font-weight: 600;
+        line-height: 1em;
+        margin-bottom: 5px;
+      }
+      .field-name-field-testimonial-job-title {
+        // ...
+        line-height: 1em;
+      }
+      .btn {
+        margin-top: 30px;
+        margin-bottom: 0;
+        display: inline-block;
       }
     }
   }
-
-  .btn {
-    margin-top: 35px;
+  &.carousel-slide-media-right {
+    .carousel-slide-content {
+      @include make-md-column-pull(6);
+    }
+    .carousel-slide-media {
+      @include make-md-column-push(6);
+    }
   }
-}
-
-.carousel-slide-media-right {
-  .carousel-slide-content {
-    @include make-md-column-pull(6);
-  }
-
-  .carousel-slide-media {
-    @include make-md-column-push(6);
-  }
-}
-
-.field-name-field-testimonial-job-title {
-  margin-top: .5em;
-}
-
-.field-name-field-testimonial-author {
-  font-weight: 600;
-  margin-top: 65px;
 }
 
 .flexslider,

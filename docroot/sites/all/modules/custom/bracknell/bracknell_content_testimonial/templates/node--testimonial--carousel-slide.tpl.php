@@ -80,20 +80,17 @@
  * @ingroup themeable
  */
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="content"<?php print $content_attributes; ?>>
-    <div class="carousel-slide-media">
-      <?php print render($content['field_testimonial_image']); ?>
-      <?php print render($content['field_testimonial_video']); ?>
-      ?>
-    </div>
-    <div class="carousel-slide-content">
-      <?php print render($content['body']); ?>
-      <?php print render($content['field_testimonial_author']); ?>
-      <?php print render($content['field_testimonial_job_title']); ?>
-      <a href="<?php print $node_url ?>" class="btn btn-primary">
-        <?php print t('Read more'); ?>
-      </a>
-    </div>
+<div class='carousel-slide-media'>
+  <?php print render($content['field_testimonial_image']); ?>
+  <?php print render($content['field_testimonial_video']); ?>
+</div>
+<div class='carousel-slide-content'>
+  <?php print render($content['body']); ?>
+  <?php print render($content['field_testimonial_author']); ?>
+  <?php print render($content['field_testimonial_job_title']); ?>
+  <div class='carousel-buttons'>
+    <a href="<?php print $node_url ?>" class='btn btn-primary'>
+      <?php print t('Read more'); ?>
+    </a>
   </div>
 </div>
