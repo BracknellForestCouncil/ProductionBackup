@@ -9,6 +9,7 @@ dependencies[] = features
 dependencies[] = link
 dependencies[] = strongarm
 dependencies[] = viewfield
+dependencies[] = lightbox2
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_base][] = field_related_links
