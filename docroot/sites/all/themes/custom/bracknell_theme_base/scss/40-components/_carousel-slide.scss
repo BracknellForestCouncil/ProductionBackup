@@ -94,16 +94,29 @@
     .flex-next,
     .flex-next:hover {
       right: 30px;
+      &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: url('../images/icons/src/right-arrow-grey.svg') center left no-repeat;
+      }
     }
 
     .flex-prev,
     .flex-prev:hover {
       left: 30px;
+      &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: url('../images/icons/src/left-arrow-grey.svg') center left no-repeat;
+      }
     }
 
     .flex-next,
     .flex-prev {
-      height: 43px;
+      height: 75px;
+      width: 46px;
     }
   }
 }
