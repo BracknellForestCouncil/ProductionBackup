@@ -14,11 +14,13 @@ function s3fs_settings() {
   // I couldn't find a way to get the human-readable region names.
   $region_map = array(
     '' => t('Default'),
-    'us-east-1' => t('US Standard (us-east-1)'),
+    'us-east-1' => t('US East - Northern Virginia (us-east-1)'),
+    'us-east-2' => t('US East - Ohio (us-east-2)'),
     'us-west-1' => t('US West - Northern California  (us-west-1)'),
     'us-west-2' => t('US West - Oregon (us-west-2)'),
     'us-gov-west-1' => t('USA GovCloud Standard (us-gov-west-1)'),
     'eu-west-1' => t('EU - Ireland  (eu-west-1)'),
+    'eu-west-2' => t('EU - London (eu-west-2)'),
     'eu-central-1' => t('EU - Frankfurt (eu-central-1)'),
     'ap-southeast-1' => t('Asia Pacific - Singapore (ap-southeast-1)'),
     'ap-southeast-2' => t('Asia Pacific - Sydney (ap-southeast-2)'),
@@ -42,9 +44,12 @@ function s3fs_settings() {
     '#collapsible' => TRUE,
     // Simplify the form by collapsing this fieldset if it's already been configured.
     '#collapsed'   => _s3fs_get_setting('awssdk2_access_key') ||
-                      _s3fs_get_setting('use_instance_profile'),
+                      _s3fs_get_setting('awssdk2_use_instance_profile'),
   );
 
+  # NOTE: The awssdk2 settings can be a bit confusing. They start with "s3fs_"
+  # to ensure that they get pulled as part of _s3fs_get_config(), but they can
+  # be hard-coded as overrides in settings.php without the s3fs_ prefix.
   $form['aws_credentials']['s3fs_awssdk2_access_key'] = array(
     '#type'          => 'textfield',
     '#title'         => t('Amazon Web Services Access Key'),
@@ -60,8 +65,7 @@ function s3fs_settings() {
   $form['aws_credentials']['s3fs_awssdk2_use_instance_profile'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Use EC2 Instance Profile Credentials'),
-    // TODO: Remove the 'use_instance_profile' and 's3fs_use_instance_profile' bits in 3.0.
-    '#default_value' => _s3fs_get_setting('awssdk2_use_instance_profile') || _s3fs_get_setting('use_instance_profile'),
+    '#default_value' => _s3fs_get_setting('awssdk2_use_instance_profile'),
     '#description'   => t(
       'If your Drupal site is running on an Amazon EC2 server, you may use the Instance Profile Credentials
       from that server rather than setting your AWS credentials directly.'
@@ -72,10 +76,11 @@ function s3fs_settings() {
     '#type'          => 'textfield',
     '#title'         => t('Default Cache Location'),
     '#default_value' => _s3fs_get_setting('awssdk2_default_cache_config'),
-    '#description'   => t('The default cache location for your EC2 Instance Profile Credentials.'),
+    '#description'   => t('The default location to which your EC2 Instance Profile Credentials should be cached.
+      This must be a path to a folder in which the webserver can read and write.'),
     '#states'        => array(
       'visible' => array(
-        ':input[id=edit-s3fs-use-instance-profile]' => array('checked' => TRUE),
+        ':input[id=edit-s3fs-awssdk2-use-instance-profile]' => array('checked' => TRUE),
       ),
     ),
   );
@@ -246,13 +251,15 @@ function s3fs_settings() {
 
   $form['advanced']['s3fs_no_rewrite_cssjs'] = array(
     '#type'          => 'checkbox',
-    '#title'         => t("Don't rewrite CSS/JS file paths"),
+    '#title'         => t("Don't render proxied CSS/JS file paths"),
     '#default_value' => _s3fs_get_setting('no_rewrite_cssjs'),
     '#description'   => t(
-      'If this box is checked, s3fs will NOT rewrite the CSS/JS file paths to "/s3fs-(css|js)/...". Instead, they will
-      be placed on the page with their regular CDN name. Only enable this option if you <b>know</b> you need it!'
+      "Normally, S3FS renders the URLs of public:// CSS and JS files to make use of the proxy settings that are
+        assumed to be configured in your webserver based on the README. However, if you don't want it to do that, you
+        can check this box to make S3FS serve the regular S3 or CNAME URL for public:// CSS and JS files, instead.<br>
+        Under most setups, this will break your CSS and JS. Only enable this option if you <b>know</b> you need it!"
     ),
-    '#states'        => array(
+    '#states' => array(
       'visible' => array(
         ':input[id=edit-s3fs-use-s3-for-public]' => array('checked' => TRUE),
       ),
