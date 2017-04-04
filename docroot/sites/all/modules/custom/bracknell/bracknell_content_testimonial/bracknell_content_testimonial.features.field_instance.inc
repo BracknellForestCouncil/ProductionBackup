@@ -20,8 +20,10 @@ function bracknell_content_testimonial_field_default_field_instances() {
       'carousel_slide' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'settings' => array(
+          'trim_length' => 224,
+        ),
+        'type' => 'text_summary_or_trimmed',
         'weight' => -9,
       ),
       'default' => array(
@@ -289,69 +291,6 @@ function bracknell_content_testimonial_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-testimonial-field_testimonial_logo'.
-  $field_instances['node-testimonial-field_testimonial_logo'] = array(
-    'bundle' => 'testimonial',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'carousel_slide' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => -6,
-      ),
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => -6,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_testimonial_logo',
-    'is_property' => 0,
-    'label' => 'Logo',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '2MB',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 's3fs_cors',
-      'settings' => array(),
-      'type' => 's3fs_cors',
-      'weight' => 34,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-testimonial-field_testimonial_video'.
   $field_instances['node-testimonial-field_testimonial_video'] = array(
     'bundle' => 'testimonial',
@@ -370,7 +309,7 @@ function bracknell_content_testimonial_field_default_field_instances() {
           'youtube_iv_load_policy' => 0,
           'youtube_loop' => 0,
           'youtube_showinfo' => 1,
-          'youtube_size' => '420x315',
+          'youtube_size' => 'responsive',
           'youtube_width' => '',
         ),
         'type' => 'youtube_video',
@@ -436,7 +375,6 @@ function bracknell_content_testimonial_field_default_field_instances() {
   t('Body');
   t('Editorial Group');
   t('Image');
-  t('Logo');
   t('Select the team responsible for editing/moderating this content.');
   t('Video');
 
