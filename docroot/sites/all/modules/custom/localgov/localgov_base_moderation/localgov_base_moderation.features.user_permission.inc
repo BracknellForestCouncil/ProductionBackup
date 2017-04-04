@@ -161,6 +161,17 @@ function localgov_base_moderation_user_default_permissions() {
     'module' => 'workbench_moderation',
   );
 
+  // Exported permission: 'moderate content from needs_review to draft'.
+  $permissions['moderate content from needs_review to draft'] = array(
+    'name' => 'moderate content from needs_review to draft',
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'workbench_moderation',
+  );
+
   // Exported permission: 'moderate content from needs_review to needs_editing'.
   $permissions['moderate content from needs_review to needs_editing'] = array(
     'name' => 'moderate content from needs_review to needs_editing',
