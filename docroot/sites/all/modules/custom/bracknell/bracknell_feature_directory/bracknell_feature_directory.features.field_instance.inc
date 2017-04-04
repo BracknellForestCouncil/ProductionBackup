@@ -471,7 +471,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -518,7 +518,99 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 7,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_car_park-field_charges'.
+  $field_instances['node-location_car_park-field_charges'] = array(
+    'bundle' => 'location_car_park',
+    'default_value' => array(
+      0 => array(
+        'tablefield' => array(
+          'caption' => '',
+          'cell_0_0' => '',
+          'cell_0_1' => '',
+          'cell_0_2' => '',
+          'cell_0_3' => '',
+          'cell_0_4' => '',
+          'cell_0_weight' => 1,
+          'cell_1_0' => '',
+          'cell_1_1' => '',
+          'cell_1_2' => '',
+          'cell_1_3' => '',
+          'cell_1_4' => '',
+          'cell_1_weight' => 2,
+          'cell_2_0' => '',
+          'cell_2_1' => '',
+          'cell_2_2' => '',
+          'cell_2_3' => '',
+          'cell_2_4' => '',
+          'cell_2_weight' => 3,
+          'cell_3_0' => '',
+          'cell_3_1' => '',
+          'cell_3_2' => '',
+          'cell_3_3' => '',
+          'cell_3_4' => '',
+          'cell_3_weight' => 4,
+          'cell_4_0' => '',
+          'cell_4_1' => '',
+          'cell_4_2' => '',
+          'cell_4_3' => '',
+          'cell_4_4' => '',
+          'cell_4_weight' => 5,
+          'import' => array(
+            'file' => '',
+            'import' => 'Upload CSV',
+          ),
+          'paste' => array(
+            'data' => '',
+            'paste_delimiter' => '',
+            'paste_import' => 'Import & Rebuild',
+          ),
+          'rebuild' => array(
+            'count_cols' => 5,
+            'count_rows' => 5,
+            'rebuild' => 'Rebuild Table',
+          ),
+        ),
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'tablefield',
+        'settings' => array(
+          'trim_trailing_cols' => FALSE,
+          'trim_trailing_rows' => FALSE,
+        ),
+        'type' => 'tablefield_default',
+        'weight' => -2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_charges',
+    'is_property' => 0,
+    'label' => 'Charges',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'tablefield',
+      'settings' => array(),
+      'type' => 'tablefield',
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -631,7 +723,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 5,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -672,7 +764,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 9,
     ),
     'workbench_access_field' => 1,
   );
@@ -720,6 +812,147 @@ function bracknell_feature_directory_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_car_park-field_payment_options'.
+  $field_instances['node-location_car_park-field_payment_options'] = array(
+    'bundle' => 'location_car_park',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => -1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_payment_options',
+    'is_property' => 0,
+    'label' => 'Payment Options',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_car_park-field_security'.
+  $field_instances['node-location_car_park-field_security'] = array(
+    'bundle' => 'location_car_park',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_security',
+    'is_property' => 0,
+    'label' => 'Security',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 12,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_car_park-field_spaces'.
+  $field_instances['node-location_car_park-field_spaces'] = array(
+    'bundle' => 'location_car_park',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_spaces',
+    'is_property' => 0,
+    'label' => 'Types of Spaces',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -2083,7 +2316,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -2130,7 +2363,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -2290,7 +2523,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -2378,7 +2611,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 11,
     ),
     'workbench_access_field' => 1,
   );
@@ -2472,7 +2705,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -2536,7 +2769,54 @@ function bracknell_feature_directory_field_default_field_instances() {
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 6,
+      'weight' => 7,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_library-field_stock'.
+  $field_instances['node-location_library-field_stock'] = array(
+    'bundle' => 'location_library',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_stock',
+    'is_property' => 0,
+    'label' => 'Stock facilities',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -3329,6 +3609,53 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-location_playground-field_age_suitability'.
+  $field_instances['node-location_playground-field_age_suitability'] = array(
+    'bundle' => 'location_playground',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => -4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_age_suitability',
+    'is_property' => 0,
+    'label' => 'Age suitability',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-location_playground-field_anything_else'.
   $field_instances['node-location_playground-field_anything_else'] = array(
     'bundle' => 'location_playground',
@@ -3371,7 +3698,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -3418,6 +3745,53 @@ function bracknell_feature_directory_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_playground-field_equipment'.
+  $field_instances['node-location_playground-field_equipment'] = array(
+    'bundle' => 'location_playground',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => -3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_equipment',
+    'is_property' => 0,
+    'label' => 'Type of equipment',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -3484,7 +3858,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -3525,7 +3899,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 7,
     ),
     'workbench_access_field' => 1,
   );
@@ -3572,7 +3946,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -4046,8 +4420,10 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Activity listing (link)');
   t('Activity listing (table)');
   t('Address');
+  t('Age suitability');
   t('Anything else');
   t('Category');
+  t('Charges');
   t('Contact details');
   t('Directions');
   t('Directory entry');
@@ -4060,10 +4436,15 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Management of the Park');
   t('Opening hours');
   t('Parking');
+  t('Payment Options');
   t('Phone');
   t('Related Links');
   t('School type');
+  t('Security');
   t('Select the team responsible for editing/moderating this content.');
+  t('Stock facilities');
+  t('Type of equipment');
+  t('Types of Spaces');
   t('Website');
   t('What facilities are available?');
   t('Wildlife');

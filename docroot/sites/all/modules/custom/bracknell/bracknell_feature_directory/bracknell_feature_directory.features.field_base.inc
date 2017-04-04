@@ -79,6 +79,25 @@ function bracknell_feature_directory_field_default_field_bases() {
     'type' => 'tablefield',
   );
 
+  // Exported field_base: 'field_age_suitability'.
+  $field_bases['field_age_suitability'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_age_suitability',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_anything_else'.
   $field_bases['field_anything_else'] = array(
     'active' => 1,
@@ -96,6 +115,27 @@ function bracknell_feature_directory_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_charges'.
+  $field_bases['field_charges'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_charges',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'tablefield',
+    'settings' => array(
+      'cell_processing' => 0,
+      'export' => 0,
+      'hide_headers' => 0,
+      'lock_values' => 0,
+      'restrict_rebuild' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'tablefield',
   );
 
   // Exported field_base: 'field_contact_details'.
@@ -288,6 +328,25 @@ function bracknell_feature_directory_field_default_field_bases() {
     'type' => 'telephone',
   );
 
+  // Exported field_base: 'field_equipment'.
+  $field_bases['field_equipment'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_equipment',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_headteacher'.
   $field_bases['field_headteacher'] = array(
     'active' => 1,
@@ -475,6 +534,25 @@ function bracknell_feature_directory_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_payment_options'.
+  $field_bases['field_payment_options'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_payment_options',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_school_type'.
   $field_bases['field_school_type'] = array(
     'active' => 1,
@@ -501,6 +579,63 @@ function bracknell_feature_directory_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_security'.
+  $field_bases['field_security'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_security',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_spaces'.
+  $field_bases['field_spaces'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_spaces',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_stock'.
+  $field_bases['field_stock'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_stock',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_website'.
