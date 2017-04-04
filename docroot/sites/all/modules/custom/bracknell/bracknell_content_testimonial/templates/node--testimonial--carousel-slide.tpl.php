@@ -81,8 +81,11 @@
  */
 ?>
 <div class='carousel-slide-media'>
-  <?php print render($content['field_testimonial_image']); ?>
-  <?php print render($content['field_testimonial_video']); ?>
+  <?php if (isset($content['field_testimonial_video'])): ?>
+    <?php print render($content['field_testimonial_video']); ?>
+  <?php else: ?>
+    <?php print render($content['field_testimonial_image']); ?>
+  <?php endif; ?>
 </div>
 <div class='carousel-slide-content'>
   <?php print render($content['body']); ?>

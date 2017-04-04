@@ -1,10 +1,10 @@
 .carousel-slides {
-  // ...
+  background-color: $carousel-bg-color;
+  margin-bottom: 20px;
 }
 .carousel-slide {
   .carousel-slide-inner {
     @include make-row(0);
-    background-color: $carousel-bg-color;
     .carousel-slide-flex-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -21,7 +21,16 @@
     }
     // Delete this
     .field-name-field-testimonial-image {
-      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
     .carousel-slide-media {
       padding: 0;
@@ -31,11 +40,13 @@
       }
     }
     .carousel-slide-content {
-      padding: 60px 65px;
+      padding: 60px 85px 60px 65px;
       .field-name-body {
         padding-bottom: 20px;
         border-bottom: 1px solid $carousel-caption-line-color;
         margin-bottom: 20px;
+        min-height: 6.9em;
+        line-height: 1.4em;
         .field-items {
           p {
             position: relative;
@@ -74,6 +85,7 @@
   &.carousel-slide-media-right {
     .carousel-slide-content {
       @include make-md-column-pull(6);
+      padding: 60px 65px 60px 85px;
     }
     .carousel-slide-media {
       @include make-md-column-push(6);
@@ -93,7 +105,7 @@
 
     .flex-next,
     .flex-next:hover {
-      right: 30px;
+      right: 20px;
       &:before {
         content: '';
         height: 100%;
@@ -104,7 +116,7 @@
 
     .flex-prev,
     .flex-prev:hover {
-      left: 30px;
+      left: 20px;
       &:before {
         content: '';
         height: 100%;
@@ -117,6 +129,7 @@
     .flex-prev {
       height: 75px;
       width: 46px;
+      margin-top: -36px;
     }
   }
 }
