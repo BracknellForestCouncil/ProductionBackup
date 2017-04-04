@@ -13,6 +13,27 @@ function bracknell_feature_directory_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location_car_park';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location_car_park'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location_car_park';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location_car_park'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location_car_park';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location_car_park'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_directory_entry__directory_entry';
   $strongarm->value = array(
     'view_modes' => array(
@@ -28,11 +49,23 @@ function bracknell_feature_directory_strongarm() {
       'location_zoomed_map' => array(
         'custom_settings' => TRUE,
       ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '5',
         ),
       ),
       'display' => array(),
@@ -45,17 +78,42 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__location_car_park';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '13',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '12',
         ),
       ),
       'display' => array(),
@@ -394,7 +452,7 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_location_car_park';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_location_car_park'] = $strongarm;

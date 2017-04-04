@@ -126,16 +126,10 @@ function bracknell_feature_directory_field_default_field_bases() {
     'field_name' => 'field_charges',
     'indexes' => array(),
     'locked' => 0,
-    'module' => 'tablefield',
-    'settings' => array(
-      'cell_processing' => 0,
-      'export' => 0,
-      'hide_headers' => 0,
-      'lock_values' => 0,
-      'restrict_rebuild' => 0,
-    ),
+    'module' => 'paragraphs',
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'tablefield',
+    'type' => 'paragraphs',
   );
 
   // Exported field_base: 'field_contact_details'.
@@ -335,6 +329,25 @@ function bracknell_feature_directory_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_equipment',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_facilities'.
+  $field_bases['field_facilities'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_facilities',
     'indexes' => array(
       'format' => array(
         0 => 'format',
