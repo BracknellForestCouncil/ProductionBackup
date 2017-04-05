@@ -14,6 +14,13 @@ function bracknell_feature_directory_ctools_plugin_api($module = NULL, $api = NU
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function bracknell_feature_directory_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_eck_bundle_info().
  */
 function bracknell_feature_directory_eck_bundle_info() {
@@ -117,7 +124,7 @@ function bracknell_feature_directory_node_info() {
     'location_main' => array(
       'name' => t('Location - Main'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Location to be used where specific type does not apply, e.g. offices.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

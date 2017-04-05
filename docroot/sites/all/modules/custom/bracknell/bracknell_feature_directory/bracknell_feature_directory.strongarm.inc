@@ -20,6 +20,62 @@ function bracknell_feature_directory_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location_community';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location_community'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location_council';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location_council'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location_leisure';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location_leisure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location_library';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location_library'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location_main';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location_main'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location_park';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location_park'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location_playground';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location_playground'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location_school';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location_school'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'diff_show_preview_changes_node_location_car_park';
   $strongarm->value = 1;
   $export['diff_show_preview_changes_node_location_car_park'] = $strongarm;
@@ -27,9 +83,121 @@ function bracknell_feature_directory_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location_community';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location_community'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location_council';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location_council'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location_leisure';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location_leisure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location_library';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location_library'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location_main';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location_main'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location_park';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location_park'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location_playground';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location_playground'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location_school';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location_school'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'diff_view_mode_preview_node_location_car_park';
   $strongarm->value = 'full';
   $export['diff_view_mode_preview_node_location_car_park'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location_community';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location_community'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location_council';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location_council'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location_leisure';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location_leisure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location_library';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location_library'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location_main';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location_main'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location_park';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location_park'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location_playground';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location_playground'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location_school';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location_school'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -110,10 +278,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
       ),
       'display' => array(),
@@ -133,10 +301,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
       ),
       'display' => array(),
@@ -156,10 +324,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
       ),
       'display' => array(),
@@ -179,10 +347,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
       ),
       'display' => array(),
@@ -202,10 +370,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
         'redirect' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
       ),
       'display' => array(),
@@ -225,10 +393,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
       ),
       'display' => array(),
@@ -248,10 +416,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
       ),
       'display' => array(),
@@ -271,10 +439,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
       ),
       'display' => array(),
@@ -294,10 +462,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
       ),
       'display' => array(),
@@ -462,7 +630,7 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_location_community';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_location_community'] = $strongarm;
@@ -472,7 +640,7 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_location_council';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_location_council'] = $strongarm;
@@ -482,7 +650,7 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_location_leisure';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_location_leisure'] = $strongarm;
@@ -492,7 +660,7 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_location_library';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_location_library'] = $strongarm;
@@ -502,7 +670,7 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_location_main';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_location_main'] = $strongarm;
@@ -512,7 +680,7 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_location_park';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_location_park'] = $strongarm;
@@ -522,7 +690,7 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_location_playground';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_location_playground'] = $strongarm;
@@ -532,7 +700,7 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_location_school';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
     1 => 'revision',
   );
   $export['node_options_location_school'] = $strongarm;
