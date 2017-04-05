@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the LocalGov Base: Showcase Category feature.
- */
-
-include_once 'localgov_base_showcase_category.features.inc';
