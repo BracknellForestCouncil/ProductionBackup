@@ -245,6 +245,12 @@ $acc-tabs-control-item-active-bottom-border-color: $white;
 $acc-tabs-control-button-text-color: $deepBlue;
 $acc-tabs-control-active-button-text-color: $textBlack;
 
+// Category Showcase.
+$showcase-overlay-text-color: $white;
+$showcase-overlay-bg-color: rgba($slateBlue, 0.75);
+$showcase-button-bg-color: $white;
+$showcase-button-text-color: $slateBlue;
+
 // Colour schemes/themes.
 $themes: (
   business: (#009fd4, white),

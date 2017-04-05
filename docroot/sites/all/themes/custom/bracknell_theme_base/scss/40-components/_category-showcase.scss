@@ -1,50 +1,54 @@
+// Category Showcase.
+
 .showcase-item {
   margin-bottom: 30px;
+  position: relative;
 
-  .showcase-image-wrap {
-    .showcase-image {
-      height: 235px;
-      overflow-y: hidden;
-      position: relative;
-    }
-  }
-  .showcase-overlay {
-    background: rgba($slateBlue, 0.75);
-    bottom: 0;
-    color: white;
-    left: 0;
-    margin: 0 15px;
+  .js & {
+    height: 245px;
     overflow: hidden;
-    padding: 0 20px;
-    position: absolute;
-    right: 0;
-    top: 75%;
-    -webkit-transition: top .9s ease;
-    transition: top .9s ease;
+  }
 
-    &:hover, &:focus {
-      top: 0%;
-
-      .showcase-content {
-        display: block;
-        overflow: hidden;
-      }
+  .showcase-media-wrap {
+    .showcase-media {
+      position: relative;
+      overflow-y: hidden;
     }
   }
-  .showcase-title {
+
+  .showcase-overlay {
+    background: $showcase-overlay-bg-color;
+    color: $showcase-overlay-text-color;
+    padding: 0;
+    width: 100%;
+
+    .js & {
+      left: 0;
+      position: absolute;
+    }
+  }
+
+  .showcase-item-content {
+    padding: 0 20px;
+  }
+
+  .showcase-item-title {
     font-weight: 600;
     height: auto;
     margin: 0;
-    padding: 15px 0px;
+    padding: 10px 20px;
   }
-  .showcase-content {
-    display: none;
-  }
-  .showcase-summary {
+
+  .showcase-item-summary {
     margin-bottom: 15px;
   }
-  .btn.field-name-field-showcase-link {
-    background: $white;
-    color: $slateBlue;
+
+  .btn {
+    background: $showcase-button-bg-color;
+    color: $showcase-button-text-color;
+
+    &:focus {
+      border: 0;
+    }
   }
 }
