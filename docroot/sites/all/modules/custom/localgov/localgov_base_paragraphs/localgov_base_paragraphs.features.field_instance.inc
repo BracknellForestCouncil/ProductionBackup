@@ -655,12 +655,14 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'entity_reference_multiple',
+        'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 1,
+          'use_content_language' => 1,
+          'view_mode' => 'carousel_slide',
         ),
-        'type' => 'entity_reference_multiple_label',
-        'weight' => 0,
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -673,20 +675,16 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'field_name' => 'field_carousel_slide_content',
     'is_property' => 0,
     'label' => 'Slide Content',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entity_reference_multiple',
-      'settings' => array(
-        'autocomplete_limit' => 15,
-        'autocomplete_path' => '',
-        'autocomplete_query_like_type' => 'STARTS_WITH',
-      ),
-      'type' => 'entity_reference_multiple_autocomplete',
-      'weight' => 2,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );

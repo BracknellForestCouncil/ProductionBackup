@@ -23,28 +23,26 @@ function localgov_base_paragraphs_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'entity_reference_multiple',
+    'module' => 'entityreference',
     'settings' => array(
-      'target_entities_bundles' => array(
-        'node' => array(
-          'target_bundles' => array(
-            'testimonial' => 'testimonial',
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
           ),
         ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'testimonial' => 'testimonial',
+        ),
       ),
-      'target_types' => array(
-        'file' => 0,
-        'node' => 'node',
-        'paragraphs_item' => 0,
-        'redirect' => 0,
-        'taxonomy_term' => 0,
-        'taxonomy_vocabulary' => 0,
-        'user' => 0,
-        'workbench_moderation_transition' => 0,
-      ),
+      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'entity_reference_multiple',
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_carousel_slide_layout'.
