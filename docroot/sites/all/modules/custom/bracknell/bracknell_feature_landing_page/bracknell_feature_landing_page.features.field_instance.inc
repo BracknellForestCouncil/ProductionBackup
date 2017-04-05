@@ -22,7 +22,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -9,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -65,7 +65,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -106,7 +106,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -148,7 +148,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => -6,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -214,10 +214,9 @@ function bracknell_feature_landing_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'viewfield',
         'settings' => array(),
-        'type' => 'viewfield_default',
-        'weight' => -3,
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -288,7 +287,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
           'link' => 1,
         ),
         'type' => 'entity_reference_multiple_label',
-        'weight' => -7,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -333,10 +332,9 @@ function bracknell_feature_landing_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'viewfield',
         'settings' => array(),
-        'type' => 'viewfield_default',
-        'weight' => -4,
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -408,7 +406,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -5,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -449,7 +447,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
           'link' => 1,
         ),
         'type' => 'entity_reference_multiple_label',
-        'weight' => -8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',

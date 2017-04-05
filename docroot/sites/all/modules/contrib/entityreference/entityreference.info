@@ -29,9 +29,9 @@ files[] = tests/entityreference.admin.test
 files[] = tests/entityreference.feeds.test
 files[] = tests/entityreference.entity_translation.test
 
-; Information added by Drupal.org packaging script on 2016-12-23
-version = "7.x-1.2+13-dev"
+; Information added by Drupal.org packaging script on 2017-03-13
+version = "7.x-1.2+19-dev"
 core = "7.x"
 project = "entityreference"
-datestamp = "1482523685"
+datestamp = "1489447385"
 

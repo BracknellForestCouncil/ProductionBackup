@@ -25,7 +25,7 @@
     "copy": "npm-run-all -p copy:Js",
     "copy:Js": "cp -R ./node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js $npm_package_config_outputJs",
     "rminfo": "find node_modules/ -name '*.info' -type f -delete",
-    "watch:css": "onchange $npm_package_config_scssPath -v -- npm-run-all -p build:css",
+    "watch:css": "onchange $npm_package_config_scssPath -v -- npm-run-all -p lint build:css",
     "dev": "npm run build:css && npm-run-all -p watch:css"
   },
   "devDependencies": {

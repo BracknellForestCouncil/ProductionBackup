@@ -1,0 +1,54 @@
+// Category Showcase.
+
+.showcase-item {
+  margin-bottom: 30px;
+  position: relative;
+
+  .js & {
+    height: 245px;
+    overflow: hidden;
+  }
+
+  .showcase-media-wrap {
+    .showcase-media {
+      position: relative;
+      overflow-y: hidden;
+    }
+  }
+
+  .showcase-overlay {
+    background: $showcase-overlay-bg-color;
+    color: $showcase-overlay-text-color;
+    padding: 0;
+    width: 100%;
+
+    .js & {
+      left: 0;
+      position: absolute;
+    }
+  }
+
+  .showcase-item-content {
+    padding: 0 20px;
+  }
+
+  .showcase-item-title {
+    font-weight: 600;
+    height: auto;
+    margin: 0;
+    padding: 10px 20px;
+  }
+
+  .showcase-item-summary {
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    background: $showcase-button-bg-color;
+    color: $showcase-button-text-color;
+
+    &:focus {
+      border: 0;
+    }
+  }
+}

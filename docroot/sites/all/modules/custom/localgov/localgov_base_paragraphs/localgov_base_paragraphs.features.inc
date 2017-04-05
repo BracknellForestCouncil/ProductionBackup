@@ -14,6 +14,34 @@ function localgov_base_paragraphs_ctools_plugin_api($module = NULL, $api = NULL)
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function localgov_base_paragraphs_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: category_showcase.
+  $styles['category_showcase'] = array(
+    'label' => 'Category Showcase',
+    'effects' => array(
+      1 => array(
+        'name' => 'manualcrop_crop_and_scale',
+        'data' => array(
+          'width' => 370,
+          'height' => 247,
+          'upscale' => 0,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 0,
+          'style_name' => 'category_showcase',
+        ),
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_paragraphs_info().
  */
 function localgov_base_paragraphs_paragraphs_info() {
@@ -51,6 +79,11 @@ function localgov_base_paragraphs_paragraphs_info() {
     'category_showcase' => array(
       'name' => 'Category Showcase',
       'bundle' => 'category_showcase',
+      'locked' => '1',
+    ),
+    'category_showcase_item' => array(
+      'name' => 'Category Showcase Item',
+      'bundle' => 'category_showcase_item',
       'locked' => '1',
     ),
     'document' => array(

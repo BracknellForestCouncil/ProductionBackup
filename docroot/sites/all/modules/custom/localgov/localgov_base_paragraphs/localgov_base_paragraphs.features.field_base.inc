@@ -23,28 +23,26 @@ function localgov_base_paragraphs_field_default_field_bases() {
       ),
     ),
     'locked' => 0,
-    'module' => 'entity_reference_multiple',
+    'module' => 'entityreference',
     'settings' => array(
-      'target_entities_bundles' => array(
-        'node' => array(
-          'target_bundles' => array(
-            'testimonial' => 'testimonial',
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
           ),
         ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'testimonial' => 'testimonial',
+        ),
       ),
-      'target_types' => array(
-        'file' => 0,
-        'node' => 'node',
-        'paragraphs_item' => 0,
-        'redirect' => 0,
-        'taxonomy_term' => 0,
-        'taxonomy_vocabulary' => 0,
-        'user' => 0,
-        'workbench_moderation_transition' => 0,
-      ),
+      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'entity_reference_multiple',
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_carousel_slide_layout'.
@@ -807,42 +805,19 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_paragraph_showcase_items'.
-  $field_bases['field_paragraph_showcase_items'] = array(
+  // Exported field_base: 'field_paragraph_showcase_item'.
+  $field_bases['field_paragraph_showcase_item'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_paragraph_showcase_items',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
+    'field_name' => 'field_paragraph_showcase_item',
+    'indexes' => array(),
     'locked' => 0,
-    'module' => 'entity_reference_multiple',
-    'settings' => array(
-      'target_entities_bundles' => array(
-        'node' => array(
-          'target_bundles' => array(
-            'basic' => 'basic',
-            'guide' => 'guide',
-          ),
-        ),
-      ),
-      'target_types' => array(
-        'file' => 0,
-        'node' => 'node',
-        'paragraphs_item' => 0,
-        'redirect' => 0,
-        'taxonomy_term' => 0,
-        'taxonomy_vocabulary' => 0,
-        'user' => 0,
-        'workbench_moderation_transition' => 0,
-      ),
-    ),
+    'module' => 'paragraphs',
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'entity_reference_multiple',
+    'type' => 'paragraphs',
   );
 
   // Exported field_base: 'field_paragraph_showcase_title'.
@@ -1123,6 +1098,97 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_promotional_area_title',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_showcase_image'.
+  $field_bases['field_showcase_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_showcase_image',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
+  // Exported field_base: 'field_showcase_link'.
+  $field_bases['field_showcase_link'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_showcase_link',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_showcase_summary'.
+  $field_bases['field_showcase_summary'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_showcase_summary',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_showcase_title'.
+  $field_bases['field_showcase_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_showcase_title',
     'indexes' => array(
       'format' => array(
         0 => 'format',

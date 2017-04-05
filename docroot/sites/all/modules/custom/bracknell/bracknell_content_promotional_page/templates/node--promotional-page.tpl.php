@@ -80,11 +80,28 @@
  */
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php
-    // Hide comments, tags, and links now so that we can render them later.
-    hide($content['comments']);
-    hide($content['links']);
-    hide($content['field_tags']);
-    print render($content);
-  ?>
+  <div class="promotional-hero">
+    <?php if (!empty($title)) : ?>
+    <div class='promotional-hero-title'>
+      <h1 class='promotional-hero-title-inner'>
+        <?php print $title; ?>
+      </h1>
+    </div>
+    <?php endif; ?>
+    <?php print render($content['field_promotional_hero']); ?>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <?php
+          // Hide comments, tags, and links now so that we can render them later.
+          hide($content['comments']);
+          hide($content['links']);
+          hide($content['field_tags']);
+          hide($content['field_promotional_hero']);
+          print render($content);
+        ?>
+      </div>
+    </div>
+  </div>
 </article>
