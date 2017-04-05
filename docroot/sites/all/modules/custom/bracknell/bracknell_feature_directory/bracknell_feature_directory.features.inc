@@ -29,7 +29,7 @@ function bracknell_feature_directory_eck_bundle_info() {
       'machine_name' => 'directory_entry_directory_entry',
       'entity_type' => 'directory_entry',
       'name' => 'directory_entry',
-      'label' => 'Directory entry',
+      'label' => 'directory entry',
       'config' => array(),
     ),
   );
@@ -43,7 +43,7 @@ function bracknell_feature_directory_eck_entity_type_info() {
   $items = array(
     'directory_entry' => array(
       'name' => 'directory_entry',
-      'label' => 'Directory entry',
+      'label' => 'directory entry',
       'properties' => array(
         'title' => array(
           'label' => 'Title',

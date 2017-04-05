@@ -257,7 +257,6 @@ features[variable][] = node_submitted_location_main
 features[variable][] = node_submitted_location_park
 features[variable][] = node_submitted_location_playground
 features[variable][] = node_submitted_location_school
-features[views_view][] = administration_directory_entries
 features_exclude[dependencies][advanced_link] = advanced_link
 features_exclude[dependencies][image] = image
 features_exclude[dependencies][link] = link
