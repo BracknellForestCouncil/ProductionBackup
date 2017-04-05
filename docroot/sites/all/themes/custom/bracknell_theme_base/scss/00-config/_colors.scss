@@ -205,7 +205,8 @@ $carousel-control-hover-text-color: $greyLight;
 $contact-info-bg-color: $greyLight;
 
 // Hero.
-$hero-my-back-text-color: $grey4;
+$hero-title-text-color: $textBlack;
+$hero-title-inner-bg-color: rgba(255, 255, 255, 0.8);
 
 // Slogan.
 $slogan-button-background-color: $grey2;
@@ -251,6 +252,14 @@ $showcase-overlay-bg-color: rgba($slateBlue, 0.75);
 $showcase-button-bg-color: $white;
 $showcase-button-text-color: $slateBlue;
 
+// Accordion.
+$accordion-pane-title-bg-color: $greyExtraLight;
+$accordion-pane-title-border-color: $greyLight;
+$accordion-pane-bg-color: $white;
+$accordion-pane-border-color: $greyLight;
+$accordion-control-hover-bg-color: $deepBlue;
+$accordion-control-hover-text-color: $white;
+
 // Colour schemes/themes.
 $themes: (
   business: (#009fd4, white),
@@ -273,7 +282,7 @@ $themes: (
 //   @include applyColour(color);
 //   @include applyColour((background-color, border-color));
 //
-@mixin applyColour($primary_props: 'background-color', $secondary_props: 'color') {
+@mixin applyColour($primary_props: 'background-color', $secondary_props: ()) {
   @each $class, $colours in $themes {
     body.theme-#{$class} & {
       @each $attribute in $primary_props {

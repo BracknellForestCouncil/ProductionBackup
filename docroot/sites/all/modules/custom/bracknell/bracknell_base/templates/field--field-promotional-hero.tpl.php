@@ -44,34 +44,30 @@
  * @ingroup themeable
  */
 ?>
-<div class="promotional-hero <?php print $classes; ?>"<?php print $attributes; ?>>
-  <div class='promotional-hero-title'>
-    <h1 class='promotional-hero-title-inner'><?php print $element['#object']->title; ?></h1>
-  </div>
-  <?php
-    $hero_images = array_filter($items, function ($hero_image) {
-      return is_array($hero_image) && isset($hero_image['#item']['uri']);
-    });
-    if (count($hero_images) === 1): ?>
-      <div class='hero-images'>
-      <?php print render($hero_images[0]); ?>
-      </div>
-    <?php elseif (count($hero_images) > 1): ?>
+<?php
+  $hero_images = array_filter($items, function ($hero_image) {
+    return is_array($hero_image) && isset($hero_image['#item']['uri']);
+  });
+  if (count($hero_images) === 1): ?>
+    <div class='hero-images'>
+    <?php print render($hero_images[0]); ?>
+    </div>
+  <?php elseif (count($hero_images) > 1): ?>
+    <div class='hero-images'>
+      <?php
+      // Render out all the promotional hero images as a slideshow.
+      foreach ($hero_images as $key => $hero_image): ?>
+        <a
+          href="<?php print file_create_url($hero_image['#item']['uri']); ?>"
+          rel="lightbox[hero_image]"
+          title=""
+          class="hero-image <?php print $key > 0 ? 'hidden' : 'first-image'; ?>">
+          <?php print render($hero_image); ?>
+        </a>
+      <?php endforeach; ?>
       <div class='hero-buttons'>
         <div class='hero-button action-open'>View gallery</div>
       </div>
-      <div class='hero-images'>
-        <?php
-        // Render out all the promotional hero images as a slideshow.
-        foreach ($hero_images as $key => $hero_image): ?>
-          <a
-            href="<?php print file_create_url($hero_image['#item']['uri']); ?>"
-            rel="lightbox[hero_image]"
-            title=""
-            class="hero-image <?php print $key > 0 ? 'hidden' : 'first-image'; ?>">
-            <?php print render($hero_image); ?>
-          </a>
-        <?php endforeach; ?>
-      </div>
-    <?php endif; ?>
-</div>
+    </div>
+  <?php endif; ?>
+

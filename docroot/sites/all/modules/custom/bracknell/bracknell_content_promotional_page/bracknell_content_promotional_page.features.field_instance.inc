@@ -190,7 +190,7 @@ function bracknell_content_promotional_page_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -262,52 +262,6 @@ function bracknell_content_promotional_page_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance:
-  // 'node-promotional_page-field_promotional_related_pages'.
-  $field_instances['node-promotional_page-field_promotional_related_pages'] = array(
-    'bundle' => 'promotional_page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'entity_reference_multiple',
-        'settings' => array(
-          'link' => 1,
-        ),
-        'type' => 'entity_reference_multiple_label',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_promotional_related_pages',
-    'is_property' => 0,
-    'label' => 'Related Pages',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entity_reference_multiple',
-      'settings' => array(
-        'autocomplete_limit' => 15,
-        'autocomplete_path' => '',
-        'autocomplete_query_like_type' => 'STARTS_WITH',
-      ),
-      'type' => 'entity_reference_multiple_autocomplete',
-      'weight' => 8,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-promotional_page-field_promotional_slogan'.
   $field_instances['node-promotional_page-field_promotional_slogan'] = array(
     'bundle' => 'promotional_page',
@@ -351,6 +305,51 @@ function bracknell_content_promotional_page_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-promotional_page-field_related_pages'.
+  $field_instances['node-promotional_page-field_related_pages'] = array(
+    'bundle' => 'promotional_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entity_reference_multiple',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entity_reference_multiple_label',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_pages',
+    'is_property' => 0,
+    'label' => 'Related Pages',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entity_reference_multiple',
+      'settings' => array(
+        'autocomplete_limit' => 15,
+        'autocomplete_path' => '',
+        'autocomplete_query_like_type' => 'STARTS_WITH',
+      ),
+      'type' => 'entity_reference_multiple_autocomplete',
+      'weight' => 9,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-promotional_page-field_related_pages_view'.
   $field_instances['node-promotional_page-field_related_pages_view'] = array(
     'bundle' => 'promotional_page',
@@ -365,9 +364,8 @@ function bracknell_content_promotional_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'viewfield',
         'settings' => array(),
-        'type' => 'viewfield_default',
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(

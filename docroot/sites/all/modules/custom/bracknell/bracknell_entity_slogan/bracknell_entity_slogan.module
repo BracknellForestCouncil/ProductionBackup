@@ -5,3 +5,17 @@
  */
 
 include_once 'bracknell_entity_slogan.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function bracknell_entity_slogan_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['slogan__slogan'] = array(
+    'render element' => 'content',
+    'base hook' => 'slogan',
+    'template' => 'slogan--slogan',
+    'path' => drupal_get_path('module', 'bracknell_entity_slogan') . '/templates',
+  );
+  return $theme;
+}

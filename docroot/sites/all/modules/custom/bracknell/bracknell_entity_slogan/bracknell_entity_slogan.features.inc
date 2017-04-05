@@ -21,7 +21,11 @@ function bracknell_entity_slogan_eck_bundle_info() {
       'entity_type' => 'slogan',
       'name' => 'slogan',
       'label' => 'slogan',
-      'config' => array(),
+      'config' => array(
+        'managed_properties' => array(
+          'title' => 'title',
+        ),
+      ),
     ),
   );
   return $items;

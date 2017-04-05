@@ -123,7 +123,6 @@
       }
     }
   };
-
 })(jQuery);
 
 // Tooltip for My account

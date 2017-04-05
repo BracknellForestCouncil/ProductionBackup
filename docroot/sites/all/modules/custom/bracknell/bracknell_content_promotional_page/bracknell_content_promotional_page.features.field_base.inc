@@ -47,46 +47,6 @@ function bracknell_content_promotional_page_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_promotional_related_pages'.
-  $field_bases['field_promotional_related_pages'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_promotional_related_pages',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entity_reference_multiple',
-    'settings' => array(
-      'target_entities_bundles' => array(
-        'node' => array(
-          'target_bundles' => array(
-            'basic' => 'basic',
-            'guide' => 'guide',
-            'promotional_page' => 'promotional_page',
-          ),
-        ),
-      ),
-      'target_types' => array(
-        'file' => 0,
-        'node' => 'node',
-        'paragraphs_item' => 0,
-        'redirect' => 0,
-        'slogan' => 0,
-        'taxonomy_term' => 0,
-        'taxonomy_vocabulary' => 0,
-        'user' => 0,
-        'workbench_moderation_transition' => 0,
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'entity_reference_multiple',
-  );
-
   // Exported field_base: 'field_promotional_slogan'.
   $field_bases['field_promotional_slogan'] = array(
     'active' => 1,

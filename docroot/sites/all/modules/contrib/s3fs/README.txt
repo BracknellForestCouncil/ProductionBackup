@@ -200,7 +200,7 @@ location ~* ^/(s3fs-css|s3fs-js)/(.*) {
   set $s3_base_path 'YOUR-BUCKET.s3.amazonaws.com/s3fs-public';
   set $file_path $2;
 
-  resolver         172.16.0.23 valid=300s;
+  resolver 8.8.4.4 8.8.8.8 valid=300s;
   resolver_timeout 10s;
 
   proxy_pass http://$s3_base_path/$file_path;
@@ -251,7 +251,7 @@ $conf['s3fs_torrents'] = "yarrr/*";
 $conf['awssdk2_access_key'] = 'YOUR ACCESS KEY';
 $conf['awssdk2_secret_key'] = 'YOUR SECRET KEY';
 $conf['awssdk2_use_instance_profile'] = TRUE or FALSE;
-$conf['awssdk2_default_cache_config'] = '/path/to/cache';
+$conf['awssdk2_default_cache_config'] = '/tmp/cache';
 
 
 ===========================================

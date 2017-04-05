@@ -2146,7 +2146,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'settings' => array(
       'add_mode' => 'select',
       'allowed_bundles' => array(
-        'accordion' => -1,
+        'accordion' => 'accordion',
         'accordion_pane' => -1,
         'basic' => 'basic',
         'blockquote' => 'blockquote',
@@ -2167,7 +2167,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'layout_3_col_4_4_4' => -1,
         'layout_3_col_6_3_3' => -1,
         'link' => -1,
-        'map' => 'map',
         'promotional_area' => 'promotional_area',
         'tab_panel' => -1,
         'table' => 'table',
@@ -2196,7 +2195,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'layout_3_col_4_4_4' => 20,
         'layout_3_col_6_3_3' => 21,
         'link' => 22,
-        'map' => 23,
         'promotional_area' => 24,
         'tab_panel' => 27,
         'table' => 25,
