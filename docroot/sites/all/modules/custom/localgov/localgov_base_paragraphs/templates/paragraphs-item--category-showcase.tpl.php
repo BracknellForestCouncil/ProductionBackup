@@ -27,5 +27,5 @@
  */
 ?>
 <div class="showcase">
-  <?php print render($content['field_paragraph_showcase_item']); ?>
+  <?php print render($content); ?>
 </div>

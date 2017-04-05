@@ -26,18 +26,17 @@
  * @see template_process()
  */
 ?>
-<div class="showcase-item col-sm-6 col-md-4">
-  <div class="showcase-image-wrap">
-      <div class="showcase-image">
-        <?php print render($content['field_showcase_image']); ?>
-      </div>
+<div class="showcase-item">
+  <div class="showcase-media-wrap">
+    <div class="showcase-media">
+      <?php print render($content['field_showcase_image']); ?>
+    </div>
   </div>
   <div class="showcase-overlay">
-    <h4 class="showcase-title"><?php print render($content['field_showcase_title']); ?></h4>
-    <div class="showcase-content">
-      <div class="showcase-summary"><?php print render($content['field_showcase_summary']); ?></div>
+    <?php print render($content['field_showcase_title']); ?>
+    <div class="showcase-item-content">
+      <?php print render($content['field_showcase_summary']); ?>
       <?php print render($content['field_showcase_link']); ?>
     </div>
   </div>
 </div>
-

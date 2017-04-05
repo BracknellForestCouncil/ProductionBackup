@@ -24,7 +24,6 @@
  * @see template_process()
  */
 ?>
-
 <div class="row">
-  <?php print $content; ?>
+    <?php print $content; ?>
 </div>
