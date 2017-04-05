@@ -32,7 +32,6 @@
  * @ingroup themeable
  */
 ?>
-
 <?php if ($tree || $has_links): ?>
   <div id="guide-navigation-<?php print $guide_id; ?>" class="guide-navigation-primary">
 
