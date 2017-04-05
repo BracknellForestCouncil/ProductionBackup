@@ -5,3 +5,53 @@
  */
 
 include_once 'bracknell_content_testimonial.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function bracknell_content_testimonial_theme($existing, $type, $theme, $path) {
+  $theme = array();
+
+  $theme['node__testimonial__carousel_slide'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--testimonial--carousel-slide',
+    'path' => drupal_get_path('module', 'bracknell_content_testimonial') . '/templates',
+  );
+
+  return $theme;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bracknell_content_testimonial_preprocess_paragraphs_items(&$variables) {
+  if ($variables['field_name'] !== 'field_promotional_content') {
+    return;
+  }
+  $variables['classes_array'][] = 'flexslider';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bracknell_content_testimonial_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] !== 'field_carousel_slide_content') {
+    return;
+  }
+  module_load_include('inc', 'bracknell_content_testimonial', 'bracknell_content_testimonial.helpers');
+  _bracknell_content_testimonial_add_carousel_slide_classes($variables);
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function bracknell_content_testimonial_node_view($node, $view_mode, $langcode) {
+  if ($node->type !== 'testimonial' || $view_mode !== 'carousel_slide') {
+    return;
+  }
+  drupal_add_css(drupal_get_path('theme', 'bracknell_theme_base') . '/libraries/flexslider/flexslider.css');
+  drupal_add_js(drupal_get_path('theme', 'bracknell_theme_base') . '/libraries/flexslider/jquery.flexslider.js');
+
+  drupal_add_js(drupal_get_path('module', 'bracknell_content_testimonial') . '/js/carousel.js');
+}

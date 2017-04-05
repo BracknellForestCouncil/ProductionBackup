@@ -18,3 +18,4 @@ features[field_base][] = field_related_pages
 features[field_base][] = field_related_pages_view
 features[field_base][] = field_top_tasks
 features[variable][] = entity_view_modes
+project path = sites/all/modules/custom/bracknell

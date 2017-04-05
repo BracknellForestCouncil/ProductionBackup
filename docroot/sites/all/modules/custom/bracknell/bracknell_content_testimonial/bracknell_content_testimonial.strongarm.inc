@@ -31,6 +31,9 @@ function bracknell_content_testimonial_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel_slide' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
