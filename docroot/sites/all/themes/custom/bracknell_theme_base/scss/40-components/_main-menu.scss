@@ -2,46 +2,56 @@
   background: $nav-top-nav-wrapper-bg-color;
   position: relative;
   z-index: 100;
+
   .js & {
     left: 0;
     position: absolute;
-    top: 96px;
+    top: 70px;
     width: 100%;
   }
+
   .nav-item {
     @include gridRows(1, 1%);
     display: inline-block;
     vertical-align: top;
+
     @include breakpoint($screen-xs) {
       @include gridRows(2, 1%);
     }
+
     @include breakpoint($screen-md) {
       @include gridRows(3, 1%);
     }
   }
+
   .navbar-collapse {
     ul {
       list-style-type: none;
       margin: 0;
       padding: 20px 0;
     }
+
     .js & {
       ul {
         padding-top: 50px;
+
         @include breakpoint($screen-md) {
           padding-bottom: 40px;
           padding-top: 90px;
         }
       }
     }
+
     li {
       background: url('../images/main-menu-arrow-white.png') 0 17px no-repeat;
     }
+
     a {
       color: $nav-bar-collapse-link-text-color;
       display: block;
       padding: 10px 10px 10px 17px;
       text-decoration: none;
+
       &:hover,
       &:focus {
         text-decoration: underline;
@@ -49,6 +59,7 @@
     }
   }
 }
+
 .main-menu-btn {
   background: $main-menu-button-bg-color;
   border: {
@@ -60,52 +71,65 @@
   padding: 10px 15px 12px;
   position: relative;
   box-sizing: border-box;
-  height: 48px;
+  min-height: 48px;
   font-weight: 600;
+
   &:focus {
     outline: none;
   }
+
   &.expanded {
     .icon-bar {
       transition: all 0.2s;
+
       &.top {
         transform: translate(1px, 8px)rotate(45deg);
       }
+
       &.centre {
         opacity: 0;
       }
+
       &.bottom {
         transform: translate(1px, -6px)rotate(-45deg);
       }
     }
   }
+
   &.collapsed {
     .icon-bar {
       transition: all 0.2s;
+
       &.top {
         transform: rotate(0);
       }
+
       &.centre {
         opacity: 1;
       }
+
       &.bottom {
         transform: rotate(0);
       }
     }
   }
+
   .icon-bar {
     background: $nav-tools-menu-toggle-icon-bar-bg-color;
     border-radius: 4px;
     display: block;
     height: 3px;
     width: 26px;
+
     &.centre {
       margin-top: 4px;
     }
+
     &.bottom {
       margin-top: 4px;
     }
   }
+
   .icon-bars-wrap {
     padding: 4px 0 0 10px;
   }
