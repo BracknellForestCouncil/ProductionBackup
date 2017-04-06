@@ -73,7 +73,6 @@
  * @ingroup templates
  */
 ?>
-
 <?php include_once DRUPAL_ROOT . '/' . drupal_get_path('theme', 'bracknell_theme_base') . '/templates/includes/header.inc'; ?>
 
 <main class="main-container" id="main-content" role="main">
@@ -98,18 +97,45 @@
     </div><!-- end .row -->
   </div><!-- end .container -->
 
-  <div class="promotional-hero <?php print $classes; ?>">
-    <?php if (!empty($title)) : ?>
-    <div class="promotional-hero-title container">
-      <h1 class="promotional-hero-title-inner col-md-8">
-        <?php print $title; ?>
-      </h1>
-    </div><!-- end .promotional-hero-title -->
-    <?php endif; ?>
-    <?php if ($hero) : ?>
-      <?php print $hero; ?>
-    <?php endif; ?>
-  </div><!-- end .promotional-hero -->
+  <?php if ($guide_menu && !$hero) : ?>
+    <div class="guide-navigation-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <?php if (!empty($title)) : ?>
+            <h1><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print $guide_menu; ?>
+        </div><!-- end .col -->
+      </div><!-- end .row -->
+    </div><!-- end .container -->
+    </div>
+  <?php endif; ?>
+
+  <?php if ($guide_menu && $hero) : ?>
+    <div class="promotional-hero <?php print $classes; ?>">
+      <?php if (!empty($title)) : ?>
+      <div class="promotional-hero-title container">
+        <h1 class="promotional-hero-title-inner col-md-8">
+          <?php print $title; ?>
+        </h1>
+      </div><!-- end .promotional-hero-title -->
+      <?php endif; ?>
+      <?php if ($hero) : ?>
+        <?php print $hero; ?>
+      <?php endif; ?>
+    </div><!-- end .promotional-hero -->
+    <div class="guide-navigation-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <?php print $guide_menu; ?>
+        </div><!-- end .col -->
+      </div><!-- end .row -->
+    </div><!-- end .container -->
+    </div>
+  <?php endif; ?>
+
   <div class="container">
     <div class="row">
       <div<?php print $content_column_class ?>>

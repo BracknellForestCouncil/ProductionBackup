@@ -2,20 +2,35 @@
 /**
  * @file
  * localgov_content_guidesection.features.field_base.inc
- * TODO: Add file description
- *
- * @package   localgov_content_guidesection
- * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
- * @copyright Copyright (c) 2016, Craig Gardener
- * @license   http://opensource.org/licenses/gpl-license.php
- *            GNU General Public License, version 2 or later
  */
 
- /**
-  * Implements hook_field_default_field_bases().
-  */
- function localgov_content_directory_field_default_field_bases() {
-   $field_bases = array();
+/**
+ * Implements hook_field_default_field_bases().
+ */
+function localgov_content_guidesection_field_default_field_bases() {
+  $field_bases = array();
 
-   return $field_bases;
- }
+  // Exported field_base: 'field_node_display_title'.
+  $field_bases['field_node_display_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_node_display_title',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+      'no_ui' => TRUE,
+    ),
+    'translatable' => 1,
+    'type' => 'text',
+  );
+
+  return $field_bases;
+}

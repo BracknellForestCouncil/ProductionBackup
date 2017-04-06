@@ -42,6 +42,6 @@ features[variable][] = node_preview_guide
 features[variable][] = node_submitted_guide
 features[variable][] = pathauto_node_guide_pattern
 features_exclude[dependencies][localgov_content_guide] = localgov_content_guide
-features_exclude[field_instance][node-guide-field_moderation] = node-guide-field_moderation
 features_exclude[field_base][field_weight] = field_weight
+features_exclude[field_instance][node-guide-field_moderation] = node-guide-field_moderation
 files[] = migrate/localgov_content_guide.migrate.inc

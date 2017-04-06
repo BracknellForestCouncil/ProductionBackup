@@ -31,17 +31,20 @@ function localgov_content_guidesection_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel_slide' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '6',
         ),
       ),
       'display' => array(),

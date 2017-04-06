@@ -215,6 +215,7 @@ $slogan-button-background-color: $grey2;
 $slogan-button-text-color: $slateBlue;
 
 // Guide.
+$guide-nav-primary-bg-color: $greyExtraLight;
 $guide-nav-primary-list-text-color: $textBlack;
 $guide-nav-primary-list-link-hover-bg-color: $greyExtraLight;
 $guide-nav-secondary-button-bg-color: $white;
@@ -261,6 +262,12 @@ $accordion-pane-bg-color: $white;
 $accordion-pane-border-color: $greyLight;
 $accordion-control-hover-bg-color: $deepBlue;
 $accordion-control-hover-text-color: $white;
+
+// Top Tasks.
+$top-tasks-bg-color: $oliveGreenLight;
+
+// Related Pages.
+$related-pages-bg-color: $greyExtraLight;
 
 // Colour schemes/themes.
 $themes: (

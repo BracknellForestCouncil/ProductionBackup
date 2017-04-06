@@ -17,11 +17,17 @@ function localgov_content_guidesection_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 90,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -46,7 +52,7 @@ function localgov_content_guidesection_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => -2,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -58,11 +64,17 @@ function localgov_content_guidesection_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Select contact information to display on this page.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 95,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -84,7 +96,7 @@ function localgov_content_guidesection_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 95,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -100,11 +112,17 @@ function localgov_content_guidesection_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 96,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -126,7 +144,7 @@ function localgov_content_guidesection_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 96,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -138,6 +156,12 @@ function localgov_content_guidesection_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'paragraphs',
@@ -145,7 +169,7 @@ function localgov_content_guidesection_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => -9,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -191,7 +215,124 @@ function localgov_content_guidesection_field_default_field_instances() {
       'module' => 'paragraphs',
       'settings' => array(),
       'type' => 'paragraphs_embed',
-      'weight' => 32,
+      'weight' => 8,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-guide_section-field_node_display_title'.
+  $field_instances['node-guide_section-field_node_display_title'] = array(
+    'bundle' => 'guide_section',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-guide_section-field_promotional_hero'.
+  $field_instances['node-guide_section-field_promotional_hero'] = array(
+    'bundle' => 'guide_section',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_promotional_hero',
+    'is_property' => 0,
+    'label' => 'Promotional Hero',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          's3' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'localgov_document' => 0,
+          'localgov_image' => 0,
+          'localgov_image_header' => 0,
+          'localgov_video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -203,11 +344,18 @@ function localgov_content_guidesection_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
-      'default' => array(
-        'label' => 'hidden',
+      'carousel_slide' => array(
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 97,
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -254,7 +402,7 @@ function localgov_content_guidesection_field_default_field_instances() {
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 97,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -266,11 +414,17 @@ function localgov_content_guidesection_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 90,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -293,7 +447,7 @@ function localgov_content_guidesection_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => -1,
+      'weight' => 5,
     ),
   );
 
@@ -303,6 +457,8 @@ function localgov_content_guidesection_field_default_field_instances() {
   t('Contact Information');
   t('Contact Information Style');
   t('Content');
+  t('Display title');
+  t('Promotional Hero');
   t('Related Links');
   t('Select contact information to display on this page.');
   t('TODO: Add help text');
