@@ -46,7 +46,7 @@
 '40-components/61-deeson-page-rater',
 '40-components/footer',
 '40-components/alerts',
-'40-components/block_related-links',
+'40-components/related-links',
 '40-components/carousel',
 '40-components/carousel-slide',
 '40-components/contact-info',
@@ -61,7 +61,9 @@
 '40-components/table',
 '40-components/tabs',
 '40-components/video',
-'40-components/hero';
+'40-components/hero',
+'40-components/guide',
+'40-components/related-pages';
 
 // Pages.
 @import
@@ -70,7 +72,6 @@
 // Overrides.
 @import
 '90-overrides-module/general',
-'90-overrides-module/guide',
 '90-overrides-module/localgov_base_navigation.navigation_home',
 '90-overrides-module/navbar',
 '90-overrides-module/small-print',

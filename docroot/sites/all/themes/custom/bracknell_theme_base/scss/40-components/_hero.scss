@@ -9,7 +9,6 @@
   }
 
   .promotional-hero-title {
-    @include constrained;
     color: $hero-title-text-color;
     font-size: 1.8em;
     letter-spacing: -1px;
@@ -29,6 +28,7 @@
 
   .promotional-hero-title {
     padding: 0;
+    position: relative;
 
     .promotional-hero-title-inner {
       background: $hero-title-inner-bg-color;
@@ -37,10 +37,7 @@
       z-index: 2;
 
       @include breakpoint($screen-md) {
-        left: 0;
-        margin-left: -20px;
-        padding-left: 30px;
-        padding-right: 30px;
+        left: auto;
         position: absolute;
         top: 55px;
         width: auto;

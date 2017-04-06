@@ -1,26 +1,26 @@
-// Top Tasks.
+// Related pages - used on landing and promotional pages.
 
-.top-tasks {
+.related-pages {
   @extend .call-to-actions;
   @extend .sub-grid-categories;
-  background: $top-tasks-bg-color;
-  padding: 40px 0 30px;
+  background: $related-pages-bg-color;
+  padding: 30px 0 20px;
 
   .task-list {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -12px;
+    margin: 0 -5px;
     padding: 0;
 
     .task-list-item {
       display: flex;
       margin: 0 0 10px;
-      padding: 0 10px;
-      width: 33.333333%;
+      padding: 0 5px;
+      width: 25%;
 
       a {
         @extend .btn;
-        @extend .key-task;
+        @extend .sub-task;
         border-radius: 3px;
         width: 100%;
         margin: 0;
