@@ -17,6 +17,12 @@ function localgov_content_form_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Enter an introduction for this form.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -52,7 +58,7 @@ function localgov_content_form_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -64,6 +70,12 @@ function localgov_content_form_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -105,6 +117,12 @@ function localgov_content_form_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Enter additional information for this form.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -135,7 +153,7 @@ function localgov_content_form_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -152,6 +170,12 @@ function localgov_content_form_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'Enter the URL for the form.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'link',
@@ -204,7 +228,80 @@ function localgov_content_form_field_default_field_instances() {
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-form-field_promotional_hero'.
+  $field_instances['node-form-field_promotional_hero'] = array(
+    'bundle' => 'form',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_promotional_hero',
+    'is_property' => 0,
+    'label' => 'Promotional Hero',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          's3' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'localgov_document' => 0,
+          'localgov_image' => 0,
+          'localgov_image_header' => 0,
+          'localgov_video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -216,6 +313,12 @@ function localgov_content_form_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -267,7 +370,7 @@ function localgov_content_form_field_default_field_instances() {
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -279,6 +382,12 @@ function localgov_content_form_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -321,6 +430,12 @@ function localgov_content_form_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -365,6 +480,7 @@ function localgov_content_form_field_default_field_instances() {
   t('Enter the URL for the form.');
   t('Form URL');
   t('Introduction');
+  t('Promotional Hero');
   t('Related Links');
   t('TODO: Add help text.');
   t('Tags');
