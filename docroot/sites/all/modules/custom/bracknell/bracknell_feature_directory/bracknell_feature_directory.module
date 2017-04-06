@@ -39,8 +39,8 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
     $location_id = $variables['field_directory_entry'][0]['target_id'];
     if (!empty($location_id)) {
       $location_entity = entity_load('directory_entry', array($location_id));
-      $overview_map = entity_view('directory_entry', $location_entity, 'location_overview_map');
-      $variables['map_overview'] = !empty($overview_map) ? $overview_map : '<p>' . t('An overview map is currently unavailable.') . '</p>';
+      $map = entity_view('directory_entry', $location_entity, 'location_zoomed_map');
+      $variables['map'] = !empty($map) ? $map : '<p>' . t('An overview map is currently unavailable.') . '</p>';
     }
   }
 }

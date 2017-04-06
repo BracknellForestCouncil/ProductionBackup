@@ -91,6 +91,7 @@ hide($content['field_tags']);
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
     <?php endif; ?>
     <?php print render($title_suffix); ?>
+    <?php print render($map); ?>
     <?php if ($display_submitted): ?>
     <span class="submitted">
       <?php print $user_picture; ?>
@@ -102,8 +103,7 @@ hide($content['field_tags']);
   <?php
     print render($content);
   ?>
-    <h2>MAP!</h2>
-    <?php print render($map_overview); ?>
+    
   <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
   <footer>
     <?php print render($content['field_tags']); ?>
