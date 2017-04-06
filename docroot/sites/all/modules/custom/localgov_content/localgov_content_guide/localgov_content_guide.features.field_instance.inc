@@ -21,6 +21,12 @@ function localgov_content_guide_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -63,6 +69,12 @@ function localgov_content_guide_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -104,6 +116,12 @@ function localgov_content_guide_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'This will be used as the guide\'s description in search listings.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -152,6 +170,12 @@ function localgov_content_guide_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -215,6 +239,12 @@ function localgov_content_guide_field_default_field_instances() {
     'deleted' => 0,
     'description' => 'TODO: Add help text.',
     'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),

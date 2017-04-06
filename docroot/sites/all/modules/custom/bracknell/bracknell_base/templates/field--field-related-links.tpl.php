@@ -44,14 +44,20 @@
  * @ingroup themeable
  */
 ?>
-<section class='related-links'>
-  <?php $view = views_get_view('related_links_taxonomy_'); ?>
-  <h3 class='related-links-title'>
-    <?php print $view->get_title(); ?>
-  </h3>
-  <ul class='related-links-list'>
-    <?php foreach ($items as $delta => $item): ?>
-      <li class='related-links-list-item'><?php print render($item); ?></li>
-    <?php endforeach; ?>
-  </ul>
-</section>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class='related-links'>
+        <?php $view = views_get_view('related_links_taxonomy_'); ?>
+        <h3 class='related-links-title'>
+          <?php print $view->get_title(); ?>
+        </h3>
+        <ul class='related-links-list'>
+          <?php foreach ($items as $delta => $item): ?>
+            <li class='related-links-list-item'><?php print render($item); ?></li>
+          <?php endforeach; ?>
+        </ul>
+      </div><!-- end .related-links -->
+    </div><!-- end .col -->
+  </div><!-- end .row -->
+</div><!-- end .container -->

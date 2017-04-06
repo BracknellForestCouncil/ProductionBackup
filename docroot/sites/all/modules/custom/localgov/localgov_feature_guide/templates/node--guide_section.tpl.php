@@ -80,31 +80,22 @@
  * @ingroup themeable
  */
 ?>
-
-<?php hide($content['guide_navigation_primary']); ?>
-<?php print render($content['guide_navigation_primary']); ?>
-
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print $user_picture; ?>
   <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
 
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
+  <?php
+    // We hide the comments and links now so that we can render them later.
+    hide($content['comments']);
+    hide($content['links']);
+    hide($content['field_promotional_hero']);
+    hide($content['guide_navigation_primary']);
 
-      print render($content);
-    ?>
-  </div>
+    print render($content);
+  ?>
 
   <?php print render($content['links']); ?>
 
   <?php print render($content['comments']); ?>
 
-</div>
+</div><!-- end .node -->

@@ -1,11 +1,12 @@
-.node-type-guide-section section.col-sm-12 {
-  padding-left: 0;
-}
+// Guide.
+
+// .node-type-guide-section section.col-sm-12 {
+//   padding-left: 0;
+// }
 
 .guide-navigation-primary {
+  background-color: $guide-nav-primary-bg-color;
   padding: 25px 0;
-  @extend .full-width;
-  @extend .grey-x-light;
 }
 
 @media only screen and (min-width: 768px) {
