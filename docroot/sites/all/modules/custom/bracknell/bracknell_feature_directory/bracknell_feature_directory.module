@@ -1,9 +1,9 @@
 <?php
+
 /**
  * @file
  * Code for the Bracknell Directory feature.
  */
-
 include_once 'bracknell_feature_directory.features.inc';
 
 /**
@@ -18,19 +18,30 @@ function bracknell_feature_directory_form_eck__entity__form_add_directory_entry_
  * Implements hook_preprocess_HOOK() for nodes.
  */
 function bracknell_feature_directory_preprocess_node(&$variables) {
+  // This code is a copy of content type group theme module.
   $node = &$variables['node'];
 
   // Get the content type groups and apply the theme suggestion.
   $content_type_group = db_select('content_type_groups_types', 'g')
-    ->fields('g', array('group_type'))
-    ->condition('content_type', $node->type)
-    ->execute()
-    ->fetchField();
+      ->fields('g', array('group_type'))
+      ->condition('content_type', $node->type)
+      ->execute()
+      ->fetchField();
 
   if ($content_type_group) {
     // Add specific theme hook suggestions for the content type group.
     array_unshift($variables['theme_hook_suggestions'], 'node__content_type_groups__' . $content_type_group . '__' . $variables['view_mode']);
     array_unshift($variables['theme_hook_suggestions'], 'node__content_type_groups__' . $content_type_group);
+  }
+
+  //Add an overview map to location_ content types.
+  if ($content_type_group == 'location') {
+    $location_id = $variables['field_directory_entry'][0]['target_id'];
+    if (!empty($location_id)) {
+      $location_entity = entity_load('directory_entry', array($location_id));
+      $overview_map = entity_view('directory_entry', $location_entity, 'location_overview_map');
+      $variables['map_overview'] = !empty($overview_map) ? $overview_map : '<p>' . t('An overview map is currently unavailable.') . '</p>';
+    }
   }
 }
 

@@ -103,6 +103,7 @@ hide($content['field_tags']);
     print render($content);
   ?>
     <h2>MAP!</h2>
+    <?php print render($map_overview); ?>
   <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
   <footer>
     <?php print render($content['field_tags']); ?>
