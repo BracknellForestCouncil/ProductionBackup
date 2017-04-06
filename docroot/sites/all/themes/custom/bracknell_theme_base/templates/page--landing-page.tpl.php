@@ -73,13 +73,12 @@
  * @ingroup templates
  */
 ?>
-
 <?php include_once DRUPAL_ROOT . '/' . drupal_get_path('theme', 'bracknell_theme_base') . '/templates/includes/header.inc'; ?>
 
 <main class="main-container" id="main-content" role="main">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
+      <div<?php print $content_column_class ?>>
         <?php if (!empty($page['highlighted'])): ?>
           <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
         <?php endif; ?>
@@ -106,34 +105,21 @@
       </h1>
     </div><!-- end .promotional-hero-title -->
     <?php endif; ?>
-    <?php if ($hero) : ?>
-      <?php print $hero; ?>
-    <?php endif; ?>
   </div><!-- end .promotional-hero -->
+
+  <?php print render($page['content']); ?>
+  <?php if (!empty($page['page_footer'])): ?>
+
   <div class="container">
     <div class="row">
-      <div<?php print $content_column_class ?>>
-        <?php print render($page['content']); ?>
-        <?php if (!empty($page['page_footer'])): ?>
+      <div class="col-sm-8">
         <div class="footer">
           <?php print render($page['page_footer']); ?>
-        </div>
-        <?php endif; ?>
+        </div><!-- end .footer -->
       </div><!-- end .col -->
-
-      <?php if (!empty($page['sidebar_first'])): ?>
-        <aside class="col-md-3 col-sm-12" role="complementary">
-          <?php print render($page['sidebar_first']); ?>
-        </aside>  <!-- /#sidebar-first -->
-      <?php endif; ?>
-
-      <?php if (!empty($page['sidebar_second'])): ?>
-        <aside class="col-md-3 col-md-offset-1 col-sm-12" role="complementary">
-          <?php print render($page['sidebar_second']); ?>
-        </aside>  <!-- /#sidebar-second -->
-      <?php endif; ?>
-    </div><!-- end .row-->
+    </div><!-- end .row -->
   </div><!-- end .container -->
+  <?php endif; ?>
 </main>
 
 <?php include_once DRUPAL_ROOT . '/' . drupal_get_path('theme', 'bracknell_theme_base') . '/templates/includes/footer.inc'; ?>

@@ -48,7 +48,26 @@ function bracknell_base_theme($existing, $type, $theme, $path) {
  * Implements hook_preprocess_node().
  */
 function bracknell_base_preprocess_node(&$variables) {
-  if (!empty($variables['field_promotional_hero']) >= 1) {
-    $variables['classes_array'][] = 'promotional-hero-has-image';
+
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function bracknell_base_preprocess_page(&$variables) {
+  // Make the field "field_promotional_hero"
+  // available as variable to use in page.tpl.php
+  $variables['hero'] = '';
+  // Get the object and do some other checks based on what you need.
+  if (($node = menu_get_object()) && $node->type) {
+    // Generate a render array for the node.
+    $view = node_view($node);
+    // "Create" a new variable for the page.tpl.php.
+    $variables['hero'] = drupal_render($view['field_promotional_hero']);
+
+    // If the hero has an image, output a class to style the hero differently from the title alone.
+    if (!empty($variables['node']->field_promotional_hero) >= 1) {
+      $variables['classes_array'][] = 'promotional-hero-has-image';
+    }
   }
 }
