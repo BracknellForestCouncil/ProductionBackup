@@ -44,12 +44,17 @@
  * @ingroup themeable
  */
 ?>
+
 <div class="related-pages <?php print $classes; ?>"<?php print $attributes; ?>>
-  <div class='related-pages-inner'>
-    <ul class='task-list'>
-      <?php foreach ($items as $delta => $item): ?>
-        <li class='task-list-item'><?php print render($item); ?></li>
-      <?php endforeach; ?>
-    </ul>
-  </div>
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class='task-list'>
+          <?php foreach ($items as $delta => $item) : ?>
+            <li class='task-list-item'><?php print render($item); ?></li>
+          <?php endforeach; ?>
+        </ul>
+      </div><!-- end .col -->
+    </div><!-- end .row -->
+  </div><!-- end .container -->
+</div><!-- end .related-pages -->

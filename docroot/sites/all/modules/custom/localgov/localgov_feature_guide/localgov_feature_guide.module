@@ -64,7 +64,7 @@ function localgov_feature_guide_preprocess_page(&$variables) {
     $new_title = $parent['link_title'];
 
     // Set the page $title and <title> tag
-    // TODO: Fix <title> for guide page. Possibly use Metatag module. 
+    // TODO: Fix <title> for guide page. Possibly use Metatag module.
 
 
     // Temporarily remove long page title to fix breadcrumbs.
@@ -86,5 +86,14 @@ function localgov_feature_guide_preprocess_page(&$variables) {
     }
   }
 
+  $node = $variables['node'];
 
+  $variables['guide_menu'] = '';
+  // Get the object and do some other checks based on what you need.
+  if (($node = menu_get_object()) && ($node->type == "guide" || $node->type == "guide_section")) {
+    // Generate a render array for the node.
+    $view = node_view($node);
+    // "Create" a new variable for the page.tpl.php.
+    $variables['guide_menu'] = drupal_render($view['guide_navigation_primary']);
+  }
 }

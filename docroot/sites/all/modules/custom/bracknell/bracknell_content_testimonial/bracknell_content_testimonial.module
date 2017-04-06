@@ -12,6 +12,13 @@ include_once 'bracknell_content_testimonial.features.inc';
 function bracknell_content_testimonial_theme($existing, $type, $theme, $path) {
   $theme = array();
 
+  $theme['node__testimonial'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--testimonial',
+    'path' => drupal_get_path('module', 'bracknell_content_testimonial') . '/templates',
+  );
+
   $theme['node__testimonial__carousel_slide'] = array(
     'render element' => 'content',
     'base hook' => 'node',

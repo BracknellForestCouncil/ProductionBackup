@@ -31,6 +31,9 @@ function localgov_content_basic_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel_slide' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -38,10 +41,10 @@ function localgov_content_basic_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '9',
+          'weight' => '7',
         ),
       ),
       'display' => array(),

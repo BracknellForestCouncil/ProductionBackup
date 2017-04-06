@@ -81,33 +81,26 @@
  */
 ?>
 
-<?php if ($logged_in): ?>
-
-  <?php hide($content['guide_navigation_primary']); ?>
-  <?php print render($content['guide_navigation_primary']); ?>
-
+<?php if ($logged_in) : ?>
   <div class="alert alert-warning">
     Guides are not displayed to the public. Only logged in users will see this page.<br>All other users will be redirected to the first section within this guide:
     <a href="<?php print $node->guide['next_url']; ?>"><?php print $node->guide['next_title']; ?></a>
   </div>
 
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-    <div class="content"<?php print $content_attributes; ?>>
 
       <?php
         // We hide the comments and links now so that we can render them later.
         hide($content['comments']);
         hide($content['links']);
+        hide($content['guide_navigation_primary']);
 
         print render($content);
       ?>
-    </div>
-    <?php print render($content['links']); ?>
-    <?php print render($content['comments']); ?>
+      <?php print render($content['links']); ?>
+      <?php print render($content['comments']); ?>
   </div>
 
-<?php else: ?>
-
-<?php drupal_goto($node->guide['next_url']) ?>
-
-<?php endif; ?>
+  <?php else : ?>
+      <?php drupal_goto($node->guide['next_url']) ?>
+  <?php endif; ?>
