@@ -22,9 +22,11 @@
 
 // Promotional Hero With Images.
 .promotional-hero-has-image {
-  max-height: 480px;
-  min-height: 200px;
-  overflow: hidden;
+  .promotional-hero {
+    max-height: 480px;
+    min-height: 200px;
+    overflow: hidden;
+  }
 
   .promotional-hero-title {
     padding: 0;
@@ -68,8 +70,7 @@
   .hero-images {
     img {
       width: 100%;
-      *height: auto;
-      height: 100%;
+      height: auto;
       object-fit: cover;
     }
   }

@@ -733,8 +733,8 @@ function localgov_base_paragraphs_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-category_showcase-field_paragraph_showcase_items'.
-  $field_instances['paragraphs_item-category_showcase-field_paragraph_showcase_items'] = array(
+  // 'paragraphs_item-category_showcase-field_paragraph_showcase_item'.
+  $field_instances['paragraphs_item-category_showcase-field_paragraph_showcase_item'] = array(
     'bundle' => 'category_showcase',
     'default_value' => NULL,
     'deleted' => 0,
@@ -742,11 +742,11 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'entity_reference_multiple',
+        'module' => 'paragraphs',
         'settings' => array(
-          'link' => 1,
+          'view_mode' => 'full',
         ),
-        'type' => 'entity_reference_multiple_label',
+        'type' => 'paragraphs_view',
         'weight' => 1,
       ),
       'paragraphs_editor_preview' => array(
@@ -757,22 +757,80 @@ function localgov_base_paragraphs_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_paragraph_showcase_items',
+    'field_name' => 'field_paragraph_showcase_item',
     'is_property' => 0,
-    'label' => 'Items',
-    'required' => 1,
+    'label' => 'Showcase Item',
+    'required' => 0,
     'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'accordion' => -1,
+        'accordion_pane' => -1,
+        'basic' => -1,
+        'blockquote' => -1,
+        'carousel' => -1,
+        'carousel_slide' => -1,
+        'category_showcase' => -1,
+        'category_showcase_item' => 'category_showcase_item',
+        'document' => -1,
+        'featured_box' => -1,
+        'highlighted' => -1,
+        'image' => -1,
+        'key_fact' => -1,
+        'key_fact_item' => -1,
+        'layout_1_col_12' => -1,
+        'layout_2_col_4_8' => -1,
+        'layout_2_col_6_6' => -1,
+        'layout_2_col_8_4' => -1,
+        'layout_3_col_3_3_6' => -1,
+        'layout_3_col_4_4_4' => -1,
+        'layout_3_col_6_3_3' => -1,
+        'link' => -1,
+        'promotional_area' => -1,
+        'tab_panel' => -1,
+        'table' => -1,
+        'tabs' => -1,
+        'video' => -1,
+      ),
+      'bundle_weights' => array(
+        'accordion' => 2,
+        'accordion_pane' => 3,
+        'basic' => 4,
+        'blockquote' => 5,
+        'carousel' => 6,
+        'carousel_slide' => 7,
+        'category_showcase' => 8,
+        'category_showcase_item' => 9,
+        'document' => 10,
+        'featured_box' => 11,
+        'highlighted' => 12,
+        'image' => 13,
+        'key_fact' => 14,
+        'key_fact_item' => 15,
+        'layout_1_col_12' => 16,
+        'layout_2_col_4_8' => 17,
+        'layout_2_col_6_6' => 18,
+        'layout_2_col_8_4' => 19,
+        'layout_3_col_3_3_6' => 20,
+        'layout_3_col_4_4_4' => 21,
+        'layout_3_col_6_3_3' => 22,
+        'link' => 23,
+        'promotional_area' => 24,
+        'tab_panel' => 27,
+        'table' => 25,
+        'tabs' => 26,
+        'video' => 28,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'entity_reference_multiple',
-      'settings' => array(
-        'autocomplete_limit' => 15,
-        'autocomplete_path' => '',
-        'autocomplete_query_like_type' => 'STARTS_WITH',
-      ),
-      'type' => 'entity_reference_multiple_autocomplete',
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
       'weight' => 2,
     ),
     'workbench_access_field' => 0,
@@ -822,6 +880,256 @@ function localgov_base_paragraphs_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-category_showcase_item-field_showcase_image'.
+  $field_instances['paragraphs_item-category_showcase_item-field_showcase_image'] = array(
+    'bundle' => 'category_showcase_item',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'category_showcase',
+        ),
+        'type' => 'image',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_showcase_image',
+    'is_property' => 0,
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          's3' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'localgov_document' => 0,
+          'localgov_image' => 0,
+          'localgov_image_header' => 0,
+          'localgov_video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 1,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(
+          'category_showcase' => 'category_showcase',
+        ),
+        'manualcrop_styles_list' => array(
+          'category_showcase' => 'category_showcase',
+        ),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-category_showcase_item-field_showcase_link'.
+  $field_instances['paragraphs_item-category_showcase_item-field_showcase_link'] = array(
+    'bundle' => 'category_showcase_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_showcase_link',
+    'is_property' => 0,
+    'label' => 'Link',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'advanced_link',
+      'settings' => array(
+        'default_titles' => '',
+        'urls_allowed' => 'both',
+        'urls_filter' => '',
+        'urls_search' => 'start',
+      ),
+      'type' => 'advanced_link',
+      'weight' => 3,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-category_showcase_item-field_showcase_summary'.
+  $field_instances['paragraphs_item-category_showcase_item-field_showcase_summary'] = array(
+    'bundle' => 'category_showcase_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_showcase_summary',
+    'is_property' => 0,
+    'label' => 'Summary',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 120,
+        'maxlength_js_enforce' => 1,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'maxlength_js_truncate_html' => 0,
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-category_showcase_item-field_showcase_title'.
+  $field_instances['paragraphs_item-category_showcase_item-field_showcase_title'] = array(
+    'bundle' => 'category_showcase_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_showcase_title',
+    'is_property' => 0,
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => '',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
     ),
     'workbench_access_field' => 0,
   );
@@ -979,6 +1287,18 @@ function localgov_base_paragraphs_field_default_field_instances() {
           'media_default--media_browser_my_files' => 0,
           'upload' => 'upload',
         ),
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_keyboard' => TRUE,
+        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => FALSE,
       ),
       'type' => 'media_generic',
       'weight' => 1,
@@ -1185,6 +1505,86 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'paragraphs_item-image-field_image'.
+  $field_instances['paragraphs_item-image-field_image'] = array(
+    'bundle' => 'image',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_image',
+    'is_property' => 0,
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          's3' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'localgov_document' => 0,
+          'localgov_image' => 0,
+          'localgov_image_header' => 0,
+          'localgov_video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_keyboard' => TRUE,
+        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => FALSE,
+      ),
+      'type' => 'media_generic',
+      'weight' => 6,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'paragraphs_item-image-field_paragraph_body'.
   $field_instances['paragraphs_item-image-field_paragraph_body'] = array(
     'bundle' => 'image',
@@ -1288,6 +1688,18 @@ function localgov_base_paragraphs_field_default_field_instances() {
           'media_internet' => 0,
           'upload' => 'upload',
         ),
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_keyboard' => TRUE,
+        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => FALSE,
       ),
       'type' => 'media_generic',
       'weight' => 2,
@@ -4409,15 +4821,16 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Image');
   t('Image Position');
   t('Introduction');
-  t('Items');
   t('Link');
   t('Paragraph Accordion Panes');
   t('Promotional Area Layout');
   t('Related Content');
   t('Select an icon from the list or select "- None -" if you do not wish to display an icon.');
   t('Select an icon from the list.');
+  t('Showcase Item');
   t('Slide Content');
   t('Slide Layout');
+  t('Summary');
   t('TODO: Add help text.');
   t('Table');
   t('Table theme');

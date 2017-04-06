@@ -33,6 +33,18 @@ function localgov_base_paragraphs_user_default_permissions() {
     'module' => 'localgov_base_paragraphs',
   );
 
+  // Exported permission: 'administer manualcrop settings'.
+  $permissions['administer manualcrop settings'] = array(
+    'name' => 'administer manualcrop settings',
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'manualcrop',
+  );
+
   // Exported permission: 'administer paragraphs bundles'.
   $permissions['administer paragraphs bundles'] = array(
     'name' => 'administer paragraphs bundles',
@@ -43,6 +55,13 @@ function localgov_base_paragraphs_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'paragraphs',
+  );
+
+  // Exported permission: 'bypass maxlength'.
+  $permissions['bypass maxlength'] = array(
+    'name' => 'bypass maxlength',
+    'roles' => array(),
+    'module' => 'maxlength',
   );
 
   // Exported permission: 'configure tablefield'.
@@ -76,6 +95,19 @@ function localgov_base_paragraphs_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'tablefield',
+  );
+
+  // Exported permission: 'use manualcrop'.
+  $permissions['use manualcrop'] = array(
+    'name' => 'use manualcrop',
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'manualcrop',
   );
 
   return $permissions;

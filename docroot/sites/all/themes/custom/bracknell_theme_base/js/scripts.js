@@ -67,6 +67,62 @@
     }
   };
 
+  Drupal.behaviors.bracknellTabs = {
+    attach: function (context, settings) {
+      if ($('.acc-tabs-panel').length > 1) {
+        $('.acc-tabs').accTabs({
+          containerClass: 'js-acc-tabs',
+          controlActiveClass: 'js-acc-tabs-control-item-active',
+          tabPanelClass: 'js-acc-tabs-panel',
+          panelActiveClass: 'js-tabs-panel-active',
+          controlsTextClass: 'element-invisible',
+          tabControlsClass: 'js-acc-tabs-control'
+        });
+      }
+    }
+  };
+
+  Drupal.behaviors.bracknellCategoryShowcase = {
+    attach: function (context, settings) {
+      if ($('.showcase').length !== 0) {
+        $('.showcase-item').each(function() {
+          var slide = $(this),
+              boxHeight = $(slide).height(),
+              titleHeight = $('.showcase-item-title', this).outerHeight(false),
+              startHeight = boxHeight - titleHeight;
+
+          $('.showcase-overlay', slide).css({
+            height: boxHeight,
+            top: startHeight
+          });
+
+          slide.hover(function() {
+            startAni();
+          }, function() {
+            stopAni();
+          });
+
+          function startAni() {
+            $('.showcase-overlay', slide).stop().animate({
+              top: 0
+            }, {
+              queue: false,
+              duration: 100
+            });
+          }
+
+          function stopAni() {
+            $('.showcase-overlay', slide).stop().animate({
+              top: startHeight
+            }, {
+              queue: false,
+              duration: 100
+            });
+          }
+        });
+      }
+    }
+  };
 })(jQuery);
 
 // Tooltip for My account
