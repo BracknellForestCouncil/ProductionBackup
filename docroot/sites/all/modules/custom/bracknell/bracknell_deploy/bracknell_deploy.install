@@ -86,7 +86,8 @@ function bracknell_deploy_update_7002() {
 function bracknell_deploy_update_7003() {
   $field_list = array(
     'field_carousel_slide_content',
-    'field_promotional_related_pages'
+    'field_promotional_related_pages',
+    'field_testimonial_logo'
   );
   // Loop through the list of field names and EXTERMINATE!
   foreach ($field_list as $field_name) {
