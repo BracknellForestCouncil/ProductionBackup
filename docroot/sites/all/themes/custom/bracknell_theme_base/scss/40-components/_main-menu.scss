@@ -1,3 +1,5 @@
+// Main Menu.
+
 .main-menu {
   background: $nav-top-nav-wrapper-bg-color;
   position: relative;
@@ -25,6 +27,9 @@
   }
 
   .navbar-collapse {
+    border: 0;
+    box-shadow: none;
+
     ul {
       list-style-type: none;
       margin: 0;
@@ -33,11 +38,9 @@
 
     .js & {
       ul {
-        padding-top: 50px;
-
         @include breakpoint($screen-md) {
           padding-bottom: 40px;
-          padding-top: 90px;
+          padding-top: 100px;
         }
       }
     }
@@ -67,18 +70,16 @@
     width: 0;
   }
   color: $main-menu-button-text-color;
-  display: inline-block;
-  padding: 10px 15px 12px;
-  position: relative;
-  box-sizing: border-box;
-  min-height: 48px;
   font-weight: 600;
+  padding: 10px;
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  z-index: 2;
 
-  &:focus {
-    outline: none;
-  }
+  &-expanded {
+    border-radius: 5px 5px 0 0;
 
-  &.expanded {
     .icon-bar {
       transition: all 0.2s;
 
@@ -96,7 +97,7 @@
     }
   }
 
-  &.collapsed {
+  &-collapsed {
     .icon-bar {
       transition: all 0.2s;
 

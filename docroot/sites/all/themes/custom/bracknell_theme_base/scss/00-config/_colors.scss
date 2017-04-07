@@ -139,9 +139,11 @@ $alert-danger-bg-color: $brightRed;
 $icon-circle-dark-text-color: $brandGreen;
 $alert-content-section-link-bg-color: $white;
 
+// Header.
+$header-logo-bg-color: $white;
+
 // NavBar.
 $navbar-bg-color: $white;
-$nav-tools-border-color: $textBlack;
 $nav-tools-account-link-text-color: $textBlack;
 $nav-tools-account-link-q-mark-bg-color: $grey3;
 $nav-tools-menu-toggle-menu-icon-text-color: $white;
@@ -161,6 +163,7 @@ $search-button-background-color: $charcoal;
 $search-button-hover-background-color: $turquoise;
 
 // Breadcrumbs.
+$breadcrumb-border-color: $textBlack;
 $breadcrumb-li-text-color: $textBlack;
 
 // Socials.
