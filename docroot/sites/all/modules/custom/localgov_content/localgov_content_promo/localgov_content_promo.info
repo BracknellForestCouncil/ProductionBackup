@@ -2,6 +2,7 @@ name = LocalGov Content: Promo
 description = TODO: Add description for localgov_content_promo module.
 core = 7.x
 package = localgov_content
+version = 7.x-1.0
 project = localgov_content_promo
 dependencies[] = advanced_link
 dependencies[] = ctools
