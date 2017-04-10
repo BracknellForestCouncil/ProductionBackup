@@ -2,6 +2,7 @@ name = LocalGov Content: Article
 description = TODO: Add description for localgov_content_article module.
 core = 7.x
 package = localgov_content
+version = 7.x-1.0
 project = localgov_content_article
 dependencies[] = advanced_link
 dependencies[] = ctools

@@ -7,6 +7,16 @@
 include_once 'bracknell_content_testimonial.features.inc';
 
 /**
+* Implements hook_entity_info_alter().
+*/
+function bracknell_content_testimonial_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['carousel_slide'] = array(
+    'label' => t('Carousel Slide'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
  * Implements hook_theme().
  */
 function bracknell_content_testimonial_theme($existing, $type, $theme, $path) {
