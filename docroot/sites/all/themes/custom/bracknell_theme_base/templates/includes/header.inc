@@ -11,6 +11,9 @@
       <div class="header-section col-xs-12 col-sm-10">
         <div class="header-tools row">
           <div class="search col-sm-8 col-md-5 col-md-offset-2">
+            <?php if (!empty($page['search'])) : ?>
+              <?php print render($page['search']); ?>
+            <?php endif; ?>
           </div><!-- end .search -->
 
           <div class="header-account col-md-3">
@@ -20,7 +23,6 @@
               <span class='header-account-section header-account-section-tooltip q-mark icon theme-icon-question' data-toggle="tooltip-my-account" data-placement="bottom" title="Register for a self service account to save yourself time, or login if you already have an account."></span>
             </a>
           </div><!-- end .header-account -->
-          <div class="header-menu col-md-2"  data-js="header-menu"></div>
         </div><!-- end .header-tools -->
 
         <?php if (!drupal_is_front_page()) { ?>
@@ -36,7 +38,9 @@
     <div class="container">
       <div class="navbar-collapse" id="bracknell-topnav">
         <div class="row">
-          <?php print render($page['navigation']); ?>
+          <?php if (!empty($page['navigation'])) : ?>
+            <?php print render($page['navigation']); ?>
+          <?php endif; ?>
         </div>
       </div>
     </div>
