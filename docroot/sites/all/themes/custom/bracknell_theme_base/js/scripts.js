@@ -21,66 +21,6 @@
     }
   };
 
-  Drupal.behaviors.bracknellSearch = {
-    attach: function attach(context, settings) {
-
-      $(window).resize(function(){
-        var mediaQuery = Modernizr.mq('only screen and (max-width: 768px)');
-
-        if (mediaQuery) {
-          // Hide search form.
-          $('.search').hide().attr('aria-hidden', 'true');
-
-          // Check if the button exists, if not create and append the button.
-          if ($('[data-js="search-button"]').length === 0) {
-            // Create search button.
-            var searchButton = $('<button>' +
-              '<span class="search-btn-copy"></span>' +
-              '</button>');
-            searchButton.attr({
-              'class': 'search-btn',
-              'aria-expanded': 'false',
-              'aria-controls': 'search-wrapper',
-              'data-toggle': 'closed',
-              'data-js': 'search-button'
-            }).text(Drupal.t('Search'));
-            $('[data-js="logo"]').append(searchButton);
-
-            $('[data-js="search-button"]').on('click', function () {
-              var button = $(this),
-                  status = button.attr('aria-expanded'),
-                  searchForm = $('.search');
-
-              if (status === 'false') {
-                searchForm.show().attr({
-                  'aria-hidden': 'false'
-                });
-                button.attr({
-                  'aria-expanded': 'true',
-                  'data-toggle': 'open'
-                });
-              }
-              else {
-                searchForm.hide().attr({
-                  'aria-hidden': 'true'
-                });
-                button.attr({
-                  'aria-expanded': 'false',
-                  'data-toggle': 'closed'
-                });
-              }
-            });
-          }
-        }
-        else {
-          // Remove the button and Aria attributes on desktop.
-          $('.search').show().removeAttr('aria-hidden');
-          $('[data-js="search-button"]').remove();
-        }
-      }).resize();
-    }
-  };
-
   Drupal.behaviors.bracknellMainMenu = {
     attach: function attach(context, settings) {
       $('[data-js="main-menu"]').find('.collapse').hide().attr('aria-hidden', 'true');
@@ -128,6 +68,66 @@
           }).addClass('main-menu-btn-collapsed').removeClass('main-menu-btn-expanded');
         }
       });
+    }
+  };
+
+  Drupal.behaviors.bracknellSearch = {
+    attach: function attach(context, settings) {
+
+      $(window).resize(function(){
+        var mediaQuery = Modernizr.mq('only screen and (max-width: 768px)');
+
+        if (mediaQuery) {
+          // Hide search form.
+          $('.search').hide().attr('aria-hidden', 'true');
+
+          // Check if the button exists, if not create and append the button.
+          if ($('[data-js="search-button"]').length === 0) {
+            // Create search button.
+            var searchButton = $('<button>' +
+              '<span class="search-btn-copy"></span>' +
+              '</button>');
+            searchButton.attr({
+              'class': 'btn search-btn icon glyphicon glyphicon-search',
+              'aria-expanded': 'false',
+              'aria-controls': 'search-wrapper',
+              'data-toggle': 'closed',
+              'data-js': 'search-button'
+            }).find('.search-btn-copy').text(Drupal.t('Search'));
+            searchButton.insertBefore('[data-js="main-menu-button"]');
+
+            $('[data-js="search-button"]').on('click', function () {
+              var button = $(this),
+                  status = button.attr('aria-expanded'),
+                  searchForm = $('.search');
+
+              if (status === 'false') {
+                searchForm.show().attr({
+                  'aria-hidden': 'false'
+                });
+                button.attr({
+                  'aria-expanded': 'true',
+                  'data-toggle': 'open'
+                });
+              }
+              else {
+                searchForm.hide().attr({
+                  'aria-hidden': 'true'
+                });
+                button.attr({
+                  'aria-expanded': 'false',
+                  'data-toggle': 'closed'
+                });
+              }
+            });
+          }
+        }
+        else {
+          // Reset the dom on desktop.
+          $('.search').show().removeAttr('aria-hidden');
+          $('[data-js="search-button"]').remove();
+        }
+      }).resize();
     }
   };
 
