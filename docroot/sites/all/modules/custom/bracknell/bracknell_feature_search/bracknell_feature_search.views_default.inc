@@ -35,10 +35,6 @@ function bracknell_feature_search_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Search: Spellcheck */
-  $handler->display->display_options['header']['search_api_spellcheck']['id'] = 'search_api_spellcheck';
-  $handler->display->display_options['header']['search_api_spellcheck']['table'] = 'search_api_index_default_node_index';
-  $handler->display->display_options['header']['search_api_spellcheck']['field'] = 'search_api_spellcheck';
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_default_node_index';
