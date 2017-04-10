@@ -2,6 +2,7 @@ name = Bracknell Content Testimonial
 description = Provides a testimonial content type
 core = 7.x
 package = bracknell
+version = 7.x-1.0
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = image

@@ -3,52 +3,6 @@
 (function ($) {
   Drupal.behaviors.bracknellThemeBaseBehavior = {
     attach: function attach(context, settings) {
-      $('[data-js="main-menu"]').find('.collapse').hide().attr('aria-hidden', 'true');
-
-      // Create main menu button.
-      var mainMenuButton = $('<button>' +
-        '<span class="button-copy pull-left"></span>' +
-        '<span aria-hidden="true" class="icon-bars-wrap pull-left">' +
-          '<span class="icon-bar top"></span>' +
-          '<span class="icon-bar centre"></span>' +
-          '<span class="icon-bar bottom"></span>' +
-        '</span>' +
-        '</button>');
-      mainMenuButton.attr({
-        'class': 'main-menu-btn',
-        'aria-expanded': 'false',
-        'aria-controls': 'main-nav',
-        'data-toggle': 'closed',
-        'data-js': 'main-menu-button'
-      });
-      mainMenuButton.find('.button-copy').text(Drupal.t('Menu'));
-      $('[data-js="main-menu-trigger"]').append(mainMenuButton);
-
-      $('[data-js="main-menu-button"]').on('click', function () {
-        var button = $(this),
-            status = button.attr('aria-expanded'),
-            mainMenu = $('[data-js="main-menu"]');
-
-        if (status === 'false') {
-          mainMenu.show().attr({
-            'aria-hidden': 'false'
-          });
-          button.attr({
-            'aria-expanded': 'true',
-            'data-toggle': 'open'
-          }).addClass('expanded').removeClass('collapsed');
-        }
-        else {
-          mainMenu.hide().attr({
-            'aria-hidden': 'true'
-          });
-          button.attr({
-            'aria-expanded': 'false',
-            'data-toggle': 'closed'
-          }).addClass('collapsed').removeClass('expanded');
-        }
-      });
-
       // Fix related links location on guide pages
       // media query checking for minimum 992px  event handler
       if (matchMedia) {
@@ -64,6 +18,116 @@
           $('.node-type-guide-section .region-sidebar-second').css('margin-top', 0 + 'px');
         }
       }
+    }
+  };
+
+  Drupal.behaviors.bracknellMainMenu = {
+    attach: function attach(context, settings) {
+      $('[data-js="main-menu"]').find('.collapse').hide().attr('aria-hidden', 'true');
+
+        var mainMenuButton = $('<button>' +
+          '<span class="button-copy pull-left"></span>' +
+          '<span aria-hidden="true" class="icon-bars-wrap pull-left">' +
+            '<span class="icon-bar top"></span>' +
+            '<span class="icon-bar centre"></span>' +
+            '<span class="icon-bar bottom"></span>' +
+          '</span>' +
+          '</button>');
+        mainMenuButton.attr({
+          'class': 'main-menu-btn',
+          'aria-expanded': 'false',
+          'aria-controls': 'main-nav',
+          'data-toggle': 'closed',
+          'data-js': 'main-menu-button'
+        });
+        mainMenuButton.find('.button-copy').text(Drupal.t('Menu'));
+
+        $('[data-js="logo"]').append(mainMenuButton);
+
+      $('[data-js="main-menu-button"]').on('click', function () {
+        var button = $(this),
+            status = button.attr('aria-expanded'),
+            mainMenu = $('[data-js="main-menu"]');
+
+        if (status === 'false') {
+          mainMenu.show().attr({
+            'aria-hidden': 'false'
+          });
+          button.attr({
+            'aria-expanded': 'true',
+            'data-toggle': 'open'
+          }).addClass('main-menu-btn-expanded').removeClass('main-menu-btn-collapsed');
+        }
+        else {
+          mainMenu.hide().attr({
+            'aria-hidden': 'true'
+          });
+          button.attr({
+            'aria-expanded': 'false',
+            'data-toggle': 'closed'
+          }).addClass('main-menu-btn-collapsed').removeClass('main-menu-btn-expanded');
+        }
+      });
+    }
+  };
+
+  Drupal.behaviors.bracknellSearch = {
+    attach: function attach(context, settings) {
+
+      $(window).resize(function(){
+        var mediaQuery = Modernizr.mq('only screen and (max-width: 768px)');
+
+        if (mediaQuery) {
+          // Hide search form.
+          $('.search').hide().attr('aria-hidden', 'true');
+
+          // Check if the button exists, if not create and append the button.
+          if ($('[data-js="search-button"]').length === 0) {
+            // Create search button.
+            var searchButton = $('<button>' +
+              '<span class="search-btn-copy"></span>' +
+              '</button>');
+            searchButton.attr({
+              'class': 'btn search-btn icon glyphicon glyphicon-search',
+              'aria-expanded': 'false',
+              'aria-controls': 'search-wrapper',
+              'data-toggle': 'closed',
+              'data-js': 'search-button'
+            }).find('.search-btn-copy').text(Drupal.t('Search'));
+            searchButton.insertBefore('[data-js="main-menu-button"]');
+
+            $('[data-js="search-button"]').on('click', function () {
+              var button = $(this),
+                  status = button.attr('aria-expanded'),
+                  searchForm = $('.search');
+
+              if (status === 'false') {
+                searchForm.show().attr({
+                  'aria-hidden': 'false'
+                });
+                button.attr({
+                  'aria-expanded': 'true',
+                  'data-toggle': 'open'
+                });
+              }
+              else {
+                searchForm.hide().attr({
+                  'aria-hidden': 'true'
+                });
+                button.attr({
+                  'aria-expanded': 'false',
+                  'data-toggle': 'closed'
+                });
+              }
+            });
+          }
+        }
+        else {
+          // Reset the dom on desktop.
+          $('.search').show().removeAttr('aria-hidden');
+          $('[data-js="search-button"]').remove();
+        }
+      }).resize();
     }
   };
 

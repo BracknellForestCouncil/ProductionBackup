@@ -79,3 +79,33 @@ function bracknell_deploy_update_7002() {
 
   features_revert_module('bracknell_feature_directory');
 }
+
+/**
+ * Eradicate a list of fields updated in Features.
+ */
+function bracknell_deploy_update_7003() {
+  $field_list = array(
+    'field_carousel_slide_content',
+    'field_promotional_related_pages',
+    'field_testimonial_logo'
+  );
+  // Loop through the list of field names and EXTERMINATE!
+  foreach ($field_list as $field_name) {
+    // Retrieve all bundles for an entity.
+    $bundles = field_info_bundles($field_name);
+    foreach ($bundles as $bundle => $properties) {
+
+      // Retrieve all the fields for a given bundle.
+      $instances = field_info_instances($field_name, $bundle);
+      foreach ($instances as $instance) {
+        field_delete_instance($instance, TRUE);
+        field_purge_batch(1);
+      }
+    }
+
+    if (field_read_field($field_name)) {
+      field_delete_field($field_name);
+      field_purge_batch(1);
+    }
+  }
+}
