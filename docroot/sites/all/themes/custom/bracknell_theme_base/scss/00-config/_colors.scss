@@ -102,6 +102,13 @@ $button-prompt-text-color: $slateBlue;
 $button-prompt-icon-text-color: $slateBlue;
 $button-prompt-icon-border-color: $slateBlue;
 
+// Blockquotes.
+$blockquote-bg-color: $greyExtraLight;
+$blockquote-border-color: $brandGreen;
+
+// Key Facts.
+$key-fact-item-body-border-color: $greyExtraLight;
+
 // Forms.
 $form-has-success-text-color: $textBlack;
 $form-control-border-color: $bracknellBlack;
@@ -271,15 +278,15 @@ $related-pages-bg-color: $greyExtraLight;
 
 // Colour schemes/themes.
 $themes: (
-  business: (#009fd4, white),
-  coral-reef-blue: (#009fd4, white),
+  business: ($slateBlue, white),
+  coral-reef-blue: ($coralreefBlue, white),
   default: ($brandGreen, white),
-  discovery-green: (#00aa55, white),
-  downshire-purple: (#702277, white),
-  forestcare: (#b42371, white),
-  fostering: (#00a4a6, white),
-  leisure-blue: (#055fad, white),
-  parks-green: (#62a00f, white),
+  discovery-green: ($discoveryGreen, white),
+  downshire-purple: ($downshirePurple, white),
+  forestcare: ($magenta, white),
+  fostering: ($turquoise, white),
+  leisure-blue: ($leisureBlue, white),
+  parks-green: ($brightGreen, white),
 );
 
 // Mixin to apply colour hexes to a list of CSS properties, based on the body's
