@@ -271,6 +271,9 @@ function bracknell_feature_directory_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel_slide' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -317,6 +320,9 @@ function bracknell_feature_directory_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'carousel_slide' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -367,6 +373,9 @@ function bracknell_feature_directory_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel_slide' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -413,6 +422,9 @@ function bracknell_feature_directory_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'carousel_slide' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -463,6 +475,9 @@ function bracknell_feature_directory_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel_slide' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -509,6 +524,9 @@ function bracknell_feature_directory_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'carousel_slide' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -559,6 +577,9 @@ function bracknell_feature_directory_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel_slide' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -605,6 +626,9 @@ function bracknell_feature_directory_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'carousel_slide' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -655,6 +679,9 @@ function bracknell_feature_directory_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel_slide' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -672,6 +699,32 @@ function bracknell_feature_directory_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__location_school'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'geocoder_cache_empty_results';
+  $strongarm->value = 1;
+  $export['geocoder_cache_empty_results'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'geocoder_google_delay';
+  $strongarm->value = '0';
+  $export['geocoder_google_delay'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'geocoder_settings';
+  $strongarm->value = array(
+    'geocoder_apikey_yahoo' => '',
+    'geocoder_apikey_yandex' => '',
+    'geocoder_apikey_bing' => '',
+    'geocoder_apikey_google' => 'AIzaSyAEIrOaR4tSOn99Qi-YU2m1jcRcde2dsUw',
+  );
+  $export['geocoder_settings'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

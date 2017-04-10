@@ -253,6 +253,7 @@ function bracknell_feature_directory_field_default_field_instances() {
   // 'directory_entry-directory_entry-field_directory_location'.
   $field_instances['directory_entry-directory_entry-field_directory_location'] = array(
     'bundle' => 'directory_entry',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(

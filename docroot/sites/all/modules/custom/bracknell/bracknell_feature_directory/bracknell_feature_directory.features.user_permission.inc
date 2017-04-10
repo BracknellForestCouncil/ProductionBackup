@@ -10,6 +10,17 @@
 function bracknell_feature_directory_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer geofield_map configuration'.
+  $permissions['administer geofield_map configuration'] = array(
+    'name' => 'administer geofield_map configuration',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'geofield_map',
+  );
+
   // Exported permission: 'eck add directory_entry bundles'.
   $permissions['eck add directory_entry bundles'] = array(
     'name' => 'eck add directory_entry bundles',
@@ -92,6 +103,123 @@ function bracknell_feature_directory_user_default_permissions() {
     'name' => 'eck view directory_entry directory_entry entities',
     'roles' => array(),
     'module' => 'eck',
+  );
+
+  // Exported permission: 'geocoder_service_all_handlers'.
+  $permissions['geocoder_service_all_handlers'] = array(
+    'name' => 'geocoder_service_all_handlers',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_bing'.
+  $permissions['geocoder_service_handler_bing'] = array(
+    'name' => 'geocoder_service_handler_bing',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_exif'.
+  $permissions['geocoder_service_handler_exif'] = array(
+    'name' => 'geocoder_service_handler_exif',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_google'.
+  $permissions['geocoder_service_handler_google'] = array(
+    'name' => 'geocoder_service_handler_google',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_gpx'.
+  $permissions['geocoder_service_handler_gpx'] = array(
+    'name' => 'geocoder_service_handler_gpx',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_json'.
+  $permissions['geocoder_service_handler_json'] = array(
+    'name' => 'geocoder_service_handler_json',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_kml'.
+  $permissions['geocoder_service_handler_kml'] = array(
+    'name' => 'geocoder_service_handler_kml',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_latlon'.
+  $permissions['geocoder_service_handler_latlon'] = array(
+    'name' => 'geocoder_service_handler_latlon',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_mapquest_nominatim'.
+  $permissions['geocoder_service_handler_mapquest_nominatim'] = array(
+    'name' => 'geocoder_service_handler_mapquest_nominatim',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_openstreetmap_nominatim'.
+  $permissions['geocoder_service_handler_openstreetmap_nominatim'] = array(
+    'name' => 'geocoder_service_handler_openstreetmap_nominatim',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_wkt'.
+  $permissions['geocoder_service_handler_wkt'] = array(
+    'name' => 'geocoder_service_handler_wkt',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_yahoo'.
+  $permissions['geocoder_service_handler_yahoo'] = array(
+    'name' => 'geocoder_service_handler_yahoo',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
+  );
+
+  // Exported permission: 'geocoder_service_handler_yandex'.
+  $permissions['geocoder_service_handler_yandex'] = array(
+    'name' => 'geocoder_service_handler_yandex',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'geocoder',
   );
 
   // Exported permission: 'manage directory_entry properties'.
