@@ -1,7 +1,5 @@
 
 .search {
-  background-color: #f3f;
-
   @include breakpoint($screen-sm) {
     display: inline-block;
     vertical-align: middle;
@@ -84,29 +82,18 @@
   }
 }
 
-
 .search-btn {
   background-color: $search-button-background-color;
   border: 0;
-  height: 45px;
-  position: absolute;
-  top: 25px;
-  right: 170px;
+  display: inline-block;
+  height: auto;
+  margin-right: 15px;
+  min-height: 48px;
+  padding: 5px 12px;
   width: 45px;
 
+  .search-btn-copy {
+    position: absolute;
+    left: -999em;
+  }
 }
-// body.page-search .main-container {
-//   .views-exposed-form {
-//     @include search-exposed-form();
-//     .views-exposed-widget {
-//       margin-right: 20px;
-//       &.views-submit-button {
-//         margin-top: 1.7em;
-//         .btn {
-//           padding: 0 30px;
-//         }
-//       }
-//     }
-//   }
-// }
-

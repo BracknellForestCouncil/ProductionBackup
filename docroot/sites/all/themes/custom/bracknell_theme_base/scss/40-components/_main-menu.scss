@@ -8,7 +8,7 @@
   .js & {
     left: 0;
     position: absolute;
-    top: 70px;
+    top: 85px;
     width: 100%;
   }
 
@@ -40,7 +40,7 @@
       ul {
         @include breakpoint($screen-md) {
           padding-bottom: 40px;
-          padding-top: 100px;
+          padding-top: 80px;
         }
       }
     }
@@ -70,15 +70,21 @@
     width: 0;
   }
   color: $main-menu-button-text-color;
+  display: inline-block;
   font-weight: 600;
+  margin: 25px 0 0;
   padding: 10px;
-  position: absolute;
-  top: 25px;
-  right: 15px;
-  z-index: 2;
+
+  @include breakpoint($screen-sm) {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    z-index: 2;
+  }
 
   &-expanded {
     border-radius: 5px 5px 0 0;
+    padding-bottom: 50px;
 
     .icon-bar {
       transition: all 0.2s;
