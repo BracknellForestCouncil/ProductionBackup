@@ -35,7 +35,7 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
   }
 
   //Add an overview map to location_ content types.
-  if ($content_type_group == 'location') {
+  if ($content_type_group == 'location' && !empty($variables['field_directory_entry'])) {
     $location_id = $variables['field_directory_entry'][0]['target_id'];
     if (!empty($location_id)) {
       $location_entity = entity_load('directory_entry', array($location_id));
