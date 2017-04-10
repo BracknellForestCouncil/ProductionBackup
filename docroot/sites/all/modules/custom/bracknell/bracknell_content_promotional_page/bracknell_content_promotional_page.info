@@ -2,6 +2,7 @@ name = Bracknell Content: Promotional Page
 description = Provides a content type for promotional pages.
 core = 7.x
 package = bracknell
+version = 7.x-1.0
 dependencies[] = bracknell_base
 dependencies[] = ctools
 dependencies[] = entity_reference_multiple

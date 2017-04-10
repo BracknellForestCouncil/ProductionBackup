@@ -1,96 +1,99 @@
-@mixin search-exposed-form {
+
+.search {
+  @include breakpoint($screen-sm) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   .views-exposed-widgets {
-    display: table;
-    margin-bottom: 0;
     .views-exposed-widget {
+      float: none;
       padding: 0;
+    }
+
+    .input-group-addon {
+      display: none;
+    }
+
+    label {
+      left: -999em;
+      position: absolute;
+    }
+
+    .views-widget-filter-search_api_views_fulltext {
       display: table-cell;
+      vertical-align: top;
+      width: 100%;
+    }
+
+    .views-submit-button {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .form-text {
+      @include border-right-radius(0);
+    }
+
+    .btn {
+      @include border-left-radius(0);
     }
   }
+
+  // Hide sort by field.
+  .views-widget-sort-by,
+  .views-widget-sort-order {
+    display: none;
+  }
+
   .form-text {
     border-color: $search-text-border-color;
     padding: 6px 18px;
     min-height: 48px;
     height: auto;
+
     // This will only work with autoprefixer.
     &::placeholder {
       color: $search-text-placeholder-text-color;
     }
   }
-  .input-group-btn, .views-submit-button {
+
+  .input-group-btn,
+  .views-submit-button {
     .btn {
       background-color: $search-button-background-color;
       margin: 0;
       margin-bottom: 0;
-      min-width: 48px;
+      width: 48px;
       min-height: 48px;
       height: auto;
       transition: 0.1s ease-in-out background-color;
       padding: 5px 12px;
       top: 0;
+
       &:hover {
         background-color: $search-button-hover-background-color;
       }
     }
   }
+
   .form-actions {
     display: none;
   }
 }
 
-.header-section-search {
-  .views-exposed-form {
-    @include search-exposed-form();
-    .views-exposed-widget {
-      &.views-widget-sort-by, &.views-widget-sort-order {
-        display: none;
-      }
-      .input-group-addon, label {
-        display: none;
-      }
-      .form-text {
-        @include border-right-radius(0);
-      }
-      .btn {
-        @include border-left-radius(0);
-      }
-    }
-  }
-  .navbar-form {
-    padding-bottom: 5px;
-  }
-  .btn.btn-primary.btn-glyph {
-    background: $nav-tools-search-button-primary-bg-color;
-    height: 45px;
-    width: 45px;
-    padding: 10px 12px 8px;
-  }
-}
-.header-section-search-mobile-search {
-  padding-top: 0px;
-  @media (max-width: 768px) {
-    padding-top: 6px;
-  }
-  @media (min-width: 480px) and (max-width: 980px) {
-    padding-top: 2px;
-  }
-  .input-group-btn .btn {
-    background: #333;
-    margin-bottom: 0;
-  }
-}
+.search-btn {
+  background-color: $search-button-background-color;
+  border: 0;
+  display: inline-block;
+  height: auto;
+  margin-right: 15px;
+  min-height: 48px;
+  padding: 5px 12px;
+  width: 45px;
 
-body.page-search .main-container {
-  .views-exposed-form {
-    @include search-exposed-form();
-    .views-exposed-widget {
-      margin-right: 20px;
-      &.views-submit-button {
-        margin-top: 1.7em;
-        .btn {
-          padding: 0 30px;
-        }
-      }
-    }
+  .search-btn-copy {
+    position: absolute;
+    left: -999em;
   }
 }

@@ -1,93 +1,84 @@
-/*
-* Header.
-*/
-.masthead {
-  min-height: 160px;
+// Header.
+
+.header-inner {
   position: relative;
 }
-.logo-container {
-  background: white;
-  width: 120px;
-  height: 120px;
-  @include breakpoint($screen-sm) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 14%;
-    height: auto;
-    padding: 20px 25px 18px 20px;
-    margin-left: -20px;
-    z-index: 150;
-    box-sizing: content-box;
-    border-radius: 3px;
-  }
-  @include breakpoint($screen-md) {
-    padding: 10px 0 0;
-    width: 13%;
-  }
-}
+
 .logo {
+  position: static;
+  text-align: right;
+}
+
+.logo-container {
+  float: left;
+  height: auto;
+  margin: 15px 0 0 -10px;
+  position: relative;
+  width: 110px;
+  z-index: 150;
+
+  @include breakpoint($screen-sm) {
+    margin-bottom: 15px;
+    width: auto;
+  }
+}
+
+.logo-link {
+  background: $header-logo-bg-color;
+  border-radius: 0 0 5px 5px;
   display: block;
+  padding: 0 10px 10px;
   position: relative;
 }
-.header-tools {
-  border-bottom: 3px solid $nav-tools-border-color;
-  padding-bottom: 0;
-  padding-top: 0;
-  position: relative;
-  text-align: right;
-  @include breakpoint($screen-sm) {
-    padding: 25px 15px 23px;
-  }
-  .header-section {
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 360px;
-    &.header-section-search {
-      // ...
-    }
-    &.header-section-account {
-      margin-left: 60px;
-      @media (max-width: $screen-sm-max) {
-        display: none;
-      }
-      .header-account-section {
-        display: inline-block;
-        vertical-align: middle;
-        &.header-account-section-account {
-          font-size: $font-size-03;
-          font-weight: $font-weight-headinglight;
-          line-height: 1;
-          margin: 0 5px;
-        }
-        &.header-account-section-user-icon {
-          font-size: 15px;
-          padding-top: 1px;
-        }
-      }
-      a {
-        display: block;
-        color: $nav-tools-account-link-text-color;
-        text-decoration: none;
-        line-height: 1;
-        span.q-mark {
-          background: $nav-tools-account-link-q-mark-bg-color;
-          border-radius: 50%;
-          font-size: 12px;
-          box-sizing: border-box;
-          width: 22px;
-          height: 22px;
-          line-height: 23px;
-          text-align: center;
-          padding-right: 1px;
-        }
-      }
-    }
-    &.header-section-menu-tools {
+
+
+.header-section {
+  .js & {
+    position: static;
+
+    @include breakpoint($screen-sm) {
       position: relative;
-      @include breakpoint($screen-md) {
-        margin-left: 80px;
-      }
+    }
+  }
+}
+
+.header-tools {
+  margin-bottom: 10px;
+
+  @include breakpoint($screen-sm) {
+    min-height: 75px;
+    padding-top: 20px;
+    position: static;
+    text-align: right;
+  }
+}
+
+.header-account {
+  display: none;
+
+  @include breakpoint($screen-md) {
+    display: inline-block;
+    margin-top: 15px;
+    max-width: 360px;
+    vertical-align: middle;
+  }
+
+  a {
+    display: block;
+    color: $nav-tools-account-link-text-color;
+    line-height: 1;
+    text-decoration: none;
+
+    .q-mark {
+      background: $nav-tools-account-link-q-mark-bg-color;
+      border-radius: 50%;
+      box-sizing: border-box;
+      font-size: 12px;
+      height: 22px;
+      line-height: 23px;
+      text-align: center;
+      padding-right: 1px;
+      width: 22px;
     }
   }
 }

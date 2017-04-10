@@ -33,12 +33,6 @@ function bracknell_base_strongarm() {
         'custom settings' => 1,
       ),
     ),
-    'node' => array(
-      'carousel_slide' => array(
-        'label' => 'Carousel slide',
-        'custom settings' => 1,
-      ),
-    ),
   );
   $export['entity_view_modes'] = $strongarm;
 
