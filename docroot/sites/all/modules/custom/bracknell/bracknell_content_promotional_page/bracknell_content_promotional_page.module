@@ -84,11 +84,11 @@ function _bracknell_content_promotional_page_get_theme_class(EntityDrupalWrapper
  */
 function _bracknell_content_promotional_page_get_theme_class_for_child_page(EntityDrupalWrapper $wrapper) {
   // Find the path parent menu item based on the path of the child and it’s
-  // "p1" value.
+  // "plid" value.
   $query = db_select('menu_links', 'ml_child')
     ->condition('ml_child.link_path', 'node/' . $wrapper->getIdentifier());
 
-  $query->join('menu_links', 'ml_parent', 'ml_parent.mlid = ml_child.p1');
+  $query->join('menu_links', 'ml_parent', 'ml_parent.mlid = ml_child.plid');
   $query->fields('ml_parent', array('link_path'));
 
   $parent_path = $query->execute()->fetchField();
