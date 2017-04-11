@@ -1,12 +1,71 @@
+// Headings.
+
+// Custom heading class - extended.
+.hdng-lge {
+  font-size: $font-size-14;
+  font-weight: $font-weight-heading;
+}
+
 h1 {
   font-size: $font-size-21;
+  margin-top: 20px;
+
+  &.green-base {
+    line-height: 1;
+    margin-top: 7px;
+  }
+}
+
+h1,
+h2 {
+  margin: ($commonSpacing / 2) 0;
+
+  // Large override heading size.
+  &.lge {
+    @extend .hdng-lge;
+  }
 }
 
 h2 {
   font-size: $font-size-13;
+
+  &.h2-small {
+    font-size: $font-size-10;
+    font-weight: $font-weight-base;
+  }
 }
 
 h3 {
+  font-size: $font-size-10;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin: ($commonSpacing - 10) 0 ($commonSpacing / 3);
+
+  // Large override heading size.
+  &.lge {
+    @extend .hdng-lge;
+  }
+}
+
+h1,
+h2,
+h6 {
+  font-weight: $font-weight-heading;
+
+  &.h-light {
+    font-weight: $font-weight-headinglight;
+  }
+}
+
+aside h2,
+h3,
+h4,
+h5 {
+  font-weight: $font-weight-base;
   font-size: $font-size-10;
 }
 
@@ -20,4 +79,34 @@ h5 {
 
 h6 {
   font-size: $font-size-05;
+}
+
+aside {
+  h2,
+  h3,
+  h4,
+  h5 {
+    @include applyColour(border-top-color);
+    border-top: {
+      style: solid;
+      width: 5px;
+    }
+    margin-bottom: $commonSpacing / 3;
+    padding-top: 20px;
+  }
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: $global-heading-link-text-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $global-heading-link-hover-text-color;
+    text-decoration: underline;
+  }
 }

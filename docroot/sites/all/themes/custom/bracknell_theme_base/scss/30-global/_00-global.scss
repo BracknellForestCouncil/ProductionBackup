@@ -1,23 +1,7 @@
-html,
-body {
-  overflow: hidden; //fixed the horizontal scroll when use full-width 100%.
-  overflow-y: auto;
-}
-
-html {
-  position: relative;
-  // overflow-y: auto;
-}
+// Global.
 
 .page-wrapper {
   position: relative;
-  // display: flex;
-  // flex-direction: column;
-  // min-height: 100vh;
-
-  // .main-container {
-  //   flex: 1;
-  // }
 }
 
 .page-header {

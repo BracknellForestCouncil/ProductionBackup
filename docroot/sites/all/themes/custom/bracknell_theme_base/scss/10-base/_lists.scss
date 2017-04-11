@@ -1,0 +1,10 @@
+// Lists.
+
+// Split <ol> into 2x columns.
+.ol-split {
+  @media (min-width: 768px) {
+    column-count: 2;
+    column-gap: 3em;
+  }
+  padding-left: 20px;
+}
