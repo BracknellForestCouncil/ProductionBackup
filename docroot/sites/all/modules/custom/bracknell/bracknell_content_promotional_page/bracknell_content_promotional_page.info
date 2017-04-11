@@ -4,7 +4,6 @@ core = 7.x
 package = bracknell
 version = 7.x-1.0
 dependencies[] = bracknell_base
-dependencies[] = bracknell_feature_landing_page
 dependencies[] = ctools
 dependencies[] = entity_reference_multiple
 dependencies[] = entityreference
