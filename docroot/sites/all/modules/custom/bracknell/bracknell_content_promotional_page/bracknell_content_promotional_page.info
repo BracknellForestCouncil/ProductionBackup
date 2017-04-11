@@ -30,6 +30,7 @@ features[field_instance][] = node-promotional_page-field_promotional_hero
 features[field_instance][] = node-promotional_page-field_promotional_slogan
 features[field_instance][] = node-promotional_page-field_related_pages
 features[field_instance][] = node-promotional_page-field_related_pages_view
+features[field_instance][] = node-promotional_page-field_theme
 features[node][] = promotional_page
 features[user_permission][] = create promotional_page content
 features[user_permission][] = delete any promotional_page content
