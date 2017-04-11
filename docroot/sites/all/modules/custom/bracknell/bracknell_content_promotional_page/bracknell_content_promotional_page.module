@@ -107,5 +107,5 @@ function _bracknell_content_promotional_page_get_theme_class_for_child_page(Enti
 
   return !empty($parent_node->field_theme)
     ?_bracknell_content_promotional_page_get_theme_class($parent_node_wrapper)
-    : NULL;
+    :_bracknell_content_promotional_page_get_theme_class_for_child_page($parent_node_wrapper);
 }
