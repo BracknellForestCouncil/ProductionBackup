@@ -19,7 +19,7 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'address_only' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'addressfield',
         'settings' => array(
           'format_handlers' => array(
@@ -43,7 +43,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'weight' => 1,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'addressfield',
         'settings' => array(
           'format_handlers' => array(
@@ -125,7 +125,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'weight' => 4,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'bypass_access' => FALSE,
@@ -184,7 +184,7 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'address_only' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -198,7 +198,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'weight' => 3,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -270,7 +270,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'weight' => 2,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'geofield',
         'settings' => array(
           'data' => 'full',
@@ -410,7 +410,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
@@ -2127,7 +2127,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -2174,7 +2174,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -2216,7 +2216,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -2263,7 +2263,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -2389,7 +2389,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'manualcrop_thumblist' => FALSE,
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -2431,7 +2431,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'workbench_access_field' => 1,
   );
@@ -2478,7 +2478,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -2525,7 +2525,86 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_leisure-field_promotional_hero'.
+  $field_instances['node-location_leisure-field_promotional_hero'] = array(
+    'bundle' => 'location_leisure',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_promotional_hero',
+    'is_property' => 0,
+    'label' => 'Promotional Hero',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          's3' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'localgov_document' => 0,
+          'localgov_image' => 0,
+          'localgov_image_header' => 0,
+          'localgov_video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -2578,7 +2657,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'module' => 'advanced_link',
       'settings' => array(),
       'type' => 'advanced_link',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -5025,6 +5104,7 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Parking');
   t('Payment Options');
   t('Phone');
+  t('Promotional Hero');
   t('Related Links');
   t('School type');
   t('Security');

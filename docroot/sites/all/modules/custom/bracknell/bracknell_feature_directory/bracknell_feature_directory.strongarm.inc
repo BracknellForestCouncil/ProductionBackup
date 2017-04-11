@@ -434,10 +434,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '13',
         ),
         'redirect' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
       ),
       'display' => array(),
