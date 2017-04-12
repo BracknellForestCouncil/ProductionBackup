@@ -27,12 +27,6 @@ function bracknell_feature_search_default_fe_block_settings() {
         'theme' => 'adminimal',
         'weight' => 0,
       ),
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'bracknell_theme_base' => array(
         'region' => '',
         'status' => 0,

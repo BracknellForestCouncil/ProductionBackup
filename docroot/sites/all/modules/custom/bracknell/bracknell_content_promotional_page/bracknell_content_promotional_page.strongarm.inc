@@ -38,16 +38,10 @@ function bracknell_content_promotional_page_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'search_index' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_result' => array(
+      'carousel_slide' => array(
         'custom_settings' => FALSE,
       ),
       'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-      'carousel_slide' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -57,10 +51,10 @@ function bracknell_content_promotional_page_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
       ),
       'display' => array(),
