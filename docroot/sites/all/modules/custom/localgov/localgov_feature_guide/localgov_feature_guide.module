@@ -86,9 +86,7 @@ function localgov_feature_guide_preprocess_page(&$variables) {
     }
   }
 
-  if (!empty($variables['node'])) {
-    $node = $variables['node'];
-  }
+  $node = (!empty($variables['node'])) ? $variables['node'] : NULL;
 
   $variables['guide_menu'] = '';
   // Get the object and do some other checks based on what you need.
