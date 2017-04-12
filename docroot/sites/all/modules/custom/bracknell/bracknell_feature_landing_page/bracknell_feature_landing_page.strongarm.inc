@@ -31,6 +31,9 @@ function bracknell_feature_landing_page_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel_slide' => array(
+        'custom_settings' => FALSE,
+      ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),

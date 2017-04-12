@@ -133,6 +133,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['edit terms in moderation'] = array(
     'name' => 'edit terms in moderation',
     'roles' => array(
+      'content administrator' => 'content administrator',
       'site administrator' => 'site administrator',
       'webmaster' => 'webmaster',
     ),
