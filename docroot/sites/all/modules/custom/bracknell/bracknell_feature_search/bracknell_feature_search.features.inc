@@ -57,13 +57,14 @@ function bracknell_feature_search_default_search_api_index() {
     "name" : "Default node index",
     "machine_name" : "default_node_index",
     "description" : "An automatically created search index for indexing node data. Might be configured to specific needs.",
-    "server" : "bracknell_solr_default",
+    "server" : "database_backend",
     "item_type" : "node",
     "options" : {
       "datasource" : { "bundles" : [
           "basic",
           "form",
           "guide_section",
+          "landing_page",
           "miscellaneous",
           "article",
           "promo",
@@ -133,6 +134,8 @@ function bracknell_feature_search_default_search_api_index() {
               "field_content" : true,
               "field_contact_email" : true,
               "field_contact_telephone" : true,
+              "field_promotional_content" : true,
+              "field_promotional_slogan" : true,
               "search_api_language" : true,
               "attachments_field_video" : true,
               "attachments_field_paragraph_document" : true,
@@ -165,6 +168,8 @@ function bracknell_feature_search_default_search_api_index() {
               "field_content" : true,
               "field_contact_email" : true,
               "field_contact_telephone" : true,
+              "field_promotional_content" : true,
+              "field_promotional_slogan" : true,
               "search_api_language" : true,
               "attachments_field_video" : true,
               "attachments_field_paragraph_document" : true,
@@ -198,16 +203,14 @@ function bracknell_feature_search_default_search_api_index() {
               "field_description:value" : true,
               "field_contact_additional:value" : true,
               "field_contactinfo:field_contact_additional:value" : true,
-              "field_content:field_paragraph_body:value" : true,
-              "field_promotional_content" : true,
-              "field_promotional_slogan" : true
+              "field_content:field_paragraph_body:value" : true
             },
             "spaces" : "[^\\\\p{L}\\\\p{N}]",
             "ignorable" : "[-]"
           }
         },
         "search_api_stopwords" : {
-          "status" : 1,
+          "status" : 0,
           "weight" : "30",
           "settings" : {
             "fields" : {
@@ -239,7 +242,7 @@ function bracknell_feature_search_default_search_api_index() {
             "excerpt_length" : "256",
             "exclude_fields" : [],
             "highlight" : "always",
-            "highlight_partial" : 0
+            "highlight_partial" : 1
           }
         }
       },
@@ -274,6 +277,175 @@ function bracknell_feature_search_default_search_api_index() {
     },
     "enabled" : "1",
     "read_only" : "0",
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
+
+/**
+ * Implements hook_default_search_api_server().
+ */
+function bracknell_feature_search_default_search_api_server() {
+  $items = array();
+  $items['database_backend'] = entity_import('search_api_server', '{
+    "name" : "Database backend",
+    "machine_name" : "database_backend",
+    "description" : "",
+    "class" : "search_api_db_service",
+    "options" : {
+      "database" : "default:default",
+      "min_chars" : "1",
+      "partial_matches" : 0,
+      "autocomplete" : { "suggest_suffix" : 1, "suggest_words" : 1 },
+      "indexes" : { "default_node_index" : {
+          "type" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "type",
+            "type" : "string",
+            "boost" : "1.0"
+          },
+          "title" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "5.0"
+          },
+          "promote" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "promote",
+            "type" : "boolean",
+            "boost" : "1.0"
+          },
+          "sticky" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "sticky",
+            "type" : "boolean",
+            "boost" : "1.0"
+          },
+          "created" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "created",
+            "type" : "date",
+            "boost" : "1.0"
+          },
+          "changed" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "changed",
+            "type" : "date",
+            "boost" : "1.0"
+          },
+          "author" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "author",
+            "type" : "integer",
+            "boost" : "1.0"
+          },
+          "field_tags" : {
+            "table" : "search_api_db_default_node_index_field_tags",
+            "column" : "value",
+            "type" : "list\\u003Cinteger\\u003E",
+            "boost" : "1.0"
+          },
+          "field_contactinfo" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "field_contactinfo",
+            "type" : "integer",
+            "boost" : "1.0"
+          },
+          "field_category" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "field_category",
+            "type" : "integer",
+            "boost" : "1.0"
+          },
+          "field_content" : {
+            "table" : "search_api_db_default_node_index_field_content",
+            "column" : "value",
+            "type" : "list\\u003Cinteger\\u003E",
+            "boost" : "1.0"
+          },
+          "field_contact_email" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_contact_telephone" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_promotional_content" : {
+            "table" : "search_api_db_default_node_index_field_promotional_content",
+            "column" : "value",
+            "type" : "list\\u003Cinteger\\u003E",
+            "boost" : "1.0"
+          },
+          "field_promotional_slogan" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "field_promotional_slogan",
+            "type" : "integer",
+            "boost" : "1.0"
+          },
+          "search_api_language" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "search_api_language",
+            "type" : "string",
+            "boost" : "1.0"
+          },
+          "attachments_field_video" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "attachments_field_paragraph_document" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "body:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "body:summary" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_contactinfo:field_content" : {
+            "table" : "search_api_db_default_node_index_field_contactinfo_field_conte",
+            "column" : "value",
+            "type" : "list\\u003Cinteger\\u003E",
+            "boost" : "1.0"
+          },
+          "field_form_additional:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_description:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_contact_additional:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_contactinfo:field_contact_additional:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_content:field_paragraph_body:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "list\\u003Ctext\\u003E",
+            "boost" : "1.0"
+          }
+        }
+      }
+    },
+    "enabled" : "1",
     "rdf_mapping" : []
   }');
   return $items;
