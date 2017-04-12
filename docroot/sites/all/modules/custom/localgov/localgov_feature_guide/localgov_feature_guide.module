@@ -88,15 +88,8 @@ function localgov_feature_guide_preprocess_page(&$variables) {
   $variables['guide_menu'] = '';
 
   // Get the object and do some other checks based on what you need.
-  if (!empty($variables['node'])) {
+  if (isset($variables['node']) && ($variables['node']->type == "guide" || $variables['node']->type == "guide_section")) {
     $node = $variables['node'];
-  }
-  else {
-    // Set the object to the currently loaded node.
-    $node = menu_get_object();
-  }
-
-  if (!empty($node) && ($node->type == "guide" || $node->type == "guide_section")) {
     // Generate a render array for the node.
     $view = node_view($node);
     // "Create" a new variable for the page.tpl.php.
