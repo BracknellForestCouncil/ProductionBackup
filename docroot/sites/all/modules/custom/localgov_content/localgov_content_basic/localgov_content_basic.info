@@ -26,6 +26,7 @@ dependencies[] = options
 dependencies[] = paragraphs
 dependencies[] = strongarm
 dependencies[] = taxonomy
+dependencies[] = text
 configure = admin/localgov/modules/localgov_content/localgov_content_basic/admin
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2

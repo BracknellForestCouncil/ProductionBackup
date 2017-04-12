@@ -218,6 +218,44 @@ function localgov_content_promo_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-promo-field_node_display_title'.
+  $field_instances['node-promo-field_node_display_title'] = array(
+    'bundle' => 'promo',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 98,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-promo-field_related'.
   $field_instances['node-promo-field_related'] = array(
     'bundle' => 'promo',
@@ -416,6 +454,7 @@ function localgov_content_promo_field_default_field_instances() {
   t('Body');
   t('Contact Information');
   t('Contact Information Style');
+  t('Display title');
   t('Image');
   t('Related Links');
   t('Select contact information to display on this page.');

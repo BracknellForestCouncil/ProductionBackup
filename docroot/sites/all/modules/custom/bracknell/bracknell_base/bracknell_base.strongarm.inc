@@ -36,5 +36,33 @@ function bracknell_base_strongarm() {
   );
   $export['entity_view_modes'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_display_title_settings';
+  $strongarm->value = array(
+    0 => 'landing_page',
+    1 => 'promotional_page',
+    2 => 'article',
+    3 => 'form',
+    4 => 'promo',
+    5 => 'guide',
+    6 => 'miscellaneous',
+    7 => 'location_car_park',
+    8 => 'location_community',
+    9 => 'location_council',
+    10 => 'location_leisure',
+    11 => 'location_library',
+    12 => 'location_main',
+    13 => 'location_park',
+    14 => 'location_playground',
+    15 => 'location_school',
+    16 => 'contact',
+    17 => 'basic',
+    18 => 'guide_section',
+    19 => 'fact',
+  );
+  $export['node_display_title_settings'] = $strongarm;
+
   return $export;
 }

@@ -262,6 +262,44 @@ function localgov_content_contactinfo_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-contact-field_node_display_title'.
+  $field_instances['node-contact-field_node_display_title'] = array(
+    'bundle' => 'contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-contact-field_title_display'.
   $field_instances['node-contact-field_title_display'] = array(
     'bundle' => 'contact',
@@ -315,6 +353,7 @@ function localgov_content_contactinfo_field_default_field_instances() {
   t('Address');
   t('Contact Form');
   t('Display Name');
+  t('Display title');
   t('Email Address');
   t('Enter a name here to override the "Name", if necessary, when displaying contact information to the public. ');
   t('Enter a telephone number.');

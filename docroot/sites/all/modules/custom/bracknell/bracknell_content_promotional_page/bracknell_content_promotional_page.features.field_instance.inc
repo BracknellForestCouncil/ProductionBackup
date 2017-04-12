@@ -92,6 +92,44 @@ function bracknell_content_promotional_page_field_default_field_instances() {
     'workbench_access_field' => 1,
   );
 
+  // Exported field_instance: 'node-promotional_page-field_node_display_title'.
+  $field_instances['node-promotional_page-field_node_display_title'] = array(
+    'bundle' => 'promotional_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-promotional_page-field_promotional_content'.
   $field_instances['node-promotional_page-field_promotional_content'] = array(
     'bundle' => 'promotional_page',
@@ -478,6 +516,7 @@ function bracknell_content_promotional_page_field_default_field_instances() {
   t('Category');
   t('Colour scheme');
   t('Content');
+  t('Display title');
   t('Editorial Group');
   t('Promotional Hero');
   t('Related Pages');

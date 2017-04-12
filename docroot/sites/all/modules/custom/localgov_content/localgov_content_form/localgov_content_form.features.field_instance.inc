@@ -233,6 +233,44 @@ function localgov_content_form_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-form-field_node_display_title'.
+  $field_instances['node-form-field_node_display_title'] = array(
+    'bundle' => 'form',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-form-field_promotional_hero'.
   $field_instances['node-form-field_promotional_hero'] = array(
     'bundle' => 'form',
@@ -487,6 +525,7 @@ function localgov_content_form_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Additional information');
   t('Category');
+  t('Display title');
   t('Enter additional information for this form.');
   t('Enter an introduction for this form.');
   t('Enter the URL for the form.');

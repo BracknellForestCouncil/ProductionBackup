@@ -205,6 +205,44 @@ function localgov_content_miscellaneous_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-miscellaneous-field_node_display_title'.
+  $field_instances['node-miscellaneous-field_node_display_title'] = array(
+    'bundle' => 'miscellaneous',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-miscellaneous-field_weight'.
   $field_instances['node-miscellaneous-field_weight'] = array(
     'bundle' => 'miscellaneous',
@@ -259,6 +297,7 @@ function localgov_content_miscellaneous_field_default_field_instances() {
   t('Contact Information Style');
   t('Content');
   t('Description');
+  t('Display title');
   t('TODO: Add help text.');
   t('Weight');
 
