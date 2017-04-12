@@ -86,11 +86,13 @@ function localgov_feature_guide_preprocess_page(&$variables) {
     }
   }
 
-  $node = $variables['node'];
+  if (!empty($variables['node'])) {
+    $node = $variables['node'];
+  }
 
   $variables['guide_menu'] = '';
   // Get the object and do some other checks based on what you need.
-  if (($node = menu_get_object()) && ($node->type == "guide" || $node->type == "guide_section")) {
+  if (isset($node) && ($node = menu_get_object()) && ($node->type == "guide" || $node->type == "guide_section")) {
     // Generate a render array for the node.
     $view = node_view($node);
     // "Create" a new variable for the page.tpl.php.
