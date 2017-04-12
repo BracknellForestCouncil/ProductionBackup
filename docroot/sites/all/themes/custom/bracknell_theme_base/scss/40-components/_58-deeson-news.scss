@@ -29,11 +29,15 @@
 }
 
 .news-leader {
+  @include applyColour(border-top-color);
+  border-top: {
+    style: solid;
+    width: 5px;
+  }
+
   .img-responsive {
     width: 100%;
   }
-
-  @extend .green-top;
 
   .col-sm-8 {
     @media (max-width: 767px) {
@@ -60,6 +64,12 @@ aside.news-aside {
   }
 
   article {
+    @include applyColour(border-top-color);
+    border-top: {
+      style: solid;
+      width: 5px;
+    }
+
     &:first-child {
       @media (min-width: 768px){
         margin-top: 80px;
@@ -70,7 +80,6 @@ aside.news-aside {
       }
     }
 
-    @extend .green-top;
     padding-bottom: $commonSpacing;
 
     img {

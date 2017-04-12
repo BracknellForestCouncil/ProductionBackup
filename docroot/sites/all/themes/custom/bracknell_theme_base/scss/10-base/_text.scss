@@ -1,130 +1,33 @@
-/*
-* Typographical settings.
-*/
-$sourceSansPro: 'Source Sans Pro', sans-serif;
-.line-wrapping {
-  white-space: pre-line;
-}
-body {
-  font-family: $sourceSansPro;
-  font-weight: $font-weight-base;
-  font-size: $font-size-base;
-  color: $global-text-color;
-  -webkit-font-smoothing: antialiased;
-}
-// Anchors.
-a, p a, li a {
-  color: $global-link-text-color;
-  text-decoration: underline;
-  transition: all 0.1s ease;
-  &:hover {
-    text-decoration: none;
-  }
-  &:focus {
-    @extend .link-focus;
-  }
-}
+// Text.
+
 p {
   margin: 0 0 20px;
+
   &.lead {
     font-size: $font-size-06;
   }
+
   &.alert-boxout {
     padding: 15px 15px 15px 75px;
     background: $global-text-alert-boxout-bg-color url('data:image/png;base64,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') 20px 25px no-repeat;
   }
 }
-a {
-  &.download-link {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAAxElEQVQ4je3SMW5CMRAE0Af5RYTEYRBNzkAfUdISylDkABwgVKRJQ0VqJEo4QVquQpEIQYEjmY8NPxKiYiRLu+PxrL3rmvZUBhO8lLgPDFLies7lv7gb3dCoiOIHh9E2Qt5K6Ft4C/HG4Ytsy0ZbrLHAY6bwU1g/6PyZcPq0FbpBmMMvnrGMyVSP5ujF1Uq37gXNEXLN/kIfu4jbBW6WOnBuap94jfJh4JIochsBYzRRw/s54SUjGFXQKPBdRVjFqH0Noz0vHB08sINUBgAAAABJRU5ErkJggg==') 98% 3px no-repeat;
-    padding: 0 30px 0 0;
-  }
-}
-// Custom heading class - extended.
-.hdng-lge {
-  font-size: $font-size-14;
-  font-weight: $font-weight-heading;
-}
-h1 {
-  margin-top: 20px;
-  &.green-base {
-    margin-top: 7px;
-    line-height: 1;
-  }
-}
-h1, h2 {
-  margin: ($commonSpacing / 2) 0;
-  // Large override heading size.
-  &.lge {
-    @extend .hdng-lge;
-  }
-}
-h2 {
-  &.h2-small {
-    font-weight: $font-weight-base;
-    font-size: $font-size-10;
-  }
-}
-h3, h4, h5, h6 {
-  margin: ($commonSpacing - 10) 0 ($commonSpacing/3);
-  // Large override heading size.
-  &.lge {
-    @extend .hdng-lge;
-  }
-}
-h1, h2, h6 {
-  font-weight: $font-weight-heading;
-  &.h-light {
-    font-weight: $font-weight-headinglight;
-  }
-}
-aside h2, h3, h4, h5 {
-  font-weight: $font-weight-base;
-  font-size: $font-size-10;
-}
-h4, h5 {
-  font-size: $font-size-08;
-}
-aside {
-  h2, h3, h4, h5 {
-    margin-bottom: $commonSpacing/3;
-    @extend .green-top;
-    margin-top: -5px;
-    padding-top: 20px;
-  }
-}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: $global-heading-link-text-color;
-  text-decoration: none;
-  &:hover {
-    color: $global-heading-link-hover-text-color;
-    text-decoration: underline;
-  }
-}
-// Split <ol> into 2x columns.
-.ol-split {
-  @media (min-width: 768px) {
-    column-count: 2;
-    column-gap: 3em;
-  }
-  padding-left: 20px;
-}
-// Bootstrap override.
-.btn {
-  padding: 12px;
-}
-span.lge{
+
+span.lge {
   @extend h2;
   @extend .hdng-lge;
 }
+
 .text-light-lg {
   font-size: $font-size-08;
   font-weight: $font-weight-light;
 }
+
 .text-light-normal {
   font-size: $font-size-base;
   font-weight: $font-weight-light;
 }
+
 hr {
   margin-top: 1em;
   margin-right:1em;
@@ -132,4 +35,8 @@ hr {
   margin-left: 1em;
   border: 0;
   border-top: 1px solid $global-horizontal-rule-border-color;
+}
+
+.line-wrapping {
+  white-space: pre-line;
 }

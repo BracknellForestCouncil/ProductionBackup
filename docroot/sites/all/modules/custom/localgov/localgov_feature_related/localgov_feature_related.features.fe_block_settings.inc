@@ -31,7 +31,7 @@ function localgov_feature_related_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => 1,
         'theme' => 'bracknell_theme_base',
-        'weight' => -14,
+        'weight' => -16,
       ),
     ),
     'title' => '',

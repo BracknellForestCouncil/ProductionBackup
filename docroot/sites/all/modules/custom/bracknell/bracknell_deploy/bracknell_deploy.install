@@ -81,9 +81,18 @@ function bracknell_deploy_update_7002() {
 }
 
 /**
- * Eradicate a list of fields updated in Features.
+ * Enable content_type_groups and content_type_groups_theme.
  */
 function bracknell_deploy_update_7003() {
+  module_enable(array('content_type_groups', 'content_type_groups_theme'));
+
+  features_revert_module('bracknell_feature_directory');
+}
+
+/**
+ * Eradicate a list of fields updated in Features.
+ */
+function bracknell_deploy_update_7004() {
   $field_list = array(
     'field_carousel_slide_content',
     'field_promotional_related_pages',

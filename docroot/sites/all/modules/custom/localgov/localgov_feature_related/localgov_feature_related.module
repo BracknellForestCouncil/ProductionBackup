@@ -34,3 +34,18 @@ function localgov_feature_related_form_alter(&$form, &$form_state, $form_id, $no
     $form['#validate'][] = '_localgov_feature_related_form_validate';
   }
 }
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function localgov_feature_related_preprocess_block(&$variables) {
+  $block_id = $variables['block']->module . '-' . $variables['block']->delta;
+  $classes = &$variables['classes_array'];
+
+  // Output classes depending on the block id.
+  switch($block_id) {
+    case 'views-related_links_node-block':
+      $classes[] = 'related-links';
+    break;
+  }
+}
