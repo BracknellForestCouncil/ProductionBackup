@@ -66,7 +66,6 @@ function localgov_feature_guide_preprocess_page(&$variables) {
     // Set the page $title and <title> tag
     // TODO: Fix <title> for guide page. Possibly use Metatag module.
 
-
     // Temporarily remove long page title to fix breadcrumbs.
     // drupal_set_title($new_title . " - " . $old_title);
 
@@ -86,11 +85,18 @@ function localgov_feature_guide_preprocess_page(&$variables) {
     }
   }
 
-  $node = (!empty($variables['node'])) ? $variables['node'] : NULL;
-
   $variables['guide_menu'] = '';
+
   // Get the object and do some other checks based on what you need.
-  if (isset($node) && ($node = menu_get_object()) && ($node->type == "guide" || $node->type == "guide_section")) {
+  if (!empty($variables['node'])) {
+    $node = $variables['node'];
+  }
+  else {
+    // set the object to the currently loaded node.
+    $node = menu_get_object();
+  }
+
+  if (!empty($node) && ($node->type == "guide" || $node->type == "guide_section")) {
     // Generate a render array for the node.
     $view = node_view($node);
     // "Create" a new variable for the page.tpl.php.
