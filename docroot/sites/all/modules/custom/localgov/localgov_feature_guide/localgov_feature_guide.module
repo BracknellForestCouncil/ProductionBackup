@@ -92,7 +92,7 @@ function localgov_feature_guide_preprocess_page(&$variables) {
     $node = $variables['node'];
   }
   else {
-    // set the object to the currently loaded node.
+    // Set the object to the currently loaded node.
     $node = menu_get_object();
   }
 
