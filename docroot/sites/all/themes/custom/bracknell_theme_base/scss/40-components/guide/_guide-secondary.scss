@@ -1,16 +1,7 @@
 // Guide Secondary Navigation.
 
-
 .guide-navigation-secondary {
   .page-links {
-    display: inline-block;
-    width: 100%;
-
-    @media (max-width: 768px) {
-      display: block;
-      width: 100%;
-    }
-
     .btn {
       background-color: $guide-nav-secondary-button-bg-color;
       color: $guide-nav-secondary-button-text-color;
