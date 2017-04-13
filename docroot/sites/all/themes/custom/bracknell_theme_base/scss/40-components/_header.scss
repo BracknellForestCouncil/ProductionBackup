@@ -2,6 +2,11 @@
 
 .header-inner {
   position: relative;
+  padding-bottom: 15px;
+
+  @include breakpoint($screen-md) {
+    padding-bottom: 0;
+  }
 }
 
 .logo {
@@ -48,10 +53,10 @@
 }
 
 .header-tools {
-  margin-bottom: 10px;
+  border-bottom: 3px solid $breadcrumb-border-color;
 
   @include breakpoint($screen-sm) {
-    min-height: 75px;
+    min-height: 95px;
     padding-top: 20px;
     position: static;
     text-align: right;

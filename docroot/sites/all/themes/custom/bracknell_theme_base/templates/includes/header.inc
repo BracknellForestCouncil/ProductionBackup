@@ -9,7 +9,7 @@
         </div><!-- end .logo-container -->
       </div><!-- end .col -->
       <div class="header-section col-xs-12 col-sm-10">
-        <div class="header-tools row">
+        <div class="header-tools">
           <div class="search col-sm-8 col-md-5 col-md-offset-2">
             <?php if (!empty($page['search'])) : ?>
               <?php print render($page['search']); ?>
