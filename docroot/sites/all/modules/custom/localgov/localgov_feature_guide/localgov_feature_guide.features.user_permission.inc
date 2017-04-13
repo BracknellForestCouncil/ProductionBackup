@@ -41,6 +41,8 @@ function localgov_feature_guide_user_default_permissions() {
     'roles' => array(
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'guide',
@@ -51,6 +53,8 @@ function localgov_feature_guide_user_default_permissions() {
     'name' => 'administer guide structures',
     'roles' => array(
       'content administrator' => 'content administrator',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'guide',
@@ -71,6 +75,8 @@ function localgov_feature_guide_user_default_permissions() {
     'name' => 'create new guides',
     'roles' => array(
       'content administrator' => 'content administrator',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'guide',

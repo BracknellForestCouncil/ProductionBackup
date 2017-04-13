@@ -66,7 +66,11 @@ function bracknell_content_testimonial_field_default_field_instances() {
   // Exported field_instance: 'node-testimonial-field_moderation'.
   $field_instances['node-testimonial-field_moderation'] = array(
     'bundle' => 'testimonial',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 7,
+      ),
+    ),
     'deleted' => 0,
     'description' => 'Select the team responsible for editing/moderating this content.',
     'display' => array(
@@ -100,10 +104,7 @@ function bracknell_content_testimonial_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => -10,
     ),

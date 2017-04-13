@@ -21,6 +21,195 @@ function bracknell_feature_directory_user_default_permissions() {
     'module' => 'geofield_map',
   );
 
+  // Exported permission: 'create location_car_park content'.
+  $permissions['create location_car_park content'] = array(
+    'name' => 'create location_car_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create location_community content'.
+  $permissions['create location_community content'] = array(
+    'name' => 'create location_community content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create location_council content'.
+  $permissions['create location_council content'] = array(
+    'name' => 'create location_council content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create location_leisure content'.
+  $permissions['create location_leisure content'] = array(
+    'name' => 'create location_leisure content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create location_library content'.
+  $permissions['create location_library content'] = array(
+    'name' => 'create location_library content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create location_main content'.
+  $permissions['create location_main content'] = array(
+    'name' => 'create location_main content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create location_park content'.
+  $permissions['create location_park content'] = array(
+    'name' => 'create location_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create location_playground content'.
+  $permissions['create location_playground content'] = array(
+    'name' => 'create location_playground content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create location_school content'.
+  $permissions['create location_school content'] = array(
+    'name' => 'create location_school content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any location_car_park content'.
+  $permissions['delete any location_car_park content'] = array(
+    'name' => 'delete any location_car_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any location_community content'.
+  $permissions['delete any location_community content'] = array(
+    'name' => 'delete any location_community content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any location_council content'.
+  $permissions['delete any location_council content'] = array(
+    'name' => 'delete any location_council content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any location_leisure content'.
+  $permissions['delete any location_leisure content'] = array(
+    'name' => 'delete any location_leisure content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any location_library content'.
+  $permissions['delete any location_library content'] = array(
+    'name' => 'delete any location_library content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any location_main content'.
+  $permissions['delete any location_main content'] = array(
+    'name' => 'delete any location_main content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any location_park content'.
+  $permissions['delete any location_park content'] = array(
+    'name' => 'delete any location_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any location_playground content'.
+  $permissions['delete any location_playground content'] = array(
+    'name' => 'delete any location_playground content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any location_school content'.
+  $permissions['delete any location_school content'] = array(
+    'name' => 'delete any location_school content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own location_car_park content'.
+  $permissions['delete own location_car_park content'] = array(
+    'name' => 'delete own location_car_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own location_community content'.
+  $permissions['delete own location_community content'] = array(
+    'name' => 'delete own location_community content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own location_council content'.
+  $permissions['delete own location_council content'] = array(
+    'name' => 'delete own location_council content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own location_leisure content'.
+  $permissions['delete own location_leisure content'] = array(
+    'name' => 'delete own location_leisure content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own location_library content'.
+  $permissions['delete own location_library content'] = array(
+    'name' => 'delete own location_library content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own location_main content'.
+  $permissions['delete own location_main content'] = array(
+    'name' => 'delete own location_main content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own location_park content'.
+  $permissions['delete own location_park content'] = array(
+    'name' => 'delete own location_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own location_playground content'.
+  $permissions['delete own location_playground content'] = array(
+    'name' => 'delete own location_playground content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own location_school content'.
+  $permissions['delete own location_school content'] = array(
+    'name' => 'delete own location_school content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'eck add directory_entry bundles'.
   $permissions['eck add directory_entry bundles'] = array(
     'name' => 'eck add directory_entry bundles',
@@ -71,6 +260,7 @@ function bracknell_feature_directory_user_default_permissions() {
   $permissions['eck delete directory_entry bundles'] = array(
     'name' => 'eck delete directory_entry bundles',
     'roles' => array(
+      'content administrator' => 'content administrator',
       'site administrator' => 'site administrator',
       'webmaster' => 'webmaster',
     ),
@@ -82,9 +272,7 @@ function bracknell_feature_directory_user_default_permissions() {
     'name' => 'eck delete directory_entry directory_entry entities',
     'roles' => array(
       'content administrator' => 'content administrator',
-      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
-      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
@@ -117,7 +305,10 @@ function bracknell_feature_directory_user_default_permissions() {
   $permissions['eck list directory_entry bundles'] = array(
     'name' => 'eck list directory_entry bundles',
     'roles' => array(
+      'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
@@ -127,8 +318,12 @@ function bracknell_feature_directory_user_default_permissions() {
   $permissions['eck list directory_entry directory_entry entities'] = array(
     'name' => 'eck list directory_entry directory_entry entities',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+      'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
@@ -138,8 +333,10 @@ function bracknell_feature_directory_user_default_permissions() {
   $permissions['eck view directory_entry bundles'] = array(
     'name' => 'eck view directory_entry bundles',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
@@ -158,6 +355,132 @@ function bracknell_feature_directory_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
+  );
+
+  // Exported permission: 'edit any location_car_park content'.
+  $permissions['edit any location_car_park content'] = array(
+    'name' => 'edit any location_car_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any location_community content'.
+  $permissions['edit any location_community content'] = array(
+    'name' => 'edit any location_community content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any location_council content'.
+  $permissions['edit any location_council content'] = array(
+    'name' => 'edit any location_council content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any location_leisure content'.
+  $permissions['edit any location_leisure content'] = array(
+    'name' => 'edit any location_leisure content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any location_library content'.
+  $permissions['edit any location_library content'] = array(
+    'name' => 'edit any location_library content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any location_main content'.
+  $permissions['edit any location_main content'] = array(
+    'name' => 'edit any location_main content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any location_park content'.
+  $permissions['edit any location_park content'] = array(
+    'name' => 'edit any location_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any location_playground content'.
+  $permissions['edit any location_playground content'] = array(
+    'name' => 'edit any location_playground content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any location_school content'.
+  $permissions['edit any location_school content'] = array(
+    'name' => 'edit any location_school content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own location_car_park content'.
+  $permissions['edit own location_car_park content'] = array(
+    'name' => 'edit own location_car_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own location_community content'.
+  $permissions['edit own location_community content'] = array(
+    'name' => 'edit own location_community content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own location_council content'.
+  $permissions['edit own location_council content'] = array(
+    'name' => 'edit own location_council content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own location_leisure content'.
+  $permissions['edit own location_leisure content'] = array(
+    'name' => 'edit own location_leisure content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own location_library content'.
+  $permissions['edit own location_library content'] = array(
+    'name' => 'edit own location_library content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own location_main content'.
+  $permissions['edit own location_main content'] = array(
+    'name' => 'edit own location_main content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own location_park content'.
+  $permissions['edit own location_park content'] = array(
+    'name' => 'edit own location_park content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own location_playground content'.
+  $permissions['edit own location_playground content'] = array(
+    'name' => 'edit own location_playground content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own location_school content'.
+  $permissions['edit own location_school content'] = array(
+    'name' => 'edit own location_school content',
+    'roles' => array(),
+    'module' => 'node',
   );
 
   // Exported permission: 'geocoder_service_all_handlers'.

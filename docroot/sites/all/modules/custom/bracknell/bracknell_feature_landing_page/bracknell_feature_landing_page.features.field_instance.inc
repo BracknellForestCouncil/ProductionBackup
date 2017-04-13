@@ -98,7 +98,11 @@ function bracknell_feature_landing_page_field_default_field_instances() {
   // Exported field_instance: 'node-landing_page-field_moderation'.
   $field_instances['node-landing_page-field_moderation'] = array(
     'bundle' => 'landing_page',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 7,
+      ),
+    ),
     'deleted' => 0,
     'description' => 'Select the team responsible for editing/moderating this content.',
     'display' => array(
@@ -126,14 +130,49 @@ function bracknell_feature_landing_page_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 0,
     ),
     'workbench_access_field' => 1,
+  );
+
+  // Exported field_instance: 'node-landing_page-field_node_display_title'.
+  $field_instances['node-landing_page-field_node_display_title'] = array(
+    'bundle' => 'landing_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
   );
 
   // Exported field_instance: 'node-landing_page-field_related_links'.
@@ -483,6 +522,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
   t('Body');
   t('Category');
   t('Colour scheme');
+  t('Display title');
   t('Editorial Group');
   t('Related Links');
   t('Related Links View');

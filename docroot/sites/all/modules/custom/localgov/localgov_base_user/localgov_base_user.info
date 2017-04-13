@@ -5,7 +5,6 @@ package = localgov
 project = localgov_base_user
 dependencies[] = ctools
 dependencies[] = features
-dependencies[] = localgov_base_user
 dependencies[] = strongarm
 dependencies[] = user
 configure = admin/localgov/modules/localgov/localgov_base_user/admin

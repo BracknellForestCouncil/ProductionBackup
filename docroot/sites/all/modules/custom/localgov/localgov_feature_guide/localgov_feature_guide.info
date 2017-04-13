@@ -2,6 +2,7 @@ name = LocalGov Feature: Guide
 description = TODO: Add description for localgov_feature_guide module.
 core = 7.x
 package = localgov
+version = 7.x-1.0
 project = localgov_feature_guide
 dependencies[] = ctools
 dependencies[] = features

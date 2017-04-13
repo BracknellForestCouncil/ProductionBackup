@@ -163,6 +163,86 @@ function localgov_content_guide_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-guide-field_moderation'.
+  $field_instances['node-guide-field_moderation'] = array(
+    'bundle' => 'guide',
+    'default_value' => array(
+      0 => array(
+        'tid' => 7,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Select the team responsible for editing/moderating this content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -10,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_moderation',
+    'is_property' => 1,
+    'label' => 'Editorial Group',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -10,
+    ),
+    'workbench_access_field' => 1,
+  );
+
+  // Exported field_instance: 'node-guide-field_node_display_title'.
+  $field_instances['node-guide-field_node_display_title'] = array(
+    'bundle' => 'guide',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 101,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -4,
+    ),
+  );
+
   // Exported field_instance: 'node-guide-field_related'.
   $field_instances['node-guide-field_related'] = array(
     'bundle' => 'guide',
@@ -280,7 +360,10 @@ function localgov_content_guide_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Category');
   t('Description');
+  t('Display title');
+  t('Editorial Group');
   t('Related Links');
+  t('Select the team responsible for editing/moderating this content.');
   t('TODO: Add help text.');
   t('Tags');
   t('This will be used as the guide\'s description in search listings.');

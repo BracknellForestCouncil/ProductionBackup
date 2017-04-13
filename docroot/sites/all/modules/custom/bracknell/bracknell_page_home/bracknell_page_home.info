@@ -1,18 +1,13 @@
 name = Bracknell Page: Home
 description = TODO: Add description for bracknell_page_home module.
-
+core = 7.x
 package = bracknell
 project = bracknell_page_home
-
-core = 7.x
-
 dependencies[] = ctools
 dependencies[] = image
-dependencies[] = strongarm
 dependencies[] = localgov_base_pages
-
+dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
-
 features[image][] = home_feature
 features[variable][] = site_frontpage

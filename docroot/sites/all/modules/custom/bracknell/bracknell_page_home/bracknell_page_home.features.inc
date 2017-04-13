@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * bracknell_page_home2.features.inc
+ * bracknell_page_home.features.inc
  */
 
 /**

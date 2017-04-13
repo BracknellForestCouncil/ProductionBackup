@@ -48,6 +48,7 @@ function bracknell_entity_external_link_user_default_permissions() {
     'name' => 'eck administer external_link external_link entities',
     'roles' => array(
       'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
       'webmaster' => 'webmaster',
@@ -70,9 +71,7 @@ function bracknell_entity_external_link_user_default_permissions() {
     'name' => 'eck delete external_link external_link entities',
     'roles' => array(
       'content administrator' => 'content administrator',
-      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
-      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
@@ -115,6 +114,7 @@ function bracknell_entity_external_link_user_default_permissions() {
   $permissions['eck list external_link external_link entities'] = array(
     'name' => 'eck list external_link external_link entities',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

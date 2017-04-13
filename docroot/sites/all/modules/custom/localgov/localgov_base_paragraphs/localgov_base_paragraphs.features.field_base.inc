@@ -820,6 +820,44 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'type' => 'paragraphs',
   );
 
+  // Exported field_base: 'field_paragraph_showcase_items'.
+  $field_bases['field_paragraph_showcase_items'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_paragraph_showcase_items',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entity_reference_multiple',
+    'settings' => array(
+      'target_entities_bundles' => array(
+        'node' => array(
+          'target_bundles' => array(
+            'basic' => 'basic',
+            'guide' => 'guide',
+          ),
+        ),
+      ),
+      'target_types' => array(
+        'file' => 0,
+        'node' => 'node',
+        'paragraphs_item' => 0,
+        'redirect' => 0,
+        'taxonomy_term' => 0,
+        'taxonomy_vocabulary' => 0,
+        'user' => 0,
+        'workbench_moderation_transition' => 0,
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'entity_reference_multiple',
+  );
+
   // Exported field_base: 'field_paragraph_showcase_title'.
   $field_bases['field_paragraph_showcase_title'] = array(
     'active' => 1,

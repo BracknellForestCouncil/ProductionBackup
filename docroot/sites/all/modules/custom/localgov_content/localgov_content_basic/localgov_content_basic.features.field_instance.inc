@@ -186,24 +186,64 @@ function localgov_content_basic_field_default_field_instances() {
     'settings' => array(
       'add_mode' => 'select',
       'allowed_bundles' => array(
+        'accordion' => -1,
+        'accordion_pane' => -1,
         'basic' => 'basic',
         'blockquote' => 'blockquote',
+        'carousel' => -1,
+        'carousel_slide' => -1,
+        'category_showcase' => -1,
+        'category_showcase_item' => -1,
         'document' => 'document',
-        'easyread' => -1,
+        'featured_box' => -1,
         'highlighted' => 'highlighted',
         'image' => 'image',
+        'key_fact' => -1,
+        'key_fact_item' => -1,
+        'layout_1_col_12' => 'layout_1_col_12',
+        'layout_2_col_4_8' => 'layout_2_col_4_8',
+        'layout_2_col_6_6' => 'layout_2_col_6_6',
+        'layout_2_col_8_4' => 'layout_2_col_8_4',
+        'layout_3_col_3_3_6' => 'layout_3_col_3_3_6',
+        'layout_3_col_4_4_4' => 'layout_3_col_4_4_4',
+        'layout_3_col_6_3_3' => 'layout_3_col_6_3_3',
         'link' => 'link',
+        'map' => -1,
+        'promotional_area' => -1,
+        'tab_panel' => -1,
         'table' => 'table',
+        'tabs' => -1,
+        'video' => -1,
       ),
       'bundle_weights' => array(
+        'accordion' => 2,
+        'accordion_pane' => 3,
         'basic' => -16,
         'blockquote' => -15,
+        'carousel' => 6,
+        'carousel_slide' => 7,
+        'category_showcase' => 8,
+        'category_showcase_item' => 9,
         'document' => -14,
-        'easyread' => -13,
+        'featured_box' => 11,
         'highlighted' => -12,
         'image' => -11,
+        'key_fact' => 14,
+        'key_fact_item' => 15,
+        'layout_1_col_12' => 16,
+        'layout_2_col_4_8' => 17,
+        'layout_2_col_6_6' => 18,
+        'layout_2_col_8_4' => 19,
+        'layout_3_col_3_3_6' => 20,
+        'layout_3_col_4_4_4' => 21,
+        'layout_3_col_6_3_3' => 22,
         'link' => -10,
+        'map' => 24,
+        'promotional_area' => 25,
+        'tab_panel' => 28,
         'table' => -9,
+        'tabs' => 27,
+        'video' => 29,
       ),
       'default_edit_mode' => 'open',
       'title' => 'Section',
@@ -218,6 +258,98 @@ function localgov_content_basic_field_default_field_instances() {
       'weight' => 5,
     ),
     'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-basic-field_moderation'.
+  $field_instances['node-basic-field_moderation'] = array(
+    'bundle' => 'basic',
+    'default_value' => array(
+      0 => array(
+        'tid' => 7,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Select the team responsible for editing/moderating this content.',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -10,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_moderation',
+    'is_property' => 1,
+    'label' => 'Editorial Group',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => -10,
+    ),
+    'workbench_access_field' => 1,
+  );
+
+  // Exported field_instance: 'node-basic-field_node_display_title'.
+  $field_instances['node-basic-field_node_display_title'] = array(
+    'bundle' => 'basic',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
   );
 
   // Exported field_instance: 'node-basic-field_promotional_hero'.
@@ -477,9 +609,12 @@ function localgov_content_basic_field_default_field_instances() {
   t('Contact Information');
   t('Contact Information Style');
   t('Content');
+  t('Display title');
+  t('Editorial Group');
   t('Promotional Hero');
   t('Related Links');
   t('Select contact information to display on this page.');
+  t('Select the team responsible for editing/moderating this content.');
   t('TODO: Add help text');
   t('TODO: Add help text.');
   t('Tags');

@@ -10,6 +10,29 @@
 function localgov_content_fact_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access localgov_content_fact'.
+  $permissions['access localgov_content_fact'] = array(
+    'name' => 'access localgov_content_fact',
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'localgov_content_fact',
+  );
+
+  // Exported permission: 'administer localgov_content_fact'.
+  $permissions['administer localgov_content_fact'] = array(
+    'name' => 'administer localgov_content_fact',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'localgov_content_fact',
+  );
+
   // Exported permission: 'create fact content'.
   $permissions['create fact content'] = array(
     'name' => 'create fact content',

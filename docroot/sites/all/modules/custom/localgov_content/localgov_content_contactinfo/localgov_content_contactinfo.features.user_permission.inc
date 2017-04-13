@@ -18,6 +18,7 @@ function localgov_content_contactinfo_user_default_permissions() {
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'localgov_content_contactinfo',
   );
@@ -28,6 +29,7 @@ function localgov_content_contactinfo_user_default_permissions() {
     'roles' => array(
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'localgov_content_contactinfo',
   );

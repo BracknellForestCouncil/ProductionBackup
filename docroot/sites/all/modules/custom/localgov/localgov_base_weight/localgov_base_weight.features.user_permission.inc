@@ -15,6 +15,7 @@ function localgov_base_weight_user_default_permissions() {
     'name' => 'access draggableviews',
     'roles' => array(
       'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
       'webmaster' => 'webmaster',

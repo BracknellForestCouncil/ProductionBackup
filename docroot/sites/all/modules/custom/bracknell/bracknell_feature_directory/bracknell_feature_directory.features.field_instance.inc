@@ -909,6 +909,44 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 1,
   );
 
+  // Exported field_instance: 'node-location_car_park-field_node_display_title'.
+  $field_instances['node-location_car_park-field_node_display_title'] = array(
+    'bundle' => 'location_car_park',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-location_car_park-field_opening_hours'.
   $field_instances['node-location_car_park-field_opening_hours'] = array(
     'bundle' => 'location_car_park',
@@ -1606,6 +1644,45 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 1,
   );
 
+  // Exported field_instance:
+  // 'node-location_community-field_node_display_title'.
+  $field_instances['node-location_community-field_node_display_title'] = array(
+    'bundle' => 'location_community',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-location_community-field_parking'.
   $field_instances['node-location_community-field_parking'] = array(
     'bundle' => 'location_community',
@@ -2021,6 +2098,44 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 1,
   );
 
+  // Exported field_instance: 'node-location_council-field_node_display_title'.
+  $field_instances['node-location_council-field_node_display_title'] = array(
+    'bundle' => 'location_council',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-location_council-field_website'.
   $field_instances['node-location_council-field_website'] = array(
     'bundle' => 'location_council',
@@ -2434,6 +2549,44 @@ function bracknell_feature_directory_field_default_field_instances() {
       'weight' => 10,
     ),
     'workbench_access_field' => 1,
+  );
+
+  // Exported field_instance: 'node-location_leisure-field_node_display_title'.
+  $field_instances['node-location_leisure-field_node_display_title'] = array(
+    'bundle' => 'location_leisure',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
   );
 
   // Exported field_instance: 'node-location_leisure-field_opening_hours'.
@@ -3059,6 +3212,44 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 1,
   );
 
+  // Exported field_instance: 'node-location_library-field_node_display_title'.
+  $field_instances['node-location_library-field_node_display_title'] = array(
+    'bundle' => 'location_library',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-location_library-field_opening_hours'.
   $field_instances['node-location_library-field_opening_hours'] = array(
     'bundle' => 'location_library',
@@ -3520,6 +3711,44 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 1,
   );
 
+  // Exported field_instance: 'node-location_main-field_node_display_title'.
+  $field_instances['node-location_main-field_node_display_title'] = array(
+    'bundle' => 'location_main',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-location_main-field_opening_hours'.
   $field_instances['node-location_main-field_opening_hours'] = array(
     'bundle' => 'location_main',
@@ -3869,6 +4098,44 @@ function bracknell_feature_directory_field_default_field_instances() {
       'weight' => 10,
     ),
     'workbench_access_field' => 1,
+  );
+
+  // Exported field_instance: 'node-location_park-field_node_display_title'.
+  $field_instances['node-location_park-field_node_display_title'] = array(
+    'bundle' => 'location_park',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
   );
 
   // Exported field_instance: 'node-location_park-field_park_about'.
@@ -4514,6 +4781,45 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 1,
   );
 
+  // Exported field_instance:
+  // 'node-location_playground-field_node_display_title'.
+  $field_instances['node-location_playground-field_node_display_title'] = array(
+    'bundle' => 'location_playground',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-location_playground-field_parking'.
   $field_instances['node-location_playground-field_parking'] = array(
     'bundle' => 'location_playground',
@@ -4912,6 +5218,44 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 1,
   );
 
+  // Exported field_instance: 'node-location_school-field_node_display_title'.
+  $field_instances['node-location_school-field_node_display_title'] = array(
+    'bundle' => 'location_school',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'label' => 'Display title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-location_school-field_related'.
   $field_instances['node-location_school-field_related'] = array(
     'bundle' => 'location_school',
@@ -5093,6 +5437,7 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Contact details');
   t('Directions');
   t('Directory entry');
+  t('Display title');
   t('Editorial Group');
   t('Facilities');
   t('Headteacher');

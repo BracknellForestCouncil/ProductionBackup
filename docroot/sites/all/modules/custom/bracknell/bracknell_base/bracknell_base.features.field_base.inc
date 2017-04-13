@@ -73,8 +73,18 @@ function bracknell_base_field_default_field_bases() {
         'node' => array(
           'target_bundles' => array(
             'basic' => 'basic',
+            'form' => 'form',
             'guide' => 'guide',
             'landing_page' => 'landing_page',
+            'location_car_park' => 'location_car_park',
+            'location_community' => 'location_community',
+            'location_council' => 'location_council',
+            'location_leisure' => 'location_leisure',
+            'location_library' => 'location_library',
+            'location_main' => 'location_main',
+            'location_park' => 'location_park',
+            'location_playground' => 'location_playground',
+            'location_school' => 'location_school',
             'promotional_page' => 'promotional_page',
           ),
         ),

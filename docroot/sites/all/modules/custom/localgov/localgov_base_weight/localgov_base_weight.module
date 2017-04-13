@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the LocalGov Base: Weight feature.
+ */
+
+include_once 'localgov_base_weight.features.inc';
+/**
+ * @file
  * localgov_base_weight.module
  * Code for the LocalGov Base: Weight module.
  *
