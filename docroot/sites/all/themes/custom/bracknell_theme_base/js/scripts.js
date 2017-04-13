@@ -73,61 +73,90 @@
 
   Drupal.behaviors.bracknellSearch = {
     attach: function attach(context, settings) {
+      var searchBlock = $('[data-js="search"]'),
+          searchButton;
 
-      $(window).resize(function(){
-        var mediaQuery = Modernizr.mq('only screen and (max-width: 768px)');
+      // Check if the search block exists before we do anything.
+      if (searchBlock.length !== 0) {
+        $(window).resize(function() {
+          var mediaQuery = Modernizr.mq('only screen and (max-width: 768px)');
+          if (mediaQuery) {
+            console.log('mobile');
+            // Check if the button exists, if not create and append the button.
+            if ($('[data-js="search-button"]').length === 0) {
+              createButton();
+              searchButton.insertBefore('[data-js="main-menu-button"]');
+            }
 
-        if (mediaQuery) {
-          // Hide search form.
-          $('.search').hide().attr('aria-hidden', 'true');
-
-          // Check if the button exists, if not create and append the button.
-          if ($('[data-js="search-button"]').length === 0) {
-            // Create search button.
-            var searchButton = $('<button>' +
-              '<span class="search-btn-copy"></span>' +
-              '</button>');
-            searchButton.attr({
-              'class': 'btn search-btn icon glyphicon glyphicon-search',
-              'aria-expanded': 'false',
-              'aria-controls': 'search-wrapper',
-              'data-toggle': 'closed',
-              'data-js': 'search-button'
-            }).find('.search-btn-copy').text(Drupal.t('Search'));
-            searchButton.insertBefore('[data-js="main-menu-button"]');
-
-            $('[data-js="search-button"]').on('click', function () {
-              var button = $(this),
-                  status = button.attr('aria-expanded'),
-                  searchForm = $('.search');
-
-              if (status === 'false') {
-                searchForm.show().attr({
-                  'aria-hidden': 'false'
-                });
-                button.attr({
-                  'aria-expanded': 'true',
-                  'data-toggle': 'open'
-                });
-              }
-              else {
-                searchForm.hide().attr({
-                  'aria-hidden': 'true'
-                });
-                button.attr({
-                  'aria-expanded': 'false',
-                  'data-toggle': 'closed'
-                });
-              }
-            });
+            if ($('.search form *').focus()) {
+              console.log('here');
+              // Hide search form.
+              actionClose();
+            }
+            else {
+              actionOpen();
+            }
           }
-        }
-        else {
-          // Reset the dom on desktop.
-          $('.search').show().removeAttr('aria-hidden');
-          $('[data-js="search-button"]').remove();
-        }
-      }).resize();
+          else {
+            console.log('desktop');
+            // Reset the dom on desktop.
+            searchBlock.show().removeAttr('aria-hidden');
+            $('[data-js="search-button"]').off().remove();
+          }
+        }).resize();
+      }
+
+      function createButton() {
+        // Create search button.
+        searchButton = $('<button>' +
+          '<span class="search-btn-copy">' + Drupal.t('Search') +'</span>' +
+          '</button>');
+
+        searchButton.attr({
+          'class': 'btn search-btn icon glyphicon glyphicon-search',
+          'aria-expanded': 'false',
+          'aria-controls': 'search-wrapper',
+          'data-toggle': 'closed',
+          'data-js': 'search-button'
+        });
+
+        searchButton.on('click', function () {
+          var button = $(this),
+              status = button.attr('aria-expanded');
+
+          console.log(status);
+          if (status === 'true') {
+            actionClose();
+          }
+          else {
+            actionOpen();
+          }
+        });
+      };
+
+      function actionOpen() {
+        searchBlock
+          .attr('aria-hidden', 'false')
+          .show()
+
+        searchButton
+          .attr({
+            'aria-expanded': 'true',
+            'data-toggle': 'open'
+          });
+      };
+
+      function actionClose() {
+        searchBlock
+          .attr('aria-hidden', 'true')
+          .hide()
+
+        searchButton
+          .attr({
+            'aria-expanded': 'false',
+            'data-toggle': 'closed'
+          });
+      };
     }
   };
 
