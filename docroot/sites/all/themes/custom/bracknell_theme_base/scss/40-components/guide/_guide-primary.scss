@@ -1,0 +1,41 @@
+// Guide Primary Navigation.
+
+.guide-navigation-primary {
+  background-color: $guide-nav-primary-bg-color;
+  padding: 25px 0;
+
+  .guide-navigation-primary-list {
+    @include breakpoint($screen-sm) {
+      column-count: 2;
+      column-gap: 30px;
+    }
+  }
+
+  .nav {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin-left: 20px;
+
+    li {
+      color: $guide-nav-primary-list-text-color;
+      display: list-item;
+      line-height: 1.25em;
+      margin-bottom: 20px;
+      position: static;
+    }
+
+    a {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 0;
+      vertical-align: top;
+
+      &:hover,
+      &:focus {
+        background-color: $guide-nav-primary-list-link-hover-bg-color;
+        border-radius: $border-radius-base;
+        text-decoration: none;
+      }
+    }
+  }
+}

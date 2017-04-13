@@ -34,6 +34,7 @@
 ?>
 
 <?php if ($tree || $has_links) : ?>
+<div class="guide-navigation-primary-list">
   <?php print str_replace("<ul", "<ol", str_replace("</ul", "</ol", $tree)); ?>
 
   <?php if ($has_links) : ?>
@@ -46,4 +47,5 @@
       <?php endif; ?>
   </div><!-- end .page-links -->
   <?php endif; ?>
+  </div><!-- end .guide-navigation-primary-list -->
 <?php endif; ?>
