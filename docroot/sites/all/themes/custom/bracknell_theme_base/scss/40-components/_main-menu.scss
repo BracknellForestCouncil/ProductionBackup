@@ -38,6 +38,8 @@
 
     .js & {
       ul {
+        padding-top: 40px;
+
         @include breakpoint($screen-md) {
           padding-bottom: 40px;
           padding-top: 80px;
