@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the Bracknell Feature: Town and Country feature.
+ */
+
+include_once 'bracknell_feature_townandcountry.features.inc';
+/**
+ * @file
  * bracknell_feature_townandcountry.module
  * Code for the Bracknell Feature: Town and Country module.
  *

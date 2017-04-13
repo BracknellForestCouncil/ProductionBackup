@@ -13,6 +13,13 @@ function bracknell_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'eck_clear_caches';
+  $strongarm->value = FALSE;
+  $export['eck_clear_caches'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_view_modes';
   $strongarm->value = array(
     'directory_entry' => array(

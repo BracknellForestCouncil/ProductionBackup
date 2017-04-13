@@ -6,7 +6,6 @@ project = localgov_base_content
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = list
-dependencies[] = localgov_base_content
 dependencies[] = node
 dependencies[] = strongarm
 dependencies[] = text

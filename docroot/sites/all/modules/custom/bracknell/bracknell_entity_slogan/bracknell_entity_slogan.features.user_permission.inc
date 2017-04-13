@@ -15,6 +15,7 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'eck add slogan bundles',
     'roles' => array(
       'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -24,8 +25,10 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'eck add slogan slogan entities',
     'roles' => array(
       'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -35,6 +38,7 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'eck administer slogan bundles',
     'roles' => array(
       'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -44,8 +48,10 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'eck administer slogan slogan entities',
     'roles' => array(
       'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -55,6 +61,7 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'eck delete slogan bundles',
     'roles' => array(
       'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -65,7 +72,7 @@ function bracknell_entity_slogan_user_default_permissions() {
     'roles' => array(
       'content administrator' => 'content administrator',
       'site administrator' => 'site administrator',
-      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -75,6 +82,7 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'eck edit slogan bundles',
     'roles' => array(
       'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -84,8 +92,10 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'eck edit slogan slogan entities',
     'roles' => array(
       'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -95,6 +105,7 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'eck list slogan bundles',
     'roles' => array(
       'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -103,9 +114,12 @@ function bracknell_entity_slogan_user_default_permissions() {
   $permissions['eck list slogan slogan entities'] = array(
     'name' => 'eck list slogan slogan entities',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -115,6 +129,7 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'eck view slogan bundles',
     'roles' => array(
       'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );
@@ -135,6 +150,7 @@ function bracknell_entity_slogan_user_default_permissions() {
     'name' => 'manage slogan properties',
     'roles' => array(
       'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'eck',
   );

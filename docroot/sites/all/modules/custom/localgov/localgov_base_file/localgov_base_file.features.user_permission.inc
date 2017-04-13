@@ -59,7 +59,10 @@ function localgov_base_file_user_default_permissions() {
   // Exported permission: 'administer files'.
   $permissions['administer files'] = array(
     'name' => 'administer files',
-    'roles' => array(),
+    'roles' => array(
+      'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'file_entity',
   );
 

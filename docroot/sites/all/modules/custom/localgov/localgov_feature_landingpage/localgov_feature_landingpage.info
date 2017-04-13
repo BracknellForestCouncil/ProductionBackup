@@ -5,7 +5,6 @@ package = localgov
 project = localgov_feature_landingpage
 dependencies[] = ctools
 dependencies[] = features
-dependencies[] = localgov_feature_landingpage
 dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = strongarm

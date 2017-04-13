@@ -837,6 +837,52 @@ function localgov_base_paragraphs_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'paragraphs_item-category_showcase-field_paragraph_showcase_items'.
+  $field_instances['paragraphs_item-category_showcase-field_paragraph_showcase_items'] = array(
+    'bundle' => 'category_showcase',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entity_reference_multiple',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entity_reference_multiple_label',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_paragraph_showcase_items',
+    'is_property' => 0,
+    'label' => 'Items',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entity_reference_multiple',
+      'settings' => array(
+        'autocomplete_limit' => 15,
+        'autocomplete_path' => '',
+        'autocomplete_query_like_type' => 'STARTS_WITH',
+      ),
+      'type' => 'entity_reference_multiple_autocomplete',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
   // 'paragraphs_item-category_showcase-field_paragraph_showcase_title'.
   $field_instances['paragraphs_item-category_showcase-field_paragraph_showcase_title'] = array(
     'bundle' => 'category_showcase',
@@ -4821,6 +4867,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Image');
   t('Image Position');
   t('Introduction');
+  t('Items');
   t('Link');
   t('Paragraph Accordion Panes');
   t('Promotional Area Layout');

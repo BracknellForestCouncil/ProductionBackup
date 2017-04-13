@@ -233,6 +233,48 @@ function localgov_content_form_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-form-field_moderation'.
+  $field_instances['node-form-field_moderation'] = array(
+    'bundle' => 'form',
+    'default_value' => array(
+      0 => array(
+        'tid' => 7,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Select the team responsible for editing/moderating this content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_moderation',
+    'is_property' => 1,
+    'label' => 'Editorial Group',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+    'workbench_access_field' => 1,
+  );
+
   // Exported field_instance: 'node-form-field_node_display_title'.
   $field_instances['node-form-field_node_display_title'] = array(
     'bundle' => 'form',
@@ -526,6 +568,7 @@ function localgov_content_form_field_default_field_instances() {
   t('Additional information');
   t('Category');
   t('Display title');
+  t('Editorial Group');
   t('Enter additional information for this form.');
   t('Enter an introduction for this form.');
   t('Enter the URL for the form.');
@@ -533,6 +576,7 @@ function localgov_content_form_field_default_field_instances() {
   t('Introduction');
   t('Promotional Hero');
   t('Related Links');
+  t('Select the team responsible for editing/moderating this content.');
   t('TODO: Add help text.');
   t('Tags');
   t('Weight');

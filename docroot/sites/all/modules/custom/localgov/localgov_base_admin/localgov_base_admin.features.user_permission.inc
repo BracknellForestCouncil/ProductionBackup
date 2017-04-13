@@ -85,6 +85,8 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['access site-wide contact form'] = array(
     'name' => 'access site-wide contact form',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
       'webmaster' => 'webmaster',
     ),
     'module' => 'contact',
@@ -94,6 +96,7 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['access user contact forms'] = array(
     'name' => 'access user contact forms',
     'roles' => array(
+      'authenticated user' => 'authenticated user',
       'webmaster' => 'webmaster',
     ),
     'module' => 'contact',
@@ -112,6 +115,7 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['administer blocks'] = array(
     'name' => 'administer blocks',
     'roles' => array(
+      'site administrator' => 'site administrator',
       'webmaster' => 'webmaster',
     ),
     'module' => 'block',
@@ -121,6 +125,8 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['administer contact forms'] = array(
     'name' => 'administer contact forms',
     'roles' => array(
+      'content administrator' => 'content administrator',
+      'site administrator' => 'site administrator',
       'webmaster' => 'webmaster',
     ),
     'module' => 'contact',
@@ -130,6 +136,7 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['administer dependencies'] = array(
     'name' => 'administer dependencies',
     'roles' => array(
+      'content administrator' => 'content administrator',
       'webmaster' => 'webmaster',
     ),
     'module' => 'conditional_fields',
@@ -157,6 +164,7 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['administer filters'] = array(
     'name' => 'administer filters',
     'roles' => array(
+      'site administrator' => 'site administrator',
       'webmaster' => 'webmaster',
     ),
     'module' => 'filter',
@@ -166,6 +174,7 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',
     'roles' => array(
+      'site administrator' => 'site administrator',
       'webmaster' => 'webmaster',
     ),
     'module' => 'image',
