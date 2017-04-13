@@ -118,3 +118,11 @@ function bracknell_deploy_update_7004() {
     }
   }
 }
+
+/**
+ * Enable Modernizr module.
+ */
+function bracknell_deploy_update_7005() {
+  module_enable(array('modernizr'));
+}
+
