@@ -3719,11 +3719,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   // Exported field_instance: 'paragraphs_item-link-field_icon'.
   $field_instances['paragraphs_item-link-field_icon'] = array(
     'bundle' => 'link',
-    'default_value' => array(
-      0 => array(
-        'value' => 'theme-icon-external-link',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select an icon from the list or select "- None -" if you do not wish to display an icon.',
     'display' => array(
