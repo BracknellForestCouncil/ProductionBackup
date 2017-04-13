@@ -5,21 +5,26 @@
 }
 
 .logo {
+  padding-left: 0;
   position: static;
   text-align: right;
+
+  @include breakpoint($screen-sm) {
+    padding-right: 0;
+  }
 }
 
 .logo-container {
   float: left;
   height: auto;
-  margin: 15px 0 0 -10px;
+  margin: 0;
   position: relative;
-  width: 110px;
+  width: 140px;
   z-index: 150;
 
   @include breakpoint($screen-sm) {
     margin-bottom: 15px;
-    width: auto;
+    width: 100%;
   }
 }
 
@@ -27,7 +32,7 @@
   background: $header-logo-bg-color;
   border-radius: 0 0 5px 5px;
   display: block;
-  padding: 0 10px 10px;
+  padding: 15px;
   position: relative;
 }
 
