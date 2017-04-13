@@ -1,0 +1,69 @@
+// Guide Secondary Navigation.
+
+
+.guide-navigation-secondary {
+  .page-links {
+    display: inline-block;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      display: block;
+      width: 100%;
+    }
+
+    .btn {
+      background-color: $guide-nav-secondary-button-bg-color;
+      color: $guide-nav-secondary-button-text-color;
+      white-space: normal;
+
+      &:hover {
+        background-color: $guide-nav-secondary-button-hover-bg-color;
+        color: $guide-nav-secondary-button-hover-text-color;
+      }
+    }
+
+    .icon {
+      &:before {
+        display: inline;
+        font-size: $font-size-13;
+        line-height: 0.7;
+        vertical-align: top;
+      }
+    }
+
+    .pagination-title {
+      display: block;
+    }
+
+    .page-previous {
+      float: left;
+      text-align: left;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      .pagination-title {
+        padding-left: 42px;
+      }
+    }
+
+    .page-next {
+      float: right;
+      text-align: right;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      .pagination-title {
+        padding-right: 42px;
+      }
+    }
+
+    .pagination-label {
+      font-size: $font-size-20;
+    }
+  }
+}
+
