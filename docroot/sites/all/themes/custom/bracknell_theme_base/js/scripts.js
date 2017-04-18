@@ -2,7 +2,7 @@
 
 (function ($) {
   Drupal.behaviors.bracknellThemeBaseBehavior = {
-    attach: function attach(context, settings) {
+    attach: function (context, settings) {
       // Fix related links location on guide pages
       // media query checking for minimum 992px  event handler
       if (matchMedia) {
@@ -22,7 +22,7 @@
   };
 
   Drupal.behaviors.bracknellMainMenu = {
-    attach: function attach(context, settings) {
+    attach: function (context, settings) {
       $('[data-js="main-menu"]').find('.collapse').hide().attr('aria-hidden', 'true');
 
         var mainMenuButton = $('<button>' +
@@ -72,7 +72,7 @@
   };
 
   Drupal.behaviors.bracknellSearch = {
-    attach: function attach(context, settings) {
+    attach: function (context, settings) {
       var searchBlock = $('[data-js="search"]'),
           searchButton,
           searchStatus = 'closed';
