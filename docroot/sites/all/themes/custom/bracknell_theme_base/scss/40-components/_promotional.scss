@@ -1,15 +1,41 @@
-.paragraphs-item-promotional-area {
+// Promotional area.
+
+.promotional-area {
+  @include clearfix();
+  margin-bottom: 30px;
+
+  @include breakpoint($screen-md) {
+    .promotional-area-content {
+      padding-right: 0;
+
+      .promo-text {
+        padding-right: 15px;
+      }
+    }
+
+    .promotional-area-media {
+      padding-left: 0;
+    }
+  }
+
   .promo-text {
-    border-top: 5px solid #000;
+    border: {
+      color: $promotional-area-border-color;
+      style: solid;
+      width: 5px 0 0 0;
+    }
     @include applyColour(border-top-color);
   }
+
   .promo-description {
     margin-bottom: 20px;
   }
+
   .promo-image {
     &.right {
       padding-left: 0;
     }
+
     &.left {
       padding-right: 0;
     }
