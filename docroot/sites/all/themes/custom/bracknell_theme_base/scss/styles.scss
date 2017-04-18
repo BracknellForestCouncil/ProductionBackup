@@ -41,9 +41,8 @@
 '40-components/search',
 '40-components/breadcrumbs',
 '40-components/53-deeson-socials-icons',
-'40-components/54-deeson-gridder',
 '40-components/55-deeson-news-events',
-'40-components/56-deeson-pagination',
+'40-components/pagination',
 '40-components/58-deeson-news',
 '40-components/59-deeson-related',
 '40-components/60-deeson-content-page-table',
@@ -71,7 +70,8 @@
 '40-components/location',
 '40-components/guide/guide-primary',
 '40-components/guide/guide-secondary',
-'40-components/related-pages';
+'40-components/related-pages',
+'40-components/services';
 
 // Pages.
 @import
@@ -80,7 +80,6 @@
 // Overrides.
 @import
 '90-overrides-module/general',
-'90-overrides-module/localgov_base_navigation.navigation_home',
 '90-overrides-module/navbar',
 '90-overrides-module/small-print',
 '90-overrides-module/tablefield';
