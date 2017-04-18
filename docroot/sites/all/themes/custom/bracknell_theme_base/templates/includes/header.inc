@@ -10,7 +10,7 @@
       </div><!-- end .col -->
       <div class="header-section col-xs-12 col-sm-10">
         <div class="header-tools">
-          <div class="search col-sm-8 col-md-5 col-md-offset-2">
+          <div class="search col-sm-8 col-md-5 col-md-offset-2" role="search">
             <?php if (!empty($page['search'])) : ?>
               <?php print render($page['search']); ?>
             <?php endif; ?>
