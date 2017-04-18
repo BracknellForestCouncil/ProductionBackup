@@ -38,3 +38,10 @@ body.page-taxonomy-term .page-header {
   float: left;
   margin-right: 1em;
 }
+
+.full-width {
+  margin-left: -9999rem !important;
+  margin-right: -9999rem !important;
+  padding-left: 9999rem !important;
+  padding-right: 9999rem !important;
+}
