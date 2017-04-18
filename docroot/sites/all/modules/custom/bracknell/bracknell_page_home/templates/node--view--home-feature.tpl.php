@@ -87,7 +87,7 @@
   hide($content['field_image']);
 ?>
 
-<div class="container block-30" id="main-content" role="main">
+<div class="container block-30" id="main-content">
 	<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> row no-pad clearfix"<?php print $attributes; ?>>
 		<div class="col-md-6 green-top" <?php print $content_attributes; ?>>
 			<h2 class="h-light" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>

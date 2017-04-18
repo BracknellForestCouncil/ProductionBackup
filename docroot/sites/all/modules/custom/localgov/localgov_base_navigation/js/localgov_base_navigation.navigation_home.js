@@ -13,10 +13,12 @@
         'data-toggle': 'collapse',
         'data-target': '.nav-link-collapse, .nav-content-collapse',
         'aria-expanded': 'false',
-        'aria-controls': 'homepage-nav'
+        'aria-controls': 'homepage-nav',
+        'data-js': 'services-btn'
       });
       servicesButton.html(Drupal.t('More services') + ' <span class="icon theme-icon-triangle-down"></span>');
       servicesButton.insertAfter('#homepage-nav');
+      $('[data-js="services-btn"]').wrap('<div class="services-control" />');
 
       // Call Gridder
       $('.gridder').gridderExpander({

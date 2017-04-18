@@ -10,8 +10,8 @@
  */
 ?>
 
-<div id="panels-layout-home" role="main">
-	<div id="panels-layout-home-navigation" class="row">
+<div id="panels-layout-home" class="services">
+	<div id="panels-layout-home-navigation">
 		<?php print $content['navigation']; ?>
 	</div>
 	<div id="panels-layout-home-feature-one" class="row">
