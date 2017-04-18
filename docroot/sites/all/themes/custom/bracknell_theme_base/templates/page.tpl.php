@@ -110,6 +110,9 @@
       <?php print $hero; ?>
     <?php endif; ?>
   </div><!-- end .promotional-hero -->
+  <?php if ($slogan) : ?>
+    <?php print $slogan; ?>
+  <?php endif; ?>
   <div class="container">
     <div class="row">
       <div<?php print $content_column_class ?>>
