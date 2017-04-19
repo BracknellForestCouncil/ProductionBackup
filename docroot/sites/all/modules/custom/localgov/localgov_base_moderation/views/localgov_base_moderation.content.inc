@@ -2,13 +2,10 @@
 /**
  * @file
  * localgov_base_moderation.content.inc
- * TODO: Add file description
+ * Contains the exported form of the localgov_base_moderation module view
+ * "Workbench (Content)"
  *
  * @package   localgov_base_moderation
- * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
- * @copyright Copyright (c) 2016, Craig Gardener
- * @license   http://opensource.org/licenses/gpl-license.php
- *            GNU General Public License, version 2 or later
  */
 
 $view = new view();
@@ -29,6 +26,7 @@ $handler->display->display_options['access']['type'] = 'perm';
 $handler->display->display_options['cache']['type'] = 'none';
 $handler->display->display_options['query']['type'] = 'views_query';
 $handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
 $handler->display->display_options['pager']['type'] = 'full';
 $handler->display->display_options['pager']['options']['items_per_page'] = '25';
 $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -43,6 +41,8 @@ $handler->display->display_options['style_options']['columns'] = array(
   'vid' => 'vid',
   'hid' => 'hid',
   'title' => 'title',
+  'field_category' => 'field_category',
+  'field_tags' => 'field_tags',
   'section' => 'section',
   'name' => 'name',
   'timestamp' => 'timestamp',
@@ -55,10 +55,12 @@ $handler->display->display_options['style_options']['columns'] = array(
   'workbench_moderation_history_link' => 'workbench_moderation_history_link',
   'custom_contentinfo' => 'custom_contentinfo',
   'nothing' => 'nothing',
+  'nothing_1' => 'nothing_1',
+  'custom_moderation' => 'custom_moderation',
   'custom_revision' => 'custom_revision',
   'moderation_actions' => 'moderation_actions',
 );
-$handler->display->display_options['style_options']['default'] = 'stamp';
+$handler->display->display_options['style_options']['default'] = 'timestamp';
 $handler->display->display_options['style_options']['info'] = array(
   'nid' => array(
     'sortable' => 0,
@@ -88,21 +90,33 @@ $handler->display->display_options['style_options']['info'] = array(
     'separator' => '',
     'empty_column' => 0,
   ),
+  'field_category' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_tags' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
   'section' => array(
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
   ),
   'name' => array(
-    'sortable' => 0,
+    'sortable' => 1,
     'default_sort_order' => 'asc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
   ),
   'timestamp' => array(
-    'sortable' => 0,
-    'default_sort_order' => 'asc',
+    'sortable' => 1,
+    'default_sort_order' => 'desc',
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
@@ -120,7 +134,7 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
   'state' => array(
-    'sortable' => 0,
+    'sortable' => 1,
     'default_sort_order' => 'asc',
     'align' => '',
     'separator' => '',
@@ -158,6 +172,16 @@ $handler->display->display_options['style_options']['info'] = array(
     'empty_column' => 0,
   ),
   'nothing' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'nothing_1' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'custom_moderation' => array(
     'align' => '',
     'separator' => '',
     'empty_column' => 0,
@@ -426,6 +450,65 @@ $handler->display->display_options['arguments']['state']['summary']['number_of_r
 $handler->display->display_options['arguments']['state']['summary']['format'] = 'default_summary';
 $handler->display->display_options['arguments']['state']['summary_options']['items_per_page'] = '25';
 $handler->display->display_options['arguments']['state']['limit'] = '0';
+/* Filter criterion: Content: Title */
+$handler->display->display_options['filters']['title']['id'] = 'title';
+$handler->display->display_options['filters']['title']['table'] = 'node';
+$handler->display->display_options['filters']['title']['field'] = 'title';
+$handler->display->display_options['filters']['title']['relationship'] = 'nid';
+$handler->display->display_options['filters']['title']['operator'] = '!=';
+$handler->display->display_options['filters']['title']['group'] = 1;
+$handler->display->display_options['filters']['title']['exposed'] = TRUE;
+$handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+$handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+$handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+$handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+$handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  5 => 0,
+  3 => 0,
+  6 => 0,
+);
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['relationship'] = 'nid';
+$handler->display->display_options['filters']['type']['group'] = 1;
+$handler->display->display_options['filters']['type']['exposed'] = TRUE;
+$handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+$handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+$handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+$handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+$handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  5 => 0,
+  3 => 0,
+  6 => 0,
+);
+/* Filter criterion: Content: Author uid */
+$handler->display->display_options['filters']['uid']['id'] = 'uid';
+$handler->display->display_options['filters']['uid']['table'] = 'node';
+$handler->display->display_options['filters']['uid']['field'] = 'uid';
+$handler->display->display_options['filters']['uid']['value'] = '';
+$handler->display->display_options['filters']['uid']['group'] = 1;
+$handler->display->display_options['filters']['uid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
+$handler->display->display_options['filters']['uid']['expose']['label'] = 'Author';
+$handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
+$handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
+$handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  3 => 0,
+  6 => 0,
+  5 => 0,
+  7 => 0,
+);
 /* Filter criterion: Workbench Moderation: Current */
 $handler->display->display_options['filters']['is_current']['id'] = 'is_current';
 $handler->display->display_options['filters']['is_current']['table'] = 'workbench_moderation_node_history';
@@ -437,8 +520,6 @@ $handler->display->display_options['filters']['is_current']['expose']['operator_
 $handler->display->display_options['filters']['is_current']['expose']['label'] = 'Current Revision';
 $handler->display->display_options['filters']['is_current']['expose']['operator'] = 'is_current_op';
 $handler->display->display_options['filters']['is_current']['expose']['identifier'] = 'is_current';
-$handler->display->display_options['filters']['is_current']['expose']['required'] = FALSE;
-$handler->display->display_options['filters']['is_current']['expose']['remember'] = FALSE;
 $handler->display->display_options['filters']['is_current']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
@@ -457,7 +538,6 @@ $handler->display->display_options['filters']['state']['expose']['operator_id'] 
 $handler->display->display_options['filters']['state']['expose']['label'] = 'State';
 $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
 $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
-$handler->display->display_options['filters']['state']['expose']['remember'] = FALSE;
 $handler->display->display_options['filters']['state']['expose']['remember_roles'] = array(
   2 => '2',
   1 => 0,
@@ -489,47 +569,6 @@ $handler->display->display_options['filters']['field_moderation_tid']['expose'][
 $handler->display->display_options['filters']['field_moderation_tid']['type'] = 'select';
 $handler->display->display_options['filters']['field_moderation_tid']['vocabulary'] = 'moderation';
 $handler->display->display_options['filters']['field_moderation_tid']['hierarchy'] = 1;
-/* Filter criterion: Content: Type */
-$handler->display->display_options['filters']['type']['id'] = 'type';
-$handler->display->display_options['filters']['type']['table'] = 'node';
-$handler->display->display_options['filters']['type']['field'] = 'type';
-$handler->display->display_options['filters']['type']['relationship'] = 'nid';
-$handler->display->display_options['filters']['type']['group'] = 1;
-$handler->display->display_options['filters']['type']['exposed'] = TRUE;
-$handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-$handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
-$handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
-$handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-$handler->display->display_options['filters']['type']['expose']['remember'] = FALSE;
-$handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
-  2 => '2',
-  1 => 0,
-  4 => 0,
-  5 => 0,
-  3 => 0,
-  6 => 0,
-);
-/* Filter criterion: Content: Title */
-$handler->display->display_options['filters']['title']['id'] = 'title';
-$handler->display->display_options['filters']['title']['table'] = 'node';
-$handler->display->display_options['filters']['title']['field'] = 'title';
-$handler->display->display_options['filters']['title']['relationship'] = 'nid';
-$handler->display->display_options['filters']['title']['operator'] = '!=';
-$handler->display->display_options['filters']['title']['group'] = 1;
-$handler->display->display_options['filters']['title']['exposed'] = TRUE;
-$handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-$handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
-$handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-$handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-$handler->display->display_options['filters']['title']['expose']['remember'] = FALSE;
-$handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-  2 => '2',
-  1 => 0,
-  4 => 0,
-  5 => 0,
-  3 => 0,
-  6 => 0,
-);
 
 /* Display: Page: List */
 $handler = $view->new_display('page', 'Page: List', 'page_list');
@@ -553,12 +592,117 @@ $handler->display->display_options['arguments']['state']['field'] = 'state';
 $handler->display->display_options['arguments']['state']['exception']['title_enable'] = TRUE;
 $handler->display->display_options['arguments']['state']['title_enable'] = TRUE;
 $handler->display->display_options['arguments']['state']['title'] = 'Content in "%1" state';
+$handler->display->display_options['arguments']['state']['breadcrumb_enable'] = TRUE;
 $handler->display->display_options['arguments']['state']['breadcrumb'] = 'Content in "%1" state';
 $handler->display->display_options['arguments']['state']['default_argument_type'] = 'fixed';
 $handler->display->display_options['arguments']['state']['summary']['number_of_records'] = '0';
 $handler->display->display_options['arguments']['state']['summary']['format'] = 'default_summary';
 $handler->display->display_options['arguments']['state']['summary_options']['items_per_page'] = '25';
 $handler->display->display_options['arguments']['state']['limit'] = '0';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Title */
+$handler->display->display_options['filters']['title']['id'] = 'title';
+$handler->display->display_options['filters']['title']['table'] = 'node';
+$handler->display->display_options['filters']['title']['field'] = 'title';
+$handler->display->display_options['filters']['title']['relationship'] = 'nid';
+$handler->display->display_options['filters']['title']['operator'] = 'contains';
+$handler->display->display_options['filters']['title']['group'] = 1;
+$handler->display->display_options['filters']['title']['exposed'] = TRUE;
+$handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+$handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+$handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+$handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+$handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  3 => 0,
+  6 => 0,
+  5 => 0,
+  7 => 0,
+);
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['relationship'] = 'nid';
+$handler->display->display_options['filters']['type']['group'] = 1;
+$handler->display->display_options['filters']['type']['exposed'] = TRUE;
+$handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+$handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+$handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+$handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+$handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  5 => 0,
+  3 => 0,
+  6 => 0,
+);
+/* Filter criterion: Content: Author uid */
+$handler->display->display_options['filters']['uid']['id'] = 'uid';
+$handler->display->display_options['filters']['uid']['table'] = 'node';
+$handler->display->display_options['filters']['uid']['field'] = 'uid';
+$handler->display->display_options['filters']['uid']['value'] = '';
+$handler->display->display_options['filters']['uid']['group'] = 1;
+$handler->display->display_options['filters']['uid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
+$handler->display->display_options['filters']['uid']['expose']['label'] = 'Author';
+$handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
+$handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
+$handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  3 => 0,
+  6 => 0,
+  5 => 0,
+  7 => 0,
+);
+/* Filter criterion: Workbench Moderation: Current */
+$handler->display->display_options['filters']['is_current']['id'] = 'is_current';
+$handler->display->display_options['filters']['is_current']['table'] = 'workbench_moderation_node_history';
+$handler->display->display_options['filters']['is_current']['field'] = 'is_current';
+$handler->display->display_options['filters']['is_current']['value'] = '1';
+$handler->display->display_options['filters']['is_current']['group'] = 1;
+$handler->display->display_options['filters']['is_current']['exposed'] = TRUE;
+$handler->display->display_options['filters']['is_current']['expose']['operator_id'] = '';
+$handler->display->display_options['filters']['is_current']['expose']['label'] = 'Current Revision';
+$handler->display->display_options['filters']['is_current']['expose']['operator'] = 'is_current_op';
+$handler->display->display_options['filters']['is_current']['expose']['identifier'] = 'is_current';
+$handler->display->display_options['filters']['is_current']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  5 => 0,
+  3 => 0,
+  6 => 0,
+);
+/* Filter criterion: Content: Editorial Group (field_moderation) */
+$handler->display->display_options['filters']['field_moderation_tid']['id'] = 'field_moderation_tid';
+$handler->display->display_options['filters']['field_moderation_tid']['table'] = 'field_data_field_moderation';
+$handler->display->display_options['filters']['field_moderation_tid']['field'] = 'field_moderation_tid';
+$handler->display->display_options['filters']['field_moderation_tid']['relationship'] = 'nid';
+$handler->display->display_options['filters']['field_moderation_tid']['group'] = 1;
+$handler->display->display_options['filters']['field_moderation_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_moderation_tid']['expose']['operator_id'] = 'field_moderation_tid_op';
+$handler->display->display_options['filters']['field_moderation_tid']['expose']['label'] = 'Editorial Group';
+$handler->display->display_options['filters']['field_moderation_tid']['expose']['operator'] = 'field_moderation_tid_op';
+$handler->display->display_options['filters']['field_moderation_tid']['expose']['identifier'] = 'field_moderation_tid';
+$handler->display->display_options['filters']['field_moderation_tid']['expose']['remember'] = TRUE;
+$handler->display->display_options['filters']['field_moderation_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  5 => 0,
+  3 => 0,
+  6 => 0,
+);
+$handler->display->display_options['filters']['field_moderation_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_moderation_tid']['vocabulary'] = 'moderation';
+$handler->display->display_options['filters']['field_moderation_tid']['hierarchy'] = 1;
 $handler->display->display_options['path'] = 'admin/localgov/modules/localgov_base_moderation/status/%';
 $handler->display->display_options['menu']['title'] = 'Moderation: By Status';
 $handler->display->display_options['menu']['weight'] = '0';
@@ -588,6 +732,104 @@ $handler->display->display_options['arguments']['field_moderation_tid']['summary
 $handler->display->display_options['arguments']['field_moderation_tid']['specify_validation'] = TRUE;
 $handler->display->display_options['arguments']['field_moderation_tid']['validate']['type'] = 'taxonomy_term';
 $handler->display->display_options['arguments']['field_moderation_tid']['validate_options']['type'] = 'convert';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Title */
+$handler->display->display_options['filters']['title']['id'] = 'title';
+$handler->display->display_options['filters']['title']['table'] = 'node';
+$handler->display->display_options['filters']['title']['field'] = 'title';
+$handler->display->display_options['filters']['title']['relationship'] = 'nid';
+$handler->display->display_options['filters']['title']['operator'] = '!=';
+$handler->display->display_options['filters']['title']['group'] = 1;
+$handler->display->display_options['filters']['title']['exposed'] = TRUE;
+$handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+$handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+$handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+$handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+$handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  5 => 0,
+  3 => 0,
+  6 => 0,
+);
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['relationship'] = 'nid';
+$handler->display->display_options['filters']['type']['group'] = 1;
+$handler->display->display_options['filters']['type']['exposed'] = TRUE;
+$handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+$handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+$handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+$handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+$handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  5 => 0,
+  3 => 0,
+  6 => 0,
+);
+/* Filter criterion: Content: Author uid */
+$handler->display->display_options['filters']['uid']['id'] = 'uid';
+$handler->display->display_options['filters']['uid']['table'] = 'node';
+$handler->display->display_options['filters']['uid']['field'] = 'uid';
+$handler->display->display_options['filters']['uid']['value'] = '';
+$handler->display->display_options['filters']['uid']['group'] = 1;
+$handler->display->display_options['filters']['uid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
+$handler->display->display_options['filters']['uid']['expose']['label'] = 'Author';
+$handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
+$handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
+$handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  3 => 0,
+  6 => 0,
+  5 => 0,
+  7 => 0,
+);
+/* Filter criterion: Workbench Moderation: Current */
+$handler->display->display_options['filters']['is_current']['id'] = 'is_current';
+$handler->display->display_options['filters']['is_current']['table'] = 'workbench_moderation_node_history';
+$handler->display->display_options['filters']['is_current']['field'] = 'is_current';
+$handler->display->display_options['filters']['is_current']['value'] = '1';
+$handler->display->display_options['filters']['is_current']['group'] = 1;
+$handler->display->display_options['filters']['is_current']['exposed'] = TRUE;
+$handler->display->display_options['filters']['is_current']['expose']['operator_id'] = '';
+$handler->display->display_options['filters']['is_current']['expose']['label'] = 'Current Revision';
+$handler->display->display_options['filters']['is_current']['expose']['operator'] = 'is_current_op';
+$handler->display->display_options['filters']['is_current']['expose']['identifier'] = 'is_current';
+$handler->display->display_options['filters']['is_current']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  5 => 0,
+  3 => 0,
+  6 => 0,
+);
+/* Filter criterion: Workbench Moderation: State */
+$handler->display->display_options['filters']['state']['id'] = 'state';
+$handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
+$handler->display->display_options['filters']['state']['field'] = 'state';
+$handler->display->display_options['filters']['state']['group'] = 1;
+$handler->display->display_options['filters']['state']['exposed'] = TRUE;
+$handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
+$handler->display->display_options['filters']['state']['expose']['label'] = 'State';
+$handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
+$handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
+$handler->display->display_options['filters']['state']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  4 => 0,
+  5 => 0,
+  3 => 0,
+  6 => 0,
+);
 $handler->display->display_options['path'] = 'admin/localgov/modules/localgov/localgov_base_moderation/group/%';
 $handler->display->display_options['menu']['title'] = 'Moderation: By Group';
 $handler->display->display_options['menu']['weight'] = '0';

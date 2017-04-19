@@ -22,11 +22,6 @@
   @include fullwidth-bg($helper-green-extra-light-bg-color);
 }
 
-// Common spacing
-.block-30 {
-  margin-bottom: $commonSpacing;
-}
-
 .pad-30-top {
   padding-top: $commonSpacing;
 }
@@ -80,16 +75,6 @@
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.pod-inner {
-  padding: 20px 0;
-}
-
-.pod-emphasise {
-  background: $pod-emphasise-bg-color;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .green-base {

@@ -1,5 +1,5 @@
-<div class="outer-wrap global-footer hide-print">
-  <footer class="<?php print $container_class; ?>" role="contentinfo">
+<footer class="footer" role="contentinfo">
+  <div class="<?php print $container_class; ?>">
     <?php print render($page['footer']); ?>
     <div class="row">
       <div class="col-xs-12 col-sm-8">
@@ -8,12 +8,12 @@
           print theme('links__footer_menu', array(
             'links' => $menu,
             'attributes' => array(
-              'class' => array('global-footer-links')
+              'class' => array('footer-links')
             )
           ));
-          ?>
+        ?>
       </div>
-      <div class="col-xs-12 col-sm-4 socials socials-global-footer">
+      <div class="col-xs-12 col-sm-4 social-media">
         <ul>
           <li>
             <a href="https://www.instagram.com/bracknellforest" target="_blank">
@@ -47,5 +47,5 @@
         <p class="copyright"><small>© Bracknell Forest Council</small></p>
       </div>
     </div>
-  </footer>
-</div>
+  </div>
+</footer>

@@ -1,15 +1,37 @@
+// Services.
 
-.full-width {
-  margin-left: -9999rem !important;
-  margin-right: -9999rem !important;
-  padding-left: 9999rem !important;
-  padding-right: 9999rem !important;
+.services-title {
+  margin-top: 0;
+}
+
+.services-content {
+  margin-bottom: 30px;
+  padding-top: 1px;
+  padding-bottom: 8px;
+}
+
+.services-control {
+  text-align: center;
 }
 
 .gridder {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.gridder-list {
+  display: inline-block;
+  font-size: $font-size-01;
+  vertical-align: top;
+}
+
+.gridder-show {
+  display: block;
+  float: left;
+  font-size: $font-size-01;
+  position: relative;
+  width: 100%;
 }
 
 .gridder-content,
@@ -27,15 +49,7 @@
 
   @media (max-width: $screen-sm) {
     width: 100%;
-    @include rowMachine(0,2%);
-  }
-}
-
-#navigation-home-button-show-hide {
-  @include gridWidthSingleCenter(4,1%);
-
-  @media (max-width: $screen-sm) {
-    width: auto;
+    @include gridRows(0, 2%);
   }
 }
 
@@ -161,7 +175,8 @@ a.gridder-close {
 
     @media (max-width: $screen-md) {
       width: 100%;
-      @include rowMachine(0,0%);
+      @include gridRows(0, 0%);
+
       margin-right: 0;
     }
   }
@@ -183,6 +198,8 @@ a.gridder-close {
   }
 }
 
+
+// Services icons.
 .homepage-nav-item {
   .icon {
     font-family: $icon-font-base-name;
