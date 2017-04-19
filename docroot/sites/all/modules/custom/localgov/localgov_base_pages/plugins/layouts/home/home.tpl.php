@@ -10,8 +10,8 @@
  */
 ?>
 
-<div id="panels-layout-home" role="main">
-	<div id="panels-layout-home-navigation" class="row">
+<div id="panels-layout-home" class="services">
+	<div id="panels-layout-home-navigation">
 		<?php print $content['navigation']; ?>
 	</div>
 	<div id="panels-layout-home-feature-one" class="row">
@@ -19,17 +19,19 @@
 	</div>
 	<div class="row">
 		<div class="col-md-3 col-sm-6">
-			<div class="pod-inner green-top">
+			<div class="pod">
 	      <?php print $content['block_one']; ?>
 			</div>
 		</div>
 		<div class="col-md-3 col-sm-6">
-			<div class="pod-inner green-top">
+			<div class="pod">
 	      <?php print $content['block_two']; ?>
 			</div>
 		</div>
-		<div id="panels-layout-home-feature-two" class="col-md-6 col-sm-12 pod-inner pod-emphasise">
-	    <?php print $content['feature_two']; ?>
+		<div id="panels-layout-home-feature-two" class="col-md-6 col-sm-12">
+			<div class="pod pod-emphasise">
+	    	<?php print $content['feature_two']; ?>
+	    </div>
 		</div>
 	</div>
 </div>

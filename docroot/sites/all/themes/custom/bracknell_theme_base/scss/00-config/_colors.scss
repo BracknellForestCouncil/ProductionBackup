@@ -64,7 +64,6 @@ $global-heading-link-hover-text-color: $deepBlue;
 $global-horizontal-rule-border-color: $greyLight;
 
 // Settings.
-$pod-emphasise-bg-color: $greyExtraLight;
 $green-top-border-color: $brandGreen;
 $green-base-border-color: $brandGreen;
 $green-top-twopx-border-color: $brandGreen;
@@ -179,6 +178,7 @@ $facebookIconBlue: $blue3;
 $socials-share-page-link-text-color: $slateBlue;
 $socials-share-page-twitter-link-text-color: $twitterIconBlue;
 $socials-share-page-facebook-link-text-color: $facebookIconBlue;
+$social-media-link-text-color: $white;
 
 // Pagination.
 $pagination-controls-link-hover-text-color: $deepBlue;
@@ -250,6 +250,7 @@ $footer-bg-color: $grey1;
 $footer-text-color: $white;
 $footer-link-text-color: $white;
 $footer-list-border-color: $white;
+$footer-list-bullet-color: $greyLight;
 
 // Tabs.
 $acc-tabs-control-border-color: $greyLight;
@@ -278,6 +279,14 @@ $top-tasks-bg-color: $oliveGreenLight;
 
 // Related Pages.
 $related-pages-bg-color: $greyExtraLight;
+
+// Promotional Area.
+$promotional-area-border-color: $brandGreen;
+
+// Pods.
+$pod-border-color: $brandGreen;
+$pod-emphasise-bg-color: $greyExtraLight;
+$pod-emphasise-border-color: $greyExtraLight;
 
 // Colour schemes/themes.
 $themes: (

@@ -29,10 +29,10 @@
 <?php
   hide($content['field_promotional_area_layout']);
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <div class="content"<?php print $content_attributes; ?>>
-    <div class="row">
-      <div class="col-sm-6 promo-text <?php print render($content['field_promotional_area_layout']['#items'][0]['value']); ?>">
+<div class="promotional-area"<?php print $attributes; ?>>
+  <div class="row">
+    <div class="col-md-6 promotional-area-content">
+      <div class="promo-text <?php print render($content['field_promotional_area_layout']['#items'][0]['value']); ?>">
         <?php if (array_key_exists('field_promotional_area_title', $content)): ?>
           <h2><?php print render($content['field_promotional_area_title']); ?></h2>
         <?php endif; ?>
@@ -44,11 +44,19 @@
         <?php if (array_key_exists('field_promotional_area_link', $content)): ?>
           <?php print render($content['field_promotional_area_link']); ?>
         <?php endif; ?>
+
+        <?php if (array_key_exists('field_promotional_area_related_c', $content)): ?>
+          <?php print render($content['field_promotional_area_related_c']); ?>
+        <?php endif; ?>
+
+        <?php print render($content); ?>
       </div>
-      <?php
-        $image_position = ($content['field_promotional_area_layout']['#items'][0]['value'] == 'left') ? 'right' : 'left';
-      ?>
-      <div class="col-sm-6 promo-image <?php print $image_position ?>">
+    </div>
+    <?php
+      $image_position = ($content['field_promotional_area_layout']['#items'][0]['value'] == 'left') ? 'right' : 'left';
+    ?>
+    <div class="col-md-6 promotional-area-media">
+      <div class="promo-image <?php print $image_position ?>">
         <div class="img-responsive">
           <?php if (array_key_exists('field_promotional_area_image', $content)): ?>
             <?php print render($content['field_promotional_area_image']); ?>
@@ -56,10 +64,5 @@
         </div>
       </div>
     </div>
-    <?php if (array_key_exists('field_promotional_area_related_c', $content)): ?>
-      <?php print render($content['field_promotional_area_related_c']); ?>
-    <?php endif; ?>
-
-    <?php print render($content); ?>
   </div>
 </div>

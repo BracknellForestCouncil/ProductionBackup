@@ -1,0 +1,17 @@
+// Pod.
+
+.pod {
+  border: {
+    color: $pod-border-color;
+    style: solid;
+    width: 5px 0 0 0;
+  }
+  padding: 20px 0 10px;
+}
+
+.pod-emphasise {
+  background: $pod-emphasise-bg-color;
+  border-color: $pod-emphasise-border-color;
+  padding-left: 15px;
+  padding-right: 15px;
+}

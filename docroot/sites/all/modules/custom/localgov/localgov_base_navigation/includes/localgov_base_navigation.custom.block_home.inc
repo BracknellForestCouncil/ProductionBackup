@@ -16,10 +16,10 @@
 function localgov_base_navigation_block_content_navigation_home() {
   $tree = menu_tree_all_data('main-menu');
 
-  $content = '<h1 class="margin-top-zero">Services</h1>';
+  $content = '<h1 class="services-title">Services</h1>';
   // Process Top Level links (gridder-list)
-  $content .= '<div id="homepage-nav-wrapper" class="block-30 grey-x-light full-width"><div class="row no-pad">';
-  $content.= '<ul id="homepage-nav" class="gridder" role="navigation">';
+  $content .= '<div id="homepage-nav-wrapper" class="services-content grey-x-light full-width">';
+  $content.= '<ul id="homepage-nav" class="gridder services-listing">';
 
    $count = 0;
    foreach ($tree as $item) {
@@ -45,7 +45,7 @@ function localgov_base_navigation_block_content_navigation_home() {
 
    $content .= '</ul>';
 
-   $content .= '</div></div>';
+   $content .= '</div>';
 
 
    // Process links for each section (gridder-content)

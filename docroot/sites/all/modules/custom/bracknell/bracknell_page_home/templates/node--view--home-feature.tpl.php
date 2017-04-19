@@ -87,20 +87,21 @@
   hide($content['field_image']);
 ?>
 
-<div class="container block-30" id="main-content" role="main">
-	<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> row no-pad clearfix"<?php print $attributes; ?>>
-		<div class="col-md-6 green-top" <?php print $content_attributes; ?>>
-			<h2 class="h-light" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-			<?php print render($content); ?>
-			<a href="<?php print render($content['links']['node']['#links']['node-readmore']['href']); ?>" class="btn">
-				<?php print render($content['links']['node']['#links']['node-readmore']['title']); ?>
-			</a>
-		</div>
-		<div class="col-md-6">
-      <a href="<?php print $node_url; ?>">
-        <?php $img_url = $node->field_image['und'][0]['uri']; ?>
-        <img src="<?php print image_style_url("home_feature", $img_url); ?>" />
+<div class="promotional-area" id="main-content">
+  <div class="col-md-6 promotional-area-content">
+    <div class="promo-text" <?php print $content_attributes; ?>>
+      <h2 class="h-light" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      <?php print render($content); ?>
+      <a href="<?php print render($content['links']['node']['#links']['node-readmore']['href']); ?>" class="btn">
+        <?php print render($content['links']['node']['#links']['node-readmore']['title']); ?>
       </a>
-		</div>
-	</div>
+    </div>
+  </div>
+  <div class="col-md-6 promotional-area-media">
+    <div class="promo-image">
+      <?php if (!empty($article_image_path)) : ?>
+        <img alt="<?php print $article_image_alt; ?>" class="img-responsive" src="<?php print $article_image_path; ?>">
+      <?php endif; ?>
+    </div>
+  </div>
 </div>
