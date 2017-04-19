@@ -2,7 +2,7 @@
 
 (function ($) {
   Drupal.behaviors.bracknellThemeBaseBehavior = {
-    attach: function attach(context, settings) {
+    attach: function (context, settings) {
       // Fix related links location on guide pages
       // media query checking for minimum 992px  event handler
       if (matchMedia) {
@@ -22,7 +22,7 @@
   };
 
   Drupal.behaviors.bracknellMainMenu = {
-    attach: function attach(context, settings) {
+    attach: function (context, settings) {
       $('[data-js="main-menu"]').find('.collapse').hide().attr('aria-hidden', 'true');
 
         var mainMenuButton = $('<button>' +
@@ -72,62 +72,99 @@
   };
 
   Drupal.behaviors.bracknellSearch = {
-    attach: function attach(context, settings) {
+    attach: function (context, settings) {
+      var searchBlock = $('[data-js="search"]'),
+          searchButton,
+          searchStatus = 'closed';
 
-      $(window).resize(function(){
-        var mediaQuery = Modernizr.mq('only screen and (max-width: 768px)');
+      // Check if the search block exists before we do anything.
+      if (searchBlock.length !== 0) {
+        $(window).resize(function() {
+          var mediaQuery = Modernizr.mq('only screen and (max-width: 768px)');
+          if (mediaQuery) {
+            // Check if the button exists, if not create and append the button.
+            if ($('[data-js="search-button"]').length === 0) {
+              createButton();
+              searchButton.insertBefore('[data-js="main-menu-button"]');
+            }
 
-        if (mediaQuery) {
-          // Hide search form.
-          $('.search').hide().attr('aria-hidden', 'true');
-
-          // Check if the button exists, if not create and append the button.
-          if ($('[data-js="search-button"]').length === 0) {
-            // Create search button.
-            var searchButton = $('<button>' +
-              '<span class="search-btn-copy"></span>' +
-              '</button>');
-            searchButton.attr({
-              'class': 'btn search-btn icon glyphicon glyphicon-search',
-              'aria-expanded': 'false',
-              'aria-controls': 'search-wrapper',
-              'data-toggle': 'closed',
-              'data-js': 'search-button'
-            }).find('.search-btn-copy').text(Drupal.t('Search'));
-            searchButton.insertBefore('[data-js="main-menu-button"]');
-
-            $('[data-js="search-button"]').on('click', function () {
-              var button = $(this),
-                  status = button.attr('aria-expanded'),
-                  searchForm = $('.search');
-
-              if (status === 'false') {
-                searchForm.show().attr({
-                  'aria-hidden': 'false'
-                });
-                button.attr({
-                  'aria-expanded': 'true',
-                  'data-toggle': 'open'
-                });
-              }
-              else {
-                searchForm.hide().attr({
-                  'aria-hidden': 'true'
-                });
-                button.attr({
-                  'aria-expanded': 'false',
-                  'data-toggle': 'closed'
-                });
-              }
-            });
+            // Check for the status of the search form e.g. if it is open or closed.
+            // This is to ensure that if the media query matches and there is a resize event
+            // e.g. when the keyboard is opened on Android mobile devices that the search
+            // form retains the correct status.
+            if (searchStatus === 'closed') {
+              actionClose();
+            } else {
+              actionOpen();
+            }
           }
-        }
-        else {
-          // Reset the dom on desktop.
-          $('.search').show().removeAttr('aria-hidden');
-          $('[data-js="search-button"]').remove();
-        }
-      }).resize();
+          else {
+            // Reset the DOM on desktop.
+            searchBlock.show().removeAttr('aria-hidden');
+            $('[data-js="search-button"]').off().remove();
+            searchStatus = 'closed';
+          }
+        }).resize();
+      }
+
+      function createButton() {
+        // Create search button.
+        searchButton = $('<button>' +
+          '<span class="search-btn-copy">' + Drupal.t('Search') +'</span>' +
+          '</button>');
+
+        searchButton.attr({
+          'class': 'btn search-btn icon glyphicon glyphicon-search',
+          'aria-expanded': 'false',
+          'aria-controls': 'search-wrapper',
+          'data-toggle': 'closed',
+          'data-js': 'search-button'
+        });
+
+        searchButton.on('click', function () {
+          var button = $(this),
+              status = button.attr('aria-expanded');
+
+          if (status === 'true') {
+            // Close the search form.
+            actionClose();
+          }
+          else {
+            // Open the search form.
+            actionOpen();
+          }
+        });
+      };
+
+      // Show the search form, set attributes and status.
+      function actionOpen() {
+        searchBlock
+          .attr('aria-hidden', 'false')
+          .show()
+
+        searchButton
+          .attr({
+            'aria-expanded': 'true',
+            'data-toggle': 'open'
+          });
+
+        searchStatus = 'open';
+      };
+
+      // Hide the search form, set attributes and status.
+      function actionClose() {
+        searchBlock
+          .attr('aria-hidden', 'true')
+          .hide()
+
+        searchButton
+          .attr({
+            'aria-expanded': 'false',
+            'data-toggle': 'closed'
+          });
+
+        searchStatus = 'closed';
+      };
     }
   };
 
