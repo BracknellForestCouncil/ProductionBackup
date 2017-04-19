@@ -44,6 +44,6 @@
  * @ingroup themeable
  */
 ?>
-<?php foreach ($items as $delta => $item): ?>
-  <span class="icon <?php print render($item); ?>"></span>
+<?php foreach ($items as $delta => $item) : ?>
+  <span class="icon <?php print render($item); ?>" aria-hidden="true"></span>
 <?php endforeach; ?>
