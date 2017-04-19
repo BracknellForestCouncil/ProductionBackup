@@ -64,7 +64,6 @@ $global-heading-link-hover-text-color: $deepBlue;
 $global-horizontal-rule-border-color: $greyLight;
 
 // Settings.
-$pod-emphasise-bg-color: $greyExtraLight;
 $green-top-border-color: $brandGreen;
 $green-base-border-color: $brandGreen;
 $green-top-twopx-border-color: $brandGreen;
@@ -281,6 +280,11 @@ $related-pages-bg-color: $greyExtraLight;
 
 // Promotional Area.
 $promotional-area-border-color: $brandGreen;
+
+// Pods.
+$pod-border-color: $brandGreen;
+$pod-emphasise-bg-color: $greyExtraLight;
+$pod-emphasise-border-color: $greyExtraLight;
 
 // Colour schemes/themes.
 $themes: (
