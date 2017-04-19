@@ -86,6 +86,7 @@
     hide($content['links']);
     hide($content['field_tags']);
     hide($content['field_promotional_hero']);
+    hide($content['field_promotional_slogan']);
     print render($content);
   ?>
 </article>
