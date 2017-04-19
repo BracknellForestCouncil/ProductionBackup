@@ -160,13 +160,19 @@
  *   );
  * @endcode
  */
+
+/**
+ * As of 18 April, 2017 we have switched to using the prod_main database to
+ * enable content editors to start loading using the new content types.
+ */
+
 $databases = array(
   'default' =>
   array(
     'default' =>
     array(
-      'database' => 'www_default',
-      // 'database' => 'prod_bracknell_main',
+      // 'database' => 'www_default',
+      'database' => 'prod_bracknell_main',
       // 'database' => 'prod_bracknell_beta',
       'username' => 'p_microserve',
       'password' => 'HBX1u3ji5KaclWbWg9Xat06GNnF7Tapzp3i0eQkboHAElMMpcQGZsCbUjprY5uWR',
