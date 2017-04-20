@@ -74,17 +74,6 @@ $conf['theme_debug'] = FALSE;
 $conf['site_name'] = 'Bracknell Forest Council';
 
 /**
- * Variable overrides (caching):
- */
- $conf['block_cache'] = 1;
- $conf['cache'] = 1;
- $conf['cache_lifetime'] = '43200';
- $conf['page_cache_maximum_age'] = '86400';
- $conf['page_compression'] = 1;
- $conf['preprocess_css'] = 1;
- $conf['preprocess_js'] = 1;
-
-/**
  * Variable overrides (google_analytics):
  */
 $conf['googleanalytics_account'] = 'UA-70816792-3';
