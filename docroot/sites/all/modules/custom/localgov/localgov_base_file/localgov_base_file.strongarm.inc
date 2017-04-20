@@ -112,6 +112,10 @@ function localgov_base_file_strongarm() {
             'weight' => '0',
             'visible' => TRUE,
           ),
+          'preview' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
         ),
       ),
     ),
