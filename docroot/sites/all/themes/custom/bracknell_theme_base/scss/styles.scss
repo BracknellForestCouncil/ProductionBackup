@@ -12,16 +12,11 @@
 '00-config/variables',
 '00-config/mixins';
 
-// Icons.
-@import
-'10-base/icons/bracknell_theme_base-icons',
-'10-base/icons/50-deeson-icons',
-'10-base/icons/icons-base',
-'10-base/icons/icons-application';
-
 // Base.
 @import
 '10-base/body',
+'10-base/icons/icons-base',
+'10-base/icons/icons-services',
 '10-base/text',
 '10-base/anchors',
 '10-base/text',
@@ -29,7 +24,6 @@
 '10-base/lists',
 '10-base/52-deeson-global-settings',
 '10-base/buttons',
-
 '10-base/helpers',
 '10-base/table/table',
 '10-base/table/custom-table';
