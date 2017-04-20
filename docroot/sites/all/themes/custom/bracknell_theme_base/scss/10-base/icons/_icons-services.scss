@@ -29,7 +29,7 @@ $services-icons: (
 @each $class-name, $icon in $services-icons {
   .nav-icon-#{$class-name} {
     &:before {
-      content: "#{$icon}";
+      content: '#{$icon}';
     }
   }
 }

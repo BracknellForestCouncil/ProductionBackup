@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icons/icomoon.eot');
-  src:  url('../fonts/icons/icomoon.eot#iefix') format('embedded-opentype'),
+  src: url('../fonts/icons/icomoon.eot');
+  src: url('../fonts/icons/icomoon.eot#iefix') format('embedded-opentype'),
     url('../fonts/icons/icomoon.ttf') format('truetype'),
     url('../fonts/icons/icomoon.woff') format('woff'),
     url('../fonts/icons/icomoon.svg#icomoon') format('svg');
@@ -62,7 +62,7 @@ $base-icons: (
 @each $class-name, $icon in $base-icons {
   .theme-icon-#{$class-name} {
     &:before {
-      content: "#{$icon}";
+      content: '#{$icon}';
     }
   }
 }
