@@ -1,0 +1,5 @@
+name = Bracknell Feeds
+description = Provides custom feed blocks to display external RSS feeds.
+package = bracknell
+core = 7.x
+version = 7.x-1.0
