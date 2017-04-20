@@ -567,34 +567,9 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 # $conf['allow_authorize_operations'] = FALSE;
 
 /**
- * Variable overrides (s3fs):
+ * The local settings file should be updated to include whichever
+ * configuration is required.
  */
-$conf['s3fs_awssdk2_access_key'] = 'AKIAJYWVERUL2YZBAMPA';
-$conf['s3fs_awssdk2_secret_key'] = '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';
-$conf['s3fs_bucket'] = 'files.bracknell-forest.gov.uk';
-$conf['s3fs_domain'] = 'files.bracknell-forest.gov.uk';
-$conf['s3fs_hostname'] = '';
-$conf['s3fs_region'] = 'eu-west-1';
-$conf['s3fs_root_folder'] = 'sites/bracknell';
-$conf['s3fs_use_cname'] = 1;
-$conf['s3fs_use_customhost'] = 0;
-$conf['s3fs_use_https'] = 1;
-$conf['s3fs_awssdk2_use_instance_profile'] = 0;
-$conf['s3fs_cache_control_header'] = '';
-$conf['s3fs_encryption'] = '';
-$conf['s3fs_ignore_cache'] = 0;
-$conf['s3fs_no_redirect_derivatives'] = 0;
-$conf['s3fs_no_rewrite_cssjs'] = 1;
-$conf['s3fs_presigned_urls'] = '';
-$conf['s3fs_private_folder'] = 'private';
-$conf['s3fs_public_folder'] = 'public';
-$conf['s3fs_hostname'] = '';
-$conf['s3fs_saveas'] = '';
-$conf['s3fs_torrents'] = '';
-$conf['s3fs_use_s3_for_private'] = 1;
-$conf['s3fs_use_s3_for_public'] = 1;
-
-// Include a local settings file if it exists.
 $local_settings = __DIR__ . '/settings.local.php';
 if (file_exists($local_settings)) {
   include $local_settings;
