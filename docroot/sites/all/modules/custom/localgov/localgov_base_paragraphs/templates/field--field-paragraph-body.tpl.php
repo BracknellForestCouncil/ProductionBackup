@@ -45,5 +45,7 @@
  */
 ?>
 <?php foreach ($items as $delta => $item): ?>
+  <div class="highlight-content">
   <?php print render($item); ?>
+  </div>
 <?php endforeach; ?>

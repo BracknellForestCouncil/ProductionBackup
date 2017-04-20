@@ -89,6 +89,13 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
   if ($variables['elements']['#bundle'] == 'accordion' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
     libraries_load('jquery_accessible_accordion');
   }
+
+  // If the highlight paragraph has an icon, output a class to style the paragraph differently.
+  if ($variables['elements']['#bundle'] == 'highlighted' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    if (isset($variables['field_icon'])) {
+      $variables['classes_array'][] = 'highlight-has-icon';
+    }
+  }
 }
 
 /**

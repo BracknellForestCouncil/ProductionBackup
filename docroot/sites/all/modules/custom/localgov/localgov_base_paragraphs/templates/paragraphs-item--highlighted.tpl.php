@@ -26,6 +26,6 @@
  * @see template_process()
  */
 ?>
-<section class="content-section-highlighted well clearfix">
+<div class="highlight <?php print $classes; ?>">
     <?php print render($content); ?>
-</section>
+</div>

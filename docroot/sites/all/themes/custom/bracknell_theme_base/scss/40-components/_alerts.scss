@@ -19,21 +19,3 @@
     @include alertStatus($alert-danger-bg-color, 40%);
   }
 }
-
-.content-section-highlighted > .icon-name {
-  display: none;
-}
-
-.content-section-highlighted p {
-  padding: 0px 15px 0px 55px !important;
-}
-
-.content-section-highlighted.well {
-  padding: 19px 19px 5px 19px;
-}
-
-.content-section-link.well {
-  display: block;
-  padding: 0;
-  background-color: $alert-content-section-link-bg-color !important;
-}
