@@ -26,15 +26,13 @@
     "copy:Js": "cp -R ./node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js $npm_package_config_outputJs",
     "rminfo": "find node_modules/ -name '*.info' -type f -delete",
     "watch:css": "onchange $npm_package_config_scssPath -v -- npm-run-all -p lint build:css",
-    "dev": "npm run build:css && npm-run-all -p watch:css",
-    "icons": "gulp iconizr"
+    "dev": "npm run build:css && npm-run-all -p watch:css"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "bootstrap-sass": "^3.3.6",
     "bower": "^1.8.0",
     "csscomb": "^3.1.7",
-    "gulp-iconizr": "github:jkphl/gulp-iconizr",
     "node-sass": "^3.7.0",
     "npm-run-all": "^2.1.1",
     "onchange": "^2.4.0",
