@@ -15,7 +15,6 @@
  * Returns block content for the "navigation_main" block.
  */
 function localgov_base_navigation_block_content_navigation_main() {
-  global $base_url;
   $tree = menu_tree_all_data('main-menu');
 
   $content = '<nav id="main-nav" role="navigation"><ul>';
