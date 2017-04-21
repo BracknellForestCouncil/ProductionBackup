@@ -34,7 +34,7 @@ function localgov_base_navigation_block_content_navigation_main() {
     $name_safe =  str_replace(',', '', str_replace(' ', '-', strtolower($name)));
 
     if (!$menu_item_disabled) {
-      $content .= '<li class="nav-item nav-item-' . $name_safe . '"><a href="' . $base_url . '/'. $url . '">' . $name . '</a></li>';
+      $content .= '<li class="nav-item nav-item-' . $name_safe . '">' . l(t($name), $url) . '</li>';
     }
   }
 
