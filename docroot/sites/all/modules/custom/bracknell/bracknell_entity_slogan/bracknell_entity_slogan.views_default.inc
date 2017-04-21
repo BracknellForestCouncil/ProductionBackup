@@ -94,7 +94,11 @@ function bracknell_entity_slogan_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'eck_slogan';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  /* Field: slogan: Strapline */
+  /* Field: slogan: Line 1 */
+  $handler->display->display_options['fields']['field_slogan_title']['id'] = 'field_slogan_title';
+  $handler->display->display_options['fields']['field_slogan_title']['table'] = 'field_data_field_slogan_title';
+  $handler->display->display_options['fields']['field_slogan_title']['field'] = 'field_slogan_title';
+  /* Field: slogan: Line 2 */
   $handler->display->display_options['fields']['field_slogan_strapline']['id'] = 'field_slogan_strapline';
   $handler->display->display_options['fields']['field_slogan_strapline']['table'] = 'field_data_field_slogan_strapline';
   $handler->display->display_options['fields']['field_slogan_strapline']['field'] = 'field_slogan_strapline';
