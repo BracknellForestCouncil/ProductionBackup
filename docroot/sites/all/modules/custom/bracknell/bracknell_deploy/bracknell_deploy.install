@@ -132,3 +132,11 @@ function bracknell_deploy_update_7005() {
 function bracknell_deploy_update_7006() {
   module_enable(array('bracknell_feature_feeds'));
 }
+
+/**
+ * Delete link field from accordion paragraph.
+ */
+function bracknell_deploy_update_7007() {
+  field_delete_field('field_paragraph_accordion_pane_l');
+  field_purge_batch(1);
+}
