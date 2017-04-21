@@ -127,10 +127,8 @@ function bracknell_deploy_update_7005() {
 }
 
 /**
- * Update the site Error Pages config to new custom 403-404 spec.
+ * Enable Bracknell Feeds feature.
  */
-function bracknell_deploy_update_7006(&$sandbox) {
-  // reset the error pages in admin/config/system/site-information
-  variable_set('site_403', 'bb-403');
-  variable_set('site_404', 'bb-404');
+function bracknell_deploy_update_7006() {
+  module_enable(array('bracknell_feature_feeds'));
 }
