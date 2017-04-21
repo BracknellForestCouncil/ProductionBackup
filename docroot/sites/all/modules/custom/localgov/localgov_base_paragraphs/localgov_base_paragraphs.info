@@ -229,6 +229,6 @@ features[variable][] = field_bundle_settings_paragraphs_item__tab_panel
 features[variable][] = field_bundle_settings_paragraphs_item__table
 features[variable][] = field_bundle_settings_paragraphs_item__tabs
 features[variable][] = field_bundle_settings_paragraphs_item__video
-features_exclude[field_base][field_icon] = field_icon
 features_exclude[dependencies][localgov_base_paragraphs] = localgov_base_paragraphs
+features_exclude[field_base][field_icon] = field_icon
 files[] = migrate/localgov_base_paragraphs.migrate.inc

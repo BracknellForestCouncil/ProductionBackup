@@ -28,21 +28,32 @@
  * @see template_process()
  */
 ?>
-<section class='slogan'>
-  <div class='slogan-inner'>
-    <div class='slogan-image'>
-      <?php print render($content['field_slogan_image']); ?>
-    </div>
-    <div class='slogan-text'>
-      <div class='slogan-title'>
-        <?php print $title; ?>
+<div class="slogan-content">
+  <div class="slogan-inner">
+    <?php if (isset($content['field_slogan_image'])) : ?>
+      <div class="slogan-image">
+        <?php print render($content['field_slogan_image']); ?>
       </div>
-      <div class='slogan-strapline'>
+    <?php endif; ?>
+
+    <div class="slogan-text">
+    <?php if (isset($content['field_slogan_title'])) : ?>
+      <h2 class="slogan-title">
+        <?php print render($content['field_slogan_title']); ?>
+      </h2>
+    <?php endif; ?>
+
+    <?php if (isset($content['field_slogan_strapline'])) : ?>
+      <p class="slogan-strapline">
         <?php print render($content['field_slogan_strapline']); ?>
-      </div>
-    </div>
-    <div class='slogan-call-to-action'>
-      <?php print render($content['field_slogan_call_to_action']); ?>
-    </div>
-  </div>
-</section>
+      </p>
+    <?php endif; ?>
+    </div><!-- end .slogan-text -->
+
+    <?php if (isset($content['field_slogan_call_to_action'])) : ?>
+      <div class="slogan-call-to-action">
+        <?php print render($content['field_slogan_call_to_action']); ?>
+      </div><!-- end .slogan-call-to-action -->
+    <?php endif; ?>
+  </div><!-- end .slogan-inner -->
+</div><!-- end .slogan-content -->

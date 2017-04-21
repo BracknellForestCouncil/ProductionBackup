@@ -61,11 +61,6 @@
   }
 }
 
-.glyphicon.glyphicon-search {
-  color: $form-search-icon-text-color;
-  font-size: $font-size-07;
-}
-
 // This is to force visibility of the toggled search input.
 #search-toggle {
   @media (max-width: 768px) {

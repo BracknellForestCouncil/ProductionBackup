@@ -26,6 +26,12 @@ The following tasks are available:
 
 - 'npm run dev': runs and watches SCSS and JS files.
 
+### Icons.
+
+The icon fonts for the Bracknell Forest Council website are created using [Icomoon](https://icomoon.io/app/#/select). In the 'images/icons/src' directory are the SVG and AI files used to create the font. The AI and SVG files were inherit by Microserve and as such we do not know who original created them. The AI files cannot be opened when using Adobe Illustrator for Mac as they appear to be corrupt, however they have been left in the repository in case they are required in future.
+
+To create the icon fonts (for example if you need to add/remove icons) please upload all the SVG files in the 'images/icons/src/base' and 'images/icons/src/services' directories to Icomoon. In Icomoon, you can regenerate the font, which should then be placed in the 'fonts/icons' directory and update any values in the 'scss/10-base/icons/icons-base' and 'scss/10-base/icons/icons-services' directories.
+
 ## Files and Directories
 - `css/` - CSS files (generated from SCSS)
 - `fonts/` - Font files
