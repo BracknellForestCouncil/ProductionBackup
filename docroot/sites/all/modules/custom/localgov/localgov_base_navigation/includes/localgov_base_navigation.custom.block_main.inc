@@ -29,11 +29,11 @@ function localgov_base_navigation_block_content_navigation_main() {
       $url = $link_url;
     }
 
-    $name = $item['link']['link_title'];
+    $name = t($item['link']['link_title']);
     $name_safe =  str_replace(',', '', str_replace(' ', '-', strtolower($name)));
 
     if (!$menu_item_disabled) {
-      $content .= '<li class="nav-item nav-item-' . $name_safe . '">' . l(t($name), $url) . '</li>';
+      $content .= '<li class="nav-item nav-item-' . $name_safe . '">' . l($name, $url) . '</li>';
     }
   }
 
