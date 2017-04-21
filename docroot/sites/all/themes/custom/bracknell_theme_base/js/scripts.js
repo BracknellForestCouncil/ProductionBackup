@@ -142,7 +142,7 @@
         function actionOpen() {
           searchBlock
             .attr('aria-hidden', 'false')
-            .show()
+            .show();
 
           searchButton
             .attr({
@@ -157,7 +157,7 @@
         function actionClose() {
           searchBlock
             .attr('aria-hidden', 'true')
-            .hide()
+            .hide();
 
           searchButton
             .attr({
