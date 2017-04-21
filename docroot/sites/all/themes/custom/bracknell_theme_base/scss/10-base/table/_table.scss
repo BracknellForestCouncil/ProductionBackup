@@ -1,0 +1,118 @@
+/*
+*  Table styling for mininmal, headed and striped designs.
+*/
+
+table {
+  caption {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+}
+
+.table {
+  border: none;
+
+  thead {
+    background: none;
+    vertical-align: middle;
+
+    tr > th {
+      font-size: $font-size-05;
+    }
+  }
+
+  tbody {
+    tr {
+      th {
+        border: none;
+      }
+      td {
+        border: none;
+      }
+    }
+  }
+
+  p {
+    margin: 15px 10px;
+  }
+
+  span.icon {
+    font-size: $font-size-06;
+    padding-right: 10px;
+  }
+
+  @media screen and (max-width: $screen-sm - 1) {
+    .table-responsive {
+      border: none;
+    }
+  }
+
+  &.table-minimal {
+    thead {
+      tr {
+        th {
+          border-bottom: 3px solid $table-grey-border-color;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background: none;
+        border-bottom: 1px solid $table-grey-border-color;
+      }
+    }
+  }
+
+  &.table-headed {
+    thead {
+      background: $table-thead-bg-color;
+      tr {
+        th {
+          border-bottom: none;
+          font-weight: 600;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background: none;
+      }
+      tr > td {
+        padding: 5px 10px;
+        font-size: $font-size-05;
+      }
+    }
+  }
+
+  &.table-icon-striped {
+    thead > tr {
+      border: 1px solid $table-border-color;
+
+      > th {
+        background: $grey3;
+        border: 1px solid $table-border-color;
+        font-weight: 600;
+      }
+    }
+    tbody {
+      border: 1px solid #000;
+      border-top: 0;
+
+      tr {
+        td {
+          border-right: 1px solid $table-border-color;
+          border-top: none;
+        }
+      }
+    }
+  }
+}
+

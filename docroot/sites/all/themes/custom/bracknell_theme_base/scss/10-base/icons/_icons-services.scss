@@ -1,0 +1,35 @@
+// Services icons.
+
+// The key should be the name of the service e.g. bins-and-recycling output as a class in Drupal.
+$services-icons: (
+  benefits: '\e920',
+  bins-and-recycling: '\e92b',
+  births-marriages-and-deaths: '\e92a',
+  business-information: '\e925',
+  children-and-family-services: '\e926',
+  consultations: '\e91d',
+  council-tax: '\e92e',
+  crime-and-emergencies: '\e91c',
+  environmental-issues: '\e923',
+  elections-and-voting: '\e921',
+  health-and-social-care: '\e927',
+  housing: '\e92c',
+  jobs: '\e924',
+  leisure-services: '\e930',
+  libraries: '\e922',
+  licensing: '\e91a',
+  parks-and-countryside: '\e91f',
+  planning-and-building-control: '\e92f',
+  roads-parking-and-transport: '\e928',
+  schools-and-learning: '\e92d',
+  street-cleaning: '\e91e',
+  the-council-and-democracy: '\e929'
+);
+
+@each $class-name, $icon in $services-icons {
+  .nav-icon-#{$class-name} {
+    &:before {
+      content: '#{$icon}';
+    }
+  }
+}

@@ -9,9 +9,9 @@
 
     li+li {
       &:before {
-        content: $font-icon-next;
+        content: "\e90f";
         font: {
-          family: $icon-font-base-name;
+          family: 'icomoon';
           size: $font-size-17;
         }
         padding: 0 8px 0 0;

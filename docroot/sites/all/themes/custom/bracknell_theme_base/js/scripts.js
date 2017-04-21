@@ -114,7 +114,7 @@
           '</button>');
 
         searchButton.attr({
-          'class': 'btn search-btn icon glyphicon glyphicon-search',
+          'class': 'btn search-btn icon theme-icon-search',
           'aria-expanded': 'false',
           'aria-controls': 'search-wrapper',
           'data-toggle': 'closed',
