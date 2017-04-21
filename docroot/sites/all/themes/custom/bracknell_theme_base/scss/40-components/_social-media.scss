@@ -12,14 +12,6 @@
     display: inline-block;
     margin: 0 5px;
 
-    // Instagram icon
-    &:first-child {
-      a {
-        position: relative;
-        top: 2px;
-      }
-    }
-
     &:last-child {
       margin-right: 0;
     }

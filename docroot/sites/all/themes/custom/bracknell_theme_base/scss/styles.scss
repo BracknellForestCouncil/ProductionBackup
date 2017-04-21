@@ -10,13 +10,13 @@
 '../libraries/bootstrap-sass/assets/stylesheets/bootstrap',
 '00-config/bootstrap-overrides',
 '00-config/variables',
-'00-config/mixins',
-'00-config/bracknell_theme_base-icons';
+'00-config/mixins';
 
 // Base.
 @import
-'10-base/50-deeson-icons',
 '10-base/body',
+'10-base/icons/icons-base',
+'10-base/icons/icons-services',
 '10-base/text',
 '10-base/anchors',
 '10-base/text',
@@ -24,29 +24,27 @@
 '10-base/lists',
 '10-base/52-deeson-global-settings',
 '10-base/buttons',
-'10-base/icons-base';
+'10-base/helpers',
+'10-base/table/table',
+'10-base/table/custom-table';
 
 // Global.
 @import
-'30-global/00-global',
-'30-global/prompt-button',
-'30-global/forms',
-'30-global/icons-application';
+'30-global/forms';
 
 // Components.
 @import
+'40-components/prompt-button',
 '40-components/beta',
 '40-components/header',
 '40-components/main-menu',
 '40-components/search',
 '40-components/breadcrumbs',
 '40-components/social-media',
-'40-components/55-deeson-news-events',
+'40-components/news-events',
+'40-components/news-listing',
 '40-components/pagination',
-'40-components/58-deeson-news',
-'40-components/59-deeson-related',
-'40-components/60-deeson-content-page-table',
-'40-components/61-deeson-page-rater',
+'40-components/page-rater',
 '40-components/footer',
 '40-components/alerts',
 '40-components/related-links',
@@ -63,7 +61,6 @@
 '40-components/sidebars',
 '40-components/slogan',
 '40-components/accordion',
-'40-components/table',
 '40-components/tabs',
 '40-components/video',
 '40-components/hero',
@@ -74,15 +71,3 @@
 '40-components/services',
 '40-components/pod',
 '40-components/highlight';
-
-// Pages.
-@import
-'50-pages/promotional-page';
-
-// Overrides.
-@import
-'90-overrides-module/general',
-'90-overrides-module/navbar',
-'90-overrides-module/small-print',
-'90-overrides-module/tablefield';
-

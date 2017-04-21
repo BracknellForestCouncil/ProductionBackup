@@ -1,5 +1,15 @@
 // Lists.
 
+// Ordered list.
+ol {
+  padding-left: 15px;
+  margin-bottom: $commonSpacing;
+
+  li {
+    line-height: 2;
+  }
+}
+
 // Split <ol> into 2x columns.
 .ol-split {
   @media (min-width: 768px) {
