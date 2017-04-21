@@ -35,7 +35,7 @@ function bracknell_feature_feeds_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'aggregator_parser';
-  $strongarm->value = 'bracknell_feeds';
+  $strongarm->value = 'bracknell_feature_feeds';
   $export['aggregator_parser'] = $strongarm;
 
   $strongarm = new stdClass();
