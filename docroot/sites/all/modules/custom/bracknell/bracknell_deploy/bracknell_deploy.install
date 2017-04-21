@@ -126,3 +126,9 @@ function bracknell_deploy_update_7005() {
   module_enable(array('modernizr'));
 }
 
+/**
+ * Enable Bracknell Feeds feature.
+ */
+function bracknell_deploy_update_7006() {
+  module_enable(array('bracknell_feature_feeds'));
+}
