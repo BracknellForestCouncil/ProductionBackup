@@ -22,16 +22,18 @@ function localgov_base_navigation_block_content_navigation_main() {
   foreach ($tree as $item) {
     $menu_item_disabled = !empty($item['link']['hidden']) ? $item['link']['hidden'] : NULL;
     $link_url = $item['link']['href'];
+
     if (strpos($link_url, 'node') !== FALSE) {
       $url = drupal_get_path_alias($link_url);
     } else {
       $url = $link_url;
     }
-    $name = $item['link']['link_title'];
+
+    $name = t($item['link']['link_title']);
     $name_safe =  str_replace(',', '', str_replace(' ', '-', strtolower($name)));
 
     if (!$menu_item_disabled) {
-      $content .= '<li class="nav-item nav-item-' . $name_safe . '"><a href="' . $url . '">' . $name . '</a></li>';
+      $content .= '<li class="nav-item nav-item-' . $name_safe . '">' . l($name, $url) . '</li>';
     }
   }
 
