@@ -4,10 +4,24 @@
   background-color: $contact-info-bg-color;
   margin-bottom: 1em;
   margin-top: 1em;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 1px 15px;
 
-  .block-title {
-    font-size: $font-size-10;
+  @include breakpoint($screen-md) {
+    display: flex;
+    align-items: flex-start;
   }
+
+  .btn {
+    margin-top: 15px;
+  }
+}
+
+@include breakpoint($screen-md) {
+  .contact-info-content {
+    flex: 1;
+  }
+}
+
+.contact-info-title {
+  font-size: $font-size-10;
 }
