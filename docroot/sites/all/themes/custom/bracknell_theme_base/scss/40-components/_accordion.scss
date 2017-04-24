@@ -32,12 +32,6 @@
 .js-accordion-control {
   border-radius: 5px;
   outline: none;
-
-  &:hover,
-  &:focus {
-    background-color: $accordion-control-hover-bg-color;
-    color: $accordion-control-hover-text-color;
-  }
 }
 
 .js-accordion-control-active {
