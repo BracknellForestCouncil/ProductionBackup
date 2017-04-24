@@ -1,0 +1,5 @@
+name = Bracknell Readspeak
+description = Implements the Readspeaker functionality.
+core = 7.x
+package = bracknell
+version = 7.x-1.0
