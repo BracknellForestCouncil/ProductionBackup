@@ -7,18 +7,31 @@
 
 /**
  * Custom function to return 403 or 404 page.
+ * TODO: Refactor not to have html in this function.
  */
 function bracknell_base_error_page($errorcode) {
   $content = '';
-  $search_link = l(t("search"), 'search');
-  $home_link = l(t("home page"), '<front>');
+  // Display page dependant on error code.
   if ($errorcode == '404') {
+    $search_link = l(t("search"), 'search');
+    $home_link = l(t("home page"), '<front>');
+    // Alternative options for the user.
+    $alt_links = array(
+      t("check that you typed in the correct address"),
+      t("try using our ") . $search_link,
+      t("go to the ") . $home_link . t(" and browse the site")
+    );
+    // Create the 404 page message.
     $message_title = t("Sorry, the page you were looking for was not found.") . "<br/><br/>";
-    $message_body = t("There are a few different ways to help you find the page you were looking for:") . "<br/><ul><li>" .
-        t("check that you typed in the correct address") . "</li><li>" .
-        t("try using our ") . $search_link . "</li><li>" .
-        t("go to the ") . $home_link . t(" and browse the site") . "</li></ul>";
-    $message = $message_title . $message_body;
+    $message_body = t("There are a few different ways to help you find the page you were looking for:") . "<br/>";
+    // Create an unordered list of options to display.
+    $message_options = "";
+    foreach ($alt_links as $item) {
+      $message_options = $message_options . "<li>" . $item . "</li>";
+    }
+    $message_options = "<ul>" . $message_options . "</ul>";
+    // Combine the options and stick in the markup.
+    $message = $message_title . $message_body . $message_options;
     $content['raw_markup'] = array(
       '#type' => 'markup',
       '#markup' => '<p>' . $message . '</p>',
