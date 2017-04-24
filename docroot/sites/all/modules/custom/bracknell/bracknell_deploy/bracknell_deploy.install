@@ -134,9 +134,18 @@ function bracknell_deploy_update_7006() {
 }
 
 /**
+ * Update the site Error Pages config to new custom 403-404 spec.
+ */
+function bracknell_deploy_update_7007(&$sandbox) {
+  // reset the error pages in admin/config/system/site-information
+  variable_set('site_403', 'bb-403');
+  variable_set('site_404', 'bb-404');
+}
+
+/**
  * Delete link field from accordion paragraph.
  */
-function bracknell_deploy_update_7007() {
+function bracknell_deploy_update_7008() {
   field_delete_field('field_paragraph_accordion_pane_l');
   field_purge_batch(1);
 }

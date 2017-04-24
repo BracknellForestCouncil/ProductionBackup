@@ -41,3 +41,4 @@ features[variable][] = eck_clear_caches
 features[variable][] = entity_view_modes
 features[variable][] = node_display_title_settings
 project path = sites/all/modules/custom/bracknell
+
