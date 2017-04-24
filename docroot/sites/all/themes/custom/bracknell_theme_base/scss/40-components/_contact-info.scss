@@ -1,7 +1,13 @@
-#block-views-contactinfo-block {
+// Contact Info.
+
+.contact-info {
   background-color: $contact-info-bg-color;
-  margin-top: 1em;
   margin-bottom: 1em;
+  margin-top: 1em;
   padding-left: 15px;
   padding-right: 15px;
+
+  .block-title {
+    font-size: $font-size-10;
+  }
 }
