@@ -64,3 +64,31 @@ function localgov_feature_contactinfo_theme_registry_alter(&$theme_registry) {
   }
 }
 
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function localgov_feature_contactinfo_preprocess_node(&$variables) {
+  if ($variables['type'] == 'contact') {
+    $parent = menu_get_object();
+
+    // If viewing the full display of the contact node, don't do anything.
+    if ($variables['nid'] === $parent->nid) {
+      return;
+    }
+
+    // Find the display mode e.g. full or mini from the parent node and set as a variable.
+    if (!empty($parent->field_contactinfo_style)) {
+      $contact_style_field = $parent->field_contactinfo_style;
+      $contact_style_value = $contact_style_field['und'][0]['value'];
+      $variables['display_mode'] = $contact_style_value;
+    }
+
+    // Format the email link.
+    if (!empty($variables['field_contact_email'])) {
+      $contact_email_address = $variables['field_contact_email'][0]['email'];
+      $contact_email = l(t('Send an email'), 'mailto:' . $contact_email_address, array('attributes' => array('class' => 'btn btn-primary')));
+      $variables['contact_email'] = $contact_email;
+    }
+  }
+}
