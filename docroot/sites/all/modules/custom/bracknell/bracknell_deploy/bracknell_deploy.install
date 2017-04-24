@@ -146,6 +146,8 @@ function bracknell_deploy_update_7007(&$sandbox) {
  * Delete link field from accordion paragraph.
  */
 function bracknell_deploy_update_7008() {
-  field_delete_field('field_paragraph_accordion_pane_l');
-  field_purge_batch(1);
+  if (field_read_field('field_paragraph_accordion_pane_l')) {
+    field_delete_field('field_paragraph_accordion_pane_l');
+    field_purge_batch(1);
+  }
 }
