@@ -95,7 +95,8 @@ function localgov_content_basic_strongarm() {
   $strongarm->name = 'node_options_basic';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_basic'] = $strongarm;
 
