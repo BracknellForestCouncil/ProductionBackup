@@ -113,6 +113,9 @@
   <?php if ($slogan) : ?>
     <?php print $slogan; ?>
   <?php endif; ?>
+  <?php if ($promotional_related_pages) : ?>
+    <?php print $promotional_related_pages; ?>
+  <?php endif; ?>
   <div class="container">
     <div class="row">
       <div<?php print $content_column_class ?>>
