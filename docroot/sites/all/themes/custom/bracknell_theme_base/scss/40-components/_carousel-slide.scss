@@ -1,12 +1,17 @@
+// Carousel Slides.
+
 .carousel-slides {
   background-color: $carousel-bg-color;
   margin-bottom: 20px;
+
   .carousel-slide {
     .carousel-slide-inner {
       @include make-row(0);
+
       .carousel-slide-flex-wrapper {
         display: flex;
         flex-wrap: wrap;
+
         > * {
           display: flex;
           flex-wrap: wrap;
@@ -14,63 +19,80 @@
           justify-content: center;
         }
       }
-      .carousel-slide-media, .carousel-slide-content {
+
+      .carousel-slide-media,
+      .carousel-slide-content {
         @include make-md-column(6);
       }
+
       .field-name-field-testimonial-image {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
+
       .carousel-slide-media {
         padding: 0;
         background: $carousel-video-bg-color;
+
         .youtube-field-player {
           width: 100%;
         }
       }
+
       .carousel-slide-content {
         padding: 60px 65px;
+
         .field-name-body {
           padding-bottom: 20px;
           border-bottom: 1px solid $carousel-caption-line-color;
           margin-bottom: 20px;
           min-height: 6.9em;
           line-height: 1.4em;
+
           .field-items {
             p {
               position: relative;
-            }
-            p:first-child:before {
-              content: "\201C";
-              position: absolute;
-              left: -11px;
-            }
-            p:last-child {
-              display: inline;
-              &:after {
-                content: "\201D";
-                position: absolute;
-                right: -10px;
+
+              &:first-child {
+                &:before {
+                  content: '\201C';
+                  position: absolute;
+                  left: -11px;
+                }
+              }
+
+              &:last-child {
+                display: inline;
+
+                &:after {
+                  content: '\201D';
+                  position: absolute;
+                  right: -10px;
+                }
               }
             }
           }
         }
+
         .field-name-field-testimonial-author {
           font-weight: 600;
           line-height: 1em;
           margin-bottom: 5px;
         }
+
         .field-name-field-testimonial-job-title {
           line-height: 1em;
         }
+
         .btn {
           margin-top: 30px;
           margin-bottom: 0;
@@ -78,15 +100,18 @@
         }
       }
     }
+
     &.carousel-slide-media-right {
       .carousel-slide-content {
         @include make-md-column-pull(6);
         padding-left: 85px;
       }
+
       .carousel-slide-media {
         @include make-md-column-push(6);
       }
     }
+
     &.carousel-slide-media-left {
       .carousel-slide-content {
         padding-right: 85px;
@@ -94,33 +119,57 @@
     }
   }
 }
-.flexslider, .flexslider:hover {
+
+.flexslider {
+  &:hover {
+    .flex-direction-nav {
+      .flex-next {
+        right: 20px;
+      }
+
+      .flex-prev {
+        left: 20px;
+      }
+    }
+  }
+
   .flex-direction-nav {
-    .flex-next, .flex-next:hover, .flex-prev, .flex-prev:hover {
-      opacity: 1;
-    }
-    .flex-next, .flex-next:hover {
-      right: 20px;
-      &:before {
-        content: '';
-        height: 100%;
-        width: 100%;
-        background: url('../images/icons/src/right-arrow-grey.svg') center left no-repeat;
-      }
-    }
-    .flex-prev, .flex-prev:hover {
-      left: 20px;
-      &:before {
-        content: '';
-        height: 100%;
-        width: 100%;
-        background: url('../images/icons/src/left-arrow-grey.svg') center left no-repeat;
-      }
-    }
-    .flex-next, .flex-prev {
+    .flex-next,
+    .flex-prev {
       height: 75px;
-      width: 46px;
       margin-top: -36px;
+      opacity: 1;
+      width: 46px;
+    }
+
+    .flex-next {
+      right: 20px;
+
+      &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: url('../images/icons/src/svg/base/right-arrow-grey.svg') center left no-repeat;
+      }
+
+      &:hover {
+        right: 20px;
+      }
+    }
+
+    .flex-prev {
+      left: 20px;
+
+      &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: url('../images/icons/src/svg/base/left-arrow-grey.svg') center left no-repeat;
+      }
+
+      &:hover {
+        left: 20px;
+      }
     }
   }
 }
