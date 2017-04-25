@@ -103,7 +103,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-8">
           <?php if (!empty($title)) : ?>
-            <h1><?php print $title; ?></h1>
+            <h1 class="page-title"><?php print $title; ?></h1>
           <?php endif; ?>
           <?php print $guide_menu; ?>
         </div><!-- end .col -->
