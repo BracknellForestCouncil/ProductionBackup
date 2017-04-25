@@ -9,11 +9,21 @@
 h1 {
   font-size: $font-size-21;
   margin-top: 20px;
+}
 
-  &.green-base {
-    line-height: 1;
-    margin-top: 7px;
+.page-title {
+  border: {
+    color: $hero-title-border-color;
+    style: solid;
+    width: 0 0 5px 0;
   }
+  @include applyColour(border-color);
+  padding-bottom: 10px;
+}
+
+.page-title-plain {
+  border: 0;
+  padding-bottom: 0;
 }
 
 h1,
