@@ -1,8 +1,14 @@
-// Carousel Slides.
+// Carousel.
+
+.carousel {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 
 .carousel-slides {
   background-color: $carousel-bg-color;
   margin-bottom: 20px;
+  position: relative;
 
   .carousel-slide {
     .carousel-slide-inner {
@@ -121,6 +127,8 @@
 }
 
 .flexslider {
+  margin-bottom: 0;
+
   &:hover {
     .flex-direction-nav {
       .flex-next {
