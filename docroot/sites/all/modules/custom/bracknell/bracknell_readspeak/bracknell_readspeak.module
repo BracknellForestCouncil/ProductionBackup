@@ -9,13 +9,21 @@
  * Implements hook_form_alter().
  */
 function bracknell_readspeak_form_alter(&$form, &$form_state, $form_id) {
-  // Attach the Readspeak javascript to the page.
-  // TODO: add variable for Readspeak to improve performance.
-  $form['#attached']['js'] = array(
-    '//f1-eu.readspeaker.com/script/5766/ReadSpeaker.js?pids=embhl' => array(
-      'type' => 'external',
-    ),
-  );
+  // If path is a node, load the node id and get the readspeak variable.
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    $nid = arg(1);
+    if (!empty($nid)) {
+      $node = node_load($nid);
+      if (!empty($node->base_readspeak) && $node->base_readspeak == '1') {
+        // Attach the Readspeak javascript to the page as it's required.
+        $form['#attached']['js'] = array(
+          '//f1-eu.readspeaker.com/script/5766/ReadSpeaker.js?pids=embhl' => array(
+            'type' => 'external',
+          ),
+        );
+      }
+    }
+  }
 }
 
 /**
@@ -25,17 +33,24 @@ function bracknell_readspeak_preprocess_page(&$variables) {
   if (path_is_admin(current_path())) {
     return;
   }
-  
-  // TODO: add a readspeak variable and check it's status to suggest template.
+
+  $enable_rs = '0';
+  if (isset($variables['node'])) {
+    $enable_rs = $variables['node']->base_readspeak;
+  }
+
+  if ($enable_rs == '1') {
+    // TODO: add a readspeak variable and check it's status to suggest template.
   $variables['theme_hook_suggestions'][] = 'page__readspeak';
-  
+
   // Define a new title variable - text only.
   if (!empty($node = $variables['node'])) {
     $variables['rs_title'] = $node->title;
   }
-  
+
   // Define a path for the Readspeak JS
   $variables['rs_path'] = $GLOBALS['base_url'] . request_uri();
+  }
 }
 
 /**
