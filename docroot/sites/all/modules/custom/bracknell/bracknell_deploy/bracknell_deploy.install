@@ -156,5 +156,6 @@ function bracknell_deploy_update_7008() {
  * Enable the bracknell_readspeak module.
  */
 function bracknell_deploy_update_7009(&$sandbox) {
+  module_enable(array('custom_pub'));
   module_enable(array('bracknell_readspeak'));
 }
