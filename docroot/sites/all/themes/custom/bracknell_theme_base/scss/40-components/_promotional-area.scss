@@ -1,5 +1,6 @@
 // Promotional area.
 
+// Promotional area (content left, media right).
 .promotional-area {
   @include clearfix();
   margin-bottom: 30px;
@@ -30,13 +31,22 @@
   .promo-description {
     margin-bottom: 20px;
   }
+}
 
-  .promo-image {
-    &.right {
+// Promotional area (media left, content right).
+.promotional-area-media-left {
+  @include breakpoint($screen-md) {
+    .promotional-area-content {
       padding-left: 0;
+      padding-right: 15px;
+
+      .promo-text {
+        padding-right: 0;
+      }
     }
 
-    &.left {
+    .promotional-area-media {
+      padding-left: 15px;
       padding-right: 0;
     }
   }
