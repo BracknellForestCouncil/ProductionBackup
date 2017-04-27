@@ -79,12 +79,12 @@
  *
  * @ingroup themeable
  */
-?>
-<?php
-  // We hide all fields so we can render them later.
-  hide($content);
+
+// We hide all fields so we can render them later.
+hide($content);
 ?>
 
+<?php if(!empty($display_mode)) : ?>
 <div class="contact-info">
   <div class="contact-info-content">
     <h2 class="contact-info-title"><?php print t('Contact Information') ?></h2>
@@ -111,3 +111,4 @@
     <?php endif; ?>
   <?php endif; ?>
 </div>
+<?php endif; ?>
