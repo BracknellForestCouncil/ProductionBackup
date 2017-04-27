@@ -151,3 +151,10 @@ function bracknell_deploy_update_7008() {
     field_purge_batch(1);
   }
 }
+
+/**
+ * Enable the bracknell_readspeak module.
+ */
+function bracknell_deploy_update_7009(&$sandbox) {
+  module_enable(array('bracknell_readspeak'));
+}

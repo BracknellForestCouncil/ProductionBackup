@@ -722,7 +722,7 @@ function bracknell_feature_directory_strongarm() {
     'geocoder_apikey_yahoo' => '',
     'geocoder_apikey_yandex' => '',
     'geocoder_apikey_bing' => '',
-    'geocoder_apikey_google' => 'AIzaSyAEIrOaR4tSOn99Qi-YU2m1jcRcde2dsUw',
+    'geocoder_apikey_google' => 'AIzaSyAOn2Yyi2e1ouOhVmdRRqg2-fZOi2jLohc',
   );
   $export['geocoder_settings'] = $strongarm;
 

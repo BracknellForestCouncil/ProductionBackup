@@ -171,18 +171,5 @@ function bracknell_base_user_default_permissions() {
     'module' => 'eck',
   );
 
-  // Exported permission: 'edit_custom_pub_readspeak'.
-  $permissions['edit_custom_pub_readspeak'] = array(
-    'name' => 'edit_custom_pub_readspeak',
-    'roles' => array(
-      'content administrator' => 'content administrator',
-      'content editor' => 'content editor',
-      'site administrator' => 'site administrator',
-      'site editor' => 'site editor',
-      'webmaster' => 'webmaster',
-    ),
-    'module' => 'custom_pub',
-  );
-
   return $permissions;
 }

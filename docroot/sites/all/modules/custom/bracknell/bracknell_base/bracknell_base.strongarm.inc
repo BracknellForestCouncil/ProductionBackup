@@ -13,39 +13,6 @@ function bracknell_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'custom_pub_types';
-  $strongarm->value = array(
-    'readspeak' => array(
-      'type' => 'readspeak',
-      'name' => 'Readspeak Enabled',
-      'node_types' => array(
-        'basic' => 'Basic Page',
-        'form' => 'Form Page',
-        'guide' => 'Guide',
-        'guide_section' => 'Guide Page',
-        'landing_page' => 'Landing Page',
-        'location_car_park' => 'Location - Car park',
-        'location_community' => 'Location - Community venue',
-        'location_leisure' => 'Location - Leisure site',
-        'location_library' => 'Location - Library',
-        'location_main' => 'Location - Main',
-        'location_park' => 'Location - Park',
-        'location_playground' => 'Location - Playground',
-        'location_school' => 'Location - School',
-        'location_council' => 'Location - Town or Parish council',
-        'miscellaneous' => 'Miscellaneous page',
-        'article' => 'News Article',
-        'promo' => 'News Promo',
-        'promotional_page' => 'Promotional Page',
-        'smallprint' => 'Smallprint Page',
-      ),
-    ),
-  );
-  $export['custom_pub_types'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'eck_clear_caches';
   $strongarm->value = FALSE;
   $export['eck_clear_caches'] = $strongarm;
