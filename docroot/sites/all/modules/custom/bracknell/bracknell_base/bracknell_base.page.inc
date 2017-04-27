@@ -24,12 +24,8 @@ function bracknell_base_error_page($errorcode) {
     // Create the 404 page message.
     $message_title = t("Sorry, the page you were looking for was not found.") . "<br/><br/>";
     $message_body = t("There are a few different ways to help you find the page you were looking for:") . "<br/>";
-    // Create an unordered list of options to display.
-    $message_options = "";
-    foreach ($alt_links as $item) {
-      $message_options = $message_options . "<li>" . $item . "</li>";
-    }
-    $message_options = "<ul>" . $message_options . "</ul>";
+    // Create an unordered list of options to display using theme function.
+    $message_options = theme('item_list', array('items' => $alt_links));
     // Combine the options and stick in the markup.
     $message = $message_title . $message_body . $message_options;
     $content['raw_markup'] = array(

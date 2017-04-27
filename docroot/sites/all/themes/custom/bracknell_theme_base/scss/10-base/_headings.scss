@@ -9,11 +9,21 @@
 h1 {
   font-size: $font-size-21;
   margin-top: 20px;
+}
 
-  &.green-base {
-    line-height: 1;
-    margin-top: 7px;
+.page-title {
+  border: {
+    color: $hero-title-border-color;
+    style: solid;
+    width: 0 0 5px 0;
   }
+  @include applyColour(border-color);
+  padding-bottom: 10px;
+}
+
+.page-title-plain {
+  border: 0;
+  padding-bottom: 0;
 }
 
 h1,
@@ -61,52 +71,51 @@ h6 {
   }
 }
 
-aside h2,
-h3,
-h4,
-h5 {
-  font-weight: $font-weight-base;
-  font-size: $font-size-10;
-}
-
-h4 {
-  font-size: $font-size-08;
-}
-
-h5 {
-  font-size: $font-size-06;
-}
-
-h6 {
-  font-size: $font-size-05;
-}
-
 aside {
   h2,
   h3,
   h4,
   h5 {
+    border-color: $global-heading-border-color;
     @include applyColour(border-top-color);
     border-top: {
       style: solid;
       width: 5px;
     }
+    font: {
+      size: $font-size-10;
+      weight: $font-weight-base;
+    }
     margin-bottom: $commonSpacing / 3;
     padding-top: 20px;
   }
+
+  h4 {
+    font-size: $font-size-08;
+  }
+
+  h5 {
+    font-size: $font-size-06;
+  }
+
+  h6 {
+    font-size: $font-size-05;
+  }
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-  color: $global-heading-link-text-color;
-  text-decoration: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  a {
+    color: $global-heading-link-text-color;
+    text-decoration: none;
 
-  &:hover {
-    color: $global-heading-link-hover-text-color;
-    text-decoration: underline;
+    &:hover {
+      color: $global-heading-link-hover-text-color;
+      text-decoration: underline;
+    }
   }
 }

@@ -2,9 +2,12 @@
 
 .guide-navigation-primary {
   background-color: $guide-nav-primary-bg-color;
-  padding: 25px 0;
+  padding: 15px 0;
 
   .guide-navigation-primary-list {
+    margin-bottom: 15px;
+    margin-top: 30px;
+
     @include breakpoint($screen-sm) {
       column-count: 2;
       column-gap: 30px;

@@ -143,8 +143,11 @@ function bracknell_deploy_update_7007(&$sandbox) {
 }
 
 /**
- * Enable the addressfield_sub_premise module to provide Address 3
+ * Delete link field from accordion paragraph.
  */
-function bracknell_deploy_update_7008(&$sandbox) {
-  module_enable(array('addressfield_sub_premise'));
+function bracknell_deploy_update_7008() {
+  if (field_read_field('field_paragraph_accordion_pane_l')) {
+    field_delete_field('field_paragraph_accordion_pane_l');
+    field_purge_batch(1);
+  }
 }
