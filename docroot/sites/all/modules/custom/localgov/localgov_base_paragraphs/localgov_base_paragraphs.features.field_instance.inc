@@ -1097,7 +1097,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'field_name' => 'field_showcase_title',
     'is_property' => 0,
     'label' => 'Title',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'linkit' => array(
         'button_text' => '',
@@ -1111,6 +1111,8 @@ function localgov_base_paragraphs_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'size' => 60,
       ),
       'type' => 'text_textfield',

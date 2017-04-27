@@ -28,12 +28,12 @@
 ?>
 <div class="row">
   <div class="col-sm-6">
-    <?php print render($content['field_component_3_3_3_6__6']); ?>
+    <?php print render($content['field_component_3_6_3_3__6']); ?>
   </div>
   <div class="col-sm-3">
-    <?php print render($content['field_component_3_3_3_6__3_1']); ?>
+    <?php print render($content['field_component_3_6_3_3__3_1']); ?>
   </div>
   <div class="col-sm-3">
-    <?php print render($content['field_component_3_3_3_6__3_2']); ?>
+    <?php print render($content['field_component_3_6_3_3__3_2']); ?>
   </div>
 </div>
