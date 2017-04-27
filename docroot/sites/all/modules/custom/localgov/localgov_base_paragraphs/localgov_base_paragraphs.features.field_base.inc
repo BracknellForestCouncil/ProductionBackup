@@ -208,7 +208,7 @@ function localgov_base_paragraphs_field_default_field_bases() {
   // Exported field_base: 'field_component_3_4_4_4__4'.
   $field_bases['field_component_3_4_4_4__4'] = array(
     'active' => 1,
-    'cardinality' => 3,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_component_3_4_4_4__4',
