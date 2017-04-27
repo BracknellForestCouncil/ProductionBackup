@@ -46,4 +46,12 @@
     </div>
   </div>
 </header>
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <?php if ($readspeaker_button) : ?>
+        <?php print $readspeaker_button; ?>
+      <?php endif; ?>
+    </div>
+  </div>
+</div>
