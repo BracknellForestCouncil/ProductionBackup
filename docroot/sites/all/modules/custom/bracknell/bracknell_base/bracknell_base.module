@@ -93,3 +93,13 @@ function bracknell_base_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_addressfield_address_formats_alter().
+ */
+function bracknell_base_addressfield_address_formats_alter(&$address_formats) {
+  // Enable 'sub_premise' field.
+  $address_formats['GB']['used_fields'][] = 'sub_premise';
+  // Set label.
+  $address_formats['GB']['sub_premise_label'] = t('Address 3');
+}
