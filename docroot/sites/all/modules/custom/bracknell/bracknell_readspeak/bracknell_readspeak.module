@@ -40,16 +40,23 @@ function bracknell_readspeak_preprocess_page(&$variables) {
   }
 
   if ($enable_rs == '1') {
-    // TODO: add a readspeak variable and check it's status to suggest template.
-  $variables['theme_hook_suggestions'][] = 'page__readspeak';
+    $rs_button = '<div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">';
+    $rs_button .= '<a class="rsbtn_play" accesskey="L" title="Listen to this page using ReadSpeaker" href="http://app.eu.readspeaker.com/cgi-bin/rsent?customerid=5766&amp;lang=en_uk&amp;readid=readspeaker_content&amp;url=<?php print $rs_path ?>">';
+    $rs_button .= '<span class="rsbtn_left rsimg rspart">';
+    $rs_button .= '<span class="rsbtn_text"><span>Listen</span></span></span>';
+    $rs_button .= '<span class="rsbtn_right rsimg rsplay rspart"></span>';
+    $rs_button .= '</a>';
+    $rs_button .= '</div>';
 
-  // Define a new title variable - text only.
-  if (!empty($node = $variables['node'])) {
-    $variables['rs_title'] = $node->title;
-  }
+    $variables['readspeaker_button'] = $rs_button;
 
-  // Define a path for the Readspeak JS
-  $variables['rs_path'] = $GLOBALS['base_url'] . request_uri();
+    // Define a new title variable - text only.
+    if (!empty($node = $variables['node'])) {
+      $variables['rs_title'] = $node->title;
+    }
+
+    // Define a path for the Readspeak JS
+    $variables['rs_path'] = $GLOBALS['base_url'] . request_uri();
   }
 }
 
