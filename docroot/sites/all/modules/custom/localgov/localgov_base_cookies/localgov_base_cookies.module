@@ -24,35 +24,28 @@ foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
 include_once 'localgov_base_cookies.features.inc';
 
 /**
- * Implements hook_html_head_alter
+ * Implements template_preprocess_html().
  */
-function localgov_base_cookies_html_head_alter(&$head_elements) {
-
-  $head_elements['cookie_notice'] = array(
-    '#type' => 'markup',
-    '#markup' => '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script>
-    window.addEventListener("load", function(){
-    window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#336633",
-          "text": "#ffffff"
-        },
-        "button": {
-          "background": "#ffffff",
-          "text": "#070510"
-        }
+function localgov_base_cookies_preprocess_html(&$variables) {
+  drupal_add_css(drupal_get_path('module', 'localgov_base_cookies') . '/css/cookieconsent.min.css');
+  drupal_add_js(drupal_get_path('module', 'localgov_base_cookies') . '/js/cookieconsent.min.js');
+  drupal_add_js('window.addEventListener("load", function() {
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#336633",
+        "text": "#ffffff"
       },
-      "content": {
-        "message": "We use cookies to improve your visit to this site. By viewing our content you are accepting the use of cookies.",
-        "dismiss": "Continue",
-        "link": "Find out more about how we use cookies",
-        "href": "/smallprint/cookies"
+      "button": {
+        "background": "#ffffff",
+        "text": "#070510"
       }
-    })});
-    </script>',
-    '#weight' => 9999,
-  );
+    },
+    "content": {
+      "message": "We use cookies to improve your visit to this site. By viewing our content you are accepting the use of cookies.",
+      "dismiss": "Continue",
+      "link": "Find out more about how we use cookies",
+      "href": "/smallprint/cookies"
+    }
+  })});', array('type' => 'inline'));
 }
