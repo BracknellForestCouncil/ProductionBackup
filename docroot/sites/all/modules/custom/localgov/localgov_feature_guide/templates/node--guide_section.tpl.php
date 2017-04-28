@@ -90,6 +90,7 @@
     hide($content['links']);
     hide($content['field_promotional_hero']);
     hide($content['guide_navigation_primary']);
+    hide($content['field_related']);
 
     print render($content);
   ?>

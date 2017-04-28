@@ -94,6 +94,7 @@
         hide($content['comments']);
         hide($content['links']);
         hide($content['guide_navigation_primary']);
+        hide($content['field_related']);
 
         print render($content);
       ?>
