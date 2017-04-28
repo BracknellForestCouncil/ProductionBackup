@@ -7,7 +7,6 @@
   clear: both; }
 
 #sg-patterns {
-  -webkit-box-sizing: border-box !important;
   box-sizing: border-box !important;
   max-width: 100%;
   padding: 0 0.5em; }
@@ -78,5 +77,4 @@ h3.sg-pattern-title a {
 
 #sg-patterns .sg-pattern-state:before {
   font-size: 28px !important; }
-
 /*# sourceMappingURL=pattern-lab.css.map */

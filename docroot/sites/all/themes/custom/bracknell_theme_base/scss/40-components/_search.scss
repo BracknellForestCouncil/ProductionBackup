@@ -107,6 +107,7 @@
 
 .page-search {
   #views-exposed-form-search-page-page {
+    @extend .col-md-8;
     position: relative;
     background: $greyExtraLight;
     border-radius: 3px;
