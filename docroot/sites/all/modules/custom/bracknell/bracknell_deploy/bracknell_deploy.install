@@ -151,3 +151,10 @@ function bracknell_deploy_update_7008() {
     field_purge_batch(1);
   }
 }
+
+/**
+ * Enable the localgov_base_cookies module
+ */
+function bracknell_deploy_update_7009() {
+  module_enable(array('localgov_base_cookies'));
+}
