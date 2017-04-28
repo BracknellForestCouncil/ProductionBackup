@@ -40,15 +40,6 @@ function bracknell_readspeak_preprocess_page(&$variables) {
   }
 
   if ($enable_rs == '1') {
-    $rs_button = '<div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">';
-    $rs_button .= '<a class="rsbtn_play" accesskey="L" title="Listen to this page using ReadSpeaker" href="http://app.eu.readspeaker.com/cgi-bin/rsent?customerid=5766&amp;lang=en_uk&amp;readid=readspeaker_content&amp;url=<?php print $rs_path ?>">';
-    $rs_button .= '<span class="rsbtn_left rsimg rspart">';
-    $rs_button .= '<span class="rsbtn_text"><span>Listen</span></span></span>';
-    $rs_button .= '<span class="rsbtn_right rsimg rsplay rspart"></span>';
-    $rs_button .= '</a>';
-    $rs_button .= '</div>';
-
-    $variables['readspeaker_button'] = $rs_button;
 
     // Define a new title variable - text only.
     if (!empty($node = $variables['node'])) {
@@ -57,8 +48,26 @@ function bracknell_readspeak_preprocess_page(&$variables) {
 
     // Define a path for the Readspeak JS
     $variables['rs_path'] = $GLOBALS['base_url'] . request_uri();
+
+    $variables['readspeaker_button'] = theme('bracknell_readspeak_template', array('rs_path' => $variables['rs_path']));
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function bracknell_readspeak_theme($existing, $type, $theme, $path) {
+  return array(
+    'bracknell_readspeak_template' => array(
+      'variables' => array(
+        'rs_path' => NULL,
+      ),
+      'path' => drupal_get_path('module', 'bracknell_readspeak') . '/templates',
+      'template' => 'bracknell_readspeak_button',
+    ),
+  );
+}
+
 
 /**
  * Implements hook_theme_registry_alter().
