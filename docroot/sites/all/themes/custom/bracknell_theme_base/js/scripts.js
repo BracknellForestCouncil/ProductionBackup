@@ -207,6 +207,17 @@
       }
     }
   };
+
+  Drupal.behaviors.bracknellLogoFallback = {
+    attach: function (context, settings) {
+      if (typeof(Modernizr) !== 'undefined' && !Modernizr.svg) {
+        $('[data-js="logo"] img[src$=".svg"]').each(function() {
+          $(this).attr('src', $(this).attr('data-fallback'));
+        });
+      }
+    }
+  };
+
 })(jQuery);
 
 // Tooltip for My account
