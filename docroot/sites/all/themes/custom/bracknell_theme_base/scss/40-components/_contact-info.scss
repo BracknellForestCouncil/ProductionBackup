@@ -1,7 +1,27 @@
-#block-views-contactinfo-block {
+// Contact Info.
+
+.contact-info {
   background-color: $contact-info-bg-color;
-  margin-top: 1em;
   margin-bottom: 1em;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-top: 1em;
+  padding: 1px 15px;
+
+  @include breakpoint($screen-md) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .btn {
+    margin-top: 15px;
+  }
+}
+
+@include breakpoint($screen-md) {
+  .contact-info-content {
+    flex: 1;
+  }
+}
+
+.contact-info-title {
+  font-size: $font-size-10;
 }

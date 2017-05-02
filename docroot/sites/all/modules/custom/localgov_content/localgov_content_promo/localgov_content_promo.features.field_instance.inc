@@ -63,9 +63,14 @@ function localgov_content_promo_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 95,
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => TRUE,
+          'use_content_language' => TRUE,
+          'view_mode' => 'default',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -107,7 +112,7 @@ function localgov_content_promo_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 96,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -233,7 +238,7 @@ function localgov_content_promo_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -271,7 +276,7 @@ function localgov_content_promo_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 98,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -309,7 +314,7 @@ function localgov_content_promo_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 97,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -370,14 +375,9 @@ function localgov_content_promo_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'quickedit' => array(
-            'editor' => 'form',
-          ),
-        ),
+        'settings' => array(),
         'type' => 'hidden',
-        'weight' => 90,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
