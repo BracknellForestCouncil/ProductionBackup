@@ -155,6 +155,6 @@ function bracknell_deploy_update_7008() {
 /**
  * Enable the addressfield_sub_premise module to provide Address 3
  */
-function bracknell_deploy_update_7009(&$sandbox) {
+function bracknell_deploy_update_7011(&$sandbox) {
   module_enable(array('addressfield_sub_premise'));
 }
