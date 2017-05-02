@@ -1,7 +1,15 @@
 // Category Showcase.
 
+.showcase {
+  margin-top: 20px;
+}
+
+.showcase-title {
+  margin-top: 0;
+}
+
 .showcase-item {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   position: relative;
 
   .js & {

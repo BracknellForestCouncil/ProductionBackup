@@ -1,5 +1,9 @@
 // Accordion.
 
+.accordion {
+  margin-bottom: 20px;
+}
+
 .accordion-pane-title {
   background-color: $accordion-pane-title-bg-color;
   border: {
@@ -25,7 +29,7 @@
     style: solid;
     width: 0 1px 1px 1px;
   }
-  padding: 20px 15px;
+  padding: 20px 15px 0;
 }
 
 // Styling when JavaScript is enabled.

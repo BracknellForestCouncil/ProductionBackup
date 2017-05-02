@@ -26,6 +26,6 @@
  * @see template_process()
  */
 ?>
-<section class="content-section-document clearfix">
+<div class="documents">
   <?php print render($content); ?>
-</section>
+</div>

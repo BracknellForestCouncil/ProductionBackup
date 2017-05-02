@@ -116,28 +116,6 @@
   outline-offset: -2px;
 }
 
-// == Wells
-.well {
-  box-shadow: none;
-  border-radius: 0;
-  border: 0;
-}
-
-//== Labels
-//
-//##
-.label {
-  border-radius: 0;
-  padding: 7px 15px;
-  margin-bottom: $commonSpacing/2;
-  display: inline-block;
-  font-weight: $font-weight-headinglight;
-
-  &.label-archive {
-    background: $label-archive-bg-color;
-  }
-}
-
 // Carets
 .caret {
   &.up {
