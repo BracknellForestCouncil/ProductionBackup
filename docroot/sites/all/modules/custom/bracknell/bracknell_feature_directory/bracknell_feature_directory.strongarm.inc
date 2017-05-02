@@ -722,7 +722,7 @@ function bracknell_feature_directory_strongarm() {
     'geocoder_apikey_yahoo' => '',
     'geocoder_apikey_yandex' => '',
     'geocoder_apikey_bing' => '',
-    'geocoder_apikey_google' => 'AIzaSyAEIrOaR4tSOn99Qi-YU2m1jcRcde2dsUw',
+    'geocoder_apikey_google' => 'AIzaSyAOn2Yyi2e1ouOhVmdRRqg2-fZOi2jLohc',
   );
   $export['geocoder_settings'] = $strongarm;
 
@@ -874,7 +874,8 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->name = 'node_options_location_car_park';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_location_car_park'] = $strongarm;
 
@@ -884,7 +885,8 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->name = 'node_options_location_community';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_location_community'] = $strongarm;
 
@@ -894,7 +896,8 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->name = 'node_options_location_council';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_location_council'] = $strongarm;
 
@@ -904,7 +907,8 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->name = 'node_options_location_leisure';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_location_leisure'] = $strongarm;
 
@@ -914,7 +918,8 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->name = 'node_options_location_library';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_location_library'] = $strongarm;
 
@@ -924,7 +929,8 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->name = 'node_options_location_main';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_location_main'] = $strongarm;
 
@@ -934,7 +940,8 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->name = 'node_options_location_park';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_location_park'] = $strongarm;
 
@@ -944,7 +951,8 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->name = 'node_options_location_playground';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_location_playground'] = $strongarm;
 
@@ -954,7 +962,8 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->name = 'node_options_location_school';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_location_school'] = $strongarm;
 
