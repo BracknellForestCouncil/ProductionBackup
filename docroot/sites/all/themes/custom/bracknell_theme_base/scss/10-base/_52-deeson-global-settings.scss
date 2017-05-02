@@ -77,10 +77,6 @@
   overflow: hidden;
 }
 
-.green-base {
-  border-bottom: 5px solid $green-base-border-color;
-}
-
 .green-top-twopx {
   border-top: 2px solid $green-top-twopx-border-color;
 }
@@ -118,28 +114,6 @@
 .link-focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-}
-
-// == Wells
-.well {
-  box-shadow: none;
-  border-radius: 0;
-  border: 0;
-}
-
-//== Labels
-//
-//##
-.label {
-  border-radius: 0;
-  padding: 7px 15px;
-  margin-bottom: $commonSpacing/2;
-  display: inline-block;
-  font-weight: $font-weight-headinglight;
-
-  &.label-archive {
-    background: $label-archive-bg-color;
-  }
 }
 
 // Carets

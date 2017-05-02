@@ -101,7 +101,7 @@
   <div class="promotional-hero <?php print $classes; ?>">
     <?php if (!empty($title)) : ?>
     <div class="promotional-hero-title container">
-      <h1 class="promotional-hero-title-inner col-md-8">
+      <h1 class="promotional-hero-title-inner page-title col-md-8">
         <?php print $title; ?>
       </h1>
     </div><!-- end .promotional-hero-title -->
@@ -112,6 +112,9 @@
   </div><!-- end .promotional-hero -->
   <?php if ($slogan) : ?>
     <?php print $slogan; ?>
+  <?php endif; ?>
+  <?php if ($promotional_related_pages) : ?>
+    <?php print $promotional_related_pages; ?>
   <?php endif; ?>
   <div class="container">
     <div class="row">

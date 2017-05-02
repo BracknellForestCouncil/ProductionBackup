@@ -1,26 +1,6 @@
 "use strict";
 
 (function ($) {
-  Drupal.behaviors.bracknellThemeBaseBehavior = {
-    attach: function (context, settings) {
-      // Fix related links location on guide pages
-      // media query checking for minimum 992px  event handler
-      if (matchMedia) {
-        var mq_992px = window.matchMedia("(min-width:992px)");
-        mq_992px.addListener(WidthChange);
-        WidthChange(mq_992px);
-      }
-      // media query change
-      function WidthChange(mq_992px) {
-        if (mq_992px.matches) {
-          $('.node-type-guide-section .region-sidebar-second').css('margin-top', $("[id^='guide-navigation-']").height() + 70 + 'px');
-        } else {
-          $('.node-type-guide-section .region-sidebar-second').css('margin-top', 0 + 'px');
-        }
-      }
-    }
-  };
-
   Drupal.behaviors.bracknellMainMenu = {
     attach: function (context, settings) {
       $('[data-js="main-menu"]').find('.collapse').hide().attr('aria-hidden', 'true');

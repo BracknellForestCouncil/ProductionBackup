@@ -37,7 +37,6 @@ function localgov_base_navigation_block_content_navigation_main() {
     }
   }
 
-  $content .= '<li class="nav-item nav-item-contact-us"><a href="/contact-us">Contact us</a></li>';
   $content .= '</ul></nav>';
 
   return $content;
