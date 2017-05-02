@@ -113,34 +113,43 @@
     border-radius: 3px;
     padding: 20px;
     margin-bottom: 30px;
+
     .views-exposed-form {
       position: relative;
+
       .views-exposed-widgets {
         margin-bottom: 2px;
       }
+
       .views-exposed-widget {
         float: none;
         display: block;
         padding: 0;
+
         label {
           display: none;
         }
+
         .form-control {
           border: 0;
           height: auto;
           min-height: 49px;
         }
+
         .input-group-addon {
           display: none;
         }
+
         &.views-widget-sort-by {
           display: none;
         }
+
         &.views-submit-button {
           position: absolute;
           top: 0;
           right: 0;
           z-index: 3;
+
           .form-submit {
             margin: 0;
             min-height: 49px;
@@ -152,57 +161,74 @@
       }
     }
   }
-  .view.view-search-page {
+
+  .view-search-page {
+
     @extend .col-md-8;
     padding: 0;
+
     .views-row {
       padding: 22px 0;
       border-bottom: 1px solid $search-results-border-color;
-      .views-field.views-field-title {
-        margin-bottom: 2px;
-        font-size: 0.9em;
-        h3 {
-          margin: 0;
-          color: $search-results-title-color;
-          font-weight: 700;
-          font-size: 1.5em;
-          a {
-            color: inherit;
-            strong {
-              font-weight: inherit;
-              background: $search-results-title-highlight-color;
+
+      .views-field {
+
+        .views-field-title {
+          margin-bottom: 2px;
+          font-size: 0.9em;
+
+          h3 {
+            margin: 0;
+            color: $search-results-title-color;
+            font-weight: 700;
+            font-size: 1.5em;
+
+            a {
+              color: inherit;
+
+              strong {
+                font-weight: inherit;
+                background: $search-results-title-highlight-color;
+              }
             }
           }
         }
-      }
-      .views-field.views-field-search-api-excerpt {
-        font-size: 0.9em;
-        line-height: 1.3em;
-        margin: 15px 0 5px;
-        strong {
-          font-weight: inherit;
-          background: $search-results-title-highlight-color;
+
+        .views-field-search-api-excerpt {
+          font-size: 0.9em;
+          line-height: 1.3em;
+          margin: 15px 0 5px;
+
+          strong {
+            font-weight: inherit;
+            background: $search-results-title-highlight-color;
+          }
+        }
+
+        .views-field-url {
+          line-height: 1.2em;
+          font-size: 0.8em;
+        }
+
+        .views-field-changed {
+          font-size: 0.8em;
+          color: $search-results-date-color;
         }
       }
-      .views-field.views-field-url {
-        line-height: 1.2em;
-        font-size: 0.8em;
-      }
-      .views-field.views-field-changed {
-        font-size: 0.8em;
-        color: $search-results-date-color;
-      }
     }
+
     .view-header {
       padding-bottom: 15px;
       border-bottom: 1px solid $search-results-border-color;
       margin-bottom: 5px;
     }
+
     .view-empty {
       background: $search-results-no-results-background-color;
       padding: 20px 30px;
       color: $search-results-no-results-text-color;
       margin-bottom: 20px;
+
       p {
         margin: 0;
       }
