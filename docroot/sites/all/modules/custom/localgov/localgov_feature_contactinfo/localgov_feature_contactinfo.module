@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * localgov_feature_contactinfo.module
@@ -28,9 +29,9 @@ include_once 'localgov_feature_contactinfo.features.inc';
  */
 function localgov_feature_contactinfo_form_alter(&$form, &$form_state, $form_id, $node) {
   if (strpos($form_id, 'node_form')) {
-    // Implement afterbuild
+    // Implement afterbuild.
     $form['#after_build'][] = '_localgov_feature_contactinfo_form_organize';
-    // Implement validate to avoid errors & notices
+    // Implement validate to avoid errors & notices.
     $form['#validate'][] = '_localgov_feature_contactinfo_form_validate';
   }
 }
@@ -64,12 +65,11 @@ function localgov_feature_contactinfo_theme_registry_alter(&$theme_registry) {
   }
 }
 
-
 /**
  * Implements hook_preprocess_node().
  */
 function localgov_feature_contactinfo_preprocess_node(&$variables) {
-  if ($variables['type'] == 'contact') {
+  if ($variables['type'] === 'contact') {
     $parent = menu_get_object();
 
     // If viewing the full display of the contact node, don't do anything.
@@ -77,7 +77,8 @@ function localgov_feature_contactinfo_preprocess_node(&$variables) {
       return;
     }
 
-    // Find the display mode e.g. full or mini from the parent node and set as a variable.
+    // Find the display mode e.g. full or mini from the parent node and set as
+    // a variable.
     if (!empty($parent->field_contactinfo_style)) {
       $contact_style_field = $parent->field_contactinfo_style;
       $contact_style_value = $contact_style_field['und'][0]['value'];

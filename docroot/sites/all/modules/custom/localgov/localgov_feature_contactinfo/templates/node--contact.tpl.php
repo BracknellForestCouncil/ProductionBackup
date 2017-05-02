@@ -84,24 +84,24 @@
 hide($content);
 ?>
 
-<?php if(!empty($display_mode)) : ?>
-<div class="contact-info">
-  <div class="contact-info-content">
-    <h2 class="contact-info-title"><?php print t('Contact Information') ?></h2>
-    <?php if (!empty($content['field_title_display'])) : ?>
-      <p><?php print render($content['field_title_display']); ?></p>
-    <?php else : ?>
-      <p><?php print $title; ?></p>
-    <?php endif;?>
-    <?php if (!empty($display_mode) && $display_mode == 'full') : ?>
+<?php if (!empty($display_mode)) : ?>
+  <div class="contact-info">
+    <div class="contact-info-content">
+      <h2 class="contact-info-title"><?php print t('Contact Information') ?></h2>
+  <?php if (!empty($content['field_title_display'])) : ?>
+          <p><?php print render($content['field_title_display']); ?></p>
+  <?php else : ?>
+          <p><?php print $title; ?></p>
+  <?php endif; ?>
+  <?php if (!empty($display_mode) && $display_mode == 'full') : ?>
     <?php
-      print render($content['field_contact_telephone']);
-      print render($content['field_contact_address']);
+    print render($content['field_contact_telephone']);
+    print render($content['field_contact_address']);
     ?>
-    <?php endif; ?>
+  <?php endif; ?>
 
-    <?php print render($content['field_contact_additional']); ?>
-  </div><!-- end .contact-info-content -->
+  <?php print render($content['field_contact_additional']); ?>
+    </div><!-- end .contact-info-content -->
 
   <?php if (!empty($content['field_contact_form'])) : ?>
     <?php print render($content['field_contact_form']); ?>
@@ -110,5 +110,5 @@ hide($content);
       <?php print $contact_email; ?>
     <?php endif; ?>
   <?php endif; ?>
-</div>
+  </div>
 <?php endif; ?>
