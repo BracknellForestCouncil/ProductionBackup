@@ -18,14 +18,15 @@ function localgov_content_miscellaneous_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'bypass_access' => FALSE,
-          'link' => FALSE,
+          'links' => TRUE,
+          'use_content_language' => TRUE,
+          'view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
-        'weight' => -6,
+        'type' => 'entityreference_entity_view',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -65,10 +66,9 @@ function localgov_content_miscellaneous_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => -5,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -109,7 +109,7 @@ function localgov_content_miscellaneous_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'paragraphs_view',
-        'weight' => -8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -169,7 +169,7 @@ function localgov_content_miscellaneous_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -9,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -220,7 +220,7 @@ function localgov_content_miscellaneous_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -258,7 +258,7 @@ function localgov_content_miscellaneous_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -4,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -300,7 +300,7 @@ function localgov_content_miscellaneous_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -7,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',

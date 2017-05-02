@@ -34,6 +34,15 @@ function localgov_content_guidesection_strongarm() {
       'carousel_slide' => array(
         'custom_settings' => TRUE,
       ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
