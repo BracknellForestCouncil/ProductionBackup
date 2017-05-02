@@ -31,16 +31,7 @@ function localgov_content_contactinfo_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'search_index' => array(
-        'custom_settings' => FALSE,
-      ),
-      'search_result' => array(
-        'custom_settings' => FALSE,
-      ),
       'carousel_slide' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),

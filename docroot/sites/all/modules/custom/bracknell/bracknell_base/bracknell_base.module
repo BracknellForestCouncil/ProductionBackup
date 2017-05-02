@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Bracknell Base feature.
@@ -61,7 +62,8 @@ function bracknell_base_preprocess_page(&$variables) {
     $variables['hero'] = drupal_render($view['field_promotional_hero']);
     $variables['slogan'] = drupal_render($view['field_promotional_slogan']);
 
-    // If the hero has an image, output a class to style the hero differently from the title alone.
+    // If the hero has an image, output a class to style the hero differently
+    // from the title alone.
     if (!empty($variables['node']->field_promotional_hero) >= 1) {
       $variables['classes_array'][] = 'promotional-hero-has-image';
     }
@@ -93,4 +95,14 @@ function bracknell_base_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_addressfield_address_formats_alter().
+ */
+function bracknell_base_addressfield_address_formats_alter(&$address_formats) {
+  // Enable 'sub_premise' field.
+  $address_formats['GB']['used_fields'][] = 'sub_premise';
+  // Set label.
+  $address_formats['GB']['sub_premise_label'] = t('Address 3');
 }

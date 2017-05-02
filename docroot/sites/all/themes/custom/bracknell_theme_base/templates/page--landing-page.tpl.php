@@ -113,9 +113,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8">
-        <div class="footer">
-          <?php print render($page['page_footer']); ?>
-        </div><!-- end .footer -->
+        <?php print render($page['page_footer']); ?>
       </div><!-- end .col -->
     </div><!-- end .row -->
   </div><!-- end .container -->

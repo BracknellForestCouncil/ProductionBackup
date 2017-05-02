@@ -55,6 +55,13 @@ $oliveGreenLight: #b3bc9d;
 $oliveGreenOffWhite: #f8f8f6;
 $oliveGreenBorder: #959580;
 
+// Yellow.
+$yellowLight: #ffd;
+
+// Red.
+$redLight: #fee;
+$redDark: #400;
+
 // Typography.
 $global-text-color: $textBlack;
 $global-link-text-color: $deepBlue;
@@ -166,6 +173,12 @@ $search-text-border-color: $grey1;
 $search-text-placeholder-text-color: $greyMid;
 $search-button-background-color: $charcoal;
 $search-button-hover-background-color: $greyMid;
+$search-results-title-color: $brandGreen;
+$search-results-title-highlight-color: $yellowLight;
+$search-results-border-color: $grey3;
+$search-results-date-color: $greyLight;
+$search-results-no-results-background-color: $redLight;
+$search-results-no-results-text-color: $redDark;
 
 // Breadcrumbs.
 $breadcrumb-border-color: $textBlack;
@@ -213,7 +226,7 @@ $carousel-control-hover-text-color: $greyLight;
 $carousel-video-bg-color: $bracknellBlack;
 
 // Contact Info.
-$contact-info-bg-color: $greyLight;
+$contact-info-bg-color: $greyExtraLight;
 
 // Hero.
 $hero-title-text-color: $textBlack;

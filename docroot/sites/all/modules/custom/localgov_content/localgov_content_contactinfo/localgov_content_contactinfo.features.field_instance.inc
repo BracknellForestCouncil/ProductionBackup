@@ -101,6 +101,7 @@ function localgov_content_contactinfo_field_default_field_instances() {
         'default_country' => 'GB',
         'format_handlers' => array(
           'address' => 'address',
+          'address-sub-promise' => 'address-sub-promise',
           'address-hide-country' => 'address-hide-country',
           'address-optional' => 'address-optional',
           'address-hide-postal-code' => 0,

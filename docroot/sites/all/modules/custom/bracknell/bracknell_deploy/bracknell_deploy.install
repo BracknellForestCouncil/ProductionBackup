@@ -163,9 +163,23 @@ function bracknell_deploy_update_7009() {
 }
 
 /**
+ * Enable the localgov_base_cookies module.
+ */
+function bracknell_deploy_update_7010() {
+  module_enable(array('localgov_base_cookies'));
+}
+
+/**
  * Enable the bracknell_readspeak module.
  */
 function bracknell_deploy_update_7011(&$sandbox) {
   module_enable(array('custom_pub'));
   module_enable(array('bracknell_readspeak'));
+}
+
+/**
+ * Enable the addressfield_sub_premise module to provide Address 3.
+ */
+function bracknell_deploy_update_7012(&$sandbox) {
+  module_enable(array('addressfield_sub_premise'));
 }

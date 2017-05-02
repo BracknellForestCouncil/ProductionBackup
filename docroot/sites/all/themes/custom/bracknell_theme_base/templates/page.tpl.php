@@ -121,9 +121,7 @@
       <div<?php print $content_column_class ?>>
         <?php print render($page['content']); ?>
         <?php if (!empty($page['page_footer'])): ?>
-        <div class="footer">
           <?php print render($page['page_footer']); ?>
-        </div>
         <?php endif; ?>
       </div><!-- end .col -->
 
