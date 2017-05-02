@@ -4935,7 +4935,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -2,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4965,7 +4965,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -4982,7 +4982,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5007,7 +5007,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -5024,7 +5024,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -1,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -5054,7 +5054,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -5075,7 +5075,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'view_mode' => 'address_only',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => -8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -5118,7 +5118,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -5,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -5148,7 +5148,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -5167,7 +5167,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => -6,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -5227,7 +5227,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'manualcrop_thumblist' => FALSE,
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -5247,7 +5247,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -5269,7 +5269,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 11,
     ),
     'workbench_access_field' => 1,
   );
@@ -5285,7 +5285,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5308,7 +5308,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -5324,7 +5324,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => -3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -5371,7 +5371,45 @@ function bracknell_feature_directory_field_default_field_instances() {
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 6,
+      'weight' => 8,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_school-field_school_level'.
+  $field_instances['node-location_school-field_school_level'] = array(
+    'bundle' => 'location_school',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_school_level',
+    'is_property' => 0,
+    'label' => 'Level',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -5388,7 +5426,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 0,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -5410,7 +5448,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -5427,7 +5465,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => -4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -5474,7 +5512,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 5,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -5498,6 +5536,7 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Facilities');
   t('Headteacher');
   t('Image');
+  t('Level');
   t('Library manager');
   t('Location');
   t('Management of the Park');
