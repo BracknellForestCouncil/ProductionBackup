@@ -93,3 +93,19 @@ function bracknell_base_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * This processes the media browser theme for documents and removes the
+ * media label by setting '#show_names' to false.
+ *
+ * see @theme_media_thumbnail
+ */
+function bracknell_base_preprocess_media_thumbnail(&$variables) {
+  $media_browser = (current_path() == 'media/browser') ? TRUE : FALSE;
+  $elements = $variables['element'];
+  if ($media_browser && !empty($elements['#theme']) && $elements['#theme'] == 'file_formatter_table') {
+    $variables['element']['#show_names'] = FALSE;
+  }
+}
