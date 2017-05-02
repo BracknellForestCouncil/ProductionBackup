@@ -776,52 +776,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-category_showcase-field_paragraph_showcase_items'.
-  $field_instances['paragraphs_item-category_showcase-field_paragraph_showcase_items'] = array(
-    'bundle' => 'category_showcase',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'entity_reference_multiple',
-        'settings' => array(
-          'link' => 1,
-        ),
-        'type' => 'entity_reference_multiple_label',
-        'weight' => 1,
-      ),
-      'paragraphs_editor_preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_paragraph_showcase_items',
-    'is_property' => 0,
-    'label' => 'Items',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entity_reference_multiple',
-      'settings' => array(
-        'autocomplete_limit' => 15,
-        'autocomplete_path' => '',
-        'autocomplete_query_like_type' => 'STARTS_WITH',
-      ),
-      'type' => 'entity_reference_multiple_autocomplete',
-      'weight' => 2,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance:
   // 'paragraphs_item-category_showcase-field_paragraph_showcase_title'.
   $field_instances['paragraphs_item-category_showcase-field_paragraph_showcase_title'] = array(
     'bundle' => 'category_showcase',
@@ -1097,7 +1051,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'field_name' => 'field_showcase_title',
     'is_property' => 0,
     'label' => 'Title',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'linkit' => array(
         'button_text' => '',
@@ -1111,6 +1065,8 @@ function localgov_base_paragraphs_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'size' => 60,
       ),
       'type' => 'text_textfield',
@@ -3078,6 +3034,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'carousel' => -1,
         'carousel_slide' => -1,
         'category_showcase' => -1,
+        'category_showcase_item' => -1,
         'document' => -1,
         'featured_box' => -1,
         'highlighted' => -1,
@@ -3092,7 +3049,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'layout_3_col_4_4_4' => -1,
         'layout_3_col_6_3_3' => -1,
         'link' => -1,
-        'map' => -1,
         'promotional_area' => -1,
         'tab_panel' => -1,
         'table' => -1,
@@ -3107,6 +3063,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'carousel' => 6,
         'carousel_slide' => 7,
         'category_showcase' => 8,
+        'category_showcase_item' => 37,
         'document' => 9,
         'featured_box' => 10,
         'highlighted' => 11,
@@ -3121,7 +3078,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'layout_3_col_4_4_4' => 20,
         'layout_3_col_6_3_3' => 21,
         'link' => 22,
-        'map' => 23,
         'promotional_area' => 24,
         'tab_panel' => 27,
         'table' => 25,
@@ -3152,7 +3108,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'paragraphs',
         'settings' => array(
           'view_mode' => 'full',
@@ -3256,7 +3212,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'paragraphs',
         'settings' => array(
           'view_mode' => 'full',
@@ -4818,7 +4774,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Image');
   t('Image Position');
   t('Introduction');
-  t('Items');
   t('Link');
   t('Paragraph Accordion Panes');
   t('Promotional Area Layout');

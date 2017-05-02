@@ -26,5 +26,7 @@
  * @see template_process()
  */
 ?>
-<?php print render($content['field_paragraph_carousel_title']); ?>
-<?php print render($content['field_paragraph_carousel_content']); ?>
+<div class="carousel flexslider">
+  <?php print render($content['field_paragraph_carousel_title']); ?>
+  <?php print render($content['field_paragraph_carousel_content']); ?>
+</div>

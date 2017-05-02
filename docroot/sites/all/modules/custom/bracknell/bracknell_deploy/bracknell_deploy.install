@@ -152,6 +152,23 @@ function bracknell_deploy_update_7008() {
   }
 }
 
+/*
+ * Delete field_paragraph_showcase_items from category showcase paragraph.
+ */
+function bracknell_deploy_update_7009() {
+  if (field_read_field('field_paragraph_showcase_items')) {
+    field_delete_field('field_paragraph_showcase_items');
+    field_purge_batch(1);
+  }
+}
+
+/**
+ * Enable the localgov_base_cookies module.
+ */
+function bracknell_deploy_update_7010() {
+  module_enable(array('localgov_base_cookies'));
+}
+
 /**
  * Enable the addressfield_sub_premise module to provide Address 3
  */

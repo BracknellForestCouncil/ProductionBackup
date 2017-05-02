@@ -109,3 +109,18 @@ function _bracknell_content_promotional_page_get_theme_class_for_child_page(Enti
     ?_bracknell_content_promotional_page_get_theme_class($parent_node_wrapper)
     :_bracknell_content_promotional_page_get_theme_class_for_child_page($parent_node_wrapper);
 }
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function bracknell_content_promotional_page_preprocess_page(&$variables) {
+  // Make the field "field_related_pages" available as variable to use in page.tpl.php.
+  $variables['promotional_related_pages'] = '';
+  // Get the object and do some other checks based on what you need.
+  if (($node = menu_get_object()) && $node->type) {
+    // Generate a render array for the node.
+    $view = node_view($node);
+    // "Create" new variables for the page.tpl.php.
+    $variables['promotional_related_pages'] = drupal_render($view['field_related_pages']);
+  }
+}

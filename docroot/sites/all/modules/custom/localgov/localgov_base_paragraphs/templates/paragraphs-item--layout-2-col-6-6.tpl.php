@@ -27,11 +27,6 @@
  */
 ?>
 <div class="row">
-  <div class="col-sm-6">
-    <?php print render($content['field_component_2_6_6__6']); ?>
-  </div>
-  <div class="col-sm-6">
-    <?php print render($content['field_component_2_6_6__6']); ?>
-  </div>
+  <?php print render($content['field_component_2_6_6__6']); ?>
 </div>
 

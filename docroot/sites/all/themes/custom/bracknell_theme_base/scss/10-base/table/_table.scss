@@ -16,7 +16,8 @@ table {
 }
 
 .table {
-  border: none;
+  border: 0;
+  margin-bottom: 20px;
 
   thead {
     background: none;
@@ -30,26 +31,27 @@ table {
   tbody {
     tr {
       th {
-        border: none;
+        border: 0;
       }
+
       td {
-        border: none;
+        border: 0;
       }
     }
   }
 
   p {
-    margin: 15px 10px;
+    margin: 8px 10px;
   }
 
-  span.icon {
+  .icon {
     font-size: $font-size-06;
     padding-right: 10px;
   }
 
   @media screen and (max-width: $screen-sm - 1) {
     .table-responsive {
-      border: none;
+      border: 0;
     }
   }
 
@@ -73,9 +75,10 @@ table {
   &.table-headed {
     thead {
       background: $table-thead-bg-color;
+
       tr {
         th {
-          border-bottom: none;
+          border-bottom: 0;
           font-weight: 600;
         }
       }
@@ -85,6 +88,7 @@ table {
       tr {
         background: none;
       }
+
       tr > td {
         padding: 5px 10px;
         font-size: $font-size-05;
@@ -102,6 +106,7 @@ table {
         font-weight: 600;
       }
     }
+
     tbody {
       border: 1px solid #000;
       border-top: 0;
@@ -109,7 +114,7 @@ table {
       tr {
         td {
           border-right: 1px solid $table-border-color;
-          border-top: none;
+          border-top: 0;
         }
       }
     }

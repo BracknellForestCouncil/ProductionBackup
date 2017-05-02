@@ -12,6 +12,7 @@
     background-color: $button-bg-hover-color;
     color: $button-text-hover-color;
   }
+
   &:focus {
     background-color: $button-bg-focus-color;
     color: $button-text-focus-color;
@@ -39,10 +40,12 @@
     line-height: 1.15em;
     background: $button-key-task-bg-color $large-arrow-black 21px 20px no-repeat;
     color: $button-key-task-text-color;
+
     &:hover {
       border-color: darken($button-bg-hover-color, 3);
       background-image: $large-arrow-white;
     }
+
     &:focus {
       border-color: darken($button-bg-focus-color, 3);
       background-image: $small-arrow-white;
@@ -57,10 +60,12 @@
     min-height: 3em;
     background: $button-sub-task-bg-color $small-arrow-black 16px 17px no-repeat;
     border-color: $button-sub-task-border-color;
+
     &:hover {
       border-color: darken($button-bg-hover-color, 3);
       background-image: $small-arrow-white;
     }
+
     &:focus {
       border-color: darken($button-bg-focus-color, 3);
       background-image: $small-arrow-white;

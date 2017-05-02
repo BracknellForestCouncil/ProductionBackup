@@ -26,14 +26,6 @@
  * @see template_process()
  */
 ?>
-<div class="row">
-  <div class="col-sm-6">
-    <?php print render($content['field_component_3_6_3_3__6']); ?>
-  </div>
-  <div class="col-sm-3">
-    <?php print render($content['field_component_3_6_3_3__3_1']); ?>
-  </div>
-  <div class="col-sm-3">
-    <?php print render($content['field_component_3_6_3_3__3_2']); ?>
-  </div>
+<div class="video">
+  <?php print render($content); ?>
 </div>

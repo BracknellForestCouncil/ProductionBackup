@@ -96,6 +96,20 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
       $variables['classes_array'][] = 'highlight-has-icon';
     }
   }
+
+  // Output different classes to swap the layout of the content and media depending on which layout is chosen by the content editor.
+  if ($variables['elements']['#entity_type'] == 'paragraphs_item' && $variables['elements']['#bundle'] == 'promotional_area') {
+
+    $variables['content_position'] = '';
+    $variables['image_position'] = '';
+    $image_position = $variables['elements']['field_promotional_area_layout']['#items'][0]['value'];
+
+    if ($image_position == 'left') {
+      $variables['classes_array'][] = 'promotional-area-media-left';
+      $variables['content_position'] = 'col-md-push-6';
+      $variables['image_position'] = 'col-md-pull-6';
+    }
+  }
 }
 
 /**

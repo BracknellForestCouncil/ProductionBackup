@@ -24,35 +24,30 @@ foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
 include_once 'localgov_base_cookies.features.inc';
 
 /**
- * Implements hook_html_head_alter
+ * Implements hook_library().
  */
-function localgov_base_cookies_html_head_alter(&$head_elements) {
+function localgov_base_cookies_library() {
 
-  $head_elements['cookie_notice'] = array(
-    '#type' => 'markup',
-    '#markup' => '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-    <script>
-    window.addEventListener("load", function(){
-    window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#336633",
-          "text": "#ffffff"
-        },
-        "button": {
-          "background": "#ffffff",
-          "text": "#070510"
-        }
-      },
-      "content": {
-        "message": "We use cookies to improve your visit to this site. By viewing our content you are accepting the use of cookies.",
-        "dismiss": "Continue",
-        "link": "Find out more about how we use cookies",
-        "href": "/smallprint/cookies"
-      }
-    })});
-    </script>',
-    '#weight' => 9999,
+  // Cookie Consent.
+  $libraries['cookie-consent'] = array(
+    'title' => 'Cookie Consent',
+    'website' => 'https://cookieconsent.insites.com/download/',
+    'version' => '3.0',
+    'js' => array(
+      drupal_get_path('module', 'localgov_base_cookies') . '/js/cookieconsent-init.js' => array(),
+      drupal_get_path('module', 'localgov_base_cookies') . '/js/cookieconsent.min.js' => array(),
+    ),
+    'css' => array(
+       drupal_get_path('module', 'localgov_base_cookies') . '/css/cookieconsent.min.css' => array(),
+    ),
   );
+
+  return $libraries;
+}
+
+function localgov_base_cookies_preprocess_page(&$variables) {
+  // Only load the cookie consent library on pages which are not admin pages.
+  if (!path_is_admin(current_path())) {
+    drupal_add_library('localgov_base_cookies', 'cookie-consent');
+  }
 }
