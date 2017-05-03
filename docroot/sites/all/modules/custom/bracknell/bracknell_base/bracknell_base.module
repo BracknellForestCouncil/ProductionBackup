@@ -116,9 +116,8 @@ function bracknell_base_addressfield_address_formats_alter(&$address_formats) {
  * see @theme_media_thumbnail
  */
 function bracknell_base_preprocess_media_thumbnail(&$variables) {
-  $media_browser = (current_path() == 'media/browser') ? TRUE : FALSE;
-  $elements = $variables['element'];
-  if ($media_browser && !empty($elements['#theme']) && $elements['#theme'] == 'file_formatter_table') {
+  $theme = $variables['element']['#theme'];
+  if (current_path() === 'media/browser' && !empty($theme) && $theme === 'file_formatter_table') {
     $variables['element']['#show_names'] = FALSE;
   }
 }
