@@ -99,6 +99,14 @@
   padding: 5px 12px;
   width: 48px;
 
+  @include breakpoint($screen-sm) {
+    position: absolute;
+    top: 0;
+    right: 110px;
+    margin-top: 60px;
+    z-index: 2;
+  }
+
   .search-btn-copy {
     position: absolute;
     left: -999em;

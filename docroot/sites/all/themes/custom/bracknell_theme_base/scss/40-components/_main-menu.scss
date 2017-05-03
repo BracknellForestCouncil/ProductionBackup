@@ -8,8 +8,12 @@
   .js & {
     left: 0;
     position: absolute;
-    top: 85px;
+    top: 110px;
     width: 100%;
+
+    @include breakpoint($screen-sm) {
+      top: 135px;
+    }
   }
 
   .nav-item {
@@ -34,17 +38,6 @@
       list-style-type: none;
       margin: 0;
       padding: 20px 0;
-    }
-
-    .js & {
-      ul {
-        padding-top: 40px;
-
-        @include breakpoint($screen-md) {
-          padding-bottom: 40px;
-          padding-top: 80px;
-        }
-      }
     }
 
     li {
@@ -81,6 +74,7 @@
     position: absolute;
     top: 0;
     right: 15px;
+    margin-top: 60px;
     z-index: 2;
   }
 
