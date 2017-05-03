@@ -211,7 +211,7 @@
   Drupal.behaviors.bracknellLogoFallback = {
     attach: function (context, settings) {
       if (typeof(Modernizr) !== 'undefined' && !Modernizr.svg) {
-        $('[data-js="logo"] img[src$=".svg"]').each(function() {
+        $('[data-js="logo"] img[src$=".svg"]', context).each(function () {
           $(this).attr('src', $(this).attr('data-fallback'));
         });
       }
