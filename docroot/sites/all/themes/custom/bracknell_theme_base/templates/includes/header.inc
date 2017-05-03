@@ -4,7 +4,7 @@
       <div class="col-xs-12 col-sm-2 logo" data-js="logo">
         <div class="logo-container">
           <a href="<?php print $front_page; ?>" id="branding" class="logo-link">
-            <img class="img-responsive" src="<?php print base_path() . path_to_theme(); ?>/images/logo/Bracknell-logo_B.png" alt="Bracknell Forest Council">
+            <img class="img-responsive" src="<?php print base_path() . path_to_theme(); ?>/images/logo/Bracknell-logo_B.svg" alt="Bracknell Forest Council" data-fallback="<?php print $logo; ?>">
           </a>
         </div><!-- end .logo-container -->
       </div><!-- end .col -->
@@ -46,4 +46,12 @@
     </div>
   </div>
 </header>
-
+<?php if ($readspeaker_button) : ?>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <?php print $readspeaker_button; ?>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
