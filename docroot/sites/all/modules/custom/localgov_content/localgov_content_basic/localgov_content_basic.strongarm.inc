@@ -55,6 +55,15 @@ function localgov_content_basic_strongarm() {
       'carousel_slide' => array(
         'custom_settings' => TRUE,
       ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -95,7 +104,8 @@ function localgov_content_basic_strongarm() {
   $strongarm->name = 'node_options_basic';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_basic'] = $strongarm;
 

@@ -105,7 +105,8 @@ function bracknell_content_promotional_page_strongarm() {
   $strongarm->name = 'node_options_promotional_page';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_promotional_page'] = $strongarm;
 

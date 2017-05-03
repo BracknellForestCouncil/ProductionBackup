@@ -104,7 +104,8 @@ function bracknell_feature_landing_page_strongarm() {
   $strongarm->name = 'node_options_landing_page';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'revision',
+    1 => 'readspeak',
+    2 => 'revision',
   );
   $export['node_options_landing_page'] = $strongarm;
 

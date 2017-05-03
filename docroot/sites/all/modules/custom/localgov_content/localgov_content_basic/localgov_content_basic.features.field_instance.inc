@@ -27,7 +27,7 @@ function localgov_content_basic_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -72,9 +72,14 @@ function localgov_content_basic_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => 1,
+          'view_mode' => 'default',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -281,7 +286,7 @@ function localgov_content_basic_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -523,7 +528,7 @@ function localgov_content_basic_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',

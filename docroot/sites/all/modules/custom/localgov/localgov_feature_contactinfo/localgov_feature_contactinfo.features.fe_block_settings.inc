@@ -28,8 +28,8 @@ function localgov_feature_contactinfo_default_fe_block_settings() {
         'weight' => 0,
       ),
       'bracknell_theme_base' => array(
-        'region' => 'page_footer',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'bracknell_theme_base',
         'weight' => 0,
       ),

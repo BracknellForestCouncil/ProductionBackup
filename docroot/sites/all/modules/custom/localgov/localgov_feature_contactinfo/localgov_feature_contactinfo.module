@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * localgov_feature_contactinfo.module
@@ -28,9 +29,9 @@ include_once 'localgov_feature_contactinfo.features.inc';
  */
 function localgov_feature_contactinfo_form_alter(&$form, &$form_state, $form_id, $node) {
   if (strpos($form_id, 'node_form')) {
-    // Implement afterbuild
+    // Implement afterbuild.
     $form['#after_build'][] = '_localgov_feature_contactinfo_form_organize';
-    // Implement validate to avoid errors & notices
+    // Implement validate to avoid errors & notices.
     $form['#validate'][] = '_localgov_feature_contactinfo_form_validate';
   }
 }
@@ -41,5 +42,54 @@ function localgov_feature_contactinfo_form_alter(&$form, &$form_state, $form_id,
 function localgov_feature_contactinfo_views_api($module, $api) {
   if ($module == 'views' && $api == 'views_default') {
     return array('version' => 2);
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function localgov_feature_contactinfo_theme_registry_alter(&$theme_registry) {
+  // Defined path to the current module.
+  $module_path = drupal_get_path('module', 'localgov_feature_contactinfo');
+  // Find all .tpl.php files in this module's folder recursively.
+  $template_file_objects = drupal_find_theme_templates($theme_registry, '.tpl.php', $module_path);
+  // Iterate through all found template file objects.
+  foreach ($template_file_objects as $key => $template_file_object) {
+    // If the template has not already been overridden by a theme.
+    if (!isset($theme_registry[$key]['theme path']) || !preg_match('#/themes/#', $theme_registry[$key]['theme path'])) {
+      // Alter the theme path and template elements.
+      $theme_registry[$key]['theme path'] = $module_path;
+      $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
+      $theme_registry[$key]['type'] = 'module';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function localgov_feature_contactinfo_preprocess_node(&$variables) {
+  if ($variables['type'] === 'contact') {
+    $parent = menu_get_object();
+
+    // If viewing the full display of the contact node, don't do anything.
+    if ($variables['nid'] === $parent->nid) {
+      return;
+    }
+
+    // Find the display mode e.g. full or mini from the parent node and set as
+    // a variable.
+    if (!empty($parent->field_contactinfo_style)) {
+      $contact_style_field = $parent->field_contactinfo_style;
+      $contact_style_value = $contact_style_field['und'][0]['value'];
+      $variables['display_mode'] = $contact_style_value;
+    }
+
+    // Format the email link.
+    if (!empty($variables['field_contact_email'])) {
+      $contact_email_address = $variables['field_contact_email'][0]['email'];
+      $contact_email = l(t('Send an email'), 'mailto:' . $contact_email_address, array('attributes' => array('class' => 'btn btn-primary')));
+      $variables['contact_email'] = $contact_email;
+    }
   }
 }

@@ -75,7 +75,7 @@
 ?>
 <?php include_once DRUPAL_ROOT . '/' . drupal_get_path('theme', 'bracknell_theme_base') . '/templates/includes/header.inc'; ?>
 
-<main class="main-container" id="main-content" role="main">
+<main class="main-container" id="readspeaker_content" role="main">
   <div class="container">
     <div class="row">
       <div<?php print $content_column_class ?>>
@@ -113,9 +113,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8">
-        <div class="footer">
-          <?php print render($page['page_footer']); ?>
-        </div><!-- end .footer -->
+        <?php print render($page['page_footer']); ?>
       </div><!-- end .col -->
     </div><!-- end .row -->
   </div><!-- end .container -->
