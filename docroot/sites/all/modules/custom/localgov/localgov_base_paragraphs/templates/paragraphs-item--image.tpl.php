@@ -28,10 +28,19 @@
 ?>
 <?php
 hide($content['field_paragraph_image_position']);
+hide($content['field_paragraph_image_title_head']);
+hide($content['field_paragraph_image_title']);
 ?>
+<div class="image-component">
+  <?php if (!empty($heading_text)) : ?>
+    <<?php print $heading_level; ?> class="image-component-title">
+      <?php print $heading_text; ?>
+    </<?php print $heading_level; ?>>
+  <?php endif; ?>
 
-<div class="img-responsive img-<?php print $content['field_paragraph_image_position']['#items']['0']['value'] ?>">
-  <?php print render($content['field_paragraph_image']); ?>
+  <div class="img-responsive img-<?php print $content['field_paragraph_image_position']['#items']['0']['value'] ?>">
+    <?php print render($content['field_paragraph_image']); ?>
+  </div>
+
+  <?php print render($content); ?>
 </div>
-
-<?php print render($content); ?>
