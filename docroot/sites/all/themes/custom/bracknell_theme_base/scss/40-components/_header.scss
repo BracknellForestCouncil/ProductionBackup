@@ -3,50 +3,45 @@
 .header-inner {
   position: relative;
   padding-bottom: 15px;
-
-  @include breakpoint($screen-md) {
-    padding-bottom: 0;
-  }
 }
 
 .logo {
-  padding-left: 0;
+  padding-left: 15px;
+  padding-right: 15px;
   position: static;
   text-align: right;
-
-  @include breakpoint($screen-sm) {
-    padding-right: 0;
-  }
 }
 
 .logo-container {
   float: left;
-  height: auto;
-  margin: 0;
+  height: 80px;
+  margin: 15px 0 15px;
   position: relative;
-  width: 140px;
+  width: 100px;
   z-index: 150;
 
   @include breakpoint($screen-sm) {
-    margin-bottom: 15px;
+    margin-bottom: 0;
+    height: 104px;
+    width: 130px;
+  }
+
+  img {
     width: 100%;
   }
 }
 
 .logo-link {
-  background: $header-logo-bg-color;
-  border-radius: 0 0 5px 5px;
   display: block;
-  padding: 15px;
+  padding: 0;
   position: relative;
 }
-
 
 .header-section {
   .js & {
     position: static;
 
-    @include breakpoint($screen-sm) {
+    @include breakpoint($screen-md) {
       position: relative;
     }
   }
@@ -56,8 +51,8 @@
   border-bottom: 3px solid $breadcrumb-border-color;
 
   @include breakpoint($screen-sm) {
-    min-height: 95px;
-    padding-top: 20px;
+    min-height: 140px;
+    padding-top: 60px;
     position: static;
     text-align: right;
   }
