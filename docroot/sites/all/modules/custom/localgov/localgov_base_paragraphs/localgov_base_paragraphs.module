@@ -126,6 +126,11 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
       $heading_level = $variables['elements']['field_paragraph_image_title_head']['#items'][0]['value'];
       $variables['heading_level'] = $heading_level;
     }
+
+    if (isset($variables['elements']['field_paragraph_image_position'])) {
+      $paragraph_position = $variables['elements']['field_paragraph_image_position']['#items'][0]['value'];
+      $variables['paragraph_position'] = $paragraph_position;
+    }
   }
 }
 
