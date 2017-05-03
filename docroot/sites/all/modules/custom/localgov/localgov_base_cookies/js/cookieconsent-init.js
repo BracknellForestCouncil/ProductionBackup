@@ -18,7 +18,7 @@
           "message": Drupal.t('We use cookies to improve your visit to this site. By viewing our content you are accepting the use of cookies.'),
           "dismiss": Drupal.t('Continue'),
           "link": Drupal.t('Find out more about how we use cookies'),
-          "href": "/smallprint/cookies"
+          "href": "/council-and-democracy/data-protection-and-freedom-information/privacy-notice/cookies-and-tracking"
         }
       });
     }
