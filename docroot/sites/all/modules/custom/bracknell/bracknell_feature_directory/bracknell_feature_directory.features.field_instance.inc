@@ -557,11 +557,10 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -882,7 +881,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1147,7 +1146,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1199,7 +1198,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 0,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1317,7 +1316,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'trim_trailing_rows' => FALSE,
         ),
         'type' => 'tablefield_default',
-        'weight' => -1,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1356,7 +1355,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -2,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1399,11 +1398,10 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1445,7 +1443,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -4,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1496,7 +1494,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'view_mode' => 'address_only',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => -8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1541,7 +1539,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => -6,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1621,7 +1619,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1660,7 +1658,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1699,7 +1697,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -7,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1750,7 +1748,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => -5,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1814,7 +1812,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1857,11 +1855,10 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => -2,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1903,7 +1900,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -5,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1954,7 +1951,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'view_mode' => 'address_only',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => -8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1999,7 +1996,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => -6,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2079,7 +2076,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2117,7 +2114,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -1,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2156,7 +2153,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => -4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2220,7 +2217,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2271,7 +2268,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -2,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2315,10 +2312,9 @@ function bracknell_feature_directory_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2360,7 +2356,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -5,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2411,7 +2407,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'view_mode' => 'address_only',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => -8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2456,7 +2452,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => -6,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2536,7 +2532,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2574,7 +2570,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2613,7 +2609,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -4,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2660,7 +2656,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -7,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2713,7 +2709,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2790,7 +2786,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => -1,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2842,7 +2838,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -2,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2893,7 +2889,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -1,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2940,11 +2936,10 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2986,7 +2981,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -5,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -3037,7 +3032,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'view_mode' => 'address_only',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => -8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -3082,7 +3077,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => -6,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -3159,7 +3154,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -3209,7 +3204,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -3247,7 +3242,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3286,7 +3281,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -4,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -3333,7 +3328,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -7,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -3384,7 +3379,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 0,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -3448,7 +3443,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3895,7 +3890,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -3942,11 +3937,10 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3992,7 +3986,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'view_mode' => 'address_only',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => -8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4037,7 +4031,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => -6,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4117,7 +4111,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -4155,7 +4149,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4194,7 +4188,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -4,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4241,7 +4235,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4289,7 +4283,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => -1,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4328,7 +4322,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -3,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4375,7 +4369,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -2,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4422,7 +4416,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 1,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4486,7 +4480,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -4,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4537,7 +4531,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -5,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4580,11 +4574,10 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => -2,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4630,7 +4623,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'view_mode' => 'address_only',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => -8,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4673,7 +4666,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4726,7 +4719,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => -6,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4806,7 +4799,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -10,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -4845,7 +4838,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => -1,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4884,7 +4877,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => -7,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -4978,10 +4971,9 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'teaser' => array(
