@@ -106,3 +106,18 @@ function bracknell_base_addressfield_address_formats_alter(&$address_formats) {
   // Set label.
   $address_formats['GB']['sub_premise_label'] = t('Address 3');
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * This processes the media browser theme for documents and removes the
+ * media label by setting '#show_names' to false.
+ *
+ * see @theme_media_thumbnail
+ */
+function bracknell_base_preprocess_media_thumbnail(&$variables) {
+  $theme = $variables['element']['#theme'];
+  if (current_path() === 'media/browser' && !empty($theme) && $theme === 'file_formatter_table') {
+    $variables['element']['#show_names'] = FALSE;
+  }
+}
