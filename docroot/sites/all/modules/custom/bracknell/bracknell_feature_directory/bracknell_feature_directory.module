@@ -34,14 +34,24 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
     array_unshift($variables['theme_hook_suggestions'], 'node__content_type_groups__' . $content_type_group);
   }
 
-  //Add an overview map to location_ content types.
+
   if ($content_type_group == 'location' && !empty($variables['field_directory_entry'])) {
     $location_id = $variables['field_directory_entry'][0]['target_id'];
 
     if (!empty($location_id)) {
       $location_entity = entity_load('directory_entry', array($location_id));
+
+      // Add an overview map to location_ content types.
       $map = entity_view('directory_entry', $location_entity, 'location_zoomed_map');
       $variables['map'] = !empty($map) ? $map : '<p>' . t('An overview map is currently unavailable.') . '</p>';
+
+      // Display the directions, if a content editor chooses to show them.
+      $show_directions = $node->field_location_directions[LANGUAGE_NONE][0]['value'];
+
+      if ($show_directions) {
+        $display_directions = entity_view('directory_entry', $location_entity, 'directions');
+        $variables['directions'] = $display_directions;
+      }
     }
   }
 }
