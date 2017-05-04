@@ -65,3 +65,29 @@ function bracknell_feature_directory_theme_registry_alter(&$theme_registry) {
     }
   }
 }
+
+/**
+ *  Implements hook_views_post_execute().
+ */
+function bracknell_feature_directory_views_post_execute(&$view) {
+  // Change the view mode for the directory address view depending on which options
+  // a content editor has choosen.
+  if ($view->name == 'directory_address') {
+    $nid = $view->args[0];
+
+    if (!empty($nid)) {
+      $node = node_load($nid);
+      $directory_entry = $node->field_directory_entry;
+
+      // Check if the node has a directory entry.
+      if (!empty($directory_entry)) {
+        $address_details = $node->field_address_details[LANGUAGE_NONE][0]['value'];
+
+        // Change the view mode based on what address format the content editor chooses.
+        if ($address_details == 'address_with_phone') {
+          $view->style_plugin->row_plugin->options['view_mode'] = 'address_with_phone';
+        }
+      }
+    }
+  }
+}
