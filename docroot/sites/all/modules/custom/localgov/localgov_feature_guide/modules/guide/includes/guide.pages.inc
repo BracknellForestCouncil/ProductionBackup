@@ -90,8 +90,8 @@ function guide_export_html($nid) {
     if (isset($node->guide)) {
       $tree = guide_menu_subtree_data($node->guide);
       $contents = guide_export_traverse($tree, 'guide_node_export');
-      if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-        $export_title = $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
+      if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+        $export_title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
       } else {
         $export_title = $node->title;
       }
@@ -118,8 +118,8 @@ function guide_export_html($nid) {
   * @see guide_menu()
  */
 function guide_structure($node) {
-  if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-    $show_title = $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $show_title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
   } else {
     $show_title = $node->title;
   }
@@ -229,8 +229,8 @@ function guide_structure_form_submit($form, &$form_state) {
  */
 function guide_remove_form($form, &$form_state, $node) {
   $form['#node'] = $node;
-  if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-    $title = array('%title' => $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value']);
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $title = array('%title' => $node->field_node_display_title[LANGUAGE_NONE][0]['value']);
   }
   else {
     $title = array('%title' => $node->title);

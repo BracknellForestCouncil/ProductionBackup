@@ -81,8 +81,8 @@ function guide_admin_settings_validate($form, &$form_state) {
  * @ingroup forms
  */
 function guide_admin_edit($form, $form_state, $node) {
-  if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-    drupal_set_title($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value']);
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    drupal_set_title($node->field_node_display_title[LANGUAGE_NONE][0]['value']);
   }
   else {
     drupal_set_title($node->title);
@@ -142,11 +142,11 @@ function guide_admin_edit_submit($form, &$form_state) {
         $node = node_load($values['nid']);
         $langcode = LANGUAGE_NONE;
         // Changed to display title - node title remains untouched.
-        $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'] = $values['title'];
+        $node->field_node_display_title[LANGUAGE_NONE][0]['value'] = $values['title'];
         $node->guide['link_title'] = $values['title'];
         $node->revision = 1;
-        if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-          $original_title = $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
+        if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+          $original_title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
         }
         else {
           $original_title = $node->title;
@@ -155,8 +155,8 @@ function guide_admin_edit_submit($form, &$form_state) {
 
         node_save($node);
         
-        if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-         $watchdog_title = $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
+        if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+         $watchdog_title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
         } else {
           $watchdog_title = $node->title;
         }

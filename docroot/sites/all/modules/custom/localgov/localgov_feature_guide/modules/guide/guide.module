@@ -628,8 +628,8 @@ function _guide_add_form_elements(&$form, &$form_state, $node) {
 
   if (isset($node->nid) && ($nid == $node->guide['original_gid']) && ($node->guide['parent_depth_limit'] == 0)) {
     // This is the top level node in a maximum depth guide and thus cannot be moved.
-    if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-      $options[$node->nid] = $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
+    if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+      $options[$node->nid] = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
     }
     else {
       $options[$node->nid] = $node->title;
@@ -702,8 +702,8 @@ function _guide_update_structure($node) {
   $new = empty($node->guide['mlid']);
 
   $node->guide['link_path'] = 'node/' . $node->nid;
-  if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-    $node->guide['link_title'] = $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $node->guide['link_title'] = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
   }
   else {
     $node->guide['link_title'] = $node->title;
@@ -1168,8 +1168,8 @@ function guide_form_node_delete_confirm_alter(&$form, $form_state) {
   $node = node_load($form['nid']['#value']);
 
   if (isset($node->guide) && $node->guide['has_children']) {
-    if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-      $title = $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
+    if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+      $title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
     } else {
       $title = $node->title;
     }
@@ -1480,8 +1480,8 @@ function guide_node_export($node, $children = '') {
  */
 function template_preprocess_guide_node_export_html(&$variables) {
   $variables['depth'] = $variables['node']->guide['depth'];
-  if (isset($variables['node']->field_node_display_title[LANGUAGE_NONE]) && !empty($variables['node']->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-    $variables['title'] = check_plain($variables['node']->field_node_display_title[LANGUAGE_NONE][0]['safe_value']);
+  if (!empty($variables['node']->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $variables['title'] = check_plain($variables['node']->field_node_display_title[LANGUAGE_NONE][0]['value']);
   }
   else {
     $variables['title'] = check_plain($variables['node']->title);
@@ -1758,8 +1758,8 @@ function _guide_update_outline($node) {
   $new = empty($node->guide['mlid']);
 
   $node->guide['link_path'] = 'node/' . $node->nid;
-  if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-    $node->guide['link_title'] = $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $node->guide['link_title'] = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
   }
   else {
     $node->guide['link_title'] = $node->title;

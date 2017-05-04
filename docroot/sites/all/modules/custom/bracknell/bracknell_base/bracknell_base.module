@@ -138,7 +138,7 @@ function bracknell_base_entity_info_alter(&$entity_info) {
  */
 function _bracknell_base_set_display_title($entity, $entity_type) {
   if (isset($entity->field_node_display_title[LANGUAGE_NONE]) && !empty($entity->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-    return check_plain($entity->field_node_display_title[LANGUAGE_NONE][0]['safe_value']);
+    return $entity->field_node_display_title[LANGUAGE_NONE][0]['value'];
   }
   else {
     return empty($entity->title) ? 'Untitled entity' : $entity->title;

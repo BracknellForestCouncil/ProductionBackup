@@ -60,8 +60,8 @@ function localgov_feature_guide_preprocess_page(&$variables) {
 
     $parent = menu_link_load($variables['node']->guide['plid']);
     
-    if (isset($variables['node']->field_node_display_title[LANGUAGE_NONE]) && !empty($variables['node']->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
-      $old_title = $variables['node']->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
+    if (!empty($variables['node']->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+      $old_title = $variables['node']->field_node_display_title[LANGUAGE_NONE][0]['value'];
     }
     else {
       $old_title = $variables['node']->title;
