@@ -137,8 +137,8 @@ function bracknell_base_entity_info_alter(&$entity_info) {
  * @see callback_entity_info_label
  */
 function _bracknell_base_set_display_title($entity, $entity_type) {
-  if (!empty($entity->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
-    return $entity->field_node_display_title[LANGUAGE_NONE][0]['value'];
+  if (isset($entity->field_node_display_title[LANGUAGE_NONE]) && !empty($entity->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
+    return $entity->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
   }
   else {
     return $entity->title;

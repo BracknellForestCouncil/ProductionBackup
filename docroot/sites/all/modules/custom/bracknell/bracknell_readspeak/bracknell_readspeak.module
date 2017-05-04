@@ -43,8 +43,8 @@ function bracknell_readspeak_preprocess_page(&$variables) {
 
     // Define a new title variable - text only.
     if (!empty($node = $variables['node'])) {
-      if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
-        $variables['rs_title'] = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+      if (isset($node->field_node_display_title[LANGUAGE_NONE]) && !empty($node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'])) {
+        $variables['rs_title'] = $node->field_node_display_title[LANGUAGE_NONE][0]['safe_value'];
       }
       else {
         $variables['rs_title'] = $node->title;
