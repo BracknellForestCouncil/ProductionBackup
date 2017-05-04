@@ -39,6 +39,10 @@ function bracknell_base_strongarm() {
         'label' => 'Location rendered as zoomed map',
         'custom settings' => 1,
       ),
+      'directions' => array(
+        'label' => 'Directions',
+        'custom settings' => 1,
+      ),
     ),
   );
   $export['entity_view_modes'] = $strongarm;

@@ -229,11 +229,14 @@ function bracknell_feature_directory_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'directions' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
       ),
       'display' => array(),
@@ -281,10 +284,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '17',
         ),
         'redirect' => array(
-          'weight' => '13',
+          'weight' => '16',
         ),
       ),
       'display' => array(),
@@ -332,10 +335,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '15',
         ),
         'redirect' => array(
-          'weight' => '13',
+          'weight' => '16',
         ),
       ),
       'display' => array(),
@@ -383,10 +386,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '11',
         ),
       ),
       'display' => array(),
@@ -434,10 +437,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '15',
         ),
       ),
       'display' => array(),
@@ -485,10 +488,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '17',
         ),
       ),
       'display' => array(),
@@ -536,10 +539,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '11',
         ),
       ),
       'display' => array(),
@@ -587,10 +590,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '15',
+          'weight' => '17',
         ),
       ),
       'display' => array(),
@@ -638,10 +641,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '13',
         ),
         'redirect' => array(
-          'weight' => '9',
+          'weight' => '12',
         ),
       ),
       'display' => array(),
@@ -689,10 +692,10 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '15',
         ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '16',
         ),
       ),
       'display' => array(),
