@@ -140,6 +140,9 @@ function localgov_base_paragraphs_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -243,6 +246,58 @@ function localgov_base_paragraphs_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_paragraphs_item__grid_display';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'paragraphs_editor_preview' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_paragraphs_item__grid_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_paragraphs_item__grid_display_item';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'paragraphs_editor_preview' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_paragraphs_item__grid_display_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_paragraphs_item__highlighted';
   $strongarm->value = array(
     'view_modes' => array(
@@ -276,6 +331,9 @@ function localgov_base_paragraphs_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),

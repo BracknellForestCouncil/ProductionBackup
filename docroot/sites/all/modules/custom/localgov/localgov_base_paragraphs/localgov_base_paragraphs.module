@@ -110,6 +110,27 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
       $variables['image_position'] = 'col-md-pull-6';
     }
   }
+
+  // Add variables to display the grid display based on content editor choices.
+  if ($variables['elements']['#entity_type'] == 'paragraphs_item' && $variables['elements']['#bundle'] == 'grid_display') {
+    $variables['classes_array'][] = 'grid-display';
+
+    $grid_display_title_text = $variables['field_grid_display_title'][0]['value'];
+    $grid_display_title_level = $variables['field_grid_display_title_level'][0]['value'];
+    $grid_display_theme = $variables['field_grid_display_theme'][0]['value'];
+
+    dsm($variables);
+    dsm($grid_display_theme);
+
+    if (!empty($grid_display_title_text) && !empty($grid_display_title_level)) {
+      $variables['grid_display_title_text'] = $grid_display_title_text;
+      $variables['grid_display_title_level'] = $grid_display_title_level;
+    }
+
+    if (!empty($grid_display_theme)) {
+      $variables['classes_array'][] = 'grid-display-' . $grid_display_theme;
+    }
+  }
 }
 
 /**
