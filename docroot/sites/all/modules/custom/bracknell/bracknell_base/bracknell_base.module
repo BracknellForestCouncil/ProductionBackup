@@ -140,7 +140,5 @@ function _bracknell_base_set_display_title($entity, $entity_type) {
   if (isset($entity->field_node_display_title[LANGUAGE_NONE]) && !empty($entity->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
     return filter_xss($entity->field_node_display_title[LANGUAGE_NONE][0]['value']);
   }
-  else {
-    return empty($entity->title) ? 'Untitled entity' : filter_xss($entity->title);
-  }
+  return empty($entity->title) ? 'Untitled entity' : filter_xss($entity->title);
 }
