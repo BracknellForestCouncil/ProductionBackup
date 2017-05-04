@@ -1,0 +1,25 @@
+// Grid Display.
+
+// Grid Theme.
+.grid-display {
+  border: 1px #f3f dotted;
+  @include clearfix();
+  margin-bottom: 20px;
+}
+
+.grid-display-items {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.grid-display-item {
+  display: flex;
+  width: 25%;
+}
+
+.grid-display-item-content {
+  text-align: center;
+}
+
+// Box Theme.
