@@ -66,6 +66,10 @@ function localgov_base_file_strongarm() {
             'weight' => '1',
             'visible' => TRUE,
           ),
+          'preview' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
         ),
       ),
     ),
@@ -224,13 +228,6 @@ function localgov_base_file_strongarm() {
   $strongarm->name = 'media_dialogclass';
   $strongarm->value = 'media-wrapper';
   $export['media_dialogclass'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'media_dialog_theme';
-  $strongarm->value = 'bracknell_theme_base';
-  $export['media_dialog_theme'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
