@@ -28,6 +28,6 @@
  * @see template_process()
  */
 ?>
-<article class="grid-display-item"<?php print $attributes; ?>>
+<div class="grid-display-item-content"<?php print $attributes; ?>>
   <?php print render($content); ?>
-</article>
+</div>

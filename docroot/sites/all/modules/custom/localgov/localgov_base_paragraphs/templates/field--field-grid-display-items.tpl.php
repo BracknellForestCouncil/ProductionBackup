@@ -44,23 +44,10 @@
  * @ingroup themeable
  */
 ?>
-<?php dsm(count($items)); ?>
-<?php
-  $i = 0;
-?>
-  <?php foreach ($items as $delta => $item): ?>
-    <?php
-    $i++;
-    if ($i % 4 == 1): ?>
-    <div class="row">
-    <?php endif; ?>
-
-    <div class="col-sm-6 col-md-3"><?php print render($item); ?></div>
-
-    <?php if ($i % 4 == 0): ?>
-    </div>
-  <?php endif; ?>
-  <?php endforeach; ?>
-
-
-
+<?php if ($items > 0): ?>
+  <ul class="grid-display-items">
+    <?php foreach ($items as $delta => $item): ?>
+      <li class="grid-display-item"><?php print render($item); ?></li>
+    <?php endforeach; ?>
+  </ul>
+<?php endif; ?>
