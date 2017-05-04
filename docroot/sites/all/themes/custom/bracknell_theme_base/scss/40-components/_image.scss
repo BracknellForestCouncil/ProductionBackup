@@ -1,0 +1,10 @@
+// Image component.
+
+.image-component {
+  @include clearfix();
+  clear: both;
+
+  img {
+    margin-bottom: 5px;
+  }
+}
