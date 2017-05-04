@@ -18,8 +18,6 @@ function bracknell_base_theme($existing, $type, $theme, $path) {
     'base hook' => 'field',
     'template' => 'field--field-related-pages',
     'path' => drupal_get_path('module', 'bracknell_base') . '/templates',
-    'preprocess functions' => array(0 => '_bracknell_base_fix_display_title'),
-    'override preprocess functions' => TRUE,
   );
   $theme['field__field_related_links'] = array(
     'render element' => 'content',
