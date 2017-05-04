@@ -1480,7 +1480,12 @@ function guide_node_export($node, $children = '') {
  */
 function template_preprocess_guide_node_export_html(&$variables) {
   $variables['depth'] = $variables['node']->guide['depth'];
-  $variables['title'] = check_plain($variables['node']->title);
+  if (!empty($variables['node']->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $variables['title'] = check_plain($variables['node']->field_node_display_title[LANGUAGE_NONE][0]['value']);
+  }
+  else {
+    $variables['title'] = check_plain($variables['node']->title);
+  }
   $variables['content'] = $variables['node']->rendered;
 }
 

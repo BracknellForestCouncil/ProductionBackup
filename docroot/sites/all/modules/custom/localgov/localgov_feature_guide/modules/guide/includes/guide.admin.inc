@@ -161,11 +161,10 @@ function guide_admin_edit_submit($form, &$form_state) {
           $watchdog_title = $node->title;
         }
         watchdog('content', 'Guide: updated %title.', array('%title' => $watchdog_title), WATCHDOG_NOTICE, l(t('view'), 'node/' . $node->nid));
+        drupal_set_message(t('Updated guide %title.', array('%title' => $watchdog_title)));
       }
     }
   }
-
-  drupal_set_message(t('Updated guide %title.', array('%title' => $form['#node']->title)));
 }
 
 /**

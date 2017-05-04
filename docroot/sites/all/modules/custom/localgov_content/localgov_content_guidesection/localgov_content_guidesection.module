@@ -36,3 +36,4 @@ function localgov_content_guidesection_theme($existing, $type, $theme, $path) {
    );
   return $theme;
 }
+
