@@ -43,7 +43,12 @@ function bracknell_readspeak_preprocess_page(&$variables) {
 
     // Define a new title variable - text only.
     if (!empty($node = $variables['node'])) {
-      $variables['rs_title'] = $node->title;
+      if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+        $variables['rs_title'] = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+      }
+      else {
+        $variables['rs_title'] = $node->title;
+      }
     }
 
     // Define a path for the Readspeak JS

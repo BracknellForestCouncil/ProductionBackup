@@ -628,7 +628,12 @@ function _guide_add_form_elements(&$form, &$form_state, $node) {
 
   if (isset($node->nid) && ($nid == $node->guide['original_gid']) && ($node->guide['parent_depth_limit'] == 0)) {
     // This is the top level node in a maximum depth guide and thus cannot be moved.
-    $options[$node->nid] = $node->title;
+    if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+      $options[$node->nid] = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+    }
+    else {
+      $options[$node->nid] = $node->title;
+    }
   }
   else {
     foreach (guide_get_guides() as $guide) {
@@ -697,7 +702,13 @@ function _guide_update_structure($node) {
   $new = empty($node->guide['mlid']);
 
   $node->guide['link_path'] = 'node/' . $node->nid;
-  $node->guide['link_title'] = $node->title;
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $node->guide['link_title'] = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+  }
+  else {
+    $node->guide['link_title'] = $node->title;
+  }
+
   $node->guide['parent_mismatch'] = FALSE; // The normal case.
 
   if ($node->guide['gid'] == $node->nid) {
@@ -1157,8 +1168,14 @@ function guide_form_node_delete_confirm_alter(&$form, $form_state) {
   $node = node_load($form['nid']['#value']);
 
   if (isset($node->guide) && $node->guide['has_children']) {
+    if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+      $title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+    } else {
+      $title = $node->title;
+    }
+    
     $form['guide_warning'] = array(
-      '#markup' => '<p>' . t('%title is part of a guide structure, and has associated child pages. If you proceed with deletion, the child pages will be relocated automatically.', array('%title' => $node->title)) . '</p>',
+      '#markup' => '<p>' . t('%title is part of a guide structure, and has associated child pages. If you proceed with deletion, the child pages will be relocated automatically.', array('%title' => $title)) . '</p>',
       '#weight' => -10,
     );
   }
@@ -1736,7 +1753,12 @@ function _guide_update_outline($node) {
   $new = empty($node->guide['mlid']);
 
   $node->guide['link_path'] = 'node/' . $node->nid;
-  $node->guide['link_title'] = $node->title;
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $node->guide['link_title'] = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+  }
+  else {
+    $node->guide['link_title'] = $node->title;
+  }
   $node->guide['parent_mismatch'] = FALSE; // The normal case.
 
   if ($node->guide['bid'] == $node->nid) {

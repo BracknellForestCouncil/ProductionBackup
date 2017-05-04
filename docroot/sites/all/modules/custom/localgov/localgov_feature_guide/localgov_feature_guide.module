@@ -59,8 +59,13 @@ function localgov_feature_guide_preprocess_page(&$variables) {
   if (isset($variables['node']) && $variables['node']->type == "guide_section") {
 
     $parent = menu_link_load($variables['node']->guide['plid']);
-
-    $old_title = $variables['node']->title;
+    
+    if (!empty($variables['node']->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+      $old_title = $variables['node']->field_node_display_title[LANGUAGE_NONE][0]['value'];
+    }
+    else {
+      $old_title = $variables['node']->title;
+    }
     $new_title = $parent['link_title'];
 
     // Set the page $title and <title> tag

@@ -90,7 +90,12 @@ function guide_export_html($nid) {
     if (isset($node->guide)) {
       $tree = guide_menu_subtree_data($node->guide);
       $contents = guide_export_traverse($tree, 'guide_node_export');
-      return theme('guide_export_html', array('title' => $node->title, 'contents' => $contents, 'depth' => $node->guide['depth']));
+      if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+        $export_title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+      } else {
+        $export_title = $node->title;
+      }
+      return theme('guide_export_html', array('title' => $export_title, 'contents' => $contents, 'depth' => $node->guide['depth']));
     }
     else {
       drupal_not_found();
@@ -113,7 +118,12 @@ function guide_export_html($nid) {
   * @see guide_menu()
  */
 function guide_structure($node) {
-  drupal_set_title($node->title);
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $show_title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+  } else {
+    $show_title = $node->title;
+  }
+  drupal_set_title($show_title);
   return drupal_get_form('guide_structure_form', $node);
 }
 
@@ -219,8 +229,12 @@ function guide_structure_form_submit($form, &$form_state) {
  */
 function guide_remove_form($form, &$form_state, $node) {
   $form['#node'] = $node;
-  $title = array('%title' => $node->title);
-
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    $title = array('%title' => $node->field_node_display_title[LANGUAGE_NONE][0]['value']);
+  }
+  else {
+    $title = array('%title' => $node->title);
+  }
   if ($node->guide['has_children']) {
     $description = t('%title has associated child pages, which will be relocated automatically to maintain their connection to the guide. To recreate the hierarchy (as it was before removing this page), %title may be added again using the structure tab, and each of its former child pages will need to be relocated manually.', $title);
   }
