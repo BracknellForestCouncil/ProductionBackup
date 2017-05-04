@@ -96,6 +96,4 @@ hide($content['field_image']);
   <?php
     print render($content);
   ?>
-
-  <?php dsm($node); ?>
 </article>
