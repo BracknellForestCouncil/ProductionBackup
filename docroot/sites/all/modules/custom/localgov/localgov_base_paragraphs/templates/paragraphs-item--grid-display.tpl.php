@@ -33,7 +33,6 @@
   hide($content['field_grid_display_theme']);
 ?>
 
-
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if (!empty($grid_display_title_text)): ?>
     <<?php print $grid_display_title_level; ?> class="grid-display-title">
