@@ -1,4 +1,17 @@
-$page = new stdClass();
+<?php
+/**
+ * @file
+ * bracknell_page_home.node.inc
+ * TODO: Add file description
+ *
+ * @package   bracknell_page_home
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+ $page = new stdClass();
 $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
 $page->api_version = 1;
 $page->name = 'home';
