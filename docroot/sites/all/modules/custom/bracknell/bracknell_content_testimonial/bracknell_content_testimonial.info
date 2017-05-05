@@ -39,4 +39,5 @@ features[variable][] = menu_parent_testimonial
 features[variable][] = node_options_testimonial
 features[variable][] = node_preview_testimonial
 features[variable][] = node_submitted_testimonial
+features[variable][] = pathauto_node_testimonial_pattern
 project path = sites/all/modules/custom/bracknell
