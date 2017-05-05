@@ -86,7 +86,9 @@ function localgov_content_form_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_form';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
   $export['menu_options_form'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -125,7 +127,7 @@ function localgov_content_form_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_form_pattern';
-  $strongarm->value = '[node:field-category:parents:join-path]/[node:field-category]/forms/[node:title]';
+  $strongarm->value = '[node:menu-link:parents:join-path]/forms/[node:field-node-display-title]';
   $export['pathauto_node_form_pattern'] = $strongarm;
 
   return $export;

@@ -125,7 +125,7 @@ function localgov_content_promo_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_promo_pattern';
-  $strongarm->value = 'news/[node:created:custom:Y]/[node:created:custom:m]/[node:title]';
+  $strongarm->value = 'news/[node:created:custom:Y]/[node:created:custom:m]/[node:field-node-display-title]';
   $export['pathauto_node_promo_pattern'] = $strongarm;
 
   return $export;
