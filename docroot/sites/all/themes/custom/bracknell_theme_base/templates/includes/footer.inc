@@ -3,15 +3,7 @@
     <?php print render($page['footer']); ?>
     <div class="row">
       <div class="col-xs-12 col-sm-8">
-        <?php
-          $menu = menu_navigation_links('footer-menu');
-          print theme('links__footer_menu', array(
-            'links' => $menu,
-            'attributes' => array(
-              'class' => array('footer-links')
-            )
-          ));
-        ?>
+        <?php print $footer_menu; ?>
       </div>
       <div class="col-xs-12 col-sm-4 social-media">
         <ul>
