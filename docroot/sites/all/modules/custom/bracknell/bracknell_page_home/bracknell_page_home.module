@@ -11,13 +11,6 @@
  *            GNU General Public License, version 2 or later
  */
 
-/**
- * Include all files in 'includes/'.
- */
-// foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
-//   include_once $filename;
-// }$variables['field_image']
-
 include_once 'bracknell_page_home.features.inc';
 
 /**
