@@ -119,14 +119,13 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
     $grid_display_title_level = $variables['field_grid_display_title_level'][0]['value'];
     $grid_display_theme = $variables['field_grid_display_theme'][0]['value'];
 
-    dsm($variables);
-    dsm($grid_display_theme);
-
+    // Add heading level and heading text as variables so we can provide better accessibility support.
     if (!empty($grid_display_title_text) && !empty($grid_display_title_level)) {
       $variables['grid_display_title_text'] = $grid_display_title_text;
       $variables['grid_display_title_level'] = $grid_display_title_level;
     }
 
+    // Add the theme type as a variable.
     if (!empty($grid_display_theme)) {
       $variables['classes_array'][] = 'grid-display-' . $grid_display_theme;
     }
