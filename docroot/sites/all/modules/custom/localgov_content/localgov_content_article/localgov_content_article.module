@@ -22,3 +22,52 @@ foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
  * Include features code.
  */
 include_once 'localgov_content_article.features.inc';
+
+/**
+ * Implements hook_node_view()
+ * 
+ * The news articles are not menu linked so the breadcrumb trail is broken.
+ * This routine aims to fix that by using the URL to create them.
+ */
+function localgov_content_article_node_view($node, $view_mode, $langcode) {
+  // Currently this should only apply to news articles.
+  if ($node->type === 'article' && $view_mode === 'full') {
+    // Get the path alias (provided by pathauto module).
+    $path_alias = $node->path['alias'];
+    // Hit it and split.
+    if (!empty($path_alias)) {
+      // This should be an array of 4 elements.
+      $trails = explode('/', $path_alias);
+      if (count($trails) != 4) {
+        return;
+      }
+    }
+    
+    if (!empty($trails)) {
+      $breadcrumb = array();
+      $breadcrumb[] = l(t('Home'), '<front>');
+      // $trails[0] should be 'news'.
+      $breadcrumb[] = l(t('News'), '/news');
+      // $trails[1] should the year
+      $breadcrumb[] = l(t($trails[1]), '/news/' . $trails[1]);
+      // $trails[2] should the month
+      $breadcrumb[] = l(t($trails[2]), '/news/archive/' . $trails[1] . $trails[2]);
+      // Note that the node title is set as last element automatically.
+      drupal_set_breadcrumb($breadcrumb);
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ * 
+ * The news archive view in full mode needs the News item text added due to not
+ * being in the menu.
+ */
+function localgov_content_article_views_pre_render(&$view) {
+  if($view->name === 'news_archive' && $view->current_display != 'block') {
+    $breadcrumb = drupal_get_breadcrumb();
+    $breadcrumb[1] = l(t('News'), '/news');
+    drupal_set_breadcrumb($breadcrumb);
+  }
+}

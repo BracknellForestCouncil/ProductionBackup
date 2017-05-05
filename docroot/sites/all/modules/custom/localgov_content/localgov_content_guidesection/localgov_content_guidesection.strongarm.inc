@@ -86,7 +86,9 @@ function localgov_content_guidesection_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_guide_section';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
   $export['menu_options_guide_section'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -102,8 +104,7 @@ function localgov_content_guidesection_strongarm() {
   $strongarm->name = 'node_options_guide_section';
   $strongarm->value = array(
     0 => 'moderation',
-    1 => 'readspeak',
-    2 => 'revision',
+    1 => 'revision',
   );
   $export['node_options_guide_section'] = $strongarm;
 

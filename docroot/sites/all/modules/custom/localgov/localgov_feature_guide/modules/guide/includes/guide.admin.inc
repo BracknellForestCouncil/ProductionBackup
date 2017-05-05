@@ -81,7 +81,12 @@ function guide_admin_settings_validate($form, &$form_state) {
  * @ingroup forms
  */
 function guide_admin_edit($form, $form_state, $node) {
-  drupal_set_title($node->title);
+  if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    drupal_set_title($node->field_node_display_title[LANGUAGE_NONE][0]['value']);
+  }
+  else {
+    drupal_set_title($node->title);
+  }
   $form['#node'] = $node;
   _guide_admin_table($node, $form);
   $form['save'] = array(
@@ -136,18 +141,30 @@ function guide_admin_edit_submit($form, &$form_state) {
       if ($row['title']['#default_value'] != $values['title']) {
         $node = node_load($values['nid']);
         $langcode = LANGUAGE_NONE;
-        $node->title = $values['title'];
+        // Changed to display title - node title remains untouched.
+        $node->field_node_display_title[LANGUAGE_NONE][0]['value'] = $values['title'];
         $node->guide['link_title'] = $values['title'];
         $node->revision = 1;
-        $node->log = t('Title changed from %original to %current.', array('%original' => $node->title, '%current' => $values['title']));
+        if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+          $original_title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+        }
+        else {
+          $original_title = $node->title;
+        }
+        $node->log = t('Title changed from %original to %current.', array('%original' => $original, '%current' => $values['title']));
 
         node_save($node);
-        watchdog('content', 'Guide: updated %title.', array('%title' => $node->title), WATCHDOG_NOTICE, l(t('view'), 'node/' . $node->nid));
+        
+        if (!empty($node->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+         $watchdog_title = $node->field_node_display_title[LANGUAGE_NONE][0]['value'];
+        } else {
+          $watchdog_title = $node->title;
+        }
+        watchdog('content', 'Guide: updated %title.', array('%title' => $watchdog_title), WATCHDOG_NOTICE, l(t('view'), 'node/' . $node->nid));
+        drupal_set_message(t('Updated guide %title.', array('%title' => $watchdog_title)));
       }
     }
   }
-
-  drupal_set_message(t('Updated guide %title.', array('%title' => $form['#node']->title)));
 }
 
 /**

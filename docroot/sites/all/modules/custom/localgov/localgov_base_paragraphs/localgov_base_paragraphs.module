@@ -130,6 +130,28 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
       $variables['classes_array'][] = 'grid-display-' . $grid_display_theme;
     }
   }
+
+  if ($variables['elements']['#bundle'] == 'image' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    // Defaults to h2, unless overridden by content editor.
+    $variables['heading_level'] = 'h2';
+    $variables['heading_text'] = '';
+
+    if (isset($variables['elements']['field_paragraph_image_title'])) {
+      $heading_text = $variables['elements']['field_paragraph_image_title']['#items'][0]['value'];
+      $variables['heading_text'] = $heading_text;
+    }
+
+    // Output the heading level so content editor can choose heading levels for the image paragraph title -  good for accessibility.
+    if (isset($variables['elements']['field_paragraph_image_title_head'])) {
+      $heading_level = $variables['elements']['field_paragraph_image_title_head']['#items'][0]['value'];
+      $variables['heading_level'] = $heading_level;
+    }
+
+    if (isset($variables['elements']['field_paragraph_image_position'])) {
+      $paragraph_position = $variables['elements']['field_paragraph_image_position']['#items'][0]['value'];
+      $variables['paragraph_position'] = $paragraph_position;
+    }
+  }
 }
 
 /**
