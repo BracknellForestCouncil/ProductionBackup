@@ -1,25 +1,83 @@
 // Grid Display.
 
-// Grid Theme.
+// Default.
 .grid-display {
-  border: 1px #f3f dotted;
   @include clearfix();
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .grid-display-items {
-  display: flex;
-  flex-wrap: wrap;
+  list-style-type: none;
   padding-left: 0;
+
+  @include breakpoint($screen-sm) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .grid-display-item {
-  display: flex;
-  width: 25%;
+  @include breakpoint($screen-sm) {
+    display: flex;
+    width: 50%;
+  }
+
+  @include breakpoint($screen-md) {
+    width: 25%;
+  }
 }
 
 .grid-display-item-content {
   text-align: center;
 }
 
+.grid-display-item-media {
+  margin-bottom: 5px;
+
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Grid Theme.
+.grid-display-grid {
+  .grid-display-item-content {
+    border: {
+      color: $grid-display-grid-content-border-color;
+      style: solid;
+      width: 1px;
+    }
+    box-sizing: border-box;
+    margin: 0 -1px -1px 0;
+    padding: 20px;
+  }
+}
+
 // Box Theme.
+.grid-display-box {
+  .grid-display-items {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .grid-display-item {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .grid-display-item-media {
+    background-color: $grid-display-box-media-bg-color;
+    border: {
+      color: $grid-display-box-media-border-color;
+      radius: 5px;
+      style: solid;
+      width: 1px;
+    }
+
+    img {
+      border-radius: 5px;
+    }
+  }
+}
