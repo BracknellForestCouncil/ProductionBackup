@@ -81,7 +81,7 @@ function localgov_feature_contactinfo_preprocess_node(&$variables) {
     // a variable.
     if (!empty($parent->field_contactinfo_style)) {
       $contact_style_field = $parent->field_contactinfo_style;
-      $contact_style_value = $contact_style_field['und'][0]['value'];
+      $contact_style_value = $contact_style_field[LANGUAGE_NONE][0]['value'];
       $variables['display_mode'] = $contact_style_value;
     }
 

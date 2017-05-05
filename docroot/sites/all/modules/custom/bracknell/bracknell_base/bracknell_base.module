@@ -113,11 +113,32 @@ function bracknell_base_addressfield_address_formats_alter(&$address_formats) {
  * This processes the media browser theme for documents and removes the
  * media label by setting '#show_names' to false.
  *
- * see @theme_media_thumbnail
+ * @see theme_media_thumbnail
  */
 function bracknell_base_preprocess_media_thumbnail(&$variables) {
   $theme = $variables['element']['#theme'];
   if (current_path() === 'media/browser' && !empty($theme) && $theme === 'file_formatter_table') {
     $variables['element']['#show_names'] = FALSE;
   }
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function bracknell_base_entity_info_alter(&$entity_info) {
+  // Use a custom label returner.
+  $entity_info['node']['label callback'] = '_bracknell_base_set_display_title';
+}
+
+/**
+ * Custom label function that returns display title if set, falls back to 
+ * standard node title.
+ * 
+ * @see callback_entity_info_label
+ */
+function _bracknell_base_set_display_title($entity, $entity_type) {
+  if (isset($entity->field_node_display_title[LANGUAGE_NONE]) && !empty($entity->field_node_display_title[LANGUAGE_NONE][0]['value'])) {
+    return filter_xss($entity->field_node_display_title[LANGUAGE_NONE][0]['value']);
+  }
+  return empty($entity->title) ? 'Untitled entity' : filter_xss($entity->title);
 }
