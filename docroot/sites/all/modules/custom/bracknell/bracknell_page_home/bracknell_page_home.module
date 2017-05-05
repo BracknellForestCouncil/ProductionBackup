@@ -16,7 +16,7 @@
  */
 // foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
 //   include_once $filename;
-// }
+// }$variables['field_image']
 
 include_once 'bracknell_page_home.features.inc';
 
@@ -60,7 +60,7 @@ function bracknell_page_home_theme($existing, $type, $theme, $path) {
  */
 function bracknell_page_home_preprocess_node(&$variables) {
   if ($variables['type'] == 'article') {
-    $article_img = $variables['field_image'][0];
+    $article_img = (isset($variables['field_image']) && !empty($variables['field_image'][0])) ? $variables['field_image'][0] : NULL ;
     if (isset($article_img)) {
       $article_img_alt = $article_img['alt'];
       $article_img_uri = $article_img['uri'];
