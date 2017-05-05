@@ -46,7 +46,7 @@
     </div>
   </div>
 </header>
-<?php if ($readspeaker_button) : ?>
+<?php if (isset($readspeaker_button) && !empty($readspeaker_button)) : ?>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
