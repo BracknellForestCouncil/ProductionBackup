@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Bracknell Feature: SEO feature.
+ */
+
+include_once 'bracknell_feature_seo.features.inc';
