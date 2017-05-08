@@ -333,6 +333,9 @@ function localgov_base_paragraphs_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -515,6 +518,9 @@ function localgov_base_paragraphs_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),
