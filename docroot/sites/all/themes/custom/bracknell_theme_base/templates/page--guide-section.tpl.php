@@ -138,7 +138,7 @@
 
   <div class="container">
     <div class="row">
-      <div<?php print $content_column_class ?>>
+      <div class="col-sm-12 col-md-8">
         <?php print render($page['content']); ?>
         <?php if (!empty($page['page_footer'])): ?>
           <?php print render($page['page_footer']); ?>
