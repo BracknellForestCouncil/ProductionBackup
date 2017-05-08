@@ -52,9 +52,9 @@
         <?php endif; ?>
       </div>
     </div>
-    <div class="col-md-6 promotional-area-media <?php if (!empty($image_position)) : print $image_position; endif; ?>">
+    <div class="col-md-6 promotional-area-media <?php if (!empty($media_position)) : print $media_position; endif; ?>">
       <?php if (!empty($media_type)): ?>
-        <div class="promo-image">
+        <div class="promo-media">
         <?php if ($media_type == 'image'): ?>
           <?php if (array_key_exists('field_promotional_area_image', $content)): ?>
             <div class="img-responsive">
