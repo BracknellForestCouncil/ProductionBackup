@@ -4368,7 +4368,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -4398,7 +4398,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -4452,7 +4452,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 's3fs_cors',
-      'weight' => 2,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -4474,7 +4474,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_key',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -4514,7 +4514,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -4561,7 +4561,47 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 4,
+      'weight' => 6,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-promotional_area-field_promotional_area_media'.
+  $field_instances['paragraphs_item-promotional_area-field_promotional_area_media'] = array(
+    'bundle' => 'promotional_area',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Choose the type of media to display in the promotional area.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 7,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_promotional_area_media',
+    'is_property' => 0,
+    'label' => 'Choose media type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
     ),
     'workbench_access_field' => 0,
   );
@@ -4581,7 +4621,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
           'link' => 1,
         ),
         'type' => 'entity_reference_multiple_label',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'paragraphs_editor_preview' => array(
         'label' => 'above',
@@ -4607,7 +4647,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'autocomplete_query_like_type' => 'STARTS_WITH',
       ),
       'type' => 'entity_reference_multiple_autocomplete',
-      'weight' => 5,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -4656,6 +4696,56 @@ function localgov_base_paragraphs_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 0,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-promotional_area-field_promotional_area_video'.
+  $field_instances['paragraphs_item-promotional_area-field_promotional_area_video'] = array(
+    'bundle' => 'promotional_area',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'youtube',
+        'settings' => array(
+          'youtube_autohide' => FALSE,
+          'youtube_autoplay' => FALSE,
+          'youtube_controls' => FALSE,
+          'youtube_height' => NULL,
+          'youtube_iv_load_policy' => FALSE,
+          'youtube_loop' => FALSE,
+          'youtube_showinfo' => FALSE,
+          'youtube_size' => '420x315',
+          'youtube_width' => NULL,
+        ),
+        'type' => 'youtube_video',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_promotional_area_video',
+    'is_property' => 0,
+    'label' => 'Video',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'youtube',
+      'settings' => array(),
+      'type' => 'youtube',
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -5295,7 +5385,9 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Author');
   t('Author Title');
   t('Choose a theme for the table.');
+  t('Choose media type');
   t('Choose the level of heading to use for the title. Titles will default to h2 if no level is chosen.');
+  t('Choose the type of media to display in the promotional area.');
   t('Content');
   t('Content (Left)');
   t('Content (Middle)');
