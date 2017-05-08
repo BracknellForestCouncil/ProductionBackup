@@ -43,11 +43,28 @@ function bracknell_content_testimonial_theme($existing, $type, $theme, $path) {
  * Implements hook_preprocess_HOOK().
  */
 function bracknell_content_testimonial_preprocess_field(&$variables) {
-  if ($variables['element']['#field_name'] !== 'field_carousel_slide_content') {
+  if ($variables['element']['#field_name'] !== 'field_carousel_slide_content' && $variables['element']['#bundle'] != 'carousel_slide') {
     return;
   }
-  module_load_include('inc', 'bracknell_content_testimonial', 'bracknell_content_testimonial.helpers');
-  _bracknell_content_testimonial_add_carousel_slide_classes($variables);
+  
+  $wrapper = entity_metadata_wrapper('paragraphs_item', $variables['element']['#object']);
+
+  $layout = $wrapper->get('field_carousel_slide_layout')->value();
+
+  $variables['classes_array'][] = 'carousel-slide';
+  $variables['classes_array'][] = "carousel-slide-media-{$layout}";
+  
+  // Hook into the settings and add to node variables for Read More links.
+  if (isset($variables['element']['#items'][0]['target_id'])) {
+    $nid = $variables['element']['#items'][0]['target_id'];
+    // Add variables for the Read More link.
+    $read_more = $wrapper->get('field_add_read_more')->value();
+    if (isset($read_more) && $read_more === TRUE) {
+      $read_more_text = t($wrapper->get('field_read_more_text')->value());
+      $variables['items'][0]['node'][$nid]['custom_read_more'] = TRUE;
+      $variables['items'][0]['node'][$nid]['custom_read_more_text'] = isset($read_more_text) ? $read_more_text : 'Read more';
+    }
+  }
 }
 
 /**

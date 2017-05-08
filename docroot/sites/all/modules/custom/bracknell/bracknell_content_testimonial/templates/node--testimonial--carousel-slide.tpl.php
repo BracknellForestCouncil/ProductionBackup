@@ -81,19 +81,21 @@
  */
 ?>
 <div class='carousel-slide-media'>
-  <?php if (isset($content['field_testimonial_video'])): ?>
-    <?php print render($content['field_testimonial_video']); ?>
-  <?php else: ?>
-    <?php print render($content['field_testimonial_image']); ?>
-  <?php endif; ?>
+    <?php if (isset($content['field_testimonial_video'])): ?>
+      <?php print render($content['field_testimonial_video']); ?>
+    <?php else: ?>
+      <?php print render($content['field_testimonial_image']); ?>
+    <?php endif; ?>
 </div>
 <div class='carousel-slide-content'>
-  <?php print render($content['body']); ?>
-  <?php print render($content['field_testimonial_author']); ?>
-  <?php print render($content['field_testimonial_job_title']); ?>
-  <div class='carousel-buttons'>
-    <a href="<?php print $node_url ?>" class='btn btn-primary'>
-      <?php print t('Read more'); ?>
-    </a>
-  </div>
+    <?php print render($content['body']); ?>
+    <?php print render($content['field_testimonial_author']); ?>
+    <?php print render($content['field_testimonial_job_title']); ?>
+    <?php if (isset($content['custom_read_more'])): ?>
+      <div class='carousel-buttons'>
+          <a href="<?php print $node_url ?>" class='btn btn-primary'>
+              <?php print isset($content['custom_read_more_text']) ? $content['custom_read_more_text'] : t('Read more'); ?>
+          </a>
+      </div>
+    <?php endif; ?>
 </div>

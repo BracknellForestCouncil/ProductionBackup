@@ -90,7 +90,7 @@
 <div class="promotional-area" id="main-content">
   <div class="col-md-6 promotional-area-content">
     <div class="promo-text" <?php print $content_attributes; ?>>
-      <h2 class="h-light" <?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      <h2 class="h-light" <?php print $title_attributes; ?>><?php print $title; ?></h2>
       <?php print render($content); ?>
       <a href="<?php print render($content['links']['node']['#links']['node-readmore']['href']); ?>" class="btn">
         <?php print render($content['links']['node']['#links']['node-readmore']['title']); ?>

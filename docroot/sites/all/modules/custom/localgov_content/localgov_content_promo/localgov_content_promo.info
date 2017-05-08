@@ -7,6 +7,7 @@ project = localgov_content_promo
 dependencies[] = advanced_link
 dependencies[] = bracknell_content_promotional_page
 dependencies[] = ctools
+dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = file_entity
 dependencies[] = image

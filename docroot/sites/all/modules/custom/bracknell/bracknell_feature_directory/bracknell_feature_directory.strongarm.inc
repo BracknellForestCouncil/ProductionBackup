@@ -1096,5 +1096,68 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_location_school'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_location_car_park_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/car-park/[node:field-node-display-title]';
+  $export['pathauto_node_location_car_park_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_location_community_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/community-venue/[node:field-node-display-title]';
+  $export['pathauto_node_location_community_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_location_council_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/local-council/[node:field-node-display-title]';
+  $export['pathauto_node_location_council_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_location_leisure_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/leisure-site/[node:field-node-display-title]';
+  $export['pathauto_node_location_leisure_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_location_library_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/library/[node:field-node-display-title]';
+  $export['pathauto_node_location_library_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_location_main_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/council-office/[node:field-node-display-title]';
+  $export['pathauto_node_location_main_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_location_park_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/park/[node:field-node-display-title]';
+  $export['pathauto_node_location_park_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_location_playground_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/playground/[node:field-node-display-title]';
+  $export['pathauto_node_location_playground_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_location_school_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/school/[node:field-node-display-title]';
+  $export['pathauto_node_location_school_pattern'] = $strongarm;
+
   return $export;
 }

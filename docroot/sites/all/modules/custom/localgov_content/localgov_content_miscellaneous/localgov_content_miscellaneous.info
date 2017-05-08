@@ -12,6 +12,7 @@ dependencies[] = localgov_base_moderation
 dependencies[] = localgov_base_weight
 dependencies[] = localgov_content_fact
 dependencies[] = localgov_content_guidesection
+dependencies[] = localgov_content_miscellaneous
 dependencies[] = localgov_feature_contactinfo
 dependencies[] = node
 dependencies[] = number

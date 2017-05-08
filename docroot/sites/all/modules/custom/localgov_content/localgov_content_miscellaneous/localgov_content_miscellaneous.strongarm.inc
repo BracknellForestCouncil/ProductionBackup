@@ -127,7 +127,7 @@ function localgov_content_miscellaneous_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_miscellaneous_pattern';
-  $strongarm->value = 'miscellaneous/[node:title]';
+  $strongarm->value = 'miscellaneous/[node:field-node-display-title]';
   $export['pathauto_node_miscellaneous_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

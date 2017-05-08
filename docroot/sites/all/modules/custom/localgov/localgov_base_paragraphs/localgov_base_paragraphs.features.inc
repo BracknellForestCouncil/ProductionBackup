@@ -38,6 +38,24 @@ function localgov_base_paragraphs_image_default_styles() {
     ),
   );
 
+  // Exported image style: custom_image_crop.
+  $styles['custom_image_crop'] = array(
+    'label' => 'Custom Image Crop',
+    'effects' => array(
+      3 => array(
+        'name' => 'manualcrop_crop',
+        'data' => array(
+          'width' => 100,
+          'height' => 100,
+          'keepproportions' => 0,
+          'reuse_crop_style' => '',
+          'style_name' => 'custom_image_crop',
+        ),
+        'weight' => 0,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
@@ -94,6 +112,16 @@ function localgov_base_paragraphs_paragraphs_info() {
     'featured_box' => array(
       'name' => 'Featured Box',
       'bundle' => 'featured_box',
+      'locked' => '1',
+    ),
+    'grid_display' => array(
+      'name' => 'Grid Display',
+      'bundle' => 'grid_display',
+      'locked' => '1',
+    ),
+    'grid_display_item' => array(
+      'name' => 'Grid Display Item',
+      'bundle' => 'grid_display_item',
       'locked' => '1',
     ),
     'highlighted' => array(

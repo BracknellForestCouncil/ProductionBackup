@@ -46,4 +46,24 @@ function bracknell_theme_base_preprocess_page(&$vars) {
     $vars['theme_hook_suggestions'] = array_merge($vars['theme_hook_suggestions'], array($type), theme_get_suggestions($args, $type));
   }
 
+  $vars['footer_menu'] = _bracknell_generate_footer_menu_links();
+}
+
+/**
+ * Generates menu links for the footer menu.
+ *
+ * @see bracknell_theme_base_preprocess_page()
+ */
+function _bracknell_generate_footer_menu_links() {
+  $menu = menu_navigation_links('footer-menu');
+  foreach ($menu as $key => $item) {
+    unset($menu[$key]['attributes']['title']);
+  }
+
+  return theme('links__footer_menu', array(
+    'links' => $menu,
+    'attributes' => array(
+      'class' => array('footer-links')
+    )
+  ));
 }

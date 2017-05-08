@@ -96,7 +96,7 @@ function localgov_content_contactinfo_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_contact_pattern';
-  $strongarm->value = 'contact/[node:title]';
+  $strongarm->value = 'contact/[node:field-node-display-title]';
   $export['pathauto_node_contact_pattern'] = $strongarm;
 
   return $export;
