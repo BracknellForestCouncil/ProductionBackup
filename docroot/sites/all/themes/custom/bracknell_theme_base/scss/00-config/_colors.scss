@@ -304,6 +304,11 @@ $pod-border-color: $brandGreen;
 $pod-emphasise-bg-color: $greyExtraLight;
 $pod-emphasise-border-color: $greyExtraLight;
 
+// Grid Display.
+$grid-display-box-media-bg-color: $greyExtraLight;
+$grid-display-box-media-border-color: $greyLight;
+$grid-display-grid-content-border-color: $greyExtraLight;
+
 // Colour schemes/themes.
 $themes: (
   business: ($slateBlue, white),

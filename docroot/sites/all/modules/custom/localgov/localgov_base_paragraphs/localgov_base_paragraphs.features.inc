@@ -114,6 +114,16 @@ function localgov_base_paragraphs_paragraphs_info() {
       'bundle' => 'featured_box',
       'locked' => '1',
     ),
+    'grid_display' => array(
+      'name' => 'Grid Display',
+      'bundle' => 'grid_display',
+      'locked' => '1',
+    ),
+    'grid_display_item' => array(
+      'name' => 'Grid Display Item',
+      'bundle' => 'grid_display_item',
+      'locked' => '1',
+    ),
     'highlighted' => array(
       'name' => 'Highlighted',
       'bundle' => 'highlighted',

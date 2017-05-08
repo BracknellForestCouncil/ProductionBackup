@@ -1360,6 +1360,399 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance:
+  // 'paragraphs_item-grid_display-field_grid_display_items'.
+  $field_instances['paragraphs_item-grid_display-field_grid_display_items'] = array(
+    'bundle' => 'grid_display',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_grid_display_items',
+    'is_property' => 0,
+    'label' => 'Items',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'accordion' => -1,
+        'accordion_pane' => -1,
+        'basic' => -1,
+        'blockquote' => -1,
+        'carousel' => -1,
+        'carousel_slide' => -1,
+        'category_showcase' => -1,
+        'category_showcase_item' => -1,
+        'document' => -1,
+        'featured_box' => -1,
+        'grid_display' => -1,
+        'grid_display_item' => 'grid_display_item',
+        'highlighted' => -1,
+        'image' => -1,
+        'key_fact' => -1,
+        'key_fact_item' => -1,
+        'layout_1_col_12' => -1,
+        'layout_2_col_4_8' => -1,
+        'layout_2_col_6_6' => -1,
+        'layout_2_col_8_4' => -1,
+        'layout_3_col_3_3_6' => -1,
+        'layout_3_col_4_4_4' => -1,
+        'layout_3_col_6_3_3' => -1,
+        'link' => -1,
+        'promotional_area' => -1,
+        'tab_panel' => -1,
+        'table' => -1,
+        'tabs' => -1,
+        'video' => -1,
+      ),
+      'bundle_weights' => array(
+        'accordion' => 2,
+        'accordion_pane' => 3,
+        'basic' => 4,
+        'blockquote' => 5,
+        'carousel' => 6,
+        'carousel_slide' => 7,
+        'category_showcase' => 8,
+        'category_showcase_item' => 9,
+        'document' => 10,
+        'featured_box' => 11,
+        'grid_display' => 12,
+        'grid_display_item' => 13,
+        'highlighted' => 14,
+        'image' => 15,
+        'key_fact' => 16,
+        'key_fact_item' => 17,
+        'layout_1_col_12' => 18,
+        'layout_2_col_4_8' => 19,
+        'layout_2_col_6_6' => 20,
+        'layout_2_col_8_4' => 21,
+        'layout_3_col_3_3_6' => 22,
+        'layout_3_col_4_4_4' => 23,
+        'layout_3_col_6_3_3' => 24,
+        'link' => 25,
+        'promotional_area' => 26,
+        'tab_panel' => 29,
+        'table' => 27,
+        'tabs' => 28,
+        'video' => 30,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 3,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-grid_display-field_grid_display_theme'.
+  $field_instances['paragraphs_item-grid_display-field_grid_display_theme'] = array(
+    'bundle' => 'grid_display',
+    'default_value' => array(
+      0 => array(
+        'value' => 'grid',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_grid_display_theme',
+    'is_property' => 0,
+    'label' => 'Theme',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-grid_display-field_grid_display_title'.
+  $field_instances['paragraphs_item-grid_display-field_grid_display_title'] = array(
+    'bundle' => 'grid_display',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_grid_display_title',
+    'is_property' => 0,
+    'label' => 'Title',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-grid_display-field_grid_display_title_level'.
+  $field_instances['paragraphs_item-grid_display-field_grid_display_title_level'] = array(
+    'bundle' => 'grid_display',
+    'default_value' => array(
+      0 => array(
+        'value' => 'h2',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Choose the level of heading to use for the title. Titles will default to h2 if no level is chosen.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_grid_display_title_level',
+    'is_property' => 0,
+    'label' => 'Title Level',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-grid_display_item-field_grid_display_item_image'.
+  $field_instances['paragraphs_item-grid_display_item-field_grid_display_item_image'] = array(
+    'bundle' => 'grid_display_item',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_grid_display_item_image',
+    'is_property' => 0,
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          's3' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'localgov_document' => 0,
+          'localgov_image' => 'localgov_image',
+          'localgov_image_header' => 0,
+          'localgov_video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 1,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(
+          'custom_image_crop' => 'custom_image_crop',
+        ),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-grid_display_item-field_grid_display_item_link'.
+  $field_instances['paragraphs_item-grid_display_item-field_grid_display_item_link'] = array(
+    'bundle' => 'grid_display_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_grid_display_item_link',
+    'is_property' => 0,
+    'label' => 'Link',
+    'required' => 1,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'user',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 0,
+      'rel_remove' => 'default',
+      'title' => 'required',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 255,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'advanced_link',
+      'settings' => array(
+        'default_titles' => '',
+        'urls_allowed' => 'both',
+        'urls_filter' => '',
+        'urls_search' => 'start',
+      ),
+      'type' => 'advanced_link',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'paragraphs_item-highlighted-field_icon'.
   $field_instances['paragraphs_item-highlighted-field_icon'] = array(
     'bundle' => 'highlighted',
@@ -2061,8 +2454,11 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'carousel' => 'carousel',
         'carousel_slide' => -1,
         'category_showcase' => 'category_showcase',
+        'category_showcase_item' => -1,
         'document' => 'document',
         'featured_box' => 'featured_box',
+        'grid_display' => 'grid_display',
+        'grid_display_item' => -1,
         'highlighted' => 'highlighted',
         'image' => 'image',
         'key_fact' => 'key_fact',
@@ -2089,8 +2485,11 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'carousel' => 6,
         'carousel_slide' => 7,
         'category_showcase' => 8,
+        'category_showcase_item' => 37,
         'document' => 9,
         'featured_box' => 10,
+        'grid_display' => 40,
+        'grid_display_item' => 41,
         'highlighted' => 11,
         'image' => 12,
         'key_fact' => 13,
@@ -4717,6 +5116,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Author');
   t('Author Title');
   t('Choose a theme for the table.');
+  t('Choose the level of heading to use for the title. Titles will default to h2 if no level is chosen.');
   t('Content');
   t('Content (Left)');
   t('Content (Middle)');
@@ -4736,6 +5136,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Image');
   t('Image Position');
   t('Introduction');
+  t('Items');
   t('Link');
   t('Paragraph Accordion Panes');
   t('Promotional Area Layout');
@@ -4749,7 +5150,9 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('TODO: Add help text.');
   t('Table');
   t('Table theme');
+  t('Theme');
   t('Title');
+  t('Title Level');
   t('Video');
 
   return $field_instances;
