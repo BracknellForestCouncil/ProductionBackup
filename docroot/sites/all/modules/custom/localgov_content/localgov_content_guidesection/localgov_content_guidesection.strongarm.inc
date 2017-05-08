@@ -126,7 +126,7 @@ function localgov_content_guidesection_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_guide_section_pattern';
-  $strongarm->value = '[node:field-category:parents:join-path]/[node:field-category]/[node:guide:parent]/[node:title]';
+  $strongarm->value = '[node:menu-link:parents:join-path]/[node:guide:parent]/[node:field-node-display-title]';
   $export['pathauto_node_guide_section_pattern'] = $strongarm;
 
   return $export;

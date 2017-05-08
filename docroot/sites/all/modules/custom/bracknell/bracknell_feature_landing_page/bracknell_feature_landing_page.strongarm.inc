@@ -127,7 +127,7 @@ function bracknell_feature_landing_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_landing_page_pattern';
-  $strongarm->value = '[node:menu-link:parents]/[node:title]';
+  $strongarm->value = '[node:menu-link:parents:join-path]/[node:field-node-display-title]';
   $export['pathauto_node_landing_page_pattern'] = $strongarm;
 
   return $export;
