@@ -90,13 +90,11 @@
     hide($content['links']);
     hide($content['field_promotional_hero']);
     hide($content['guide_navigation_primary']);
+    hide($content['guide_navigation_secondary']);
     hide($content['field_related']);
-
+    hide($content['field_contactinfo']);
     print render($content);
+    print render($content['guide_navigation_secondary']);
+    print render($content['field_contactinfo']);
   ?>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
-
 </div><!-- end .node -->
