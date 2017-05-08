@@ -28,11 +28,12 @@
 ?>
 <?php
   hide($content['field_promotional_area_layout']);
+  hide($content['field_promotional_area_media']);
 ?>
 
 <div class="promotional-area <?php print $classes; ?>" <?php print $attributes; ?>>
   <div class="row">
-    <div class="col-md-6 promotional-area-content <?php if (!empty($content_position)) : print $content_position; endif; ?>">
+    <div class="col-md-6 promotional-area-content <?php if (!empty($content_position)): print $content_position; endif; ?>">
       <div class="promo-text">
         <?php if (array_key_exists('field_promotional_area_title', $content)): ?>
           <h2><?php print render($content['field_promotional_area_title']); ?></h2>
@@ -52,13 +53,24 @@
       </div>
     </div>
     <div class="col-md-6 promotional-area-media <?php if (!empty($image_position)) : print $image_position; endif; ?>">
-      <div class="promo-image">
-        <div class="img-responsive">
+      <?php if (!empty($media_type)): ?>
+        <div class="promo-image">
+        <?php if ($media_type == 'image'): ?>
           <?php if (array_key_exists('field_promotional_area_image', $content)): ?>
-            <?php print render($content['field_promotional_area_image']); ?>
+            <div class="img-responsive">
+              <?php print render($content['field_promotional_area_image']); ?>
+            </div>
+          <?php endif; ?>
+        <?php endif; ?>
+        <?php if ($media_type == 'video'): ?>
+          <?php if (array_key_exists('field_promotional_area_video', $content)): ?>
+             <div class="video">
+                <?php print render($content['field_promotional_area_video']); ?>
+            </div>
           <?php endif; ?>
         </div>
-      </div>
+        <?php endif; ?>
+      <?php endif; ?>
     </div>
   </div>
 </div>

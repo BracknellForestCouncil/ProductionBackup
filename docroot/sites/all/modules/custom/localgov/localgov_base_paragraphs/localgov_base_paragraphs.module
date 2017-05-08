@@ -109,6 +109,12 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
       $variables['content_position'] = 'col-md-push-6';
       $variables['image_position'] = 'col-md-pull-6';
     }
+
+    // Display an image or a video depending on the content editors choice.
+    if (isset($variables['elements']['field_promotional_area_media']['#items'][0]['value'])) {
+      $media_type = $variables['elements']['field_promotional_area_media']['#items'][0]['value'];
+      $variables['media_type'] = $media_type;
+    }
   }
 
   // Add variables to display the grid display based on content editor choices.
@@ -153,6 +159,16 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function localgov_base_paragraphs_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] == 'field_promotional_area_video' || $variables['element']['#field_name'] == 'field_paragraph_video_video') {
+    $variables['classes_array'][] = 'video-content';
+  }
+}
+
 
 /**
  * Short-circuit the version argument.
