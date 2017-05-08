@@ -96,7 +96,7 @@ hide($content['field_image']);
   <?php
     print render($content);
   ?>
-  <?php if ($directions): ?>
+  <?php if (isset($directions)): ?>
     <?php print render($directions); ?>
   <?php endif; ?>
 </article>
