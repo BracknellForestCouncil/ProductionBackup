@@ -21,12 +21,6 @@ function bracknell_feature_feeds_default_fe_block_settings() {
     'pages' => 'consultations/current-consultations',
     'roles' => array(),
     'themes' => array(
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => 0,
-      ),
       'bracknell_theme_base' => array(
         'region' => 'content',
         'status' => 1,
