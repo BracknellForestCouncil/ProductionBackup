@@ -6,12 +6,11 @@
   /**
    * Copies the node title to node display title on field exit
    *
-   * This is only effective on the /search main page, not from the header.
-   *
    * @type {Drupal~behaviour}
    *
    * @prop {Drupal~behaviorAttach} attach
-   *   Targets the edit-sort-by element and triggers form submit onChange.
+   *   Targets the edit-title element and copies value to #edit-field-node-
+   *   display-title on focusout.
    */
   Drupal.behaviors.copyToDisplayTitle = {
     attach: function (context, settings) {
