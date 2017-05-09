@@ -44,11 +44,8 @@
  * @ingroup themeable
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden) : ?>
-    <h2<?php print $title_attributes; ?>><?php print $label ?></h2>
-  <?php endif; ?>
-  <?php foreach ($items as $delta => $item) : ?>
+<address class="location-address">
+  <?php foreach ($items as $delta => $item): ?>
     <?php print render($item); ?>
   <?php endforeach; ?>
-</div>
+</address>

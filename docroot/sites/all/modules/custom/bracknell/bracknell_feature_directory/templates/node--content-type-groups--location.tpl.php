@@ -96,12 +96,7 @@ hide($content['field_image']);
   <?php
     print render($content);
   ?>
-
-  <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
-  <footer>
-    <?php print render($content['field_tags']); ?>
-    <?php print render($content['links']); ?>
-  </footer>
+  <?php if (isset($directions)): ?>
+    <?php print render($directions); ?>
   <?php endif; ?>
-  <?php print render($content['comments']); ?>
 </article>

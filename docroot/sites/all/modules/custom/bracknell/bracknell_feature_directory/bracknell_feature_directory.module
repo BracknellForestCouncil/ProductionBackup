@@ -34,14 +34,24 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
     array_unshift($variables['theme_hook_suggestions'], 'node__content_type_groups__' . $content_type_group);
   }
 
-  //Add an overview map to location_ content types.
+
   if ($content_type_group == 'location' && !empty($variables['field_directory_entry'])) {
     $location_id = $variables['field_directory_entry'][0]['target_id'];
 
     if (!empty($location_id)) {
       $location_entity = entity_load('directory_entry', array($location_id));
+
+      // Add an overview map to location_ content types.
       $map = entity_view('directory_entry', $location_entity, 'location_zoomed_map');
       $variables['map'] = !empty($map) ? $map : '<p>' . t('An overview map is currently unavailable.') . '</p>';
+
+      // Display the directions, if a content editor chooses to show them.
+      $show_directions = quickReturnField($node, 'field_location_directions');
+
+      if ($show_directions) {
+        $display_directions = entity_view('directory_entry', $location_entity, 'directions');
+        $variables['directions'] = $display_directions;
+      }
     }
   }
 }
@@ -62,6 +72,30 @@ function bracknell_feature_directory_theme_registry_alter(&$theme_registry) {
       $theme_registry[$key]['theme path'] = $module_path;
       $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
       $theme_registry[$key]['type'] = 'module';
+    }
+  }
+}
+
+/**
+ *  Implements hook_views_post_execute().
+ */
+function bracknell_feature_directory_views_post_execute(&$view) {
+  // Change the view mode for the directory address view depending on which options
+  // a content editor has choosen.
+  if ($view->name == 'directory_address') {
+    $nid = $view->args[0];
+
+    if (!empty($nid) && $node = node_load($nid)) {
+      $directory_entry = quickReturnField($node, 'field_directory_entry');
+      $address_details = quickReturnField($node, 'field_address_details');
+
+      // Check if the node has a directory entry.
+      if (!empty($directory_entry[0]['value']) && !empty($address_details[0]['value'])) {
+        // Change the view mode based on what address format the content editor chooses.
+        if ($address_details == 'address_with_phone') {
+          $view->style_plugin->row_plugin->options['view_mode'] = 'address_with_phone';
+        }
+      }
     }
   }
 }
