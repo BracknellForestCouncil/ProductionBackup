@@ -118,8 +118,10 @@ function bracknell_feature_seo_metatag_export_default() {
         'value' => '[site:name] | [current-page:pager]',
       ),
       'description' => array(
-        'value' => 'This is the website for Bracknell Forest Council. It includes all of our services, such as bins
-and recycling, council tax, benefits, libraries and schools.',
+        'value' => 'This is the website for Bracknell Forest Council. It includes all of our services, such as bins and recycling, council tax, benefits, libraries and schools.',
+      ),
+      'image_src' => array(
+        'value' => 'https://files.bracknell-forest.gov.uk/sites/bracknell/BFC_green_landscape_logo.png',
       ),
       'canonical' => array(
         'value' => '[site:url]',
@@ -139,8 +141,8 @@ and recycling, council tax, benefits, libraries and schools.',
       'og:description' => array(
         'value' => 'This is the website for Bracknell Forest Council. It includes all of our services, such as bins and recycling, council tax, benefits, libraries and schools.',
       ),
-      'og:image:url' => array(
-        'value' => '/sites/bracknell/BFC_green_landscape_logo.png',
+      'og:image' => array(
+        'value' => 'https://files.bracknell-forest.gov.uk/sites/bracknell/BFC_green_landscape_logo.png',
       ),
     ),
   );
