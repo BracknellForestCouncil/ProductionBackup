@@ -27,16 +27,7 @@ function bracknell_theme_base_preprocess_page(&$vars) {
   if (empty($header)) {
     drupal_add_http_header('X-UA-Compatible', 'IE=Edge');
   }
-  // Add information about the number of sidebars.
-  if (!empty($vars['page']['sidebar_first']) && !empty($vars['page']['sidebar_second'])) {
-    $vars['content_column_class'] = ' class="col-md-4 col-md-offset-1"';
-  }
-  elseif (!empty($vars['page']['sidebar_first']) || !empty($vars['page']['sidebar_second'])) {
-    $vars['content_column_class'] = ' class="col-md-8 col-sm-12"';
-  }
-  else {
-    $vars['content_column_class'] = ' class="col-sm-12"';
-  }
+
   // Add theme hook suggestions for page.tpl.php files representing different
   // node types. Will come out as page--proomotional-page.tpl.php, for example.
   if (isset($vars['node'])) {

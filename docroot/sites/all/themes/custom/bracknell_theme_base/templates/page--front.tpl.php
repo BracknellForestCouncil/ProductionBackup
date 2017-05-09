@@ -73,6 +73,7 @@
  * @ingroup templates
  */
 ?>
+
 <?php include_once DRUPAL_ROOT . '/' . drupal_get_path('theme', 'bracknell_theme_base') . '/templates/includes/header.inc'; ?>
 
 <main class="main-container" id="readspeaker_content" role="main">
@@ -97,39 +98,14 @@
     </div><!-- end .row -->
   </div><!-- end .container -->
 
-  <div class="guide-navigation-primary">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-8">
-          <?php if (!empty($title)) : ?>
-            <h1 class="page-title"><?php print $title; ?></h1>
-          <?php endif; ?>
-          <?php print $guide_menu; ?>
-        </div><!-- end .col -->
-      </div><!-- end .row -->
-    </div><!-- end .container -->
-  </div>
-
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 col-md-8">
+      <div<?php print $content_column_class ?>>
         <?php print render($page['content']); ?>
         <?php if (!empty($page['page_footer'])): ?>
           <?php print render($page['page_footer']); ?>
         <?php endif; ?>
       </div><!-- end .col -->
-
-      <?php if (!empty($page['sidebar_first'])): ?>
-        <aside class="col-md-3 col-sm-12" role="complementary">
-          <?php print render($page['sidebar_first']); ?>
-        </aside>  <!-- /#sidebar-first -->
-      <?php endif; ?>
-
-      <?php if (!empty($page['sidebar_second'])): ?>
-        <aside class="col-md-3 col-md-offset-1 col-sm-12" role="complementary">
-          <?php print render($page['sidebar_second']); ?>
-        </aside>  <!-- /#sidebar-second -->
-      <?php endif; ?>
     </div><!-- end .row-->
   </div><!-- end .container -->
 </main>

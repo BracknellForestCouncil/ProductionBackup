@@ -84,3 +84,4 @@ features[variable][] = pathauto_transliterate
 features[variable][] = pathauto_update_action
 features[variable][] = pathauto_verbose
 project path = sites/all/modules/custom/bracknell
+files[] = includes/bracknell_base.helpers.inc

@@ -44,11 +44,11 @@
  * @ingroup themeable
  */
 ?>
-<div class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if (!$label_hidden) : ?>
-    <h2<?php print $title_attributes; ?>><?php print $label ?></h2>
+<p class="location-phone">
+  <?php if (!$label_hidden): ?>
+    <span class="element-invisible"><?php print $label ?>:</span>
   <?php endif; ?>
-  <?php foreach ($items as $delta => $item) : ?>
+  <?php foreach ($items as $delta => $item): ?>
     <?php print render($item); ?>
   <?php endforeach; ?>
-</div>
+</p>

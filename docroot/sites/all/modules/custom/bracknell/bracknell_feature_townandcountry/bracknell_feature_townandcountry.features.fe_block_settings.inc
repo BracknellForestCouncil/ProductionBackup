@@ -22,12 +22,6 @@ function bracknell_feature_townandcountry_default_fe_block_settings() {
 news/*',
     'roles' => array(),
     'themes' => array(
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => 0,
-      ),
       'bracknell_theme_base' => array(
         'region' => '',
         'status' => 0,
