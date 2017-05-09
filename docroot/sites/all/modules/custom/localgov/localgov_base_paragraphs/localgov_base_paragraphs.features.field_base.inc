@@ -1217,6 +1217,31 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'type' => 'link_field',
   );
 
+  // Exported field_base: 'field_promotional_area_media'.
+  $field_bases['field_promotional_area_media'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_promotional_area_media',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'image' => 'image',
+        'video' => 'video',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_promotional_area_related_c'.
   $field_bases['field_promotional_area_related_c'] = array(
     'active' => 1,
@@ -1275,6 +1300,25 @@ function localgov_base_paragraphs_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_promotional_area_video'.
+  $field_bases['field_promotional_area_video'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_promotional_area_video',
+    'indexes' => array(
+      'video_id' => array(
+        0 => 'video_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'youtube',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'youtube',
   );
 
   // Exported field_base: 'field_read_more_text'.
