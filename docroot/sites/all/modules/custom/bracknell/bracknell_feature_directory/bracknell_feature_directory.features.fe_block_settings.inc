@@ -21,12 +21,6 @@ function bracknell_feature_directory_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => 0,
-      ),
       'bracknell_theme_base' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -47,12 +41,6 @@ function bracknell_feature_directory_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => 0,
-      ),
       'bracknell_theme_base' => array(
         'region' => 'sidebar_second',
         'status' => 1,
@@ -73,12 +61,6 @@ function bracknell_feature_directory_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'adminimal' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'adminimal',
-        'weight' => 0,
-      ),
       'bracknell_theme_base' => array(
         'region' => 'sidebar_second',
         'status' => 1,
