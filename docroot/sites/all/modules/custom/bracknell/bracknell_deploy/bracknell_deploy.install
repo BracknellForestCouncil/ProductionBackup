@@ -183,3 +183,10 @@ function bracknell_deploy_update_7011(&$sandbox) {
 function bracknell_deploy_update_7012(&$sandbox) {
   module_enable(array('addressfield_sub_premise'));
 }
+
+/**
+ * Enable the Metatag module for SEO and sharing on social meeja.
+ */
+function bracknell_deploy_update_7013(&$sandbox) {
+  module_enable(array('bracknell_feature_seo'));
+}
