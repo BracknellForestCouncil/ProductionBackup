@@ -1,0 +1,52 @@
+// Featured Box.
+
+// Border Theme.
+.featured-box-theme-border {
+  border: {
+    color: $featured-box-border-color;
+    style: solid;
+    width: 5px 0 0 0;
+  }
+  @include applyColour(border-color);
+  padding-top: 20px;
+}
+
+// Colour schemes/themes.
+$featured-box-themes: (
+  turquoise: ($turquoise),
+  lime-green: ($limeGreen),
+  olive-green: ($oliveGreen),
+  slate-blue: ($slateBlue),
+  coral-reef-blue: ($coralreefBlue),
+  sandhurst-orange: ($sandhurstOrange),
+  bright-green: ($brightGreen),
+  bright-red: ($brightRed),
+  plum: ($plum),
+  magenta: ($magenta),
+  downshire-purple: ($downshirePurple),
+  grey-light: ($greyLight),
+  dark-orange: ($darkOrange),
+  purple: ($purple),
+  leisure-blue: ($leisureBlue),
+  edgbarrow-red: ($edgbarrowRed),
+  discovery-green: ($discoveryGreen),
+  grey-extra-light: ($greyExtraLight),
+);
+
+@each $class-name, $value in $featured-box-themes {
+  .featured-box-theme-#{$class-name} {
+    background-color: #{$value};
+    padding: 20px 20px 1px;
+
+    p {
+      color: $featured-box-text-color;
+    }
+  }
+}
+
+.featured-box-theme-grey-light,
+.featured-box-theme-grey-extra-light {
+  p {
+    color: $featured-box-default-text-color;
+  }
+}
