@@ -1,3 +1,9 @@
+<?php if (!empty($page['alerts'])): ?>
+  <div id="global-alerts">
+    <?php print render($page['alerts']); ?>
+  </div>
+<?php endif; ?>
+
 <header class="header" role="banner">
   <div class="container">
     <div class=" header-inner row">

@@ -17,7 +17,6 @@ dependencies[] = filter
 dependencies[] = image
 dependencies[] = menu
 dependencies[] = module_filter
-dependencies[] = navbar
 dependencies[] = path
 dependencies[] = pathauto
 dependencies[] = shortcut
