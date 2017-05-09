@@ -1,6 +1,8 @@
 // Related Links.
 
 .related-links {
+  margin-bottom: 20px;
+
   .related-links-title {
     @include applyColour(border-top-color);
     border-top: {
