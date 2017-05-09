@@ -158,6 +158,16 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
       $variables['paragraph_position'] = $paragraph_position;
     }
   }
+
+  // Output classes for theming the featured box component.
+  if ($variables['elements']['#bundle'] == 'featured_box' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    $variables['classes_array'][] = 'featured-box';
+
+    if (isset($variables['elements']['field_paragraph_box_theme'])) {
+      $featured_box_theme = $variables['elements']['field_paragraph_box_theme']['#items'][0]['value'];
+      $variables['classes_array'][] = 'featured-box-theme-' . $featured_box_theme;
+    }
+  }
 }
 
 /**
