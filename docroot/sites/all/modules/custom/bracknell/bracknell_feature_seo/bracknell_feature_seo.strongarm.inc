@@ -13,6 +13,28 @@ function bracknell_feature_seo_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'default_metatag_config';
+  $strongarm->value = array(
+    'global' => FALSE,
+    'global:403' => FALSE,
+    'global:404' => FALSE,
+    'global:frontpage' => FALSE,
+    'node' => FALSE,
+    'taxonomy_term' => FALSE,
+    'user' => FALSE,
+  );
+  $export['default_metatag_config'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_cache_output';
+  $strongarm->value = 0;
+  $export['metatag_cache_output'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'metatag_enable_directory_entry';
   $strongarm->value = 0;
   $export['metatag_enable_directory_entry'] = $strongarm;
@@ -279,6 +301,20 @@ function bracknell_feature_seo_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_entity_no_lang_default';
+  $strongarm->value = 0;
+  $export['metatag_entity_no_lang_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_extended_permissions';
+  $strongarm->value = 0;
+  $export['metatag_extended_permissions'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'metatag_has_revision_id';
   $strongarm->value = TRUE;
   $export['metatag_has_revision_id'] = $strongarm;
@@ -286,9 +322,79 @@ function bracknell_feature_seo_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_i18n_disabled';
+  $strongarm->value = FALSE;
+  $export['metatag_i18n_disabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_i18n_enable_watchdog';
+  $strongarm->value = FALSE;
+  $export['metatag_i18n_enable_watchdog'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_i18n_translate_output';
+  $strongarm->value = FALSE;
+  $export['metatag_i18n_translate_output'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_leave_core_tags';
+  $strongarm->value = 0;
+  $export['metatag_leave_core_tags'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_load_all_pages';
+  $strongarm->value = 1;
+  $export['metatag_load_all_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_load_defaults';
+  $strongarm->value = 1;
+  $export['metatag_load_defaults'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_pager_string';
+  $strongarm->value = 'Page PAGER | ';
+  $export['metatag_pager_string'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_page_region';
+  $strongarm->value = 'content';
+  $export['metatag_page_region'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'metatag_schema_installed';
   $strongarm->value = TRUE;
   $export['metatag_schema_installed'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_tag_admin_pages';
+  $strongarm->value = 0;
+  $export['metatag_tag_admin_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'metatag_token_sanitize';
+  $strongarm->value = 0;
+  $export['metatag_token_sanitize'] = $strongarm;
 
   return $export;
 }
