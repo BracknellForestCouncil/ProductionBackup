@@ -13,42 +13,74 @@ function bracknell_feature_seo_user_default_permissions() {
   // Exported permission: 'add JS snippets for google analytics'.
   $permissions['add JS snippets for google analytics'] = array(
     'name' => 'add JS snippets for google analytics',
-    'roles' => array(),
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'googleanalytics',
   );
 
   // Exported permission: 'administer google analytics'.
   $permissions['administer google analytics'] = array(
     'name' => 'administer google analytics',
-    'roles' => array(),
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'googleanalytics',
   );
 
   // Exported permission: 'administer meta tags'.
   $permissions['administer meta tags'] = array(
     'name' => 'administer meta tags',
-    'roles' => array(),
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'metatag',
   );
 
   // Exported permission: 'edit meta tags'.
   $permissions['edit meta tags'] = array(
     'name' => 'edit meta tags',
-    'roles' => array(),
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'metatag',
   );
 
   // Exported permission: 'opt-in or out of tracking'.
   $permissions['opt-in or out of tracking'] = array(
     'name' => 'opt-in or out of tracking',
-    'roles' => array(),
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'googleanalytics',
   );
 
   // Exported permission: 'use PHP for tracking visibility'.
   $permissions['use PHP for tracking visibility'] = array(
     'name' => 'use PHP for tracking visibility',
-    'roles' => array(),
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'googleanalytics',
   );
 
