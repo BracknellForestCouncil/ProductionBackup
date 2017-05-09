@@ -132,9 +132,10 @@ function bracknell_base_entity_info_alter(&$entity_info) {
 }
 
 /**
- * Custom label function that returns display title if set, falls back to 
- * standard node title.
- * 
+ * Custom label function.
+ *
+ * Returns display title if set, falls back to standard node title.
+ *
  * @see callback_entity_info_label
  */
 function _bracknell_base_set_display_title($entity, $entity_type) {
