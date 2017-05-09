@@ -60,6 +60,6 @@ function bracknell_alerts_admin_settings_form_submit($form, $form_state) {
   drupal_set_message(t('Alert settings saved and caches cleared.'), 'status', FALSE);
   if (module_exists('acquia_flush_varnish') && isset($_ENV['AH_SITE_ENVIRONMENT'])) {
     acquia_flush_varnish_cache();
-    drupal_set_message(t('Acquia Varnish cache cleared..'), 'status', FALSE);
+    drupal_set_message(t('Acquia Varnish cache cleared.'), 'status', FALSE);
   }
 }
