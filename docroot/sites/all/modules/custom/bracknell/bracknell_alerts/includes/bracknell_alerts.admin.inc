@@ -57,4 +57,5 @@ function bracknell_alerts_admin_settings_form_submit($form, $form_state) {
   variable_set('bracknell_alerts_global_severity', $form_state['values']['global']['severity']);
   variable_set('bracknell_alerts_global_text', $form_state['values']['global']['text']);
   drupal_flush_all_caches();
+  drupal_set_message(t('Alert settings saved and caches cleared.'), 'status', FALSE);
 }
