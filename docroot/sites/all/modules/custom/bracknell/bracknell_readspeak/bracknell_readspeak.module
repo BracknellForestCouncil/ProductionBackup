@@ -35,7 +35,7 @@ function bracknell_readspeak_preprocess_page(&$variables) {
   }
 
   $enable_rs = '0';
-  if (isset($variables['node'])) {
+  if (isset($variables['node']) && isset($variables['node']->base_readspeak)) {
     $enable_rs = $variables['node']->base_readspeak;
   }
 
