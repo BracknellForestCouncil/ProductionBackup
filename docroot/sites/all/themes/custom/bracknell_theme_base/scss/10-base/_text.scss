@@ -17,9 +17,9 @@ p {
   }
 }
 
-span.lge {
-  @extend h2;
-  @extend .hdng-lge;
+.lge {
+  font-size: $font-size-14;
+  font-weight: $font-weight-heading;
 }
 
 .text-light-lg {

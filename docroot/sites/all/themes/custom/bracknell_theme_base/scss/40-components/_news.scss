@@ -7,7 +7,7 @@ body.page-news {
         padding: 20px 0;
 
         h2 {
-          @extend h3;
+          font-size: $font-size-10;
           margin-top: 0 !important;
         }
       }
@@ -28,12 +28,16 @@ body.page-news {
 }
 
 // Town and Country block image
-#block-bracknell-townandcountry .img-responsive,
-#block-block-3 .img-responsive {
-  margin-bottom: 20px;
+#block-bracknell-townandcountry,
+#block-block-3 {
+ .img-responsive {
+    margin-bottom: 20px;
+  }
 }
 
-.node-article .submitted {
-  margin-bottom: 1em;
-  margin-top: 0.5em;
+.node-article {
+  .submitted {
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+  }
 }

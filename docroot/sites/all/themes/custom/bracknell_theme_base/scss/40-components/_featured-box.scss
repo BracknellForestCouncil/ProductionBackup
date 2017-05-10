@@ -33,20 +33,36 @@ $featured-box-themes: (
   grey-extra-light: ($greyExtraLight),
 );
 
+// Output styles for all colours.
 @each $class-name, $value in $featured-box-themes {
   .featured-box-theme-#{$class-name} {
     background-color: #{$value};
     padding: 20px 20px 1px;
-
-    p {
-      color: $featured-box-text-color;
-    }
   }
 }
 
-.featured-box-theme-grey-light,
-.featured-box-theme-grey-extra-light {
-  p {
-    color: $featured-box-default-text-color;
+// For accessibility, we need to change the colours on the elements inside some of the coloured boxes.
+// So removed the grey-light and grey-extra-light colours from our original map.
+$reduced-featured-box-themes: map-remove($featured-box-themes, grey-light, grey-extra-light);
+
+@each $class-name, $value in $reduced-featured-box-themes {
+  .featured-box-theme-#{$class-name} {
+    border-radius: 5px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    li {
+      color: $featured-box-text-color;
+    }
+
+    blockquote {
+      p {
+        color: $featured-box-default-text-color;
+      }
+    }
   }
 }
