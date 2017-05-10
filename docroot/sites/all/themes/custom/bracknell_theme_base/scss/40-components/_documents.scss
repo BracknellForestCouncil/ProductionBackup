@@ -8,4 +8,10 @@
     border-radius: 0;
     border: 0;
   }
+
+  .table {
+    td:nth-child(2) {
+      white-space: nowrap;
+    }
+  }
 }
