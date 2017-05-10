@@ -218,6 +218,8 @@ function bracknell_deploy_update_7015(&$sandbox) {
     $sandbox['messages'] = array();
     // Last node read via the query.
     $sandbox['current_node'] = -1;
+    // A count of the number of updates.
+    $sandbox['upcount'] = 0;
   }
 
   // Process nodes by groups of 50
@@ -241,6 +243,7 @@ function bracknell_deploy_update_7015(&$sandbox) {
       // Copy the title to the display title and schedule an update
       $node->field_node_display_title[$node->language][0]['value'] = filter_xss($node->title);
       field_attach_update('node', $node);
+      $sandbox['upcount'] ++;
     }
 
     // Update our progress information.
@@ -256,6 +259,6 @@ function bracknell_deploy_update_7015(&$sandbox) {
   if ($sandbox['#finished']) {
     // hook_update_N() may optionally return a string which will be displayed
     // to the user.
-    return t('The node_display_title has been set on :count nodes.', array(':count' => $sandbox['max']));
+    return t('The node_display_title has been set on :count nodes.', array(':count' => $sandbox['upcount']));
   }
 }
