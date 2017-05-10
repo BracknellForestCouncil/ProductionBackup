@@ -44,30 +44,31 @@
  * @ingroup themeable
  */
 ?>
-<?php
-  $hero_images = array_filter($items, function ($hero_image) {
-    return is_array($hero_image) && isset($hero_image['#item']['uri']);
-  });
-  if (count($hero_images) === 1): ?>
-    <div class='hero-images'>
-    <?php print render($hero_images[0]); ?>
-    </div>
-  <?php elseif (count($hero_images) > 1): ?>
-    <div class='hero-images'>
+<?php if (!empty($hero_images)): ?>
+  <div class="hero-images">
+    <?php if ($show_gallery): ?>
       <?php
       // Render out all the promotional hero images as a slideshow.
-      foreach ($hero_images as $key => $hero_image): ?>
+      foreach ($hero_images as $key => $hero_image):
+        $hero_image_alt = $hero_image['#item']['alt'];
+        $hero_image_src = $hero_image['#item']['uri'];
+      ?>
         <a
-          href="<?php print file_create_url($hero_image['#item']['uri']); ?>"
+          href="<?php print file_create_url($hero_image_src); ?>"
           rel="lightbox[hero_image]"
           title=""
           class="hero-image <?php print $key > 0 ? 'hidden' : 'first-image'; ?>">
-          <?php print render($hero_image); ?>
+          <img alt="<?php print $hero_image_alt; ?>" src="<?php print file_create_url($hero_image_src); ?>" />
         </a>
       <?php endforeach; ?>
-      <div class='hero-buttons'>
+      <div aria-hidden="true" class='hero-buttons'>
         <div class='hero-button action-open'>View gallery</div>
       </div>
-    </div>
-  <?php endif; ?>
-
+    <?php else : ?>
+      <?php if (!empty($cover_hero_image)): ?>
+      <div class="hero-images">
+        <img alt="<?php print $cover_hero_image_alt; ?>" src="<?php print $cover_hero_image_src; ?>" />
+      <?php endif; ?>
+    <?php endif; ?>
+  </div>
+<?php endif; ?>
