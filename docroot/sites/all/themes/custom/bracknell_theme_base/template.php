@@ -74,7 +74,7 @@ function bracknell_theme_base_file_formatter_table($variables) {
 
   foreach ($variables['items'] as $delta => $item) {
     if (!empty($item['field_file_description'])) {
-      $file_description = $item['field_file_description']['und'][0]['safe_value'];
+      $file_description = $item['field_file_description'][LANGUAGE_NONE][0]['safe_value'];
     }
     $file_size = format_size($item['filesize']);
     $rows[] = array(
