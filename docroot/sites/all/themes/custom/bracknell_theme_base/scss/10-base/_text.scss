@@ -18,8 +18,11 @@ p {
 }
 
 span.lge {
-  @extend h2;
-  @extend .hdng-lge;
+  display: block;
+  font-size: $font-size-13;
+  font-weight: $font-weight-heading;
+  line-height: 1;
+  margin: 7px 0;
 }
 
 .text-light-lg {
