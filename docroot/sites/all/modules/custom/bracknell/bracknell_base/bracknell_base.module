@@ -132,6 +132,31 @@ function bracknell_base_entity_info_alter(&$entity_info) {
 }
 
 /**
+ * Implements hook_form_alter().
+ */
+function bracknell_base_form_alter(&$form, &$form_state, $form_id) {
+  if (path_is_admin(current_path()) && strpos($form_id, 'node_form')) {
+    if ($form['#node_edit_form'] === TRUE) {
+      $form['#attached']['js'] = array(
+        drupal_get_path('module', 'bracknell_base') . '/js/baseFunctions.js',
+      );
+    }
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function bracknell_base_node_presave($node) {
+  // Check for a node display title and if not set automatically copy 
+  // the node title.
+  $display_title = quickReturnField($node, 'field_node_display_title');
+  if (!$display_title) {
+    $node->field_node_display_title[$node->language][0]['value'] = $node->title;
+  }
+}
+
+/**
  * Custom label function.
  *
  * Returns display title if set, falls back to standard node title.
