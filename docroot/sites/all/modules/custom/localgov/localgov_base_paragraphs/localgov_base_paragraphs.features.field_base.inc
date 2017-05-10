@@ -719,6 +719,48 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'type' => 'link_field',
   );
 
+  // Exported field_base: 'field_paragraph_box_theme'.
+  $field_bases['field_paragraph_box_theme'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_paragraph_box_theme',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'turquoise' => 'Turquoise',
+        'lime-green' => 'Lime Green',
+        'olive-green' => 'Olive Green',
+        'slate-blue' => 'Slate Blue',
+        'coral-reef-blue' => 'Coral Reef Blue',
+        'sandhurst-orange' => 'Sandhurst Orange',
+        'bright-green' => 'Bright Green',
+        'bright-red' => 'Bright Red',
+        'plum' => 'Plum',
+        'magenta' => 'Magenta',
+        'downshire-purple' => 'Downshire Purple',
+        'grey-light' => 'Grey Light',
+        'dark-orange' => 'Dark Orange',
+        'purple' => 'Purple',
+        'leisure-blue' => 'Leisure Blue',
+        'edgbarrow-red' => 'Edgbarrow Red',
+        'discovery-green' => 'Discovery Green',
+        'grey-extra-light' => 'Grey Extra Light',
+        'border' => 'With Border',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_paragraph_carousel_content'.
   $field_bases['field_paragraph_carousel_content'] = array(
     'active' => 1,

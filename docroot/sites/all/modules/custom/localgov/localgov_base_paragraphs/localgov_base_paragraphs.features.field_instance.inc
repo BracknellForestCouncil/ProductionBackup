@@ -1460,6 +1460,46 @@ function localgov_base_paragraphs_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'paragraphs_item-featured_box-field_paragraph_box_theme'.
+  $field_instances['paragraphs_item-featured_box-field_paragraph_box_theme'] = array(
+    'bundle' => 'featured_box',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_paragraph_box_theme',
+    'is_property' => 0,
+    'label' => 'Theme',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
   // 'paragraphs_item-grid_display-field_grid_display_items'.
   $field_instances['paragraphs_item-grid_display-field_grid_display_items'] = array(
     'bundle' => 'grid_display',
