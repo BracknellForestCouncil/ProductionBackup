@@ -26,6 +26,7 @@ scripts[] = js/scripts.js
 ; ========================================
 ; Regions
 ; ========================================
+regions[alerts] = Alerts
 regions[header] = Site Header
 regions[branding] = Branding
 regions[search] = Search
