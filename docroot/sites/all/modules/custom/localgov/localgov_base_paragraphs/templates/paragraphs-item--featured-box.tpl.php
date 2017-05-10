@@ -25,7 +25,9 @@
  * @see template_preprocess_entity()
  * @see template_process()
  */
-?>
-<div class="featured-box">
+
+hide($content['field_paragraph_box_theme']); ?>
+
+<div class="<?php print $classes; ?>">
   <?php print render($content); ?>
 </div>

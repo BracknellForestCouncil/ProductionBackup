@@ -309,6 +309,11 @@ $grid-display-box-media-bg-color: $greyExtraLight;
 $grid-display-box-media-border-color: $greyLight;
 $grid-display-grid-content-border-color: $greyExtraLight;
 
+// Featured Box.
+$featured-box-border-color: $brandGreen;
+$featured-box-text-color: $white;
+$featured-box-default-text-color: $charcoal;
+
 // Colour schemes/themes.
 $themes: (
   business: ($slateBlue, white),
