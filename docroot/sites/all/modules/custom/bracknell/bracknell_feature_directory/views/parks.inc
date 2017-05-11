@@ -1,3 +1,10 @@
+<?php
+
+/*
+ * @file
+ *  Contains the view definition for the parks filters.
+ */
+
 $view = new view();
 $view->name = 'parks';
 $view->description = '';
