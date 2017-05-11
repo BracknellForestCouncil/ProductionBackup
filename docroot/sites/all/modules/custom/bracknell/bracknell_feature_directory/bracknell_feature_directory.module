@@ -46,7 +46,7 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
       $variables['map'] = !empty($map) ? $map : '<p>' . t('An overview map is currently unavailable.') . '</p>';
 
       // Display the directions, if a content editor chooses to show them.
-      $show_directions = quickReturnField($node, 'field_location_directions');
+      $show_directions = quick_return_ield($node, 'field_location_directions');
 
       if ($show_directions) {
         $display_directions = entity_view('directory_entry', $location_entity, 'directions');
@@ -86,8 +86,8 @@ function bracknell_feature_directory_views_post_execute(&$view) {
     $nid = $view->args[0];
 
     if (!empty($nid) && $node = node_load($nid)) {
-      $directory_entry = quickReturnField($node, 'field_directory_entry');
-      $address_details = quickReturnField($node, 'field_address_details');
+      $directory_entry = quick_return_ield($node, 'field_directory_entry');
+      $address_details = quick_return_ield($node, 'field_address_details');
 
       // Check if the node has a directory entry.
       if (!empty($directory_entry[0]['target_id']) && !empty($address_details[0]['value'])) {

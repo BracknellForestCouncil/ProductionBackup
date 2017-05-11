@@ -150,7 +150,7 @@ function bracknell_base_form_alter(&$form, &$form_state, $form_id) {
 function bracknell_base_node_presave($node) {
   // Check for a node display title and if not set automatically copy
   // the node title.
-  $display_title = quickReturnField($node, 'field_node_display_title');
+  $display_title = quick_return_ield($node, 'field_node_display_title');
   if (!$display_title) {
     $node->field_node_display_title[$node->language][0]['value'] = $node->title;
   }

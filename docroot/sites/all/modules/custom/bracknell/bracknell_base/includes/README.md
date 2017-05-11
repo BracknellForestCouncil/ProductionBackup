@@ -8,7 +8,7 @@ modules.
 
 Helper functions:
 
-quickReturnField($entity, $field_name)
+quick_return_field($entity, $field_name)
 
 This is a high performance version of field_get_items and takes an entity and
 a field name as it's arguments. It will return the field object if found or
@@ -17,7 +17,7 @@ FALSE if nor or if the params are empty.
 Usage example:
 
 ```php
-$directory_entry = quickReturnField($node, 'field_directory_entry');
+$directory_entry = quick_return_field($node, 'field_directory_entry');
 
 if (!empty($directory_entry[0]['value']) {
     // Do something.
