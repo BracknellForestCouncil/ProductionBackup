@@ -181,7 +181,9 @@ function bracknell_base_preprocess_field(&$variables) {
       $hero_images = $variables['items'];
       $hero_image = $hero_images[0]['#item'];
       $variables['cover_hero_image'] = $hero_image;
-      // This is to make sure the alt attribute is output even if it's empty for improved accessibility. The media module doesn't do this by default (https://www.drupal.org/node/1343022).
+      // This is to make sure the alt attribute is output even if it's empty for
+      // improved accessibility. The media module doesn't do this by default
+      // (https://www.drupal.org/node/1343022).
       $variables['cover_hero_image_src'] = $hero_image['uri'];
       $variables['cover_hero_image_alt'] = $hero_image['alt'];
 
