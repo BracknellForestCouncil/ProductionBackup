@@ -26,7 +26,7 @@
  * @see template_process()
  */
 ?>
-<div class="showcase-item">
+<article class="showcase-item">
   <div class="showcase-media-wrap">
     <div class="showcase-media">
       <?php print render($content['field_showcase_image']); ?>
@@ -39,4 +39,4 @@
       <?php print render($content['field_showcase_link']); ?>
     </div>
   </div>
-</div>
+</article>

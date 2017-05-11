@@ -41,7 +41,10 @@
   }
 
   .showcase-item-title {
-    font-weight: 600;
+    font: {
+      size: $font-size-10;
+      weight: 600;
+    }
     height: auto;
     margin: 0;
     padding: 10px 20px;
