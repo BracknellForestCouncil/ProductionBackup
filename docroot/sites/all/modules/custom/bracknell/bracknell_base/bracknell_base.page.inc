@@ -7,6 +7,7 @@
 
 /**
  * Custom function to return 403 or 404 page.
+ *
  * TODO: Refactor not to have html in this function.
  */
 function bracknell_base_error_page($errorcode) {
@@ -18,12 +19,12 @@ function bracknell_base_error_page($errorcode) {
     // Alternative options for the user.
     $alt_links = array(
       t("check that you typed in the correct address"),
-      t("try using our ") . $search_link,
-      t("go to the ") . $home_link . t(" and browse the site")
+      t("try using our:space", array(':space' => ' ')) . $search_link,
+      t("go to the:space", array(':space' => ' ')) . $home_link . t(":spaceand browse the site", array(':space' => ' ')),
     );
     // Create the 404 page message.
-    $message_title = t("Sorry, the page you were looking for was not found.") . "<br/><br/>";
-    $message_body = t("There are a few different ways to help you find the page you were looking for:") . "<br/>";
+    $message_title = t("Sorry, the page you were looking for was not found.:doublespace", array(':doublespace' => "<br/><br/>"));
+    $message_body = t("There are a few different ways to help you find the page you were looking for::singlespace", array(':singlespace' => "<br/>"));
     // Create an unordered list of options to display using theme function.
     $message_options = theme('item_list', array('items' => $alt_links));
     // Combine the options and stick in the markup.

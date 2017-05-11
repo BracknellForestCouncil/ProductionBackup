@@ -1,7 +1,8 @@
 <?php
 
 /**
- * @file includes/bracknell_alerts.admin.inc
+ * @file
+ * Admin page for the sitewide alerts system.
  */
 
 /**
