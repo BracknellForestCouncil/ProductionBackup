@@ -179,6 +179,8 @@ function bracknell_base_preprocess_field(&$variables) {
 
     if (!empty($variables['items'])) {
       $hero_images = $variables['items'];
+      $variables['hero_images'] = $hero_images;
+
       $hero_image = $hero_images[0]['#item'];
       $variables['cover_hero_image'] = $hero_image;
       // This is to make sure the alt attribute is output even if it's empty for
@@ -188,7 +190,6 @@ function bracknell_base_preprocess_field(&$variables) {
       $variables['cover_hero_image_alt'] = $hero_image['alt'];
 
       if (count($hero_images) > 1) {
-        $variables['hero_images'] = $hero_images;
         $variables['show_gallery'] = TRUE;
       }
     }

@@ -67,7 +67,7 @@
     <?php else : ?>
       <?php if (!empty($cover_hero_image)): ?>
       <div class="hero-images">
-        <img alt="<?php print $cover_hero_image_alt; ?>" src="<?php print $cover_hero_image_src; ?>" />
+        <img alt="<?php print $cover_hero_image_alt; ?>" src="<?php print file_create_url($cover_hero_image_src); ?>" />
       <?php endif; ?>
     <?php endif; ?>
   </div>
