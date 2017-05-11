@@ -23,10 +23,11 @@
 
 // Promotional Hero With Images.
 .promotional-hero-has-image {
-  .promotional-hero {
-    max-height: 480px;
-    min-height: 200px;
-    overflow: hidden;
+  min-height: 200px;
+  overflow: hidden;
+
+  @include breakpoint($screen-lg) {
+    max-width: none;
   }
 
   .promotional-hero-title {

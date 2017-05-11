@@ -148,7 +148,7 @@ function bracknell_base_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_node_presave().
  */
 function bracknell_base_node_presave($node) {
-  // Check for a node display title and if not set automatically copy 
+  // Check for a node display title and if not set automatically copy
   // the node title.
   $display_title = quickReturnField($node, 'field_node_display_title');
   if (!$display_title) {
@@ -168,4 +168,30 @@ function _bracknell_base_set_display_title($entity, $entity_type) {
     return filter_xss($entity->field_node_display_title[LANGUAGE_NONE][0]['value']);
   }
   return empty($entity->title) ? 'Untitled entity' : filter_xss($entity->title);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bracknell_base_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] == 'field_promotional_hero') {
+    $variables['show_gallery'] = FALSE;
+
+    if (!empty($variables['items'])) {
+      $hero_images = $variables['items'];
+      $hero_image = $hero_images[0]['#item'];
+      $variables['cover_hero_image'] = $hero_image;
+      // This is to make sure the alt attribute is output even if it's empty for
+      // improved accessibility. The media module doesn't do this by default
+      // (https://www.drupal.org/node/1343022).
+      $variables['cover_hero_image_src'] = $hero_image['uri'];
+      $variables['cover_hero_image_alt'] = $hero_image['alt'];
+
+      if (count($hero_images) > 1) {
+        $variables['hero_images'] = $hero_images;
+        $variables['show_gallery'] = TRUE;
+      }
+    }
+
+  }
 }
