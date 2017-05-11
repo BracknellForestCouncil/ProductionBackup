@@ -167,6 +167,7 @@ features[field_instance][] = node-location_park-field_park_facilities
 features[field_instance][] = node-location_park-field_park_facilities_available
 features[field_instance][] = node-location_park-field_park_management
 features[field_instance][] = node-location_park-field_park_wildlife
+features[field_instance][] = node-location_park-field_promotional_hero
 features[field_instance][] = node-location_park-field_related
 features[field_instance][] = node-location_playground-field_address_details
 features[field_instance][] = node-location_playground-field_age_suitability
