@@ -54,6 +54,16 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
       }
     }
   }
+
+  // Output classes for parks teasers.
+  if ($node->type == 'location_park' && $variables['view_mode'] == 'teaser') {
+    $variables['classes_array'][] = 'showcase-item';
+
+    if (empty($variables['title_attributes_array']['class']) ) {
+      $variables['title_attributes_array']['class'] = 'showcase-item-title';
+    }
+  }
+
 }
 
 /**
@@ -96,6 +106,18 @@ function bracknell_feature_directory_views_post_execute(&$view) {
           $view->style_plugin->row_plugin->options['view_mode'] = 'address_with_phone';
         }
       }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bracknell_feature_directory_preprocess_views_view_unformatted(&$variables) {
+  if ($variables['view']->name == 'parks') {
+    foreach ($variables['view']->result as $id => $row) {
+      $variables['classes_array'][$id] .= ' col-sm-6';
+      $variables['classes_array'][$id] .= ' col-md-4';
     }
   }
 }
