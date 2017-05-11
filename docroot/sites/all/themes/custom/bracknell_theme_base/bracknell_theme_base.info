@@ -36,6 +36,7 @@ regions[page_header] = Page Header
 regions[highlighted] = Highlighted
 regions[help] = Help
 regions[content] = Content
+regions[content_header] = Content Header
 regions[sidebar_first] = Left sidebar
 regions[sidebar_second] = Right sidebar
 regions[page_footer] = Page Footer
