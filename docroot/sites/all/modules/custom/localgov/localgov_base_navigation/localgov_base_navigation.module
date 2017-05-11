@@ -48,7 +48,7 @@ function localgov_base_navigation_block_view($delta = '') {
       $block['content'] = array(
         '#theme' => array('navigation_homepage'),
         '#menu_tree' => _localgov_base_navigation_format_menu(menu_tree_all_data('menu-services')),
-        '#opts' => array('show_limit' => 1),
+        '#opts' => array('show_limit' => 12),
         '#attached' => array(
           'libraries_load' => array(
             array('gridder'),
