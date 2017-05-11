@@ -34,6 +34,7 @@ features[eck_entity_type][] = directory_entry
 features[fe_block_settings][] = views-directory_accessibility-block
 features[fe_block_settings][] = views-directory_address-block
 features[fe_block_settings][] = views-directory_image-block
+features[fe_block_settings][] = views-parks-block
 features[features_api][] = api:2
 features[field_base][] = field_accessibility
 features[field_base][] = field_activity_listing_link

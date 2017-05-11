@@ -72,5 +72,25 @@ function bracknell_feature_directory_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['views-parks-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'parks-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'parks-and-countryside/parks-visit',
+    'roles' => array(),
+    'themes' => array(
+      'bracknell_theme_base' => array(
+        'region' => 'content_header',
+        'status' => 1,
+        'theme' => 'bracknell_theme_base',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
   return $export;
 }
