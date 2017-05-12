@@ -18,7 +18,7 @@
 
   .nav-item {
     @include gridRows(1, 1%);
-    display: inline-block;
+    float: left;
     vertical-align: top;
 
     @include breakpoint($screen-xs) {
