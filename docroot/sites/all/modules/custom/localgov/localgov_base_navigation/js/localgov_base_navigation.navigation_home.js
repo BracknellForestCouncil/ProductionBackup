@@ -41,9 +41,9 @@
         animationSpeed: 400,
         animationEasing: "easeInOutExpo",
         showNav: false,
-        nextText: '<span class="icon theme-icon-next"></span><span class="sr-only" aria-hidden="true">Next</span>',
-        prevText: '<span class="icon theme-icon-previous"></span><span class="sr-only" aria-hidden="true">Previous</span>',
-        closeText: '<span class="icon theme-icon-cross"></span><span class="sr-only" aria-hidden="true">Close</span>',
+        nextText: '<span class="icon theme-icon-next" aria-hidden="true"></span><span class="sr-only">Next</span>',
+        prevText: '<span class="icon theme-icon-previous" aria-hidden="true"></span><span class="sr-only">Previous</span>',
+        closeText: '<span class="icon theme-icon-cross" aria-hidden="true"></span><span class="sr-only">Close</span>',
         onStart: function () {},
         onContent: function () {},
         onClosed: function () {}

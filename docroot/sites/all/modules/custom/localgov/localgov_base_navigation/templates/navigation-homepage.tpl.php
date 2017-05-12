@@ -45,7 +45,7 @@
 foreach ($menu_tree as $index => $item):
   $li_classes = array('gridder-list', 'homepage-nav-item', 'full-width');
 ?>
-<div id="homepage-nav-<?php print $item['name_safe']; ?>" class="full-width gridder-content nav-content">
+<div id="homepage-nav-<?php print $item['name_safe']; ?>" class="full-width gridder-content nav-content" aria-hidden="true" style="display: none;">
   <ul>
     <?php foreach ($item['children'] as $child_item): ?><li class="nav-link"><?php print l($child_item['name'], $child_item['link_path']); ?></li><?php endforeach; ?><li class="nav-link nav-link-primary">
       <?php print l('All of <strong>' . $item['name'] . '</strong>', '/' . $item['name_safe'], array('html' => TRUE)); ?></li>
