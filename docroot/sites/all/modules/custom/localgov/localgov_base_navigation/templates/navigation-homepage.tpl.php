@@ -42,17 +42,19 @@ foreach ($menu_tree as $index => $item):
 </div>
 <?php endforeach; ?>
 
-<div class='services-control'>
+<div class="services-control">
   <button
-    class='btn btn-primary button-show'
-    id='navigation-home-button-show-hide'
-    data-toggle='collapse'
-    data-target='.nav-link-collapse, .nav-content-collapse'
-    aria-expanded='false'
-    aria-controls='homepage-nav'
-    data-js='services-btn'
-    style='display: none;'
+    class="btn btn-primary button-show"
+    id="navigation-home-button-show-hide"
+    data-toggle="collapse"
+    data-target=".nav-link-collapse, .nav-content-collapse"
+    aria-expanded="false"
+    aria-hidden="true"
+    aria-controls="homepage-nav"
+    data-js="services-btn"
+    style="display: none;"
   >
     <?php print t('More services'); ?>
+    <span class="icon theme-icon-triangle-down"></span>
   </button>
 </div>

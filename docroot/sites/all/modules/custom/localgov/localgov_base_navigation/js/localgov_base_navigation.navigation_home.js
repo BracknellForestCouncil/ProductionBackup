@@ -10,7 +10,7 @@
         // Hide all the collapsed services.
         collapsedServices.hide().attr('aria-hidden', 'true');
         // When the show/hide button is clicked, toggle the collapsed services.
-        showHideButton.show().on('click', function () {
+        showHideButton.show().attr('aria-hidden', 'false').on('click', function () {
           // If the services are currently hidden, show them.
           if (showHideButton.hasClass('button-hide')) {
             homepageNav.removeClass('hasSelectedItem');
