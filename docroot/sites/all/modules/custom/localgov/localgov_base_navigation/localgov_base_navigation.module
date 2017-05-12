@@ -40,7 +40,7 @@ function localgov_base_navigation_block_view($delta = '') {
       $block['subject'] = '<none>';
       $block['content'] = array(
         '#theme' => array('navigation_main'),
-        '#menu_tree' => _localgov_base_navigation_format_menu(menu_tree_all_data('menu-services')),
+        '#menu_tree' => _localgov_base_navigation_format_menu(menu_tree_all_data('main-menu')),
       );
       break;
     case 'navigation_homepage':
