@@ -1,5 +1,5 @@
 <nav id="main-nav" role="navigation">
-  <ul>
+  <ul class="clearfix">
     <li class="visible-sm-inline-block visible-xs-inline-block nav-tools__account nav-item nav-item-my-account">
       <a href="https://myaccount.bracknell-forest.gov.uk/" title="<?php print t('Register for a self service account to save yourself time, or login if you already have an account.'); ?>">
         <span class="icon theme-icon-user"></span>
