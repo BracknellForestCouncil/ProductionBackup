@@ -22,7 +22,7 @@
  *
  * @see field_get_items()
  */
-function quick_return_ield($entity, $field_name) {
+function quick_return_field($entity, $field_name) {
   if (empty($entity) || empty($field_name)) {
     return FALSE;
   }
