@@ -62,7 +62,7 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <script type="text/javascript">
-    document.write('<style type="text/css">.main-menu {display:none;}</style>');
+    document.write('<style type="text/css">.main-menu, .homepage-nav-item-hide {display:none;}</style>');
   </script>
   <?php print $styles; ?>
   <?php print $scripts; ?>

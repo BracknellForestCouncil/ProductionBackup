@@ -4,7 +4,7 @@
     attach: function (context, settings) {
       // Hide additional services.
       var homepageNav = $('#homepage-nav', context);
-      var collapsedServices = homepageNav.find('.collapse');
+      var collapsedServices = homepageNav.find('.homepage-nav-item-hide');
       var showHideButton = $('#navigation-home-button-show-hide');
       if (collapsedServices.length) {
         // Hide all the collapsed services.
@@ -21,13 +21,13 @@
             $('.currentGridder').removeClass('currentGridder');
 
             showHideButton.removeClass('button-hide').addClass('button-show');
-            homepageNav.find('.collapse').hide().attr('aria-hidden', 'true');
+            homepageNav.find('.homepage-nav-item-hide').hide().attr('aria-hidden', 'true');
             $(this).html('More services ' + '<span class="icon theme-icon-triangle-down"></span>');
           }
           // If the services are visible, hide them.
           else {
             showHideButton.removeClass('button-show').addClass('button-hide');
-            homepageNav.find('.collapse').show().attr('aria-hidden', 'false');
+            homepageNav.find('.homepage-nav-item-hide').show().attr('aria-hidden', 'false');
             $(this).html('View less ' + '<span class="icon theme-icon-triangle-up"></span>');
           }
         });
