@@ -2,9 +2,10 @@
  * @file
  * Bracknell base additional functions.
  */
+
 (function ($) {
   /**
-   * Copies the node title to node display title on field exit
+   * Copies the node title to node display title on field exit.
    *
    * @type {Drupal~behaviour}
    *

@@ -4,6 +4,7 @@
  * @file
  * Code for the Bracknell Directory feature.
  */
+
 include_once 'bracknell_feature_directory.features.inc';
 
 /**
@@ -23,17 +24,16 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
 
   // Get the content type groups and apply the theme suggestion.
   $content_type_group = db_select('content_type_groups_types', 'g')
-      ->fields('g', array('group_type'))
-      ->condition('content_type', $node->type)
-      ->execute()
-      ->fetchField();
+    ->fields('g', array('group_type'))
+    ->condition('content_type', $node->type)
+    ->execute()
+    ->fetchField();
 
   if ($content_type_group) {
     // Add specific theme hook suggestions for the content type group.
     array_unshift($variables['theme_hook_suggestions'], 'node__content_type_groups__' . $content_type_group . '__' . $variables['view_mode']);
     array_unshift($variables['theme_hook_suggestions'], 'node__content_type_groups__' . $content_type_group);
   }
-
 
   if ($content_type_group == 'location' && !empty($variables['field_directory_entry'])) {
     $location_id = $variables['field_directory_entry'][0]['target_id'];
@@ -46,7 +46,7 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
       $variables['map'] = !empty($map) ? $map : '<p>' . t('An overview map is currently unavailable.') . '</p>';
 
       // Display the directions, if a content editor chooses to show them.
-      $show_directions = quickReturnField($node, 'field_location_directions');
+      $show_directions = quick_return_field($node, 'field_location_directions');
 
       if ($show_directions) {
         $display_directions = entity_view('directory_entry', $location_entity, 'directions');
@@ -77,21 +77,22 @@ function bracknell_feature_directory_theme_registry_alter(&$theme_registry) {
 }
 
 /**
- *  Implements hook_views_post_execute().
+ * Implements hook_views_post_execute().
  */
 function bracknell_feature_directory_views_post_execute(&$view) {
-  // Change the view mode for the directory address view depending on which options
-  // a content editor has choosen.
+  // Change the view mode for the directory address view depending on which
+  // options a content editor has choosen.
   if ($view->name == 'directory_address') {
     $nid = $view->args[0];
 
     if (!empty($nid) && $node = node_load($nid)) {
-      $directory_entry = quickReturnField($node, 'field_directory_entry');
-      $address_details = quickReturnField($node, 'field_address_details');
+      $directory_entry = quick_return_field($node, 'field_directory_entry');
+      $address_details = quick_return_field($node, 'field_address_details');
 
       // Check if the node has a directory entry.
       if (!empty($directory_entry[0]['target_id']) && !empty($address_details[0]['value'])) {
-        // Change the view mode based on what address format the content editor chooses.
+        // Change the view mode based on what address format the content editor
+        // chooses.
         if ($address_details[0]['value'] == 'address_with_phone') {
           $view->style_plugin->row_plugin->options['view_mode'] = 'address_with_phone';
         }

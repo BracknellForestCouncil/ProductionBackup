@@ -96,7 +96,7 @@ function bracknell_deploy_update_7004() {
   $field_list = array(
     'field_carousel_slide_content',
     'field_promotional_related_pages',
-    'field_testimonial_logo'
+    'field_testimonial_logo',
   );
   // Loop through the list of field names and EXTERMINATE!
   foreach ($field_list as $field_name) {
@@ -137,7 +137,7 @@ function bracknell_deploy_update_7006() {
  * Update the site Error Pages config to new custom 403-404 spec.
  */
 function bracknell_deploy_update_7007(&$sandbox) {
-  // reset the error pages in admin/config/system/site-information
+  // Reset the error pages in admin/config/system/site-information.
   variable_set('site_403', 'bb-403');
   variable_set('site_404', 'bb-404');
 }
@@ -152,7 +152,7 @@ function bracknell_deploy_update_7008() {
   }
 }
 
-/*
+/**
  * Delete field_paragraph_showcase_items from category showcase paragraph.
  */
 function bracknell_deploy_update_7009() {
@@ -198,7 +198,7 @@ function bracknell_deploy_update_7014(&$sandbox) {
   $field = 'field_file_description';
   db_truncate('field_data_' . $field)->execute();
   db_truncate('field_revision_' . $field)->execute();
-  watchdog('Bracknell Deploy', 'Truncated all data from :field', array(':field'=>$field));
+  watchdog('Bracknell Deploy', 'Truncated all data from :field', array(':field' => $field));
 }
 
 /**
@@ -207,7 +207,7 @@ function bracknell_deploy_update_7014(&$sandbox) {
 function bracknell_deploy_update_7015(&$sandbox) {
   $ret = array();
 
-  // Use the sandbox to store the information needed to track progression 
+  // Use the sandbox to store the information needed to track progression
   // between successive calls to the function.
   if (!isset($sandbox['progress'])) {
     // The count of nodes visited so far.
@@ -230,24 +230,25 @@ function bracknell_deploy_update_7015(&$sandbox) {
 
   // Retrieve the next group of nids.
   $result = db_select('node', 'n')
-      ->fields('n', array('nid'))
-      ->orderBy('n.nid', 'ASC')
-      ->where('n.nid > :nid', array(':nid' => $sandbox['current_node']))
-      ->extend('PagerDefault')
-      ->limit($limit)
-      ->execute();
+    ->fields('n', array('nid'))
+    ->orderBy('n.nid', 'ASC')
+    ->where('n.nid > :nid', array(':nid' => $sandbox['current_node']))
+    ->extend('PagerDefault')
+    ->limit($limit)
+    ->execute();
+
   foreach ($result as $row) {
     $node = node_load($row->nid);
 
     if (isset($node) && !isset($node->field_node_display_title[$node->language])) {
-      // Copy the title to the display title and schedule an update
+      // Copy the title to the display title and schedule an update.
       $node->field_node_display_title[$node->language][0]['value'] = filter_xss($node->title);
       field_attach_update('node', $node);
-      $sandbox['upcount'] ++;
+      $sandbox['upcount']++;
     }
 
     // Update our progress information.
-    $sandbox['progress'] ++;
+    $sandbox['progress']++;
     $sandbox['current_node'] = $row->nid;
   }
 
