@@ -116,6 +116,9 @@
   <?php if ($promotional_related_pages) : ?>
     <?php print $promotional_related_pages; ?>
   <?php endif; ?>
+  <?php if (!empty($page['content_header'])): ?>
+    <?php print render($page['content_header']); ?>
+  <?php endif; ?>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">

@@ -590,10 +590,13 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '16',
+          'weight' => '18',
         ),
         'redirect' => array(
-          'weight' => '17',
+          'weight' => '19',
+        ),
+        'metatags' => array(
+          'weight' => '20',
         ),
       ),
       'display' => array(),
