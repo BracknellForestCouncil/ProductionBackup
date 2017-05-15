@@ -230,7 +230,16 @@ function localgov_base_editor_ckeditor_profile_defaults() {
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
       'settings' => array(
+        'skin' => 'moono',
         'ckeditor_path' => '//cdn.ckeditor.com/4.5.4/full-all',
+        'ckeditor_local_path' => '',
+        'ckeditor_plugins_path' => '%m/plugins',
+        'ckeditor_plugins_local_path' => '',
+        'ckfinder_path' => '%m/ckfinder',
+        'ckfinder_local_path' => '',
+        'ckeditor_aggregate' => 'f',
+        'toolbar_wizard' => 't',
+        'loadPlugins' => array(),
       ),
       'input_formats' => array(),
     ),
@@ -247,7 +256,7 @@ function localgov_base_editor_ckeditor_profile_defaults() {
     [\'Format\',\'Styles\',\'RemoveFormat\'],
     [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Blockquote\',\'Subscript\',\'Superscript\',\'-\'],
     [\'NumberedList\',\'BulletedList\',\'-\'],
-    [\'linkit\',\'Unlink\',\'Anchor\']
+    [\'linkit\',\'Unlink\',\'Anchor\',\'Image\',\'Media\']
 ]',
         'expand' => 't',
         'default' => 't',
@@ -337,6 +346,18 @@ function localgov_base_editor_ckeditor_profile_defaults() {
                 'icon' => 'icons/linkit.png',
               ),
             ),
+          ),
+          'media' => array(
+            'name' => 'media',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%sites/all/modules/contrib/media_ckeditor/js/plugins/media/',
+            'buttons' => array(
+              'Media' => array(
+                'icon' => 'images/icon.gif',
+                'label' => 'Add media',
+              ),
+            ),
+            'default' => 'f',
           ),
           'mediaembed' => array(
             'name' => 'mediaembed',
