@@ -256,7 +256,7 @@ function localgov_base_editor_ckeditor_profile_defaults() {
     [\'Format\',\'Styles\',\'RemoveFormat\'],
     [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Blockquote\',\'Subscript\',\'Superscript\',\'-\'],
     [\'NumberedList\',\'BulletedList\',\'-\'],
-    [\'linkit\',\'Unlink\',\'Anchor\',\'Image\',\'Media\']
+    [\'linkit\',\'Unlink\',\'Anchor\',\'Media\']
 ]',
         'expand' => 't',
         'default' => 't',
