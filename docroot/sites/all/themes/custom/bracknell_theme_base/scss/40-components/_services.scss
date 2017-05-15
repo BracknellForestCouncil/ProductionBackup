@@ -15,48 +15,9 @@
 }
 
 .gridder {
-  margin: 0;
+  margin: $commonSpacing 0 $commonSpacing/3;
   padding: 0;
   list-style-type: none;
-}
-
-.gridder-list {
-  display: inline-block;
-  font-size: $font-size-01;
-  vertical-align: top;
-}
-
-.gridder-show {
-  display: block;
-  float: left;
-  font-size: $font-size-01;
-  position: relative;
-  width: 100%;
-}
-
-.gridder-content,
-.gridder-content.collapse.in {
-  display: none;
-}
-
-.gridder-list,
-.gridder-list.collapse.in {
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: top;
-
-  @include gridRows(4,1%);
-
-  @media (max-width: $screen-sm) {
-    width: 100%;
-    @include gridRows(0, 2%);
-  }
-}
-
-// Gridder anchor list
-ul.gridder {
-  margin-top: $commonSpacing;
-  margin-bottom: $commonSpacing/3;
 
   ul {
     padding-left: 0;
@@ -67,17 +28,34 @@ ul.gridder {
   }
 }
 
-li.gridder-list {
+.gridder-list {
   background: $gridder-list-bg-color;
-  border-radius: 3px;
+  border: {
+    color: $gridder-list-border-color;
+    radius: 3px;
+    style: solid;
+    width: 1px;
+  }
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size-01;
   min-height: 118px;
   position: relative;
   padding: 8px 11px 0;
-  border: 1px solid $gridder-list-border-color;
+  vertical-align: top;
+
+  @include gridRows(4, 1%);
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+    @include gridRows(0, 2%);
+  }
 
   a {
     font-size: $font-size-07;
     line-height: 1.1;
+    color: $gridder-list-link-text-color;
+    text-decoration: none;
   }
 
   &:hover {
@@ -111,12 +89,7 @@ li.gridder-list {
     }
   }
 
-  a {
-    color: $gridder-list-link-text-color;
-    text-decoration: none;
-  }
-
- .icon  {
+  .icon  {
     position: absolute;
     right: 15px;
     bottom: 17px;
@@ -126,31 +99,12 @@ li.gridder-list {
 }
 
 .gridder-show {
-  margin-bottom: $commonSpacing / 3;
-}
-
-.gridder-expanded-content {
-  padding-top: $commonSpacing / 3;
-  padding-bottom: $commonSpacing / 1;
-
-}
-
-.gridder-navigation {
-  float: right;
-
-  a {
-    color: $gridder-navigation-link-text-color;
-  }
-}
-
-a.gridder-close {
-   font-size: 1.5em;
-   text-decoration: none;
-}
-
-.gridder-show {
+  display: block;
   float: left;
+  font-size: $font-size-01;
+  position: relative;
   width: 100%;
+  margin-bottom: $commonSpacing / 3;
 
   .gridder-padding {
     @extend .full-width;
@@ -169,9 +123,9 @@ a.gridder-close {
   }
 
   li {
-    display:inline-block;
+    display: inline-block;
     vertical-align: top;
-    @include gridRows(4,1%);
+    @include gridRows(4, 1%);
 
     @media (max-width: $screen-md) {
       width: 100%;
@@ -196,4 +150,23 @@ a.gridder-close {
       text-decoration: underline;
     }
   }
+}
+
+.gridder-expanded-content {
+  padding-top: $commonSpacing / 3;
+  padding-bottom: $commonSpacing / 1;
+}
+
+.gridder-navigation {
+  float: right;
+
+  a {
+    color: $gridder-navigation-link-text-color;
+  }
+}
+
+.gridder-close {
+  cursor: pointer;
+  font-size: 1.5em;
+  text-decoration: none;
 }

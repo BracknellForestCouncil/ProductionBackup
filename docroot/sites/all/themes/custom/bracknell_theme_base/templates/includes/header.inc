@@ -23,10 +23,10 @@
           </div><!-- end .search -->
 
           <div class="header-account col-md-3">
-            <a href="https://bracknell-forest.achieveservice.com/module/home" title="Register for a self service account to save yourself time, or login if you already have an account.">
+            <a href="https://myaccount.bracknell-forest.gov.uk/" title="Register for a self service account to save yourself time, or login if you already have an account.">
               <span class='header-account-section header-account-section-user-icon icon theme-icon-user'></span>
               <span class='header-account-section header-account-section-account'>My account</span>
-              <span class='header-account-section header-account-section-tooltip q-mark icon theme-icon-question' data-toggle="tooltip-my-account" data-placement="bottom" title="Register for a self service account to save yourself time, or login if you already have an account."></span>
+              <span class='header-account-section header-account-section-tooltip q-mark icon theme-icon-question' aria-hidden="true"></span>
             </a>
           </div><!-- end .header-account -->
         </div><!-- end .header-tools -->

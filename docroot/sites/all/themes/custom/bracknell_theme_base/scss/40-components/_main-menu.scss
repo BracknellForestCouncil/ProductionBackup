@@ -18,7 +18,7 @@
 
   .nav-item {
     @include gridRows(1, 1%);
-    display: inline-block;
+    float: left;
     vertical-align: top;
 
     @include breakpoint($screen-xs) {
@@ -42,6 +42,7 @@
 
     li {
       background: url('../images/main-menu-arrow-white.png') 0 17px no-repeat;
+      margin-right: 7px;
     }
 
     a {
