@@ -5,6 +5,7 @@
 }
 
 .services-content {
+  @include clearfix();
   margin-bottom: 30px;
   padding-top: 1px;
   padding-bottom: 8px;
