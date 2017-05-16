@@ -73,6 +73,7 @@ function bracknell_base_field_default_field_bases() {
         'node' => array(
           'target_bundles' => array(
             'basic' => 'basic',
+            'directory_landing_page' => 'directory_landing_page',
             'form' => 'form',
             'guide' => 'guide',
             'landing_page' => 'landing_page',
