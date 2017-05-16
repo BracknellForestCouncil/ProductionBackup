@@ -230,10 +230,10 @@ function localgov_base_editor_ckeditor_profile_defaults() {
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
       'settings' => array(
-        'skin' => 'moono',
-        'ckeditor_path' => '//cdn.ckeditor.com/4.5.4/full-all',
+        'skin' => 'moono-lisa',
+        'ckeditor_path' => '%m/ckeditor',
         'ckeditor_local_path' => '',
-        'ckeditor_plugins_path' => '%m/plugins',
+        'ckeditor_plugins_path' => '%m/ckeditor/plugins',
         'ckeditor_plugins_local_path' => '',
         'ckfinder_path' => '%m/ckfinder',
         'ckfinder_local_path' => '',
@@ -336,6 +336,13 @@ function localgov_base_editor_ckeditor_profile_defaults() {
             ),
             'default' => 't',
           ),
+          'lineutils' => array(
+            'name' => 'lineutils',
+            'desc' => 'Plugin file: lineutils',
+            'path' => '%plugin_dir%lineutils/',
+            'buttons' => FALSE,
+            'default' => 'f',
+          ),
           'linkit' => array(
             'name' => 'linkit',
             'desc' => 'Support for Linkit module',
@@ -377,6 +384,13 @@ function localgov_base_editor_ckeditor_profile_defaults() {
             'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/tableresize/',
             'buttons' => FALSE,
             'default' => 't',
+          ),
+          'widget' => array(
+            'name' => 'widget',
+            'desc' => 'Plugin file: widget',
+            'path' => '%plugin_dir%widget/',
+            'buttons' => FALSE,
+            'default' => 'f',
           ),
         ),
       ),
