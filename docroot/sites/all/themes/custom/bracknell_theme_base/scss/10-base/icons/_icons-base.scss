@@ -56,7 +56,8 @@ $base-icons: (
   triangle-down: '\e914',
   triangle-up: '\e918',
   twitter: '\e934',
-  youtube: '\e935'
+  youtube: '\e935',
+  user: '\e919'
 );
 
 @each $class-name, $icon in $base-icons {
