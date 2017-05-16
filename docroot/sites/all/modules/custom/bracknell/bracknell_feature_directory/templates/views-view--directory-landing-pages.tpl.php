@@ -52,16 +52,15 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-  <div class="related-pages">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <?php print $rows; ?>
-      </div><!-- end .col -->
-    </div><!-- end .row -->
-  </div><!-- end .container -->
-</div><!-- end .related-pages -->
-
+    <div class="related-pages">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <?php print $rows; ?>
+          </div><!-- end .col -->
+        </div><!-- end .row -->
+      </div><!-- end .container -->
+    </div><!-- end .related-pages -->
   <?php elseif ($empty): ?>
     <div class="view-empty">
       <?php print $empty; ?>
