@@ -72,6 +72,50 @@ function bracknell_feature_directory_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['views-directory_landing_pages-block'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'directory_landing_pages-block',
+    'module' => 'views',
+    'node_types' => array(
+      0 => 'directory_landing_page',
+    ),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bracknell_theme_base' => array(
+        'region' => 'content_header',
+        'status' => 1,
+        'theme' => 'bracknell_theme_base',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['views-directory_landing_pages-block_1'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'directory_landing_pages-block_1',
+    'module' => 'views',
+    'node_types' => array(
+      0 => 'directory_landing_page',
+    ),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bracknell_theme_base' => array(
+        'region' => 'content_header',
+        'status' => 1,
+        'theme' => 'bracknell_theme_base',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
   $export['views-parks-block'] = array(
     'cache' => -1,
     'custom' => 0,

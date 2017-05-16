@@ -81,6 +81,14 @@ function bracknell_feature_directory_eck_entity_type_info() {
  */
 function bracknell_feature_directory_node_info() {
   $items = array(
+    'directory_landing_page' => array(
+      'name' => t('Directory Landing Page'),
+      'base' => 'node_content',
+      'description' => t('Use for displaying lists of directory information for a particular location type e.g. All Schools'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'location_car_park' => array(
       'name' => t('Location - Car park'),
       'base' => 'node_content',
