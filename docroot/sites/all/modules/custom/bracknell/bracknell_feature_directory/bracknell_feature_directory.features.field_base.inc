@@ -362,6 +362,32 @@ function bracknell_feature_directory_field_default_field_bases() {
     'type' => 'telephone',
   );
 
+  // Exported field_base: 'field_directory_type'.
+  $field_bases['field_directory_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_directory_type',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'directory_type',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_equipment'.
   $field_bases['field_equipment'] = array(
     'active' => 1,
@@ -670,6 +696,7 @@ function bracknell_feature_directory_field_default_field_bases() {
         'Secondary School' => 'Secondary School',
         'Special School' => 'Special School',
         'Pupil Referral Unit' => 'Pupil Referral Unit',
+        'Junior School' => 'Junior School',
       ),
       'allowed_values_function' => '',
     ),
