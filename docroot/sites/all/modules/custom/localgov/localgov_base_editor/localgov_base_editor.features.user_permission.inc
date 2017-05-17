@@ -94,6 +94,13 @@ function localgov_base_editor_user_default_permissions() {
     'module' => 'lightbox2',
   );
 
+  // Exported permission: 'use media wysiwyg'.
+  $permissions['use media wysiwyg'] = array(
+    'name' => 'use media wysiwyg',
+    'roles' => array(),
+    'module' => 'media_wysiwyg',
+  );
+
   // Exported permission: 'use text format html_basic'.
   $permissions['use text format html_basic'] = array(
     'name' => 'use text format html_basic',

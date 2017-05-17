@@ -230,7 +230,16 @@ function localgov_base_editor_ckeditor_profile_defaults() {
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
       'settings' => array(
-        'ckeditor_path' => '//cdn.ckeditor.com/4.5.4/full-all',
+        'skin' => 'moono-lisa',
+        'ckeditor_path' => '%m/ckeditor',
+        'ckeditor_local_path' => '',
+        'ckeditor_plugins_path' => '%m/ckeditor/plugins',
+        'ckeditor_plugins_local_path' => '',
+        'ckfinder_path' => '%m/ckfinder',
+        'ckfinder_local_path' => '',
+        'ckeditor_aggregate' => 'f',
+        'toolbar_wizard' => 't',
+        'loadPlugins' => array(),
       ),
       'input_formats' => array(),
     ),
@@ -247,7 +256,7 @@ function localgov_base_editor_ckeditor_profile_defaults() {
     [\'Format\',\'Styles\',\'RemoveFormat\'],
     [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Blockquote\',\'Subscript\',\'Superscript\',\'-\'],
     [\'NumberedList\',\'BulletedList\',\'-\'],
-    [\'linkit\',\'Unlink\',\'Anchor\']
+    [\'linkit\',\'Unlink\',\'Anchor\',\'Media\']
 ]',
         'expand' => 't',
         'default' => 't',
@@ -327,6 +336,13 @@ function localgov_base_editor_ckeditor_profile_defaults() {
             ),
             'default' => 't',
           ),
+          'lineutils' => array(
+            'name' => 'lineutils',
+            'desc' => 'Plugin file: lineutils',
+            'path' => '%plugin_dir%lineutils/',
+            'buttons' => FALSE,
+            'default' => 'f',
+          ),
           'linkit' => array(
             'name' => 'linkit',
             'desc' => 'Support for Linkit module',
@@ -337,6 +353,18 @@ function localgov_base_editor_ckeditor_profile_defaults() {
                 'icon' => 'icons/linkit.png',
               ),
             ),
+          ),
+          'media' => array(
+            'name' => 'media',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%sites/all/modules/contrib/media_ckeditor/js/plugins/media/',
+            'buttons' => array(
+              'Media' => array(
+                'icon' => 'images/icon.gif',
+                'label' => 'Add media',
+              ),
+            ),
+            'default' => 'f',
           ),
           'mediaembed' => array(
             'name' => 'mediaembed',
@@ -356,6 +384,13 @@ function localgov_base_editor_ckeditor_profile_defaults() {
             'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/tableresize/',
             'buttons' => FALSE,
             'default' => 't',
+          ),
+          'widget' => array(
+            'name' => 'widget',
+            'desc' => 'Plugin file: widget',
+            'path' => '%plugin_dir%widget/',
+            'buttons' => FALSE,
+            'default' => 'f',
           ),
         ),
       ),

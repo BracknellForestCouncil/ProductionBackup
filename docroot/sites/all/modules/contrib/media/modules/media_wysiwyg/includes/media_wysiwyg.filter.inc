@@ -253,7 +253,7 @@ function media_wysiwyg_token_to_markup($match, $wysiwyg = FALSE, $langcode = NUL
       'view_mode' => $tag_info['view_mode'],
       'link_text' => $tag_info['link_text'],
     );
-    drupal_add_js(array('mediaDataMap' => array($file->fid => $data)), 'setting');
+    drupal_add_js(array('mediaDataMap' => array(array($file->fid => $data))), 'setting');
     $element['#attributes']['data-fid'] = $file->fid;
     $element['#attributes']['data-media-element'] = '1';
     $element['#attributes']['class'][] = 'media-element';

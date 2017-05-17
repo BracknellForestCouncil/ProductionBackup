@@ -52,7 +52,10 @@ function localgov_base_file_user_default_permissions() {
   // Exported permission: 'administer file types'.
   $permissions['administer file types'] = array(
     'name' => 'administer file types',
-    'roles' => array(),
+    'roles' => array(
+      'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'file_entity',
   );
 
@@ -79,7 +82,9 @@ function localgov_base_file_user_default_permissions() {
   // Exported permission: 'administer media browser'.
   $permissions['administer media browser'] = array(
     'name' => 'administer media browser',
-    'roles' => array(),
+    'roles' => array(
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'media',
   );
 

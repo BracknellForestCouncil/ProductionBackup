@@ -39,6 +39,12 @@ function localgov_base_file_field_default_field_instances() {
         'type' => 'text_trimmed',
         'weight' => 0,
       ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_file_description',
@@ -53,6 +59,7 @@ function localgov_base_file_field_default_field_instances() {
       ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
+      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -90,6 +97,12 @@ function localgov_base_file_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -138,6 +151,12 @@ function localgov_base_file_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
