@@ -97,7 +97,13 @@ function localgov_base_editor_user_default_permissions() {
   // Exported permission: 'use media wysiwyg'.
   $permissions['use media wysiwyg'] = array(
     'name' => 'use media wysiwyg',
-    'roles' => array(),
+    'roles' => array(
+      'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
+      'site administrator' => 'site administrator',
+      'site editor' => 'site editor',
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'media_wysiwyg',
   );
 
