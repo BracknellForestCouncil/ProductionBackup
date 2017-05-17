@@ -130,7 +130,7 @@
       }
 
       .views-exposed-widget {
-        float: none;
+        float: left;
         display: block;
         padding: 0;
 
@@ -145,10 +145,6 @@
         }
 
         .input-group-addon {
-          display: none;
-        }
-
-        &.views-widget-sort-by {
           display: none;
         }
 
