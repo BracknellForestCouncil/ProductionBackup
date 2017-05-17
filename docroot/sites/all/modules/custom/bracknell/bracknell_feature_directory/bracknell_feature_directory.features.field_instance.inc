@@ -619,6 +619,336 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-directory_landing_page-body'.
+  $field_instances['node-directory_landing_page-body'] = array(
+    'bundle' => 'directory_landing_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => -9,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-directory_landing_page-field_category'.
+  $field_instances['node-directory_landing_page-field_category'] = array(
+    'bundle' => 'directory_landing_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_category',
+    'is_property' => 0,
+    'label' => 'Category',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 10,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'node-directory_landing_page-field_directory_type'.
+  $field_instances['node-directory_landing_page-field_directory_type'] = array(
+    'bundle' => 'directory_landing_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 12,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-directory_landing_page-field_moderation'.
+  $field_instances['node-directory_landing_page-field_moderation'] = array(
+    'bundle' => 'directory_landing_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select the team responsible for editing/moderating this content.',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => -10,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_moderation',
+    'is_property' => 1,
+    'label' => 'Editorial Group',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+    'workbench_access_field' => 1,
+  );
+
+  // Exported field_instance:
+  // 'node-directory_landing_page-field_node_display_title'.
+  $field_instances['node-directory_landing_page-field_node_display_title'] = array(
+    'bundle' => 'directory_landing_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_node_display_title',
+    'is_property' => 0,
+    'label' => 'Display title',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'node-directory_landing_page-field_promotional_hero'.
+  $field_instances['node-directory_landing_page-field_promotional_hero'] = array(
+    'bundle' => 'directory_landing_page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel_slide' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_promotional_hero',
+    'is_property' => 0,
+    'label' => 'Promotional Hero',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          's3' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'localgov_document' => 0,
+          'localgov_image' => 0,
+          'localgov_image_header' => 0,
+          'localgov_video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 3,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-location_car_park-field_accessibility'.
   $field_instances['node-location_car_park-field_accessibility'] = array(
     'bundle' => 'location_car_park',
@@ -677,7 +1007,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -762,7 +1092,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -787,7 +1117,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 15,
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -942,6 +1272,44 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-location_car_park-field_directory_type'.
+  $field_instances['node-location_car_park-field_directory_type'] = array(
+    'bundle' => 'location_car_park',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 15,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-location_car_park-field_facilities'.
   $field_instances['node-location_car_park-field_facilities'] = array(
     'bundle' => 'location_car_park',
@@ -1084,7 +1452,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1128,7 +1496,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1166,7 +1534,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1601,7 +1969,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1686,7 +2054,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1810,6 +2178,44 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-location_community-field_directory_type'.
+  $field_instances['node-location_community-field_directory_type'] = array(
+    'bundle' => 'location_community',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 15,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-location_community-field_image'.
   $field_instances['node-location_community-field_image'] = array(
     'bundle' => 'location_community',
@@ -1905,7 +2311,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1949,7 +2355,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1988,7 +2394,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2142,7 +2548,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 9,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2227,7 +2633,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2351,6 +2757,44 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-location_council-field_directory_type'.
+  $field_instances['node-location_council-field_directory_type'] = array(
+    'bundle' => 'location_council',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 11,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-location_council-field_image'.
   $field_instances['node-location_council-field_image'] = array(
     'bundle' => 'location_council',
@@ -2446,7 +2890,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 8,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2490,7 +2934,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2528,7 +2972,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2681,7 +3125,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2766,7 +3210,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2890,6 +3334,44 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-location_leisure-field_directory_type'.
+  $field_instances['node-location_leisure-field_directory_type'] = array(
+    'bundle' => 'location_leisure',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 15,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-location_leisure-field_image'.
   $field_instances['node-location_leisure-field_image'] = array(
     'bundle' => 'location_leisure',
@@ -2984,7 +3466,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3028,7 +3510,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -3066,7 +3548,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3201,7 +3683,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3380,7 +3862,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3469,7 +3951,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3589,6 +4071,44 @@ function bracknell_feature_directory_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_library-field_directory_type'.
+  $field_instances['node-location_library-field_directory_type'] = array(
+    'bundle' => 'location_library',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -3734,7 +4254,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3778,7 +4298,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -3816,7 +4336,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4118,7 +4638,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4156,7 +4676,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4229,6 +4749,44 @@ function bracknell_feature_directory_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_main-field_directory_type'.
+  $field_instances['node-location_main-field_directory_type'] = array(
+    'bundle' => 'location_main',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -4327,7 +4885,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4371,7 +4929,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -4409,7 +4967,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4596,7 +5154,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4685,7 +5243,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4758,6 +5316,44 @@ function bracknell_feature_directory_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_park-field_directory_type'.
+  $field_instances['node-location_park-field_directory_type'] = array(
+    'bundle' => 'location_park',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 18,
     ),
     'workbench_access_field' => 0,
   );
@@ -4860,7 +5456,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -4904,7 +5500,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -4942,7 +5538,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -5161,7 +5757,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -5402,7 +5998,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5538,7 +6134,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5611,6 +6207,44 @@ function bracknell_feature_directory_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_playground-field_directory_type'.
+  $field_instances['node-location_playground-field_directory_type'] = array(
+    'bundle' => 'location_playground',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -5761,7 +6395,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5805,7 +6439,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -5844,7 +6478,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5933,7 +6567,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6018,7 +6652,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6138,6 +6772,44 @@ function bracknell_feature_directory_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-location_school-field_directory_type'.
+  $field_instances['node-location_school-field_directory_type'] = array(
+    'bundle' => 'location_school',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_directory_type',
+    'is_property' => 0,
+    'label' => 'Directory Category',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -6283,7 +6955,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6327,7 +6999,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -6365,7 +7037,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6467,7 +7139,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -6607,10 +7279,12 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Address Details');
   t('Age suitability');
   t('Anything else');
+  t('Body');
   t('Category');
   t('Charges');
   t('Contact details');
   t('Directions');
+  t('Directory Category');
   t('Directory entry');
   t('Display title');
   t('Editorial Group');
