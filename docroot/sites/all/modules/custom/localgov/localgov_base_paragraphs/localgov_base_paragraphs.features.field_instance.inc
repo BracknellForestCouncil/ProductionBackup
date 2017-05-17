@@ -2383,6 +2383,380 @@ function localgov_base_paragraphs_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'paragraphs_item-key_contact-field_key_contact_items'.
+  $field_instances['paragraphs_item-key_contact-field_key_contact_items'] = array(
+    'bundle' => 'key_contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_key_contact_items',
+    'is_property' => 0,
+    'label' => 'Key Contact Items',
+    'required' => 0,
+    'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'accordion' => -1,
+        'accordion_pane' => -1,
+        'basic' => -1,
+        'blockquote' => -1,
+        'carousel' => -1,
+        'carousel_slide' => -1,
+        'category_showcase' => -1,
+        'category_showcase_item' => -1,
+        'document' => -1,
+        'featured_box' => -1,
+        'grid_display' => -1,
+        'grid_display_item' => -1,
+        'highlighted' => -1,
+        'image' => -1,
+        'key_contact' => -1,
+        'key_contact_item' => 'key_contact_item',
+        'key_fact' => -1,
+        'key_fact_item' => -1,
+        'layout_1_col_12' => -1,
+        'layout_2_col_4_8' => -1,
+        'layout_2_col_6_6' => -1,
+        'layout_2_col_8_4' => -1,
+        'layout_3_col_3_3_6' => -1,
+        'layout_3_col_4_4_4' => -1,
+        'layout_3_col_6_3_3' => -1,
+        'link' => -1,
+        'promotional_area' => -1,
+        'tab_panel' => -1,
+        'table' => -1,
+        'tabs' => -1,
+        'video' => -1,
+      ),
+      'bundle_weights' => array(
+        'accordion' => 2,
+        'accordion_pane' => 3,
+        'basic' => 4,
+        'blockquote' => 5,
+        'carousel' => 6,
+        'carousel_slide' => 7,
+        'category_showcase' => 8,
+        'category_showcase_item' => 9,
+        'document' => 10,
+        'featured_box' => 11,
+        'grid_display' => 12,
+        'grid_display_item' => 13,
+        'highlighted' => 14,
+        'image' => 15,
+        'key_contact' => 16,
+        'key_contact_item' => 17,
+        'key_fact' => 18,
+        'key_fact_item' => 19,
+        'layout_1_col_12' => 20,
+        'layout_2_col_4_8' => 21,
+        'layout_2_col_6_6' => 22,
+        'layout_2_col_8_4' => 23,
+        'layout_3_col_3_3_6' => 24,
+        'layout_3_col_4_4_4' => 25,
+        'layout_3_col_6_3_3' => 26,
+        'link' => 27,
+        'promotional_area' => 28,
+        'tab_panel' => 31,
+        'table' => 29,
+        'tabs' => 30,
+        'video' => 32,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 4,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-key_contact-field_key_contact_title'.
+  $field_instances['paragraphs_item-key_contact-field_key_contact_title'] = array(
+    'bundle' => 'key_contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_key_contact_title',
+    'is_property' => 0,
+    'label' => 'Title',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-key_contact_item-field_key_contact_email'.
+  $field_instances['paragraphs_item-key_contact_item-field_key_contact_email'] = array(
+    'bundle' => 'key_contact_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 3,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_key_contact_email',
+    'is_property' => 0,
+    'label' => 'Email',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 3,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-key_contact_item-field_key_contact_image'.
+  $field_instances['paragraphs_item-key_contact_item-field_key_contact_image'] = array(
+    'bundle' => 'key_contact_item',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'custom_image_crop',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_key_contact_image',
+    'is_property' => 0,
+    'label' => 'Image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          's3' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'localgov_document' => 0,
+          'localgov_image' => 0,
+          'localgov_image_header' => 0,
+          'localgov_video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-key_contact_item-field_key_contact_item_title'.
+  $field_instances['paragraphs_item-key_contact_item-field_key_contact_item_title'] = array(
+    'bundle' => 'key_contact_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_key_contact_item_title',
+    'is_property' => 0,
+    'label' => 'Title',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-key_contact_item-field_key_contact_theme'.
+  $field_instances['paragraphs_item-key_contact_item-field_key_contact_theme'] = array(
+    'bundle' => 'key_contact_item',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_key_contact_theme',
+    'is_property' => 0,
+    'label' => 'Theme',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
   // 'paragraphs_item-key_fact-field_paragraph_key_fact_content'.
   $field_instances['paragraphs_item-key_fact-field_paragraph_key_fact_content'] = array(
     'bundle' => 'key_fact',
@@ -5493,6 +5867,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Content (Right)');
   t('Content (Wide)');
   t('Document');
+  t('Email');
   t('Enter an introduction for this document (or list of documents). This should include any text relevant to the document(s) and in most cases will start from the heading tag prior to the document(s). ');
   t('Enter an introduction for this link. This should include any text relevant to the link and in most cases will start from the heading tag prior to the link. ');
   t('Enter an introduction for this table. This should include text relevant to the table and in most cases will start from the heading tag prior to the table. ');
@@ -5504,6 +5879,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Image Position');
   t('Introduction');
   t('Items');
+  t('Key Contact Items');
   t('Link');
   t('Paragraph Accordion Panes');
   t('Promotional Area Layout');
