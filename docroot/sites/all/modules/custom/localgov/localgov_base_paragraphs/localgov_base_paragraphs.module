@@ -165,7 +165,22 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
 
     if (isset($variables['elements']['field_paragraph_box_theme'])) {
       $featured_box_theme = $variables['elements']['field_paragraph_box_theme']['#items'][0]['value'];
+      $variables['classes_array'][] = 'component-theme-' . $featured_box_theme;
       $variables['classes_array'][] = 'featured-box-theme-' . $featured_box_theme;
+    }
+  }
+
+  // Output classes for theming the key contact component.
+  if ($variables['elements']['#entity_type'] == 'paragraphs_item' && $variables['elements']['#bundle'] == 'key_contact') {
+    $variables['classes_array'][] = 'key-contact';
+  }
+
+  // Output classes for theming the key contact item component.
+  if ($variables['elements']['#entity_type'] == 'paragraphs_item' && $variables['elements']['#bundle'] == 'key_contact_item') {
+
+    if (isset($variables['elements']['field_key_contact_theme'])) {
+      $key_contact_theme = $variables['elements']['field_key_contact_theme']['#items'][0]['value'];
+      $variables['classes_array'][] = 'component-theme-' . $key_contact_theme;
     }
   }
 }

@@ -1,5 +1,9 @@
 // Featured Box.
 
+.featured-box {
+  padding: 20px 20px 1px;
+}
+
 // Border Theme.
 .featured-box-theme-border {
   border: {
@@ -8,42 +12,11 @@
     width: 5px 0 0 0;
   }
   @include applyColour(border-color);
-  padding-top: 20px;
-}
-
-// Colour schemes/themes.
-$featured-box-themes: (
-  turquoise: ($turquoise),
-  lime-green: ($limeGreen),
-  olive-green: ($oliveGreen),
-  slate-blue: ($slateBlue),
-  coral-reef-blue: ($coralreefBlue),
-  sandhurst-orange: ($sandhurstOrange),
-  bright-green: ($brightGreen),
-  bright-red: ($brightRed),
-  plum: ($plum),
-  magenta: ($magenta),
-  downshire-purple: ($downshirePurple),
-  grey-light: ($greyLight),
-  dark-orange: ($darkOrange),
-  purple: ($purple),
-  leisure-blue: ($leisureBlue),
-  edgbarrow-red: ($edgbarrowRed),
-  discovery-green: ($discoveryGreen),
-  grey-extra-light: ($greyExtraLight),
-);
-
-// Output styles for all colours.
-@each $class-name, $value in $featured-box-themes {
-  .featured-box-theme-#{$class-name} {
-    background-color: #{$value};
-    padding: 20px 20px 1px;
-  }
 }
 
 // For accessibility, we need to change the colours on the elements inside some of the coloured boxes.
 // So removed the grey-light and grey-extra-light colours from our original map.
-$reduced-featured-box-themes: map-remove($featured-box-themes, grey-light, grey-extra-light);
+$reduced-featured-box-themes: map-remove($paletteB, grey-light, grey-extra-light);
 
 @each $class-name, $value in $reduced-featured-box-themes {
   .featured-box-theme-#{$class-name} {

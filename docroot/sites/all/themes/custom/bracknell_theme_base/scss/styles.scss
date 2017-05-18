@@ -6,6 +6,7 @@
 @import
 '../libraries/breakpoint-sass/stylesheets/_breakpoint.scss',
 '00-config/colors',
+'00-config/color-mixins',
 '00-config/fonts',
 '../libraries/bootstrap-sass/assets/stylesheets/bootstrap',
 '00-config/bootstrap-overrides',
@@ -74,4 +75,5 @@
 '40-components/documents',
 '40-components/grid-display',
 '40-components/featured-box',
-'40-components/filters';
+'40-components/filters',
+'40-components/key-contact';
