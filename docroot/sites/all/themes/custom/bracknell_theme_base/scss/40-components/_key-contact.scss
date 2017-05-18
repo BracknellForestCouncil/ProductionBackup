@@ -58,10 +58,11 @@
     size: $font-size-03;
     weight: 700;
   }
-  margin-bottom: 20px;
 }
 
 .key-contact-item-email {
+  margin-top: 20px;
+
   a {
     color: $key-contact-item-email-link-text-color;
     text-decoration: none;
