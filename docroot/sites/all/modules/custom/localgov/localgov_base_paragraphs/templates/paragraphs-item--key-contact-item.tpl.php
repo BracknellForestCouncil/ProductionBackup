@@ -31,17 +31,23 @@
 <?php hide($content); ?>
 
 <div class="key-contact-item"<?php print $attributes; ?>>
-  <article class="key-contact-item-inner <?php print $classes; ?>" role="article">
-    <div class="key-contact-item-image">
-      <?php print render($content['field_key_contact_image']); ?>
-    </div>
+  <article class="key-contact-item-inner <?php print $classes; ?>"<?php print $attributes; ?>>
+    <?php if (!empty($content['field_key_contact_image'])): ?>
+      <div class="key-contact-item-image">
+        <?php print render($content['field_key_contact_image']); ?>
+      </div>
+    <?php endif; ?>
     <div class="key-contact-item-content">
-      <h3 class="key-contact-item-title">
-        <?php print render($content['field_key_contact_item_title']); ?>
-      </h3>
-      <p class="key-contact-item-email">
-        <?php print render($content['field_key_contact_email']); ?>
-      </p>
+      <?php if (!empty($content['field_key_contact_item_title'])): ?>
+        <h3 class="key-contact-item-title"<?php print $title_attributes; ?>>
+          <?php print render($content['field_key_contact_item_title']); ?>
+        </h3>
+      <?php endif; ?>
+      <?php if (!empty($content['field_key_contact_email'])): ?>
+        <p class="key-contact-item-email">
+          <?php print render($content['field_key_contact_email']); ?>
+        </p>
+      <?php endif; ?>
     </div>
   </article>
 </div>
