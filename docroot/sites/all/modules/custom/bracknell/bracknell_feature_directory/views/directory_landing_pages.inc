@@ -91,7 +91,7 @@ $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['style_options']['grouping'] = array(
   0 => array(
     'field' => 'field_school_level',
-    'rendered' => 0,
+    'rendered' => 1,
     'rendered_strip' => 0,
   ),
 );
@@ -118,10 +118,6 @@ $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['defaults']['sorts'] = FALSE;
-/* Sort criterion: Content: Level (field_school_level) */
-$handler->display->display_options['sorts']['field_school_level_value']['id'] = 'field_school_level_value';
-$handler->display->display_options['sorts']['field_school_level_value']['table'] = 'field_data_field_school_level';
-$handler->display->display_options['sorts']['field_school_level_value']['field'] = 'field_school_level_value';
 /* Sort criterion: Content: Title */
 $handler->display->display_options['sorts']['title']['id'] = 'title';
 $handler->display->display_options['sorts']['title']['table'] = 'node';
