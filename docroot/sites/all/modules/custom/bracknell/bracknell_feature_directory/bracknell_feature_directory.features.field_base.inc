@@ -692,11 +692,11 @@ function bracknell_feature_directory_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'Primary School' => 'Primary School',
-        'Secondary School' => 'Secondary School',
-        'Special School' => 'Special School',
-        'Pupil Referral Unit' => 'Pupil Referral Unit',
-        'Junior School' => 'Junior School',
+        'Primary School' => 'Primary school',
+        'Junior School' => 'Junior school',
+        'Secondary School' => 'Secondary school',
+        'Special School' => 'Special school',
+        'Pupil Referral Unit' => 'Pupil referral unit',
       ),
       'allowed_values_function' => '',
     ),
