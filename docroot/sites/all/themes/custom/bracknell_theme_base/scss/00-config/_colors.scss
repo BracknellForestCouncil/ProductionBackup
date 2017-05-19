@@ -205,7 +205,9 @@ $news-teaser-border-color: $grey3;
 // Tables.
 $table-border-color: $bracknellBlack;
 $table-grey-border-color: $grey5;
+$table-row-bg-color: $white;
 $table-thead-bg-color: $greyExtraLight;
+$table-thead-border-color: $grey3;
 $table-heading-border-color: $bracknellBlack;
 $table-cell-border-color: $bracknellBlack;
 
@@ -318,37 +320,8 @@ $featured-box-default-text-color: $charcoal;
 $filters-bg-color: $greyExtraLight;
 $filters-input-border-color: $grey3;
 
-// Colour schemes/themes.
-$themes: (
-  business: ($slateBlue, white),
-  coral-reef-blue: ($coralreefBlue, white),
-  default: ($brandGreen, white),
-  discovery-green: ($discoveryGreen, white),
-  downshire-purple: ($downshirePurple, white),
-  forestcare: ($magenta, white),
-  fostering: ($turquoise, white),
-  leisure-blue: ($leisureBlue, white),
-  parks-green: ($brightGreen, white),
-);
-
-// Mixin to apply colour hexes to a list of CSS properties, based on the body's
-// theme-THEMENAME class. It takes a single argument of either a property
-// or a list of properties. Ensure you put parentheses around the properties if
-// supplying multiple ones.
-//
-// Usage:
-//   @include applyColour(color);
-//   @include applyColour((background-color, border-color));
-//
-@mixin applyColour($primary_props: 'background-color', $secondary_props: ()) {
-  @each $class, $colours in $themes {
-    body.theme-#{$class} & {
-      @each $attribute in $primary_props {
-        #{$attribute}: nth($colours, 1);
-      }
-      @each $attribute in $secondary_props {
-        #{$attribute}: nth($colours, 2);
-      }
-    }
-  }
-}
+// Key Contact.
+$key-contact-bg-color: $greyExtraLight;
+$key-contact-item-image-bg-color: $white;
+$key-contact-item-title-text-color: $white;
+$key-contact-item-email-link-text-color: $white;

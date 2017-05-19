@@ -8,7 +8,7 @@
   thead {
     background: $table-thead-bg-color;
 
-    tr>th {
+    tr > th {
       border-bottom: 1px solid $table-heading-border-color;
 
       &:first-child {
@@ -33,14 +33,14 @@
   }
 }
 
-body.page-node-39 #tablefield-0,
-body.page-node-34 #tablefield-0,
-body.page-node-68 #tablefield-0 {
-  @extend .table__yes-no;
-}
+body.page-node-39,
+body.page-node-34,
+body.page-node-68 {
+  #tablefield-0 {
+    @extend .table__yes-no;
+  }
 
-body.page-node-39 #tablefield-0 td:empty,
-body.page-node-34 #tablefield-0 td:empty,
-body.page-node-68 #tablefield-0 td:empty {
-  background: none !important;
+  td:empty {
+    background: none !important;
+  }
 }
