@@ -475,6 +475,139 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_key_contact_email'.
+  $field_bases['field_key_contact_email'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_key_contact_email',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'email',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'email',
+  );
+
+  // Exported field_base: 'field_key_contact_image'.
+  $field_bases['field_key_contact_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_key_contact_image',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
+  // Exported field_base: 'field_key_contact_item_title'.
+  $field_bases['field_key_contact_item_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_key_contact_item_title',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_key_contact_items'.
+  $field_bases['field_key_contact_items'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_key_contact_items',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'paragraphs',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'paragraphs',
+  );
+
+  // Exported field_base: 'field_key_contact_theme'.
+  $field_bases['field_key_contact_theme'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_key_contact_theme',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'turquoise' => 'Turquoise',
+        'lime-green' => 'Lime Green',
+        'olive-green' => 'Olive Green',
+        'slate-blue' => 'Slate Blue',
+        'coral-reef-blue' => 'Coral Reef Blue',
+        'sandhurst-orange' => 'Sandhurst Orange',
+        'bright-green' => 'Bright Green',
+        'bright-red' => 'Bright Red',
+        'plum' => 'Plum',
+        'magenta' => 'Magenta',
+        'downshire-purple' => 'Downshire Purple',
+        'dark-orange' => 'Dark Orange',
+        'purple' => 'Purple',
+        'leisure-blue' => 'Leisure Blue',
+        'edgbarrow-red' => 'Edgbarrow Red',
+        'discovery-green' => 'Discovery Green',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_key_contact_title'.
+  $field_bases['field_key_contact_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_key_contact_title',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_key_fact_item_content'.
   $field_bases['field_key_fact_item_content'] = array(
     'active' => 1,
