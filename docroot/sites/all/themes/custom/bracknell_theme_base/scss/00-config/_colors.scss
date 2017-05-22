@@ -194,9 +194,12 @@ $social-media-link-text-color: $white;
 
 // Pagination.
 $pagination-controls-link-hover-text-color: $deepBlue;
-$pagination-list-link-text-color: $deepBlue;
-$pagination-list-link-bg-color: $white;
-$pagination-list-link-border-color: $white;
+$pagination-list-text-color: $slateBlue;
+$pagination-list-active-bg-color: $slateBlue;
+$pagination-list-active-text-color: $white;
+$pagination-list-link-hover-text-color: $white;
+$pagination-list-link-hover-bg-color: $slateBlue;
+$pagination-list-active-border-color: $slateBlue;
 
 // News.
 $news-list-border-color: $grey3;
