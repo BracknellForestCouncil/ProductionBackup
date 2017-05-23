@@ -1,89 +1,40 @@
-/*
-* Pagination
-*/
-
-.pagination-anchors {
-  padding: 1px 10px;
-  border-radius: 3px;
-  position: relative;
-  font-weight: $font-weight-headinglight;
-}
-
-.pagination-active,
-.pagination > .active > a,
-.pagination > .active > a:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span,
-.pagination > .active > span:hover,
-.pagination > .active > span:focus  {
-  background: $slateBlue;
-}
+// Pagination.
 
 .pagination {
+  text-align: left;
+
   li {
+    display: inline-block;
+
+    a,
+    span {
+      border: 0;
+      border-radius: 4px;
+      padding: 2px 10px 3px;
+    }
+
     a {
-      @extend .pagination-anchors;
+      color: $pagination-list-text-color;
 
-      @media (max-width: 768px) {
-        padding: 1px 5px;
-      }
-
-      &:hover {
-        @extend .pagination-active;
-        text-decoration: none;
-      }
-    }
-
-    &.active {
-      a,
-      a:hover {
-        @extend .pagination-active;
-        top: 0;
+      &:hover,
+      &:focus {
+        background-color: $pagination-list-link-hover-bg-color;
+        color: $pagination-list-link-hover-text-color;
       }
     }
   }
 
-  a.previous,
-  a.previous:hover,
-  a.previous:focus {
-    padding: 5px 20px 0 23px;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAALCAYAAABPhbxiAAAAlUlEQVQokZXSMQ4BURQF0DOTaWWsQKmwARJLQGiU1iESEbEMneg0mok1UOkUeq3EBkSjmPD9iVu+l/Nzf/IS3b5A6phiFlpCGpi1cELvFwrBEY5oxhBkpQeWmCN5z3KMYzDHFoOPXQO7WNUQqkyKCYp/YYYHhr7/eMMqBuGJBc7YoIY71rGq5ezRwbWqaugALmjjEIMvxCUU9RSoFsAAAAAASUVORK5CYII=') 0 13px no-repeat;
+  .active {
+    span {
+      background-color: $pagination-list-active-bg-color;
+      border-color: $pagination-list-active-border-color;
+      color: $pagination-list-active-text-color;
 
-    @media (max-width: 768px) {
-      padding-left: 18px;
-      padding-right: 10px;
+      &:hover,
+      &:focus {
+        background-color: $pagination-list-active-bg-color;
+        color: $pagination-list-active-text-color;
+      }
     }
   }
-
-  a.next,
-  a.next:hover,
-  a.next:focus {
-    padding: 5px 23px 0 20px;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAALCAYAAABPhbxiAAAAmUlEQVQokZ3PPQ4BYRCH8d/KtuIAeoVEq9kbyEoolBulW6AgcQ+1KIgz0Co0LiHRW81KNlu8ln8ymcnMPPMRSVIBbQp7VAuNEIUBLuj+CkIHZ4zLyRiTANQqfBM7rLDEK5KkeY2tZR2Q1Tm1qiG2/4BHZDFmgaY52kWcY42F4sfQ9Ct6eGKK/acQ1zjtjhFu5eS3H0/oVyF4Az13GB+cEsjvAAAAAElFTkSuQmCC') 100% 13px no-repeat;
-
-    @media (max-width: 768px) {
-      padding-left: 10px;
-      padding-right: 18px;
-    }
-  }
-
-  a.previous,
-  a.next {
-    top: -5px;
-
-    &:hover,
-    &:focus {
-      color: $pagination-controls-link-hover-text-color;
-      text-decoration: underline;
-    }
-  }
-}
-
-.pagination > li > a,
-.pagination > li > span {
-  padding: 2px 10px 3px 10px;
-  color: $pagination-list-link-text-color;
-  background-color: $pagination-list-link-bg-color;
-  border: 1px solid $pagination-list-link-border-color;
-  border-radius: 3px;
 }
