@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * The main module file that provides Was This Useful functionality.
+ * 
+ * Functions start with: bracknell_was_this_useful
+ */
+
+form_load_include($form_state, 'inc', 'bracknell_was_this_useful', 'bracknell_was_this_useful_form');
+
+/**
+ * Implements hook_block_info().
+ */
+function bracknell_was_this_useful_block_info() {
+  $blocks['was_this_useful'] = array(
+    'info' => t('Was this useful form'),  
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function bracknell_was_this_useful_block_view($delta = '') {
+  module_load_all_includes('inc', 'bracknell_was_this_useful_form');
+  $block = array();
+  if ($delta === 'was_this_useful') {
+    $block['subject'] = t('Was this page useful?');
+    $block['content'] = drupal_get_form('bracknell_was_this_useful_form');
+  }
+  
+  return $block;
+}
+
+/**
+ * Implements hook_theme()
+ */
+//function bracknell_was_this_useful_theme() {
+//  return array(
+//        'bracknell_was_this_useful_form' => array(
+//            'arguments' => array('form' => NULL),
+//            'render element' => 'form',
+//            'template' => 'bracknell_was_this_useful_form',
+//            'path' => drupal_get_path('module', 'bracknell_was_this_useful') . '/templates',
+//        ),
+//    );
+//}
