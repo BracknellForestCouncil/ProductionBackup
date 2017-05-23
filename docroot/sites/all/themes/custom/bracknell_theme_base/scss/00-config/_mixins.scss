@@ -7,6 +7,13 @@
   background: $bg-colour;
 }
 
+@mixin fullWidthContainer {
+  margin-left: -9999rem;
+  margin-right: -9999rem;
+  padding-left: 9999rem;
+  padding-right: 9999rem;
+}
+
 // Extra side padding.
 @mixin paddingLR($padding){
   padding-left: $padding;

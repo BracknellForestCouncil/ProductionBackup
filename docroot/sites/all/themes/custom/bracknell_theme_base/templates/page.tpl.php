@@ -98,18 +98,20 @@
     </div><!-- end .row -->
   </div><!-- end .container -->
 
-  <div class="promotional-hero <?php print $classes; ?>">
-    <?php if (!empty($title)) : ?>
-    <div class="promotional-hero-title container">
-      <h1 class="promotional-hero-title-inner page-title col-md-8">
-        <?php print $title; ?>
-      </h1>
-    </div><!-- end .promotional-hero-title -->
-    <?php endif; ?>
-    <?php if ($hero) : ?>
-      <?php print $hero; ?>
-    <?php endif; ?>
-  </div><!-- end .promotional-hero -->
+  <div class="content-header">
+    <div class="promotional-hero <?php print $classes; ?>">
+      <?php if (!empty($title)) : ?>
+      <div class="promotional-hero-title container">
+        <h1 class="promotional-hero-title-inner page-title col-md-8">
+          <?php print $title; ?>
+        </h1>
+      </div><!-- end .promotional-hero-title -->
+      <?php endif; ?>
+      <?php if ($hero) : ?>
+        <?php print $hero; ?>
+      <?php endif; ?>
+    </div><!-- end .promotional-hero -->
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-8">

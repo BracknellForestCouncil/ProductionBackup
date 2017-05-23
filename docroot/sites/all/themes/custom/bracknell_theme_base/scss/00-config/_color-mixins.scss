@@ -1,0 +1,66 @@
+// Colour Mixins.
+
+// Promotional Page Colour schemes/themes.
+$themes: (
+  business: ($slateBlue, white),
+  coral-reef-blue: ($coralreefBlue, white),
+  default: ($brandGreen, white),
+  discovery-green: ($discoveryGreen, white),
+  downshire-purple: ($downshirePurple, white),
+  forestcare: ($magenta, white),
+  fostering: ($turquoise, white),
+  leisure-blue: ($leisureBlue, white),
+  parks-green: ($brightGreen, white),
+);
+
+// Mixin to apply colour hexes to a list of CSS properties, based on the body's
+// theme-THEMENAME class. It takes a single argument of either a property
+// or a list of properties. Ensure you put parentheses around the properties if
+// supplying multiple ones.
+//
+// Usage:
+//   @include applyColour(color);
+//   @include applyColour((background-color, border-color));
+//
+@mixin applyColour($primary_props: 'background-color', $secondary_props: ()) {
+  @each $class, $colours in $themes {
+    body.theme-#{$class} & {
+      @each $attribute in $primary_props {
+        #{$attribute}: nth($colours, 1);
+      }
+      @each $attribute in $secondary_props {
+        #{$attribute}: nth($colours, 2);
+      }
+    }
+  }
+}
+
+// Bracknell palette B colour scheme used for specific components which require
+// colour schemes within them.
+$paletteB: (
+  turquoise: ($turquoise),
+  lime-green: ($limeGreen),
+  olive-green: ($oliveGreen),
+  slate-blue: ($slateBlue),
+  coral-reef-blue: ($coralreefBlue),
+  sandhurst-orange: ($sandhurstOrange),
+  bright-green: ($brightGreen),
+  bright-red: ($brightRed),
+  plum: ($plum),
+  magenta: ($magenta),
+  downshire-purple: ($downshirePurple),
+  grey-light: ($greyLight),
+  dark-orange: ($darkOrange),
+  purple: ($purple),
+  leisure-blue: ($leisureBlue),
+  edgbarrow-red: ($edgbarrowRed),
+  discovery-green: ($discoveryGreen),
+  grey-extra-light: ($greyExtraLight),
+);
+
+// Output styles for all colours.
+@each $class-name, $value in $paletteB {
+  .component-theme-#{$class-name} {
+    background-color: #{$value};
+  }
+}

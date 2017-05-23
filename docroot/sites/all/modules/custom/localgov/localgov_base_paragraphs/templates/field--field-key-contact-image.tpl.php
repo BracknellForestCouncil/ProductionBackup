@@ -44,30 +44,6 @@
  * @ingroup themeable
  */
 ?>
-<?php if (!empty($hero_images)): ?>
-  <div class="hero-images">
-    <?php if ($show_gallery): ?>
-      <?php
-      // Render out all the promotional hero images as a slideshow.
-      foreach ($hero_images as $key => $hero_image):
-        $hero_image_alt = $hero_image['#item']['alt'];
-        $hero_image_src = $hero_image['#item']['uri'];
-      ?>
-        <a
-          href="<?php print file_create_url($hero_image_src); ?>"
-          rel="lightbox[hero_image]"
-          title=""
-          class="hero-image <?php print $key > 0 ? 'hidden' : 'first-image'; ?>">
-          <img alt="<?php print $hero_image_alt; ?>" src="<?php print file_create_url($hero_image_src); ?>" />
-        </a>
-      <?php endforeach; ?>
-      <div aria-hidden="true" class='hero-buttons'>
-        <div class='hero-button action-open'>View gallery</div>
-      </div>
-    <?php else : ?>
-      <?php if (!empty($cover_hero_image)): ?>
-        <img alt="<?php print $cover_hero_image_alt; ?>" src="<?php print file_create_url($cover_hero_image_src); ?>" />
-      <?php endif; ?>
-    <?php endif; ?>
-  </div>
-<?php endif; ?>
+<?php foreach ($items as $delta => $item): ?>
+  <?php print render($item); ?>
+<?php endforeach; ?>

@@ -15,6 +15,15 @@ table {
   }
 }
 
+.table-responsive {
+  border: 0;
+
+  @include breakpoint($screen-md) {
+    overflow-x: visible;
+  }
+}
+
+// Default.
 .table {
   border: 0;
   margin-bottom: 20px;
@@ -24,7 +33,7 @@ table {
     vertical-align: middle;
 
     tr > th {
-      font-size: $font-size-05;
+      padding: 0;
     }
   }
 
@@ -32,10 +41,12 @@ table {
     tr {
       th {
         border: 0;
+        padding: 0;
       }
 
       td {
         border: 0;
+        padding: 0;
       }
     }
   }
@@ -48,55 +59,74 @@ table {
     font-size: $font-size-06;
     padding-right: 10px;
   }
+}
 
-  @media screen and (max-width: $screen-sm - 1) {
-    .table-responsive {
-      border: 0;
-    }
-  }
-
-  &.table-minimal {
+// Table Minial.
+.table-minimal {
+  .table {
     thead {
       tr {
         th {
           border-bottom: 3px solid $table-grey-border-color;
+          padding: 0;
         }
       }
     }
 
     tbody {
       tr {
-        background: none;
+        background: $table-row-bg-color;
         border-bottom: 1px solid $table-grey-border-color;
+        padding: 0;
       }
     }
   }
+}
 
-  &.table-headed {
+// Table Headed.
+.table-headed {
+  .table {
     thead {
       background: $table-thead-bg-color;
+      border: 0;
+
+      // To override Bootstrap styling.
+      &:first-child {
+        tr {
+          &:first-child {
+            th {
+              border: 1px $table-thead-border-color solid;
+            }
+          }
+        }
+      }
 
       tr {
         th {
-          border-bottom: 0;
+          border: 1px $table-thead-border-color solid;
           font-weight: 600;
+          padding: 0;
         }
       }
     }
 
     tbody {
       tr {
-        background: none;
+        background: $table-row-bg-color;
       }
 
       tr > td {
-        padding: 5px 10px;
-        font-size: $font-size-05;
+        background: none;
+        border: 1px solid $table-grey-border-color;
+        padding: 0;
       }
     }
   }
+}
 
-  &.table-icon-striped {
+// Table Icon Striped.
+.table-icon-striped {
+  .table {
     thead > tr {
       border: 1px solid $table-border-color;
 
@@ -115,9 +145,9 @@ table {
         td {
           border-right: 1px solid $table-border-color;
           border-top: 0;
+          padding: 0;
         }
       }
     }
   }
 }
-

@@ -28,32 +28,26 @@
  * @see template_process()
  */
 ?>
-<div class="slogan-content <?php print $classes; ?>">
-  <div class="slogan-inner">
-    <?php if (isset($content['field_slogan_image'])) : ?>
-      <div class="slogan-image">
-        <?php print render($content['field_slogan_image']); ?>
+<?php hide($content); ?>
+
+<div class="key-contact-item"<?php print $attributes; ?>>
+  <article class="key-contact-item-inner <?php print $classes; ?>"<?php print $attributes; ?>>
+    <?php if (!empty($content['field_key_contact_image'])): ?>
+      <div class="key-contact-item-image">
+        <?php print render($content['field_key_contact_image']); ?>
       </div>
     <?php endif; ?>
-
-    <div class="slogan-text">
-    <?php if (isset($content['field_slogan_title'])) : ?>
-      <h2 class="slogan-title">
-        <?php print render($content['field_slogan_title']); ?>
-      </h2>
-    <?php endif; ?>
-
-    <?php if (isset($content['field_slogan_strapline'])) : ?>
-      <p class="slogan-strapline">
-        <?php print render($content['field_slogan_strapline']); ?>
-      </p>
-    <?php endif; ?>
-    </div><!-- end .slogan-text -->
-
-    <?php if (isset($content['field_slogan_call_to_action'])) : ?>
-      <div class="slogan-call-to-action">
-        <?php print render($content['field_slogan_call_to_action']); ?>
-      </div><!-- end .slogan-call-to-action -->
-    <?php endif; ?>
-  </div><!-- end .slogan-inner -->
-</div><!-- end .slogan-content -->
+    <div class="key-contact-item-content">
+      <?php if (!empty($content['field_key_contact_item_title'])): ?>
+        <h3 class="key-contact-item-title"<?php print $title_attributes; ?>>
+          <?php print render($content['field_key_contact_item_title']); ?>
+        </h3>
+      <?php endif; ?>
+      <?php if (!empty($content['field_key_contact_email'])): ?>
+        <p class="key-contact-item-email">
+          <?php print render($content['field_key_contact_email']); ?>
+        </p>
+      <?php endif; ?>
+    </div>
+  </article>
+</div>
