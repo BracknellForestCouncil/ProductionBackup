@@ -133,3 +133,7 @@ li.gridder-list {
 .print-logo {
 	margin-bottom: 20px;
 }
+
+.guide-export .hero-images {
+	display: none;
+}
