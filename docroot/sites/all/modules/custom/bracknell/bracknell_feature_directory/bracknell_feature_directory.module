@@ -120,5 +120,7 @@ function bracknell_feature_directory_preprocess_views_view_unformatted(&$variabl
       $variables['classes_array'][$id] .= ' col-sm-6';
       $variables['classes_array'][$id] .= ' col-md-4';
     }
+
+    drupal_add_js(drupal_get_path('module', 'bracknell_feature_directory') . '/js/bracknell_feature_directory.js');
   }
 }
