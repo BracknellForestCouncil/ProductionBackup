@@ -62,12 +62,10 @@ function bracknell_feature_search_default_search_api_index() {
     "options" : {
       "datasource" : { "bundles" : [
           "basic",
-          "form",
+          "guide",
           "guide_section",
           "landing_page",
           "miscellaneous",
-          "article",
-          "promo",
           "promotional_page"
         ]
       },
@@ -79,17 +77,8 @@ function bracknell_feature_search_default_search_api_index() {
           "weight" : "-10",
           "settings" : { "default" : "1", "bundles" : [] }
         },
+        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_attachments_alter_settings" : {
-          "status" : 1,
-          "weight" : "0",
-          "settings" : {
-            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv pdf",
-            "number_indexed" : "0",
-            "max_file_size" : "0",
-            "excluded_private" : 1
-          }
-        },
-        "search_api_attachments_entityreference_alter_settings" : {
           "status" : 1,
           "weight" : "0",
           "settings" : {
@@ -109,43 +98,39 @@ function bracknell_feature_search_default_search_api_index() {
             "excluded_private" : 1
           }
         },
-        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_attachments_entityreference_alter_settings" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : {
+            "excluded_extensions" : "aif art avi bmp gif ico mov oga ogv png psd ra ram rgb flv pdf",
+            "number_indexed" : "0",
+            "max_file_size" : "0",
+            "excluded_private" : 1
+          }
+        },
         "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
-        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] }
+        "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] }
       },
       "processors" : {
         "search_api_case_ignore" : {
           "status" : 1,
           "weight" : "0",
           "settings" : { "fields" : {
-              "type" : true,
-              "title" : true,
-              "promote" : true,
-              "sticky" : true,
-              "created" : true,
-              "changed" : true,
-              "author" : true,
               "field_tags" : true,
-              "field_contactinfo" : true,
+              "field_node_display_title" : true,
               "field_category" : true,
               "field_content" : true,
-              "field_contact_email" : true,
-              "field_contact_telephone" : true,
               "field_promotional_content" : true,
-              "field_promotional_slogan" : true,
               "search_api_language" : true,
               "attachments_field_video" : true,
               "attachments_field_paragraph_document" : true,
               "body:value" : true,
               "body:summary" : true,
-              "field_contactinfo:field_content" : true,
-              "field_form_additional:value" : true,
               "field_description:value" : true,
-              "field_contact_additional:value" : true,
-              "field_contactinfo:field_contact_additional:value" : true,
               "field_content:field_paragraph_body:value" : true
             }
           }
@@ -155,31 +140,17 @@ function bracknell_feature_search_default_search_api_index() {
           "weight" : "10",
           "settings" : {
             "fields" : {
-              "type" : true,
-              "title" : true,
-              "promote" : true,
-              "sticky" : true,
-              "created" : true,
-              "changed" : true,
-              "author" : true,
               "field_tags" : true,
-              "field_contactinfo" : true,
+              "field_node_display_title" : true,
               "field_category" : true,
               "field_content" : true,
-              "field_contact_email" : true,
-              "field_contact_telephone" : true,
               "field_promotional_content" : true,
-              "field_promotional_slogan" : true,
               "search_api_language" : true,
               "attachments_field_video" : true,
               "attachments_field_paragraph_document" : true,
               "body:value" : true,
               "body:summary" : true,
-              "field_contactinfo:field_content" : true,
-              "field_form_additional:value" : true,
               "field_description:value" : true,
-              "field_contact_additional:value" : true,
-              "field_contactinfo:field_contact_additional:value" : true,
               "field_content:field_paragraph_body:value" : true
             },
             "title" : 1,
@@ -192,17 +163,12 @@ function bracknell_feature_search_default_search_api_index() {
           "weight" : "20",
           "settings" : {
             "fields" : {
-              "title" : true,
-              "field_contact_email" : true,
-              "field_contact_telephone" : true,
+              "field_node_display_title" : true,
               "attachments_field_video" : true,
               "attachments_field_paragraph_document" : true,
               "body:value" : true,
               "body:summary" : true,
-              "field_form_additional:value" : true,
               "field_description:value" : true,
-              "field_contact_additional:value" : true,
-              "field_contactinfo:field_contact_additional:value" : true,
               "field_content:field_paragraph_body:value" : true
             },
             "spaces" : "[^\\\\p{L}\\\\p{N}]",
@@ -210,15 +176,20 @@ function bracknell_feature_search_default_search_api_index() {
           }
         },
         "search_api_stopwords" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "30",
           "settings" : {
             "fields" : {
-              "title" : true,
+              "field_tags" : true,
+              "field_node_display_title" : true,
               "field_content" : true,
               "field_promotional_content" : true,
-              "field_promotional_slogan" : true,
-              "body:value" : true
+              "attachments_field_video" : true,
+              "attachments_field_paragraph_document" : true,
+              "body:value" : true,
+              "body:summary" : true,
+              "field_description:value" : true,
+              "field_content:field_paragraph_body:value" : true
             },
             "file" : "",
             "stopwords" : "a\\r\\nan\\r\\nand\\r\\nare\\r\\nas\\r\\nat\\r\\nbe\\r\\nbut\\r\\nby\\r\\ndid\\r\\netc\\r\\nfor\\r\\nif\\r\\nin\\r\\ninto\\r\\nis\\r\\nit\\r\\nno\\r\\nnot\\r\\nof\\r\\non\\r\\nor\\r\\ns\\r\\nsuch\\r\\nt\\r\\nthat\\r\\nthe\\r\\ntheir\\r\\nthen\\r\\nthere\\r\\nthese\\r\\nthey\\r\\nthose\\r\\nthis\\r\\nthrough\\r\\nto\\r\\nwas\\r\\nwill\\r\\nwith"
@@ -227,10 +198,7 @@ function bracknell_feature_search_default_search_api_index() {
         "search_api_porter_stemmer" : {
           "status" : 0,
           "weight" : "35",
-          "settings" : {
-            "fields" : { "title" : true, "body:value" : true },
-            "exceptions" : "texan=texa"
-          }
+          "settings" : { "fields" : { "body:value" : true }, "exceptions" : "texan=texa" }
         },
         "search_api_highlighting" : {
           "status" : 1,
@@ -249,29 +217,22 @@ function bracknell_feature_search_default_search_api_index() {
       "fields" : {
         "attachments_field_paragraph_document" : { "type" : "text" },
         "attachments_field_video" : { "type" : "text" },
-        "author" : { "type" : "integer", "entity_type" : "user" },
         "body:summary" : { "type" : "text" },
         "body:value" : { "type" : "text" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
         "field_category" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_contact_additional:value" : { "type" : "text" },
-        "field_contact_email" : { "type" : "text" },
-        "field_contact_telephone" : { "type" : "text" },
-        "field_contactinfo" : { "type" : "integer", "entity_type" : "node" },
-        "field_contactinfo:field_contact_additional:value" : { "type" : "text" },
-        "field_contactinfo:field_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
         "field_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
         "field_content:field_paragraph_body:value" : { "type" : "list\\u003Ctext\\u003E" },
         "field_description:value" : { "type" : "text" },
-        "field_form_additional:value" : { "type" : "text" },
+        "field_node_display_title" : { "type" : "text", "boost" : "5.0" },
         "field_promotional_content" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "paragraphs_item" },
-        "field_promotional_slogan" : { "type" : "integer", "entity_type" : "slogan" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "nid" : { "type" : "integer" },
         "promote" : { "type" : "boolean" },
+        "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "search_api_language" : { "type" : "string" },
         "sticky" : { "type" : "boolean" },
-        "title" : { "type" : "text", "boost" : "5.0" },
         "type" : { "type" : "string" }
       }
     },
@@ -296,18 +257,13 @@ function bracknell_feature_search_default_search_api_server() {
       "database" : "default:default",
       "min_chars" : "1",
       "partial_matches" : 0,
-      "autocomplete" : { "suggest_suffix" : 1, "suggest_words" : 1 },
+      "autocomplete" : { "suggest_suffix" : 1, "suggest_words" : 0 },
       "indexes" : { "default_node_index" : {
           "type" : {
             "table" : "search_api_db_default_node_index",
             "column" : "type",
             "type" : "string",
             "boost" : "1.0"
-          },
-          "title" : {
-            "table" : "search_api_db_default_node_index_text",
-            "type" : "text",
-            "boost" : "5.0"
           },
           "promote" : {
             "table" : "search_api_db_default_node_index",
@@ -333,22 +289,10 @@ function bracknell_feature_search_default_search_api_server() {
             "type" : "date",
             "boost" : "1.0"
           },
-          "author" : {
-            "table" : "search_api_db_default_node_index",
-            "column" : "author",
-            "type" : "integer",
-            "boost" : "1.0"
-          },
           "field_tags" : {
             "table" : "search_api_db_default_node_index_field_tags",
             "column" : "value",
             "type" : "list\\u003Cinteger\\u003E",
-            "boost" : "1.0"
-          },
-          "field_contactinfo" : {
-            "table" : "search_api_db_default_node_index",
-            "column" : "field_contactinfo",
-            "type" : "integer",
             "boost" : "1.0"
           },
           "field_category" : {
@@ -363,26 +307,10 @@ function bracknell_feature_search_default_search_api_server() {
             "type" : "list\\u003Cinteger\\u003E",
             "boost" : "1.0"
           },
-          "field_contact_email" : {
-            "table" : "search_api_db_default_node_index_text",
-            "type" : "text",
-            "boost" : "1.0"
-          },
-          "field_contact_telephone" : {
-            "table" : "search_api_db_default_node_index_text",
-            "type" : "text",
-            "boost" : "1.0"
-          },
           "field_promotional_content" : {
             "table" : "search_api_db_default_node_index_field_promotional_content",
             "column" : "value",
             "type" : "list\\u003Cinteger\\u003E",
-            "boost" : "1.0"
-          },
-          "field_promotional_slogan" : {
-            "table" : "search_api_db_default_node_index",
-            "column" : "field_promotional_slogan",
-            "type" : "integer",
             "boost" : "1.0"
           },
           "search_api_language" : {
@@ -411,28 +339,7 @@ function bracknell_feature_search_default_search_api_server() {
             "type" : "text",
             "boost" : "1.0"
           },
-          "field_contactinfo:field_content" : {
-            "table" : "search_api_db_default_node_index_field_contactinfo_field_conte",
-            "column" : "value",
-            "type" : "list\\u003Cinteger\\u003E",
-            "boost" : "1.0"
-          },
-          "field_form_additional:value" : {
-            "table" : "search_api_db_default_node_index_text",
-            "type" : "text",
-            "boost" : "1.0"
-          },
           "field_description:value" : {
-            "table" : "search_api_db_default_node_index_text",
-            "type" : "text",
-            "boost" : "1.0"
-          },
-          "field_contact_additional:value" : {
-            "table" : "search_api_db_default_node_index_text",
-            "type" : "text",
-            "boost" : "1.0"
-          },
-          "field_contactinfo:field_contact_additional:value" : {
             "table" : "search_api_db_default_node_index_text",
             "type" : "text",
             "boost" : "1.0"
@@ -440,6 +347,23 @@ function bracknell_feature_search_default_search_api_server() {
           "field_content:field_paragraph_body:value" : {
             "table" : "search_api_db_default_node_index_text",
             "type" : "list\\u003Ctext\\u003E",
+            "boost" : "1.0"
+          },
+          "field_node_display_title" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "5.0"
+          },
+          "search_api_access_node" : {
+            "table" : "search_api_db_default_node_index_search_api_access_node",
+            "column" : "value",
+            "type" : "list\\u003Cstring\\u003E",
+            "boost" : "1.0"
+          },
+          "nid" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "nid",
+            "type" : "integer",
             "boost" : "1.0"
           }
         }

@@ -13,6 +13,13 @@
     .slogan-inner {
       @include breakpoint($screen-md) {
         display: flex;
+      }
+    }
+  }
+
+  .slogan-content-has-strapline {
+    .slogan-inner {
+      @include breakpoint($screen-md) {
         align-items: center;
       }
     }

@@ -28,7 +28,7 @@
  * @see template_process()
  */
 ?>
-<div class="slogan-content">
+<div class="slogan-content <?php print $classes; ?>">
   <div class="slogan-inner">
     <?php if (isset($content['field_slogan_image'])) : ?>
       <div class="slogan-image">

@@ -38,17 +38,22 @@
     padding: 15px 30px 25px 42px;
     min-height: 4.2em;
     line-height: 1.15em;
-    background: $button-key-task-bg-color $large-arrow-black 21px 20px no-repeat;
+    background: {
+      color: $button-key-task-bg-color;
+      image: url('../images/large-arrow-black.png');
+      position: 21px 20px;
+      repeat: no-repeat;
+    }
     color: $button-key-task-text-color;
 
     &:hover {
       border-color: darken($button-bg-hover-color, 3);
-      background-image: $large-arrow-white;
+      background-image: url('../images/large-arrow-white.png');
     }
 
     &:focus {
       border-color: darken($button-bg-focus-color, 3);
-      background-image: $small-arrow-white;
+      background-image: url('../images/large-arrow-black.png');
     }
   }
 
@@ -58,17 +63,22 @@
     font-size: 1.1em;
     padding: 12px 24px 18px 32px;
     min-height: 3em;
-    background: $button-sub-task-bg-color $small-arrow-black 16px 17px no-repeat;
+    background: {
+      color: $button-sub-task-bg-color;
+      image: url('../images/small-arrow-black.png');
+      position: 16px 17px;
+      repeat: no-repeat;
+    }
     border-color: $button-sub-task-border-color;
 
     &:hover {
       border-color: darken($button-bg-hover-color, 3);
-      background-image: $small-arrow-white;
+      background-image: url('../images/small-arrow-white.png');
     }
 
     &:focus {
       border-color: darken($button-bg-focus-color, 3);
-      background-image: $small-arrow-white;
+      background-image: url('../images/small-arrow-black.png');
     }
   }
 
