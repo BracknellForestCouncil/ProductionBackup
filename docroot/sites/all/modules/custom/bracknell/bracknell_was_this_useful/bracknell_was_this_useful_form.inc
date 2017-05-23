@@ -10,7 +10,20 @@
  * 
  * An AJAX powered feedback form.
  */
-function bracknell_was_this_useful_form($form, &$form_state) {   
+function bracknell_was_this_useful_form($form, &$form_state) {
+  $smiley_response = NULL;
+  if (array_key_exists('triggering_element', $form_state) && $form_state['triggering_element']['#name'] === 'op') {
+    $smiley_response = $form_state['triggering_element']['#value'];
+  }
+  elseif (isset($form_state['values']) && !empty($form_state['values']['response'])) {
+    $smiley_response = $form_state['values']['response'];
+  }
+  
+  $question_response = NULL;
+  if (array_key_exists('triggering_element', $form_state) && $form_state['triggering_element']['#name'] === 'show_data') {
+    $question_response = TRUE;
+  }
+
   // Form container.
   $form['wtu_form'] = array(
     '#type' => 'container',
@@ -22,9 +35,8 @@ function bracknell_was_this_useful_form($form, &$form_state) {
   $form['wtu_form']['wtu_smileys'] = array(
     '#type' => 'container',
     '#name' => 'wtu_smileys',
-    '#attributes' => array(
-      'class' => array('wtu_smileys'),
-    ),
+     '#prefix' => '<div id="wtu-smileys">',
+    '#suffix' => '</div>',
   );
     
   $form['wtu_form']['wtu_smileys']['happy'] = array(
@@ -34,7 +46,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#limit_validation_errors' => array(),
     '#ajax' => array(
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
-      'wrapper' => 'wtu-form',
+      'wrapper' => 'wtu-question',
     ),
   );
 
@@ -45,7 +57,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#limit_validation_errors' => array(),
     '#ajax' => array(
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
-      'wrapper' => 'wtu-form',
+      'wrapper' => 'wtu-question',
     ),
   );
 
@@ -56,26 +68,42 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#limit_validation_errors' => array(),
     '#ajax' => array(
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
-      'wrapper' => 'wtu-form',
+      'wrapper' => 'wtu-question',
     ),
   );
   
-   if (array_key_exists('triggering_element', $form_state) && $form_state['triggering_element']['#name'] === 'op') {
-   $smiley_response = $form_state['triggering_element']['#value'];
- }
-  if (isset($smiley_response)) {
     // Second part - ask the user.
     $form['wtu_form']['wtu_question'] = array(
       '#type' => 'container',
+      '#prefix' => '<div id="wtu-question">',
+      '#suffix' => '</div>',
       '#attributes' => array(
-        'class' => array('wtu_question'),
+        'class' => (isset($smiley_response)) ? '' : array('hide'),
       ),
     );
+    
     $form['wtu_form']['wtu_question']['question'] = array(
-      '#markup' => l(t('Is there anything wrong with this page?'),'#'),
+      '#type' => 'button',
+      '#name' => 'show_data',
+      '#value' => t('Is there anything wrong with this page?'),
+      '#weight' => 0,
+      '#ajax' => array(
+      'callback' => 'bracknell_was_this_useful_question_callback',
+      'wrapper' => 'wtu-data',
+    ),
+    );
+    
+    // Third part - gather some information.
+    $form['wtu_form']['wtu_data'] = array(
+      '#type' => 'container',
+      '#prefix' => '<div id="wtu-data">',
+      '#suffix' => '</div>',
+      '#attributes' => array(
+        'class' => (isset($question_response)) ? '' : array('hide'),
+      ),
     );
 
-    // Hidden fields to collect data not shown to the user.
+        // Hidden fields to collect data not shown to the user.
     $form['wtu_form']['wtu_data']['response'] = array(
       '#type' => 'hidden',
       '#value' => ( isset($smiley_response) ) ? $smiley_response : '',
@@ -86,14 +114,6 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       '#value' => (isset($page_details)) ? $page_details : '',
     );
     
-    // Third part - gather some information.
-    $form['wtu_form']['wtu_data'] = array(
-      '#type' => 'container',
-      '#attributes' => array(
-        'class' => array('wtu_data', 'hide'),
-      ),
-    );
-
     $form['wtu_form']['wtu_data']['what_went_wrong'] = array(
       '#type' => 'select',
       '#title' => t('What went wrong?'),
@@ -108,8 +128,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       '#type' => 'textarea',
       '#title' => t('How can we improve this page?'),
     );
-  }
-
+  
   // $form['theme'][] = 'bracknell_was_this_useful_form';
 
   return $form;
@@ -123,8 +142,11 @@ function bracknell_was_this_useful_form($form, &$form_state) {
  * Custom AJAX function triggered from the smiley faces.
  */
 function bracknell_was_this_useful_get_smiley_ajax_callback($form, &$form_state) {
-  watchdog('php', 'inside callback');
-  return $form;
+  return $form['wtu_form']['wtu_question'];
+}
+
+function bracknell_was_this_useful_question_callback($form, &$form_state) {
+  return $form['wtu_form']['wtu_data'];
 }
 
 /**
