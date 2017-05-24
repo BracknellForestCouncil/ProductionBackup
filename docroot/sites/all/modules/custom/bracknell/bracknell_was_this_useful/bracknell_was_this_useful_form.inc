@@ -225,6 +225,17 @@ function bracknell_was_this_useful_form_ajax_submit($form, &$form_state) {
  * Custom AJAX function triggered from the smiley faces.
  */
 function bracknell_was_this_useful_get_smiley_ajax_callback($form, &$form_state) {
+  // Shortcut the $form_state['values'] for future use.
+  $values = $form_state['values'];
+  // Check we have some values.
+  if (isset($values)) {
+    // Quick email
+    $params = array(
+      'subject' => (!empty($values['response'])) ? $values['response'] . ' feedback received' : 'Response empty or not set.',
+      'body' =>  (!empty($values['page_details'])) ? 'Page details: ' . PHP_EOL . $values['page_details'] . PHP_EOL : 'Page details empty or not set.',
+    );
+    drupal_mail('bracknell_was_this_useful', 'quick_feedback', 'digital.services@bracknell-forest.gov.uk', language_default(), $params);
+  }
   return $form['wtu_form']['wtu_question'];
 }
 

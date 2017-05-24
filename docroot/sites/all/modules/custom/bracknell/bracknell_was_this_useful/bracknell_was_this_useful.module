@@ -38,7 +38,6 @@ function bracknell_was_this_useful_block_view($delta = '') {
  * Implements hook_mail().
  */
 function bracknell_was_this_useful_mail($key, &$message, $params) {
-  if ($key == 'feedback_form') {
     // Replace the to address parameter.
     $message['to'] = 'digital.services@bracknell-forest.gov.uk';
 
@@ -48,5 +47,4 @@ function bracknell_was_this_useful_mail($key, &$message, $params) {
     if (isset($params['body'])) {
       $message['body'][] = $params['body'];
     }
-  }
 }
