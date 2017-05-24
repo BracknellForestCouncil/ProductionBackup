@@ -53,6 +53,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#name' => 'wtu_smileys',
     '#prefix' => '<div id="wtu-smileys">',
     '#suffix' => '</div>',
+    '#attributes' => array(
+      'class' => array('wtu-smileys-container'),
+    ),
   );
 
   $form['wtu_form']['wtu_smileys']['happy'] = array(
@@ -63,6 +66,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#ajax' => array(
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
       'wrapper' => 'wtu-question',
+    ),
+      '#attributes' => array(
+      'class' => array('wtu-smiley-happy'),
     ),
   );
 
@@ -75,6 +81,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
       'wrapper' => 'wtu-question',
     ),
+      '#attributes' => array(
+      'class' => array('wtu-smiley-neutral'),
+    ),
   );
 
   $form['wtu_form']['wtu_smileys']['sad'] = array(
@@ -86,6 +95,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
       'wrapper' => 'wtu-question',
     ),
+      '#attributes' => array(
+      'class' => array('wtu-smiley-sad'),
+    ),
   );
 
   // Second part - ask the user.
@@ -96,6 +108,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#attributes' => array(
       'class' => (isset($smiley_response)) ? '' : array('hide'),
     ),
+      '#attributes' => array(
+      'class' => array('wtu-question-container'),
+    ),
   );
   
   $form['wtu_form']['wtu_question']['feedback'] = array(
@@ -103,7 +118,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#prefix' => '<p>',
     '#suffix' => '</p>',
     '#attributes' => array(
-      'class' => array('wtu-thanks'),
+      'class' => array('wtu-question-thanks'),
     ),
   );
 
@@ -116,6 +131,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'callback' => 'bracknell_was_this_useful_question_callback',
       'wrapper' => 'wtu-data',
     ),
+    '#attributes' => array(
+      'class' => array('wtu-question-link'),
+    ),
   );
 
   // Third part - gather some information.
@@ -124,14 +142,15 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#prefix' => '<div id="wtu-data">',
     '#suffix' => '</div>',
     '#attributes' => array(
-      'class' => (isset($question_response)) ? '' : array('hide'),
+      'class' => (isset($question_response)) ? array('wtu-data-container') : array('wtu-data-container', 'hide'),
     ),
   );
 
   $form['wtu_form']['wtu_data']['title'] = array(
     '#markup' => t('Report a problem with this page'),
-    '#prefix' => '<h3>',
+    '#prefix' => '<h3 class="wtu-data-title">',
     '#suffix' => '</h3>',
+    
   );
   
   $form['wtu_form']['wtu_data']['spiel'] = array(
@@ -155,10 +174,17 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       2 => t('It isn’t accurate'),
       3 => t('Other'),
     ),
+    '#attributes' => array(
+      'class' => array('wtu-what-went-wrong'),
+    ),
   );
+
   $form['wtu_form']['wtu_data']['how_to_improve'] = array(
     '#type' => 'textarea',
     '#title' => t('How can we improve this page?'),
+    '#attributes' => array(
+      'class' => array('wtu-how-to-improve'),
+    ),
   );
 
   $form['wtu_form']['wtu_data']['submit'] = array(
