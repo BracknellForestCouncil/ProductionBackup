@@ -34,16 +34,3 @@ function bracknell_was_this_useful_block_view($delta = '') {
   return $block;
 }
 
-/**
- * Implements hook_theme()
- */
-//function bracknell_was_this_useful_theme() {
-//  return array(
-//        'bracknell_was_this_useful_form' => array(
-//            'arguments' => array('form' => NULL),
-//            'render element' => 'form',
-//            'template' => 'bracknell_was_this_useful_form',
-//            'path' => drupal_get_path('module', 'bracknell_was_this_useful') . '/templates',
-//        ),
-//    );
-//}
