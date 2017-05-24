@@ -106,10 +106,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#prefix' => '<div id="wtu-question">',
     '#suffix' => '</div>',
     '#attributes' => array(
-      'class' => (isset($smiley_response)) ? '' : array('hide'),
-    ),
-      '#attributes' => array(
-      'class' => array('wtu-question-container'),
+      'class' => (isset($smiley_response)) ? array('wtu-question-container') : array('wtu-question-container','hide'),
     ),
   );
   
