@@ -3,7 +3,7 @@
 /**
  * @file
  * The main module file that provides Was This Useful functionality.
- * 
+ *
  * Functions start with: bracknell_was_this_useful
  */
 
@@ -14,9 +14,9 @@ form_load_include($form_state, 'inc', 'bracknell_was_this_useful', 'bracknell_wa
  */
 function bracknell_was_this_useful_block_info() {
   $blocks['was_this_useful'] = array(
-    'info' => t('Was this useful form'),  
+    'info' => t('Was this useful form'),
   );
-  
+
   return $blocks;
 }
 
@@ -30,7 +30,18 @@ function bracknell_was_this_useful_block_view($delta = '') {
     $block['subject'] = t('Was this page useful?');
     $block['content'] = drupal_get_form('bracknell_was_this_useful_form');
   }
-  
+
   return $block;
 }
 
+/**
+ * Implements hook_preprocess_block();
+ */
+function bracknell_was_this_useful_preprocess_block(&$variables) {
+  $block_id = $variables['block']->module . '-' . $variables['block']->delta;
+
+  if ($block_id == 'bracknell_was_this_useful-was_this_useful') {
+    $variables['classes_array'][] = 'wtu';
+    $variables['title_attributes_array']['class'][] = 'wtu-title';
+  }
+}

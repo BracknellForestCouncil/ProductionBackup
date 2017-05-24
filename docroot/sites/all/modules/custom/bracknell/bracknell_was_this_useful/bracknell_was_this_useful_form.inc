@@ -22,7 +22,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
   // First button click - smiley faces.
   $smiley_response = NULL;
   if (array_key_exists('triggering_element', $form_state) && $form_state['triggering_element']['#name'] === 'op') {
-    $smiley_response = $form_state['triggering_element']['#value'];    
+    $smiley_response = $form_state['triggering_element']['#value'];
   }
   elseif (isset($form_state['values']) && !empty($form_state['values']['response'])) {
     // If the second button is clicked get the value from the hidden fields.
@@ -41,7 +41,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#prefix' => '<div id="wtu-form">',
     '#suffix' => '</div>',
   );
-  
+
   $form['wtu_form']['page_details'] = array(
     '#type' => 'hidden',
     '#value' => (isset($page_details)) ? $page_details : '',
@@ -64,6 +64,11 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
       'wrapper' => 'wtu-question',
     ),
+    '#attributes' => array(
+      'class' => array(
+        'btn-happy',
+      )
+    ),
   );
 
   $form['wtu_form']['wtu_smileys']['neutral'] = array(
@@ -74,6 +79,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#ajax' => array(
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
       'wrapper' => 'wtu-question',
+    ),
+    '#attributes' => array(
+      'class' => array('btn-neutral')
     ),
   );
 
@@ -86,6 +94,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
       'wrapper' => 'wtu-question',
     ),
+    '#attributes' => array(
+      'class' => array('btn-sad')
+    ),
   );
 
   // Second part - ask the user.
@@ -97,7 +108,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'class' => (isset($smiley_response)) ? '' : array('hide'),
     ),
   );
-  
+
   $form['wtu_form']['wtu_question']['feedback'] = array(
     '#markup' => t('Thank you for your feedback.'),
     '#prefix' => '<p>',
@@ -133,7 +144,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#prefix' => '<h3>',
     '#suffix' => '</h3>',
   );
-  
+
   $form['wtu_form']['wtu_data']['spiel'] = array(
     '#markup' => t('Help us to improve this page by providing feedback. Don’t include any personal information below. We are unable to respond via this form.'),
     '#prefix' => '<p class="wtu-spiel">',
