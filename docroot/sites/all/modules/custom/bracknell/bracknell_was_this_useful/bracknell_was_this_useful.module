@@ -45,3 +45,18 @@ function bracknell_was_this_useful_preprocess_block(&$variables) {
     $variables['title_attributes_array']['class'][] = 'wtu-title';
   }
 }
+
+/**
+ * Implements hook_mail().
+ */
+function bracknell_was_this_useful_mail($key, &$message, $params) {
+  // Replace the to address parameter.
+  $message['to'] = 'digital.services@bracknell-forest.gov.uk';
+
+  if (isset($params['subject'])) {
+    $message['subject'] = $params['subject'];
+  }
+  if (isset($params['body'])) {
+    $message['body'][] = $params['body'];
+  }
+}
