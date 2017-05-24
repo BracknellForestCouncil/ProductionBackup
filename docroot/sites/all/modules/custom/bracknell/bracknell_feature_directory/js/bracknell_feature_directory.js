@@ -7,48 +7,43 @@
         var self = $('[data-js="showcase-reveal"]'),
             totalItems = self.find('.showcase .views-row').length;
 
+        // If there are more than 9 items, add a button to show/hide any additional items.
         if (totalItems > 9) {
+          // Create the button element and add attributes.
           var displayButton = $(document.createElement('button')),
               displayButtonTitle = self.attr('data-title');
+
+          var buttonMarkUp =
+            $('<span class="button-text">' + Drupal.t('More') + ' </span> ' +
+            '<span class="button-title">' + displayButtonTitle + '</span> ' +
+            '<span class="icon theme-icon-triangle-down"></span>');
 
           displayButton.attr({
             'aria-controls': 'parks-view',
             'aria-expanded': 'false',
             'data-js': 'showcase-button',
             'class': 'btn btn-primary showcase-button'
-          });
+          }).html(buttonMarkUp);
 
-          var buttonMarkUp =
-            '<span class="button-text">More </span> ' +
-            '<span class="button-title">' + displayButtonTitle + '</span> ' +
-            '<span class="icon theme-icon-triangle-down"></span>';
+          $('[data-js="showcase-reveal"] .showcase-footer').append(displayButton);
 
-          var element = $(buttonMarkUp);
-          displayButton.html(element);
+          // Add a class to the first hidden item so we can move keyboard focus to it later.
+          self.find('.showcase .views-row').filter(':eq(9), :gt(9)').first().addClass('showcase-first-item-hidden').attr('tabindex', '-1').css('outline', 'none');
 
-          $('[data-js="showcase-reveal"] .showcase').append(displayButton);
-
-          self.find('.showcase .views-row').filter(':eq(9), :gt(9)').hide().attr({
-            'aria-hidden': 'true',
-            'aria-expanded': 'false'
-          });
+          // Hide additional items - leave 9 items displayed by default.
+          self.find('.showcase .views-row').filter(':eq(9), :gt(9)').hide().attr('aria-hidden', true);
 
           displayButton.on('click', function () {
             if ($(this).attr('aria-expanded') === 'false') {
-              self.find('.showcase .views-row').filter(':eq(9), :gt(9)').show().attr({
-                'aria-hidden': 'false',
-                'aria-expanded': 'true'
-              });
-              $(this).attr('aria-expanded', 'true').find('.button-text').text('Fewer')
+              self.find('.showcase .views-row').filter(':eq(9), :gt(9)').show().attr('aria-hidden', false);
+              $(this).attr('aria-expanded', true).find('.button-text').text(Drupal.t('Fewer'));
               $(this).find('.icon').addClass('theme-icon-triangle-up').removeClass('theme-icon-triangle-down');
-              //self.find('.' + self.options.wrapperClass + '__item--first-hidden').focus();
+              // Move keyboard focus to the first revealed item.
+              self.find('.showcase-first-item-hidden').focus();
             }
             else {
-              self.find('.showcase .views-row').filter(':eq(9), :gt(9)').hide().attr({
-                'aria-hidden': 'true',
-                'aria-expanded': 'false'
-              });
-              $(this).attr('aria-expanded', 'false').find('.button-text').text('More')
+              self.find('.showcase .views-row').filter(':eq(9), :gt(9)').hide().attr('aria-hidden', true);
+              $(this).attr('aria-expanded', false).find('.button-text').text(Drupal.t('More'));
               $(this).find('.icon').addClass('theme-icon-triangle-down').removeClass('theme-icon-triangle-up');
             }
           });
