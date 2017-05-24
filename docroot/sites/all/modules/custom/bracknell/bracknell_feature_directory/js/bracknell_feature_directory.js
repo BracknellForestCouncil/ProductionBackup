@@ -11,11 +11,12 @@
         if (totalItems > 9) {
           // Create the button element and add attributes.
           var displayButton = $(document.createElement('button')),
-              displayButtonTitle = self.attr('data-title');
+              locationType = self.attr('data-title'),
+              displayButtonTextHidden = Drupal.t('More @type', {'@type': locationType}),
+              displayButtonTextShown = Drupal.t('Fewer @type', {'@type': locationType});
 
           var buttonMarkUp =
-            $('<span class="button-text">' + Drupal.t('More') + ' </span> ' +
-            '<span class="button-title">' + displayButtonTitle + '</span> ' +
+            $('<span class="button-text">' + displayButtonTextHidden + ' </span> ' +
             '<span class="icon theme-icon-triangle-down"></span>');
 
           displayButton.attr({
@@ -36,14 +37,14 @@
           displayButton.on('click', function () {
             if ($(this).attr('aria-expanded') === 'false') {
               self.find('.showcase .views-row').filter(':eq(9), :gt(9)').show().attr('aria-hidden', false);
-              $(this).attr('aria-expanded', true).find('.button-text').text(Drupal.t('Fewer'));
+              $(this).attr('aria-expanded', true).find('.button-text').text(displayButtonTextShown);
               $(this).find('.icon').addClass('theme-icon-triangle-up').removeClass('theme-icon-triangle-down');
               // Move keyboard focus to the first revealed item.
               self.find('.showcase-first-item-hidden').focus();
             }
             else {
               self.find('.showcase .views-row').filter(':eq(9), :gt(9)').hide().attr('aria-hidden', true);
-              $(this).attr('aria-expanded', false).find('.button-text').text(Drupal.t('More'));
+              $(this).attr('aria-expanded', false).find('.button-text').text(displayButtonTextHidden);
               $(this).find('.icon').addClass('theme-icon-triangle-down').removeClass('theme-icon-triangle-up');
             }
           });
