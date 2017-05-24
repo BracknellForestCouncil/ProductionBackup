@@ -56,7 +56,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="showcase">
-            <div class="row">
+            <div class="row" id="parks-view">
               <?php print $rows; ?>
             </div>
             <div class="showcase-footer"></div>
