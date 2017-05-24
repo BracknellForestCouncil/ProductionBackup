@@ -15,8 +15,8 @@ function bracknell_was_this_useful_form($form, &$form_state) {
   if ($form_state['rebuild'] == FALSE) {
     $page_details = _get_page_info();
   }
-  elseif (isset($form_state['values']) && !empty($form_state['values']['page_details'])) {
-    $page_details = $form_state['values']['page_details'];
+  elseif (isset($form_state['input']) && !empty($form_state['input']['page_details'])) {
+    $page_details = $form_state['input']['page_details'];
   }
 
   // First button click - smiley faces.
@@ -125,7 +125,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#name' => 'show_data',
     '#value' => t('Is there anything wrong with this page?'),
     '#ajax' => array(
-      'callback' => 'bracknell_was_this_useful_question_callback',
+      'callback' => 'bracknell_was_this_useful_question_ajax_callback',
       'wrapper' => 'wtu-data',
     ),
     '#attributes' => array(
@@ -166,10 +166,10 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#type' => 'select',
     '#title' => t('What went wrong?'),
     '#options' => array(
-      0 => t('It didn’t answer my question'),
-      1 => t('It is difficult to understand'),
-      2 => t('It isn’t accurate'),
-      3 => t('Other'),
+      'Didnt answer my question' => t('It didn’t answer my question'),
+      'Difficult to understand' => t('It is difficult to understand'),
+      'Not accurate' => t('It isn’t accurate'),
+      'Other' => t('Other'),
     ),
     '#attributes' => array(
       'class' => array('wtu-what-went-wrong'),
@@ -187,17 +187,38 @@ function bracknell_was_this_useful_form($form, &$form_state) {
   $form['wtu_form']['wtu_data']['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Send'),
+    '#ajax' => array(
+      'callback' => 'bracknell_was_this_useful_form_ajax_submit',
+      'wrapper' => 'wtu-form',
+    ),
   );
 
   return $form;
 }
 
 /**
- *
+ * Custom AJAX final submission of the Was this useful form.
  */
-function bracknell_was_this_useful_form_submit($form, &$form_state) {
-  // Send mail to site
+function bracknell_was_this_useful_form_ajax_submit($form, &$form_state) {
+  // Shortcut the $form_state['values'] for future use.
+  $values = $form_state['values'];
+  // Check we have some values.
+  if (isset($values)) {
+    // Build a body!
+    $line1 = (!empty($values['page_details'])) ? 'Page details: ' . PHP_EOL . $values['page_details'] . PHP_EOL : 'Page details empty or not set.';
+    $line2 = (!empty($values['response'])) ? 'Response was ' . $values['response'] . PHP_EOL : 'Response empty or not set.';
+    $line3 = (!empty($values['what_went_wrong'])) ? 'What went wrong: ' . $values['what_went_wrong'] . PHP_EOL : 'What went wrong empty or not set.';
+    $line4 = (!empty($values['how_to_improve'])) ? 'How can we improve: ' . PHP_EOL . $values['how_to_improve'] . PHP_EOL : 'How we can improve empty or not set.';
+    // Mail parameters ASSEMBLE!    
+    $params = array(
+      'subject' => 'Website feedback',
+      'body' =>  $line1 . PHP_EOL . $line2 . PHP_EOL . $line3 . PHP_EOL . $line4,
+    );
+    // Email the information using drupal_mail(), see module file for hook_mail().
+    drupal_mail('bracknell_was_this_useful', 'feedback_form', 'digital.services@bracknell-forest.gov.uk', language_default(), $params);
+  }
   // Thank user.
+  return "<div id='wtu-final-thanks'>Thank you for your feedback.</div>";
 }
 
 /**
@@ -210,7 +231,7 @@ function bracknell_was_this_useful_get_smiley_ajax_callback($form, &$form_state)
 /**
  * Custom AJAX function triggered from the question link.
  */
-function bracknell_was_this_useful_question_callback($form, &$form_state) {
+function bracknell_was_this_useful_question_ajax_callback($form, &$form_state) {
   return $form['wtu_form']['wtu_data'];
 }
 
