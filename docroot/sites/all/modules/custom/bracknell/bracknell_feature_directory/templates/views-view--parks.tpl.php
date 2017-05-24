@@ -59,6 +59,7 @@
             <div class="row">
               <?php print $rows; ?>
             </div>
+            <div class="showcase-footer"></div>
           </div>
         </div>
       </div>
