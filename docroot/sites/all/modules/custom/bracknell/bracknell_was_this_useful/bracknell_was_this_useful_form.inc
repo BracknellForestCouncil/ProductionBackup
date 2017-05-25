@@ -65,7 +65,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#limit_validation_errors' => array(),
     '#ajax' => array(
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
-      'wrapper' => 'wtu-question',
+      'wrapper' => 'wtu-smileys',
     ),
     '#attributes' => array(
       'aria-controls' => array(
@@ -84,7 +84,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#limit_validation_errors' => array(),
     '#ajax' => array(
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
-      'wrapper' => 'wtu-question',
+      'wrapper' => 'wtu-smileys',
     ),
     '#attributes' => array(
       'aria-controls' => array(
@@ -101,7 +101,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#limit_validation_errors' => array(),
     '#ajax' => array(
       'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
-      'wrapper' => 'wtu-question',
+      'wrapper' => 'wtu-smileys',
     ),
     '#attributes' => array(
       'aria-controls' => array(
@@ -137,7 +137,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#value' => t('Is there anything wrong with this page?'),
     '#ajax' => array(
       'callback' => 'bracknell_was_this_useful_question_ajax_callback',
-      'wrapper' => 'wtu-data',
+      'wrapper' => 'wtu-question',
     ),
     '#attributes' => array(
       'class' => array('wtu-question-link'),
