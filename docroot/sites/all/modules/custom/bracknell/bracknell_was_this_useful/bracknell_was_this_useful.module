@@ -42,6 +42,8 @@ function bracknell_was_this_useful_preprocess_block(&$variables) {
 
   if ($block_id == 'bracknell_was_this_useful-was_this_useful') {
     $variables['classes_array'][] = 'wtu';
+    $variables['classes_array'][] = 'col-md-3';
+    $variables['classes_array'][] = 'col-md-offset-9';
     $variables['title_attributes_array']['class'][] = 'wtu-title';
   }
 }
