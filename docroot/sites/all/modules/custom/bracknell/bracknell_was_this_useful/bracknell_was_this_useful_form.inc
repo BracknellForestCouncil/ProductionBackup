@@ -54,7 +54,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#prefix' => '<div id="wtu-smileys">',
     '#suffix' => '</div>',
     '#attributes' => array(
-      'class' => array('wtu-smileys-container'),
+      'class' => array(
+        'wtu-smileys-container',
+      ),
     ),
   );
 
@@ -69,11 +71,11 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     ),
     '#attributes' => array(
       'aria-controls' => array(
-        'wtu-question'
+        'wtu-question',
       ),
       'class' => array(
         'btn-happy',
-      )
+      ),
     ),
   );
 
@@ -88,9 +90,11 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     ),
     '#attributes' => array(
       'aria-controls' => array(
-        'wtu-question'
+        'wtu-question',
       ),
-      'class' => array('btn-neutral')
+      'class' => array(
+        'btn-neutral',
+      ),
     ),
   );
 
@@ -105,9 +109,11 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     ),
     '#attributes' => array(
       'aria-controls' => array(
-        'wtu-question'
+        'wtu-question',
       ),
-      'class' => array('btn-sad')
+      'class' => array(
+        'btn-sad',
+      ),
     ),
   );
 
@@ -117,7 +123,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#prefix' => '<div id="wtu-question">',
     '#suffix' => '</div>',
     '#attributes' => array(
-      'class' => (isset($smiley_response)) ? array('wtu-question-container') : array('wtu-question-container','hide'),
+      'class' => (isset($smiley_response)) ? array('wtu-question-container') : array('wtu-question-container', 'hide'),
     ),
   );
 
@@ -142,7 +148,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#attributes' => array(
       'class' => array('wtu-question-link'),
       'aria-controls' => array(
-        'wtu-data'
+        'wtu-data',
       ),
     ),
   );
@@ -161,7 +167,6 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#markup' => t('Report a problem with this page'),
     '#prefix' => '<h3 class="wtu-data-title">',
     '#suffix' => '</h3>',
-
   );
 
   $form['wtu_form']['wtu_data']['spiel'] = array(
@@ -229,9 +234,10 @@ function bracknell_was_this_useful_form_ajax_submit($form, &$form_state) {
     // Mail parameters ASSEMBLE!
     $params = array(
       'subject' => 'Website feedback',
-      'body' =>  $line1 . PHP_EOL . $line2 . PHP_EOL . $line3 . PHP_EOL . $line4,
+      'body' => $line1 . PHP_EOL . $line2 . PHP_EOL . $line3 . PHP_EOL . $line4,
     );
-    // Email the information using drupal_mail(), see module file for hook_mail().
+    // Email the information using drupal_mail() function. See the module file
+    // for hook_mail().
     drupal_mail('bracknell_was_this_useful', 'feedback_form', 'digital.services@bracknell-forest.gov.uk', language_default(), $params);
   }
   // Thank user.
@@ -246,10 +252,10 @@ function bracknell_was_this_useful_get_smiley_ajax_callback($form, &$form_state)
   $values = $form_state['values'];
   // Check we have some values.
   if (isset($values)) {
-    // Quick email
+    // Quick email.
     $params = array(
       'subject' => (!empty($values['response'])) ? $values['response'] . ' feedback received' : 'Response empty or not set.',
-      'body' =>  (!empty($values['page_details'])) ? 'Page details: ' . PHP_EOL . $values['page_details'] . PHP_EOL : 'Page details empty or not set.',
+      'body' => (!empty($values['page_details'])) ? 'Page details: ' . PHP_EOL . $values['page_details'] . PHP_EOL : 'Page details empty or not set.',
     );
     drupal_mail('bracknell_was_this_useful', 'quick_feedback', 'digital.services@bracknell-forest.gov.uk', language_default(), $params);
   }
@@ -273,10 +279,12 @@ function _get_page_info() {
     $user_agent = filter_input(INPUT_SERVER, "HTTP_USER_AGENT", FILTER_UNSAFE_RAW, FILTER_NULL_ON_FAILURE);
   }
   else {
-    if (isset($_SERVER["HTTP_USER_AGENT"]))
+    if (isset($_SERVER["HTTP_USER_AGENT"])) {
       $user_agent = filter_var($_SERVER["HTTP_USER_AGENT"], FILTER_UNSAFE_RAW, FILTER_NULL_ON_FAILURE);
-    else
+    }
+    else {
       $user_agent = NULL;
+    }
   };
 
   $page_info = 'date/time: ' . date('Y-m-d H:i:s') . PHP_EOL .
