@@ -1,12 +1,5 @@
 // Was This Useful component.
 
-$faces: (
-  1: happy,
-  2: neutral,
-  3: sad
-);
-
-
 .wtu {
   background-color: $wtu-bg-color;
   padding: 1px 15px;
@@ -38,6 +31,12 @@ $faces: (
     }
   }
 }
+
+$faces: (
+  1: happy,
+  2: neutral,
+  3: sad
+);
 
 // Output images for each face.
 @each $key, $value in $faces {
