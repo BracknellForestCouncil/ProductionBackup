@@ -7,7 +7,12 @@
  * Functions start with: bracknell_was_this_useful
  */
 
-form_load_include($form_state, 'inc', 'bracknell_was_this_useful', 'bracknell_was_this_useful_form');
+/**
+ * Implements hook_init().
+ */
+function bracknell_was_this_useful_init() {
+  form_load_include($form_state, 'inc', 'bracknell_was_this_useful', 'bracknell_was_this_useful_form');
+}
 
 /**
  * Implements hook_block_info().
@@ -27,7 +32,6 @@ function bracknell_was_this_useful_block_info() {
  * Implements hook_block_view().
  */
 function bracknell_was_this_useful_block_view($delta = '') {
-  module_load_all_includes('inc', 'bracknell_was_this_useful_form');
   $block = array();
   if ($delta === 'was_this_useful') {
     $block['subject'] = t('Was this page useful?');
