@@ -892,7 +892,9 @@ function bracknell_feature_directory_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_location_park';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
   $export['menu_options_location_park'] = $strongarm;
 
   $strongarm = new stdClass();
