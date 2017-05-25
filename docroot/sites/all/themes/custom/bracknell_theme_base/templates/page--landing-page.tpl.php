@@ -108,13 +108,6 @@
   </div><!-- end .promotional-hero -->
 
   <?php print render($page['content']); ?>
-  <?php if (!empty($page['page_footer'])): ?>
-  <div class="container">
-    <div class="row">
-      <?php print render($page['page_footer']); ?>
-    </div><!-- end .row -->
-  </div><!-- end .container -->
-  <?php endif; ?>
 </main>
 
 <?php include_once DRUPAL_ROOT . '/' . drupal_get_path('theme', 'bracknell_theme_base') . '/templates/includes/footer.inc'; ?>

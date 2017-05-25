@@ -4,6 +4,12 @@
   background-color: $wtu-bg-color;
   padding: 1px 15px;
 
+  @include breakpoint($screen-md) {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+  }
+
   .wtu-title {
     font: {
       size: $font-size-05;
