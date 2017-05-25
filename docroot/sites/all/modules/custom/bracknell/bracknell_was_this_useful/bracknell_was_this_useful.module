@@ -15,6 +15,8 @@ form_load_include($form_state, 'inc', 'bracknell_was_this_useful', 'bracknell_wa
 function bracknell_was_this_useful_block_info() {
   $blocks['was_this_useful'] = array(
     'info' => t('Was this useful form'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    'region' => 'page_footer',
   );
 
   return $blocks;
