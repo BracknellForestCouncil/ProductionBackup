@@ -68,6 +68,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'wrapper' => 'wtu-question',
     ),
     '#attributes' => array(
+      'aria-controls' => array(
+        'wtu-question'
+      ),
       'class' => array(
         'btn-happy',
       )
@@ -84,6 +87,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'wrapper' => 'wtu-question',
     ),
     '#attributes' => array(
+      'aria-controls' => array(
+        'wtu-question'
+      ),
       'class' => array('btn-neutral')
     ),
   );
@@ -98,6 +104,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'wrapper' => 'wtu-question',
     ),
     '#attributes' => array(
+      'aria-controls' => array(
+        'wtu-question'
+      ),
       'class' => array('btn-sad')
     ),
   );
@@ -132,6 +141,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     ),
     '#attributes' => array(
       'class' => array('wtu-question-link'),
+      'aria-controls' => array(
+        'wtu-data'
+      ),
     ),
   );
 
@@ -193,6 +205,9 @@ function bracknell_was_this_useful_form($form, &$form_state) {
       'callback' => 'bracknell_was_this_useful_form_ajax_submit',
       'wrapper' => 'wtu-form',
     ),
+    '#attributes' => array(
+      'class' => array('btn-submit'),
+    ),
   );
 
   return $form;
@@ -220,7 +235,7 @@ function bracknell_was_this_useful_form_ajax_submit($form, &$form_state) {
     drupal_mail('bracknell_was_this_useful', 'feedback_form', 'digital.services@bracknell-forest.gov.uk', language_default(), $params);
   }
   // Thank user.
-  return "<div id='wtu-final-thanks'>Thank you for your feedback.</div>";
+  return "<p id='wtu-final-thanks'>Thank you for your feedback.</p>";
 }
 
 /**
