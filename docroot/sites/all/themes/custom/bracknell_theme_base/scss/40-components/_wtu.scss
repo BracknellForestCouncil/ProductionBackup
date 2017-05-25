@@ -11,34 +11,66 @@
     }
   }
 
-  .btn {
-    background: {
-      color: transparent;
-      repeat: no-repeat;
-      position: 0 0;
-      size: 100% 100%;
+  .ajax-progress-throbber {
+    margin-left: 10px;
+  }
+
+  .wtu-smileys-container {
+    .btn {
+      background: {
+        color: transparent;
+        repeat: no-repeat;
+        position: 0 0;
+        size: 100% 100%;
+      }
+      height: 40px;
+      margin: 0 15px 0 0;
+      overflow: hidden;
+      padding: 0;
+      text-indent: -999em;
+      width: 40px;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
     }
-    height: 40px;
-    margin: 0 15px 0 0;
-    overflow: hidden;
+  }
+
+  .wtu-question-link {
+    background: none;
+    color: $wtu-question-link-text-color;
+    height: auto;
+    margin: 0;
     padding: 0;
-    text-indent: -999em;
-    width: 40px;
+    text: {
+      align: left;
+      decoration: underline;
+      indent: 0;
+    }
+    white-space: normal;
+    width: auto;
 
     &:hover,
     &:focus {
-      background-color: transparent;
+      background: none;
+      text-decoration: none;
     }
+  }
+
+  .btn-submit {
+    margin-bottom: 5px;
+    padding: 12px 15px;
   }
 }
 
+// Output background images (SVG and PNG) for each face.
 $faces: (
   1: happy,
   2: neutral,
   3: sad
 );
 
-// Output images for each face.
 @each $key, $value in $faces {
   .btn-#{$value} {
     background-image: url('../images/faces/face-#{$value}.png');
@@ -52,7 +84,7 @@ $faces: (
       background-image: url('../images/faces/face-#{$value}.svg');
 
       &:hover,
-      &:active {
+      &:focus {
         background-image: url('../images/faces/face-#{$value}-active.svg');
       }
     }
