@@ -109,12 +109,9 @@
 
   <?php print render($page['content']); ?>
   <?php if (!empty($page['page_footer'])): ?>
-
   <div class="container">
     <div class="row">
-      <div class="col-sm-8">
-        <?php print render($page['page_footer']); ?>
-      </div><!-- end .col -->
+      <?php print render($page['page_footer']); ?>
     </div><!-- end .row -->
   </div><!-- end .container -->
   <?php endif; ?>

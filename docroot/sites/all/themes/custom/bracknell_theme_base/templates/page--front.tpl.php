@@ -102,9 +102,6 @@
     <div class="row">
       <div<?php print $content_column_class ?>>
         <?php print render($page['content']); ?>
-        <?php if (!empty($page['page_footer'])): ?>
-          <?php print render($page['page_footer']); ?>
-        <?php endif; ?>
       </div><!-- end .col -->
     </div><!-- end .row-->
   </div><!-- end .container -->
