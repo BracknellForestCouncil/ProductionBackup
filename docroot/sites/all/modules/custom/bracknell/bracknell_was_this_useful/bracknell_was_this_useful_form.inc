@@ -60,7 +60,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
 
   $form['wtu_form']['wtu_smileys']['happy'] = array(
     '#type' => 'button',
-    '#value' => 'happy',
+    '#value' => 'Yes',
     '#weight' => 0,
     '#limit_validation_errors' => array(),
     '#ajax' => array(
@@ -76,7 +76,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
 
   $form['wtu_form']['wtu_smileys']['neutral'] = array(
     '#type' => 'button',
-    '#value' => 'neutral',
+    '#value' => 'Maybe',
     '#weight' => 1,
     '#limit_validation_errors' => array(),
     '#ajax' => array(
@@ -90,7 +90,7 @@ function bracknell_was_this_useful_form($form, &$form_state) {
 
   $form['wtu_form']['wtu_smileys']['sad'] = array(
     '#type' => 'button',
-    '#value' => 'sad',
+    '#value' => 'No',
     '#weight' => 2,
     '#limit_validation_errors' => array(),
     '#ajax' => array(
