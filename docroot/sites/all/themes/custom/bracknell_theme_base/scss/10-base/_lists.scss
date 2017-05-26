@@ -1,5 +1,14 @@
 // Lists.
 
+ul {
+  padding-left: 20px;
+}
+
+ul,
+ol {
+  overflow: hidden;
+}
+
 // Ordered list.
 ol {
   padding-left: 15px;
