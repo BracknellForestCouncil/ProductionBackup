@@ -299,25 +299,28 @@ function bracknell_deploy_update_7016() {
  * Insert terms for School Level vocabulary.
  */
 function bracknell_deploy_update_7018() {
-  // Create the new school level vocab.
-  $vocabulary = new stdClass();
-  $vocabulary->name = 'School Level';
-  $vocabulary->machine_name = "school_level";
-  $vocabulary->description = t('List of school levels weighted by order preference.');
-  $vocabulary->module = 'taxonomy';
-  taxonomy_vocabulary_save($vocabulary);
+  $vocabulary = taxonomy_vocabulary_machine_name_load('school_level');
+  if (!is_object($vocabulary)) {
+    // Create the new school level vocab.
+    $vocabulary = new stdClass();
+    $vocabulary->name = 'School Level';
+    $vocabulary->machine_name = "school_level";
+    $vocabulary->description = t('List of school levels weighted by order preference.');
+    $vocabulary->module = 'taxonomy';
+    taxonomy_vocabulary_save($vocabulary);
 
-  // List the terms.
-  $terms = array(
-    'Primary school',
-    'Junior school',
-    'Secondary school',
-    'Special school',
-    'Pupil referral unit',
-  );
+    // List the terms.
+    $terms = array(
+      'Primary school',
+      'Junior school',
+      'Secondary school',
+      'Special school',
+      'Pupil referral unit',
+    );
 
-  // Check if term exists in vocabulary and add it if not.
-  _bracknell_deploy_safe_add_terms($terms, $vocabulary, 'school_level', 0);
+    // Check if term exists in vocabulary and add it if not.
+    _bracknell_deploy_safe_add_terms($terms, $vocabulary, 'school_level', 0);
+  }
 }
 
 /**
