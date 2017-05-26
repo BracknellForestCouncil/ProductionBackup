@@ -1173,7 +1173,7 @@ function guide_form_node_delete_confirm_alter(&$form, $form_state) {
     } else {
       $title = $node->title;
     }
-    
+
     $form['guide_warning'] = array(
       '#markup' => '<p>' . t('%title is part of a guide structure, and has associated child pages. If you proceed with deletion, the child pages will be relocated automatically.', array('%title' => $title)) . '</p>',
       '#weight' => -10,
@@ -1404,6 +1404,7 @@ function template_preprocess_guide_export_html(&$variables) {
   $variables['language_rtl'] = ($language->direction == LANGUAGE_RTL);
   $variables['head'] = drupal_get_html_head();
   $variables['dir'] = $language->direction ? 'rtl' : 'ltr';
+  $variables['path_to_bracknell_theme'] = $base_url . '/sites/all/themes/custom/bracknell_theme_base';
 }
 
 /**

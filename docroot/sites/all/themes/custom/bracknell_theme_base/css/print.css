@@ -1,9 +1,9 @@
 /*
-*	Print specific styling
+* Print specific styling
 */
 
 body, html {
-	overflow: visible;
+  overflow: visible;
 }
 
 button,
@@ -12,124 +12,124 @@ a[href^="https://"]:not([href*="mysite.com"]),
 a[href^="//"]:not([href*="mysite.com"]),
 a[href^="www."]:not([href*="mysite.com"]),
 a[rel="external"] {
-	padding-right: 0;
-	display: inline-block;
-	background: none;
+  padding-right: 0;
+  display: inline-block;
+  background: none;
 }
 
 @page {
-	margin: 2.5cm;
+  margin: 2.5cm;
 }
 
 .content-page div.row > div {
-	display: inline-block;
+  display: inline-block;
 //margin: 0.1cm;
 }
 .content-page div.row {
-	display: block;
+  display: block;
 }
 
 .content-page .table {
-	display: table;
-	border-spacing: 2px;
+  display: table;
+  border-spacing: 2px;
 }
 .content-page .row {
-	display: table-row;
+  display: table-row;
 }
 .content-page .row > div {
-	display: table-cell;
-	padding: 2px;
+  display: table-cell;
+  padding: 2px;
 }
 
 .col-sm-4, li.gridder-list {
-	width: 100%;
-	float: left;
-	padding: 0 15px;
-	margin: 0;
-	font-weight: normal;
+  width: 100%;
+  float: left;
+  padding: 0 15px;
+  margin: 0;
+  font-weight: normal;
 }
 
 .btn.key-task, .btn.sub-task {
-	border: none;
+  border: none;
 }
 
 .pad-30-top {
-	padding-top: 15px;
+  padding-top: 15px;
 }
 
 li.gridder-list {
-	margin: 10px!important;
+  margin: 10px!important;
 }
 .socials, .page-rater {
-	display: none!important;
+  display: none!important;
 }
 
 .call-to-actions .btn.sub-task, .call-to-actions .key-task, .call-to-actions a {
-	height: auto;
-	padding: 0;
-	margin: 0;
-	font-weight: normal;
-}
-
-.news-listings figure {
-//margin: 0px 0px 15px 15px;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
 }
 
 .news-listings li figure {
-	width: 100%;
-	margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 #main-content img {
-	display: none;
+  display: none;
 }
 
 .hide-print {
-	display: none!important;
+  display: none!important;
 }
 
 .show-print {
-	display: block!important;
+  display: block!important;
 }
 
 .news-listings img {
-	display: none;
+  display: none;
 }
 
 .gridder-list {
-	margin: 0!important;
-	padding: 0!important;
+  margin: 0!important;
+  padding: 0!important;
 }
 
 .gridder li.gridder-list {
-	margin: 10px 0!important;
-	padding: 0!important;
+  margin: 10px 0!important;
+  padding: 0!important;
 }
 
 .gridder li.gridder-list, .call-to-actions .key-task {
-	width: 100%;
-	border: none;
-	height: auto;
-	min-height: 0;
-	font-weight: normal;
+  width: 100%;
+  border: none;
+  height: auto;
+  min-height: 0;
+  font-weight: normal;
 }
 
 .gridder li.gridder-list span {
-	display: none;
+  display: none;
 }
 
 .gridder li.gridder-list a:AFTER {
-	display: none;
+  display: none;
 }
 
 .well {
-	padding: 0!important;
+  padding: 0!important;
 }
 
 .btn {
-	display: none;
+  display: none;
 }
 
 .print-logo {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.guide-export .hero-images {
+  display: none;
 }
