@@ -33,14 +33,16 @@
   }
 }
 
-body.page-node-39,
-body.page-node-34,
-body.page-node-68 {
+.page-node-39,
+.page-node-34,
+.page-node-68 {
   #tablefield-0 {
     @extend .table__yes-no;
   }
 
-  td:empty {
-    background: none !important;
+  td {
+    &:empty {
+      background: none !important;
+    }
   }
 }

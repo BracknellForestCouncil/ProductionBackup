@@ -38,12 +38,14 @@
     color: $labelColour;
     border: 0;
 
-    button.close {
-      opacity: 1;
-      text-shadow: none;
-      position: relative;
-      top: -8px;
-      right: -5px;
+    button {
+      &.close {
+        opacity: 1;
+        text-shadow: none;
+        position: relative;
+        top: -8px;
+        right: -5px;
+      }
     }
 
     span[class^='icon-'] {
@@ -59,7 +61,7 @@
 
 // Alert statuses.
 @mixin alertStatus($alertColour, $alertOpacity) {
-  div.alert {
+  .alert {
     &[class^='alert-*'] {
       background: lighten($alertColour, $alertOpacity);
     }

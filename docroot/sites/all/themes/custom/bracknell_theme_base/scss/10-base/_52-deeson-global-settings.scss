@@ -27,26 +27,29 @@
 }
 
 // Remove margin/padding from gutters: http://www.bootply.com/Ae3xTyAW5D
-.row.no-pad {
-  margin-right: 0;
-  margin-left: 0;
-}
+.row {
+  &.no-pad {
+    margin-right: 0;
+    margin-left: 0;
 
-.row.no-pad > [class*='col-'] {
-  padding-right: 0;
-  padding-left: 0;
+    [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
 
-  // Address elements inside no-pad blocks
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-right: $commonSpacing / 3;
+      // Address elements inside no-pad blocks
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-right: $commonSpacing / 3;
+      }
+    }
   }
 }
+
 
 .block_no-pad {
   @media (min-width: 768px) {
@@ -90,7 +93,7 @@
 * ===============================
 */
 
-.block-30.call-to-actions {
+.call-to-actions {
   @media (max-width: 550px) {
     margin-left: -15px;
     margin-right: -15px;
