@@ -263,3 +263,69 @@ function bracknell_deploy_update_7015(&$sandbox) {
     return t('The node_display_title has been set on :count nodes.', array(':count' => $sandbox['upcount']));
   }
 }
+
+/**
+ * Insert terms for School Level vocabulary.
+ */
+function bracknell_deploy_update_7018() {
+  // Create the new school level vocab.
+  $vocabulary = new stdClass();
+  $vocabulary->name = 'School Level';
+  $vocabulary->machine_name = "school_level";
+  $vocabulary->description = t('List of school levels weighted by order preference.');
+  $vocabulary->module = 'taxonomy';
+  taxonomy_vocabulary_save($vocabulary);
+
+  // List the terms.
+  $terms = array(
+    'Primary school',
+    'Junior school',
+    'Secondary school',
+    'Special school',
+    'Pupil referral unit',
+  );
+
+  // Check if term exists in vocabulary and add it if not.
+  _bracknell_deploy_safe_add_terms($terms, $vocabulary, 'school_level', 0);
+}
+
+/**
+ * Helper function for adding terms to existing vocabularies.
+ *
+ * @param array $term_names
+ * @param string $vocabulary_machine_name
+ * @param int $weight
+ */
+function _bracknell_deploy_safe_add_terms($term_names = array(), $vocab, $vocabulary_machine_name = '', $weight = 100) {
+  //  Make sure the vocabulary exists.  This won't apply all desired options
+  //  (description, etc.) but that's okay.  Features will do that later.
+  //  For now, we just need somewhere to stuff the terms.
+  if (!isset($vocab) && !empty($vocabulary_machine_name)) {
+    $vocab = taxonomy_vocabulary_machine_name_load($vocabulary_machine_name);
+  }
+
+  // Load the vocabulary.
+  // Check if field already exists and add it if not existing.
+  if (is_object($vocab) && property_exists($vocab, 'vid') && $vocab->vid > 0) {
+    //  Load each term.
+    $i = 0;
+    foreach ($term_names as $term_name) {
+      $term = taxonomy_get_term_by_name($term_name, $vocabulary_machine_name);
+      // Check if term exists and if it doesn't exist create a new one.
+      if (count($term) == 0) {
+        $term = (object) array(
+              'name' => $term_name,
+              'vid' => $vocab->vid,
+              'weight' => $weight + $i,
+        );
+        // Save new term.
+        taxonomy_term_save($term);
+        $i++;
+      }
+    }
+    drush_log($i . ' terms added to ' . $vocabulary_machine_name . ' vocabulary', 'notice');
+  }
+  else {
+    drush_log('Vocabulary "' . $vocabulary_machine_name . '"" not found', 'error');
+  }
+}
