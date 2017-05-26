@@ -15,9 +15,8 @@
               displayButtonTextHidden = Drupal.t('More @type', {'@type': locationType}),
               displayButtonTextShown = Drupal.t('Fewer @type', {'@type': locationType});
 
-          var buttonMarkUp =
-            $('<span class="button-text">' + displayButtonTextHidden + ' </span> ' +
-            '<span class="icon theme-icon-triangle-down"></span>');
+          var buttonMarkUp = '<span class="button-text">' + displayButtonTextHidden + ' </span> ' +
+            '<span class="icon theme-icon-triangle-down"></span>';
 
           displayButton.attr({
             'aria-controls': 'parks-view',
