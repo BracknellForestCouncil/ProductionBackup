@@ -512,42 +512,19 @@ function bracknell_feature_directory_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_park_about'.
-  $field_bases['field_park_about'] = array(
+  // Exported field_base: 'field_park_content'.
+  $field_bases['field_park_content'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_park_about',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
+    'field_name' => 'field_park_content',
+    'indexes' => array(),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'paragraphs',
     'settings' => array(),
     'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_park_facilities'.
-  $field_bases['field_park_facilities'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_park_facilities',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
+    'type' => 'paragraphs',
   );
 
   // Exported field_base: 'field_park_facilities_available'.
@@ -581,25 +558,6 @@ function bracknell_feature_directory_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_park_management'.
-  $field_bases['field_park_management'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_park_management',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
   // Exported field_base: 'field_park_summary'.
   $field_bases['field_park_summary'] = array(
     'active' => 1,
@@ -607,25 +565,6 @@ function bracknell_feature_directory_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_park_summary',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_park_wildlife'.
-  $field_bases['field_park_wildlife'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_park_wildlife',
     'indexes' => array(
       'format' => array(
         0 => 'format',

@@ -115,7 +115,6 @@
 
 .page-search {
   #views-exposed-form-search-page-page {
-    @extend .col-md-8;
     position: relative;
     background: $greyExtraLight;
     border-radius: 3px;
@@ -127,10 +126,12 @@
 
       .views-exposed-widgets {
         margin-bottom: 2px;
+        display: flex;
+        padding-right: 60px;
       }
 
       .views-exposed-widget {
-        float: none;
+        flex: 1;
         display: block;
         padding: 0;
 
@@ -148,10 +149,20 @@
           display: none;
         }
 
-        &.views-widget-sort-by {
-          display: none;
+        &#edit-query-wrapper {
+          flex: 3;
+          margin-right: 5px;
+          border: 1px solid #ddd;
         }
-
+        
+        &.views-widget-sort-by {
+          border: 1px solid #ddd;
+        }
+        
+        &.views-widget-sort-order {
+          flex: 0;
+        }
+        
         &.views-submit-button {
           position: absolute;
           top: 0;
@@ -172,7 +183,6 @@
 
   .view-search-page {
 
-    @extend .col-md-8;
     padding: 0;
 
     .views-row {
@@ -181,7 +191,7 @@
 
       .views-field {
 
-        .views-field-title {
+        &.views-field-title {
           margin-bottom: 2px;
           font-size: 0.9em;
 
@@ -202,7 +212,7 @@
           }
         }
 
-        .views-field-search-api-excerpt {
+        &.views-field-search-api-excerpt {
           font-size: 0.9em;
           line-height: 1.3em;
           margin: 15px 0 5px;
@@ -213,12 +223,12 @@
           }
         }
 
-        .views-field-url {
+        &.views-field-url {
           line-height: 1.2em;
           font-size: 0.8em;
         }
 
-        .views-field-changed {
+        &.views-field-changed {
           font-size: 0.8em;
           color: $search-results-date-color;
         }

@@ -55,9 +55,15 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
     }
   }
 
-  // Output classes for parks teasers.
+  // Output classes and attributes for parks teasers.
   if ($node->type == 'location_park' && $variables['view_mode'] == 'teaser') {
     $variables['classes_array'][] = 'showcase-item';
+
+    $node_id = $variables['nid'];
+    $node_aria_reference = 'showcase-item-' . $node_id;
+    $variables['attributes_array']['role'] = 'article';
+    $variables['attributes_array']['aria-labelledby'] = $node_aria_reference;
+    $variables['title_attributes_array']['id'] = $node_aria_reference;
 
     if (empty($variables['title_attributes_array']['class']) ) {
       $variables['title_attributes_array']['class'] = 'showcase-item-title';
@@ -120,5 +126,7 @@ function bracknell_feature_directory_preprocess_views_view_unformatted(&$variabl
       $variables['classes_array'][$id] .= ' col-sm-6';
       $variables['classes_array'][$id] .= ' col-md-4';
     }
+
+    drupal_add_js(drupal_get_path('module', 'bracknell_feature_directory') . '/js/bracknell_feature_directory.js');
   }
 }

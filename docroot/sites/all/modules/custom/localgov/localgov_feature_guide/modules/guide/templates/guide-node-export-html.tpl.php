@@ -18,7 +18,7 @@
  * @ingroup themeable
  */
 ?>
-<div id="node-<?php print $node->nid; ?>" class="section-<?php print $depth; ?>">
+<div id="node-<?php print $node->nid; ?>" class="section-<?php print $depth; ?> guide-export">
   <h1 class="guide-heading"><?php print $title; ?></h1>
   <?php print $content; ?>
   <?php print $children; ?>

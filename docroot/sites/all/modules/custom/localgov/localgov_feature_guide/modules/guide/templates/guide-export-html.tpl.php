@@ -17,6 +17,7 @@
  *
  * @ingroup themeable
  */
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="<?php print $language->language; ?>" xml:lang="<?php print $language->language; ?>" dir="<?php print $dir; ?>">
@@ -24,7 +25,7 @@
     <title><?php print $title; ?></title>
     <?php print $head; ?>
     <base href="<?php print $base_url; ?>" />
-    <link type="text/css" rel="stylesheet" href="misc/print.css" />
+    <link type="text/css" rel="stylesheet" href="<?php print $path_to_bracknell_theme; ?>/css/print.css">
     <?php if ($language_rtl): ?>
       <link type="text/css" rel="stylesheet" href="misc/print-rtl.css" />
     <?php endif; ?>

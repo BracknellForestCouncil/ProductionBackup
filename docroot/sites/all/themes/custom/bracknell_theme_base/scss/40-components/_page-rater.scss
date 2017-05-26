@@ -29,7 +29,7 @@
       margin-right: 0;
     }
 
-    span[class^="icon-"]{
+    span[class^='icon-'] {
       &:before {
         background: $page-rater-icon-bg-color;
         border-radius: 50%;

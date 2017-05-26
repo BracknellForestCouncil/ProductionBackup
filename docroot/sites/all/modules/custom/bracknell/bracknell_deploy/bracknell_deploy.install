@@ -265,67 +265,32 @@ function bracknell_deploy_update_7015(&$sandbox) {
 }
 
 /**
- * Insert terms for School Level vocabulary.
+ * Delete fields from Location - Park content type.
  */
-function bracknell_deploy_update_7018() {
-  // Create the new school level vocab.
-  $vocabulary = new stdClass();
-  $vocabulary->name = 'School Level';
-  $vocabulary->machine_name = "school_level";
-  $vocabulary->description = t('List of school levels weighted by order preference.');
-  $vocabulary->module = 'taxonomy';
-  taxonomy_vocabulary_save($vocabulary);
-
-  // List the terms.
-  $terms = array(
-    'Primary school',
-    'Junior school',
-    'Secondary school',
-    'Special school',
-    'Pupil referral unit',
+function bracknell_deploy_update_7016() {
+  $field_list = array(
+    'field_park_facilities',
+    'field_park_about',
+    'field_park_management',
+    'field_park_wildlife',
   );
+  // Loop through the list of field names and EXTERMINATE!
+  foreach ($field_list as $field_name) {
+    // Retrieve all bundles for an entity.
+    $bundles = field_info_bundles($field_name);
+    foreach ($bundles as $bundle => $properties) {
 
-  // Check if term exists in vocabulary and add it if not.
-  _bracknell_deploy_safe_add_terms($terms, $vocabulary, 'school_level', 0);
-}
-
-/**
- * Helper function for adding terms to existing vocabularies.
- *
- * @param array $term_names
- * @param string $vocabulary_machine_name
- * @param int $weight
- */
-function _bracknell_deploy_safe_add_terms($term_names = array(), $vocab, $vocabulary_machine_name = '', $weight = 100) {
-  //  Make sure the vocabulary exists.  This won't apply all desired options
-  //  (description, etc.) but that's okay.  Features will do that later.
-  //  For now, we just need somewhere to stuff the terms.
-  if (!isset($vocab) && !empty($vocabulary_machine_name)) {
-    $vocab = taxonomy_vocabulary_machine_name_load($vocabulary_machine_name);
-  }
-
-  // Load the vocabulary.
-  // Check if field already exists and add it if not existing.
-  if (is_object($vocab) && property_exists($vocab, 'vid') && $vocab->vid > 0) {
-    //  Load each term.
-    $i = 0;
-    foreach ($term_names as $term_name) {
-      $term = taxonomy_get_term_by_name($term_name, $vocabulary_machine_name);
-      // Check if term exists and if it doesn't exist create a new one.
-      if (count($term) == 0) {
-        $term = (object) array(
-              'name' => $term_name,
-              'vid' => $vocab->vid,
-              'weight' => $weight + $i,
-        );
-        // Save new term.
-        taxonomy_term_save($term);
-        $i++;
+      // Retrieve all the fields for a given bundle.
+      $instances = field_info_instances($field_name, $bundle);
+      foreach ($instances as $instance) {
+        field_delete_instance($instance, TRUE);
+        field_purge_batch(1);
       }
     }
-    drush_log($i . ' terms added to ' . $vocabulary_machine_name . ' vocabulary', 'notice');
-  }
-  else {
-    drush_log('Vocabulary "' . $vocabulary_machine_name . '"" not found', 'error');
+
+    if (field_read_field($field_name)) {
+      field_delete_field($field_name);
+      field_purge_batch(1);
+    }
   }
 }

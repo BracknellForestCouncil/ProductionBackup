@@ -27,7 +27,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="<?php print $classes; ?>">
+<div class="<?php print $classes; ?>" data-js="showcase-reveal" data-title="Parks">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
@@ -56,9 +56,10 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="showcase">
-            <div class="row">
+            <div class="row" id="parks-view">
               <?php print $rows; ?>
             </div>
+            <div class="showcase-footer"></div>
           </div>
         </div>
       </div>

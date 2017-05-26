@@ -28,7 +28,7 @@ function bracknell_feature_search_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_attachments_extract_using';
-  $strongarm->value = 'solr';
+  $strongarm->value = 'tika';
   $export['search_api_attachments_extract_using'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -56,14 +56,14 @@ function bracknell_feature_search_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_attachments_tika_jar';
-  $strongarm->value = 'tika-app-1.4.jar';
+  $strongarm->value = 'tika-app-1.14.jar';
   $export['search_api_attachments_tika_jar'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_attachments_tika_path';
-  $strongarm->value = '';
+  $strongarm->value = '/var/tika/';
   $export['search_api_attachments_tika_path'] = $strongarm;
 
   $strongarm = new stdClass();

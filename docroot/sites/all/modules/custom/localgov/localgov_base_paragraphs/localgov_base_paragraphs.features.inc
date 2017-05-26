@@ -134,6 +134,16 @@ function localgov_base_paragraphs_paragraphs_info() {
       'bundle' => 'image',
       'locked' => '1',
     ),
+    'key_contact' => array(
+      'name' => 'Key Contact',
+      'bundle' => 'key_contact',
+      'locked' => '1',
+    ),
+    'key_contact_item' => array(
+      'name' => 'Key Contact Item',
+      'bundle' => 'key_contact_item',
+      'locked' => '1',
+    ),
     'key_fact' => array(
       'name' => 'Key Fact',
       'bundle' => 'key_fact',

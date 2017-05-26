@@ -5154,7 +5154,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5243,7 +5243,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5331,7 +5331,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5372,7 +5372,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -5456,7 +5456,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5500,7 +5500,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -5538,7 +5538,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -5565,8 +5565,8 @@ function bracknell_feature_directory_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location_park-field_park_about'.
-  $field_instances['node-location_park-field_park_about'] = array(
+  // Exported field_instance: 'node-location_park-field_park_content'.
+  $field_instances['node-location_park-field_park_content'] = array(
     'bundle' => 'location_park',
     'default_value' => NULL,
     'deleted' => 0,
@@ -5574,87 +5574,104 @@ function bracknell_feature_directory_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'module' => 'paragraphs',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'paragraphs_view',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_park_about',
+    'field_name' => 'field_park_content',
     'is_property' => 0,
-    'label' => 'About the Park',
+    'label' => 'Park Content',
     'required' => 0,
     'settings' => array(
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'accordion' => -1,
+        'accordion_pane' => -1,
+        'basic' => -1,
+        'blockquote' => -1,
+        'carousel' => -1,
+        'carousel_slide' => -1,
+        'category_showcase' => -1,
+        'category_showcase_item' => -1,
+        'document' => -1,
+        'featured_box' => -1,
+        'grid_display' => -1,
+        'grid_display_item' => -1,
+        'highlighted' => -1,
+        'image' => -1,
+        'key_contact' => -1,
+        'key_contact_item' => -1,
+        'key_fact' => -1,
+        'key_fact_item' => -1,
+        'layout_1_col_12' => 'layout_1_col_12',
+        'layout_2_col_4_8' => 'layout_2_col_4_8',
+        'layout_2_col_6_6' => 'layout_2_col_6_6',
+        'layout_2_col_8_4' => 'layout_2_col_8_4',
+        'layout_3_col_3_3_6' => 'layout_3_col_3_3_6',
+        'layout_3_col_4_4_4' => 'layout_3_col_4_4_4',
+        'layout_3_col_6_3_3' => 'layout_3_col_6_3_3',
+        'link' => -1,
+        'promotional_area' => -1,
+        'tab_panel' => -1,
+        'table' => -1,
+        'tabs' => -1,
+        'video' => -1,
       ),
-      'text_processing' => 1,
+      'bundle_weights' => array(
+        'accordion' => 2,
+        'accordion_pane' => 3,
+        'basic' => 4,
+        'blockquote' => 5,
+        'carousel' => 6,
+        'carousel_slide' => 7,
+        'category_showcase' => 8,
+        'category_showcase_item' => 9,
+        'document' => 10,
+        'featured_box' => 11,
+        'grid_display' => 12,
+        'grid_display_item' => 13,
+        'highlighted' => 14,
+        'image' => 15,
+        'key_contact' => 16,
+        'key_contact_item' => 17,
+        'key_fact' => 18,
+        'key_fact_item' => 19,
+        'layout_1_col_12' => 20,
+        'layout_2_col_4_8' => 21,
+        'layout_2_col_6_6' => 22,
+        'layout_2_col_8_4' => 23,
+        'layout_3_col_3_3_6' => 24,
+        'layout_3_col_4_4_4' => 25,
+        'layout_3_col_6_3_3' => 26,
+        'link' => 27,
+        'promotional_area' => 28,
+        'tab_panel' => 31,
+        'table' => 29,
+        'tabs' => 30,
+        'video' => 32,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 8,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-location_park-field_park_facilities'.
-  $field_instances['node-location_park-field_park_facilities'] = array(
-    'bundle' => 'location_park',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_park_facilities',
-    'is_property' => 0,
-    'label' => 'Facilities',
-    'required' => 0,
-    'settings' => array(
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 7,
+      'active' => 0,
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'type' => 'paragraphs_embed',
+      'weight' => 22,
     ),
     'workbench_access_field' => 0,
   );
@@ -5669,10 +5686,9 @@ function bracknell_feature_directory_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -5699,65 +5715,18 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-location_park-field_park_management'.
-  $field_instances['node-location_park-field_park_management'] = array(
-    'bundle' => 'location_park',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_park_management',
-    'is_property' => 0,
-    'label' => 'Management of the Park',
-    'required' => 0,
-    'settings' => array(
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 9,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-location_park-field_park_summary'.
   $field_instances['node-location_park-field_park_summary'] = array(
     'bundle' => 'location_park',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Summaries are only displayed in teasers.',
+    'description' => 'Summaries are only displayed in teasers e.g. for the parks landing page.',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -5793,53 +5762,6 @@ function bracknell_feature_directory_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 3,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-location_park-field_park_wildlife'.
-  $field_instances['node-location_park-field_park_wildlife'] = array(
-    'bundle' => 'location_park',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_park_wildlife',
-    'is_property' => 0,
-    'label' => 'Wildlife',
-    'required' => 0,
-    'settings' => array(
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -7271,7 +7193,6 @@ function bracknell_feature_directory_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('About the Park');
   t('Accessibility information');
   t('Activity listing (link)');
   t('Activity listing (table)');
@@ -7294,8 +7215,8 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Level');
   t('Library manager');
   t('Location');
-  t('Management of the Park');
   t('Opening hours');
+  t('Park Content');
   t('Parking');
   t('Payment Options');
   t('Phone');
@@ -7306,14 +7227,13 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Select the team responsible for editing/moderating this content.');
   t('Show Directions');
   t('Stock facilities');
-  t('Summaries are only displayed in teasers.');
+  t('Summaries are only displayed in teasers e.g. for the parks landing page.');
   t('Summary');
   t('Tick to display directions for this location.');
   t('Type of equipment');
   t('Types of Spaces');
   t('Website');
   t('What facilities are available?');
-  t('Wildlife');
 
   return $field_instances;
 }
