@@ -50,6 +50,10 @@
 .key-contact-item-image {
   background-color: $key-contact-item-image-bg-color;
   width: 100%;
+
+  .img-responsive {
+    margin-bottom: 0;
+  }
 }
 
 .key-contact-item-title {

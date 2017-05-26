@@ -5,6 +5,10 @@
   @include clearfix();
   margin-bottom: 30px;
 
+  .img-responsive {
+    margin-bottom: 0;
+  }
+
   @include breakpoint($screen-md) {
     .promotional-area-content {
       padding-right: 0;
