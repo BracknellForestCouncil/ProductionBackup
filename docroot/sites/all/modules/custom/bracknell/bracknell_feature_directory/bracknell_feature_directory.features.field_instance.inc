@@ -7119,7 +7119,7 @@ function bracknell_feature_directory_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_school_level',
     'is_property' => 0,
-    'label' => 'Level',
+    'label' => 'Level (to delete)',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -7259,6 +7259,7 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Headteacher');
   t('Image');
   t('Level');
+  t('Level (to delete)');
   t('Library manager');
   t('Location');
   t('Opening hours');
