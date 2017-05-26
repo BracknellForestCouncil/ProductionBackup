@@ -294,3 +294,10 @@ function bracknell_deploy_update_7016() {
     }
   }
 }
+
+/**
+ * Enable the Metatag module for SEO and sharing on social meeja.
+ */
+function bracknell_deploy_update_7017(&$sandbox) {
+  module_enable(array('path_redirect_import'));
+}
