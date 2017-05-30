@@ -116,9 +116,6 @@
     <div class="row">
       <div class="col-sm-12 col-md-8">
         <?php print render($page['content']); ?>
-        <?php if (!empty($page['page_footer'])): ?>
-          <?php print render($page['page_footer']); ?>
-        <?php endif; ?>
       </div><!-- end .col -->
 
       <?php if (!empty($page['sidebar_first'])): ?>
@@ -133,6 +130,11 @@
         </aside>  <!-- /#sidebar-second -->
       <?php endif; ?>
     </div><!-- end .row-->
+    <?php if (!empty($page['page_footer'])): ?>
+      <div class="row">
+        <?php print render($page['page_footer']); ?>
+      </div>
+    <?php endif; ?>
   </div><!-- end .container -->
 </main>
 
