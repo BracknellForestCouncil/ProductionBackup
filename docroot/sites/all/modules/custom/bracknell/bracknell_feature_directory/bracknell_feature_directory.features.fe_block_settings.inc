@@ -58,7 +58,7 @@ function bracknell_feature_directory_default_fe_block_settings() {
     'delta' => 'directory_image-block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'park/*',
     'roles' => array(),
     'themes' => array(
       'bracknell_theme_base' => array(
