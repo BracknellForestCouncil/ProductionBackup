@@ -30,6 +30,11 @@
 '10-base/table/table',
 '10-base/table/custom-table',
 '10-base/forms';
+'10-base/images';
+
+// Global.
+@import
+'30-global/forms';
 
 // Components.
 @import
@@ -75,4 +80,6 @@
 '40-components/grid-display',
 '40-components/featured-box',
 '40-components/filters',
-'40-components/key-contact';
+'40-components/key-contact',
+'40-components/wtu';
+

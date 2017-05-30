@@ -27,6 +27,10 @@
 
   .slogan-image {
     min-width: 120px;
+
+    .img-responsive {
+      margin-bottom: 0;
+    }
   }
 
   .slogan-text {
