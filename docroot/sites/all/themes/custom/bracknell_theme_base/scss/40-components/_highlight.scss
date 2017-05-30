@@ -1,5 +1,10 @@
 // Highlight.
 
+.highlight-content {
+  // Just in case...
+  position: relative;
+}
+
 .highlight {
   background-color: $highlight-bg-color;
   margin-bottom: 20px;
