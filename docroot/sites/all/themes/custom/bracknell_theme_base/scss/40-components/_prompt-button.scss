@@ -23,12 +23,14 @@
     margin-right: 0;
   }
 
-  span.prompt-text {
-    display: inline-block;
-    padding: 10px 15px 0;
-    color: $button-prompt-text-color;
-    width: 75%;
-    white-space: nowrap;
+  span {
+    &.prompt-text {
+      display: inline-block;
+      padding: 10px 15px 0;
+      color: $button-prompt-text-color;
+      width: 75%;
+      white-space: nowrap;
+    }
   }
 
   span[class^='icon-'] {

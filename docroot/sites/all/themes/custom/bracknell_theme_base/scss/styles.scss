@@ -28,11 +28,9 @@
 '10-base/buttons',
 '10-base/helpers',
 '10-base/table/table',
-'10-base/table/custom-table';
-
-// Global.
-@import
-'30-global/forms';
+'10-base/table/custom-table',
+'10-base/images',
+'10-base/forms';
 
 // Components.
 @import
@@ -78,4 +76,6 @@
 '40-components/grid-display',
 '40-components/featured-box',
 '40-components/filters',
-'40-components/key-contact';
+'40-components/key-contact',
+'40-components/wtu';
+

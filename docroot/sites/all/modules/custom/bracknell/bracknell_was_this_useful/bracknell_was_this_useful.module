@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * The main module file that provides Was This Useful functionality.
+ *
+ * Functions start with: bracknell_was_this_useful
+ */
+
+/**
+ * Implements hook_init().
+ */
+function bracknell_was_this_useful_init() {
+  form_load_include($form_state, 'inc', 'bracknell_was_this_useful', 'bracknell_was_this_useful_form');
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function bracknell_was_this_useful_block_info() {
+  $blocks['was_this_useful'] = array(
+    'info' => t('Bracknell: Was this useful form'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    'region' => 'page_footer',
+    'status' => TRUE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function bracknell_was_this_useful_block_view($delta = '') {
+  $block = array();
+  if ($delta === 'was_this_useful') {
+    $block['subject'] = t('Was this page useful?');
+    $block['content'] = drupal_get_form('bracknell_was_this_useful_form');
+  }
+
+  return $block;
+}
+
+/**
+ * Implements hook_preprocess_block();
+ */
+function bracknell_was_this_useful_preprocess_block(&$variables) {
+  $block_id = $variables['block']->module . '-' . $variables['block']->delta;
+
+  if ($block_id == 'bracknell_was_this_useful-was_this_useful') {
+    $variables['classes_array'][] = 'wtu';
+    $variables['classes_array'][] = 'col-md-3';
+    $variables['classes_array'][] = 'col-md-offset-9';
+    $variables['title_attributes_array']['class'][] = 'wtu-title';
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function bracknell_was_this_useful_mail($key, &$message, $params) {
+  // Replace the to address parameter.
+  $message['to'] = 'digital.services@bracknell-forest.gov.uk';
+
+  if (isset($params['subject'])) {
+    $message['subject'] = $params['subject'];
+  }
+  if (isset($params['body'])) {
+    $message['body'][] = $params['body'];
+  }
+}

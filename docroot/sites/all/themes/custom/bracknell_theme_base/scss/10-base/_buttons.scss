@@ -18,8 +18,8 @@
     color: $button-text-focus-color;
   }
 
-  .btn:active,
-  .btn.active {
+  &:active,
+  &.active {
     box-shadow: none !important;
   }
 
@@ -84,7 +84,7 @@
 
   &.button-prev,
   &.button-next {
-    span[class^="icon-"] {
+    span[class^='icon-'] {
       font-size: $font-size-17;
     }
   }

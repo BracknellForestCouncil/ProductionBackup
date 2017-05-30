@@ -77,8 +77,10 @@
 #search-toggle {
   @media (max-width: 768px) {
 
-    &.collapse.in {
-      display: block !important;
+    &.collapse {
+      &.in {
+        display: block !important;
+      }
     }
   }
 }
