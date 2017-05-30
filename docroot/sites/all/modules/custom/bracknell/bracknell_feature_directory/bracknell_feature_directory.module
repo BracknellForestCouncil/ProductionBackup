@@ -106,10 +106,13 @@ function bracknell_feature_directory_views_post_execute(&$view) {
       $address_details = quick_return_field($node, 'field_address_details');
 
       // Check if the node has a directory entry.
-      if (!empty($directory_entry[0]['target_id']) && !empty($address_details[0]['value'])) {
-        // Change the view mode based on what address format the content editor
-        // chooses.
-        if ($address_details[0]['value'] == 'address_with_phone') {
+      if (!empty($directory_entry[0]['target_id'])) {
+        // Change the view mode, or hide the results altogether, based on the
+        // address details select field.
+        if (empty($address_details[0]['value'])) {
+          $view->result = array();
+        }
+        elseif ($address_details[0]['value'] == 'address_with_phone') {
           $view->style_plugin->row_plugin->options['view_mode'] = 'address_with_phone';
         }
       }
