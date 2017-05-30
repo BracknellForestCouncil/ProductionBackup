@@ -332,15 +332,11 @@ function bracknell_deploy_update_7018() {
 
 /**
  * Helper function for adding terms to existing vocabularies.
- *
- * @param array $term_names
- * @param string $vocabulary_machine_name
- * @param int $weight
  */
 function _bracknell_deploy_safe_add_terms($term_names = array(), $vocab, $vocabulary_machine_name = '', $weight = 100) {
-  //  Make sure the vocabulary exists.  This won't apply all desired options
-  //  (description, etc.) but that's okay.  Features will do that later.
-  //  For now, we just need somewhere to stuff the terms.
+  // Make sure the vocabulary exists.  This won't apply all desired options
+  // (description, etc.) but that's okay.  Features will do that later.
+  // For now, we just need somewhere to stuff the terms.
   if (!isset($vocab) && !empty($vocabulary_machine_name)) {
     $vocab = taxonomy_vocabulary_machine_name_load($vocabulary_machine_name);
   }
@@ -348,16 +344,16 @@ function _bracknell_deploy_safe_add_terms($term_names = array(), $vocab, $vocabu
   // Load the vocabulary.
   // Check if field already exists and add it if not existing.
   if (is_object($vocab) && property_exists($vocab, 'vid') && $vocab->vid > 0) {
-    //  Load each term.
+    // Load each term.
     $i = 0;
     foreach ($term_names as $term_name) {
       $term = taxonomy_get_term_by_name($term_name, $vocabulary_machine_name);
       // Check if term exists and if it doesn't exist create a new one.
       if (count($term) == 0) {
         $term = (object) array(
-              'name' => $term_name,
-              'vid' => $vocab->vid,
-              'weight' => $weight + $i,
+          'name' => $term_name,
+          'vid' => $vocab->vid,
+          'weight' => $weight + $i,
         );
         // Save new term.
         taxonomy_term_save($term);
@@ -370,4 +366,3 @@ function _bracknell_deploy_safe_add_terms($term_names = array(), $vocab, $vocabu
     drush_log('Vocabulary "' . $vocabulary_machine_name . '"" not found', 'error');
   }
 }
-
