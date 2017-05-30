@@ -46,7 +46,8 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
       $variables['map'] = !empty($map) ? $map : '<p>' . t('An overview map is currently unavailable.') . '</p>';
 
       // Display the directions, if a content editor chooses to show them.
-      $show_directions = quick_return_field($node, 'field_location_directions');
+      $field_location_directions = quick_return_field($node, 'field_location_directions');
+      $show_directions = $field_location_directions && $field_location_directions[0]['value'];
 
       if ($show_directions) {
         $display_directions = entity_view('directory_entry', $location_entity, 'directions');
