@@ -3,7 +3,7 @@
 */
 
 // Full width block elements - bg colour.
-@mixin fullwidth-bg($bg-colour){
+@mixin fullwidth-bg($bg-colour) {
   background: $bg-colour;
 }
 
@@ -15,7 +15,7 @@
 }
 
 // Extra side padding.
-@mixin paddingLR($padding){
+@mixin paddingLR($padding) {
   padding-left: $padding;
   padding-right: $padding;
 }
@@ -38,15 +38,17 @@
     color: $labelColour;
     border: 0;
 
-    button.close {
-      opacity: 1;
-      text-shadow: none;
-      position: relative;
-      top: -8px;
-      right: -5px;
+    button {
+      &.close {
+        opacity: 1;
+        text-shadow: none;
+        position: relative;
+        top: -8px;
+        right: -5px;
+      }
     }
 
-    span[class^="icon-"] {
+    span[class^='icon-'] {
       color: $closeIconColour;
       font-size: $font-size-01;
 
@@ -58,9 +60,9 @@
 }
 
 // Alert statuses.
-@mixin alertStatus($alertColour, $alertOpacity){
-  div.alert {
-    &[class^="alert-*"] {
+@mixin alertStatus($alertColour, $alertOpacity) {
+  .alert {
+    &[class^='alert-*'] {
       background: lighten($alertColour, $alertOpacity);
     }
   }

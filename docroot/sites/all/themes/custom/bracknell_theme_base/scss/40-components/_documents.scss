@@ -10,8 +10,10 @@
   }
 
   .table {
-    td:nth-child(2) {
-      white-space: nowrap;
+    td {
+      &:nth-child(2) {
+        white-space: nowrap;
+      }
     }
   }
 }

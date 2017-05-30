@@ -24,7 +24,7 @@ $themes: (
 //
 @mixin applyColour($primary_props: 'background-color', $secondary_props: ()) {
   @each $class, $colours in $themes {
-    body.theme-#{$class} & {
+    .theme-#{$class} & {
       @each $attribute in $primary_props {
         #{$attribute}: nth($colours, 1);
       }

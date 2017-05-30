@@ -2,16 +2,19 @@
   padding: 30px;
   text-align: center;
   border-bottom: 1px solid;
+
   &.info {
     background: lighten($alert-info-bg-color, 60%);
     color: lighten($alert-info-bg-color, 0%);
     border-color: lighten($alert-info-bg-color, 55%);
   }
+
   &.warning {
     background: lighten($alert-warning-bg-color, 0%);
     color: darken($alert-warning-bg-color, 70%);
     border-color: darken($alert-warning-bg-color, 5%);
   }
+
   &.critical {
     background: lighten($alert-danger-bg-color, 40%);
     color: darken($alert-danger-bg-color, 20%);
