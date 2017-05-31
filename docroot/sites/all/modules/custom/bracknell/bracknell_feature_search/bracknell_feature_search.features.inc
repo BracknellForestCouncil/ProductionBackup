@@ -232,6 +232,7 @@ function bracknell_feature_search_default_search_api_index() {
         "promote" : { "type" : "boolean" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "search_api_language" : { "type" : "string" },
+        "status" : { "type" : "integer" },
         "sticky" : { "type" : "boolean" },
         "type" : { "type" : "string" }
       }
@@ -363,6 +364,12 @@ function bracknell_feature_search_default_search_api_server() {
           "nid" : {
             "table" : "search_api_db_default_node_index",
             "column" : "nid",
+            "type" : "integer",
+            "boost" : "1.0"
+          },
+          "status" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "status",
             "type" : "integer",
             "boost" : "1.0"
           }

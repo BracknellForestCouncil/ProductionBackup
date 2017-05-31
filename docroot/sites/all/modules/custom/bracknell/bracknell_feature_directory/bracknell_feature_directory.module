@@ -35,7 +35,7 @@ function bracknell_feature_directory_preprocess_node(&$variables) {
     array_unshift($variables['theme_hook_suggestions'], 'node__content_type_groups__' . $content_type_group);
   }
 
-  if ($content_type_group == 'location' && !empty($variables['field_directory_entry'])) {
+  if ($content_type_group == 'location' && isset($variables['field_directory_entry']) && !empty($variables['field_directory_entry'][0]['target_id'])) {
     $location_id = $variables['field_directory_entry'][0]['target_id'];
 
     if (!empty($location_id)) {

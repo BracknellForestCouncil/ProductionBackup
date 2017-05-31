@@ -121,9 +121,9 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
   if ($variables['elements']['#entity_type'] == 'paragraphs_item' && $variables['elements']['#bundle'] == 'grid_display') {
     $variables['classes_array'][] = 'grid-display';
 
-    $grid_display_title_text = $variables['field_grid_display_title'][0]['value'];
-    $grid_display_title_level = $variables['field_grid_display_title_level'][0]['value'];
-    $grid_display_theme = $variables['field_grid_display_theme'][0]['value'];
+    $grid_display_title_text = isset($variables['field_grid_display_title']) ? $variables['field_grid_display_title'][0]['value'] : '';
+    $grid_display_title_level = isset($variables['field_grid_display_title_level']) ? $variables['field_grid_display_title_level'][0]['value'] : '';
+    $grid_display_theme = isset($variables['field_grid_display_theme']) ? $variables['field_grid_display_theme'][0]['value'] : '';
 
     // Add heading level and heading text as variables so we can provide better accessibility support.
     if (!empty($grid_display_title_text) && !empty($grid_display_title_level)) {
