@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file 
+ * @file
  * bracknell_alerts.module
  */
 
@@ -66,7 +66,7 @@ function bracknell_alerts_block_view($delta = '') {
       return array(
         'subject' => '<none>',
         'content' => array(
-          '#markup' => variable_get('bracknell_alerts_global_text', ''),
+          '#markup' => variable_get('bracknell_alerts_global_text', '')['value'],
         ),
       );
     default:

@@ -32,10 +32,12 @@ function bracknell_alerts_admin_settings_form($form, &$form_state) {
     ),
     '#default_value' => variable_get('bracknell_alerts_global_severity', 'info'),
   );
+  $default_text = variable_get('bracknell_alerts_global_text', FALSE);
   $form['global']['text'] = array(
-    '#type' => 'textarea',
+    '#type' => 'text_format',
+    '#base_type' => 'textarea',
     '#title' => t('Alert text'),
-    '#default_value' => variable_get('bracknell_alerts_global_text', ''),
+    '#default_value' => $default_text ? $default_text['value'] : '',
   );
   $form['submit'] = array(
     '#type' => 'submit',
