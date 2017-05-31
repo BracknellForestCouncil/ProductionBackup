@@ -60,13 +60,15 @@ function bracknell_alerts_block_info() {
 function bracknell_alerts_block_view($delta = '') {
   switch ($delta) {
     case 'bracknell_alerts_global_alert':
-      if (!variable_get('bracknell_alerts_global_enabled', 0)) {
+      $is_enabled = variable_get('bracknell_alerts_global_enabled', FALSE);
+      $default_text = variable_get('bracknell_alerts_global_text', FALSE);
+      if (!$is_enabled || !$default_text) {
         return array();
       }
       return array(
         'subject' => '<none>',
         'content' => array(
-          '#markup' => variable_get('bracknell_alerts_global_text', '')['value'],
+          '#markup' => $default_text['value'],
         ),
       );
     default:
