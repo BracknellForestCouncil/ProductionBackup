@@ -6862,6 +6862,52 @@ function bracknell_feature_directory_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-location_school-field_level'.
+  $field_instances['node-location_school-field_level'] = array(
+    'bundle' => 'location_school',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_level',
+    'is_property' => 0,
+    'label' => 'Level',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 7,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-location_school-field_location_directions'.
   $field_instances['node-location_school-field_location_directions'] = array(
     'bundle' => 'location_school',
@@ -7073,7 +7119,7 @@ function bracknell_feature_directory_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_school_level',
     'is_property' => 0,
-    'label' => 'Level',
+    'label' => 'Level (to delete)',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -7213,6 +7259,7 @@ function bracknell_feature_directory_field_default_field_instances() {
   t('Headteacher');
   t('Image');
   t('Level');
+  t('Level (to delete)');
   t('Library manager');
   t('Location');
   t('Opening hours');

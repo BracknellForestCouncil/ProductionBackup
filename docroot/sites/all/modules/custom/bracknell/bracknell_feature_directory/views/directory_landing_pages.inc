@@ -27,6 +27,18 @@ $handler->display->display_options['pager']['options']['offset'] = '0';
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+/* Relationship: Content: Taxonomy terms on node */
+$handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+$handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+$handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+$handler->display->display_options['relationships']['term_node_tid']['label'] = 'level';
+$handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+  'school_level' => 'school_level',
+  'category' => 0,
+  'directory_type' => 0,
+  'tags' => 0,
+  'moderation' => 0,
+);
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -90,8 +102,8 @@ $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['style_options']['grouping'] = array(
   0 => array(
-    'field' => 'field_school_level',
-    'rendered' => 0,
+    'field' => 'field_level',
+    'rendered' => 1,
     'rendered_strip' => 0,
   ),
 );
@@ -100,16 +112,18 @@ $handler->display->display_options['defaults']['row_plugin'] = FALSE;
 $handler->display->display_options['row_plugin'] = 'fields';
 $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
 $handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['relationships'] = FALSE;
 $handler->display->display_options['defaults']['fields'] = FALSE;
 /* Field: Content: Level */
-$handler->display->display_options['fields']['field_school_level']['id'] = 'field_school_level';
-$handler->display->display_options['fields']['field_school_level']['table'] = 'field_data_field_school_level';
-$handler->display->display_options['fields']['field_school_level']['field'] = 'field_school_level';
-$handler->display->display_options['fields']['field_school_level']['label'] = '';
-$handler->display->display_options['fields']['field_school_level']['exclude'] = TRUE;
-$handler->display->display_options['fields']['field_school_level']['alter']['alter_text'] = TRUE;
-$handler->display->display_options['fields']['field_school_level']['alter']['text'] = '[field_school_level]s';
-$handler->display->display_options['fields']['field_school_level']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_level']['id'] = 'field_level';
+$handler->display->display_options['fields']['field_level']['table'] = 'field_data_field_level';
+$handler->display->display_options['fields']['field_level']['field'] = 'field_level';
+$handler->display->display_options['fields']['field_level']['label'] = '';
+$handler->display->display_options['fields']['field_level']['exclude'] = TRUE;
+$handler->display->display_options['fields']['field_level']['element_label_colon'] = FALSE;
+$handler->display->display_options['fields']['field_level']['settings'] = array(
+  'link' => 0,
+);
 /* Field: Content: Title */
 $handler->display->display_options['fields']['title']['id'] = 'title';
 $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -118,10 +132,10 @@ $handler->display->display_options['fields']['title']['label'] = '';
 $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
 $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
 $handler->display->display_options['defaults']['sorts'] = FALSE;
-/* Sort criterion: Content: Level (field_school_level) */
-$handler->display->display_options['sorts']['field_school_level_value']['id'] = 'field_school_level_value';
-$handler->display->display_options['sorts']['field_school_level_value']['table'] = 'field_data_field_school_level';
-$handler->display->display_options['sorts']['field_school_level_value']['field'] = 'field_school_level_value';
+/* Sort criterion: Content: Level (field_level) */
+$handler->display->display_options['sorts']['field_level_target_id']['id'] = 'field_level_target_id';
+$handler->display->display_options['sorts']['field_level_target_id']['table'] = 'field_data_field_level';
+$handler->display->display_options['sorts']['field_level_target_id']['field'] = 'field_level_target_id';
 /* Sort criterion: Content: Title */
 $handler->display->display_options['sorts']['title']['id'] = 'title';
 $handler->display->display_options['sorts']['title']['table'] = 'node';
