@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * localgov_base_editor.strongarm.inc
@@ -43,8 +44,9 @@ function localgov_base_editor_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'media_wysiwyg_wysiwyg_allowed_types';
   $strongarm->value = array(
-    0 => 'localgov_image',
-    1 => 'localgov_image_header',
+    0 => 'localgov_document',
+    1 => 'localgov_image',
+    2 => 'localgov_image_header',
   );
   $export['media_wysiwyg_wysiwyg_allowed_types'] = $strongarm;
 
