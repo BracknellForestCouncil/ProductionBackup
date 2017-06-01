@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * bracknell_feature_search.strongarm.inc
@@ -151,6 +152,18 @@ function bracknell_feature_search_strongarm() {
     'article' => TRUE,
     'promo' => TRUE,
     'smallprint' => TRUE,
+    'location_car_park' => TRUE,
+    'landing_page' => TRUE,
+    'location_community' => TRUE,
+    'location_leisure' => TRUE,
+    'location_library' => TRUE,
+    'location_main' => TRUE,
+    'location_park' => TRUE,
+    'location_playground' => TRUE,
+    'location_school' => TRUE,
+    'location_council' => TRUE,
+    'testimonial' => TRUE,
+    'promotional_page' => TRUE,
   );
   $export['search_api_exclude_types'] = $strongarm;
 
