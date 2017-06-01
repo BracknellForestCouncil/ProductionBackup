@@ -14,6 +14,7 @@ dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = geocoder
 dependencies[] = geofield
+dependencies[] = geofield_gmap
 dependencies[] = geofield_map
 dependencies[] = list
 dependencies[] = localgov_base_file

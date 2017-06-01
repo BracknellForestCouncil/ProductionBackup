@@ -405,7 +405,7 @@ function bracknell_feature_directory_field_default_field_instances() {
   // 'directory_entry-directory_entry-field_directory_location'.
   $field_instances['directory_entry-directory_entry-field_directory_location'] = array(
     'bundle' => 'directory_entry',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -517,30 +517,15 @@ function bracknell_feature_directory_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'geocoder',
+      'module' => 'geofield_gmap',
       'settings' => array(
-        'delta_handling' => 'm_to_s',
-        'geocoder_field' => 'field_directory_address',
-        'geocoder_handler' => 'google',
-        'handler_settings' => array(
-          'google' => array(
-            'all_results' => 0,
-            'biasing' => array(
-              'bounds' => '',
-              'components' => '',
-              'region' => '',
-            ),
-            'geometry_type' => 'point',
-            'reject_results' => array(
-              'APPROXIMATE' => 0,
-              'GEOMETRIC_CENTER' => 0,
-              'RANGE_INTERPOLATED' => 0,
-              'ROOFTOP' => 0,
-            ),
-          ),
-        ),
+        'click_to_place_marker' => 0,
+        'confirm_center_marker' => 0,
+        'html5_geolocation' => 0,
+        'map_type' => 'ROADMAP',
+        'zoom_level' => 6,
       ),
-      'type' => 'geocoder',
+      'type' => 'geofield_gmap',
       'weight' => 1,
     ),
     'workbench_access_field' => 0,
