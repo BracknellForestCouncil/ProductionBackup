@@ -14,6 +14,13 @@
     }
   }
 
+  .paragraphs-items-field-content {
+    ul,
+    ol {
+      padding-left: 20px;
+    }
+  }
+
   // Ordered list.
   ol {
     margin-bottom: $commonSpacing;
