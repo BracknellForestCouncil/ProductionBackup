@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * bracknell_feature_directory.features.field_base.inc
@@ -29,54 +30,19 @@ function bracknell_feature_directory_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_activity_listing_link'.
-  $field_bases['field_activity_listing_link'] = array(
+  // Exported field_base: 'field_activity_listing'.
+  $field_bases['field_activity_listing'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_activity_listing_link',
+    'field_name' => 'field_activity_listing',
     'indexes' => array(),
     'locked' => 0,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
+    'module' => 'paragraphs',
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'link_field',
-  );
-
-  // Exported field_base: 'field_activity_listing_table'.
-  $field_bases['field_activity_listing_table'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_activity_listing_table',
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'tablefield',
-    'settings' => array(
-      'cell_processing' => 1,
-      'export' => 0,
-      'hide_headers' => 0,
-      'lock_values' => 0,
-      'restrict_rebuild' => 0,
-    ),
-    'translatable' => 0,
-    'type' => 'tablefield',
+    'type' => 'paragraphs',
   );
 
   // Exported field_base: 'field_address_details'.

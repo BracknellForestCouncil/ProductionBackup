@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * bracknell_feature_directory.features.field_instance.inc
@@ -1746,7 +1747,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -1780,14 +1781,13 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance:
-  // 'node-location_community-field_activity_listing_link'.
-  $field_instances['node-location_community-field_activity_listing_link'] = array(
+  // Exported field_instance: 'node-location_community-field_activity_listing'.
+  $field_instances['node-location_community-field_activity_listing'] = array(
     'bundle' => 'location_community',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1795,149 +1795,103 @@ function bracknell_feature_directory_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'none',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_activity_listing_link',
-    'is_property' => 0,
-    'label' => 'Activity listing (link)',
-    'required' => 0,
-    'settings' => array(
-      'absolute_url' => 1,
-      'attributes' => array(
-        'class' => '',
-        'configurable_class' => 0,
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'rel_remove' => 'default',
-      'title' => 'none',
-      'title_label_use_field_label' => 0,
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-      'user_register_form' => FALSE,
-      'validate_url' => 1,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 7,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance:
-  // 'node-location_community-field_activity_listing_table'.
-  $field_instances['node-location_community-field_activity_listing_table'] = array(
-    'bundle' => 'location_community',
-    'default_value' => array(
-      0 => array(
-        'tablefield' => array(
-          'caption' => '',
-          'cell_0_0' => '',
-          'cell_0_1' => '',
-          'cell_0_2' => '',
-          'cell_0_3' => '',
-          'cell_0_4' => '',
-          'cell_0_weight' => 1,
-          'cell_1_0' => '',
-          'cell_1_1' => '',
-          'cell_1_2' => '',
-          'cell_1_3' => '',
-          'cell_1_4' => '',
-          'cell_1_weight' => 2,
-          'cell_2_0' => '',
-          'cell_2_1' => '',
-          'cell_2_2' => '',
-          'cell_2_3' => '',
-          'cell_2_4' => '',
-          'cell_2_weight' => 3,
-          'cell_3_0' => '',
-          'cell_3_1' => '',
-          'cell_3_2' => '',
-          'cell_3_3' => '',
-          'cell_3_4' => '',
-          'cell_3_weight' => 4,
-          'cell_4_0' => '',
-          'cell_4_1' => '',
-          'cell_4_2' => '',
-          'cell_4_3' => '',
-          'cell_4_4' => '',
-          'cell_4_weight' => 5,
-          'import' => array(
-            'file' => '',
-            'import' => 'Upload CSV',
-          ),
-          'paste' => array(
-            'data' => '',
-            'paste_delimiter' => '',
-            'paste_import' => 'Import & Rebuild',
-          ),
-          'rebuild' => array(
-            'count_cols' => 5,
-            'count_rows' => 5,
-            'rebuild' => 'Rebuild Table',
-          ),
-        ),
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'tablefield',
+        'module' => 'paragraphs',
         'settings' => array(
-          'trim_trailing_cols' => FALSE,
-          'trim_trailing_rows' => FALSE,
+          'view_mode' => 'full',
         ),
-        'type' => 'tablefield_default',
-        'weight' => 7,
+        'type' => 'paragraphs_view',
+        'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'none',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_activity_listing_table',
+    'field_name' => 'field_activity_listing',
     'is_property' => 0,
-    'label' => 'Activity listing (table)',
+    'label' => 'Activity Listing',
     'required' => 0,
     'settings' => array(
+      'add_mode' => 'select',
+      'allowed_bundles' => array(
+        'accordion' => -1,
+        'accordion_pane' => -1,
+        'basic' => 'basic',
+        'blockquote' => -1,
+        'carousel' => -1,
+        'carousel_slide' => -1,
+        'category_showcase' => -1,
+        'category_showcase_item' => -1,
+        'document' => 'document',
+        'featured_box' => -1,
+        'grid_display' => -1,
+        'grid_display_item' => -1,
+        'highlighted' => -1,
+        'image' => -1,
+        'key_contact' => -1,
+        'key_contact_item' => -1,
+        'key_fact' => -1,
+        'key_fact_item' => -1,
+        'layout_1_col_12' => 'layout_1_col_12',
+        'layout_2_col_4_8' => 'layout_2_col_4_8',
+        'layout_2_col_6_6' => 'layout_2_col_6_6',
+        'layout_2_col_8_4' => 'layout_2_col_8_4',
+        'layout_3_col_3_3_6' => 'layout_3_col_3_3_6',
+        'layout_3_col_4_4_4' => 'layout_3_col_4_4_4',
+        'layout_3_col_6_3_3' => 'layout_3_col_6_3_3',
+        'link' => 'link',
+        'promotional_area' => -1,
+        'tab_panel' => -1,
+        'table' => 'table',
+        'tabs' => -1,
+        'video' => -1,
+      ),
+      'bundle_weights' => array(
+        'accordion' => 2,
+        'accordion_pane' => 3,
+        'basic' => 4,
+        'blockquote' => 5,
+        'carousel' => 6,
+        'carousel_slide' => 7,
+        'category_showcase' => 8,
+        'category_showcase_item' => 9,
+        'document' => 10,
+        'featured_box' => 11,
+        'grid_display' => 12,
+        'grid_display_item' => 13,
+        'highlighted' => 14,
+        'image' => 15,
+        'key_contact' => 16,
+        'key_contact_item' => 17,
+        'key_fact' => 18,
+        'key_fact_item' => 19,
+        'layout_1_col_12' => 20,
+        'layout_2_col_4_8' => 21,
+        'layout_2_col_6_6' => 22,
+        'layout_2_col_8_4' => 23,
+        'layout_3_col_3_3_6' => 24,
+        'layout_3_col_4_4_4' => 25,
+        'layout_3_col_6_3_3' => 26,
+        'link' => 27,
+        'promotional_area' => 28,
+        'tab_panel' => 31,
+        'table' => 29,
+        'tabs' => 30,
+        'video' => 32,
+      ),
+      'default_edit_mode' => 'open',
+      'title' => 'Paragraph',
+      'title_multiple' => 'Paragraphs',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'tablefield',
+      'module' => 'paragraphs',
       'settings' => array(),
-      'type' => 'tablefield',
+      'type' => 'paragraphs_embed',
       'weight' => 6,
     ),
     'workbench_access_field' => 0,
@@ -1954,7 +1908,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1993,7 +1947,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2023,7 +1977,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -2039,7 +1993,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2064,7 +2018,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 14,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -2081,7 +2035,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2174,7 +2128,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2196,7 +2150,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 16,
     ),
     'workbench_access_field' => 0,
   );
@@ -2215,7 +2169,7 @@ function bracknell_feature_directory_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2275,7 +2229,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'manualcrop_thumblist' => FALSE,
       ),
       'type' => 'media_generic',
-      'weight' => 12,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -2296,7 +2250,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2320,7 +2274,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -2340,7 +2294,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -2362,7 +2316,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 14,
     ),
     'workbench_access_field' => 1,
   );
@@ -2379,7 +2333,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2418,7 +2372,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -2452,7 +2406,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -2469,7 +2423,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'none',
@@ -7225,8 +7179,7 @@ function bracknell_feature_directory_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Accessibility information');
-  t('Activity listing (link)');
-  t('Activity listing (table)');
+  t('Activity Listing');
   t('Address');
   t('Address Details');
   t('Age suitability');
