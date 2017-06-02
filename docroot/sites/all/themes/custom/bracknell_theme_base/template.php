@@ -1,26 +1,19 @@
 <?php
+
 /**
  * @file
- * template.php
- * Template overrides as well as (pre-)process and alter hooks for the
- * Bracknell Base Theme theme.
- *
- * @package   bracknell_theme_base
- * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
- * @copyright Copyright (c) 2016, Craig Gardener
- * @license   http://opensource.org/licenses/gpl-license.php
- *            GNU General Public License, version 2 or later
+ * Template overrides as well as (pre-)process and alter hooks for the theme.
  */
 
 /**
- * Implements HOOK_preprocess().
+ * Implements hook_preprocess().
  */
 function bracknell_theme_base_preprocess(&$vars, $hook) {
   $vars['theme_directory'] = drupal_get_path('theme', $GLOBALS['theme']);
 }
 
 /**
- * Implements HOOK_preprocess_page().
+ * Implements hook_preprocess_page().
  */
 function bracknell_theme_base_preprocess_page(&$vars) {
   $header = drupal_get_http_header('X-UA-Compatible');
@@ -54,33 +47,37 @@ function _bracknell_generate_footer_menu_links() {
   return theme('links__footer_menu', array(
     'links' => $menu,
     'attributes' => array(
-      'class' => array('footer-links')
-    )
+      'class' => array('footer-links'),
+    ),
   ));
 }
 
 /**
  * Returns HTML for a file attachments table.
  *
- * @param $variables
+ * @param array $variables
  *   An associative array containing:
  *   - items: An array of file attachments.
  *
  * @ingroup themeable
  */
-function bracknell_theme_base_file_formatter_table($variables) {
-  $header = array(t('Attachment'), t('Size'),);
+function bracknell_theme_base_file_formatter_table(array $variables) {
+  $header = array(
+    t('Attachment'),
+    t('Size'),
+  );
   $rows = array();
 
   foreach ($variables['items'] as $delta => $item) {
+    $file_description = '';
     if (!empty($item['field_file_description'])) {
       $file_description = $item['field_file_description'][LANGUAGE_NONE][0]['safe_value'];
-      $file_size = format_size($item['filesize']);
-      $rows[] = array(
-        theme('file_link', array('file' => (object) $item)) . $file_description,
-        format_size(round($file_size)),
-      );
     }
+    $file_size = format_size($item['filesize']);
+    $rows[] = array(
+      theme('file_link', array('file' => (object) $item)) . $file_description,
+      format_size(round($file_size)),
+    );
   }
 
   return empty($rows) ? '' : theme('table', array('header' => $header, 'rows' => $rows));
