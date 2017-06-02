@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * bracknell_feature_directory.features.field_instance.inc
@@ -405,7 +406,15 @@ function bracknell_feature_directory_field_default_field_instances() {
   // 'directory_entry-directory_entry-field_directory_location'.
   $field_instances['directory_entry-directory_entry-field_directory_location'] = array(
     'bundle' => 'directory_entry',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'geom' => array(
+          'lat' => 51.4139677,
+          'lon' => '-0.7530457999999953',
+        ),
+        'input_format' => 'lat/lon',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -523,7 +532,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'confirm_center_marker' => 0,
         'html5_geolocation' => 0,
         'map_type' => 'ROADMAP',
-        'zoom_level' => 6,
+        'zoom_level' => 10,
       ),
       'type' => 'geofield_gmap',
       'weight' => 1,
@@ -6855,12 +6864,9 @@ function bracknell_feature_directory_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 16,
       ),
       'teaser' => array(
