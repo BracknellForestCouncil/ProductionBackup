@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * bracknell_feature_search.features.inc
@@ -217,6 +218,7 @@ function bracknell_feature_search_default_search_api_index() {
       "fields" : {
         "attachments_field_paragraph_document" : { "type" : "text" },
         "attachments_field_video" : { "type" : "text" },
+        "author" : { "type" : "integer", "entity_type" : "user" },
         "body:summary" : { "type" : "text" },
         "body:value" : { "type" : "text" },
         "changed" : { "type" : "date" },
@@ -370,6 +372,12 @@ function bracknell_feature_search_default_search_api_server() {
           "status" : {
             "table" : "search_api_db_default_node_index",
             "column" : "status",
+            "type" : "integer",
+            "boost" : "1.0"
+          },
+          "author" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "author_1",
             "type" : "integer",
             "boost" : "1.0"
           }
