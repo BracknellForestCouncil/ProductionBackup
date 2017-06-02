@@ -45,6 +45,11 @@ function localgov_content_guidesection_theme($existing, $type, $theme, $path) {
  */
 function localgov_content_guidesection_node_view($node, $view_mode, $langcode) {
   if ($node->type === 'guide_section' && $view_mode === 'full') {
+    // Check that we have the reference guide first.
+    if (!isset($node->guide) || !isset($node->guide['plid'])) {
+      return;
+    }
+
     // Get the parent menu ID from the guide entity referenced in the
     // guide_section node.
     $menu_item = menu_link_load($node->guide['plid']);
