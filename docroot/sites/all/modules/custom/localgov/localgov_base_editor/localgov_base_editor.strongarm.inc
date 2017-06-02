@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * localgov_base_editor.strongarm.inc
