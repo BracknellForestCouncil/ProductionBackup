@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * bracknell_content_promotional_page.strongarm.inc
@@ -14,7 +15,7 @@ function bracknell_content_promotional_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_promotional_page';
-  $strongarm->value = 'edit-workflow';
+  $strongarm->value = 'edit-search-api-exclude';
   $export['additional_settings__active_tab_promotional_page'] = $strongarm;
 
   $strongarm = new stdClass();
