@@ -37,3 +37,37 @@ function localgov_content_guidesection_theme($existing, $type, $theme, $path) {
   return $theme;
 }
 
+/**
+ * Implements hook_node_view()
+ *
+ * Apply the guide sections to the same menu path as guide pages for the sake
+ * of breadcrumbs and the like.
+ */
+function localgov_content_guidesection_node_view($node, $view_mode, $langcode) {
+  if ($node->type === 'guide_section' && $view_mode === 'full') {
+    // Check that we have the reference guide first.
+    if (!isset($node->guide) || !isset($node->guide['plid'])) {
+      return;
+    }
+
+    // Get the parent menu ID from the guide entity referenced in the
+    // guide_section node.
+    $menu_item = menu_link_load($node->guide['plid']);
+
+    // Set the menu path.
+    menu_tree_set_path('main-menu', $menu_item['link_path']);
+
+    // Manually set the preferred link for this path so that
+    // menu_get_active_trail() returns the proper trail.
+    $preferred_links = &drupal_static('menu_link_get_preferred');
+    $preferred_links[$_GET['q']][MENU_PREFERRED_LINK] = menu_link_get_preferred($menu_item['link_path']);
+
+    // Reset static trail and breadcrumb caches.
+    drupal_static_reset('menu_set_active_trail');
+    drupal_static_reset('drupal_set_breadcrumb');
+
+    // Remove the menu position router from the end of the trail.
+    $active_trail = menu_set_active_trail();
+    menu_set_active_trail($active_trail);
+  }
+}
