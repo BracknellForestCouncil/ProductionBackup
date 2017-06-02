@@ -1,0 +1,19 @@
+diff --git a/docroot/.htaccess b/docroot/.htaccess
+index 440cabc..72009af 100644
+--- a/docroot/.htaccess
++++ b/docroot/.htaccess
+@@ -92,7 +92,13 @@ DirectoryIndex index.php index.html index.htm
+   # RewriteCond %{HTTP_HOST} .
+   # RewriteCond %{HTTP_HOST} !^www\. [NC]
+   # RewriteRule ^ http%{ENV:protossl}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+-  #
++  
++  # Redirect HTTP to HTTPS for users accessing the beta site.
++  RewriteCond %{HTTPS} off
++  RewriteCond %{HTTP:X-Forwarded-Proto} !https
++  RewriteCond %{HTTP_HOST} !microserve.web-dev.bracknell-forest.gov.uk$ [NC]
++  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
++
+   # To redirect all users to access the site WITHOUT the 'www.' prefix,
+   # (http://www.example.com/... will be redirected to http://example.com/...)
+   # uncomment the following:
