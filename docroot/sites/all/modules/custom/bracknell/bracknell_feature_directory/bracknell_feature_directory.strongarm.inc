@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * bracknell_feature_directory.strongarm.inc
@@ -407,13 +408,13 @@ function bracknell_feature_directory_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '16',
-        ),
-        'redirect' => array(
           'weight' => '17',
         ),
-        'metatags' => array(
+        'redirect' => array(
           'weight' => '18',
+        ),
+        'metatags' => array(
+          'weight' => '19',
         ),
       ),
       'display' => array(),
