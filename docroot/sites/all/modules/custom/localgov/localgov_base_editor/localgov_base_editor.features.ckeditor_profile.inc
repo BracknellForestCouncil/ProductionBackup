@@ -165,13 +165,6 @@ function localgov_base_editor_ckeditor_profile_defaults() {
         'theme_config_js' => 't',
         'js_conf' => '',
         'loadPlugins' => array(
-          'autogrow' => array(
-            'name' => 'autogrow',
-            'desc' => 'Auto Grow plugin. See <a href="http://ckeditor.com/addon/autogrow">addon page</a> for more details.',
-            'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/autogrow/',
-            'buttons' => FALSE,
-            'default' => 'f',
-          ),
           'counter' => array(
             'name' => 'counter',
             'desc' => 'Plugin to count symbols, symbols without blanks and words',
@@ -296,12 +289,14 @@ function localgov_base_editor_ckeditor_profile_defaults() {
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
-        'js_conf' => '',
+        'js_conf' => 'config.autoGrow_minHeight = 250;
+config.autoGrow_maxHeight = 500;
+config.autoGrow_onStartup = true;',
         'loadPlugins' => array(
           'autogrow' => array(
             'name' => 'autogrow',
-            'desc' => 'Auto Grow plugin. See <a href="http://ckeditor.com/addon/autogrow">addon page</a> for more details.',
-            'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/autogrow/',
+            'desc' => 'Plugin file: autogrow',
+            'path' => '%plugin_dir%autogrow/',
             'buttons' => FALSE,
             'default' => 'f',
           ),
