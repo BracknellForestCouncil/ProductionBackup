@@ -3,49 +3,67 @@
 (function ($) {
   Drupal.behaviors.bracknellMainMenu = {
     attach: function (context, settings) {
-      $('[data-js="main-menu"]').find('.collapse').hide().attr('aria-hidden', 'true');
+      // Cache some jQuery selectors.
+      var els = {};
+      els.mainMenu = $('[data-js="main-menu"]', context);
+      els.logo = $('[data-js="logo"]', context);
 
-        var mainMenuButton = $('<button>' +
-          '<span class="button-copy pull-left"></span>' +
-          '<span aria-hidden="true" class="icon-bars-wrap pull-left">' +
-            '<span class="icon-bar top"></span>' +
-            '<span class="icon-bar centre"></span>' +
-            '<span class="icon-bar bottom"></span>' +
-          '</span>' +
-          '</button>');
-        mainMenuButton.attr({
-          'class': 'main-menu-btn',
-          'aria-expanded': 'false',
-          'aria-controls': 'main-nav',
-          'data-toggle': 'closed',
-          'data-js': 'main-menu-button'
-        });
-        mainMenuButton.find('.button-copy').text(Drupal.t('Menu'));
+      // Define the classes for when the button is expanded or collapsed, for
+      // better readibility later.
+      var expandedClass = 'main-menu-btn-expanded';
+      var collapsedClass = 'main-menu-btn-collapsed';
 
-        $('[data-js="logo"]').append(mainMenuButton);
+      // Initially close the menu with JS and add the aria-hidden attribute.
+      els.mainMenu
+        .find('.collapse')
+        .hide()
+        .attr('aria-hidden', 'true');
 
-      $('[data-js="main-menu-button"]').on('click', function () {
-        var button = $(this),
-            status = button.attr('aria-expanded'),
-            mainMenu = $('[data-js="main-menu"]');
+      // Generate the menu button using HTML generated from concatenated strings
+      // and assigned to a jQuery object. Yeah, that.
+      els.mainMenuButton = $('<button>' +
+        '<span class="button-text pull-left"></span>' +
+        '<span aria-hidden="true" class="icon-bars-wrap pull-left">' +
+          '<span class="icon-bar top"></span>' +
+          '<span class="icon-bar centre"></span>' +
+          '<span class="icon-bar bottom"></span>' +
+        '</span>' +
+        '</button>');
 
-        if (status === 'false') {
-          mainMenu.show().attr({
-            'aria-hidden': 'false'
-          });
-          button.attr({
+      // Add some attributes to the button, whch could be in that string up
+      // there but this way we can add some overhead to the page load ;)
+      els.mainMenuButton.attr({
+        'class': 'main-menu-btn',
+        'aria-expanded': 'false',
+        'aria-controls': 'main-nav',
+        'data-toggle': 'closed',
+        'data-js': 'main-menu-button'
+      });
+
+      // Add some text to the menu button, again outside of the initial string
+      // for no real reason.
+      els.mainMenuButton.find('.button-text').text(Drupal.t('Menu'));
+
+      // Attach the jQuery element to the DOM. Into the... the logo?
+      els.logo.append(els.mainMenuButton);
+
+      // Events for when the main menu button is clicked, which should open and
+      // close the menu, with the aria attributes being toggled accordingly.
+      els.mainMenuButton.on('click', function () {
+        var status = els.mainMenuButton.hasClass(expandedClass);
+        if (!status) {
+          els.mainMenu.show().attr({ 'aria-hidden': 'false' });
+          els.mainMenuButton.attr({
             'aria-expanded': 'true',
             'data-toggle': 'open'
-          }).addClass('main-menu-btn-expanded').removeClass('main-menu-btn-collapsed');
+          }).addClass(expandedClass).removeClass(collapsedClass);
         }
         else {
-          mainMenu.hide().attr({
-            'aria-hidden': 'true'
-          });
-          button.attr({
+          els.mainMenu.hide().attr({ 'aria-hidden': 'true' });
+          els.mainMenuButton.attr({
             'aria-expanded': 'false',
             'data-toggle': 'closed'
-          }).addClass('main-menu-btn-collapsed').removeClass('main-menu-btn-expanded');
+          }).addClass(collapsedClass).removeClass(expandedClass);
         }
       });
     }
@@ -55,97 +73,100 @@
     attach: function (context, settings) {
 
       if (Modernizr.mq) {
-        var searchBlock = $('[data-js="search"]'),
-            searchButton,
-            searchStatus = 'closed';
+        var els = {};
+        els.searchBlock = $('[data-js="search"]', context);
+        els.mainMenuButton = $('[data-js="main-menu-button"]', context);
+        els.searchButton = $('[data-js="search-button"]', context);
+
+        var buttonIsAdded = false;
+        var searchIsOpen = false;
 
         // Check if the search block exists before we do anything.
-        if (searchBlock.length !== 0) {
-          $(window).resize(function() {
-            var mediaQuery = Modernizr.mq('only screen and (max-width: 768px)');
-            if (mediaQuery) {
+        if (els.searchBlock.length > 0) {
+          $(window).resize(function (e) {
+            if (Modernizr.mq('only screen and (max-width: 768px)')) {
               // Check if the button exists, if not create and append the button.
-              if ($('[data-js="search-button"]').length === 0) {
-                createButton();
-                searchButton.insertBefore('[data-js="main-menu-button"]');
+              if (!buttonIsAdded) {
+                // Create search button.
+                var searchButtonNew = $('<button>' +
+                  '<span class="search-btn-copy">' + Drupal.t('Search') +'</span>' +
+                  '</button>');
+
+                searchButtonNew.attr({
+                  'class': 'btn search-btn icon theme-icon-search',
+                  'aria-expanded': 'false',
+                  'aria-controls': 'search-wrapper',
+                  'data-toggle': 'closed',
+                  'data-js': 'search-button'
+                });
+
+                searchButtonNew.on('click', function (e) {
+                  var status = searchButtonNew.hasClass('search-btn-open');
+
+                  if (status) {
+                    actionCloseSearchForm();
+                  }
+                  else {
+                    actionOpenSearchForm();
+                  }
+                });
+                els.searchButton = searchButtonNew.insertBefore(els.mainMenuButton);
+                buttonIsAdded = true;
               }
 
               // Check for the status of the search form e.g. if it is open or closed.
               // This is to ensure that if the media query matches and there is a resize event
               // e.g. when the keyboard is opened on Android mobile devices that the search
               // form retains the correct status.
-              if (searchStatus === 'closed') {
-                actionClose();
-              } else {
-                actionOpen();
+              if (!searchIsOpen) {
+                actionCloseSearchForm();
+              }
+              else {
+                actionOpenSearchForm();
               }
             }
             else {
               // Reset the DOM on desktop.
-              searchBlock.show().removeAttr('aria-hidden');
-              $('[data-js="search-button"]').off().remove();
-              searchStatus = 'closed';
+              els.searchBlock.show().removeAttr('aria-hidden');
+              els.searchButton.off().remove();
+              searchIsOpen = false;
+              buttonIsAdded = false;
             }
           }).resize();
         }
 
-        function createButton() {
-          // Create search button.
-          searchButton = $('<button>' +
-            '<span class="search-btn-copy">' + Drupal.t('Search') +'</span>' +
-            '</button>');
-
-          searchButton.attr({
-            'class': 'btn search-btn icon theme-icon-search',
-            'aria-expanded': 'false',
-            'aria-controls': 'search-wrapper',
-            'data-toggle': 'closed',
-            'data-js': 'search-button'
-          });
-
-          searchButton.on('click', function () {
-            var button = $(this),
-                status = button.attr('aria-expanded');
-
-            if (status === 'true') {
-              // Close the search form.
-              actionClose();
-            }
-            else {
-              // Open the search form.
-              actionOpen();
-            }
-          });
-        };
-
         // Show the search form, set attributes and status.
-        function actionOpen() {
-          searchBlock
+        function actionOpenSearchForm() {
+          els.searchBlock
             .attr('aria-hidden', 'false')
             .show();
 
-          searchButton
-            .attr({
-              'aria-expanded': 'true',
-              'data-toggle': 'open'
-            });
-
-          searchStatus = 'open';
+          if (els.searchButton !== undefined && els.searchButton.length > 0) {
+            els.searchButton
+              .addClass('search-btn-open')
+              .attr({
+                'aria-expanded': 'true',
+                'data-toggle': 'open'
+              });
+          }
+          searchIsOpen = true;
         };
 
         // Hide the search form, set attributes and status.
-        function actionClose() {
-          searchBlock
+        function actionCloseSearchForm() {
+          els.searchBlock
             .attr('aria-hidden', 'true')
             .hide();
 
-          searchButton
-            .attr({
-              'aria-expanded': 'false',
-              'data-toggle': 'closed'
-            });
-
-          searchStatus = 'closed';
+          if (els.searchButton !== undefined && els.searchButton.length > 0) {
+            els.searchButton
+              .removeClass('search-btn-open')
+              .attr({
+                'aria-expanded': 'false',
+                'data-toggle': 'closed'
+              });
+          }
+          searchIsOpen = false;
         };
       }
     }
@@ -153,8 +174,8 @@
 
   Drupal.behaviors.bracknellTabs = {
     attach: function (context, settings) {
-      if ($('.acc-tabs-panel').length > 1) {
-        $('.acc-tabs').accTabs({
+      if ($('.acc-tabs-panel', context).length > 1) {
+        $('.acc-tabs', context).accTabs({
           containerClass: 'js-acc-tabs',
           controlActiveClass: 'js-acc-tabs-control-item-active',
           tabPanelClass: 'js-acc-tabs-panel',
@@ -168,40 +189,46 @@
 
   Drupal.behaviors.bracknellCategoryShowcase = {
     attach: function (context, settings) {
-      if ($('.showcase').length !== 0) {
-        $('.showcase-item').each(function() {
-          var slide = $(this),
-              boxHeight = $(slide).height(),
-              titleHeight = $('.showcase-item-title', this).outerHeight(false),
-              startHeight = boxHeight - titleHeight;
+      if ($('.showcase', context).length > 0) {
+        $('.showcase-item', context).each(function () {
+          var slide = $(this);
+          var boxHeight = $(slide).height();
+          var titleHeight = $('.showcase-item-title', this).outerHeight(false);
+          var startHeight = boxHeight - titleHeight;
 
           $('.showcase-overlay', slide).css({
             height: boxHeight,
             top: startHeight
           });
 
-          slide.hover(function() {
+          slide.hover(function () {
             startAni();
-          }, function() {
+          }, function () {
             stopAni();
           });
 
           function startAni() {
-            $('.showcase-overlay', slide).stop().animate({
-              top: 0
-            }, {
-              queue: false,
-              duration: 100
-            });
+            $('.showcase-overlay', slide).stop().animate(
+              {
+                top: 0
+              },
+              {
+                queue: false,
+                duration: 100
+              }
+            );
           }
 
           function stopAni() {
-            $('.showcase-overlay', slide).stop().animate({
-              top: startHeight
-            }, {
-              queue: false,
-              duration: 100
-            });
+            $('.showcase-overlay', slide).stop().animate(
+              {
+                top: startHeight
+              },
+              {
+                queue: false,
+                duration: 100
+              }
+            );
           }
         });
       }
