@@ -45,6 +45,6 @@
  */
 ?>
 <?php foreach ($items as $delta => $item): ?>
-  <a class="btn <?php print($classes) ?>" target="_blank" href="<?php print_r($item['#element']['url']); ?>"><?php print_r($item['#element']['title']); ?></a>
+  <a class="btn <?php print($classes) ?>" target="<?php print($item['#element']['attributes']['target']); ?>" href="<?php print_r($item['#element']['url']); ?>"><?php print_r($item['#element']['title']); ?></a>
   <br>
 <?php endforeach; ?>
