@@ -45,8 +45,10 @@
     }
   }
 
-  &:hover, &:focus {
+  &:focus {
     outline: auto 5px -webkit-focus-ring-color;
+  }
+  &:hover, &:focus {
     .showcase-overlay {
       transform: translate3d(0, 0, 0) !important;
     }
