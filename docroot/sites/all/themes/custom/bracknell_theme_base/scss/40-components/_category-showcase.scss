@@ -12,9 +12,14 @@
   margin-bottom: 20px;
   position: relative;
 
+  height: 245px;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
   .js & {
-    height: 245px;
-    overflow: hidden;
+  }
+
+  &, * {
+    max-height: 100%;
   }
 
   .showcase-media-wrap {
@@ -29,10 +34,21 @@
     color: $showcase-overlay-text-color;
     padding: 0;
     width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    transform: translate3d(0, 101%, 0);
+    transition: 0.8s transform ease;
 
     .js & {
-      left: 0;
-      position: absolute;
+    }
+  }
+
+  &:hover, &:focus {
+    outline: auto 5px -webkit-focus-ring-color;
+    .showcase-overlay {
+      transform: translate3d(0, 0, 0) !important;
     }
   }
 
@@ -55,6 +71,7 @@
   }
 
   .btn {
+    // display: none;
     background: $showcase-button-bg-color;
     color: $showcase-button-text-color;
 

@@ -167,42 +167,33 @@
   };
 
   Drupal.behaviors.bracknellCategoryShowcase = {
+    setOffset: function (overlay, offset) {
+      overlay.css({ 'transform': 'translate3d(0, ' + offset + 'px, 0)' });
+    },
     attach: function (context, settings) {
-      if ($('.showcase').length !== 0) {
-        $('.showcase-item').each(function() {
-          var slide = $(this),
-              boxHeight = $(slide).height(),
-              titleHeight = $('.showcase-item-title', this).outerHeight(false),
-              startHeight = boxHeight - titleHeight;
+      var _self = this;
+      if ($('.showcase', context).length > 0) {
+        $('.showcase-item', context).each(function () {
+          var showcaseItem = $(this);
+          var overlay = $('.showcase-overlay', showcaseItem);
+          var title = $('.showcase-item-title', showcaseItem);
+          var titleOffset = overlay.height() - title.innerHeight();
 
-          $('.showcase-overlay', slide).css({
-            height: boxHeight,
-            top: startHeight
+          showcaseItem.attr({ 'aria-hidden': true, tabindex: '0' });
+
+          $(window).on('resize showcase-item-show', function () {
+            titleOffset = overlay.height() - title.innerHeight();
+            _self.setOffset(overlay, titleOffset);
+          }).resize();
+
+          showcaseItem.on('focusin mouseenter', function (e) {
+            _self.setOffset(overlay, 0);
+            showcaseItem.attr({ 'aria-hidden': false });
           });
-
-          slide.hover(function() {
-            startAni();
-          }, function() {
-            stopAni();
+          showcaseItem.on('focusout mouseleave', function (e) {
+            _self.setOffset(overlay, titleOffset);
+            showcaseItem.attr({ 'aria-hidden': true });
           });
-
-          function startAni() {
-            $('.showcase-overlay', slide).stop().animate({
-              top: 0
-            }, {
-              queue: false,
-              duration: 100
-            });
-          }
-
-          function stopAni() {
-            $('.showcase-overlay', slide).stop().animate({
-              top: startHeight
-            }, {
-              queue: false,
-              duration: 100
-            });
-          }
         });
       }
     }
