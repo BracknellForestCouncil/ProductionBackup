@@ -179,7 +179,7 @@
           var title = $('.showcase-item-title', showcaseItem);
           var titleOffset = overlay.height() - title.innerHeight();
 
-          showcaseItem.attr({ 'aria-hidden': true, tabindex: '0' });
+          showcaseItem.attr({ tabindex: '0' });
 
           $(window).on('resize showcase-item-show', function () {
             titleOffset = overlay.height() - title.innerHeight();
@@ -188,11 +188,9 @@
 
           showcaseItem.on('focusin mouseenter', function (e) {
             _self.setOffset(overlay, 0);
-            showcaseItem.attr({ 'aria-hidden': false });
           });
           showcaseItem.on('focusout mouseleave', function (e) {
             _self.setOffset(overlay, titleOffset);
-            showcaseItem.attr({ 'aria-hidden': true });
           });
         });
       }
