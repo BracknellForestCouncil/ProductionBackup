@@ -71,6 +71,23 @@ function bracknell_base_preprocess_page(&$variables) {
   }
 }
 
+function bracknell_base_preprocess_html(&$variables) {
+  if (($node = menu_get_object()) && $node->type) {
+    // Generate a render array for the node.
+    $view = node_view($node);
+    // If the hero has an image, output a class to style the hero differently
+    // from the title alone.
+    if (isset($node->field_promotional_hero)) {
+      if (!empty($node->field_promotional_hero)) {
+        $variables['classes_array'][] = 'promotional-hero-has-image';
+      }
+      else {
+        $variables['classes_array'][] = 'promotional-hero-no-image';
+      }
+    }
+  }
+}
+
 /**
  * Implements hook_menu().
  */
