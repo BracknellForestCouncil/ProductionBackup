@@ -3,6 +3,7 @@
 .wtu {
   background-color: $wtu-bg-color;
   padding: 1px 15px;
+  z-index: 110;
 
   @include breakpoint($screen-md) {
     bottom: 0;
