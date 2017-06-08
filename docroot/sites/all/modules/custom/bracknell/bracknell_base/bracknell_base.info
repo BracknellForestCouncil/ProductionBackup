@@ -13,6 +13,7 @@ dependencies[] = link
 dependencies[] = node_display_title
 dependencies[] = pathauto
 dependencies[] = pathauto_persist
+dependencies[] = pathologic
 dependencies[] = strongarm
 dependencies[] = subpathauto
 dependencies[] = viewfield
