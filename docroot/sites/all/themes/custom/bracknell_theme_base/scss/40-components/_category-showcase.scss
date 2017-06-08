@@ -12,10 +12,9 @@
   margin-bottom: 20px;
   position: relative;
 
-  .js & {
-    height: 245px;
-    overflow: hidden;
-  }
+  height: 245px;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
 
   .showcase-media-wrap {
     .showcase-media {
@@ -29,10 +28,22 @@
     color: $showcase-overlay-text-color;
     padding: 0;
     width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    transform: translate3d(0, 101%, 0);
+    transition: 0.8s transform ease;
+  }
 
-    .js & {
-      left: 0;
-      position: absolute;
+  &:focus {
+    outline: auto 5px -webkit-focus-ring-color;
+  }
+
+  &:hover,
+  &:focus {
+    .showcase-overlay {
+      transform: translate3d(0, 0, 0) !important;
     }
   }
 

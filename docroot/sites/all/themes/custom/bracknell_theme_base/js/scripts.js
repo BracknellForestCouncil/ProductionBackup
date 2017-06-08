@@ -188,48 +188,31 @@
   };
 
   Drupal.behaviors.bracknellCategoryShowcase = {
+    setOffset: function (overlay, offset) {
+      overlay.css({ 'transform': 'translate3d(0, ' + offset + 'px, 0)' });
+    },
     attach: function (context, settings) {
+      var _self = this;
       if ($('.showcase', context).length > 0) {
         $('.showcase-item', context).each(function () {
-          var slide = $(this);
-          var boxHeight = $(slide).height();
-          var titleHeight = $('.showcase-item-title', this).outerHeight(false);
-          var startHeight = boxHeight - titleHeight;
+          var showcaseItem = $(this);
+          var overlay = $('.showcase-overlay', showcaseItem);
+          var title = $('.showcase-item-title', showcaseItem);
+          var titleOffset = overlay.height() - title.innerHeight();
 
-          $('.showcase-overlay', slide).css({
-            height: boxHeight,
-            top: startHeight
+          showcaseItem.attr({ tabindex: '0' });
+
+          $(window).on('resize showcase-item-show', function () {
+            titleOffset = overlay.height() - title.innerHeight();
+            _self.setOffset(overlay, titleOffset);
+          }).resize();
+
+          showcaseItem.on('focusin mouseenter', function (e) {
+            _self.setOffset(overlay, 0);
           });
-
-          slide.hover(function () {
-            startAni();
-          }, function () {
-            stopAni();
+          showcaseItem.on('focusout mouseleave', function (e) {
+            _self.setOffset(overlay, titleOffset);
           });
-
-          function startAni() {
-            $('.showcase-overlay', slide).stop().animate(
-              {
-                top: 0
-              },
-              {
-                queue: false,
-                duration: 100
-              }
-            );
-          }
-
-          function stopAni() {
-            $('.showcase-overlay', slide).stop().animate(
-              {
-                top: startHeight
-              },
-              {
-                queue: false,
-                duration: 100
-              }
-            );
-          }
         });
       }
     }
