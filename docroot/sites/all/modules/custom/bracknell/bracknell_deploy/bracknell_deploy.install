@@ -326,14 +326,44 @@ function bracknell_deploy_update_7018() {
     );
 
     // Check if term exists in vocabulary and add it if not.
-    _bracknell_deploy_safe_add_terms($terms, $vocabulary, 'school_level', 0);
+    _bracknell_deploy_safe_add_terms($vocabulary, $terms, 'school_level', 0);
+  }
+}
+
+/**
+ * Field clean up pre-go-live.
+ */
+function bracknell_deploy_update_7019() {
+  $field_list = array(
+    'field_school_level',
+    'field_activity_listing_link',
+    'field_activity_listing_table',
+  );
+  // Loop through the list of field names and EXTERMINATE!
+  foreach ($field_list as $field_name) {
+    // Retrieve all bundles for an entity.
+    $bundles = field_info_bundles($field_name);
+    foreach ($bundles as $bundle => $properties) {
+
+      // Retrieve all the fields for a given bundle.
+      $instances = field_info_instances($field_name, $bundle);
+      foreach ($instances as $instance) {
+        field_delete_instance($instance, TRUE);
+        field_purge_batch(1);
+      }
+    }
+
+    if (field_read_field($field_name)) {
+      field_delete_field($field_name);
+      field_purge_batch(1);
+    }
   }
 }
 
 /**
  * Helper function for adding terms to existing vocabularies.
  */
-function _bracknell_deploy_safe_add_terms($term_names = array(), $vocab, $vocabulary_machine_name = '', $weight = 100) {
+function _bracknell_deploy_safe_add_terms($vocab, $term_names = array(), $vocabulary_machine_name = '', $weight = 100) {
   // Make sure the vocabulary exists.  This won't apply all desired options
   // (description, etc.) but that's okay.  Features will do that later.
   // For now, we just need somewhere to stuff the terms.
