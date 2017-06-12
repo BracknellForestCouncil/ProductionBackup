@@ -100,7 +100,7 @@
 </head>
 <body<?php print $body_attributes; ?>>
   <div class="page-wrapper">
-    <a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
+    <a class="sr-only sr-only-focusable" href="#readspeaker_content">Skip to main content</a>
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
