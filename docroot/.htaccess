@@ -92,13 +92,22 @@ DirectoryIndex index.php index.html index.htm
   # RewriteCond %{HTTP_HOST} .
   # RewriteCond %{HTTP_HOST} !^www\. [NC]
   # RewriteRule ^ http%{ENV:protossl}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Live site as of June 14 2017 - all requests to this site unless specified
+  # in the ruleset below.
+  RewriteCond %{HTTP_HOST} !^www\.bracknell-forest\.gov.uk$  [NC]
+  RewriteCond %{HTTP_HOST} !bracknell.dev$
+  RewriteCond %{HTTP_HOST} !dev.bracknell.local$
+  RewriteCond %{HTTP_HOST} !^microserve.web-dev.bracknell-forest.gov.uk$ [NC]
+  RewriteCond %{HTTP_HOST} !^beta.bracknell-forest.gov.uk$ [NC]
+  RewriteRule ^ https://www.bracknell-forest.gov.uk%{REQUEST_URI} [L,R=301]
   
   # Redirect HTTP to HTTPS for users accessing the beta site.
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteCond %{HTTP_HOST} !bracknell.dev$
   RewriteCond %{HTTP_HOST} !dev.bracknell.local$
-  RewriteCond %{HTTP_HOST} !microserve.web-dev.bracknell-forest.gov.uk$ [NC]
+  RewriteCond %{HTTP_HOST} !^microserve.web-dev.bracknell-forest.gov.uk$ [NC]
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
