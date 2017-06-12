@@ -15,10 +15,11 @@
   text-align: center;
 }
 
-.gridder {
+.main-container .gridder {
   margin: $commonSpacing 0 $commonSpacing/3;
   padding: 0;
   list-style-type: none;
+  overflow: visible;
 
   ul {
     padding-left: 0;
