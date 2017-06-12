@@ -13,6 +13,7 @@ dependencies[] = lightbox2
 dependencies[] = linkit
 dependencies[] = media_ckeditor
 dependencies[] = media_wysiwyg
+dependencies[] = pathologic
 dependencies[] = strongarm
 dependencies[] = youtube
 configure = admin/localgov/modules/localgov/localgov_base_editor/admin
