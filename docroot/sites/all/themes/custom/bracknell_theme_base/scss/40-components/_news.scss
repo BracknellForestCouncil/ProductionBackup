@@ -1,0 +1,43 @@
+.page-news {
+  .view-content {
+    .views-row {
+      .node-teaser {
+        border-bottom: 1px solid $news-teaser-border-color;
+        margin-bottom: $commonSpacing / 2;
+        padding: 20px 0;
+
+        h2 {
+          font-size: $font-size-10;
+          margin-top: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+#block-views-news-archive-block {
+  ul {
+    margin-before: 0;
+
+    li {
+      list-style-type: none;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+}
+
+// Town and Country block image
+#block-bracknell-townandcountry,
+#block-block-3 {
+  .img-responsive {
+    margin-bottom: 20px;
+  }
+}
+
+.node-article {
+  .submitted {
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+  }
+}

@@ -1,0 +1,6 @@
+name = Bracknell Was This Useful
+description = Provides the Was this Useful block and response form.
+core = 7.x
+package = bracknell 
+version = 7.x-1.0
+files[] = bracknell_was_this_useful_form.inc

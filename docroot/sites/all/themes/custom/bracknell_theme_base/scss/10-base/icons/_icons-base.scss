@@ -1,0 +1,75 @@
+// Icons.
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icons/icomoon.eot');
+  src: url('../fonts/icons/icomoon.eot#iefix') format('embedded-opentype'),
+    url('../fonts/icons/icomoon.ttf') format('truetype'),
+    url('../fonts/icons/icomoon.woff') format('woff'),
+    url('../fonts/icons/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  display: inline-block;
+  // use !important to prevent issues with browser extensions that change fonts.
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Base icons.
+$base-icons: (
+  arrow-left: '\e900',
+  arrow-right: '\e901',
+  circle-cross: '\e901',
+  circle-dark-exclamation: '\e903',
+  circle-dark-question: '\e904',
+  circle-tick: '\e905',
+  cross: '\e906',
+  download: '\e907',
+  envelope: '\e908',
+  external-link: '\e909',
+  face-happy: '\e90a',
+  face-neutral: '\e90b',
+  face-sad: '\e90c',
+  facebook: '\e932',
+  instagram: '\e933',
+  left-arrow-grey: '\e90d',
+  menu: '\e90e',
+  next: '\e90f',
+  previous: '\e910',
+  printer: '\e911',
+  question: '\e912',
+  right-arrow-grey: '\e913',
+  search: '\e931',
+  speaker: '\e915',
+  text-size: '\e916',
+  triangle-down: '\e914',
+  triangle-up: '\e918',
+  twitter: '\e934',
+  youtube: '\e935',
+  user: '\e919'
+);
+
+@each $class-name, $icon in $base-icons {
+  .theme-icon-#{$class-name} {
+    &:before {
+      content: '#{$icon}';
+    }
+  }
+}
+
+.theme-icon-circle-dark-exclamation {
+  &:before {
+    color: $icon-circle-dark-text-color;
+  }
+}

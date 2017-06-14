@@ -1,0 +1,254 @@
+.search {
+  margin-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+
+  @include breakpoint($screen-sm) {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    vertical-align: middle;
+  }
+
+  .views-exposed-widgets {
+    .views-exposed-widget {
+      float: none;
+      padding: 0;
+    }
+
+    .input-group-addon {
+      display: none;
+    }
+
+    label {
+      left: -999em;
+      position: absolute;
+    }
+
+    .views-widget-filter-search_api_views_fulltext {
+      display: table-cell;
+      vertical-align: top;
+      width: 100%;
+    }
+
+    .views-submit-button {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .form-text {
+      @include border-right-radius(0);
+    }
+
+    .btn {
+      @include border-left-radius(0);
+    }
+  }
+
+  // Hide sort by field.
+  .views-widget-sort-by,
+  .views-widget-sort-order {
+    display: none;
+  }
+
+  .form-text {
+    border-color: $search-text-border-color;
+    padding: 6px 18px;
+    min-height: 48px;
+    height: auto;
+
+    // This will only work with autoprefixer.
+    &::placeholder {
+      color: $search-text-placeholder-text-color;
+    }
+  }
+
+  .input-group-btn,
+  .views-submit-button {
+    .btn {
+      background-color: $search-button-background-color;
+      font-size: $font-size-08;
+      height: auto;
+      margin: 0;
+      min-height: 48px;
+      transition: 0.1s ease-in-out background-color;
+      padding: 5px 12px;
+      top: 0;
+      width: 48px;
+
+      &:hover {
+        background-color: $search-button-hover-background-color;
+      }
+    }
+  }
+
+  .form-actions {
+    display: none;
+  }
+}
+
+.search-btn {
+  background-color: $search-button-background-color;
+  border: 0;
+  display: inline-block;
+  font-size: $font-size-08;
+  height: auto;
+  margin-right: 15px;
+  min-height: 48px;
+  padding: 5px 12px;
+  width: 48px;
+
+  @include breakpoint($screen-sm) {
+    position: absolute;
+    top: 0;
+    right: 110px;
+    margin-top: 60px;
+    z-index: 2;
+  }
+
+  .search-btn-copy {
+    position: absolute;
+    left: -999em;
+  }
+}
+
+.page-search {
+  #views-exposed-form-search-page-page {
+    position: relative;
+    background: $greyExtraLight;
+    border-radius: 3px;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    .views-exposed-form {
+      position: relative;
+
+      .views-exposed-widgets {
+        margin-bottom: 2px;
+        display: flex;
+        padding-right: 60px;
+      }
+
+      .views-exposed-widget {
+        flex: 1;
+        display: block;
+        padding: 0;
+
+        label {
+          display: none;
+        }
+
+        .form-control {
+          border: 0;
+          height: auto;
+          min-height: 49px;
+        }
+
+        .input-group-addon {
+          display: none;
+        }
+
+        &#edit-query-wrapper {
+          flex: 3;
+          margin-right: 5px;
+          border: 1px solid #ddd;
+        }
+
+        &.views-widget-sort-by {
+          border: 1px solid #ddd;
+        }
+
+        &.views-widget-sort-order {
+          flex: 0;
+        }
+
+        &.views-submit-button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 3;
+
+          .form-submit {
+            margin: 0;
+            min-height: 49px;
+            background: transparent;
+            color: $slateBlue;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .view-search-page {
+    padding: 0;
+
+    .views-row {
+      padding: 22px 0;
+      border-bottom: 1px solid $search-results-border-color;
+
+      .views-field {
+
+        &.views-field-title {
+          margin-bottom: 2px;
+          font-size: 0.9em;
+
+          h3 {
+            margin: 0;
+            color: $search-results-title-color;
+            font-weight: 700;
+            font-size: 1.5em;
+
+            a {
+              color: inherit;
+
+              strong {
+                font-weight: inherit;
+                background: $search-results-title-highlight-color;
+              }
+            }
+          }
+        }
+
+        &.views-field-search-api-excerpt {
+          font-size: 0.9em;
+          line-height: 1.3em;
+          margin: 15px 0 5px;
+
+          strong {
+            font-weight: inherit;
+            background: $search-results-title-highlight-color;
+          }
+        }
+
+        &.views-field-url {
+          line-height: 1.2em;
+          font-size: 0.8em;
+        }
+
+        &.views-field-changed {
+          font-size: 0.8em;
+          color: $search-results-date-color;
+        }
+      }
+    }
+
+    .view-header {
+      padding-bottom: 15px;
+      border-bottom: 1px solid $search-results-border-color;
+      margin-bottom: 5px;
+    }
+
+    .view-empty {
+      background: $search-results-no-results-background-color;
+      padding: 20px 30px;
+      color: $search-results-no-results-text-color;
+      margin-bottom: 20px;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

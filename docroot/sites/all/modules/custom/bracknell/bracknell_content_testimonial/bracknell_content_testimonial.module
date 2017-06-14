@@ -1,0 +1,112 @@
+<?php
+/**
+ * @file
+ * Code for the Bracknell Content Testimonial feature.
+ */
+
+include_once 'bracknell_content_testimonial.features.inc';
+
+/**
+* Implements hook_entity_info_alter().
+*/
+function bracknell_content_testimonial_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['carousel_slide'] = array(
+    'label' => t('Carousel Slide'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bracknell_content_testimonial_theme($existing, $type, $theme, $path) {
+  $theme = array();
+
+  $theme['node__testimonial'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--testimonial',
+    'path' => drupal_get_path('module', 'bracknell_content_testimonial') . '/templates',
+  );
+
+  $theme['node__testimonial__carousel_slide'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--testimonial--carousel-slide',
+    'path' => drupal_get_path('module', 'bracknell_content_testimonial') . '/templates',
+  );
+
+  return $theme;
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bracknell_content_testimonial_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] !== 'field_carousel_slide_content' && $variables['element']['#bundle'] != 'carousel_slide') {
+    return;
+  }
+
+  $wrapper = entity_metadata_wrapper('paragraphs_item', $variables['element']['#object']);
+
+  $layout = $wrapper->get('field_carousel_slide_layout')->value();
+
+  $variables['classes_array'][] = 'carousel-slide';
+  $variables['classes_array'][] = "carousel-slide-media-{$layout}";
+
+  // Hook into the settings and add to node variables for Read More links.
+  if (isset($variables['element']['#items'][0]['target_id'])) {
+    $nid = $variables['element']['#items'][0]['target_id'];
+    // Add variables for the Read More link.
+    $read_more = $wrapper->get('field_add_read_more')->value();
+    if (isset($read_more) && $read_more === TRUE) {
+      $read_more_text = t($wrapper->get('field_read_more_text')->value());
+      $variables['items'][0]['node'][$nid]['custom_read_more'] = TRUE;
+      $variables['items'][0]['node'][$nid]['custom_read_more_text'] = isset($read_more_text) ? $read_more_text : 'Read more';
+    }
+  }
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function bracknell_content_testimonial_libraries_info() {
+  $libraries = array();
+  $libraries['flexslider'] = array(
+    'name' => 'Flexslider',
+    'vendor url' => 'https://woocommerce.com/flexslider/',
+    'download url' => 'https://api.github.com/repos/woocommerce/FlexSlider/zipball/2.6.3',
+    'version callback' => 'bracknell_content_testimonial_version',
+    'files' => array(
+      'js' => array(
+        'jquery.flexslider.js',
+      ),
+      'css' => array(
+        'flexslider.css',
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Short-circuit the version argument for hook_libraries_info().
+ */
+function bracknell_content_testimonial_version() {
+  return TRUE;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function bracknell_content_testimonial_node_view($node, $view_mode, $langcode) {
+  if ($node->type !== 'testimonial' || $view_mode !== 'carousel_slide') {
+    return;
+  }
+
+  // Check if flexslider is loaded, then do something with it.
+  if (($library = libraries_load('flexslider')) && !empty($library['loaded'])) {
+    drupal_add_js(drupal_get_path('module', 'bracknell_content_testimonial') . '/js/carousel.js');
+  }
+}

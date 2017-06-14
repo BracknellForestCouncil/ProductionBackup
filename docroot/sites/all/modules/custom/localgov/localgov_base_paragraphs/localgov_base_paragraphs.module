@@ -1,0 +1,208 @@
+<?php
+/**
+ * @file
+ * localgov_base_paragraphs.module
+ * Code for the LocalGov Base: Paragraphs module.
+ *
+ * @package   localgov_base_paragraphs
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+/**
+ * Include all files in 'includes/'.
+ */
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+/**
+ * Include features code.
+ */
+include_once 'localgov_base_paragraphs.features.inc';
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function localgov_base_paragraphs_theme_registry_alter(&$theme_registry) {
+  // Defined path to the current module.
+  $module_path = drupal_get_path('module', 'localgov_base_paragraphs');
+  // Find all .tpl.php files in this module's folder recursively.
+  $template_file_objects = drupal_find_theme_templates($theme_registry, '.tpl.php', $module_path);
+  // Iterate through all found template file objects.
+  foreach ($template_file_objects as $key => $template_file_object) {
+    // If the template has not already been overridden by a theme.
+    if (!isset($theme_registry[$key]['theme path']) || !preg_match('#/themes/#', $theme_registry[$key]['theme path'])) {
+      // Alter the theme path and template elements.
+      $theme_registry[$key]['theme path'] = $module_path;
+      $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
+      $theme_registry[$key]['type'] = 'module';
+    }
+  }
+}
+
+
+/**
+ * Implements hook_libraries_info().
+ */
+function localgov_base_paragraphs_libraries_info() {
+  $libraries = array();
+  $libraries['jquery_accessible_tabs'] = array(
+    'name' => 'jQuery Accessible Tabs',
+    'vendor url' => 'https://github.com/nomensa/jquery.accessible-tabs',
+    'download url' => 'https://github.com/nomensa/jquery.accessible-tabs/achive/master.zip',
+    'version callback' => 'localgov_base_paragraphs_version',
+    'files' => array(
+      'js' => array(
+        'jquery.accTabs.js',
+      ),
+    ),
+  );
+
+  $libraries['jquery_accessible_accordion'] = array(
+    'name' => 'jQuery Accessible Accordion',
+    'vendor url' => 'https://github.com/nomensa/jquery.accessible-accordion',
+    'download url' => 'https://github.com/nomensa/jquery.accessible-accordionachive/master.zip',
+    'version callback' => 'localgov_base_paragraphs_version',
+    'files' => array(
+      'js' => array(
+        'jquery.accAccordion.js',
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_preprocess_entity().
+ */
+function localgov_base_paragraphs_preprocess_entity(&$variables) {
+	drupal_add_js(drupal_get_path('module', 'localgov_base_paragraphs') . '/js/localgov_base_paragraphs.js');
+
+  if ($variables['elements']['#bundle'] == 'tabs' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    libraries_load('jquery_accessible_tabs');
+  }
+
+  if ($variables['elements']['#bundle'] == 'accordion' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    libraries_load('jquery_accessible_accordion');
+  }
+
+  // If the highlight paragraph has an icon, output a class to style the paragraph differently.
+  if ($variables['elements']['#bundle'] == 'highlighted' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    if (isset($variables['field_icon'])) {
+      $variables['classes_array'][] = 'highlight-has-icon';
+    }
+  }
+
+  // Output different classes to swap the layout of the content and media depending on which layout is chosen by the content editor.
+  if ($variables['elements']['#entity_type'] == 'paragraphs_item' && $variables['elements']['#bundle'] == 'promotional_area') {
+
+    $variables['content_position'] = '';
+    $variables['media_position'] = '';
+    $media_position = $variables['elements']['field_promotional_area_layout']['#items'][0]['value'];
+
+    if ($media_position == 'left') {
+      $variables['classes_array'][] = 'promotional-area-media-left';
+      $variables['content_position'] = 'col-md-push-6';
+      $variables['media_position'] = 'col-md-pull-6';
+    }
+
+    // Display an image or a video depending on the content editors choice.
+    if (isset($variables['elements']['field_promotional_area_media']['#items'][0]['value'])) {
+      $media_type = $variables['elements']['field_promotional_area_media']['#items'][0]['value'];
+      $variables['media_type'] = $media_type;
+    }
+  }
+
+  // Add variables to display the grid display based on content editor choices.
+  if ($variables['elements']['#entity_type'] == 'paragraphs_item' && $variables['elements']['#bundle'] == 'grid_display') {
+    $variables['classes_array'][] = 'grid-display';
+
+    $grid_display_title_text = isset($variables['field_grid_display_title']) ? $variables['field_grid_display_title'][0]['value'] : '';
+    $grid_display_title_level = isset($variables['field_grid_display_title_level']) ? $variables['field_grid_display_title_level'][0]['value'] : '';
+    $grid_display_theme = isset($variables['field_grid_display_theme']) ? $variables['field_grid_display_theme'][0]['value'] : '';
+
+    // Add heading level and heading text as variables so we can provide better accessibility support.
+    if (!empty($grid_display_title_text) && !empty($grid_display_title_level)) {
+      $variables['grid_display_title_text'] = $grid_display_title_text;
+      $variables['grid_display_title_level'] = $grid_display_title_level;
+    }
+
+    // Add the theme type as a variable.
+    if (!empty($grid_display_theme)) {
+      $variables['classes_array'][] = 'grid-display-' . $grid_display_theme;
+    }
+  }
+
+  if ($variables['elements']['#bundle'] == 'image' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    // Defaults to h2, unless overridden by content editor.
+    $variables['heading_level'] = 'h2';
+    $variables['heading_text'] = '';
+
+    if (isset($variables['elements']['field_paragraph_image_title'])) {
+      $heading_text = $variables['elements']['field_paragraph_image_title']['#items'][0]['value'];
+      $variables['heading_text'] = $heading_text;
+    }
+
+    // Output the heading level so content editor can choose heading levels for the image paragraph title -  good for accessibility.
+    if (isset($variables['elements']['field_paragraph_image_title_head'])) {
+      $heading_level = $variables['elements']['field_paragraph_image_title_head']['#items'][0]['value'];
+      $variables['heading_level'] = $heading_level;
+    }
+
+    if (isset($variables['elements']['field_paragraph_image_position'])) {
+      $paragraph_position = $variables['elements']['field_paragraph_image_position']['#items'][0]['value'];
+      $variables['paragraph_position'] = $paragraph_position;
+    }
+  }
+
+  // Output classes for theming the featured box component.
+  if ($variables['elements']['#bundle'] == 'featured_box' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    $variables['classes_array'][] = 'featured-box';
+
+    if (isset($variables['elements']['field_paragraph_box_theme'])) {
+      $featured_box_theme = $variables['elements']['field_paragraph_box_theme']['#items'][0]['value'];
+      $variables['classes_array'][] = 'component-theme-' . $featured_box_theme;
+      $variables['classes_array'][] = 'featured-box-theme-' . $featured_box_theme;
+    }
+  }
+
+  // Output classes for theming the key contact component.
+  if ($variables['elements']['#entity_type'] == 'paragraphs_item' && $variables['elements']['#bundle'] == 'key_contact') {
+    $variables['classes_array'][] = 'key-contact';
+  }
+
+  // Output classes and attributes for the key contact item component.
+  if ($variables['elements']['#entity_type'] == 'paragraphs_item' && $variables['elements']['#bundle'] == 'key_contact_item') {
+    $entity_id = $variables['id'];
+    $entity_aria_reference = 'key-contact-item-' . $entity_id;
+    $variables['attributes_array']['role'] = 'article';
+    $variables['attributes_array']['aria-labelledby'] = $entity_aria_reference;
+    $variables['title_attributes_array']['id'] = $entity_aria_reference;
+
+    if (isset($variables['elements']['field_key_contact_theme'])) {
+      $key_contact_theme = $variables['elements']['field_key_contact_theme']['#items'][0]['value'];
+      $variables['classes_array'][] = 'component-theme-' . $key_contact_theme;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function localgov_base_paragraphs_preprocess_field(&$variables) {
+  if ($variables['element']['#field_name'] == 'field_promotional_area_video' || $variables['element']['#field_name'] == 'field_paragraph_video_video') {
+    $variables['classes_array'][] = 'video-content';
+  }
+}
+
+
+/**
+ * Short-circuit the version argument.
+ */
+function localgov_base_paragraphs_version() {
+  return TRUE;
+}

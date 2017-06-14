@@ -1,0 +1,58 @@
+// Promotional area.
+
+// Promotional area (content left, media right).
+.promotional-area {
+  @include clearfix();
+  margin-bottom: 30px;
+
+  .img-responsive {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint($screen-md) {
+    .promotional-area-content {
+      padding-right: 0;
+
+      .promo-text {
+        padding-right: 15px;
+      }
+    }
+
+    .promotional-area-media {
+      padding-left: 0;
+    }
+  }
+
+  .promo-text {
+    border: {
+      color: $promotional-area-border-color;
+      style: solid;
+      width: 5px 0 0 0;
+    }
+    @include applyColour(border-top-color);
+  }
+
+  .promo-description {
+    margin-bottom: 20px;
+  }
+}
+
+// Promotional area (media left, content right).
+.promotional-area-media-left {
+  @include breakpoint($screen-md) {
+    .promotional-area-content {
+      padding-left: 0;
+      padding-right: 15px;
+
+      .promo-text {
+        padding-left: 15px;
+        padding-right: 0;
+      }
+    }
+
+    .promotional-area-media {
+      padding-left: 15px;
+      padding-right: 0;
+    }
+  }
+}

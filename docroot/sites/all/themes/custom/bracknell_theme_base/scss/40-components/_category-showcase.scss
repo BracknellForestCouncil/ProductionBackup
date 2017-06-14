@@ -1,0 +1,80 @@
+// Category Showcase.
+
+.showcase {
+  margin-top: 20px;
+}
+
+.showcase-title {
+  margin-top: 0;
+}
+
+.showcase-item {
+  margin-bottom: 20px;
+  position: relative;
+
+  height: 245px;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+
+  .showcase-media-wrap {
+    .showcase-media {
+      position: relative;
+      overflow-y: hidden;
+    }
+  }
+
+  .showcase-overlay {
+    background: $showcase-overlay-bg-color;
+    color: $showcase-overlay-text-color;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    transform: translate3d(0, 101%, 0);
+    transition: 0.8s transform ease;
+  }
+
+  &:focus {
+    outline: auto 5px -webkit-focus-ring-color;
+  }
+
+  &:hover,
+  &:focus {
+    .showcase-overlay {
+      transform: translate3d(0, 0, 0) !important;
+    }
+  }
+
+  .showcase-item-content {
+    padding: 0 20px;
+  }
+
+  .showcase-item-title {
+    font: {
+      size: $font-size-10;
+      weight: 600;
+    }
+    height: auto;
+    margin: 0;
+    padding: 10px 20px;
+  }
+
+  .showcase-item-summary {
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    background: $showcase-button-bg-color;
+    color: $showcase-button-text-color;
+
+    &:focus {
+      border: 0;
+    }
+  }
+}
+
+.showcase-footer {
+  text-align: center;
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Bracknell Feature: Performance feature.
+ */
+
+include_once 'bracknell_feature_performance.features.inc';

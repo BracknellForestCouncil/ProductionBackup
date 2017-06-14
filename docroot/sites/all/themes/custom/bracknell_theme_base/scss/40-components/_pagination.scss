@@ -1,0 +1,40 @@
+// Pagination.
+
+.pagination {
+  text-align: left;
+
+  li {
+    display: inline-block;
+
+    a,
+    span {
+      border: 0;
+      border-radius: 4px;
+      padding: 2px 10px 3px;
+    }
+
+    a {
+      color: $pagination-list-text-color;
+
+      &:hover,
+      &:focus {
+        background-color: $pagination-list-link-hover-bg-color;
+        color: $pagination-list-link-hover-text-color;
+      }
+    }
+  }
+
+  .active {
+    span {
+      background-color: $pagination-list-active-bg-color;
+      border-color: $pagination-list-active-border-color;
+      color: $pagination-list-active-text-color;
+
+      &:hover,
+      &:focus {
+        background-color: $pagination-list-active-bg-color;
+        color: $pagination-list-active-text-color;
+      }
+    }
+  }
+}

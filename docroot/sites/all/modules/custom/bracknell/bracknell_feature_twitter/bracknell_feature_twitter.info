@@ -1,0 +1,6 @@
+name = Bracknell Feature: Twitter
+description = TODO: Add description for bracknell_feature_twitter module.
+core = 7.x
+package = bracknell
+project = bracknell_feature_twitter
+features[features_api][] = api:2

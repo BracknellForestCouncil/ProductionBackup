@@ -1,0 +1,66 @@
+<?php
+/**
+ * @file
+ * bracknell_page_home.module
+ * Code for the Bracknell Page: Home module.
+ *
+ * @package   bracknell_page_home
+ * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
+ * @copyright Copyright (c) 2016, Craig Gardener
+ * @license   http://opensource.org/licenses/gpl-license.php
+ *            GNU General Public License, version 2 or later
+ */
+
+include_once 'bracknell_page_home.features.inc';
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function bracknell_page_home_ctools_plugin_api($module, $api) {
+  if ($module == 'page_manager' && $api == 'pages_default') {
+    return array('version' => 1);
+  }
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function bracknell_page_home_views_api($module, $api) {
+  if ($module == 'views' && $api == 'views_default') {
+    return array('version' => 2);
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bracknell_page_home_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__view__home_feature'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--view--home-feature',
+    'path' => drupal_get_path('module', 'bracknell_page_home') . '/templates',
+   );
+  return $theme;
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function bracknell_page_home_preprocess_node(&$variables) {
+  if ($variables['type'] == 'article') {
+    $article_img = (isset($variables['field_image']) && !empty($variables['field_image'][0])) ? $variables['field_image'][0] : NULL ;
+    if (isset($article_img)) {
+      $article_img_alt = $article_img['alt'];
+      $article_img_uri = $article_img['uri'];
+      $article_img_path = image_style_url('home_feature', $article_img_uri);
+
+      $variables['article_image_path'] = $article_img_path;
+      $variables['article_image_alt'] = $article_img_alt;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+// Documents.
+
+.documents {
+  margin-top: 20px;
+
+  .well {
+    box-shadow: none;
+    border-radius: 0;
+    border: 0;
+  }
+
+  .table {
+    td {
+      &:nth-child(2) {
+        white-space: nowrap;
+      }
+    }
+  }
+}

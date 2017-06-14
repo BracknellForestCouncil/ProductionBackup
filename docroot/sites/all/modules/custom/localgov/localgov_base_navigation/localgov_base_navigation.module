@@ -1,0 +1,131 @@
+<?php
+
+foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
+  include_once $filename;
+}
+
+include_once 'localgov_base_navigation.features.inc';
+
+
+/**
+ * Implements hook_block_info().
+ */
+function localgov_base_navigation_block_info() {
+  $blocks = array();
+
+  $blocks['navigation_main'] = array(
+    'info' => t('Main Navigation'),
+    'status' => TRUE,
+    'region' => 'navigation',
+  );
+
+  $blocks['navigation_homepage'] = array(
+    'info' => t('Home Page Navigation'),
+    'status' => FALSE,
+    'region' => 'page_header',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function localgov_base_navigation_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'navigation_main':
+      $block['subject'] = '<none>';
+      $block['content'] = array(
+        '#theme' => array('navigation_main'),
+        '#menu_tree' => _localgov_base_navigation_format_menu(menu_tree_all_data('main-menu')),
+      );
+      break;
+    case 'navigation_homepage':
+      $block['subject'] = '<none>';
+      $block['content'] = array(
+        '#theme' => array('navigation_homepage'),
+        '#menu_tree' => _localgov_base_navigation_format_menu(menu_tree_all_data('menu-services')),
+        '#opts' => array('show_limit' => 12),
+        '#attached' => array(
+          'libraries_load' => array(
+            array('gridder'),
+          ),
+          'js' => array(
+            drupal_get_path('module', 'localgov_base_navigation') . '/js/localgov_base_navigation.navigation_home.js' => array(
+              'type' => 'file',
+              'group' => JS_DEFAULT,
+              'scope' => 'footer',
+            ),
+          ),
+          'css' => array(
+            drupal_get_path('module', 'localgov_base_navigation') . '/css/localgov_base_navigation.navigation_home.css',
+          ),
+        ),
+      );
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function localgov_base_navigation_libraries_info() {
+  $libraries['gridder'] = array(
+    'name' => 'Gridder',
+    'vendor url' => 'https://github.com/oriongunning/gridder',
+    'download url' => 'https://github.com/oriongunning/gridder/releases',
+    'version arguments' => array(
+      'file' => 'package.json',
+      'pattern' => '/"version": "([0-9\.]+)"/',
+      'lines' => 5,
+    ),
+    'files' => array(
+      'js' => array('dist/js/jquery.gridder.js'),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function localgov_base_navigation_theme($existing, $type, $theme, $path) {
+  $items = array();
+  $items['navigation_homepage'] = array(
+    'template' => 'navigation-homepage',
+    'path' => drupal_get_path('module', 'localgov_base_navigation') . '/templates',
+    'variables' => array('menu_tree' => array(), 'opts' => array('show_limit' => 12)),
+  );
+  $items['navigation_main'] = array(
+    'template' => 'navigation-main',
+    'path' => drupal_get_path('module', 'localgov_base_navigation') . '/templates',
+    'variables' => array('menu_tree' => array()),
+  );
+  return $items;
+}
+
+/**
+ * Format a menu for templating.
+ *
+ * @param array $menu_tree
+ *   A menu tree sent by menu_tree_all_data().
+ *
+ * @return array
+ *   A formatted array of menu items for the template files.
+ */
+function _localgov_base_navigation_format_menu($menu_tree) {
+  return array_map(function ($menu_item) {
+    return array(
+      'name' => $menu_item['link']['link_title'],
+      'name_safe' => drupal_html_class($menu_item['link']['link_title']),
+      'link_path' => ((bool) $menu_item['link']['external'] ? '/' : '') . $menu_item['link']['href'],
+      'disabled' => !empty($menu_item['link']['hidden']) ? $menu_item['link']['hidden'] : FALSE,
+      'children' => _localgov_base_navigation_format_menu($menu_item['below']),
+    );
+  }, array_values($menu_tree));
+}

@@ -1,0 +1,94 @@
+/*
+* News specific styling.
+*/
+
+.news-listings {
+  padding-left: 15px;
+
+  @media (max-width: 768px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  li {
+    article {
+      border-bottom: 1px solid $news-list-border-color;
+      margin-bottom: $commonSpacing/2;
+      padding: 20px 0;
+    }
+
+    figure {
+      padding: 0;
+
+      .img-responsive {
+        margin-bottom: 0;
+      }
+    }
+
+    h2,
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .img-responsive {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .col-sm-8 {
+    @media (max-width: 767px) {
+      padding: 10px 0 0;
+    }
+  }
+}
+
+.news-leader {
+  @include applyColour(border-top-color);
+  border-top: {
+    style: solid;
+    width: 5px;
+  }
+
+  .img-responsive {
+    width: 100%;
+  }
+
+  .col-sm-8 {
+    @media (max-width: 767px) {
+      padding: 10px 0 0;
+    }
+  }
+}
+
+aside {
+  &.news-aside {
+    @media (max-width: 991px) {
+      clear: both;
+    }
+
+    article {
+      @include applyColour(border-top-color);
+      border-top: {
+        style: solid;
+        width: 5px;
+      }
+
+      &:first-child {
+        @media (min-width: 768px) {
+          margin-top: 80px;
+        }
+
+        img {
+          margin-bottom: $commonSpacing/2;
+        }
+      }
+
+      padding-bottom: $commonSpacing;
+
+      img {
+        margin-bottom: $commonSpacing/2;
+      }
+    }
+  }
+}

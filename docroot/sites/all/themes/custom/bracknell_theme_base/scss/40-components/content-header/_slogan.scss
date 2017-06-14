@@ -1,0 +1,63 @@
+// Slogan.
+
+.slogan {
+  @include applyColour(background-color, color);
+
+  .slogan-content {
+    padding: 10px 15px 15px;
+
+    @include breakpoint($screen-md) {
+      @include constrained;
+    }
+
+    .slogan-inner {
+      @include breakpoint($screen-md) {
+        display: flex;
+      }
+    }
+  }
+
+  .slogan-content-has-strapline {
+    .slogan-inner {
+      @include breakpoint($screen-md) {
+        align-items: center;
+      }
+    }
+  }
+
+  .slogan-image {
+    min-width: 120px;
+
+    .img-responsive {
+      margin-bottom: 0;
+    }
+  }
+
+  .slogan-text {
+    flex: 1;
+  }
+
+  .slogan-title,
+  .slogan-strapline {
+    font: {
+      size: 2.4em;
+      weight: 300;
+    }
+    line-height: 1.2em;
+  }
+
+  .slogan-strapline {
+    margin-bottom: 15px;
+  }
+
+  .slogan-call-to-action {
+    a {
+      @extend .btn;
+      background-color: $slogan-button-background-color;
+      color: $slogan-button-text-color;
+      font-weight: 600;
+      margin-bottom: 15px;
+      white-space: normal;
+    }
+  }
+}

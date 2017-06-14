@@ -1,0 +1,174 @@
+<?php
+
+/**
+ * @file
+ * Menu functions for the block module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function acquia_flush_varnish_help($path, $arg) {
+  switch ($path) {
+    case 'admin/config/flush-varnish':
+      return '<p>' . t('Provides a drupal admin side interface to manually purge Acquia
+ Cloud varnish cache using the Acquia  Cloud API. It uses acquia cloud API credentials and validates those credentials in congiguration. It flush varnish cache in domain level. It saves developers time while implementation.') . '</p>';
+
+    case  'admin/help#acquia_flush_varnish': 
+      return '<p>' . t('Provides a drupal admin side interface to manually purge Acquia
+ Cloud varnish cache using the Acquia  Cloud API. It uses acquia cloud API credentials and validates those credentials in congiguration. It flush varnish cache in domain level. It saves developers time while implementation.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function acquia_flush_varnish_menu() {
+  $items['admin/config/flush-varnish'] = array(
+    'title' => 'Acquia API Credentials',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('acquia_flush_varnish_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['admin/config/flush-varnish/api-credentials'] = array(
+    'title' => 'Acquia API Credentials',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+  );
+  $items['admin/config/flush-varnish/flush-all-cache'] = array(
+    'title' => 'Clear varnish cache',
+    'description' => 'Purge acquia varnish cache in admin side',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('acquia_flush_varnish_cacheclear_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+  );
+  return $items;
+}
+
+/**
+ * Function to get api response.
+ */
+function acquia_flush_varnish_getresponse($url, $method, $credentials) {
+  $uname = $credentials[0];
+  $pword = $credentials[1];
+  $headers['Authorization'] = ('Basic ' . base64_encode($uname . ':' . $pword));
+  $response = drupal_http_request($url, array(
+    'headers' => $headers,
+    'method' => $method,
+    'data' => '',
+  ));
+  $response = drupal_json_decode($response->data);
+  return $response;
+}
+
+/**
+ * Function to clear acquia varnish cache.
+ */
+function acquia_flush_varnish_cache() {
+  $referer_url = $_SERVER['HTTP_REFERER'];
+  $mydomainenv = $_ENV['AH_SITE_ENVIRONMENT'];
+  $mydomain = $_ENV['HTTP_HOST'];
+  $uname = variable_get('acquia_flush_varnish_email', '');
+  $pword = variable_get('acquia_flush_varnish_privatekey', '');
+  $credentials = array($uname, $pword);
+  $mysites = acquia_flush_varnish_getresponse("https://cloudapi.acquia.com/v1/sites.json", 'GET', $credentials);
+  $realm = preg_grep('/' . $_ENV['AH_SITE_GROUP'] . '/', $mysites);
+  if ($uname != NULL && $pword != NULL) {
+    foreach ($realm as $realmvalue) {
+      $url = "https://cloudapi.acquia.com/v1/sites/" . $realmvalue . "/envs/" . $mydomainenv . "/domains/" . $mydomain . "/cache.json";
+      $output = acquia_flush_varnish_getresponse($url, 'DELETE', $credentials);
+      if (isset($output['description'])) {
+        break;
+      }
+    }
+    if (isset($output['description'])) {
+      drupal_set_message(check_plain($output['description']));
+    }
+    else {
+      if (isset($output['message']) && $output['message'] == 'Not authorized') {
+        drupal_set_message(t("Not authorized"), 'error');
+      }
+    }
+    drupal_goto($referer_url);
+  }
+  else {
+    drupal_set_message(t("Check your acquia API credentials"), 'error');
+    drupal_goto($referer_url);
+  }
+}
+
+/**
+ * Acquia flush cache form.
+ */
+function acquia_flush_varnish_cacheclear_form($form, &$form_state) {
+  $question = t("Clear varnish cache");
+  $path = check_plain('admin/config/flush-varnish/flush-all-cache');
+  $description = t('Are you sure you want to flush varnish cache?');
+  $yes = t("Confirm");
+  $no  = t("Cancel");
+  return confirm_form($form, $question, $path, $description, $yes, $no);
+}
+
+/**
+ * Acquia flush cache form submit.
+ */
+function acquia_flush_varnish_cacheclear_form_submit($form, &$form_state) {
+  acquia_flush_varnish_cache();
+}
+
+/**
+ * Acquia cloud API credentials form.
+ */
+function acquia_flush_varnish_form($form, &$form_state) {
+  $form['#tree'] = TRUE;
+  $form['acquia_flush_varnish']['email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('E-mail'),
+    '#default_value' => variable_get('acquia_flush_varnish_email', ''),
+    '#size' => 60,
+    '#required' => TRUE,
+    '#attributes' => array('placeholder' => array('Enter your acquia cloud API e-mail')),
+    '#description' => t("Please enter your email."),
+  );
+  $form['acquia_flush_varnish']['private_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Private key'),
+    '#default_value' => variable_get('acquia_flush_varnish_privatekey', ''),
+    '#size' => 60,
+    '#required' => TRUE,
+    '#attributes' => array('placeholder' => array('Enter your acquia cloud API private key')),
+    '#description' => t("Please enter your private key."),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Save API values'),
+  );
+  return $form;
+}
+
+/**
+ * Acquia cloud API credentials form validate.
+ */
+function acquia_flush_varnish_form_validate($form, &$form_state) {
+  $uname = isset($form_state['values']['acquia_flush_varnish']['email']) ? $form_state['values']['acquia_flush_varnish']['email'] : "";
+  $pword = isset($form_state['values']['acquia_flush_varnish']['private_key']) ? $form_state['values']['acquia_flush_varnish']['private_key'] : "";
+  $credentials = array($uname, $pword);
+  $output = acquia_flush_varnish_getresponse("https://cloudapi.acquia.com/v1/sites.json", 'GET', $credentials);
+  if (isset($form_state['values']['acquia_flush_varnish']['email']) && !valid_email_address($form_state['values']['acquia_flush_varnish']['email'])) {
+    form_set_error('acquia_flush_varnish][email', t('The e-mail address is not valid.'));
+  }
+  elseif (isset($output['message']) && $output['message'] == ' Not authorized') {
+    form_set_error('acquia_flush_varnish', t('Acquia cloud API credentials is not valid.'));
+  }
+  else {
+    if (isset($form_state['values']['acquia_flush_varnish']['email']) && isset($form_state['values']['acquia_flush_varnish']['private_key']) && !isset($output['message'])) {
+      variable_set('acquia_flush_varnish_email', $uname);
+      variable_set('acquia_flush_varnish_privatekey', $pword);
+      drupal_set_message(t("Acquia cloud API credentials saved successfully"));
+    }
+    else {
+      form_set_error('acquia_flush_varnish', t('Acquia cloud API credentials is not valid.'));
+    }
+  }
+}

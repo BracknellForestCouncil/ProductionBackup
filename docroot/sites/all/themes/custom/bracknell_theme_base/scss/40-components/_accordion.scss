@@ -1,0 +1,43 @@
+// Accordion.
+
+.accordion {
+  margin-bottom: 20px;
+}
+
+.accordion-pane-title {
+  background-color: $accordion-pane-title-bg-color;
+  border: {
+    color: $accordion-pane-title-border-color;
+    radius: 5px 5px 0 0;
+    style: solid;
+    width: 1px;
+  }
+  font: {
+    size: $font-size-05;
+    weight: 700;
+  }
+  margin-bottom: 0;
+  margin-top: 10px;
+  padding: 10px 15px;
+}
+
+.accordion-pane {
+  background-color: $accordion-pane-bg-color;
+  border: {
+    color: $accordion-pane-border-color;
+    radius: 0 0 5px 5px;
+    style: solid;
+    width: 0 1px 1px 1px;
+  }
+  padding: 20px 15px 0;
+}
+
+// Styling when JavaScript is enabled.
+.js-accordion-control {
+  border-radius: 5px;
+  outline: none;
+}
+
+.js-accordion-control-active {
+  border-radius: 5px 5px 0 0;
+}

@@ -1,0 +1,22 @@
+// Body.
+html,
+body {
+  overflow: hidden; // Fixed the horizontal scroll when use full-width 100%.
+  overflow-y: auto;
+}
+
+html {
+  position: relative;
+}
+
+body {
+  color: $global-text-color;
+  font-family: $sourceSansPro;
+  font-weight: $font-weight-base;
+  font-size: $font-size-base;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrapper {
+  position: relative;
+}

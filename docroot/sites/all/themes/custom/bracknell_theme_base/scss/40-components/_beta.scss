@@ -1,0 +1,11 @@
+// Beta message.
+
+#beta-message {
+  vertical-align: middle;
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

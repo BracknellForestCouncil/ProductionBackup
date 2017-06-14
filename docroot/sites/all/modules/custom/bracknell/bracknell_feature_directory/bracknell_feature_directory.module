@@ -1,0 +1,147 @@
+<?php
+
+/**
+ * @file
+ * Code for the Bracknell Directory feature.
+ */
+
+include_once 'bracknell_feature_directory.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function bracknell_feature_directory_form_eck__entity__form_add_directory_entry_directory_entry_alter(&$form, $form_state) {
+  // Ensure that the title field is at the top of the form.
+  $form['title']['#weight'] = -1;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for nodes.
+ */
+function bracknell_feature_directory_preprocess_node(&$variables) {
+  // This code is a copy of content type group theme module.
+  $node = &$variables['node'];
+
+  // Get the content type groups and apply the theme suggestion.
+  $content_type_group = db_select('content_type_groups_types', 'g')
+    ->fields('g', array('group_type'))
+    ->condition('content_type', $node->type)
+    ->execute()
+    ->fetchField();
+
+  if ($content_type_group) {
+    // Add specific theme hook suggestions for the content type group.
+    array_unshift($variables['theme_hook_suggestions'], 'node__content_type_groups__' . $content_type_group . '__' . $variables['view_mode']);
+    array_unshift($variables['theme_hook_suggestions'], 'node__content_type_groups__' . $content_type_group);
+  }
+
+  if ($content_type_group == 'location' && isset($variables['field_directory_entry']) && !empty($variables['field_directory_entry'][0]['target_id'])) {
+    $location_id = $variables['field_directory_entry'][0]['target_id'];
+
+    if (!empty($location_id)) {
+      $location_entity = entity_load('directory_entry', array($location_id));
+
+      // Add an overview map to location_ content types.
+      $map = entity_view('directory_entry', $location_entity, 'location_zoomed_map');
+      $variables['map'] = !empty($map) ? $map : '<p>' . t('An overview map is currently unavailable.') . '</p>';
+
+      // Display the directions, if a content editor chooses to show them.
+      $field_location_directions = quick_return_field($node, 'field_location_directions');
+      $show_directions = $field_location_directions && $field_location_directions[0]['value'];
+
+      if ($show_directions) {
+        $display_directions = entity_view('directory_entry', $location_entity, 'directions');
+        $variables['directions'] = $display_directions;
+      }
+    }
+  }
+
+  // Output classes and attributes for parks teasers.
+  if ($node->type == 'location_park' && $variables['view_mode'] == 'teaser') {
+    $variables['classes_array'][] = 'showcase-item';
+
+    $node_id = $variables['nid'];
+    $node_aria_reference = 'showcase-item-' . $node_id;
+    $variables['attributes_array']['role'] = 'article';
+    $variables['attributes_array']['aria-labelledby'] = $node_aria_reference;
+    $variables['title_attributes_array']['id'] = $node_aria_reference;
+
+    if (empty($variables['title_attributes_array']['class']) ) {
+      $variables['title_attributes_array']['class'] = 'showcase-item-title';
+    }
+  }
+
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function bracknell_feature_directory_theme_registry_alter(&$theme_registry) {
+  // Defined path to the current module.
+  $module_path = drupal_get_path('module', 'bracknell_feature_directory');
+  // Find all .tpl.php files in this module's folder recursively.
+  $template_file_objects = drupal_find_theme_templates($theme_registry, '.tpl.php', $module_path);
+  // Iterate through all found template file objects.
+  foreach ($template_file_objects as $key => $template_file_object) {
+    // If the template has not already been overridden by a theme.
+    if (!isset($theme_registry[$key]['theme path']) || !preg_match('#/themes/#', $theme_registry[$key]['theme path'])) {
+      // Alter the theme path and template elements.
+      $theme_registry[$key]['theme path'] = $module_path;
+      $theme_registry[$key] = array_merge($theme_registry[$key], $template_file_object);
+      $theme_registry[$key]['type'] = 'module';
+    }
+  }
+}
+
+/**
+ * Implements hook_views_post_execute().
+ */
+function bracknell_feature_directory_views_post_execute(&$view) {
+  // Change the view mode for the directory address view depending on which
+  // options a content editor has choosen.
+  if ($view->name == 'directory_address') {
+    $nid = $view->args[0];
+
+    if (!empty($nid) && $node = node_load($nid)) {
+      $directory_entry = quick_return_field($node, 'field_directory_entry');
+      $address_details = quick_return_field($node, 'field_address_details');
+
+      // Check if the node has a directory entry.
+      if (!empty($directory_entry[0]['target_id'])) {
+        // Change the view mode, or hide the results altogether, based on the
+        // address details select field.
+        if (empty($address_details[0]['value'])) {
+          $view->result = array();
+        }
+        elseif ($address_details[0]['value'] == 'address_with_phone') {
+          $view->style_plugin->row_plugin->options['view_mode'] = 'address_with_phone';
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bracknell_feature_directory_preprocess_views_view_unformatted(&$variables) {
+  if ($variables['view']->name == 'parks') {
+    foreach ($variables['view']->result as $id => $row) {
+      $variables['classes_array'][$id] .= ' col-sm-6';
+      $variables['classes_array'][$id] .= ' col-md-4';
+    }
+
+    drupal_add_js(drupal_get_path('module', 'bracknell_feature_directory') . '/js/bracknell_feature_directory.js');
+  }
+}
+
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function bracknell_feature_directory_preprocess_page(&$variables) {
+  if (isset($variables['node']) && $variables['node']->type === "directory_landing_page") {
+    $display_title = $variables['node']->field_node_display_title[LANGUAGE_NONE][0]['value'];
+    $variables['title'] = !empty($display_title) ? $display_title : $variables['node']->title;
+  }
+}

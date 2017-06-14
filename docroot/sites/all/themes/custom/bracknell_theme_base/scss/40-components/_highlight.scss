@@ -1,0 +1,36 @@
+// Highlight.
+
+.highlight-content {
+  // Just in case...
+  position: relative;
+}
+
+.highlight {
+  background-color: $highlight-bg-color;
+  margin-bottom: 20px;
+  padding: 20px 20px 5px;
+  position: relative;
+
+  .icon {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+
+    &:before {
+      font-size: $font-size-13;
+      line-height: 1.3;
+      vertical-align: top;
+    }
+  }
+
+  h1,
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.highlight-has-icon {
+  .highlight-content {
+    padding-left: 50px;
+  }
+}

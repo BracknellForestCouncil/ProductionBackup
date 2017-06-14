@@ -1,0 +1,29 @@
+// Breadcrumbs.
+
+.breadcrumbs {
+  .breadcrumb {
+    background: none;
+    font-size: $font-size-01;
+    margin: 0;
+    padding: 0;
+
+    li+li {
+      &:before {
+        content: '\e90f';
+        font: {
+          family: 'icomoon';
+          size: $font-size-17;
+        }
+        padding: 0 8px 0 0;
+      }
+    }
+
+    li {
+      display: inline;
+
+      &.active {
+        color: $breadcrumb-li-text-color;
+      }
+    }
+  }
+}

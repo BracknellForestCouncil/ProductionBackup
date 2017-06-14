@@ -1,0 +1,334 @@
+/*
+* Site specific colours.
+*/
+
+// Primary.
+$white: #fff;
+$black: #000;
+
+// Palette A.
+$brandGreen: #363;
+$bracknellBlack: #000010;
+$deepBlue: #0033a1;
+$charcoal: #333;
+$textBlack: $charcoal;
+$greyMid: #545454;
+$greyLight: #adadad;
+$greyExtraLight: #f2f2f2;
+
+// Palette B.
+$turquoise: #00a4a6;
+$limeGreen: #a39707;
+$oliveGreen: #899065;
+$slateBlue: #003b4c;
+$coralreefBlue: #009fd4;
+$sandhurstOrange: #e65722;
+$brightGreen: #62a00f;
+$brightRed: #d62828;
+$plum: #87364e;
+$magenta: #b42371;
+$downshirePurple: #702277;
+$darkOrange: #d35400;
+$purple: #c126b8;
+$leisureBlue: #055fad;
+$edgbarrowRed: #ed2600;
+$discoveryGreen: #0a5;
+
+// Greys.
+$grey1: #484848;
+$grey2: #f7f7f7;
+$grey3: #e7e7e7;
+$grey4: #555;
+$grey5: #ddd;
+$borderGrey: #b7b7b7;
+
+// Beige.
+$beige1: #fbead4;
+
+// Blue.
+$blue1: #09456a;
+$blue2: #55acee;
+$blue3: #3b5998;
+
+// Green.
+$oliveGreenLight: #b3bc9d;
+$oliveGreenOffWhite: #f8f8f6;
+$oliveGreenBorder: #959580;
+
+// Yellow.
+$yellowLight: #ffd;
+
+// Red.
+$redLight: #fee;
+$redDark: #400;
+
+// Typography.
+$global-text-color: $textBlack;
+$global-link-text-color: $deepBlue;
+$global-text-alert-boxout-bg-color: $greyExtraLight;
+$global-heading-link-text-color: $textBlack;
+$global-heading-link-hover-text-color: $deepBlue;
+$global-horizontal-rule-border-color: $greyLight;
+$global-heading-border-color: $brandGreen;
+
+// Settings.
+$green-top-border-color: $brandGreen;
+$green-top-twopx-border-color: $brandGreen;
+$label-archive-bg-color: $brandGreen;
+
+$helper-grey-extra-light-bg-color: $greyExtraLight;
+$helper-olive-green-bg-color: $oliveGreen;
+$helper-green-extra-light-bg-color: $oliveGreenLight;
+
+// Buttons.
+$button-bg-color: $slateBlue;
+$button-text-color: $white;
+$button-bg-hover-color: $slateBlue;
+$button-text-hover-color: $white;
+$button-bg-focus-color: $grey3;
+$button-text-focus-color: $charcoal;
+
+// Buttons - Key Task.
+$button-key-task-border-color: $oliveGreenBorder;
+$button-key-task-bg-color: $oliveGreenOffWhite;
+$button-key-task-text-color: $textBlack;
+
+// Buttons - Sub Task.
+$button-sub-task-bg-color: $white;
+$button-sub-task-border-color: $borderGrey;
+
+// Buttons - Beta.
+$button-beta-bg-color: $darkOrange;
+$button-beta-text-color: $white;
+
+// Buttons - Prompt.
+$button-prompt-bg-color: $white;
+$button-prompt-border-color: $slateBlue;
+$button-prompt-text-color: $slateBlue;
+$button-prompt-icon-text-color: $slateBlue;
+$button-prompt-icon-border-color: $slateBlue;
+
+// Blockquotes.
+$blockquote-bg-color: $greyExtraLight;
+$blockquote-border-color: $brandGreen;
+
+// Key Facts.
+$key-fact-item-body-border-color: $greyExtraLight;
+
+// Forms.
+$form-has-success-text-color: $textBlack;
+$form-control-border-color: $bracknellBlack;
+$form-input-group-button-bg-color: $bracknellBlack;
+$form-search-icon-text-color: $white;
+$form-legend-text-color: $bracknellBlack;
+$form-legend-border-color: $bracknellBlack;
+
+$form-has-warning-label-color: $textBlack;
+$form-has-warning-input-border-color: $textBlack;
+$form-has-warning-status-color: $beige1;
+$form-has-warning-close-icon-color: $textBlack;
+
+$form-has-error-label-color: $brightRed;
+$form-has-error-input-border-color: $brightRed;
+$form-has-error-status-color: $brightRed;
+$form-has-error-close-icon-color: $brightRed;
+
+$form-has-feedback-label-color: $bracknellBlack;
+$form-has-feedback-input-border-color: $blue1;
+$form-has-feedback-status-color: $blue1;
+$form-has-feedback-close-icon-color: $bracknellBlack;
+
+$form-has-default-label-color: $bracknellBlack;
+$form-has-default-input-border-color: $bracknellBlack;
+$form-has-default-status-color: $grey2;
+$form-has-default-close-icon-color: $bracknellBlack;
+
+// Alerts.
+$alert-success-bg-color: $brandGreen;
+$alert-success-text-color: $textBlack;
+$alert-info-bg-color: $blue1;
+$alert-warning-bg-color: $beige1;
+$alert-danger-bg-color: $brightRed;
+$icon-circle-dark-text-color: $brandGreen;
+
+// Header.
+$header-logo-bg-color: $white;
+
+// NavBar.
+$navbar-bg-color: $white;
+$nav-tools-account-link-text-color: $textBlack;
+$nav-tools-account-link-q-mark-bg-color: $grey3;
+$nav-tools-menu-toggle-menu-icon-text-color: $white;
+$nav-tools-menu-toggle-icon-bar-bg-color: $white;
+$nav-tools-search-button-primary-bg-color: $textBlack;
+$nav-top-nav-wrapper-bg-color: $textBlack;
+$nav-bar-collapse-link-text-color: $white;
+
+$main-menu-button-text-color: $white;
+$main-menu-button-bg-color: $textBlack;
+$main-menu-button-focus-bg-color: $greyMid;
+
+// Search.
+$search-text-border-color: $grey1;
+$search-text-placeholder-text-color: $greyMid;
+$search-button-background-color: $charcoal;
+$search-button-hover-background-color: $greyMid;
+$search-results-title-color: $brandGreen;
+$search-results-title-highlight-color: $yellowLight;
+$search-results-border-color: $grey3;
+$search-results-date-color: $greyLight;
+$search-results-no-results-background-color: $redLight;
+$search-results-no-results-text-color: $redDark;
+
+// Breadcrumbs.
+$breadcrumb-border-color: $textBlack;
+$breadcrumb-li-text-color: $textBlack;
+
+// Socials.
+$twitterIconBlue: $blue2;
+$facebookIconBlue: $blue3;
+$socials-share-page-link-text-color: $slateBlue;
+$socials-share-page-twitter-link-text-color: $twitterIconBlue;
+$socials-share-page-facebook-link-text-color: $facebookIconBlue;
+$social-media-link-text-color: $white;
+
+// Pagination.
+$pagination-controls-link-hover-text-color: $deepBlue;
+$pagination-list-text-color: $slateBlue;
+$pagination-list-active-bg-color: $slateBlue;
+$pagination-list-active-text-color: $white;
+$pagination-list-link-hover-text-color: $white;
+$pagination-list-link-hover-bg-color: $slateBlue;
+$pagination-list-active-border-color: $slateBlue;
+
+// News.
+$news-list-border-color: $grey3;
+$news-teaser-border-color: $grey3;
+
+// Tables.
+$table-border-color: $bracknellBlack;
+$table-grey-border-color: $grey5;
+$table-row-bg-color: $white;
+$table-thead-bg-color: $greyExtraLight;
+$table-thead-border-color: $grey3;
+$table-heading-border-color: $bracknellBlack;
+$table-cell-border-color: $bracknellBlack;
+
+// Page Rater.
+$page-rater-bg-color: $greyExtraLight;
+$page-rater-button-text-color: $slateBlue;
+$page-rater-icon-bg-color: $white;
+
+// Carousel.
+$carousel-bg-color: $greyExtraLight;
+$carousel-inner-bg-color: $greyExtraLight;
+$carousel-caption-text-color: $bracknellBlack;
+$carousel-caption-bg-color: $greyExtraLight;
+$carousel-caption-line-color: $grey3;
+$carousel-caption-quote-text-color: $greyMid;
+$carousel-control-text-color: $greyLight;
+$carousel-control-hover-text-color: $greyLight;
+$carousel-video-bg-color: $bracknellBlack;
+
+// Contact Info.
+$contact-info-bg-color: $greyExtraLight;
+
+// Hero.
+$hero-title-text-color: $textBlack;
+$hero-title-inner-bg-color: rgba(255, 255, 255, 0.8);
+$hero-title-border-color: $brandGreen;
+
+// Slogan.
+$slogan-button-background-color: $grey2;
+$slogan-button-text-color: $slateBlue;
+
+// Guide.
+$guide-nav-primary-bg-color: $greyExtraLight;
+$guide-nav-primary-list-text-color: $textBlack;
+$guide-nav-primary-list-link-hover-bg-color: $greyExtraLight;
+$guide-nav-secondary-button-bg-color: $white;
+$guide-nav-secondary-button-text-color: $slateBlue;
+$guide-nav-secondary-button-hover-bg-color: $greyExtraLight;
+$guide-nav-secondary-button-hover-text-color: $bracknellBlack;
+
+// Gridder.
+$gridder-list-bg-color: $white;
+$gridder-list-border-color: $greyLight;
+$gridder-selected-item-bg-color: $oliveGreen;
+$gridder-selected-item-link-text-color: $white;
+$gridder-selected-item-icon-text-color: $white;
+$gridder-list-link-text-color: $grey1;
+$gridder-show-link-text-color: $grey1;
+$gridder-list-icon-text-color: $brandGreen;
+$gridder-navigation-link-text-color: $bracknellBlack;
+$gridder-show-padding-bg-color: $oliveGreenLight;
+
+// Footer.
+$footer-bg-color: $grey1;
+$footer-text-color: $white;
+$footer-link-text-color: $white;
+$footer-list-border-color: $white;
+$footer-list-bullet-color: $greyLight;
+
+// Tabs.
+$acc-tabs-control-border-color: $greyLight;
+$acc-tabs-control-button-border-color: transparent;
+$acc-tabs-control-item-active-border-color: $greyLight;
+$acc-tabs-control-item-active-bottom-border-color: $white;
+$acc-tabs-control-button-text-color: $deepBlue;
+$acc-tabs-control-active-button-text-color: $textBlack;
+
+// Category Showcase.
+$showcase-overlay-text-color: $white;
+$showcase-overlay-bg-color: rgba($slateBlue, 0.75);
+$showcase-button-bg-color: $white;
+$showcase-button-text-color: $slateBlue;
+
+// Accordion.
+$accordion-pane-title-bg-color: $greyExtraLight;
+$accordion-pane-title-border-color: $greyLight;
+$accordion-pane-bg-color: $white;
+$accordion-pane-border-color: $greyLight;
+$accordion-control-hover-bg-color: $deepBlue;
+$accordion-control-hover-text-color: $white;
+
+// Top Tasks.
+$top-tasks-bg-color: $oliveGreenLight;
+
+// Related Pages.
+$related-pages-bg-color: $greyExtraLight;
+
+// Highlight.
+$highlight-bg-color: $greyExtraLight;
+
+// Promotional Area.
+$promotional-area-border-color: $brandGreen;
+
+// Pods.
+$pod-border-color: $brandGreen;
+$pod-emphasise-bg-color: $greyExtraLight;
+$pod-emphasise-border-color: $greyExtraLight;
+
+// Grid Display.
+$grid-display-box-media-bg-color: $greyExtraLight;
+$grid-display-box-media-border-color: $greyLight;
+$grid-display-grid-content-border-color: $greyExtraLight;
+
+// Featured Box.
+$featured-box-border-color: $brandGreen;
+$featured-box-text-color: $white;
+$featured-box-default-text-color: $charcoal;
+
+// Filters
+$filters-bg-color: $greyExtraLight;
+$filters-input-border-color: $grey3;
+
+// Key Contact.
+$key-contact-bg-color: $greyExtraLight;
+$key-contact-item-image-bg-color: $white;
+$key-contact-item-title-text-color: $white;
+$key-contact-item-email-link-text-color: $white;
+
+// Was This Useful.
+$wtu-bg-color: $greyExtraLight;
+$wtu-question-link-text-color: $charcoal;

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAEA,SAAU;EACR,KAAK,EAAE,IAAI;;AAOX,YAAa;EACX,MAAM,EAAE,GAAG;EACX,OAAO,EAAE,GAAG;EACZ,eAAe,EAAE,IAAI;;AAGvB,mBAAoB;EAClB,OAAO,EAAE,YAAY;EACrB,cAAc,EAAE,GAAG;ECjBrB,KAAK,EAAE,SAAoD;EAC3D,gCAAe;IACb,aAAa,EDgBO,EAAE;ICftB,YAAY,EDeQ,EAAE;ECbxB,mCAA8B;IAC5B,YAAY,EAAE,CAAC;IACf,aAAa,EAAE,CAAC",
-"sources": ["../scss/localgov_base_navigation.navigation_main.scss","../scss/_mixins.scss"],
-"names": [],
-"file": "localgov_base_navigation.navigation_main.css"
-}

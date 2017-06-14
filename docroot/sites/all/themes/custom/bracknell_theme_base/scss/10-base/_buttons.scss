@@ -1,0 +1,102 @@
+// Buttons - override BS default.
+
+.btn {
+  border: 0;
+  text-decoration: none;
+  padding: 12px 15px;
+  margin-bottom: $commonSpacing - 10;
+  background: $button-bg-color;
+  color: $button-text-color;
+
+  &:hover {
+    background-color: $button-bg-hover-color;
+    color: $button-text-hover-color;
+  }
+
+  &:focus {
+    background-color: $button-bg-focus-color;
+    color: $button-text-focus-color;
+  }
+
+  &:active,
+  &.active {
+    box-shadow: none !important;
+  }
+
+  &.btn-primary {
+    padding: 12px 20px;
+  }
+
+  &.key-task {
+    @extend .line-wrapping;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: $font-weight-headinglight;
+    display: block;
+    border: 1px solid $button-key-task-border-color;
+    padding: 15px 30px 25px 42px;
+    min-height: 4.2em;
+    line-height: 1.15em;
+    background: {
+      color: $button-key-task-bg-color;
+      image: url('../images/large-arrow-black.png');
+      position: 21px 20px;
+      repeat: no-repeat;
+    }
+    color: $button-key-task-text-color;
+
+    &:hover {
+      border-color: darken($button-bg-hover-color, 3);
+      background-image: url('../images/large-arrow-white.png');
+    }
+
+    &:focus {
+      border-color: darken($button-bg-focus-color, 3);
+      background-image: url('../images/large-arrow-black.png');
+    }
+  }
+
+  &.sub-task {
+    @extend .key-task;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    padding: 12px 24px 18px 32px;
+    min-height: 3em;
+    background: {
+      color: $button-sub-task-bg-color;
+      image: url('../images/small-arrow-black.png');
+      position: 16px 17px;
+      repeat: no-repeat;
+    }
+    border-color: $button-sub-task-border-color;
+
+    &:hover {
+      border-color: darken($button-bg-hover-color, 3);
+      background-image: url('../images/small-arrow-white.png');
+    }
+
+    &:focus {
+      border-color: darken($button-bg-focus-color, 3);
+      background-image: url('../images/small-arrow-black.png');
+    }
+  }
+
+  &.button-prev,
+  &.button-next {
+    span[class^='icon-'] {
+      font-size: $font-size-17;
+    }
+  }
+}
+
+.btn-beta {
+  border: 0;
+  text-decoration: none;
+  padding: 8px 15px;
+  background: $button-beta-bg-color;
+  color: $button-beta-text-color;
+  border-radius: $border-radius-base;
+  float: left;
+  margin-right: 10px;
+}

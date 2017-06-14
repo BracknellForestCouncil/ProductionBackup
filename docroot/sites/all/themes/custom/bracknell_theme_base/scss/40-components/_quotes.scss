@@ -1,0 +1,42 @@
+// Blockquotes.
+
+blockquote {
+  @include applyColour(border-color);
+  background: $blockquote-bg-color;
+  border: {
+    style: solid;
+    width: 0 0 0 5px;
+  }
+  clear: both;
+  font-size: $font-size-base;
+  margin: 20px 0;
+  padding: 25px 23px;
+
+  .blockquote-quote {
+    line-height: 1.4em;
+    margin-bottom: 10px;
+
+    p {
+      // This will only work on Safari, but there's no point doing something
+      // like text-indent: -5em because, although it will work in many
+      // situations, there are also many which will break it.
+      hanging-punctuation: first;
+    }
+  }
+
+  footer {
+    color: inherit;
+    font: {
+      size: 1em;
+      weight: 600;
+    }
+
+    &:before {
+      display: none;
+    }
+
+    cite {
+      font-style: normal;
+    }
+  }
+}

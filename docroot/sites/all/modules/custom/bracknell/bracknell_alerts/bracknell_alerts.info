@@ -1,0 +1,10 @@
+name = Bracknell Alerts
+description = Controller for all the alerts that show on the site
+core = 7.x
+package = bracknell
+version = 7.x-1.0
+project path = sites/all/modules/custom/bracknell
+
+files[] = includes/bracknell_alerts.admin.inc
+
+dependencies[] = block

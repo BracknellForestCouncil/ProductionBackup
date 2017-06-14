@@ -1,0 +1,48 @@
+// Key facts.
+
+.key-facts {
+  .key-facts-title {
+    h5 {
+      font-size: 1em;
+    }
+    margin-bottom: 15px;
+  }
+
+  .key-facts-items {
+    .key-fact-item {
+      margin-bottom: 20px;
+      position: relative;
+
+      .key-fact-item-title {
+        @include applyColour(background-color, color);
+        border-radius: 3px;
+        display: inline-block;
+        left: 0;
+        margin: 0;
+        padding: 8px 15px 10px;
+        position: absolute;
+        top: 15px;
+
+        h5 {
+          font: {
+            size: 1em;
+            weight: 600;
+          }
+          margin: 0;
+          padding: 0;
+        }
+      }
+
+      .key-fact-item-body {
+        border: {
+          color: $key-fact-item-body-border-color;
+          radius: 3px;
+          style: solid;
+          width: 1px;
+        }
+        margin-left: 15px;
+        padding: 60px 20px 0 25px;
+      }
+    }
+  }
+}

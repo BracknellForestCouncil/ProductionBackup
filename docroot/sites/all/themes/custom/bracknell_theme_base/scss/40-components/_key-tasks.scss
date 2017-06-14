@@ -1,0 +1,34 @@
+// Top Tasks.
+
+.top-tasks {
+  @extend .call-to-actions;
+  @extend .sub-grid-categories;
+  background: $top-tasks-bg-color;
+  padding: 40px 0 30px;
+
+  .task-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+    padding: 0;
+
+    .task-list-item {
+      display: flex;
+      margin: 0 0 10px;
+      padding: 0 10px;
+      width: 33.333333%;
+
+      a {
+        @extend .btn;
+        @extend .key-task;
+        border-radius: 3px;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: $screen-sm)  {
+        width: 100%;
+      }
+    }
+  }
+}

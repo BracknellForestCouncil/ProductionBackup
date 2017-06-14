@@ -1,0 +1,91 @@
+/*
+* Bespoke form element styling
+*/
+
+.label {
+  border-radius: 0;
+  padding: 7px 15px;
+  margin-bottom: $commonSpacing/2;
+  display: inline-block;
+  font-weight: $font-weight-headinglight;
+
+  &.label-archive {
+    background: $label-archive-bg-color;
+  }
+}
+
+.navbar-form {
+  border: 0;
+  margin: 0;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.form-group {
+  .div-required {
+    position: relative;
+    right: 10px;
+    top: 40px;
+  }
+
+  .help-block {
+    border-radius: 0;
+  }
+
+  &.has-success {
+    @include showFormStatus($brandGreen, $brandGreen, $brandGreen, 50%, $brandGreen);
+
+    .help-block {
+      color: $form-has-success-text-color;
+    }
+  }
+
+  &.has-warning {
+    @include showFormStatus($form-has-warning-label-color, $form-has-warning-input-border-color, $form-has-warning-status-color, 0%, $form-has-warning-close-icon-color);
+  }
+
+  &.has-error {
+    @include showFormStatus($form-has-error-label-color, $form-has-error-input-border-color, $form-has-error-status-color, 40%, $form-has-error-close-icon-color);
+  }
+
+  &.has-feedback {
+    @include showFormStatus($form-has-feedback-label-color, $form-has-feedback-input-border-color, $form-has-feedback-status-color, 60%, $form-has-feedback-close-icon-color);
+  }
+
+  &.has-default {
+    @include showFormStatus($form-has-default-label-color, $form-has-default-input-border-color, $form-has-default-status-color, 0%, $form-has-default-close-icon-color);
+  }
+}
+
+.form-control {
+  border: 1px solid $form-control-border-color;
+  box-shadow: none;
+  height: 49px;
+}
+
+.input-group-btn {
+  .btn {
+    background: $form-input-group-button-bg-color;
+    border: 0;
+    padding: 12px 12px 8px;
+  }
+}
+
+// This is to force visibility of the toggled search input.
+#search-toggle {
+  @media (max-width: 768px) {
+
+    &.collapse {
+      &.in {
+        display: block !important;
+      }
+    }
+  }
+}
+
+legend {
+  border-bottom: 2px solid $form-legend-border-color;
+  color: $form-legend-text-color;
+}

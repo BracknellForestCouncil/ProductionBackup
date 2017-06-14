@@ -1,0 +1,29 @@
+// Social Media (footer).
+
+.social-media {
+  ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: $social-media-link-text-color;
+    font-size: $font-size-12;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

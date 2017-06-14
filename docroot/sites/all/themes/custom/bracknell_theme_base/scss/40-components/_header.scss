@@ -1,0 +1,97 @@
+// Header.
+
+.header {
+  position: relative;
+}
+
+.header-inner {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.logo {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: static;
+  text-align: right;
+}
+
+.logo-container {
+  float: left;
+  height: 80px;
+  margin: 15px 0;
+  position: relative;
+  width: 100px;
+  z-index: 150;
+
+  @include breakpoint($screen-sm) {
+    margin-bottom: 0;
+    height: 104px;
+    width: 130px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.logo-link {
+  display: block;
+  padding: 0;
+  position: relative;
+}
+
+.header-section {
+  .js & {
+    position: static;
+
+    @include breakpoint($screen-md) {
+      position: relative;
+    }
+  }
+}
+
+.header-tools {
+  border-bottom: 3px solid $breadcrumb-border-color;
+
+  @include breakpoint($screen-sm) {
+    min-height: 140px;
+    padding-top: 60px;
+    position: static;
+    text-align: right;
+  }
+}
+
+.header-account {
+  display: none;
+
+  @include breakpoint($screen-md) {
+    display: inline-block;
+    margin-top: 15px;
+    max-width: 360px;
+    vertical-align: middle;
+  }
+
+  a {
+    display: block;
+    color: $nav-tools-account-link-text-color;
+    line-height: 1;
+    text-decoration: none;
+
+    .q-mark {
+      background: {
+        color: $nav-tools-account-link-q-mark-bg-color;
+        position: 50% 50%;
+        size: 10px 10px;
+      }
+      border-radius: 50%;
+      box-sizing: border-box;
+      font-size: 12px;
+      height: 22px;
+      line-height: 23px;
+      padding-right: 1px;
+      text-align: center;
+      width: 22px;
+    }
+  }
+}

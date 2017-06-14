@@ -1,0 +1,143 @@
+/*
+* Global site settings here.
+* Includes @extend-ed classes
+* Includes some Bootstrap specific overrides.
+*/
+
+/**
+* Grid and related:
+* ===============================
+*/
+
+// Full width wrapping elements - bg colour
+&.grey-x-light {
+  @include fullwidth-bg($helper-grey-extra-light-bg-color);
+}
+
+&.green-olive {
+  @include fullwidth-bg($helper-olive-green-bg-color);
+}
+
+&.green-x-light {
+  @include fullwidth-bg($helper-green-extra-light-bg-color);
+}
+
+.pad-30-top {
+  padding-top: $commonSpacing;
+}
+
+// Remove margin/padding from gutters: http://www.bootply.com/Ae3xTyAW5D
+.row {
+  &.no-pad {
+    margin-right: 0;
+    margin-left: 0;
+
+    [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
+
+      // Address elements inside no-pad blocks
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-right: $commonSpacing / 3;
+      }
+    }
+  }
+}
+
+
+.block_no-pad {
+  @media (min-width: 768px) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/*
+* Common/generic and bespoke pod setting tweaks/additions
+* =====================================================
+*/
+
+.paddingLR {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.margin-top-zero {
+  margin-top: 0;
+}
+
+.margin-bot-small {
+  margin-bottom: $commonSpacing / 2;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.green-top-twopx {
+  border-top: 2px solid $green-top-twopx-border-color;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/**
+* Misc elements
+* ===============================
+*/
+
+.call-to-actions {
+  @media (max-width: 550px) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .sub-task {
+    margin: 0 0 10px;
+  }
+}
+
+.sub-grid-categories {
+  padding-bottom: 20px;
+
+  .col-sm-4 {
+    padding: 0 5px;
+  }
+}
+
+// Accessibility misc:
+// Add visual :focus to given element - accessibility requirement
+.link-focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+// Carets
+.caret {
+  &.up {
+    content: '';
+    border-top: 0;
+    border-bottom: 4px dashed;
+  }
+}
+
+.show-ie8 {
+  display: none;
+}
+
+.lt-ie9 {
+  .hide-ie8 {
+    display: none;
+  }
+
+  .show-ie8 {
+    display: block;
+  }
+}

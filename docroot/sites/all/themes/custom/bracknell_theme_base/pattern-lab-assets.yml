@@ -1,0 +1,10 @@
+# Add file paths here to get added to Pattern Lab.
+
+js:
+  - /js/scripts.js
+  - /js/pattern-lab/jquery.gridder.min.js
+  - /js/pattern-lab/pattern-lab.js
+
+css:
+  - /css/bootstrap.custom.css
+  - /css/bracknell_theme_base.styles.css

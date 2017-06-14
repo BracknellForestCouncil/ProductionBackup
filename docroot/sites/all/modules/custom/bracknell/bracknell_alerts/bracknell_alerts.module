@@ -1,0 +1,89 @@
+<?php
+
+/**
+ * @file
+ * bracknell_alerts.module
+ */
+
+/**
+ * Implements hook_menu().
+ *
+ * Define the administrative paths for changing alert settings.
+ */
+function bracknell_alerts_menu() {
+  $items = array();
+  $items['admin/localgov/alerts'] = array(
+    'title' => t('Alerts'),
+    'description' => t('Settings form for the Bracknell alerts'),
+    'access arguments' => array('administer alerts'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bracknell_alerts_admin_settings_form'),
+    'file' => 'includes/bracknell_alerts.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function bracknell_alerts_permission() {
+  return array(
+    'administer alerts' => array(
+      'title' => t('Administer alerts'),
+      'description' => t('Allow users to modify the global alerts.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ *
+ * Define the block that will show the alert message.
+ */
+function bracknell_alerts_block_info() {
+  return array(
+    'bracknell_alerts_global_alert' => array(
+      'info' => t('Global alert'),
+      'status' => TRUE,
+      'theme' => 'bracknell_theme_base',
+      'region' => 'alerts',
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * Define the block views for alert messages.
+ */
+function bracknell_alerts_block_view($delta = '') {
+  switch ($delta) {
+    case 'bracknell_alerts_global_alert':
+      $is_enabled = variable_get('bracknell_alerts_global_enabled', FALSE);
+      $default_text = variable_get('bracknell_alerts_global_text', FALSE);
+      if (!$is_enabled || !$default_text) {
+        return array();
+      }
+      return array(
+        'subject' => '<none>',
+        'content' => array(
+          '#markup' => $default_text['value'],
+        ),
+      );
+    default:
+      return array();
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ *
+ * Add classes to the global alert block based on the severity level.
+ */
+function bracknell_alerts_preprocess_block(&$variables) {
+  $block = $variables['block'];
+  if ($block->module === 'bracknell_alerts' && $block->delta === 'bracknell_alerts_global_alert') {
+    $variables['classes_array'][] = variable_get('bracknell_alerts_global_severity', 'info');
+  }
+}

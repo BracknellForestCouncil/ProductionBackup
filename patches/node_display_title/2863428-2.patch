@@ -1,0 +1,38 @@
+diff --git a/node_display_title.info b/node_display_title.info
+index 06e7694..afb39c8 100755
+--- a/node_display_title.info
++++ b/node_display_title.info
+@@ -1,6 +1,7 @@
+ name = Node Display Title
+ description = Create separate admin and display titles for a node.
+ core = 7.x
++dependencies[] = entity
+ dependencies[] = field
+ files[] = node_display_title.module
+ configure = admin/config/content/node_display_title
+diff --git a/node_display_title.module b/node_display_title.module
+index 2246644..be94eaa 100755
+--- a/node_display_title.module
++++ b/node_display_title.module
+@@ -16,13 +16,15 @@
+  * @return string 
+  */
+ function _node_display_title_get_display_title($node) {
+-  // Default display title value is the admin title value. 
+-  $title = $node->title;
+-    
+-  if (isset($node->field_node_display_title[$node->language][0]['value'])) {
+-    $title = check_plain($node->field_node_display_title[$node->language][0]['value']);
++  $wrapper = entity_metadata_wrapper('node', $node);
++
++  // Use the field_node_display_title value.
++  if ($title = $wrapper->field_node_display_title->value()) {
++    return $title;
+   }
+-  return $title;
++
++  // Use the default title.
++  return $wrapper->label();
+ }
+ 
+ /**

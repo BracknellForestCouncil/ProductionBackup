@@ -1,0 +1,153 @@
+/*
+*  Table styling for mininmal, headed and striped designs.
+*/
+
+table {
+  caption {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+}
+
+.table-responsive {
+  border: 0;
+
+  @include breakpoint($screen-md) {
+    overflow-x: visible;
+  }
+}
+
+// Default.
+.table {
+  border: 0;
+  margin-bottom: 20px;
+
+  thead {
+    background: none;
+    vertical-align: middle;
+
+    tr > th {
+      padding: 0;
+    }
+  }
+
+  tbody {
+    tr {
+      th {
+        border: 0;
+        padding: 0;
+      }
+
+      td {
+        border: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  p {
+    margin: 8px 10px;
+  }
+
+  .icon {
+    font-size: $font-size-06;
+    padding-right: 10px;
+  }
+}
+
+// Table Minial.
+.table-minimal {
+  .table {
+    thead {
+      tr {
+        th {
+          border-bottom: 3px solid $table-grey-border-color;
+          padding: 0;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background: $table-row-bg-color;
+        border-bottom: 1px solid $table-grey-border-color;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Table Headed.
+.table-headed {
+  .table {
+    thead {
+      background: $table-thead-bg-color;
+      border: 0;
+
+      // To override Bootstrap styling.
+      &:first-child {
+        tr {
+          &:first-child {
+            th {
+              border: 1px $table-thead-border-color solid;
+            }
+          }
+        }
+      }
+
+      tr {
+        th {
+          border: 1px $table-thead-border-color solid;
+          font-weight: 600;
+          padding: 0;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background: $table-row-bg-color;
+      }
+
+      tr > td {
+        background: none;
+        border: 1px solid $table-grey-border-color;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Table Icon Striped.
+.table-icon-striped {
+  .table {
+    thead > tr {
+      border: 1px solid $table-border-color;
+
+      > th {
+        background: $grey3;
+        border: 1px solid $table-border-color;
+        font-weight: 600;
+      }
+    }
+
+    tbody {
+      border: 1px solid #000;
+      border-top: 0;
+
+      tr {
+        td {
+          border-right: 1px solid $table-border-color;
+          border-top: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

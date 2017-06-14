@@ -1,0 +1,398 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall hooks for bracknell_deploy.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function bracknell_deploy_install() {
+  // Search for any existing update hooks.
+  for ($i = 7000; $i < 8000; $i++) {
+    if (function_exists($function_name = "bracknell_deploy_update_{$i}")) {
+      // Run the function.
+      $function_name();
+    }
+  }
+}
+
+/**
+ * Enable and configure node_display_title module.
+ */
+function bracknell_deploy_update_7000() {
+  module_enable(array('node_display_title'));
+
+  variable_set('node_display_title_settings', array('guide_section'));
+}
+
+/**
+ * Create landing page nodes for existing taxonomy terms.
+ */
+function bracknell_deploy_update_7001() {
+  foreach (taxonomy_get_tree(taxonomy_vocabulary_machine_name_load('category')->vid) as $term) {
+    watchdog('bracknell_deploy', 'Converting ":name" to a landing page.', array(':name' => $term->name));
+
+    if (function_exists('drush_log')) {
+      drush_log(dt('Converting "!name" to a landing page.', array(
+        '!name' => $term->name,
+      )), 'ok');
+    }
+
+    $node = entity_create('node', array(
+      'status' => NODE_PUBLISHED,
+      'title' => $term->name,
+      'type' => 'landing_page',
+      'uid' => 1,
+    ));
+
+    node_save($node);
+
+    // Update the menu link.
+    watchdog('bracknell_deploy', 'Updating the menu link for ":name".', array(':name' => $term->name));
+
+    if (function_exists('drush_log')) {
+      drush_log(dt('Updating the menu link for "!name".', array(
+        '!name' => $term->name,
+      )), 'ok');
+    }
+
+    $menu_link = db_query("SELECT * FROM {menu_links} WHERE menu_name = 'main-menu' AND link_title = :title", array(':title' => $term->name))->fetchAssoc();
+    $menu_link['link_path'] = "node/{$node->nid}";
+    $menu_link['router_path'] = 'node/%';
+
+    db_update('menu_links')
+      ->fields($menu_link)
+      ->condition('mlid', $menu_link['mlid'])
+      ->execute();
+  }
+
+  menu_cache_clear('main-menu');
+}
+
+/**
+ * Enable and revert bracknell_feature_directory.
+ */
+function bracknell_deploy_update_7002() {
+  features_install_modules(array('bracknell_feature_directory'));
+
+  features_revert_module('bracknell_feature_directory');
+}
+
+/**
+ * Enable content_type_groups and content_type_groups_theme.
+ */
+function bracknell_deploy_update_7003() {
+  module_enable(array('content_type_groups', 'content_type_groups_theme'));
+
+  features_revert_module('bracknell_feature_directory');
+}
+
+/**
+ * Eradicate a list of fields updated in Features.
+ */
+function bracknell_deploy_update_7004() {
+  $field_list = array(
+    'field_carousel_slide_content',
+    'field_promotional_related_pages',
+    'field_testimonial_logo',
+  );
+  // Loop through the list of field names and EXTERMINATE!
+  foreach ($field_list as $field_name) {
+    // Retrieve all bundles for an entity.
+    $bundles = field_info_bundles($field_name);
+    foreach ($bundles as $bundle => $properties) {
+
+      // Retrieve all the fields for a given bundle.
+      $instances = field_info_instances($field_name, $bundle);
+      foreach ($instances as $instance) {
+        field_delete_instance($instance, TRUE);
+        field_purge_batch(1);
+      }
+    }
+
+    if (field_read_field($field_name)) {
+      field_delete_field($field_name);
+      field_purge_batch(1);
+    }
+  }
+}
+
+/**
+ * Enable Modernizr module.
+ */
+function bracknell_deploy_update_7005() {
+  module_enable(array('modernizr'));
+}
+
+/**
+ * Enable Bracknell Feeds feature.
+ */
+function bracknell_deploy_update_7006() {
+  module_enable(array('bracknell_feature_feeds'));
+}
+
+/**
+ * Update the site Error Pages config to new custom 403-404 spec.
+ */
+function bracknell_deploy_update_7007(&$sandbox) {
+  // Reset the error pages in admin/config/system/site-information.
+  variable_set('site_403', 'bb-403');
+  variable_set('site_404', 'bb-404');
+}
+
+/**
+ * Delete link field from accordion paragraph.
+ */
+function bracknell_deploy_update_7008() {
+  if (field_read_field('field_paragraph_accordion_pane_l')) {
+    field_delete_field('field_paragraph_accordion_pane_l');
+    field_purge_batch(1);
+  }
+}
+
+/**
+ * Delete field_paragraph_showcase_items from category showcase paragraph.
+ */
+function bracknell_deploy_update_7009() {
+  if (field_read_field('field_paragraph_showcase_items')) {
+    field_delete_field('field_paragraph_showcase_items');
+    field_purge_batch(1);
+  }
+}
+
+/**
+ * Enable the localgov_base_cookies module.
+ */
+function bracknell_deploy_update_7010() {
+  module_enable(array('localgov_base_cookies'));
+}
+
+/**
+ * Enable the bracknell_readspeak module.
+ */
+function bracknell_deploy_update_7011(&$sandbox) {
+  module_enable(array('custom_pub'));
+  module_enable(array('bracknell_readspeak'));
+}
+
+/**
+ * Enable the addressfield_sub_premise module to provide Address 3.
+ */
+function bracknell_deploy_update_7012(&$sandbox) {
+  module_enable(array('addressfield_sub_premise'));
+}
+
+/**
+ * Enable the Metatag module for SEO and sharing on social meeja.
+ */
+function bracknell_deploy_update_7013(&$sandbox) {
+  module_enable(array('bracknell_feature_seo'));
+}
+
+/**
+ * Drop all data from the File Type Document Description field.
+ */
+function bracknell_deploy_update_7014(&$sandbox) {
+  $field = 'field_file_description';
+  db_truncate('field_data_' . $field)->execute();
+  db_truncate('field_revision_' . $field)->execute();
+  watchdog('Bracknell Deploy', 'Truncated all data from :field', array(':field' => $field));
+}
+
+/**
+ * Batch update the nodes with node display titles.
+ */
+function bracknell_deploy_update_7015(&$sandbox) {
+  $ret = array();
+
+  // Use the sandbox to store the information needed to track progression
+  // between successive calls to the function.
+  if (!isset($sandbox['progress'])) {
+    // The count of nodes visited so far.
+    $sandbox['progress'] = 0;
+    // Total nodes that must be visited.
+    $sandbox['max'] = db_query('SELECT COUNT(nid) FROM {node}')->fetchField();
+    // A place to store messages during the run.
+    $sandbox['messages'] = array();
+    // Last node read via the query.
+    $sandbox['current_node'] = -1;
+    // A count of the number of updates.
+    $sandbox['upcount'] = 0;
+  }
+
+  // Process nodes by groups of 50
+  // When a group is processed, the batch update engine determines
+  // whether it should continue processing in the same request or provide
+  // progress feedback to the user and wait for the next request.
+  $limit = 50;
+
+  // Retrieve the next group of nids.
+  $result = db_select('node', 'n')
+    ->fields('n', array('nid'))
+    ->orderBy('n.nid', 'ASC')
+    ->where('n.nid > :nid', array(':nid' => $sandbox['current_node']))
+    ->extend('PagerDefault')
+    ->limit($limit)
+    ->execute();
+
+  foreach ($result as $row) {
+    $node = node_load($row->nid);
+
+    if (isset($node) && !isset($node->field_node_display_title[$node->language])) {
+      // Copy the title to the display title and schedule an update.
+      $node->field_node_display_title[$node->language][0]['value'] = filter_xss($node->title);
+      field_attach_update('node', $node);
+      $sandbox['upcount']++;
+    }
+
+    // Update our progress information.
+    $sandbox['progress']++;
+    $sandbox['current_node'] = $row->nid;
+  }
+
+  // Set the "finished" status, to tell batch engine whether this function
+  // needs to run again. If you set a float, this will indicate the progress
+  // of the batch so the progress bar will update.
+  $sandbox['#finished'] = ($sandbox['progress'] >= $sandbox['max']) ? TRUE : ($sandbox['progress'] / $sandbox['max']);
+
+  if ($sandbox['#finished']) {
+    // hook_update_N() may optionally return a string which will be displayed
+    // to the user.
+    return t('The node_display_title has been set on :count nodes.', array(':count' => $sandbox['upcount']));
+  }
+}
+
+/**
+ * Delete fields from Location - Park content type.
+ */
+function bracknell_deploy_update_7016() {
+  $field_list = array(
+    'field_park_facilities',
+    'field_park_about',
+    'field_park_management',
+    'field_park_wildlife',
+  );
+  // Loop through the list of field names and EXTERMINATE!
+  foreach ($field_list as $field_name) {
+    // Retrieve all bundles for an entity.
+    $bundles = field_info_bundles($field_name);
+    foreach ($bundles as $bundle => $properties) {
+
+      // Retrieve all the fields for a given bundle.
+      $instances = field_info_instances($field_name, $bundle);
+      foreach ($instances as $instance) {
+        field_delete_instance($instance, TRUE);
+        field_purge_batch(1);
+      }
+    }
+
+    if (field_read_field($field_name)) {
+      field_delete_field($field_name);
+      field_purge_batch(1);
+    }
+  }
+}
+
+/**
+ * Enable the Redirect bulk import module.
+ */
+function bracknell_deploy_update_7017(&$sandbox) {
+  module_enable(array('path_redirect_import'));
+}
+
+/**
+ * Insert terms for School Level vocabulary.
+ */
+function bracknell_deploy_update_7018() {
+  $vocabulary = taxonomy_vocabulary_machine_name_load('school_level');
+  if (!is_object($vocabulary)) {
+    // Create the new school level vocab.
+    $vocabulary = new stdClass();
+    $vocabulary->name = 'School Level';
+    $vocabulary->machine_name = "school_level";
+    $vocabulary->description = t('List of school levels weighted by order preference.');
+    $vocabulary->module = 'taxonomy';
+    taxonomy_vocabulary_save($vocabulary);
+
+    // List the terms.
+    $terms = array(
+      'Primary school',
+      'Junior school',
+      'Secondary school',
+      'Special school',
+      'Pupil referral unit',
+    );
+
+    // Check if term exists in vocabulary and add it if not.
+    _bracknell_deploy_safe_add_terms($vocabulary, $terms, 'school_level', 0);
+  }
+}
+
+/**
+ * Field clean up pre-go-live.
+ */
+function bracknell_deploy_update_7019() {
+  $field_list = array(
+    'field_school_level',
+    'field_activity_listing_link',
+    'field_activity_listing_table',
+  );
+  // Loop through the list of field names and EXTERMINATE!
+  foreach ($field_list as $field_name) {
+    // Retrieve all bundles for an entity.
+    $bundles = field_info_bundles($field_name);
+    foreach ($bundles as $bundle => $properties) {
+
+      // Retrieve all the fields for a given bundle.
+      $instances = field_info_instances($field_name, $bundle);
+      foreach ($instances as $instance) {
+        field_delete_instance($instance, TRUE);
+        field_purge_batch(1);
+      }
+    }
+
+    if (field_read_field($field_name)) {
+      field_delete_field($field_name);
+      field_purge_batch(1);
+    }
+  }
+}
+
+/**
+ * Helper function for adding terms to existing vocabularies.
+ */
+function _bracknell_deploy_safe_add_terms($vocab, $term_names = array(), $vocabulary_machine_name = '', $weight = 100) {
+  // Make sure the vocabulary exists.  This won't apply all desired options
+  // (description, etc.) but that's okay.  Features will do that later.
+  // For now, we just need somewhere to stuff the terms.
+  if (!isset($vocab) && !empty($vocabulary_machine_name)) {
+    $vocab = taxonomy_vocabulary_machine_name_load($vocabulary_machine_name);
+  }
+
+  // Load the vocabulary.
+  // Check if field already exists and add it if not existing.
+  if (is_object($vocab) && property_exists($vocab, 'vid') && $vocab->vid > 0) {
+    // Load each term.
+    $i = 0;
+    foreach ($term_names as $term_name) {
+      $term = taxonomy_get_term_by_name($term_name, $vocabulary_machine_name);
+      // Check if term exists and if it doesn't exist create a new one.
+      if (count($term) == 0) {
+        $term = (object) array(
+          'name' => $term_name,
+          'vid' => $vocab->vid,
+          'weight' => $weight + $i,
+        );
+        // Save new term.
+        taxonomy_term_save($term);
+        $i++;
+      }
+    }
+    drush_log($i . ' terms added to ' . $vocabulary_machine_name . ' vocabulary', 'notice');
+  }
+  else {
+    drush_log('Vocabulary "' . $vocabulary_machine_name . '"" not found', 'error');
+  }
+}

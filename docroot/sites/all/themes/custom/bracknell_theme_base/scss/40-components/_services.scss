@@ -1,0 +1,191 @@
+// Services.
+
+.services-title {
+  margin-top: 0;
+}
+
+.services-content {
+  @include clearfix();
+  margin-bottom: 30px;
+  padding-top: 1px;
+  padding-bottom: 8px;
+}
+
+.services-control {
+  text-align: center;
+}
+
+.main-container .gridder {
+  margin: $commonSpacing 0 $commonSpacing/3;
+  padding: 0;
+  list-style-type: none;
+  overflow: visible;
+
+  ul {
+    padding-left: 0;
+  }
+
+  &.collapse {
+    margin-top: 0;
+  }
+}
+
+.gridder-list {
+  background: $gridder-list-bg-color;
+  border: {
+    color: $gridder-list-border-color;
+    radius: 3px;
+    style: solid;
+    width: 1px;
+  }
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size-01;
+  min-height: 118px;
+  position: relative;
+  padding: 8px 11px 0;
+  vertical-align: top;
+
+  @include gridRows(4, 1%);
+
+  @media (max-width: $screen-md) {
+    @include gridRows(3, 1%);
+  }
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+    @include gridRows(0, 2%);
+    padding: 20px;
+  }
+
+  a {
+    font-size: $font-size-07;
+    line-height: 1.1;
+    color: $gridder-list-link-text-color;
+    text-decoration: none;
+    @media (max-width: $screen-md) {
+      font-size: $font-size-05;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &.selectedItem {
+    background: $gridder-selected-item-bg-color;
+
+    a {
+      color: $gridder-selected-item-link-text-color;
+      text-decoration: none;
+    }
+
+    .icon {
+      color: $gridder-selected-item-icon-text-color;
+    }
+
+    &::after {
+      position: absolute;
+      width: 57px;
+      height: 22px;
+      bottom: -22px;
+      left: 39%;
+      z-index: 10;
+      content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAWCAYAAAB64jRmAAAB1ElEQVRYhd3X24dVYRjH8U/7qn+no0onqRiKFEUSc1U3mySSmJtIhiRGlCiSqIsSiaJuorkYmhQNQyl100kno8xM08WzVmqb3azDu/bQ93K963nW77v22t7nXTA41O7HGSz0//Ed7RYuYCWez2+e5LzAKpxvZRdGsQQ35y1SWm5hMR5B64+FT9iGI5jufa4kTOMotgof/C0JMziBTXjbs2hpeIfNOC48ftMpmXNf/NwPms2VjIdYhHuzLXaThDfYgFMNhErJaawTeWflX5IwiYPYia/pciXhG3bhgMjZlbkkc65hOZ7Wy5WMZ1iGq0VuLioJY2I/vVwhVEquiBc+VrSgjCTxiexBGz9K1tZlMnvu7ixHYcpK5gxhPV5VrC/La6zNnluaqpIwLKakOzV6FOGu2M6GqzaoIwnv0Ydj+FmzVyczWd8+sdFXpq4kITeALfiQoB98FKPZgAQjZgrJnNvi8x2p2WcES8WQnYSUkvASq3G2Yv05rBHHpGSkliS2lv3Yi4mCNRPoxz5x0E1KE5I5l7AC43PcNy4OtxebCtKkJDwR/6/rXdZviPHscZMhmpaEL9iBQ5jKrk3hMLbjc9MBeiFJ7HknxdFtFBsxqONw2xS/ALkSXOg0/as5AAAAAElFTkSuQmCC');
+    }
+  }
+
+  .icon  {
+    position: absolute;
+    right: 15px;
+    bottom: 17px;
+    font-size: $font-size-21;
+    color: $gridder-list-icon-text-color;
+    transition: 0.5s font-size ease;
+    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+      font-size: $font-size-18;
+    }
+    @media (max-width: $screen-sm) {
+      font-size: $font-size-15;
+      bottom: 50%;
+      margin-bottom: -($font-size-15/2);
+    }
+  }
+}
+
+.gridder-show {
+  display: block;
+  float: left;
+  font-size: $font-size-01;
+  position: relative;
+  width: 100%;
+  margin-bottom: $commonSpacing / 3;
+
+  .gridder-padding {
+    @extend .full-width;
+    background: $gridder-show-padding-bg-color;
+  }
+
+  .gridder-expanded-content {
+    clear: both;
+    margin-bottom: $commonSpacing / 3;
+    padding-top: 0;
+    padding-bottom: $commonSpacing;
+  }
+
+  ul {
+    display: block;
+  }
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    @include gridRows(4, 1%);
+
+    @media (max-width: $screen-md) {
+      width: 100%;
+      @include gridRows(0, 0%);
+
+      margin-right: 0;
+    }
+  }
+
+  li > a {
+    background: $white url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAOCAYAAAAWo42rAAAA00lEQVQokXXRv0qCURzG8U/ykkND1NAVtDi/QwRtodDkFC1Bi02BeSdpazkGlrtLOQZ1AzXUNSg0CIZgg+eF49EeOMPv4cvvz3M28jy/wSUGaODHGpVwgS2c4g37/4HnUZcK3lFdBw5wiO/g7QavmYLwgQO8hDpDB3fYjEEY4QS3kdfAEHsxCDNcW6TwG7wjDFOw0Dy8lR0LZWjjHuXgveI4i6AdPFqOposrTIuOaX4ztMIx02JUDU/YDtAYZ3hOd+pF0Cfq+EqvK+EBE/QtfmgFgj/QtCj9XFzRVQAAAABJRU5ErkJggg==') 12px 11px no-repeat;
+    margin: 0 0 10px;
+    min-height: 70px;
+    font-size: $font-size-04;
+    border-radius: 3px;
+    color: $gridder-show-link-text-color;
+    text-decoration: none;
+    display: block;
+    padding: 7px 10px 0 30px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.gridder-expanded-content {
+  padding-top: $commonSpacing / 3;
+  padding-bottom: $commonSpacing / 1;
+}
+
+.gridder-navigation {
+  float: right;
+
+  a {
+    color: $gridder-navigation-link-text-color;
+  }
+}
+
+.gridder-close {
+  cursor: pointer;
+  font-size: 1.5em;
+  text-decoration: none;
+}

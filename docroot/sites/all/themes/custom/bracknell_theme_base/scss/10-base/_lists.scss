@@ -1,0 +1,41 @@
+// Lists.
+
+.main-container {
+  ul {
+    padding-left: 20px;
+  }
+
+  ul,
+  ol {
+    overflow: hidden;
+    padding-left: 0;
+    li {
+      list-style-position: inside;
+    }
+  }
+
+  .paragraphs-items-field-content {
+    ul,
+    ol {
+      padding-left: 20px;
+    }
+  }
+
+  // Ordered list.
+  ol {
+    margin-bottom: $commonSpacing;
+    li {
+      line-height: 2;
+    }
+  }
+
+  // Split <ol> into 2x columns.
+  .ol-split {
+    @media (min-width: 768px) {
+      column-count: 2;
+      column-gap: 3em;
+    }
+    padding-left: 20px;
+  }
+}
+

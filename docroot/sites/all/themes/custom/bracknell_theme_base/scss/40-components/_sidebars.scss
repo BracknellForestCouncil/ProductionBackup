@@ -1,0 +1,16 @@
+.region-sidebar-second {
+  h2 {
+    font-size: $font-size-10;
+    margin: ($commonSpacing - 10) 0 ($commonSpacing / 3);
+
+    a {
+      color: $global-heading-link-text-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $global-heading-link-hover-text-color;
+        text-decoration: underline;
+      }
+    }
+  }
+}

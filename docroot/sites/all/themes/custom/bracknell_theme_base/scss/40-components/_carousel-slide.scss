@@ -1,0 +1,173 @@
+// Carousel.
+
+.carousel {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.carousel-slides {
+  background-color: $carousel-bg-color;
+  margin-bottom: 20px;
+  position: relative;
+
+  .carousel-slide {
+    .carousel-slide-inner {
+      @include make-row(0);
+
+      .carousel-slide-flex-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        > * {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+
+      .carousel-slide-media,
+      .carousel-slide-content {
+        @include make-md-column(6);
+      }
+
+      .carousel-slide-media {
+        padding: 0;
+        background: $carousel-video-bg-color;
+
+        .youtube-field-player {
+          width: 100%;
+        }
+
+        .img-responsive {
+          margin-bottom: 0;
+        }
+      }
+
+      .carousel-slide-content {
+        padding: 60px 65px;
+
+        .field-name-body {
+          padding-bottom: 20px;
+          border-bottom: 1px solid $carousel-caption-line-color;
+          margin-bottom: 20px;
+          min-height: 6.9em;
+          line-height: 1.4em;
+
+          .field-items {
+            p {
+              position: relative;
+
+              &:first-child {
+                &:before {
+                  content: '\201C';
+                  position: absolute;
+                  left: -11px;
+                }
+              }
+
+              &:last-child {
+                display: inline;
+
+                &:after {
+                  content: '\201D';
+                  position: absolute;
+                  right: -10px;
+                }
+              }
+            }
+          }
+        }
+
+        .field-name-field-testimonial-author {
+          font-weight: 600;
+          line-height: 1em;
+          margin-bottom: 5px;
+        }
+
+        .field-name-field-testimonial-job-title {
+          line-height: 1em;
+        }
+
+        .btn {
+          margin-top: 30px;
+          margin-bottom: 0;
+          display: inline-block;
+        }
+      }
+    }
+
+    &.carousel-slide-media-right {
+      .carousel-slide-content {
+        @include make-md-column-pull(6);
+        padding-left: 85px;
+      }
+
+      .carousel-slide-media {
+        @include make-md-column-push(6);
+      }
+    }
+
+    &.carousel-slide-media-left {
+      .carousel-slide-content {
+        padding-right: 85px;
+      }
+    }
+  }
+}
+
+.flexslider {
+  margin-bottom: 0;
+
+  &:hover {
+    .flex-direction-nav {
+      .flex-next {
+        right: 20px;
+      }
+
+      .flex-prev {
+        left: 20px;
+      }
+    }
+  }
+
+  .flex-direction-nav {
+    .flex-next,
+    .flex-prev {
+      height: 75px;
+      margin-top: -36px;
+      opacity: 1;
+      width: 46px;
+    }
+
+    .flex-next {
+      right: 20px;
+
+      &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: url('../images/icons/src/svg/base/right-arrow-grey.svg') center left no-repeat;
+      }
+
+      &:hover {
+        right: 20px;
+      }
+    }
+
+    .flex-prev {
+      left: 20px;
+
+      &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        background: url('../images/icons/src/svg/base/left-arrow-grey.svg') center left no-repeat;
+      }
+
+      &:hover {
+        left: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+// Anchors.
+
+// Anchors.
+a,
+p a,
+li a {
+  color: $global-link-text-color;
+  text-decoration: underline;
+  transition: all 0.1s ease;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    @extend .link-focus;
+  }
+}
+
+a {
+  &.download-link {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAAxElEQVQ4je3SMW5CMRAE0Af5RYTEYRBNzkAfUdISylDkABwgVKRJQ0VqJEo4QVquQpEIQYEjmY8NPxKiYiRLu+PxrL3rmvZUBhO8lLgPDFLies7lv7gb3dCoiOIHh9E2Qt5K6Ft4C/HG4Ytsy0ZbrLHAY6bwU1g/6PyZcPq0FbpBmMMvnrGMyVSP5ujF1Uq37gXNEXLN/kIfu4jbBW6WOnBuap94jfJh4JIochsBYzRRw/s54SUjGFXQKPBdRVjFqH0Noz0vHB08sINUBgAAAABJRU5ErkJggg==') 98% 3px no-repeat;
+    padding: 0 30px 0 0;
+  }
+}
