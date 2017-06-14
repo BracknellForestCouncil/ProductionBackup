@@ -137,7 +137,7 @@ DirectoryIndex index.php index.html index.htm
   # Requires both mod_rewrite and mod_headers to be enabled.
   <IfModule mod_headers.c>
     # CORS policy required since live URLS above redirect all requests.
-    Header set Access-Control-Allow-Origin "https://beta.bracknell-forest.gov.uk/"
+    Header set Access-Control-Allow-Origin "https://beta.bracknell-forest.gov.uk"
 
     # Serve gzip compressed CSS files if they exist and the client accepts gzip.
     RewriteCond %{HTTP:Accept-encoding} gzip
