@@ -76,7 +76,7 @@ $conf['site_name'] = 'Bracknell Forest Council';
 /**
  * Variable overrides (google_analytics):
  */
-$conf['googleanalytics_account'] = 'UA-70816792-3';
+$conf['googleanalytics_account'] = 'UA-70816792-2';
 
 /**
  * Variable overrides (s3fs):
