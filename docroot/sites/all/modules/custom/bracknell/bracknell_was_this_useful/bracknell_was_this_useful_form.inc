@@ -11,119 +11,136 @@
  * An AJAX powered feedback form.
  */
 function bracknell_was_this_useful_form($form, &$form_state) {
-  // Assemble some information for the submission.
-  if ($form_state['rebuild'] == FALSE) {
-    $page_details = _get_page_info();
+  // Store data that will be sent through all pages. This needs to happen
+  // because the values will get wiped due to the rebuild flag.
+  if (empty($form_state['data'])) {
+    $form_state['data'] = array();
   }
-  elseif (isset($form_state['input']) && !empty($form_state['input']['page_details'])) {
-    $page_details = $form_state['input']['page_details'];
-  }
-
-  // First button click - smiley faces.
-  $smiley_response = NULL;
-  if (array_key_exists('triggering_element', $form_state) && $form_state['triggering_element']['#name'] === 'op') {
-    $smiley_response = $form_state['triggering_element']['#value'];
-  }
-  elseif (isset($form_state['values']) && !empty($form_state['values']['response'])) {
-    // If the second button is clicked get the value from the hidden fields.
-    $smiley_response = $form_state['values']['response'];
+  if (empty($form_state['data']['page_details'])) {
+    $form_state['data']['page_details'] = _bracknell_was_this_useful_get_page_info();
   }
 
-  // Second button click - what's wrong.
-  $question_response = NULL;
-  if (array_key_exists('triggering_element', $form_state) && $form_state['triggering_element']['#name'] === 'show_data') {
-    $question_response = TRUE;
-  }
+  // Get the current form step, or by default 1.
+  $step = isset($form_state['step']) ? $form_state['step'] : 1;
 
-  // Form container.
+  // Define our form container; this is required for AJAX to work.
   $form['wtu_form'] = array(
     '#type' => 'container',
     '#prefix' => '<div id="wtu-form">',
     '#suffix' => '</div>',
   );
 
-  $form['wtu_form']['page_details'] = array(
-    '#type' => 'hidden',
-    '#value' => (isset($page_details)) ? $page_details : '',
-  );
+  // Render a different page of the form, depending on the current step.
+  switch ($step) {
+    // Smileys that send the initial happy/neutral/sad email.
+    case 1:
+      $form = bracknell_was_this_useful_step_1_form($form, $form_state);
+      break;
+    // Link that takes you to the next step, does nothing else.
+    case 2:
+      $form = bracknell_was_this_useful_step_2_form($form, $form_state);
+      break;
+    // Final form with select box and textarea to give more detail.
+    case 3:
+      $form = bracknell_was_this_useful_step_3_form($form, $form_state);
+      break;
+    // Submission is complete text.
+    case 4:
+      $form['wtu_form']['complete'] = array(
+        '#type' => 'markup',
+        '#markup' => "<p id='wtu-final-thanks'>Thank you for your feedback.</p>",
+      );
+      break;
+    // Something went wrong text; should never see this.
+    default:
+      $form['wtu_form']['error'] = array(
+        '#type' => 'markup',
+        '#markup' => 'Sorry, something has gone wrong with this form. Please try again later.',
+      );
+      break;
+  }
 
-  // First part - smiley faces. Always shown.
+  return $form;
+}
+
+/**
+ * Implements hook_form().
+ *
+ * Show the first step of the form, the smileys.
+ */
+function bracknell_was_this_useful_step_1_form($form, &$form_state) {
   $form['wtu_form']['wtu_smileys'] = array(
     '#type' => 'container',
     '#name' => 'wtu_smileys',
     '#prefix' => '<div id="wtu-smileys">',
     '#suffix' => '</div>',
     '#attributes' => array(
-      'class' => array(
-        'wtu-smileys-container',
-      ),
+      'class' => array('wtu-smileys-container'),
     ),
   );
 
   $form['wtu_form']['wtu_smileys']['happy'] = array(
-    '#type' => 'button',
+    '#type' => 'submit',
     '#value' => 'Yes',
     '#weight' => 0,
     '#limit_validation_errors' => array(),
+    '#submit' => array('bracknell_was_this_useful_smiley_submit'),
     '#ajax' => array(
-      'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
-      'wrapper' => 'wtu-smileys',
+      'callback' => 'bracknell_was_this_useful_ajax_callback',
+      'wrapper' => 'wtu-form',
     ),
     '#attributes' => array(
-      'aria-controls' => array(
-        'wtu-question',
-      ),
-      'class' => array(
-        'btn-happy',
-      ),
+      'aria-controls' => array('wtu-question'),
+      'class' => array('btn-happy'),
     ),
   );
 
   $form['wtu_form']['wtu_smileys']['neutral'] = array(
-    '#type' => 'button',
+    '#type' => 'submit',
     '#value' => 'Maybe',
     '#weight' => 1,
     '#limit_validation_errors' => array(),
+    '#submit' => array('bracknell_was_this_useful_smiley_submit'),
     '#ajax' => array(
-      'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
-      'wrapper' => 'wtu-smileys',
+      'callback' => 'bracknell_was_this_useful_ajax_callback',
+      'wrapper' => 'wtu-form',
     ),
     '#attributes' => array(
-      'aria-controls' => array(
-        'wtu-question',
-      ),
-      'class' => array(
-        'btn-neutral',
-      ),
+      'aria-controls' => array('wtu-question'),
+      'class' => array('btn-neutral'),
     ),
   );
 
   $form['wtu_form']['wtu_smileys']['sad'] = array(
-    '#type' => 'button',
+    '#type' => 'submit',
     '#value' => 'No',
     '#weight' => 2,
     '#limit_validation_errors' => array(),
+    '#submit' => array('bracknell_was_this_useful_smiley_submit'),
     '#ajax' => array(
-      'callback' => 'bracknell_was_this_useful_get_smiley_ajax_callback',
-      'wrapper' => 'wtu-smileys',
+      'callback' => 'bracknell_was_this_useful_ajax_callback',
+      'wrapper' => 'wtu-form',
     ),
     '#attributes' => array(
-      'aria-controls' => array(
-        'wtu-question',
-      ),
-      'class' => array(
-        'btn-sad',
-      ),
+      'aria-controls' => array('wtu-question'),
+      'class' => array('btn-sad'),
     ),
   );
+  return $form;
+}
 
-  // Second part - ask the user.
+/**
+ * Implements hook_form().
+ *
+ * Show the second step of the form, the next step link.
+ */
+function bracknell_was_this_useful_step_2_form($form, &$form_state) {
   $form['wtu_form']['wtu_question'] = array(
     '#type' => 'container',
     '#prefix' => '<div id="wtu-question">',
     '#suffix' => '</div>',
     '#attributes' => array(
-      'class' => (isset($smiley_response)) ? array('wtu-question-container') : array('wtu-question-container', 'hide'),
+      'class' => array('wtu-question-container'),
     ),
   );
 
@@ -138,28 +155,34 @@ function bracknell_was_this_useful_form($form, &$form_state) {
 
   // This button will be formatted as a link.
   $form['wtu_form']['wtu_question']['question'] = array(
-    '#type' => 'button',
+    '#type' => 'submit',
     '#name' => 'show_data',
     '#value' => t('Is there anything wrong with this page?'),
+    '#submit' => array('bracknell_was_this_useful_question_submit'),
     '#ajax' => array(
-      'callback' => 'bracknell_was_this_useful_question_ajax_callback',
-      'wrapper' => 'wtu-question',
+      'callback' => 'bracknell_was_this_useful_ajax_callback',
+      'wrapper' => 'wtu-form',
     ),
     '#attributes' => array(
       'class' => array('wtu-question-link'),
-      'aria-controls' => array(
-        'wtu-data',
-      ),
+      'aria-controls' => array('wtu-data'),
     ),
   );
+  return $form;
+}
 
-  // Third part - gather some information.
+/**
+ * Implements hook_form().
+ *
+ * Show the final step of the form, the extra details.
+ */
+function bracknell_was_this_useful_step_3_form($form, &$form_state) {
   $form['wtu_form']['wtu_data'] = array(
     '#type' => 'container',
     '#prefix' => '<div id="wtu-data">',
     '#suffix' => '</div>',
     '#attributes' => array(
-      'class' => (isset($question_response)) ? array('wtu-data-container') : array('wtu-data-container', 'hide'),
+      'class' => array('wtu-question-container'),
     ),
   );
 
@@ -173,12 +196,6 @@ function bracknell_was_this_useful_form($form, &$form_state) {
     '#markup' => t('Help us to improve this page by providing feedback. Don’t include any personal information below. We are unable to respond via this form.'),
     '#prefix' => '<p class="wtu-spiel">',
     '#suffix' => '</p>',
-  );
-
-  // Hidden fields to collect data not shown to the user.
-  $form['wtu_form']['wtu_data']['response'] = array(
-    '#type' => 'hidden',
-    '#value' => (isset($smiley_response)) ? $smiley_response : '',
   );
 
   $form['wtu_form']['wtu_data']['what_went_wrong'] = array(
@@ -206,73 +223,106 @@ function bracknell_was_this_useful_form($form, &$form_state) {
   $form['wtu_form']['wtu_data']['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Send'),
+    '#submit' => array('bracknell_was_this_useful_form_submit'),
     '#ajax' => array(
-      'callback' => 'bracknell_was_this_useful_form_ajax_submit',
+      'callback' => 'bracknell_was_this_useful_ajax_callback',
       'wrapper' => 'wtu-form',
     ),
     '#attributes' => array(
       'class' => array('btn-submit'),
     ),
   );
-
   return $form;
 }
 
 /**
- * Custom AJAX final submission of the Was this useful form.
+ * Generic ajax function for all steps, returns the whole form.
  */
-function bracknell_was_this_useful_form_ajax_submit($form, &$form_state) {
-  // Shortcut the $form_state['values'] for future use.
-  $values = $form_state['values'];
+function bracknell_was_this_useful_ajax_callback($form, &$form_state) {
+  return $form;
+}
+
+/**
+ * Implements hook_form_submit().
+ *
+ * Sends an email based on the initial chosen smiley.
+ */
+function bracknell_was_this_useful_smiley_submit($form, &$form_state) {
+  // Translate the submit button that was clicked (aka the triggering element)
+  // into a response.
+  if (array_key_exists('triggering_element', $form_state) && $form_state['triggering_element']['#name'] === 'op') {
+    $smiley_response = $form_state['data']['smiley_response'] = $form_state['triggering_element']['#value'];
+  }
+
+  // Initial email as a quick response from the chosen smiley.
+  $params = array(
+    'subject' => !empty($smiley_response) ? $smiley_response . ' feedback received' : 'Response empty or not set.',
+    'body' => !empty($form_state['data']['page_details']) ? 'Page details: ' . PHP_EOL . $form_state['data']['page_details'] . PHP_EOL : 'Page details empty or not set.',
+  );
+  drupal_mail('bracknell_was_this_useful', 'quick_feedback', 'digital.services@bracknell-forest.gov.uk', language_default(), $params);
+
+  // Set the step to the next page and force a rebuild.
+  $form_state['step'] = 2;
+  $form_state['rebuild'] = TRUE;
+}
+
+/**
+ * Implements hook_form_submit().
+ *
+ * Does nothing except move you to the next page.
+ */
+function bracknell_was_this_useful_question_submit($form, &$form_state) {
+  // Set the step to the next page and force a rebuild.
+  $form_state['step'] = 3;
+  $form_state['rebuild'] = TRUE;
+}
+
+/**
+ * Implements hook_form_submit().
+ *
+ * Final step of the form, sends an email with all details.
+ */
+function bracknell_was_this_useful_form_submit($form, &$form_state) {
   // Check we have some values.
-  if (isset($values)) {
+  if (isset($form_state['values'])) {
     // Build a body!
-    $line1 = (!empty($values['page_details'])) ? 'Page details: ' . PHP_EOL . $values['page_details'] . PHP_EOL : 'Page details empty or not set.';
-    $line2 = (!empty($values['response'])) ? 'Response was ' . $values['response'] . PHP_EOL : 'Response empty or not set.';
-    $line3 = (!empty($values['what_went_wrong'])) ? 'What went wrong: ' . $values['what_went_wrong'] . PHP_EOL : 'What went wrong empty or not set.';
-    $line4 = (!empty($values['how_to_improve'])) ? 'How can we improve: ' . PHP_EOL . $values['how_to_improve'] . PHP_EOL : 'How we can improve empty or not set.';
+    $lines = array();
+
+    $lines[] = !empty($form_state['data']['page_details']) ?
+      'Page details: ' . PHP_EOL . $form_state['data']['page_details'] . PHP_EOL :
+      'Page details empty or not set.';
+
+    $lines[] = !empty($form_state['data']['smiley_response']) ?
+      'Response was ' . $form_state['data']['smiley_response'] . PHP_EOL :
+      'Response empty or not set.';
+
+    $lines[] = !empty($form_state['values']['what_went_wrong']) ?
+      'What went wrong: ' . $form_state['values']['what_went_wrong'] . PHP_EOL :
+      'What went wrong empty or not set.';
+
+    $lines[] = !empty($form_state['values']['how_to_improve']) ?
+      'How can we improve: ' . PHP_EOL . $form_state['values']['how_to_improve'] . PHP_EOL :
+      'How we can improve empty or not set.';
+
     // Mail parameters ASSEMBLE!
     $params = array(
       'subject' => 'Website feedback',
-      'body' => $line1 . PHP_EOL . $line2 . PHP_EOL . $line3 . PHP_EOL . $line4,
+      'body' => implode(PHP_EOL, $lines),
     );
     // Email the information using drupal_mail() function. See the module file
     // for hook_mail().
     drupal_mail('bracknell_was_this_useful', 'feedback_form', 'digital.services@bracknell-forest.gov.uk', language_default(), $params);
   }
-  // Thank user.
-  return "<p id='wtu-final-thanks'>Thank you for your feedback.</p>";
+
+  // Set the step to the next page and force a rebuild.
+  $form_state['step'] = 4;
+  $form_state['rebuild'] = TRUE;
 }
 
 /**
- * Custom AJAX function triggered from the smiley faces.
+ * Custom function that returns info such as user agent, current page, etc.
  */
-function bracknell_was_this_useful_get_smiley_ajax_callback($form, &$form_state) {
-  // Shortcut the $form_state['values'] for future use.
-  $values = $form_state['values'];
-  // Check we have some values.
-  if (isset($values)) {
-    // Quick email.
-    $params = array(
-      'subject' => (!empty($values['response'])) ? $values['response'] . ' feedback received' : 'Response empty or not set.',
-      'body' => (!empty($values['page_details'])) ? 'Page details: ' . PHP_EOL . $values['page_details'] . PHP_EOL : 'Page details empty or not set.',
-    );
-    drupal_mail('bracknell_was_this_useful', 'quick_feedback', 'digital.services@bracknell-forest.gov.uk', language_default(), $params);
-  }
-  return $form['wtu_form']['wtu_question'];
-}
-
-/**
- * Custom AJAX function triggered from the question link.
- */
-function bracknell_was_this_useful_question_ajax_callback($form, &$form_state) {
-  return $form['wtu_form']['wtu_data'];
-}
-
-/**
- * Custom function - returns page info.
- */
-function _get_page_info() {
+function _bracknell_was_this_useful_get_page_info() {
   // It is unsafe to use raw variables so we need to filter. Unfortunately there
   // was a bug in PHP so here's the workaround.
   if (filter_has_var(INPUT_SERVER, "HTTP_USER_AGENT")) {
@@ -288,9 +338,9 @@ function _get_page_info() {
   };
 
   $page_info = 'date/time: ' . date('Y-m-d H:i:s') . PHP_EOL .
-      'location: ' . current_path() . PHP_EOL .
-      'title: ' . drupal_get_title() . PHP_EOL .
-      'user_agent: ' . $user_agent;
+    'location: ' . current_path() . PHP_EOL .
+    'title: ' . drupal_get_title() . PHP_EOL .
+    'user_agent: ' . $user_agent;
 
   return $page_info;
 }
