@@ -256,7 +256,7 @@ function bracknell_was_this_useful_smiley_submit($form, &$form_state) {
 
   // Initial email as a quick response from the chosen smiley.
   $params = array(
-    'subject' => !empty($smiley_response) ? '"' . $smiley_response . '" feedback received' : 'Response empty or not set.',
+    'subject' => !empty($smiley_response) ? $smiley_response . ' feedback received' : 'Response empty or not set.',
     'body' => !empty($form_state['data']['page_details']) ? 'Page details: ' . PHP_EOL . $form_state['data']['page_details'] . PHP_EOL : 'Page details empty or not set.',
   );
   drupal_mail('bracknell_was_this_useful', 'quick_feedback', 'digital.services@bracknell-forest.gov.uk', language_default(), $params);
