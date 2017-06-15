@@ -1,8 +1,8 @@
 <?php
+
 /**
  * @file
- * Default theme implementation to display the basic html structure of a single
- * Drupal page.
+ * Default theme to display the html structure of a single Drupal page.
  *
  * Variables:
  * - $css: An array of CSS files for the current page.
@@ -94,9 +94,6 @@
   <!--Favicons targeted to any additional png sizes not covered above-->
   <link rel="icon" href="/favicon-32.png" sizes="32x32">
   <!-- END - Favicons -->
-
-  <!-- Microserve Development server addition only! -->
-  <meta name="robots" content="noindex,nofollow" />
 </head>
 <body<?php print $body_attributes; ?>>
   <div class="page-wrapper">
