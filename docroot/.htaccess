@@ -137,7 +137,7 @@ DirectoryIndex index.php index.html index.htm
   # Requires both mod_rewrite and mod_headers to be enabled.
   <IfModule mod_headers.c>
     # CORS policy required since live URLS above redirect all requests.
-    SetEnvIf Origin ^(https?://(?:.+\.)?mywebsite\.com(?::\d{1,5})?)$  CORS_ALLOW_ORIGIN=$1
+    SetEnvIf Origin ^(https?://(?:.+\.)?bracknell-forest\.gov\.uk(?::\d{1,5})?)$  CORS_ALLOW_ORIGIN=$1
     Header append Access-Control-Allow-Origin  %{CORS_ALLOW_ORIGIN}e   env=CORS_ALLOW_ORIGIN
     Header merge  Vary "Origin"
 
