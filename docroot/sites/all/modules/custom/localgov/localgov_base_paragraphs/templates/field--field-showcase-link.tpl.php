@@ -44,6 +44,11 @@
  * @ingroup themeable
  */
 ?>
+
+<?php
+  $target = isset($item['#element']['attributes']['target']) ? $item['#element']['attributes']['target'] : '_self';
+?>
+
 <?php foreach ($items as $delta => $item): ?>
-  <a class="btn <?php print($classes) ?>" target="<?php print($item['#element']['attributes']['target']); ?>" href="<?php print_r($item['#element']['url']); ?>"><?php print_r($item['#element']['title']); ?></a>
+  <a class="btn <?php print($classes) ?>" target="<?php print $target; ?>" href="<?php print_r($item['#element']['url']); ?>"><?php print_r($item['#element']['title']); ?></a>
 <?php endforeach; ?>
