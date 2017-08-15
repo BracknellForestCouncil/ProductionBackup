@@ -50,7 +50,6 @@ hooks:
       composer install
       cd ..
       npm install
-      npm install bower
       bower install
       npm run build:css
     
