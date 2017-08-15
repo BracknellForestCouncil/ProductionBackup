@@ -46,11 +46,10 @@ hooks:
       drush -y entup
       
     build: |
-      cd docroot/sites/all/themes/custom/bracknell_theme_base/pattern-lab/
-      composer install
-      cd ..
+      cd docroot/sites/all/themes/custom/bracknell_theme_base/
       npm install
-      bower install
+      npm install bower
+      ./node_modules/.bin/bower install
       npm run build:css
     
 
