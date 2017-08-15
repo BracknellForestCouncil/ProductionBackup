@@ -32,7 +32,7 @@ mounts:
 
 
 # Configuration of the build of this application.
-build:
+build: |
     flavor: composer
 
 # The hooks executed at various points in the lifecycle of the application.
@@ -44,14 +44,15 @@ hooks:
       drush -y updatedb
       drush -y config-import
       drush -y entup
-      cd 
+    build: |
       cd docroot/sites/all/themes/custom/bracknell_theme_base/pattern-lab/
       composer install
       cd ..
       npm install
       npm install bower
       bower install
-      npm run build:css      
+      npm run build:css
+    
 
 # The configuration of app when it is exposed to the web.
 web:
