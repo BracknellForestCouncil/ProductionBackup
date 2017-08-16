@@ -244,7 +244,7 @@ function localgov_content_miscellaneous_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => -10,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-miscellaneous-field_node_display_title'.

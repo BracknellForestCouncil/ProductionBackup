@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * bracknell_feature_search.strongarm.inc

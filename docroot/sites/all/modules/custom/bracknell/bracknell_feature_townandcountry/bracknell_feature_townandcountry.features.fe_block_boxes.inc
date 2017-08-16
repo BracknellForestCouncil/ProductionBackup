@@ -14,13 +14,11 @@ function bracknell_feature_townandcountry_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Town & Country';
   $fe_block_boxes->format = 'html_full';
   $fe_block_boxes->machine_name = 'bracknell_townandcountry';
-  $fe_block_boxes->body = '				<p>Find out more about Bracknell Forest Council\'s newspaper.</p>
-				<div class="row">
-					<div class="col-xs-10 col-sm-7">
-						<img src="https://d1jvujni4ixr8o.cloudfront.net/sites/bracknell/town-and-country-block-image.jpg" class="img-responsive" alt="Town &amp; Country front cover">
-					</div>
-				</div>
-				<a href="/news/town-and-country" class="btn btn-primary">View Town &amp; Country</a>
+  $fe_block_boxes->body = '<p>
+	[[{"fid":"1010","view_mode":"default","fields":{"format":"default","alignment":"","field_file_image_alt_text[und][0][value]":"Town &amp; Country front cover","field_file_image_title_text[und][0][value]":false},"type":"media","field_deltas":{"1":{"format":"default","alignment":"","field_file_image_alt_text[und][0][value]":"Town &amp; Country front cover","field_file_image_title_text[und][0][value]":false}},"attributes":{"alt":"Town &amp; Country front cover","class":"media-element file-default","data-delta":"1"}}]]</p>
+
+<p>
+	<a class="btn btn-primary" href="/node/2561">View Town &amp; Country</a></p>
 ';
 
   $export['bracknell_townandcountry'] = $fe_block_boxes;
