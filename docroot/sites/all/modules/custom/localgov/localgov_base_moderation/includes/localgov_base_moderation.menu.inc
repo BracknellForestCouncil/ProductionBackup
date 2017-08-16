@@ -211,7 +211,7 @@
     'description' => 'This list displays content in the "Draft (not submitted for moderation)" state that you can edit.',
     'menu_name' => 'localgov',
     'page callback' => 'views_page',
-    'page arguments' => array('localgov_base_moderation_content', 'page_status', 'needs_review'),
+    'page arguments' => array('localgov_base_moderation_content', 'page_status', 'draft'),
     'access arguments' => array('access localgov_base_moderation'),
     'weight' => -20,
     'type' => MENU_LOCAL_TASK,
