@@ -14,6 +14,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['access localgov_base_file'] = array(
     'name' => 'access localgov_base_file',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -27,6 +28,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -40,6 +42,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['add media from remote sources'] = array(
     'name' => 'add media from remote sources',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -99,6 +102,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['create files'] = array(
     'name' => 'create files',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -156,6 +160,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['delete own localgov_document files'] = array(
     'name' => 'delete own localgov_document files',
     'roles' => array(
+      'News editor' => 'News editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
       'webmaster' => 'webmaster',
@@ -167,6 +172,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['delete own localgov_image files'] = array(
     'name' => 'delete own localgov_image files',
     'roles' => array(
+      'News editor' => 'News editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
       'webmaster' => 'webmaster',
@@ -328,6 +334,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['edit own localgov_document files'] = array(
     'name' => 'edit own localgov_document files',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -341,6 +348,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['edit own localgov_image files'] = array(
     'name' => 'edit own localgov_image files',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -367,6 +375,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['edit own localgov_video files'] = array(
     'name' => 'edit own localgov_video files',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -390,6 +399,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['view own files'] = array(
     'name' => 'view own files',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -403,6 +413,7 @@ function localgov_base_file_user_default_permissions() {
   $permissions['view own private files'] = array(
     'name' => 'view own private files',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

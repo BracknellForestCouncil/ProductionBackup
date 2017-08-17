@@ -14,6 +14,7 @@ function localgov_base_paragraphs_user_default_permissions() {
   $permissions['access localgov_base_paragraphs'] = array(
     'name' => 'access localgov_base_paragraphs',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -77,6 +78,7 @@ function localgov_base_paragraphs_user_default_permissions() {
   $permissions['export tablefield'] = array(
     'name' => 'export tablefield',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -101,6 +103,7 @@ function localgov_base_paragraphs_user_default_permissions() {
   $permissions['use manualcrop'] = array(
     'name' => 'use manualcrop',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

@@ -14,6 +14,7 @@ function localgov_feature_landingpage_user_default_permissions() {
   $permissions['access localgov_feature_landingpage'] = array(
     'name' => 'access localgov_feature_landingpage',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

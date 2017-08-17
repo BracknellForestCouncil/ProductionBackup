@@ -134,7 +134,7 @@ function bracknell_feature_landing_page_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 0,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-landing_page-field_node_display_title'.

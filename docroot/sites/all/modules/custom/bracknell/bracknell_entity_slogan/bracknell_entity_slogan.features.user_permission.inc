@@ -24,6 +24,7 @@ function bracknell_entity_slogan_user_default_permissions() {
   $permissions['eck add slogan slogan entities'] = array(
     'name' => 'eck add slogan slogan entities',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -47,6 +48,7 @@ function bracknell_entity_slogan_user_default_permissions() {
   $permissions['eck administer slogan slogan entities'] = array(
     'name' => 'eck administer slogan slogan entities',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -91,6 +93,7 @@ function bracknell_entity_slogan_user_default_permissions() {
   $permissions['eck edit slogan slogan entities'] = array(
     'name' => 'eck edit slogan slogan entities',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
