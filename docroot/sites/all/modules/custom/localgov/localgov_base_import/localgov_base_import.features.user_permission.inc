@@ -14,6 +14,7 @@ function localgov_base_import_user_default_permissions() {
   $permissions['access localgov_base_import'] = array(
     'name' => 'access localgov_base_import',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

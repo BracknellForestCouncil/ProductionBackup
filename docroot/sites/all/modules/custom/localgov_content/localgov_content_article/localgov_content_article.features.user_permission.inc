@@ -14,6 +14,7 @@ function localgov_content_article_user_default_permissions() {
   $permissions['access localgov_content_article'] = array(
     'name' => 'access localgov_content_article',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -37,6 +38,7 @@ function localgov_content_article_user_default_permissions() {
   $permissions['create article content'] = array(
     'name' => 'create article content',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'webmaster' => 'webmaster',
@@ -68,6 +70,7 @@ function localgov_content_article_user_default_permissions() {
   $permissions['edit any article content'] = array(
     'name' => 'edit any article content',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'webmaster' => 'webmaster',
@@ -79,6 +82,7 @@ function localgov_content_article_user_default_permissions() {
   $permissions['edit own article content'] = array(
     'name' => 'edit own article content',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'webmaster' => 'webmaster',

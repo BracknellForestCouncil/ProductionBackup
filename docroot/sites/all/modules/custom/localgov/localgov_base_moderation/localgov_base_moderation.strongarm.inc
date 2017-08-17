@@ -57,10 +57,12 @@ function localgov_base_moderation_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'workbench_access_menu';
   $strongarm->value = array(
+    'footer-menu' => 0,
     'localgov' => 0,
     'main-menu' => 0,
     'management' => 0,
     'navigation' => 0,
+    'menu-services' => 0,
     'user-menu' => 0,
   );
   $export['workbench_access_menu'] = $strongarm;
@@ -218,6 +220,10 @@ function localgov_base_moderation_strongarm() {
   $strongarm->name = 'workbench_access_taxonomy';
   $strongarm->value = array(
     'moderation' => 'moderation',
+    'category' => 0,
+    'directory_type' => 0,
+    'school_level' => 0,
+    'tags' => 0,
   );
   $export['workbench_access_taxonomy'] = $strongarm;
 

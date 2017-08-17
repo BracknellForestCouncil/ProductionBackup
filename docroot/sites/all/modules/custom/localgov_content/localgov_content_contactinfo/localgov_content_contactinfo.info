@@ -9,7 +9,6 @@ dependencies[] = advanced_link
 dependencies[] = ctools
 dependencies[] = email
 dependencies[] = features
-dependencies[] = localgov_content_contactinfo
 dependencies[] = localgov_content_guidesection
 dependencies[] = localgov_feature_related
 dependencies[] = node

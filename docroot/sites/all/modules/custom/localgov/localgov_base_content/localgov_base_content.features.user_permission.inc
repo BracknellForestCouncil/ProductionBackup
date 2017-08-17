@@ -24,6 +24,7 @@ function localgov_base_content_user_default_permissions() {
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -37,6 +38,7 @@ function localgov_base_content_user_default_permissions() {
   $permissions['access localgov_base_content'] = array(
     'name' => 'access localgov_base_content',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -112,6 +114,7 @@ function localgov_base_content_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -125,6 +128,7 @@ function localgov_base_content_user_default_permissions() {
   $permissions['view revisions'] = array(
     'name' => 'view revisions',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

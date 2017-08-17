@@ -14,6 +14,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['access localgov_base_moderation'] = array(
     'name' => 'access localgov_base_moderation',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -27,6 +28,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['access workbench'] = array(
     'name' => 'access workbench',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -40,6 +42,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['access workbench access by role'] = array(
     'name' => 'access workbench access by role',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -144,6 +147,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['moderate content from draft to needs_review'] = array(
     'name' => 'moderate content from draft to needs_review',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'webmaster' => 'webmaster',
@@ -155,6 +159,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['moderate content from needs_editing to needs_review'] = array(
     'name' => 'moderate content from needs_editing to needs_review',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'webmaster' => 'webmaster',
@@ -166,6 +171,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['moderate content from needs_review to draft'] = array(
     'name' => 'moderate content from needs_review to draft',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'webmaster' => 'webmaster',
@@ -177,6 +183,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['moderate content from needs_review to needs_editing'] = array(
     'name' => 'moderate content from needs_review to needs_editing',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'webmaster' => 'webmaster',
     ),
@@ -187,6 +194,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['moderate content from needs_review to published'] = array(
     'name' => 'moderate content from needs_review to published',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'webmaster' => 'webmaster',
     ),
@@ -197,6 +205,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['moderate content from published to archived'] = array(
     'name' => 'moderate content from published to archived',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'webmaster' => 'webmaster',
     ),
@@ -207,6 +216,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['use workbench_moderation my drafts tab'] = array(
     'name' => 'use workbench_moderation my drafts tab',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'webmaster' => 'webmaster',
@@ -218,6 +228,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['use workbench_moderation needs review tab'] = array(
     'name' => 'use workbench_moderation needs review tab',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'webmaster' => 'webmaster',
@@ -241,6 +252,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['view moderation history'] = array(
     'name' => 'view moderation history',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -254,6 +266,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['view moderation messages'] = array(
     'name' => 'view moderation messages',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -267,6 +280,7 @@ function localgov_base_moderation_user_default_permissions() {
   $permissions['view workbench access information'] = array(
     'name' => 'view workbench access information',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

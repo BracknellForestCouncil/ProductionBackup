@@ -224,6 +224,7 @@ function bracknell_feature_directory_user_default_permissions() {
   $permissions['eck add directory_entry directory_entry entities'] = array(
     'name' => 'eck add directory_entry directory_entry entities',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -247,6 +248,7 @@ function bracknell_feature_directory_user_default_permissions() {
   $permissions['eck administer directory_entry directory_entry entities'] = array(
     'name' => 'eck administer directory_entry directory_entry entities',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -292,6 +294,7 @@ function bracknell_feature_directory_user_default_permissions() {
   $permissions['eck edit directory_entry directory_entry entities'] = array(
     'name' => 'eck edit directory_entry directory_entry entities',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -305,6 +308,7 @@ function bracknell_feature_directory_user_default_permissions() {
   $permissions['eck list directory_entry bundles'] = array(
     'name' => 'eck list directory_entry bundles',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -333,6 +337,7 @@ function bracknell_feature_directory_user_default_permissions() {
   $permissions['eck view directory_entry bundles'] = array(
     'name' => 'eck view directory_entry bundles',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

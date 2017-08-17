@@ -14,6 +14,7 @@ function localgov_base_navigation_user_default_permissions() {
   $permissions['access localgov_base_navigation'] = array(
     'name' => 'access localgov_base_navigation',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

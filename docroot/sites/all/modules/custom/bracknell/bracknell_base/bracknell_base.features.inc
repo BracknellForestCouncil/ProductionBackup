@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * bracknell_base.features.inc
@@ -22,7 +21,7 @@ function bracknell_base_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function bracknell_base_custom_pub_defaults() {
   $options = array();
-  // Exported option: readspeak.
+  // Exported option: readspeak
   $options['readspeak'] = array(
     'type' => 'readspeak',
     'name' => t('Readspeak Enabled'),

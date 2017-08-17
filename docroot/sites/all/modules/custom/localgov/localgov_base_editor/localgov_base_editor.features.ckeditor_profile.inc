@@ -16,13 +16,13 @@ function localgov_base_editor_ckeditor_profile_defaults() {
         'toolbar' => '[
     [\'Source\'],
     [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'-\',\'SpellChecker\',\'Scayt\'],
-    [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
-    [\'Maximize\',\'ShowBlocks\',\'JustifyLeft\',\'JustifyCenter\'],
+    [\'Undo\',\'Redo\',\'-\'],
+    [\'Maximize\',\'ShowBlocks\',\'JustifyLeft\',\'JustifyCenter\',\'Unlink\',\'linkit\'],
+    [\'-\'],
     \'/\',
-    [\'Format\',\'Styles\',\'RemoveFormat\'],
-    [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\'],
-    [\'NumberedList\',\'BulletedList\',\'-\'],
-    [\'linkit\',\'Unlink\',\'Anchor\']
+    [\'RemoveFormat\',\'Superscript\',\'Subscript\',\'-\'],
+    [\'NumberedList\',\'BulletedList\',\'Format\',\'Styles\'],
+    [\'-\']
 ]',
         'expand' => 't',
         'default' => 't',
@@ -67,23 +67,11 @@ function localgov_base_editor_ckeditor_profile_defaults() {
           'drupalbreaks' => array(
             'name' => 'drupalbreaks',
             'desc' => 'Plugin for inserting Drupal teaser and page breaks.',
-            'path' => '%plugin_dir%drupalbreaks/',
+            'path' => '%plugin_dir_extra%drupalbreaks/',
             'buttons' => array(
               'DrupalBreak' => array(
                 'label' => 'DrupalBreak',
                 'icon' => 'images/drupalbreak.png',
-              ),
-            ),
-            'default' => 't',
-          ),
-          'image2' => array(
-            'name' => 'image2',
-            'desc' => 'Enhanced Image plugin. See <a href="http://ckeditor.com/addon/image2">addon page</a> for more details.',
-            'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/image2/',
-            'buttons' => array(
-              'Enhanced Image' => array(
-                'icon' => 'icons/image.png',
-                'label' => 'Insert Enhanced Image',
               ),
             ),
             'default' => 't',
@@ -99,13 +87,6 @@ function localgov_base_editor_ckeditor_profile_defaults() {
               ),
             ),
           ),
-          'tableresize' => array(
-            'name' => 'tableresize',
-            'desc' => 'Table Resize plugin. See <a href="http://ckeditor.com/addon/tableresize">addon page</a> for more details.',
-            'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/tableresize/',
-            'buttons' => FALSE,
-            'default' => 't',
-          ),
         ),
       ),
       'input_formats' => array(),
@@ -117,13 +98,13 @@ function localgov_base_editor_ckeditor_profile_defaults() {
         'toolbar' => '[
     [\'Source\'],
     [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'-\',\'SpellChecker\',\'Scayt\'],
-    [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
+    [\'Undo\',\'Redo\',\'-\'],
     [\'Maximize\',\'ShowBlocks\',\'JustifyLeft\',\'JustifyCenter\'],
     \'/\',
     [\'Format\',\'Styles\',\'RemoveFormat\'],
-    [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Blockquote\',\'Subscript\',\'Superscript\',\'-\'],
+    [\'-\',\'Blockquote\',\'Subscript\',\'Superscript\',\'-\'],
     [\'NumberedList\',\'BulletedList\',\'-\'],
-    [\'linkit\',\'Unlink\',\'Anchor\']
+    [\'linkit\',\'Unlink\']
 ]',
         'expand' => 't',
         'default' => 't',
@@ -168,30 +149,18 @@ function localgov_base_editor_ckeditor_profile_defaults() {
           'counter' => array(
             'name' => 'counter',
             'desc' => 'Plugin to count symbols, symbols without blanks and words',
-            'path' => '%plugin_dir%counter/',
+            'path' => '%plugin_dir_extra%counter/',
             'buttons' => FALSE,
             'default' => 'f',
           ),
           'drupalbreaks' => array(
             'name' => 'drupalbreaks',
             'desc' => 'Plugin for inserting Drupal teaser and page breaks.',
-            'path' => '%plugin_dir%drupalbreaks/',
+            'path' => '%plugin_dir_extra%drupalbreaks/',
             'buttons' => array(
               'DrupalBreak' => array(
                 'label' => 'DrupalBreak',
                 'icon' => 'images/drupalbreak.png',
-              ),
-            ),
-            'default' => 't',
-          ),
-          'image2' => array(
-            'name' => 'image2',
-            'desc' => 'Enhanced Image plugin. See <a href="http://ckeditor.com/addon/image2">addon page</a> for more details.',
-            'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/image2/',
-            'buttons' => array(
-              'Enhanced Image' => array(
-                'icon' => 'icons/image.png',
-                'label' => 'Insert Enhanced Image',
               ),
             ),
             'default' => 't',
@@ -206,13 +175,6 @@ function localgov_base_editor_ckeditor_profile_defaults() {
                 'icon' => 'icons/linkit.png',
               ),
             ),
-          ),
-          'tableresize' => array(
-            'name' => 'tableresize',
-            'desc' => 'Table Resize plugin. See <a href="http://ckeditor.com/addon/tableresize">addon page</a> for more details.',
-            'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/tableresize/',
-            'buttons' => FALSE,
-            'default' => 't',
           ),
         ),
       ),
@@ -243,13 +205,13 @@ function localgov_base_editor_ckeditor_profile_defaults() {
         'toolbar' => '[
     [\'Source\'],
     [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'-\',\'SpellChecker\',\'Scayt\'],
-    [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
+    [\'Undo\',\'Redo\',\'-\'],
     [\'Maximize\',\'ShowBlocks\',\'JustifyLeft\',\'JustifyCenter\'],
     \'/\',
     [\'Format\',\'Styles\',\'RemoveFormat\'],
-    [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Blockquote\',\'Subscript\',\'Superscript\',\'-\'],
+    [\'-\',\'Blockquote\',\'Subscript\',\'Superscript\',\'-\'],
     [\'NumberedList\',\'BulletedList\',\'-\'],
-    [\'linkit\',\'Unlink\',\'Anchor\',\'Media\']
+    [\'linkit\',\'Unlink\',\'Media\']
 ]',
         'expand' => 't',
         'default' => 't',
@@ -303,14 +265,14 @@ config.autoGrow_onStartup = true;',
           'counter' => array(
             'name' => 'counter',
             'desc' => 'Plugin to count symbols, symbols without blanks and words',
-            'path' => '%plugin_dir%counter/',
+            'path' => '%plugin_dir_extra%counter/',
             'buttons' => FALSE,
             'default' => 'f',
           ),
           'drupalbreaks' => array(
             'name' => 'drupalbreaks',
             'desc' => 'Plugin for inserting Drupal teaser and page breaks.',
-            'path' => '%plugin_dir%drupalbreaks/',
+            'path' => '%plugin_dir_extra%drupalbreaks/',
             'buttons' => array(
               'DrupalBreak' => array(
                 'label' => 'DrupalBreak',
@@ -319,22 +281,10 @@ config.autoGrow_onStartup = true;',
             ),
             'default' => 't',
           ),
-          'image2' => array(
-            'name' => 'image2',
-            'desc' => 'Enhanced Image plugin. See <a href="http://ckeditor.com/addon/image2">addon page</a> for more details.',
-            'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/image2/',
-            'buttons' => array(
-              'Enhanced Image' => array(
-                'icon' => 'icons/image.png',
-                'label' => 'Insert Enhanced Image',
-              ),
-            ),
-            'default' => 't',
-          ),
           'lineutils' => array(
             'name' => 'lineutils',
             'desc' => 'Plugin file: lineutils',
-            'path' => '%plugin_dir%lineutils/',
+            'path' => '%plugin_dir_extra%lineutils/',
             'buttons' => FALSE,
             'default' => 'f',
           ),
@@ -364,7 +314,7 @@ config.autoGrow_onStartup = true;',
           'mediaembed' => array(
             'name' => 'mediaembed',
             'desc' => 'Plugin for embedding HTML snippets',
-            'path' => '%plugin_dir%mediaembed/',
+            'path' => '%plugin_dir_extra%mediaembed/',
             'buttons' => array(
               'MediaEmbed' => array(
                 'label' => 'MediaEmbed',
@@ -373,17 +323,10 @@ config.autoGrow_onStartup = true;',
             ),
             'default' => 'f',
           ),
-          'tableresize' => array(
-            'name' => 'tableresize',
-            'desc' => 'Table Resize plugin. See <a href="http://ckeditor.com/addon/tableresize">addon page</a> for more details.',
-            'path' => '//cdn.ckeditor.com/4.5.4/full-all/plugins/tableresize/',
-            'buttons' => FALSE,
-            'default' => 't',
-          ),
           'widget' => array(
             'name' => 'widget',
             'desc' => 'Plugin file: widget',
-            'path' => '%plugin_dir%widget/',
+            'path' => '%plugin_dir_extra%widget/',
             'buttons' => FALSE,
             'default' => 'f',
           ),
