@@ -108,7 +108,7 @@ function bracknell_content_testimonial_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => -10,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-testimonial-field_testimonial_author'.

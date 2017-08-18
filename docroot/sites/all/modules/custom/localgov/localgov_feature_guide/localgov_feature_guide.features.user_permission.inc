@@ -14,6 +14,7 @@ function localgov_feature_guide_user_default_permissions() {
   $permissions['access localgov_feature_guide'] = array(
     'name' => 'access localgov_feature_guide',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -39,6 +40,7 @@ function localgov_feature_guide_user_default_permissions() {
   $permissions['add content to guides'] = array(
     'name' => 'add content to guides',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

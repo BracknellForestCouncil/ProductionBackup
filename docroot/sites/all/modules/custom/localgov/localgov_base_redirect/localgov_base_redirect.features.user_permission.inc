@@ -27,6 +27,7 @@ function localgov_base_redirect_user_default_permissions() {
   $permissions['administer localgov_base_redirect'] = array(
     'name' => 'administer localgov_base_redirect',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

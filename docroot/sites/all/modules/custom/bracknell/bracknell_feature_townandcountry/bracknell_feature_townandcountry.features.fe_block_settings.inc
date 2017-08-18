@@ -18,13 +18,12 @@ function bracknell_feature_townandcountry_default_fe_block_settings() {
     'machine_name' => 'bracknell_townandcountry',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'news
-news/*',
+    'pages' => 'news',
     'roles' => array(),
     'themes' => array(
       'bracknell_theme_base' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_second',
+        'status' => 1,
         'theme' => 'bracknell_theme_base',
         'weight' => 0,
       ),

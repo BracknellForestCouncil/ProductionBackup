@@ -13,7 +13,9 @@ function bracknell_feature_performance_user_default_permissions() {
   // Exported permission: 'bypass advanced aggregation'.
   $permissions['bypass advanced aggregation'] = array(
     'name' => 'bypass advanced aggregation',
-    'roles' => array(),
+    'roles' => array(
+      'webmaster' => 'webmaster',
+    ),
     'module' => 'advagg',
   );
 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * bracknell_content_promotional_page.strongarm.inc
