@@ -44,6 +44,16 @@ function bracknell_base_theme($existing, $type, $theme, $path) {
     'template' => 'field--field-promotional-hero',
     'path' => drupal_get_path('module', 'bracknell_base') . '/templates',
   );
+  $theme['bb_403'] = array(
+    'render element' => 'elements',
+    'template' => 'bb-403',
+    'path' => drupal_get_path('module', 'bracknell_base') . '/templates',
+  );
+  $theme['bb_404'] = array(
+    'render element' => 'elements',
+    'template' => 'bb-404',
+    'path' => drupal_get_path('module', 'bracknell_base') . '/templates',
+  );
   return $theme;
 }
 
