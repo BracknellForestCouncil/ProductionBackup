@@ -39,15 +39,17 @@
 
   button {
     background: transparent;
-    border: {
-      color: $acc-tabs-control-button-border-color;
-      width: 1px;
-    }
+    border: 1px solid $acc-tabs-control-button-border-color;
+    border-bottom: 0;
+    border-radius: 5px 5px 0 0;
     color: $acc-tabs-control-button-text-color;
     cursor: pointer;
     outline: none;
     padding: 8px 20px 10px;
     text-decoration: underline;
+    margin-right: -1px;
+    z-index: 1;
+    background: #fcfcfc;
 
     &:hover,
     &:focus {
@@ -63,15 +65,12 @@
 
   &-item-active {
     button {
-      border: {
-        color: $acc-tabs-control-item-active-border-color;
-        style: solid;
-        radius: 5px 5px 0 0;
-        width: 1px 1px 1px 1px;
-      }
+      border: 1px solid $acc-tabs-control-item-active-border-color;
       border-bottom-color: $acc-tabs-control-item-active-bottom-border-color;
       color: $acc-tabs-control-active-button-text-color;
       text-decoration: none;
+      margin-right: 0;
+      background: white;
     }
   }
 }
