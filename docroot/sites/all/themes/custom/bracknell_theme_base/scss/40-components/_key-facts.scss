@@ -15,13 +15,24 @@
 
       .key-fact-item-title {
         @include applyColour(background-color, color);
-        border-radius: 3px;
-        display: inline-block;
-        left: 0;
         margin: 0;
-        padding: 8px 15px 10px;
-        position: absolute;
-        top: 15px;
+
+        @media (min-width: $screen-sm) {
+          position: absolute;
+          padding: 8px 15px 10px;
+          top: 15px;
+          display: inline-block;
+          left: 0;
+          border-radius: 3px;
+        }
+
+        @media (max-width: $screen-xs-max) {
+          padding: 14px 20px;
+          border-radius: 3px 3px 0 0;
+          h5 {
+            line-height: 1.25;
+          }
+        }
 
         h5 {
           font: {
@@ -34,14 +45,18 @@
       }
 
       .key-fact-item-body {
-        border: {
-          color: $key-fact-item-body-border-color;
-          radius: 3px;
-          style: solid;
-          width: 1px;
+        border: 1px solid $key-fact-item-body-border-color;
+
+        @media (min-width: $screen-sm) {
+          margin-left: 15px;
+          padding: 60px 20px 0 25px;
+          border-radius: 3px;
         }
-        margin-left: 15px;
-        padding: 60px 20px 0 25px;
+
+        @media (max-width: $screen-xs-max) {
+          padding: 10px 20px 0px;
+          border-radius: 0 0 3px 3px;
+        }
       }
     }
   }
