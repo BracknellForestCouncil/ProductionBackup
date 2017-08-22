@@ -1,6 +1,6 @@
-name = bracknell_feature_scheduler
+name = Bracknell Feature: Scheduler
 core = 7.x
-package = Features
+package = bracknell
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = scheduler
