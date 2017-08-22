@@ -174,16 +174,46 @@
 
   Drupal.behaviors.bracknellTabs = {
     attach: function (context, settings) {
-      if ($('.acc-tabs-panel', context).length > 1) {
-        $('.acc-tabs', context).accTabs({
-          containerClass: 'js-acc-tabs',
-          controlActiveClass: 'js-acc-tabs-control-item-active',
-          tabPanelClass: 'js-acc-tabs-panel',
-          panelActiveClass: 'js-tabs-panel-active',
-          controlsTextClass: 'element-invisible',
-          tabControlsClass: 'js-acc-tabs-control'
-        });
-      }
+      ssm.addState({
+        id: 'mobile',
+        query: '(max-width: 767px)',
+        onEnter: function () {
+          if ($('.acc-tabs-panel', context).length > 1) {
+            $('.acc-accordion', context).accAccordion({
+              containerClass: 'js-acc-accordion',
+              controlActiveClass: 'js-acc-tabs-control-item-active-something',
+              tabPanelClass: 'js-acc-tabs-panel-something',
+              panelActiveClass: 'js-tabs-panel-active-something',
+              controlsTextClass: 'element-invisible-something',
+              tabControlsClass: 'js-acc-tabs-control-something'
+            });
+          }
+        },
+        onLeave: function () {
+          $('.acc-accordion', context).data('plugin_accAccordion').destroy();
+          $('.acc-accordion', context).removeData('plugin_accAccordion');
+        }
+      });
+      ssm.addState({
+        id: 'desktop',
+        query: '(min-width: 768px)',
+        onEnter: function () {
+          if ($('.acc-tabs-panel', context).length > 1) {
+            $('.acc-tabs', context).accTabs({
+              containerClass: 'js-acc-tabs',
+              controlActiveClass: 'js-acc-tabs-control-item-active',
+              tabPanelClass: 'js-acc-tabs-panel',
+              panelActiveClass: 'js-tabs-panel-active',
+              controlsTextClass: 'element-invisible',
+              tabControlsClass: 'js-acc-tabs-control'
+            });
+          }
+        },
+        onLeave: function () {
+          $('.acc-tabs', context).data('plugin_accTabs').destroy();
+          $('.acc-tabs', context).removeData('plugin_accTabs');
+        }
+      });
     }
   };
 
