@@ -343,6 +343,86 @@ function localgov_content_contactinfo_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-contact-field_social_links'.
+  $field_instances['node-contact-field_social_links'] = array(
+    'bundle' => 'contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'socialfield',
+        'settings' => array(
+          'link_text' => FALSE,
+        ),
+        'type' => 'socialfield_formatter',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_social_links',
+    'is_property' => 0,
+    'label' => 'Social Links',
+    'required' => 0,
+    'settings' => array(
+      'services' => array(
+        'facebook' => 'facebook',
+        'twitter' => 'twitter',
+      ),
+      'used_services' => array(
+        'delicious' => 'delicious',
+        'digg' => 'digg',
+        'facebook' => 'facebook',
+        'flickr' => 'flickr',
+        'instagram' => 'instagram',
+        'linkedin' => 'linkedin',
+        'myspace' => 'myspace',
+        'pinterest' => 'pinterest',
+        'reddit' => 'reddit',
+        'slideshare' => 'slideshare',
+        'stumbleupon' => 'stumbleupon',
+        'twitter' => 'twitter',
+        'vimeo' => 'vimeo',
+        'yahoo' => 'yahoo',
+        'youtube' => 'youtube',
+      ),
+      'user_register_form' => FALSE,
+      'weights' => array(
+        'delicious' => -4,
+        'digg' => -3,
+        'facebook' => -10,
+        'flickr' => -2,
+        'googleplus' => -8,
+        'instagram' => 5,
+        'linkedin' => -7,
+        'myspace' => 0,
+        'pinterest' => 1,
+        'reddit' => 2,
+        'slideshare' => 3,
+        'stumbleupon' => 4,
+        'twitter' => -9,
+        'vimeo' => -5,
+        'yahoo' => -1,
+        'youtube' => -6,
+      ),
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'socialfield',
+      'settings' => array(),
+      'type' => 'socialfield_widget',
+      'weight' => 9,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Exported field_instance: 'node-contact-field_title_display'.
   $field_instances['node-contact-field_title_display'] = array(
     'bundle' => 'contact',
@@ -405,6 +485,7 @@ function localgov_content_contactinfo_field_default_field_instances() {
   t('Enter an email address.');
   t('If required, enter additional information to display.');
   t('Select the team responsible for editing/moderating this content.');
+  t('Social Links');
   t('TODO: Add help text.');
   t('Telephone Number');
 
