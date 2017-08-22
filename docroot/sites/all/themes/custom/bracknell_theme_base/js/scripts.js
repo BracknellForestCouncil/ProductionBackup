@@ -179,13 +179,16 @@
         query: '(max-width: 767px)',
         onEnter: function () {
           if ($('.acc-tabs-panel', context).length > 1) {
-            $('.acc-accordion', context).accAccordion({
-              containerClass: 'js-acc-accordion',
-              controlActiveClass: 'js-acc-tabs-control-item-active-something',
-              tabPanelClass: 'js-acc-tabs-panel-something',
-              panelActiveClass: 'js-tabs-panel-active-something',
-              controlsTextClass: 'element-invisible-something',
-              tabControlsClass: 'js-acc-tabs-control-something'
+            setTimeout(function () {
+              $('.acc-accordion', context).accAccordion({
+                defaultPanel: 0,
+                panelClass: 'js-accordion-panel',
+                panelId: 'js-accordion-panel--',
+                panelControlClass: 'js-accordion-control',
+                panelControlActiveClass: 'js-accordion-control--active',
+                panelControlHiddenClass: 'js-accordion-control--hidden',
+                panelControlId: 'js-accordion-control--'
+              });
             });
           }
         },
@@ -199,13 +202,15 @@
         query: '(min-width: 768px)',
         onEnter: function () {
           if ($('.acc-tabs-panel', context).length > 1) {
-            $('.acc-tabs', context).accTabs({
-              containerClass: 'js-acc-tabs',
-              controlActiveClass: 'js-acc-tabs-control-item-active',
-              tabPanelClass: 'js-acc-tabs-panel',
-              panelActiveClass: 'js-tabs-panel-active',
-              controlsTextClass: 'element-invisible',
-              tabControlsClass: 'js-acc-tabs-control'
+            setTimeout(function () {
+              $('.acc-tabs', context).accTabs({
+                containerClass: 'js-acc-tabs',
+                controlActiveClass: 'js-acc-tabs-control-item-active',
+                tabPanelClass: 'js-acc-tabs-panel',
+                panelActiveClass: 'js-tabs-panel-active',
+                controlsTextClass: 'element-invisible',
+                tabControlsClass: 'js-acc-tabs-control'
+              });
             });
           }
         },
