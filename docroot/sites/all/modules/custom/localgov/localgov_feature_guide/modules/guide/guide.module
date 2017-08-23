@@ -1243,7 +1243,7 @@ function template_preprocess_guide_navigation_primary(&$variables) {
   if ($guide_link['mlid']) {
     if ($guide_link['plid'] && $parent = guide_link_load($guide_link['plid'])) {
       $parent_href = url($parent['href']);
-      drupal_add_html_head_link(array('href' => $parent_href));
+      drupal_add_html_head_link(array('rel' => 'up', 'href' => $parent_href));
       $variables['parent_url'] = $parent_href;
       $variables['parent_title'] = check_plain($parent['title']);
     }
