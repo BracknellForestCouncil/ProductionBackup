@@ -119,13 +119,13 @@
       </div><!-- end .col -->
 
       <?php if (!empty($page['sidebar_first'])): ?>
-        <aside class="col-md-3 col-sm-12" role="complementary">
+        <aside class="col-md-3 col-sm-12">
           <?php print render($page['sidebar_first']); ?>
         </aside>  <!-- /#sidebar-first -->
       <?php endif; ?>
 
       <?php if (!empty($page['sidebar_second'])): ?>
-        <aside class="col-md-3 col-md-offset-1 col-sm-12" role="complementary">
+        <aside class="col-md-3 col-md-offset-1 col-sm-12">
           <?php print render($page['sidebar_second']); ?>
         </aside>  <!-- /#sidebar-second -->
       <?php endif; ?>
