@@ -118,9 +118,11 @@ function bracknell_theme_base_tablefield_view($variables) {
 
   // Need to add in entity_id because often the tablefields have the same delta,
   // especially when in separate paragraphs.
-  $uid = isset($variables['entity_id']) ? $variables['delta'] . '-' . $variables['entity_id'] : $variables['delta'];
+  $uuid = isset($variables['entity_id']) ? $variables['delta'] . '-' . $variables['entity_id'] : $variables['delta'];
 
-  return '<div id="tablefield-wrapper-' . $uid . '" class="tablefield-wrapper">'
+  $theme_variables['attributes']['id'] = 'tablefield-' . $uuid;
+
+  return '<div id="tablefield-wrapper-' . $uuid . '" class="tablefield-wrapper">'
     . theme('table__tablefield', $theme_variables)
     . $export
     . '</div>';
