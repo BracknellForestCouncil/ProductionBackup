@@ -78,14 +78,17 @@
       .attr('aria-hidden', 'false')
       .show();
 
-      if (this.els.searchButton !== undefined && this.els.searchButton.length > 0) {
-        this.els.searchButton
-        .addClass('search-btn-open')
-        .attr({
-          'aria-expanded': 'true',
-          'data-toggle': 'open'
-        });
-      }
+      // This is a kinda hack because it's not meant to show both buttons.
+      this.els.searchButton.hide();
+
+      // if (this.els.searchButton !== undefined && this.els.searchButton.length > 0) {
+      //   this.els.searchButton
+      //   .addClass('search-btn-open')
+      //   .attr({
+      //     'aria-expanded': 'true',
+      //     'data-toggle': 'open'
+      //   });
+      // }
       this.searchIsOpen = true;
     },
     /**
