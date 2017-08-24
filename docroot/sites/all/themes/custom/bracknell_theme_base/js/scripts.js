@@ -72,17 +72,14 @@
   Drupal.behaviors.bracknellSearch = {
     /**
      * Show the search form, set attributes and status.
-     *
-     * @param {Object} els
-     *   The cached elements object.
      */
-    actionOpenSearchForm: function (els) {
-      els.searchBlock
+    actionOpenSearchForm: function () {
+      this.els.searchBlock
       .attr('aria-hidden', 'false')
       .show();
 
-      if (els.searchButton !== undefined && els.searchButton.length > 0) {
-        els.searchButton
+      if (this.els.searchButton !== undefined && this.els.searchButton.length > 0) {
+        this.els.searchButton
         .addClass('search-btn-open')
         .attr({
           'aria-expanded': 'true',
@@ -93,17 +90,14 @@
     },
     /**
      * Hide the search form, set attributes and status.
-     *
-     * @param {Object} els
-     *   The cached elements object.
      */
-    actionCloseSearchForm: function (els) {
-      els.searchBlock
+    actionCloseSearchForm: function () {
+      this.els.searchBlock
       .attr('aria-hidden', 'true')
       .hide();
 
-      if (els.searchButton !== undefined && els.searchButton.length > 0) {
-        els.searchButton
+      if (this.els.searchButton !== undefined && this.els.searchButton.length > 0) {
+        this.els.searchButton
         .removeClass('search-btn-open')
         .attr({
           'aria-expanded': 'false',
@@ -115,18 +109,19 @@
     attach: function (context, settings) {
 
       var _self = this;
-      var els = {};
+
+      _self.els = {};
+
+      _self.els.searchBlock = $('[data-js="search"]', context);
+      _self.els.mainMenuButton = $('[data-js="main-menu-button"]', context);
+      _self.els.searchButton = $('[data-js="search-button"]', context);
+
+      _self.buttonIsAdded = false;
+      _self.searchIsOpen = false;
 
       if (Modernizr.mq) {
-        els.searchBlock = $('[data-js="search"]', context);
-        els.mainMenuButton = $('[data-js="main-menu-button"]', context);
-        els.searchButton = $('[data-js="search-button"]', context);
-
-        _self.buttonIsAdded = false;
-        _self.searchIsOpen = false;
-
         // Check if the search block exists before we do anything.
-        if (els.searchBlock.length > 0) {
+        if (_self.els.searchBlock.length > 0) {
           $(window).resize(function (e) {
             if (Modernizr.mq('only screen and (max-width: 768px)')) {
               // Check if the button exists, if not create and append the button.
@@ -154,7 +149,7 @@
                     _self.actionOpenSearchForm();
                   }
                 });
-                els.searchButton = searchButtonNew.insertBefore(els.mainMenuButton);
+                _self.els.searchButton = searchButtonNew.insertBefore(_self.els.mainMenuButton);
                 _self.buttonIsAdded = true;
               }
 
@@ -171,8 +166,8 @@
             }
             else {
               // Reset the DOM on desktop.
-              els.searchBlock.show().removeAttr('aria-hidden');
-              els.searchButton.off().remove();
+              _self.els.searchBlock.show().removeAttr('aria-hidden');
+              _self.els.searchButton.off().remove();
               _self.searchIsOpen = false;
               _self.buttonIsAdded = false;
             }
