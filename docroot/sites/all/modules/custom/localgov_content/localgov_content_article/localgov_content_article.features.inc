@@ -21,10 +21,10 @@ function localgov_content_article_node_info() {
     'article' => array(
       'name' => t('News Article'),
       'base' => 'node_content',
-      'description' => t('TODO: Add content type description.'),
+      'description' => t('Use to add a news story within the news section'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => t('TODO: Add help for content type.'),
+      'help' => t('Use to add a news story within the news section'),
     ),
   );
   drupal_alter('node_info', $items);
