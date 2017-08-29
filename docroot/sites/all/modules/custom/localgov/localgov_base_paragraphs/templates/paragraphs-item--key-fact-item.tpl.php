@@ -29,7 +29,7 @@
 <div class='key-fact-item'>
   <?php if (isset($content['field_key_fact_item_title'])): ?>
     <div class='key-fact-item-title'>
-      <h5><?php print trim(render($content['field_key_fact_item_title'])); ?></h5>
+      <h3><?php print trim(render($content['field_key_fact_item_title'])); ?></h3>
     </div>
   <?php endif; ?>
   <?php if (isset($content['field_key_fact_item_content'])): ?>
