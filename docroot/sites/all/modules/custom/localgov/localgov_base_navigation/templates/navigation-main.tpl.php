@@ -1,3 +1,5 @@
+<h2 class='visually-hidden'>Main navigation</h2>
+
 <nav id="main-nav">
   <ul class="clearfix">
     <li class="visible-sm-inline-block visible-xs-inline-block nav-tools__account nav-item nav-item-my-account">

@@ -4,26 +4,6 @@
  * @file field.tpl.php
  * Default template implementation to display the value of a field.
  *
- * This file is not used and is here as a starting point for customization only.
- * @see theme_field()
- *
- * Available variables:
- * - $items: An array of field values. Use render() to output them.
- * - $label: The item label.
- * - $label_hidden: Whether the label display is set to 'hidden'.
- * - $classes: String of classes that can be used to style contextually through
- *   CSS. It can be manipulated through the variable $classes_array from
- *   preprocess functions. The default values can be one or more of the
- *   following:
- *   - field: The current template type, i.e.,<?php
-
-/**
- * @file field.tpl.php
- * Default template implementation to display the value of a field.
- *
- * This file is not used and is here as a starting point for customization only.
- * @see theme_field()
- *
  * Available variables:
  * - $items: An array of field values. Use render() to output them.
  * - $label: The item label.
@@ -61,8 +41,8 @@
  * @ingroup themeable
  */
 ?>
-<p class="contact-additonal">
+<div class="contact-additonal">
   <?php foreach ($items as $delta => $item): ?>
     <?php print render($item); ?>
   <?php endforeach; ?>
-</p>
+</div>
