@@ -27,11 +27,15 @@
  */
 ?>
 <div class='key-fact-item'>
-  <div class='key-fact-item-title'>
-    <h5><?php print render($content['field_key_fact_item_title']); ?></h5>
-  </div>
-  <div class='key-fact-item-body'>
-    <?php print render($content['field_key_fact_item_content']); ?>
-  </div>
+  <?php if (isset($content['field_key_fact_item_title'])): ?>
+    <div class='key-fact-item-title'>
+      <h5><?php print trim(render($content['field_key_fact_item_title'])); ?></h5>
+    </div>
+  <?php endif; ?>
+  <?php if (isset($content['field_key_fact_item_content'])): ?>
+    <div class='key-fact-item-body'>
+      <?php print render($content['field_key_fact_item_content']); ?>
+    </div>
+  <?php endif; ?>
   <?php print render($content); ?>
 </div>
