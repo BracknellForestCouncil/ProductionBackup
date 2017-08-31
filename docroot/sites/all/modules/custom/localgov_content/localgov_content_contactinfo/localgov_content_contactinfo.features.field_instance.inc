@@ -351,10 +351,10 @@ function localgov_content_contactinfo_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'socialfield',
         'settings' => array(
-          'link_text' => FALSE,
+          'link_text' => 0,
         ),
         'type' => 'socialfield_formatter',
         'weight' => 7,

@@ -50,6 +50,7 @@ features[variable][] = node_options_contact
 features[variable][] = node_preview_contact
 features[variable][] = node_submitted_contact
 features[variable][] = pathauto_node_contact_pattern
+features[variable][] = socialfield_services
 features_exclude[dependencies][link] = link
 features_exclude[dependencies][localgov_base_moderation] = localgov_base_moderation
 features_exclude[dependencies][options] = options
