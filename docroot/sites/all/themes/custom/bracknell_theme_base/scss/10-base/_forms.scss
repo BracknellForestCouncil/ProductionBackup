@@ -89,3 +89,7 @@ legend {
   border-bottom: 2px solid $form-legend-border-color;
   color: $form-legend-text-color;
 }
+
+input, button, select, textarea {
+  max-width: 100%;
+}
