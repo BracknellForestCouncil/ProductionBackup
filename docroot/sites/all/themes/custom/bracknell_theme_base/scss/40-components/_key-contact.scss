@@ -39,7 +39,6 @@
 
 .key-contact-item-inner {
   width: 100%;
-  text-align: center;
 }
 
 .key-contact-item-content {
@@ -51,6 +50,7 @@
 .key-contact-item-image {
   background-color: $key-contact-item-image-bg-color;
   width: 100%;
+  text-align: center;
 
   .img-responsive {
     margin-bottom: 0;
