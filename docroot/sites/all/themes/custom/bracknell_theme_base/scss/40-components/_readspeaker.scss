@@ -1,3 +1,456 @@
-.rsbtn {
-  z-index: 99 !important;
+.page-wrapper {
+  .rsbtn {
+    position: relative;
+    height: 38px;
+    margin-bottom: 10px;
+    z-index: 100;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    // Added by MF.
+    z-index: 99 !important;
+    width: auto !important;
+    @include clearfix();
+  }
+  .rsfloating {
+    display: none;
+  }
+  .rsbtn.rsfloating {
+    display: block;
+  }
+  .rsbtn span,
+  .rsbtn a {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  .rsbtn span,
+  .rsbtn a:focus {
+    border: none;
+  }
+  .rsbtn .rsbtn_play {
+    text-decoration: none;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 16px;
+    color: #333;
+    position: static;
+    display: inline;
+    margin: auto;
+    padding: inherit;
+    float: left;
+    // Added by MF.
+    @include clearfix();
+  }
+  .rsbtn .rsimg,
+  .rsbtn a.rsimg {
+    background: transparent url(../images/readspeaker/rs_button-new.png) no-repeat scroll 0 0;
+  }
+  #rslightbox_logo.rsimg
+  {
+    background: #eeeeee;
+  }
+  .rsbtn .rspart {
+    position: relative;
+    float: left;
+    height: 38px;
+  }
+  .rsbtn .rsbtn_left .rsbtn_text {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 27px;
+    margin: 5px 8px;
+    padding-left: 25px;
+    background: transparent url(../images/readspeaker/speaker-icon.png) no-repeat scroll 0 7px;
+  }
+  .rsdeferred .rsbtn_left .rsbtn_text span {
+    padding-right: 20px;
+    background: transparent url(../images/readspeaker/rs_loader_anim.gif) no-repeat scroll top right;
+  }
+  .rsbtn .rsbtn_right.rsimg,
+  .rsbtn .rsbtn_pause {
+    width: 45px;
+    background-position: 0 -38px;
+  }
+  .rsbtn a:hover .rsbtn_right,
+  .rsbtn.rsfocus .rsbtn_right.rsimg {
+    background-position: 0px -38px;
+  }
+  .rsbtn .rsbtn_right.rsimg.rsanim {
+    background: transparent url(../images/readspeaker/play-anim.gif) no-repeat scroll 0 0;
+  }
+  .rsbtn.rsanimate .rsbtn_right.rsimg {
+    background-position: 0px -38px;
+  }
+  .rsbtn.rsexpanded .rsbtn_right.rsimg {
+    display: none;
+  }
+  .rsbtn .rsbtn_pause .rsbtn_btnlabel,
+  .rsbtn .rsbtn_stop .rsbtn_btnlabel,
+  .rsbtn .rsbtn_volume .rsbtn_btnlabel,
+  .rsbtn .rsbtn_settings .rsbtn_btnlabel,
+  .rsbtn .rsbtn_dl .rsbtn_btnlabel,
+  .rsbtn .rsbtn_pin .rsbtn_btnlabel,
+  .rsbtn .rsbtn_closer .rsbtn_btnlabel,
+  .rsbtn .rsbtn_powered .rsbtn_btnlabel {
+    display: none;
+  }
+  .rsbtn.rsplaying .rsbtn_pause {
+    display: none;
+    background-position: 0 -114px;
+  }
+  .rsbtn.rsfloating .rsbtn_pause {
+    background-position: 0 -513px;
+  }
+  .rsbtn.rsexpanded .rsbtn_pause,
+  .rsbtn.rsexpanded.rsplaying .rsbtn_pause {
+    display: block;
+  }
+  .rsbtn.rsexpanded.rs-no-touch .rsbtn_pause.rsimg:hover,
+  .rsbtn.rsexpanded.rs-no-touch .rsbtn_pause.rsimg.rsfocus {
+    background-position: 0px -114px;
+  }
+  .rsbtn.rsexpanded.rsfloating.rs-no-touch .rsbtn_pause.rsimg:hover,
+  .rsbtn.rsexpanded.rsfloating.rs-no-touch .rsbtn_pause.rsimg.rsfocus {
+    background-position: -42px -513px;
+  }
+  .rsbtn.rsexpanded.rsstopped .rsbtn_pause,
+  .rsbtn.rsexpanded.rspaused .rsbtn_pause {
+    background-position: 0 -386px;
+  }
+  .rsbtn.rsexpanded.rsstopped.rs-no-touch .rsbtn_pause:hover,
+  .rsbtn.rsexpanded.rspaused.rs-no-touch .rsbtn_pause:hover,
+  .rsbtn.rsexpanded.rsstopped.rs-no-touch .rsbtn_pause.rsfocus,
+  .rsbtn.rsexpanded.rspaused.rs-no-touch .rsbtn_pause.rsfocus,
+  .pre-expanded.rsexpanded.rsstopped .rsbtn_pause:hover {
+    background-position: 0px -386px;
+  }
+  .rsbtn.rsexpanded.rsfloating.rsstopped .rsbtn_pause,
+  .rsbtn.rsexpanded.rsfloating.rspaused .rsbtn_pause {
+    background-position: 0 -475px;
+  }
+  .rsbtn.rsexpanded.rsfloating.rsstopped.rs-no-touch .rsbtn_pause:hover,
+  .rsbtn.rsexpanded.rsfloating.rspaused.rs-no-touch .rsbtn_pause:hover,
+  .rsbtn.rsexpanded.rsfloating.rspaused.rs-no-touch .rsbtn_pause.rsfocus {
+    background-position: 0 -475px;
+  }
+  .rsbtn .rsbtn_exp.rsimg {
+    display: none;
+    background: none;
+  }
+  .rsbtn.rsexpanded .rsbtn_exp {
+    display: block;
+  }
+  .rsbtn .rsbtn_stop.rsimg {
+    left: -9px;
+    margin-right: -9px;
+    width: 45px;
+    background-position: 0 -152px;
+  }
+  .rsbtn.rsexpanded.rs-no-touch .rsbtn_stop.rsimg:hover,
+  .rsbtn.rsexpanded.rs-no-touch .rsbtn_stop.rsimg.rsfocus {
+    background-position: 0px -152px;
+  }
+  .rsbtn.rsexpanded.rsstopped .rsbtn_stop.rsimg,
+  .rsbtn.rsexpanded.rsstopped .rsbtn_stop.rsimg:hover,
+  .rsbtn.rsexpanded.rsstopped .rsbtn_stop.rsimg.rsfocus {
+    background-position: 0px -152px;
+    cursor: default;
+  }
+  .rsbtn .rsbtn_player.rsimg {
+    position: relative;
+    z-index: 120;
+    background-position: 0 -190px;
+    background-repeat: repeat-x;
+  }
+  .rsbtn .rsbtn_player .rsplaypart {
+    float: left;
+  }
+  .rsbtn .rsbtn_progress_container.rsimg {
+    position: relative;
+    width: 55px;
+    height: 10px;
+    border: 1px solid #555;
+    background-repeat: repeat-x;
+    background-position: 0 -296px;
+    margin: 12px 5px 0 5px;
+  }
+  .rsbtn .rsbtn_progress_container .rsbtn_progress_loaded {
+    position: relative;
+    width: 1%;
+    height: 100%;
+    background-color: #ccc;
+  }
+  .rsbtn .rsbtn_progress_container .rsbtn_progress_played.rsimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1%;
+    background-position: 0 -294px;
+  }
+  .rsbtn .rsbtn_progress_container .rsbtn_progress_handle.rsimg {
+    position: absolute;
+    left: -3px;
+    top: -7px;
+    width: 20px;
+    height: 24px;
+    background-position: 0 -268px;
+  }
+  .rsbtn.rs-no-touch .rsbtn_progress_container .rsbtn_progress_handle.rsimg:hover,
+  .rsbtn.rs-no-touch .rsbtn_progress_container .rsbtn_progress_handle.rsimg.rsfocus {
+    background-position: 0px -268px;
+  }
+  .rsbtn.rsstopped .rsbtn_progress_container .rsbtn_progress_handle.rsimg,
+  .rsbtn.rsstopped.rs-no-touch .rsbtn_progress_container .rsbtn_progress_handle.rsimg:hover {
+    opacity: .6;
+    background-position: 0 -268px;
+    cursor: default;
+  }
+  .rsbtn .rsbtn_progress_container.rsloading {
+    background: transparent url(../images/readspeaker/timeline-anim.gif) repeat-x scroll 0 0;
+  }
+  .rsbtn .rsbtn_volume.rsimg {
+    position: relative;
+    width: 22px;
+    height: 20px;
+    background-position: -20px -310px;
+    margin-top: 5px;
+    margin-right: 0px;
+  }
+  .rsbtn.rs-no-touch .rsbtn_volume.rsimg:hover,
+  .rsbtn.rs-no-touch .rsbtn_volume.rsimg.rsfocus {
+    background-position: -20px -310px;
+  }
+  .rsbtn .rsbtn_volume_container.rsimg {
+    position: absolute;
+    height: 70px;
+    width: 26px;
+    bottom: -58px;
+    left: 0;
+    border: none;
+    background-position: 0 -432px;
+    display: none;
+    z-index: 120;
+  }
+  .rsbtn .rsbtn_volume_container.rsimg .rsbtn_volume_slider {
+    border: none;
+    position: absolute;
+    top: 15px;
+    left: 3px;
+    width: 22px;
+    height: 40px;
+  }
+  .rsbtn .rsbtn_volume_slider .rsbtn_volume_handle.rsimg {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 20px;
+    height: 14px;
+    background-position: -43px -268px;
+  }
+  .rsbtn.rs-no-touch .rsbtn_volume_slider .rsbtn_volume_handle.rsimg:hover,
+  .rsbtn.rs-no-touch .rsbtn_volume_slider .rsbtn_volume_handle.rsimg.rsfocus {
+    background-position: -43px -268px;
+  }
+  .rsbtn_volume_handle:hover,
+  .rsbtn_volume_handle:focus {
+    background-position: -43px -268px;
+  }
+  .rsbtn .rsbtn_settings.rsimg,
+  .rsbtn .rsbtn_dl.rsimg {
+    width: 20px;
+    height: 23px;
+    background-position: -20px -330px;
+    margin-top: 3px;
+  }
+  .rsbtn.rs-no-touch .rsbtn_settings.rsimg:hover,
+  .rsbtn.rs-no-touch .rsbtn_settings.rsimg.rsfocus,
+  .pre-expanded.rsexpanded.rsstopped .rsbtn_settings.rsimg:hover {
+    background-position: -20px -330px;
+  }
+  .rsbtn .rsbtn_dl.rsimg {
+    background-position: -20px  -352px;
+  }
+  .rsbtn.rs-no-touch .rsbtn_dl.rsimg:hover,
+  .rsbtn.rs-no-touch .rsbtn_dl.rsimg.rsfocus {
+    background-position: -20px -352px;
+  }
+  .rsbtn .rsbtn_pin {
+    margin-top: 3px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/readspeaker/rs_button-new.png);
+    background-repeat: no-repeat;
+    background-position: -42px -218px;
+  }
+  .rsbtn .rsbtn_pin:hover,
+  .rsbtn .rsbtn_pin.rsfocus {
+    background-position: -62px -218px;
+  }
+  .rsbtn .rsbtn_pin.pinned {
+    background-position: -42px -238px;
+  }
+  .rsbtn .rsbtn_pin.pinned:hover,
+  .rsbtn .rsbtn_pin.pinned.rsfocus {
+    background-position: -62px -238px;
+  }
+  .rsbtn a.turnedOff {
+    display: none!important;
+  }
+  .rsbtn_pinnedHome {
+    background-color: #eee;
+    border: dashed 1px #aaa;
+    border-radius: 5px;
+  }
+  .rsbtn .rsbtn_closer.rsimg {
+    width: 25px;
+    background-position: 0 -228px;
+  }
+  .rsbtn.rs-no-touch .rsbtn_closer.rsimg:hover,
+  .rsbtn.rs-no-touch .rsbtn_closer.rsimg.rsfocus,
+  .pre-expanded.rsexpanded.rsstopped .rsbtn_closer.rsimg:hover {
+    background-position: 0px -228px;
+  }
+  .rsbtn.rsfloating .rsbtn_closer.rsimg {
+    width: 27px;
+    background-position: -104px -238px;
+  }
+  .rsbtn.rsfloating.rs-no-touch .rsbtn_closer.rsimg:hover,
+  .rsbtn.rsfloating.rs-no-touch .rsbtn_closer.rsimg.rsfocus {
+    background-position: -131px -228px;
+  }
+  .rsbtn .rsbtn_powered {
+    display: none;
+  }
+  .rsbtn_exp span.rsbtn_status_overlay {
+    position: absolute;
+    z-index: 140;
+    top: 1px;
+    left: 0;
+    width: 92%;
+    height: 93%;
+    background: #eee;
+    opacity: .9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90);
+  }
+  .rsbtn_exp .rsbtn_status_overlay span.rsbtn_status {
+    position: relative;
+    color: #000;
+    text-align: center;
+    font-size: 11px;
+    font-family: Verdana;
+    margin-top: 4px;
+  }
+  .rsbtn a.rsbtn_loaderror {
+    display: inline;
+    font-size: 10px;
+    margin-left: 2px;
+  }
+  .rsbtn_exp .rsbtn_status_overlay a.rsbtn_nosound,
+  a.rsbtn_loaderror {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .rsbtn_exp .rsbtn_status_overlay a.rsbtn_nosound:hover,
+  .rsbtn_exp .rsbtn_status_overlay a.rsbtn_nosound.rsfocus {
+    text-decoration: underline;
+  }
+  .readspeaker_button_settings .rsbtn_settings,
+  .readspeaker_button_settings .rsbtn_dl,
+  .readspeaker_button_settings .rsbtn_powered {
+    display: none;
+  }
+  #rsdl_container {
+    background: #fff;
+  }
+  #rsdl_container .rsdl_textwrapper {
+    padding: 20px;
+  }
+  .rsbtn.rsresume {
+    cursor: pointer;
+    display: none;
+  }
+  .rsbtn.rsresume .rsbtn_right {
+    width: 14px;
+    background-position: -132px -26px;
+  }
+  .rsbtn.rsresume a:hover .rsbtn_right {
+    background-position: -132px -26px;
+  }
+  .rsbtn a.rsimg,
+  .rsbtn a.rsimg:hover {
+    -webkit-transition: all 0s ease 0s!important;
+    transition: all 0s ease 0s!important;
+    border: none!important;
+  }
+  #rs_enlargeHL_box {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    padding: 25px;
+    border: solid 4px black;
+    background-color: white;
+    color: black;
+    box-shadow: 10px 10px 5px rgba(50, 50, 50, 0.5);
+    border-radius: 15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    line-height: 1.2em;
+    z-index: 1000;
+  }
+  .rs_enlargeHL_legacy {
+    position: absolute !important;
+    top: expression(((document.documentElement.scrollTop || document.body.scrollTop)+(document.documentElement.clientHeight || document.body.clientHeight) - this.offsetHeight - 50)+"px")!important;
+  }
+  @media only screen and (max-device-width: 480px) and (orientation: portrait) {
+    #rs_enlargeHL_box {
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      padding: 15px;
+      font-size: 2em;
+    }
+  }
+  @media only screen and (max-device-width: 480px) and (orientation: landscape) {
+    #rs_enlargeHL_box {
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      border-width: 3px;
+      padding: 10px;
+      font-size: 1em;
+    }
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    #rs_enlargeHL_box {
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      padding: 15px;
+    }
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    #rs_enlargeHL_box {
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      padding: 15px;
+      font-size: 2em;
+    }
+  }
+
 }
