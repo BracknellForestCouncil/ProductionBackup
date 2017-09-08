@@ -179,7 +179,6 @@ features[field_instance][] = paragraphs_item-layout_3_col_4_4_4-field_component_
 features[field_instance][] = paragraphs_item-layout_3_col_6_3_3-field_component_3_6_3_3__3_1
 features[field_instance][] = paragraphs_item-layout_3_col_6_3_3-field_component_3_6_3_3__3_2
 features[field_instance][] = paragraphs_item-layout_3_col_6_3_3-field_component_3_6_3_3__6
-features[field_instance][] = paragraphs_item-link-field_icon
 features[field_instance][] = paragraphs_item-link-field_paragraph_additional
 features[field_instance][] = paragraphs_item-link-field_paragraph_body
 features[field_instance][] = paragraphs_item-link-field_paragraph_link

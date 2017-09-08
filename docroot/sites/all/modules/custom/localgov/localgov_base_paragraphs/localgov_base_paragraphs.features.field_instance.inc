@@ -4717,45 +4717,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'paragraphs_item-link-field_icon'.
-  $field_instances['paragraphs_item-link-field_icon'] = array(
-    'bundle' => 'link',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Select an icon from the list or select "- None -" if you do not wish to display an icon.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_key',
-        'weight' => 1,
-      ),
-      'paragraphs_editor_preview' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_icon',
-    'is_property' => 0,
-    'label' => 'Icon',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 0,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'paragraphs_item-link-field_paragraph_additional'.
   $field_instances['paragraphs_item-link-field_paragraph_additional'] = array(
     'bundle' => 'link',
@@ -5947,7 +5908,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Promotional Area Layout');
   t('Read More');
   t('Read More text');
-  t('Select an icon from the list or select "- None -" if you do not wish to display an icon.');
   t('Select an icon from the list.');
   t('Showcase Item');
   t('Slide Content');
