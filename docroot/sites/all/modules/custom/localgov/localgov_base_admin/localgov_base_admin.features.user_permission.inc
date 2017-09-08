@@ -32,6 +32,16 @@ function localgov_base_admin_user_default_permissions() {
     'module' => 'contextual',
   );
 
+  // Exported permission: 'access drupal admin'.
+  $permissions['access drupal admin'] = array(
+    'name' => 'access drupal admin',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'localgov_base_admin',
+  );
+
   // Exported permission: 'access localgov_base_admin'.
   $permissions['access localgov_base_admin'] = array(
     'name' => 'access localgov_base_admin',

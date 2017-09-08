@@ -14,8 +14,6 @@ function localgov_base_taxonomy_user_default_permissions() {
   $permissions['access localgov_base_taxonomy'] = array(
     'name' => 'access localgov_base_taxonomy',
     'roles' => array(
-      'content administrator' => 'content administrator',
-      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
       'webmaster' => 'webmaster',
