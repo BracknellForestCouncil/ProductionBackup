@@ -182,16 +182,51 @@
 
   Drupal.behaviors.bracknellTabs = {
     attach: function (context, settings) {
-      if ($('.acc-tabs-panel', context).length > 1) {
-        $('.acc-tabs', context).accTabs({
-          containerClass: 'js-acc-tabs',
-          controlActiveClass: 'js-acc-tabs-control-item-active',
-          tabPanelClass: 'js-acc-tabs-panel',
-          panelActiveClass: 'js-tabs-panel-active',
-          controlsTextClass: 'element-invisible',
-          tabControlsClass: 'js-acc-tabs-control'
-        });
-      }
+      ssm.addState({
+        id: 'mobile',
+        query: '(max-width: 767px)',
+        onEnter: function () {
+          if ($('.acc-tabs-panel', context).length > 1) {
+            setTimeout(function () {
+              $('.acc-accordion', context).accAccordion({
+                defaultPanel: 0,
+                panelClass: 'js-accordion-panel',
+                panelId: 'js-accordion-panel--',
+                panelControlClass: 'js-accordion-control',
+                panelControlActiveClass: 'js-accordion-control--active',
+                panelControlHiddenClass: 'js-accordion-control--hidden',
+                panelControlId: 'js-accordion-control--'
+              });
+            });
+          }
+        },
+        onLeave: function () {
+          $('.acc-accordion', context).data('plugin_accAccordion').destroy();
+          $('.acc-accordion', context).removeData('plugin_accAccordion');
+        }
+      });
+      ssm.addState({
+        id: 'desktop',
+        query: '(min-width: 768px)',
+        onEnter: function () {
+          if ($('.acc-tabs-panel', context).length > 1) {
+            setTimeout(function () {
+              $('.acc-tabs', context).accTabs({
+                containerClass: 'js-acc-tabs',
+                controlActiveClass: 'js-acc-tabs-control-item-active',
+                tabPanelClass: 'js-acc-tabs-panel',
+                panelActiveClass: 'js-tabs-panel-active',
+                controlsTextClass: 'element-invisible',
+                tabControlsClass: 'js-acc-tabs-control'
+              });
+            });
+          }
+        },
+        onLeave: function () {
+          $('.acc-tabs', context).data('plugin_accTabs').destroy();
+          $('.acc-tabs', context).removeData('plugin_accTabs');
+        }
+      });
     }
   };
 

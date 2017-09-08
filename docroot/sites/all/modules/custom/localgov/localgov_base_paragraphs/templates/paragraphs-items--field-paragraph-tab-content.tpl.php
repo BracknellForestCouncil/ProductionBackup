@@ -24,6 +24,6 @@
  * @see template_process()
  */
 ?>
-<div class="acc-tabs">
+<div class="acc-tabs acc-accordion">
 <?php print $content; ?>
 </div>
