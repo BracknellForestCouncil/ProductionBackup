@@ -4,7 +4,6 @@
  * @file
  * Custom 403 page html.
  */
-
 ?>
 
-<p>You are not authorized to access this page.</p>
+<p>You are not authorised to access this page.</p>
