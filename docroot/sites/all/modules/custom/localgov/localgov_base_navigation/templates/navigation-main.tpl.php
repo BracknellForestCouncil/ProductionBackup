@@ -1,4 +1,6 @@
-<h2 class='visually-hidden'>Main navigation</h2>
+<h2 class='element-invisible'>
+  <?php print t('Main navigation'); ?>
+</h2>
 
 <nav id="main-nav">
   <ul class="clearfix">

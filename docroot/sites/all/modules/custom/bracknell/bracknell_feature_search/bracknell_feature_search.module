@@ -18,7 +18,7 @@ function bracknell_feature_search_form_views_exposed_form_alter(&$form, &$form_s
   // Add the custom JS file to the Search page only.
   if ($form['#id'] == 'views-exposed-form-search-page-page') {
     $form['section_title'] = array(
-      '#prefix' => '<h2 class="visually-hidden">',
+      '#prefix' => '<h2 class="element-invisible">',
       '#suffix' => '</h2>',
       '#markup' => t('Search'),
     );
