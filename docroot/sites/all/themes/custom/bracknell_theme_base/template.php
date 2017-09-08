@@ -120,6 +120,9 @@ function bracknell_theme_base_tablefield_view($variables) {
   // especially when in separate paragraphs.
   $uuid = isset($variables['entity_id']) ? $variables['delta'] . '-' . $variables['entity_id'] : $variables['delta'];
 
+  // Wrap in `drupal_html_id()` as a failsafe.
+  $uuid = drupal_html_id($uuid);
+
   $theme_variables['attributes']['id'] = 'tablefield-' . $uuid;
 
   return '<div id="tablefield-wrapper-' . $uuid . '" class="tablefield-wrapper">'
