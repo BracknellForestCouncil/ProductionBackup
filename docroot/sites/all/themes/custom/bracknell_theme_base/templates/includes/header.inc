@@ -4,7 +4,7 @@
   </div>
 <?php endif; ?>
 
-<header class="header" role="banner">
+<header class="header">
   <div class="container">
     <div class=" header-inner row">
       <div class="col-xs-12 col-sm-2 logo" data-js="logo">

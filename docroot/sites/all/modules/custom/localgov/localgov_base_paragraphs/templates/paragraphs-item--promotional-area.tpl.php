@@ -68,8 +68,8 @@
                 <?php print render($content['field_promotional_area_video']); ?>
             </div>
           <?php endif; ?>
-        </div>
         <?php endif; ?>
+        </div>
       <?php endif; ?>
     </div>
   </div>
