@@ -3,24 +3,14 @@
  * @file
  * localgov_feature_guide.module
  * Code for the LocalGov Feature: Guide module.
- *
- * @package   localgov_feature_guide
- * @author    Craig Gardener <craig.gardener@bracknell-forest.gov.uk>
- * @copyright Copyright (c) 2016, Craig Gardener
- * @license   http://opensource.org/licenses/gpl-license.php
- *            GNU General Public License, version 2 or later
  */
 
-/**
- * Include all files in 'includes/'.
- */
+// Include all inc files.
 foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
   include_once $filename;
 }
 
-/**
- * Include features code.
- */
+// Include features code.
 include_once 'localgov_feature_guide.features.inc';
 
 /**
@@ -45,37 +35,34 @@ function localgov_feature_guide_theme($existing, $type, $theme, $path) {
 
 
 /**
- * Implements preprocess_html().
+ * Implements hook_process_html().
  */
 function localgov_feature_guide_process_html(&$variables) {
   // Use the guide title (rather than guide section) for the page title.
-  $arg0 = arg(0);
-  $arg1 = arg(1);
-  if ($arg0 == 'node' && isset($arg1) && $arg1 > 0) {
-    $node = node_load($arg1);
-    if ($node->type == "guide_section") {
-      $parent = menu_link_load($node->guide['plid']);
-      $variables['head_title_array']['title'] = $parent['link_title'];
-      $variables['head_title'] = implode(' | ', $variables['head_title_array']);
-    }
+  $node = menu_get_object();
+  if ($node && $node->type === 'guide_section') {
+    $parent = menu_link_load($node->guide['plid']);
+    $variables['head_title_array']['title'] = $parent['link_title'];
+    $variables['head_title'] = implode(' | ', $variables['head_title_array']);
   }
 }
 
 /**
- * Implements preprocess_page().
+ * Implements hook_preprocess_page().
  */
 function localgov_feature_guide_preprocess_page(&$variables) {
   // Use the guide title (rather than guide section) for the page title.
-  if (isset($variables['node']) && $variables['node']->type == "guide_section") {
+  if (isset($variables['node']) && $variables['node']->type === 'guide_section') {
     $parent = menu_link_load($variables['node']->guide['plid']);
     $variables['title'] = $parent['link_title'];
   }
 
   // Create the previous and next section links.
-  if (isset($variables['node']) && $variables['node']->type == "guide") {
+  if (isset($variables['node']) && $variables['node']->type === 'guide') {
     $guide_link = menu_link_load($variables['node']->guide['mlid']);
     if ($guide_link['mlid']) {
-      if ($next = guide_next($guide_link)) {
+      $next = guide_next($guide_link);
+      if ($next) {
         $next_href = url($next['href']);
         drupal_add_html_head_link(array('rel' => 'next', 'href' => $next_href));
         $variables['node']->guide['next_url'] = $next_href;
@@ -85,11 +72,10 @@ function localgov_feature_guide_preprocess_page(&$variables) {
   }
 
   // Get the object and do some other checks based on what you need.
-  if (isset($variables['node']) && ($variables['node']->type == "guide" || $variables['node']->type == "guide_section")) {
-    $variables['guide_menu'] = '';
+  if (isset($variables['node']) && in_array($variables['node']->type, array('guide', 'guide_section'))) {
     // Generate a render array for the node.
     $view = node_view($variables['node']);
-    // "Create" a new variable for the page.tpl.php.
+    // Supply the guide_menu variable to the page.tpl.php file.
     $variables['guide_menu'] = drupal_render($view['guide_navigation_primary']);
   }
 }
