@@ -5185,52 +5185,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'paragraphs_item-promotional_area-field_promotional_area_related_c'.
-  $field_instances['paragraphs_item-promotional_area-field_promotional_area_related_c'] = array(
-    'bundle' => 'promotional_area',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'entity_reference_multiple',
-        'settings' => array(
-          'link' => 1,
-        ),
-        'type' => 'entity_reference_multiple_label',
-        'weight' => 5,
-      ),
-      'paragraphs_editor_preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'paragraphs_item',
-    'field_name' => 'field_promotional_area_related_c',
-    'is_property' => 0,
-    'label' => 'Related Content',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entity_reference_multiple',
-      'settings' => array(
-        'autocomplete_limit' => 15,
-        'autocomplete_path' => '',
-        'autocomplete_query_like_type' => 'STARTS_WITH',
-      ),
-      'type' => 'entity_reference_multiple_autocomplete',
-      'weight' => 7,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance:
   // 'paragraphs_item-promotional_area-field_promotional_area_title'.
   $field_instances['paragraphs_item-promotional_area-field_promotional_area_title'] = array(
     'bundle' => 'promotional_area',
@@ -5993,7 +5947,6 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Promotional Area Layout');
   t('Read More');
   t('Read More text');
-  t('Related Content');
   t('Select an icon from the list or select "- None -" if you do not wish to display an icon.');
   t('Select an icon from the list.');
   t('Showcase Item');
