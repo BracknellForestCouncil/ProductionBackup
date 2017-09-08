@@ -211,7 +211,7 @@ function localgov_base_editor_ckeditor_profile_defaults() {
     [\'Format\',\'Styles\',\'RemoveFormat\'],
     [\'-\',\'Blockquote\',\'Subscript\',\'Superscript\',\'-\'],
     [\'NumberedList\',\'BulletedList\',\'-\'],
-    [\'linkit\',\'Unlink\',\'Media\']
+    [\'linkit\',\'Unlink\',\'Media\',\'MediaEmbed\']
 ]',
         'expand' => 't',
         'default' => 't',
