@@ -21,10 +21,10 @@ function bracknell_content_testimonial_node_info() {
     'testimonial' => array(
       'name' => t('Testimonial'),
       'base' => 'node_content',
-      'description' => t('Use \'testimonial\' to display content about endorsements and commendations of services.'),
+      'description' => t('Use to add content for use in a carousel'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('Use to add content for use in a carousel'),
     ),
   );
   drupal_alter('node_info', $items);

@@ -21,10 +21,10 @@ function localgov_content_basic_node_info() {
     'basic' => array(
       'name' => t('Basic Page'),
       'base' => 'node_content',
-      'description' => t('TODO: Add content type description.'),
+      'description' => t('Use for standard content pages'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => t('TODO: Add help for content type.'),
+      'help' => t('Use for standard content pages'),
     ),
   );
   drupal_alter('node_info', $items);
