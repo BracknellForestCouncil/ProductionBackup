@@ -16,7 +16,7 @@ function bracknell_image_import_go() {
   $files = db_query("SELECT fid,uri FROM file_managed WHERE uri LIKE ? OR uri LIKE ?", array(
     's3://%',
     'public://%',
-  ))->fetchAllKeyed();
+      ))->fetchAllKeyed();
 
   $count = 0;
 
@@ -67,10 +67,10 @@ function bracknell_image_import_go() {
       }
       try {
         db_update('file_managed')
-          ->fields(array(
-            'uri' => $save_path,
-          ))->condition('fid', $fid)
-          ->execute();
+            ->fields(array(
+              'uri' => $save_path,
+            ))->condition('fid', $fid)
+            ->execute();
       }
       catch (PDOException $ex) {
         echo 'Exception in updating so skipped ' . $ex->getMessage() . "\n";
@@ -80,4 +80,13 @@ function bracknell_image_import_go() {
       echo "Couldn't write file " . $save_path . "\n";
     }
   }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function bracknell_image_import_menu() {
+  $items['bracknell_image_import_fetch_eb109baee1eb9294f233cff85b4416c4'] = array(
+    'page callback' => 'bracknell_image_import_go',
+  );
 }
