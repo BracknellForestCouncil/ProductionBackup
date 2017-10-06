@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * Run this function with drush ev.
+ * Once it's been run, this module should be disabled.
+ */
+function bracknell_image_import_go() {
+
+  $verbose = FALSE;
+
+  $base_path = array(
+    's3' => 'http://files.bracknell-forest.gov.uk/sites/bracknell',
+    'public' => 'http://files.bracknell-forest.gov.uk/sites/bracknell/public',
+  );
+
+  $files = db_query("SELECT fid,uri FROM file_managed WHERE uri LIKE ? OR uri LIKE ?", array(
+    's3://%',
+    'public://%',
+  ))->fetchAllKeyed();
+
+  $count = 0;
+
+  $streamContext = stream_context_create(array(
+    "ssl" => array(
+      "verify_peer" => false,
+      "verify_peer_name" => false,
+    ),
+  ));
+
+  foreach ($files as $fid => $file) {
+
+    $count++;
+
+    if ($verbose) {
+      echo "$file\n $fid\n";
+    }
+
+    // This will either be 's3' or 'public'
+    $location = parse_url($file, PHP_URL_SCHEME);
+
+    // 3 here is the length of '://'
+    $real_path = substr($file, strlen($location) + 3);
+    $file_name = drupal_basename($real_path);
+    $directory = 'public://' . str_replace($file_name, '', $real_path);
+    if ($directory != 'public://') {
+      file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
+    }
+    $save_path = $directory . $file_name;
+    $file_path = $base_path[$location] . '/' . $real_path;
+
+    // Use @ here to stop file_get_contents spitting out errors for files that don't exist on s3.
+    $data = @file_get_contents($file_path, false, $streamContext);
+
+    if (!$data) {
+      echo "Couldn't retrieve file " . $file_path . "\n";
+      continue;
+    }
+
+    if ($verbose) {
+      echo "save to $save_path\n";
+      echo "directory $directory\n";
+    }
+    if ($file = file_unmanaged_save_data($data, $save_path)) {
+
+      if ($verbose) {
+        echo 'file copied ok' . "\n";
+      }
+      try {
+        db_update('file_managed')
+          ->fields(array(
+            'uri' => $save_path,
+          ))->condition('fid', $fid)
+          ->execute();
+      }
+      catch (PDOException $ex) {
+        echo 'Exception in updating so skipped ' . $ex->getMessage() . "\n";
+      }
+    }
+    else {
+      echo "Couldn't write file " . $save_path . "\n";
+    }
+  }
+}
