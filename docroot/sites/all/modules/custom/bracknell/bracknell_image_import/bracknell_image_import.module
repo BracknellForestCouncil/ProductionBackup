@@ -81,12 +81,3 @@ function bracknell_image_import_go() {
     }
   }
 }
-
-/**
- * Implements hook_menu().
- */
-function bracknell_image_import_menu() {
-  $items['bracknell_image_import_fetch_eb109baee1eb9294f233cff85b4416c4'] = array(
-    'page callback' => 'bracknell_image_import_go',
-  );
-}
