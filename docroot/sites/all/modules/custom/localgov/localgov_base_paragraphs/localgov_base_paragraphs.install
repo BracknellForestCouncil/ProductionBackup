@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Delete icon field from link paragraph.
+ */
+function localgov_base_paragraphs_update_7000() {
+  $instance = field_info_instance('paragraphs_item', 'field_icon', 'link');
+  if ($instance) {
+    field_delete_instance($instance);
+  }
+}
