@@ -9,3 +9,13 @@ function localgov_base_paragraphs_update_7000() {
     field_delete_instance($instance);
   }
 }
+
+/**
+ * Delete Related Content field from Promotional Area paragraph.
+ */
+function localgov_base_paragraphs_update_7001() {
+  $instance = field_info_instance('paragraphs_item', 'field_promotional_area_related_c', 'promotional_area');
+  if ($instance) {
+    field_delete_instance($instance);
+  }
+}
