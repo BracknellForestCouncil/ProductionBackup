@@ -82,13 +82,6 @@
   $form['moderation']['field_moderation'] = $form['field_moderation'];
 
   unset($form['field_moderation']);
-  // $form['moderation']['log'] = $form['revision_information']['log'];
-  // $form['moderation']['state'] = isset($form['revision_information']['workbench_moderation_state_new']) ? $form['revision_information']['workbench_moderation_state_new'] : '';
-
-  $form['options']['log']['#required'] = TRUE;
-  $form['options']['log']['#default_value'] = '';
-  $form['options']['log']['#value'] = '';
-  $form['options']['log']['#weight'] = 50;
 
   //  Move the revision log into the publishing options to make things pretty.
   if ($form['options']['#access']) {
