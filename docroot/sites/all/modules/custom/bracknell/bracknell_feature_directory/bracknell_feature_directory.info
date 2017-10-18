@@ -4,6 +4,7 @@ core = 7.x
 package = bracknell
 version = 7.x-1.10
 dependencies[] = addressfield
+dependencies[] = better_exposed_filters
 dependencies[] = bracknell_base
 dependencies[] = bracknell_content_promotional_page
 dependencies[] = bracknell_entity_external_link
