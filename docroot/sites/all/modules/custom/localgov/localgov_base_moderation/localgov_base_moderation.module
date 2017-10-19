@@ -60,6 +60,16 @@ function localgov_base_moderation_form_node_form_alter(&$form, $form_state) {
     return;
   }
 
+  // Make Moderation notes mandatory but default to empty.
+  if ($form['options']['#access']) {
+    $form['options']['log']['#required'] = TRUE;
+    $form['options']['log']['#default_value'] = '';
+  }
+  else {
+    $form['revision_information']['log']['#required'] = TRUE;
+    $form['revision_information']['log']['#default_value'] = '';
+  }
+
   // Implement afterbuild.
   $form['#after_build'][] = '_localgov_base_moderation_form_organize';
 
