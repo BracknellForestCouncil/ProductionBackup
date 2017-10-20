@@ -54,7 +54,12 @@ function localgov_base_admin_admin_paths() {
  * Implements hook_navbar_alter().
  */
 function localgov_base_admin_navbar_alter(&$items) {
-  $items['administration']['tab']['#title'] = "Drupal Admin";
+  if (user_access('access drupal admin')) {
+    $items['administration']['tab']['#title'] = t('Drupal Admin');
+  }
+  else {
+    unset($items['administration']['tab']);
+  }
 }
 
 /**

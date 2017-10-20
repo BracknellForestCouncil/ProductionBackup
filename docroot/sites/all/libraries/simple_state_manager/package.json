@@ -1,0 +1,43 @@
+{
+  "name": "simplestatemanager",
+  "description": "SimpleStateManager ==================",
+  "version": "3.3.0",
+  "main": "src/ssm.js",
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://jonathan-fielding@github.com/jonathan-fielding/SimpleStateManager.git"
+  },
+  "keywords": [
+    "Responsive",
+    "State",
+    "Resize"
+  ],
+  "author": "Jonathan Fielding",
+  "contributors": [
+    {
+      "name": "Iszak Bryan",
+      "url": "http://iszak.net/"
+    },
+    {
+      "name": "Jonathan Fielding",
+      "url": "http://www.jonathanfielding.com"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bumpup": "^0.6.2",
+    "grunt-cli": "^1.2.0",
+    "grunt-compile-handlebars": "^2.0.2",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-qunit": "^1.2.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "load-grunt-tasks": "^3.1.0"
+  }
+}

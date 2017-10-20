@@ -56,14 +56,14 @@ function bracknell_feature_search_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_attachments_tika_jar';
-  $strongarm->value = 'tika-app-1.14.jar';
+  $strongarm->value = 'tika-app-1.16.jar';
   $export['search_api_attachments_tika_jar'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_api_attachments_tika_path';
-  $strongarm->value = '/var/tika/';
+  $strongarm->value = '/Users/darren/NetBeansProjects/bfc/docroot/sites/all/libraries/tika';
   $export['search_api_attachments_tika_path'] = $strongarm;
 
   $strongarm = new stdClass();

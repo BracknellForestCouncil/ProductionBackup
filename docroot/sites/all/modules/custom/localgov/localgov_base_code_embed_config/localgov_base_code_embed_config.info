@@ -1,0 +1,9 @@
+name = LocalGov Base: Code embed config
+description = Configuration for code embed (excludes text editor/ckeditor config)
+core = 7.x
+package = localgov
+version = 7.x-1.0
+dependencies[] = add_to_head
+dependencies[] = features
+features[features_api][] = api:2
+features[user_permission][] = administer add to head

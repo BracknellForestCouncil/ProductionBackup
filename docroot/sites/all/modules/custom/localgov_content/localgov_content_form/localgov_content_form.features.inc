@@ -21,10 +21,10 @@ function localgov_content_form_node_info() {
     'form' => array(
       'name' => t('Form Page'),
       'base' => 'node_content',
-      'description' => t('TODO: Add content type description.'),
+      'description' => t('Use to create form start page'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => t('TODO: Add help for content type.'),
+      'help' => t('Use to create form start page'),
     ),
   );
   drupal_alter('node_info', $items);

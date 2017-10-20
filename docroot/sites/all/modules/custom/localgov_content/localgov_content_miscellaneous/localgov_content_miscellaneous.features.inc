@@ -21,10 +21,10 @@ function localgov_content_miscellaneous_node_info() {
     'miscellaneous' => array(
       'name' => t('Miscellaneous page'),
       'base' => 'node_content',
-      'description' => t('<em>Miscellaneous</em> pages should only be used where no other page type is appropriate. TODO: Improve description.'),
+      'description' => t('Use only where no other page type is appropriate'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('Use only where no other page type is appropriate'),
     ),
   );
   drupal_alter('node_info', $items);

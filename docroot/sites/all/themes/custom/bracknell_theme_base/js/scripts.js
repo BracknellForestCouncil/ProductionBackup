@@ -70,23 +70,65 @@
   };
 
   Drupal.behaviors.bracknellSearch = {
+    /**
+     * Show the search form, set attributes and status.
+     */
+    actionOpenSearchForm: function () {
+      this.els.searchBlock
+      .attr('aria-hidden', 'false')
+      .show();
+
+      // This is a kinda hack because it's not meant to show both buttons.
+      this.els.searchButton.hide();
+
+      // if (this.els.searchButton !== undefined && this.els.searchButton.length > 0) {
+      //   this.els.searchButton
+      //   .addClass('search-btn-open')
+      //   .attr({
+      //     'aria-expanded': 'true',
+      //     'data-toggle': 'open'
+      //   });
+      // }
+      this.searchIsOpen = true;
+    },
+    /**
+     * Hide the search form, set attributes and status.
+     */
+    actionCloseSearchForm: function () {
+      this.els.searchBlock
+      .attr('aria-hidden', 'true')
+      .hide();
+
+      if (this.els.searchButton !== undefined && this.els.searchButton.length > 0) {
+        this.els.searchButton
+        .removeClass('search-btn-open')
+        .attr({
+          'aria-expanded': 'false',
+          'data-toggle': 'closed'
+        });
+      }
+      this.searchIsOpen = false;
+    },
     attach: function (context, settings) {
 
+      var _self = this;
+
+      _self.els = {};
+
+      _self.els.searchBlock = $('[data-js="search"]', context);
+      _self.els.mainMenuButton = $('[data-js="main-menu-button"]', context);
+      _self.els.searchButton = $('[data-js="search-button"]', context);
+
+      _self.buttonIsAdded = false;
+      _self.searchIsOpen = false;
+
       if (Modernizr.mq) {
-        var els = {};
-        els.searchBlock = $('[data-js="search"]', context);
-        els.mainMenuButton = $('[data-js="main-menu-button"]', context);
-        els.searchButton = $('[data-js="search-button"]', context);
-
-        var buttonIsAdded = false;
-        var searchIsOpen = false;
-
         // Check if the search block exists before we do anything.
-        if (els.searchBlock.length > 0) {
+        if (_self.els.searchBlock.length > 0) {
           $(window).resize(function (e) {
             if (Modernizr.mq('only screen and (max-width: 768px)')) {
               // Check if the button exists, if not create and append the button.
-              if (!buttonIsAdded) {
+              if (!_self.buttonIsAdded) {
                 // Create search button.
                 var searchButtonNew = $('<button>' +
                   '<span class="search-btn-copy">' + Drupal.t('Search') +'</span>' +
@@ -104,86 +146,87 @@
                   var status = searchButtonNew.hasClass('search-btn-open');
 
                   if (status) {
-                    actionCloseSearchForm();
+                    _self.actionCloseSearchForm();
                   }
                   else {
-                    actionOpenSearchForm();
+                    _self.actionOpenSearchForm();
                   }
                 });
-                els.searchButton = searchButtonNew.insertBefore(els.mainMenuButton);
-                buttonIsAdded = true;
+                _self.els.searchButton = searchButtonNew.insertBefore(_self.els.mainMenuButton);
+                _self.buttonIsAdded = true;
               }
 
               // Check for the status of the search form e.g. if it is open or closed.
               // This is to ensure that if the media query matches and there is a resize event
               // e.g. when the keyboard is opened on Android mobile devices that the search
               // form retains the correct status.
-              if (!searchIsOpen) {
-                actionCloseSearchForm();
+              if (!_self.searchIsOpen) {
+                _self.actionCloseSearchForm();
               }
               else {
-                actionOpenSearchForm();
+                _self.actionOpenSearchForm();
               }
             }
             else {
               // Reset the DOM on desktop.
-              els.searchBlock.show().removeAttr('aria-hidden');
-              els.searchButton.off().remove();
-              searchIsOpen = false;
-              buttonIsAdded = false;
+              _self.els.searchBlock.show().removeAttr('aria-hidden');
+              _self.els.searchButton.off().remove();
+              _self.searchIsOpen = false;
+              _self.buttonIsAdded = false;
             }
           }).resize();
         }
-
-        // Show the search form, set attributes and status.
-        function actionOpenSearchForm() {
-          els.searchBlock
-            .attr('aria-hidden', 'false')
-            .show();
-
-          if (els.searchButton !== undefined && els.searchButton.length > 0) {
-            els.searchButton
-              .addClass('search-btn-open')
-              .attr({
-                'aria-expanded': 'true',
-                'data-toggle': 'open'
-              });
-          }
-          searchIsOpen = true;
-        };
-
-        // Hide the search form, set attributes and status.
-        function actionCloseSearchForm() {
-          els.searchBlock
-            .attr('aria-hidden', 'true')
-            .hide();
-
-          if (els.searchButton !== undefined && els.searchButton.length > 0) {
-            els.searchButton
-              .removeClass('search-btn-open')
-              .attr({
-                'aria-expanded': 'false',
-                'data-toggle': 'closed'
-              });
-          }
-          searchIsOpen = false;
-        };
       }
     }
   };
 
   Drupal.behaviors.bracknellTabs = {
     attach: function (context, settings) {
-      if ($('.acc-tabs-panel', context).length > 1) {
-        $('.acc-tabs', context).accTabs({
-          containerClass: 'js-acc-tabs',
-          controlActiveClass: 'js-acc-tabs-control-item-active',
-          tabPanelClass: 'js-acc-tabs-panel',
-          panelActiveClass: 'js-tabs-panel-active',
-          controlsTextClass: 'element-invisible',
-          tabControlsClass: 'js-acc-tabs-control'
-        });
-      }
+      ssm.addState({
+        id: 'mobile',
+        query: '(max-width: 767px)',
+        onEnter: function () {
+          if ($('.acc-tabs-panel', context).length > 1) {
+            setTimeout(function () {
+              $('.acc-accordion', context).accAccordion({
+                defaultPanel: 0,
+                panelClass: 'js-accordion-panel',
+                panelId: 'js-accordion-panel--',
+                panelControlClass: 'js-accordion-control',
+                panelControlActiveClass: 'js-accordion-control--active',
+                panelControlHiddenClass: 'js-accordion-control--hidden',
+                panelControlId: 'js-accordion-control--'
+              });
+            });
+          }
+        },
+        onLeave: function () {
+          $('.acc-accordion', context).data('plugin_accAccordion').destroy();
+          $('.acc-accordion', context).removeData('plugin_accAccordion');
+        }
+      });
+      ssm.addState({
+        id: 'desktop',
+        query: '(min-width: 768px)',
+        onEnter: function () {
+          if ($('.acc-tabs-panel', context).length > 1) {
+            setTimeout(function () {
+              $('.acc-tabs', context).accTabs({
+                containerClass: 'js-acc-tabs',
+                controlActiveClass: 'js-acc-tabs-control-item-active',
+                tabPanelClass: 'js-acc-tabs-panel',
+                panelActiveClass: 'js-tabs-panel-active',
+                controlsTextClass: 'element-invisible',
+                tabControlsClass: 'js-acc-tabs-control'
+              });
+            });
+          }
+        },
+        onLeave: function () {
+          $('.acc-tabs', context).data('plugin_accTabs').destroy();
+          $('.acc-tabs', context).removeData('plugin_accTabs');
+        }
+      });
     }
   };
 

@@ -608,6 +608,35 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_key_contact_website'.
+  $field_bases['field_key_contact_website'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_key_contact_website',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'link_field',
+  );
+
   // Exported field_base: 'field_key_fact_item_content'.
   $field_bases['field_key_fact_item_content'] = array(
     'active' => 1,
@@ -1415,52 +1444,6 @@ function localgov_base_paragraphs_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_promotional_area_related_c'.
-  $field_bases['field_promotional_area_related_c'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_promotional_area_related_c',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entity_reference_multiple',
-    'settings' => array(
-      'target_entities_bundles' => array(
-        'node' => array(
-          'target_bundles' => array(
-            'article' => 'article',
-            'basic' => 'basic',
-            'guide' => 'guide',
-            'location_park' => 'location_park',
-          ),
-        ),
-      ),
-      'target_types' => array(
-        'directory_entry' => 0,
-        'external_link' => 0,
-        'file' => 0,
-        'node' => 'node',
-        'paragraphs_item' => 0,
-        'redirect' => 0,
-        'search_api_autocomplete_search' => 0,
-        'search_api_index' => 0,
-        'search_api_server' => 0,
-        'slogan' => 0,
-        'taxonomy_term' => 0,
-        'taxonomy_vocabulary' => 0,
-        'user' => 0,
-        'workbench_moderation_transition' => 0,
-      ),
-    ),
-    'translatable' => 0,
-    'type' => 'entity_reference_multiple',
   );
 
   // Exported field_base: 'field_promotional_area_title'.

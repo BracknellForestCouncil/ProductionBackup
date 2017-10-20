@@ -90,7 +90,7 @@ function bracknell_was_this_useful_step_1_form($form, &$form_state) {
       'wrapper' => 'wtu-form',
     ),
     '#attributes' => array(
-      'aria-controls' => array('wtu-question'),
+      'aria-controls' => array('wtu-form'),
       'class' => array('btn-happy'),
     ),
   );
@@ -106,7 +106,7 @@ function bracknell_was_this_useful_step_1_form($form, &$form_state) {
       'wrapper' => 'wtu-form',
     ),
     '#attributes' => array(
-      'aria-controls' => array('wtu-question'),
+      'aria-controls' => array('wtu-form'),
       'class' => array('btn-neutral'),
     ),
   );
@@ -122,7 +122,7 @@ function bracknell_was_this_useful_step_1_form($form, &$form_state) {
       'wrapper' => 'wtu-form',
     ),
     '#attributes' => array(
-      'aria-controls' => array('wtu-question'),
+      'aria-controls' => array('wtu-form'),
       'class' => array('btn-sad'),
     ),
   );

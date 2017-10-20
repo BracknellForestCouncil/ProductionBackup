@@ -48,6 +48,11 @@
           <?php print render($content['field_key_contact_email']); ?>
         </p>
       <?php endif; ?>
+      <?php if (!empty($content['field_key_contact_website'])): ?>
+        <p class="key-contact-item-website">
+          <?php print render($content['field_key_contact_website']); ?>
+        </p>
+      <?php endif; ?>
     </div>
   </article>
 </div>

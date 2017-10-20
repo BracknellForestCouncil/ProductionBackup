@@ -73,6 +73,18 @@ function localgov_base_paragraphs_libraries_info() {
     ),
   );
 
+  $libraries['simple_state_manager'] = array(
+    'name' => 'Simple State Mananger',
+    'vendor url' => 'http://www.simplestatemanager.com/',
+    'download url' => 'https://github.com/jonathan-fielding/SimpleStateManager/archive/master.zip',
+    'version callback' => 'localgov_base_paragraphs_version',
+    'files' => array(
+      'js' => array(
+        'dist/ssm.min.js',
+      ),
+    ),
+  );
+
   return $libraries;
 }
 
@@ -83,11 +95,15 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
 	drupal_add_js(drupal_get_path('module', 'localgov_base_paragraphs') . '/js/localgov_base_paragraphs.js');
 
   if ($variables['elements']['#bundle'] == 'tabs' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    libraries_load('simple_state_manager');
+    libraries_load('jquery_accessible_accordion');
     libraries_load('jquery_accessible_tabs');
   }
 
   if ($variables['elements']['#bundle'] == 'accordion' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
+    libraries_load('simple_state_manager');
     libraries_load('jquery_accessible_accordion');
+    libraries_load('jquery_accessible_tabs');
   }
 
   // If the highlight paragraph has an icon, output a class to style the paragraph differently.
