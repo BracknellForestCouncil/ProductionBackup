@@ -354,7 +354,7 @@ function localgov_content_contactinfo_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'socialfield',
         'settings' => array(
-          'link_text' => 0,
+          'link_text' => 1,
         ),
         'type' => 'socialfield_formatter',
         'weight' => 7,

@@ -109,82 +109,82 @@ function localgov_content_contactinfo_strongarm() {
   $strongarm->value = array(
     'facebook' => array(
       'name' => 'Facebook',
-      'icon' => 'theme-icon-facebook',
+      'icon' => 'icon-facebook-squared',
       'validation_pattern' => '*facebook.com/*',
     ),
     'twitter' => array(
       'name' => 'Twitter',
-      'icon' => 'theme-icon-twitter',
+      'icon' => 'icon-twitter',
       'validation_pattern' => '*twitter.com/*',
     ),
     'googleplus' => array(
       'name' => 'Google+',
-      'icon' => 'theme-icon-gplus',
+      'icon' => 'icon-gplus',
       'validation_pattern' => '*plus.google.com/*',
     ),
     'linkedin' => array(
       'name' => 'LinkedIn',
-      'icon' => 'theme-icon-linkedin',
+      'icon' => 'icon-linkedin',
       'validation_pattern' => '*linkedin.com/*',
     ),
     'youtube' => array(
       'name' => 'YouTube',
-      'icon' => 'theme-icon-youtube',
+      'icon' => 'icon-youtube',
       'validation_pattern' => '*youtube.com/*',
     ),
     'vimeo' => array(
       'name' => 'Vimeo',
-      'icon' => 'theme-icon-vimeo',
+      'icon' => 'icon-vimeo',
       'validation_pattern' => '*vimeo.com/*',
     ),
     'delicious' => array(
       'name' => 'Delicious',
-      'icon' => 'theme-icon-delicious',
+      'icon' => 'icon-delicious',
       'validation_pattern' => '*delicious.com/*',
     ),
     'digg' => array(
       'name' => 'Digg',
-      'icon' => 'theme-icon-digg',
+      'icon' => 'icon-digg',
       'validation_pattern' => '*digg.com/*',
     ),
     'flickr' => array(
       'name' => 'Flickr',
-      'icon' => 'theme-icon-flickr',
+      'icon' => 'icon-flickr',
       'validation_pattern' => '*flickr.com/*',
     ),
     'yahoo' => array(
       'name' => 'Yahoo!',
-      'icon' => 'theme-icon-yahoo',
+      'icon' => 'icon-yahoo',
       'validation_pattern' => '*yahoo.com/*',
     ),
     'myspace' => array(
       'name' => 'Myspace',
-      'icon' => 'theme-icon-myspace',
+      'icon' => 'icon-myspace',
       'validation_pattern' => '*myspace.com/*',
     ),
     'pinterest' => array(
       'name' => 'Pinterest',
-      'icon' => 'theme-icon-pinterest',
+      'icon' => 'icon-pinterest',
       'validation_pattern' => '*pinterest.com/*',
     ),
     'reddit' => array(
       'name' => 'Reddit',
-      'icon' => 'theme-icon-reddit',
+      'icon' => 'icon-reddit',
       'validation_pattern' => '*reddit.com/*',
     ),
     'slideshare' => array(
       'name' => 'Slideshare',
-      'icon' => 'theme-icon-slideshare',
+      'icon' => 'icon-slideshare',
       'validation_pattern' => '*slideshare.net/*',
     ),
     'stumbleupon' => array(
       'name' => 'Stumbleupon',
-      'icon' => 'theme-icon-stumbleupon',
+      'icon' => 'icon-stumbleupon',
       'validation_pattern' => '*stumbleupon.com/*',
     ),
     'instagram' => array(
       'name' => 'Instagram',
-      'icon' => 'theme-icon-instagram',
+      'icon' => 'icon-instagram',
       'validation_pattern' => '*instagram.com/*',
     ),
   );
