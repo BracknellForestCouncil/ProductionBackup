@@ -27,10 +27,14 @@
  */
 ?>
 <div class='key-facts'>
-  <div class='key-facts-title'>
-    <h5><?php print render($content['field_paragraph_key_fact_title']); ?></h5>
-  </div>
-  <div class='key-facts-items'>
-    <?php print render($content); ?>
-  </div>
+  <?php if (isset($content['field_paragraph_key_fact_title'])): ?>
+    <div class='key-facts-title'>
+      <h3><?php print render($content['field_paragraph_key_fact_title']); ?></h3>
+    </div>
+  <?php endif; ?>
+  <?php if (isset($content)): ?>
+    <div class='key-facts-items'>
+      <?php print render($content); ?>
+    </div>
+  <?php endif; ?>
 </div>

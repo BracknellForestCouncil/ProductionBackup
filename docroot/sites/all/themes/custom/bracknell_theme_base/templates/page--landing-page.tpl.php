@@ -75,7 +75,7 @@
 ?>
 <?php include_once DRUPAL_ROOT . '/' . drupal_get_path('theme', 'bracknell_theme_base') . '/templates/includes/header.inc'; ?>
 
-<main class="main-container" id="readspeaker_content" role="main">
+<main class="main-container" id="readspeaker_content">
   <div class="container">
     <div class="row">
       <div<?php print $content_column_class ?>>

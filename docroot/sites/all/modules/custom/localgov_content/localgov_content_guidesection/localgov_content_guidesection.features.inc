@@ -21,10 +21,10 @@ function localgov_content_guidesection_node_info() {
     'guide_section' => array(
       'name' => t('Guide Page'),
       'base' => 'node_content',
-      'description' => t('TODO: Add content type description.'),
+      'description' => t('Use to create a page within a guide'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => t('TODO: Add help for content type.'),
+      'help' => t('Use to create a page within a guide'),
     ),
   );
   drupal_alter('node_info', $items);

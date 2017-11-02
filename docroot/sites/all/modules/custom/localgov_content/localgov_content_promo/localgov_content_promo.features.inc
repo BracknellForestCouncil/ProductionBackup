@@ -21,10 +21,10 @@ function localgov_content_promo_node_info() {
     'promo' => array(
       'name' => t('News Promo'),
       'base' => 'node_content',
-      'description' => t('TODO: Add content type description.'),
+      'description' => t('Use to promote an item to the homepage without a news story'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => t('TODO: Add help for content type.'),
+      'help' => t('Use to promote an item to the homepage without a news story'),
     ),
   );
   drupal_alter('node_info', $items);

@@ -1,0 +1,38 @@
+--- tablefield.module	2017-08-17 13:03:21.000000000 +0100
++++ tablefield.module	2017-08-17 14:16:24.000000000 +0100
+@@ -469,7 +469,7 @@
+       $element[$delta] = array(
+         '#theme' => 'tablefield_view',
+         '#attributes' => array(
+-          'id' => 'tablefield-' . $delta,
++          'id' => drupal_html_id('tablefield-' . $delta),
+           'class' => array('tablefield'),
+         ),
+         '#caption' => $caption,
+@@ -1104,7 +1104,7 @@
+  */
+ function theme_tablefield_view($variables) {
+   $attributes = $variables['attributes'] + array(
+-    'id' => 'tablefield-' . $variables['delta'],
++    'id' => drupal_html_id('tablefield-' . $variables['delta']),
+     'class' => array('tablefield', 'tablefield-' . $variables['delta']),
+   );
+ 
+@@ -1119,7 +1119,7 @@
+   $export = '';
+   if ($variables['export'] && user_access('export tablefield')) {
+     $url = sprintf('tablefield/export/%s/%s/%s/%s/%s', $variables['entity_type'], $variables['entity_id'], $variables['field_name'], $variables['langcode'], $variables['delta']);
+-    $export = '<div id="tablefield-export-link-' . $variables['delta'] . '" class="tablefield-export-link">' . l(t('Export Table Data'), $url) . '</div>';
++    $export = '<div id="' . drupal_html_id('tablefield-export-link-' . $variables['delta']) . '" class="tablefield-export-link">' . l(t('Export Table Data'), $url) . '</div>';
+   }
+ 
+   // Prepare variables for theme_table().
+@@ -1132,7 +1132,7 @@
+     $theme_variables['caption'] = $variables['caption'];
+   }
+ 
+-  return '<div id="tablefield-wrapper-' . $variables['delta'] . '" class="tablefield-wrapper">'
++  return '<div id="'. drupal_html_id('tablefield-wrapper-' . $variables['delta']) . '" class="tablefield-wrapper">'
+     . theme('table__tablefield', $theme_variables)
+     . $export
+     . '</div>';
