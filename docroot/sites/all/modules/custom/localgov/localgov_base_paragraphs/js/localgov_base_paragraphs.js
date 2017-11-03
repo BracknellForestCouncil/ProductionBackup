@@ -37,8 +37,10 @@
           }
         },
         onLeave: function () {
-          $('.acc-accordion', context).data('plugin_accAccordion').destroy();
-          $('.acc-accordion', context).removeData('plugin_accAccordion');
+          if ($('.acc-accordion', context).length !== 0 && $('.acc-accordion', context).data('plugin_accAccordion') !== undefined) {
+            $('.acc-accordion', context).data('plugin_accAccordion').destroy();
+            $('.acc-accordion', context).removeData('plugin_accAccordion');
+          }
         }
       });
       ssm.addState({
@@ -59,8 +61,10 @@
           }
         },
         onLeave: function () {
-          $('.acc-tabs', context).data('plugin_accTabs').destroy();
-          $('.acc-tabs', context).removeData('plugin_accTabs');
+          if ($('.acc-tabs', context).length !== 0 && $('.acc-tabs', context).data('plugin_accTabs') !== undefined) {
+            $('.acc-tabs', context).data('plugin_accTabs').destroy();
+            $('.acc-tabs', context).removeData('plugin_accTabs');
+          }
         }
       });
     }
