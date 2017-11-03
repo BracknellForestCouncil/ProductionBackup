@@ -53,7 +53,7 @@
   </div>
 </header>
 <?php if (isset($readspeaker_button) && !empty($readspeaker_button)) : ?>
-  <div class="readspeaker-btn-wrapper">
+  <div>
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
