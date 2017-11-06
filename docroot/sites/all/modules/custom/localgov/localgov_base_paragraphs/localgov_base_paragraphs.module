@@ -104,14 +104,17 @@ function localgov_base_paragraphs_preprocess_entity(&$variables) {
     libraries_load('simple_state_manager');
     libraries_load('jquery_accessible_accordion');
     libraries_load('jquery_accessible_tabs');
-    if (!empty($variables['paragraphs_item']->field_paragraph_heading_level)) {
-      $heading_level = $variables['paragraphs_item']->field_paragraph_heading_level[LANGUAGE_NONE][0]['value'];
+    // If accordion title exists, wrap it in correct heading element.
+    if (!empty($variables['content']['field_paragraph_accordion_title'])) {
+      if (!empty($variables['paragraphs_item']->field_paragraph_heading_level)) {
+        $heading_level = $variables['paragraphs_item']->field_paragraph_heading_level[LANGUAGE_NONE][0]['value'];
+      }
+      else {
+        $heading_level = 'h2';
+      }
+      $variables['content']['field_paragraph_accordion_title']['#prefix'] = '<' . $heading_level . ' class="accordion-title">';
+      $variables['content']['field_paragraph_accordion_title']['#suffix'] = '</' . $heading_level . '>';
     }
-    else {
-      $heading_level = 'h2';
-    }
-    $variables['content']['field_paragraph_accordion_title']['#prefix'] = '<' . $heading_level . ' class="accordion-title">';
-    $variables['content']['field_paragraph_accordion_title']['#suffix'] = '</' . $heading_level . '>';
   }
   if ($variables['elements']['#bundle'] == 'accordion_pane' && $variables['elements']['#entity_type'] == 'paragraphs_item') {
     if (!empty($variables['paragraphs_item']->field_paragraph_heading_level)) {
