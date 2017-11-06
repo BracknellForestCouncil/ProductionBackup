@@ -11,8 +11,29 @@
     }
 
     .slogan-inner {
-      @include breakpoint($screen-md) {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      @media (min-width: $screen-sm) {
+        flex-direction: row;
+        align-items: center;
+      }
+      @media (max-width: $screen-xs-max) {
+        flex-direction: column;
+      }
+      .slogan-top, .slogan-bottom {
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        @media (min-width: $screen-sm) {
+          padding: 10px;
+        }
+        @media (max-width: $screen-xs-max) {
+          padding: 10px 0;
+        }
+        &.slogan-top {
+
+        }
       }
     }
   }
@@ -26,7 +47,12 @@
   }
 
   .slogan-image {
-    min-width: 120px;
+    @media (max-width: $screen-xs-max) {
+      max-width: 80px;
+    }
+    @media (min-width: $screen-sm) {
+      max-width: 100px;
+    }
 
     .img-responsive {
       margin-bottom: 0;
@@ -35,29 +61,37 @@
 
   .slogan-text {
     flex: 1;
+    padding: 0 10px;
   }
 
   .slogan-title,
   .slogan-strapline {
-    font: {
-      size: 2.4em;
-      weight: 300;
-    }
     line-height: 1.2em;
-  }
-
-  .slogan-strapline {
-    margin-bottom: 15px;
+    margin: 0;
+    font-size: 2.3em;
+    @media (max-width: $screen-xs-max) {
+      font-size: 1.9em;
+    }
+    @media (max-width: ($screen-xs - 1)) {
+      font-size: 1.3em;
+    }
+    &.slogan-strapline {
+      font-weight: 300;
+    }
+    &.slogan-title {
+      font-weight: 700;
+    }
   }
 
   .slogan-call-to-action {
     a {
       @extend .btn;
+      display: block;
       background-color: $slogan-button-background-color;
       color: $slogan-button-text-color;
       font-weight: 600;
-      margin-bottom: 15px;
       white-space: normal;
+      margin: 0;
     }
   }
 }
