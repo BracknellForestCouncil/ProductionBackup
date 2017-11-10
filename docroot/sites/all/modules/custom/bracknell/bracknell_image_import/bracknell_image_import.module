@@ -81,3 +81,23 @@ function bracknell_image_import_go() {
     }
   }
 }
+
+function _bracknell_image_import_get_filename($filename, array $existing_uris = array()) {
+  $prefix = 'public://';
+
+  if (!in_array("{$prefix}{$filename}", $existing_uris)) {
+    return "{$prefix}{$filename}";
+  }
+
+  // Count the number of times the filename is found within the existing URIs.
+  $count = count(preg_grep("#(?<=//){$filename}$#", $existing_uris)) - 1;
+
+  // Amend the URI to include the count as part of the filename to ensure that
+  // they are unique.
+  return preg_replace_callback('/(?<filename>.+)(?<extension>\.\w+)$/', function ($matches) use ($count, $prefix) {
+    $filename = $matches['filename'];
+    $extension = $matches['extension'];
+
+    return "{$prefix}{$filename}-{$count}{$extension}";
+  }, $filename);
+}

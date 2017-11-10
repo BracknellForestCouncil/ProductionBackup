@@ -1,0 +1,70 @@
+<?php
+
+class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
+
+  private $filename = 'foo.jpg';
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Bracknell Image Import unit tests',
+      'description' => '',
+      'group' => 'bracknell',
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    drupal_load('module', 'bracknell_image_import');
+
+    parent::setUp();
+  }
+
+  public function testNoMatches() {
+    $this->assertEqual(
+      'public://foo.jpg',
+      _bracknell_image_import_get_filename($this->filename, array())
+    );
+  }
+
+  public function testSingleMatch() {
+    $uris = array('public://foo.jpg');
+
+    $this->assertEqual(
+      'public://foo-0.jpg',
+      _bracknell_image_import_get_filename($this->filename, $uris)
+    );
+  }
+
+  public function testMultipleMatches() {
+    $uris = array(
+      'public://foo.jpg',
+      'public://foo.jpg',
+    );
+
+    $this->assertEqual(
+      'public://foo-1.jpg',
+      _bracknell_image_import_get_filename($this->filename, $uris)
+    );
+
+    $uris = array(
+      'public://foo.jpg',
+      'public://bar.jpg',
+      'public://foo.jpg',
+      'public://baz.jpg',
+      'public://foo.jpg',
+      'public://bar.jpg',
+      'public://foo.jpg',
+    );
+
+    $this->assertEqual(
+      'public://foo-3.jpg',
+      _bracknell_image_import_get_filename($this->filename, $uris)
+    );
+  }
+
+}
