@@ -16,10 +16,6 @@ To set up the theme for first time use please run these commands in the root of 
 - npm install
 - bower install
 
-You will also need to setup Pattern Lab for first time use. In the 'pattern-lab' directory, please run:
-
-- composer install
-
 To ensure browser sync works correctly, copy .bs-config.local.example.js to .bs-config.local.js and change the settings as required.
 
 The following tasks are available:

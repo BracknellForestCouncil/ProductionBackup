@@ -73,3 +73,31 @@ $base-icons: (
     color: $icon-circle-dark-text-color;
   }
 }
+
+.social-links {
+  ul {
+    margin: 0;
+    li {
+      // The social links module is a bastard and forces an !important, so I have
+      // little other choice.
+      margin: 0 !important;
+      a {
+        display: block;
+      }
+    }
+  }
+  .icon {
+    background: transparent !important;
+    padding: 0;
+    margin-right: 10px;
+    font-size: 2.3rem;
+  }
+  .service-twitter .icon {
+    color: #55acee;
+    font-size: 2.6rem;
+    margin-top: -0.1rem;
+  }
+  .service-facebook .icon {
+    color: #3b5998;
+  }
+}
