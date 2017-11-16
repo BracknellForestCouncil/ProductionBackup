@@ -50,19 +50,31 @@ function localgov_base_moderation_post_features_enable_feature() {
   }
 }
 
-
+/**
+ * Implements hook_form_node_form_alter().
+ */
 function localgov_base_moderation_form_node_form_alter(&$form, $form_state) {
-  if (!empty($form['#node']->revision)) {
+  // This must be a node form and a node that has moderation enabled.
+  // Extended to include moderation check on the individual node.
+  if (!workbench_moderation_node_moderated($form['#node'])) {
+    return;
+  }
+
+  // Make Moderation notes mandatory but default to empty.
+  if ($form['options']['#access']) {
+    $form['options']['log']['#required'] = TRUE;
+    $form['options']['log']['#default_value'] = '';
+  }
+  else {
     $form['revision_information']['log']['#required'] = TRUE;
-    $form['revision_information']['log']['#weight'] = 50;
     $form['revision_information']['log']['#default_value'] = '';
   }
 
-  // Implement afterbuild
+  // Implement afterbuild.
   $form['#after_build'][] = '_localgov_base_moderation_form_organize';
-  // Implement validate to avoid errors & notices
-  $form['#validate'][] = '_localgov_base_moderation_form_validate';
 
+  // Implement validate to avoid errors & notices.
+  $form['#validate'][] = '_localgov_base_moderation_form_validate';
 }
 
 /**
@@ -73,5 +85,18 @@ function localgov_base_moderation_views_api($module, $api) {
     return array(
       'version' => 2
     );
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function localgov_base_moderation_module_implements_alter(&$implementations, $hook) {
+  // Put the form alter for this module last, so it runs after
+  // workbench_moderation, et al.
+  if ($hook === 'form_alter' && isset($implementations['localgov_base_moderation'])) {
+    $group = $implementations['localgov_base_moderation'];
+    unset($implementations['localgov_base_moderation']);
+    $implementations['localgov_base_moderation'] = $group;
   }
 }

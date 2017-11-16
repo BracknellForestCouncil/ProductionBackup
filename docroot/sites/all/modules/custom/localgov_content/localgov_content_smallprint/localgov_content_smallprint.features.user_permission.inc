@@ -14,6 +14,7 @@ function localgov_content_smallprint_user_default_permissions() {
   $permissions['access localgov_content_smallprint'] = array(
     'name' => 'access localgov_content_smallprint',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

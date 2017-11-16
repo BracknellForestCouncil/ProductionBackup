@@ -21,10 +21,10 @@ function bracknell_feature_landing_page_node_info() {
     'landing_page' => array(
       'name' => t('Landing Page'),
       'base' => 'node_content',
-      'description' => t('Use \'landing page\' for top level category pages.'),
+      'description' => t('Use to create landing pages for sections of the site'),
       'has_title' => '1',
       'title_label' => t('Title'),
-      'help' => '',
+      'help' => t('Use to create landing pages for sections of the site'),
     ),
   );
   drupal_alter('node_info', $items);

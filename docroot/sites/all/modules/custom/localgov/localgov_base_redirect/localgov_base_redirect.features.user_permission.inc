@@ -14,8 +14,6 @@ function localgov_base_redirect_user_default_permissions() {
   $permissions['access localgov_base_redirect'] = array(
     'name' => 'access localgov_base_redirect',
     'roles' => array(
-      'content administrator' => 'content administrator',
-      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
       'webmaster' => 'webmaster',
@@ -27,10 +25,8 @@ function localgov_base_redirect_user_default_permissions() {
   $permissions['administer localgov_base_redirect'] = array(
     'name' => 'administer localgov_base_redirect',
     'roles' => array(
-      'content administrator' => 'content administrator',
-      'content editor' => 'content editor',
+      'News editor' => 'News editor',
       'site administrator' => 'site administrator',
-      'site editor' => 'site editor',
       'webmaster' => 'webmaster',
     ),
     'module' => 'localgov_base_redirect',

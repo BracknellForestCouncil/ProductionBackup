@@ -23,6 +23,7 @@ function localgov_base_editor_user_default_permissions() {
   $permissions['access localgov_base_editor'] = array(
     'name' => 'access localgov_base_editor',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -98,6 +99,7 @@ function localgov_base_editor_user_default_permissions() {
   $permissions['use media wysiwyg'] = array(
     'name' => 'use media wysiwyg',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -111,6 +113,7 @@ function localgov_base_editor_user_default_permissions() {
   $permissions['use text format html_basic'] = array(
     'name' => 'use text format html_basic',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

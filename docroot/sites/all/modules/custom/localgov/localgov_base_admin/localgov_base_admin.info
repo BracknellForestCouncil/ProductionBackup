@@ -29,6 +29,7 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[user_permission][] = access administration pages
 features[user_permission][] = access contextual links
+features[user_permission][] = access drupal admin
 features[user_permission][] = access localgov_base_admin
 features[user_permission][] = access navbar
 features[user_permission][] = access site in maintenance mode

@@ -7,6 +7,8 @@
   margin-bottom: $commonSpacing - 10;
   background: $button-bg-color;
   color: $button-text-color;
+  max-width: 100%;
+  white-space: normal;
 
   &:hover {
     background-color: $button-bg-hover-color;

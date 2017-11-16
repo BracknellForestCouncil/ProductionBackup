@@ -32,10 +32,21 @@ function localgov_base_admin_user_default_permissions() {
     'module' => 'contextual',
   );
 
+  // Exported permission: 'access drupal admin'.
+  $permissions['access drupal admin'] = array(
+    'name' => 'access drupal admin',
+    'roles' => array(
+      'site administrator' => 'site administrator',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'localgov_base_admin',
+  );
+
   // Exported permission: 'access localgov_base_admin'.
   $permissions['access localgov_base_admin'] = array(
     'name' => 'access localgov_base_admin',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -49,6 +60,7 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['access navbar'] = array(
     'name' => 'access navbar',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -62,6 +74,7 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['access site in maintenance mode'] = array(
     'name' => 'access site in maintenance mode',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -195,6 +208,7 @@ function localgov_base_admin_user_default_permissions() {
     'name' => 'administer menu',
     'roles' => array(
       'content administrator' => 'content administrator',
+      'content editor' => 'content editor',
       'site administrator' => 'site administrator',
       'site editor' => 'site editor',
       'webmaster' => 'webmaster',
@@ -299,6 +313,7 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',
@@ -375,6 +390,7 @@ function localgov_base_admin_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

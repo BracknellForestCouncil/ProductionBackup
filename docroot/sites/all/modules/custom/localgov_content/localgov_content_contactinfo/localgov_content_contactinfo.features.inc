@@ -21,10 +21,10 @@ function localgov_content_contactinfo_node_info() {
     'contact' => array(
       'name' => t('Contact Information'),
       'base' => 'node_content',
-      'description' => t('TODO: Add content type description.'),
+      'description' => t('Use to create contact information'),
       'has_title' => '1',
       'title_label' => t('Name'),
-      'help' => t('TODO: Add help for content type.'),
+      'help' => t('Use to create contact information'),
     ),
   );
   drupal_alter('node_info', $items);

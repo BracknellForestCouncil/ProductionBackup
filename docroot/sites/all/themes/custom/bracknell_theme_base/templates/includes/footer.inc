@@ -1,4 +1,4 @@
-<footer class="footer" role="contentinfo">
+<footer class="footer">
   <div class="<?php print $container_class; ?>">
     <?php print render($page['footer']); ?>
     <div class="row">

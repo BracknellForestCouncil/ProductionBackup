@@ -14,6 +14,7 @@ function localgov_feature_news_user_default_permissions() {
   $permissions['access localgov_feature_news'] = array(
     'name' => 'access localgov_feature_news',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

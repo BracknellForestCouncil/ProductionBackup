@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * bracknell_feature_performance.strongarm.inc
@@ -99,7 +98,7 @@ function bracknell_feature_performance_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'advagg_cron_timestamp';
-  $strongarm->value = 1496340002;
+  $strongarm->value = 1502715601;
   $export['advagg_cron_timestamp'] = $strongarm;
 
   $strongarm = new stdClass();

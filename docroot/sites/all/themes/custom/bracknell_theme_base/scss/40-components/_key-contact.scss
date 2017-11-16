@@ -50,6 +50,7 @@
 .key-contact-item-image {
   background-color: $key-contact-item-image-bg-color;
   width: 100%;
+  text-align: center;
 
   .img-responsive {
     margin-bottom: 0;
@@ -64,13 +65,18 @@
   }
 }
 
-.key-contact-item-email {
+.key-contact-item-email,
+.key-contact-item-website {
   margin-top: 20px;
 
   a {
     color: $key-contact-item-email-link-text-color;
     text-decoration: none;
     word-break: break-word;
+
+    &:visited {
+      color: $key-contact-item-email-link-text-color;
+    }
 
     &:hover,
     &:focus {

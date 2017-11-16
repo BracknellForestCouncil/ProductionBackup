@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the bracknell_feature_scheduler feature.
+ */
+
+include_once 'bracknell_feature_scheduler.features.inc';

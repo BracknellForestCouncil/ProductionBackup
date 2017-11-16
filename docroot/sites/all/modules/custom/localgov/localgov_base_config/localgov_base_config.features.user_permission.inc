@@ -14,6 +14,7 @@ function localgov_base_config_user_default_permissions() {
   $permissions['access localgov_base_config'] = array(
     'name' => 'access localgov_base_config',
     'roles' => array(
+      'News editor' => 'News editor',
       'content administrator' => 'content administrator',
       'content editor' => 'content editor',
       'site administrator' => 'site administrator',

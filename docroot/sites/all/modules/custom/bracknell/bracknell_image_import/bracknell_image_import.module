@@ -16,7 +16,7 @@ function bracknell_image_import_go() {
   $files = db_query("SELECT fid,uri FROM file_managed WHERE uri LIKE ? OR uri LIKE ?", array(
     's3://%',
     'public://%',
-  ))->fetchAllKeyed();
+      ))->fetchAllKeyed();
 
   $count = 0;
 
@@ -67,10 +67,10 @@ function bracknell_image_import_go() {
       }
       try {
         db_update('file_managed')
-          ->fields(array(
-            'uri' => $save_path,
-          ))->condition('fid', $fid)
-          ->execute();
+            ->fields(array(
+              'uri' => $save_path,
+            ))->condition('fid', $fid)
+            ->execute();
       }
       catch (PDOException $ex) {
         echo 'Exception in updating so skipped ' . $ex->getMessage() . "\n";

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * bracknell_feature_directory.features.field_instance.inc
@@ -272,6 +271,7 @@ function bracknell_feature_directory_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -799,7 +799,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 0,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance:
@@ -1154,24 +1154,28 @@ function bracknell_feature_directory_field_default_field_instances() {
         'carousel' => -1,
         'carousel_slide' => -1,
         'category_showcase' => -1,
+        'category_showcase_item' => -1,
         'document' => -1,
         'featured_box' => -1,
+        'grid_display' => -1,
+        'grid_display_item' => -1,
         'highlighted' => -1,
         'image' => -1,
+        'key_contact' => -1,
+        'key_contact_item' => -1,
         'key_fact' => -1,
         'key_fact_item' => -1,
-        'layout_1_col_12' => -1,
-        'layout_2_col_4_8' => -1,
-        'layout_2_col_6_6' => -1,
-        'layout_2_col_8_4' => -1,
-        'layout_3_col_3_3_6' => -1,
-        'layout_3_col_4_4_4' => -1,
-        'layout_3_col_6_3_3' => -1,
+        'layout_1_col_12' => 'layout_1_col_12',
+        'layout_2_col_4_8' => 'layout_2_col_4_8',
+        'layout_2_col_6_6' => 'layout_2_col_6_6',
+        'layout_2_col_8_4' => 'layout_2_col_8_4',
+        'layout_3_col_3_3_6' => 'layout_3_col_3_3_6',
+        'layout_3_col_4_4_4' => 'layout_3_col_4_4_4',
+        'layout_3_col_6_3_3' => 'layout_3_col_6_3_3',
         'link' => -1,
-        'map' => -1,
         'promotional_area' => -1,
         'tab_panel' => -1,
-        'table' => 'table',
+        'table' => -1,
         'tabs' => -1,
         'video' => -1,
       ),
@@ -1183,10 +1187,15 @@ function bracknell_feature_directory_field_default_field_instances() {
         'carousel' => 6,
         'carousel_slide' => 7,
         'category_showcase' => 8,
+        'category_showcase_item' => 37,
         'document' => 9,
         'featured_box' => 10,
+        'grid_display' => 40,
+        'grid_display_item' => 41,
         'highlighted' => 11,
         'image' => 12,
+        'key_contact' => 44,
+        'key_contact_item' => 45,
         'key_fact' => 13,
         'key_fact_item' => 14,
         'layout_1_col_12' => 15,
@@ -1197,7 +1206,6 @@ function bracknell_feature_directory_field_default_field_instances() {
         'layout_3_col_4_4_4' => 20,
         'layout_3_col_6_3_3' => 21,
         'link' => 22,
-        'map' => 23,
         'promotional_area' => 24,
         'tab_panel' => 27,
         'table' => 25,
@@ -1514,7 +1522,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 14,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-location_car_park-field_node_display_title'.
@@ -1827,13 +1835,13 @@ function bracknell_feature_directory_field_default_field_instances() {
       'allowed_bundles' => array(
         'accordion' => -1,
         'accordion_pane' => -1,
-        'basic' => 'basic',
+        'basic' => -1,
         'blockquote' => -1,
         'carousel' => -1,
         'carousel_slide' => -1,
         'category_showcase' => -1,
         'category_showcase_item' => -1,
-        'document' => 'document',
+        'document' => -1,
         'featured_box' => -1,
         'grid_display' => -1,
         'grid_display_item' => -1,
@@ -1850,10 +1858,10 @@ function bracknell_feature_directory_field_default_field_instances() {
         'layout_3_col_3_3_6' => 'layout_3_col_3_3_6',
         'layout_3_col_4_4_4' => 'layout_3_col_4_4_4',
         'layout_3_col_6_3_3' => 'layout_3_col_6_3_3',
-        'link' => 'link',
+        'link' => -1,
         'promotional_area' => -1,
         'tab_panel' => -1,
-        'table' => 'table',
+        'table' => -1,
         'tabs' => -1,
         'video' => -1,
       ),
@@ -2326,7 +2334,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 14,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance:
@@ -2905,7 +2913,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 9,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-location_council-field_node_display_title'.
@@ -3481,7 +3489,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 13,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-location_leisure-field_node_display_title'.
@@ -4269,7 +4277,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 14,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-location_library-field_node_display_title'.
@@ -4900,7 +4908,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 9,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-location_main-field_node_display_title'.
@@ -5471,7 +5479,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 16,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-location_park-field_node_display_title'.
@@ -6332,7 +6340,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 10,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance:
@@ -6935,7 +6943,7 @@ function bracknell_feature_directory_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 13,
     ),
-    'workbench_access_field' => 1,
+    'workbench_access_field' => TRUE,
   );
 
   // Exported field_instance: 'node-location_school-field_node_display_title'.

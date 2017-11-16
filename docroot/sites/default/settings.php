@@ -570,6 +570,13 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  * The local settings file should be updated to include whichever
  * configuration is required.
  */
+
+// Automatic Platform.sh settings.
+$platformsh_settings = __DIR__ . '/platformsh.settings.php';
+if (file_exists($platformsh_settings)) {
+  include $platformsh_settings;
+}
+
 $local_settings = __DIR__ . '/settings.local.php';
 if (file_exists($local_settings)) {
   include $local_settings;
