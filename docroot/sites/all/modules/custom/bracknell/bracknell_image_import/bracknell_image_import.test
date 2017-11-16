@@ -22,7 +22,7 @@ class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
     parent::setUp();
   }
 
-  public function testDuplicateFilenamesAreRenamedToAvoidDuplicates() {
+  public function testDuplicateFilenamesAreChanged() {
     foreach ($this->filenameAndUriDataProvider() as $data) {
       list($expected_filename, $existing_uris) = $data;
 
