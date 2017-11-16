@@ -2,8 +2,6 @@
 
 class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
 
-  private $filename = 'public://foo.jpg';
-
   /**
    * {@inheritdoc}
    */
@@ -24,52 +22,24 @@ class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
     parent::setUp();
   }
 
-  public function testNoMatches() {
-    $uris = array($this->filename);
+  public function testDuplicateFilenamesAreRenamedToAvoidDuplicates() {
+    foreach ($this->filenameAndUriDataProvider() as $data) {
+      list($expected_filename, $existing_uris) = $data;
 
-    $this->assertEqual(
-      'public://foo.jpg',
-      _bracknell_image_import_get_filename($this->filename, $uris)
-    );
+      $filename = _bracknell_image_import_get_filename('public://foo.jpg', $existing_uris);
+
+      $this->assertEqual($expected_filename, $filename);
+    }
   }
 
-  public function testSingleMatch() {
-    $uris = array(
-      's3://foo.jpg',
-      'public://foo.jpg'
-    );
-
-    $this->assertEqual(
-      'public://foo-0.jpg',
-      _bracknell_image_import_get_filename($this->filename, $uris)
-    );
-  }
-
-  public function testMultipleMatches() {
-    $uris = array(
-      'public://foo.jpg',
-      'public://foo.jpg',
-      's3://foo.jpg',
-    );
-
-    $this->assertEqual(
-      'public://foo-1.jpg',
-      _bracknell_image_import_get_filename($this->filename, $uris)
-    );
-
-    $uris = array(
-      'public://foo.jpg',
-      'public://bar.jpg',
-      's3://foo.jpg',
-      'public://baz.jpg',
-      'public://foo.jpg',
-      's3://bar.jpg',
-      'public://foo.jpg',
-    );
-
-    $this->assertEqual(
-      'public://foo-2.jpg',
-      _bracknell_image_import_get_filename($this->filename, $uris)
+  private function filenameAndUriDataProvider() {
+    return array(
+      array('public://foo.jpg', array('public://foo.jpg')),
+      array('public://foo.jpg', array('s3://foo.jpg')),
+      array('public://foo-0.jpg', array('s3://foo.jpg', 'public://foo.jpg')),
+      array('public://foo-1.jpg', array('public://foo.jpg', 'public://foo.jpg', 's3://foo.jpg')),
+      array('public://foo-1.jpg', array('s3://foo.jpg', 'public://foo.jpg', 's3://foo.jpg')),
+      array('public://foo-2.jpg', array('public://foo.jpg', 'public://bar.jpg', 's3://foo.jpg', 'public://baz.jpg', 'public://foo.jpg', 's3://bar.jpg', 'public://foo.jpg'))
     );
   }
 
