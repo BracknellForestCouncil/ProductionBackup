@@ -2,7 +2,7 @@
 
 class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
 
-  private $filename = 'foo.jpg';
+  private $filename = 'public://foo.jpg';
 
   /**
    * {@inheritdoc}
@@ -25,14 +25,19 @@ class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
   }
 
   public function testNoMatches() {
+    $uris = array($this->filename);
+
     $this->assertEqual(
       'public://foo.jpg',
-      _bracknell_image_import_get_filename($this->filename, array())
+      _bracknell_image_import_get_filename($this->filename, $uris)
     );
   }
 
   public function testSingleMatch() {
-    $uris = array('public://foo.jpg');
+    $uris = array(
+      's3://foo.jpg',
+      'public://foo.jpg'
+    );
 
     $this->assertEqual(
       'public://foo-0.jpg',
@@ -44,6 +49,7 @@ class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
     $uris = array(
       'public://foo.jpg',
       'public://foo.jpg',
+      's3://foo.jpg',
     );
 
     $this->assertEqual(
@@ -54,15 +60,15 @@ class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
     $uris = array(
       'public://foo.jpg',
       'public://bar.jpg',
-      'public://foo.jpg',
+      's3://foo.jpg',
       'public://baz.jpg',
       'public://foo.jpg',
-      'public://bar.jpg',
+      's3://bar.jpg',
       'public://foo.jpg',
     );
 
     $this->assertEqual(
-      'public://foo-3.jpg',
+      'public://foo-2.jpg',
       _bracknell_image_import_get_filename($this->filename, $uris)
     );
   }
