@@ -23,7 +23,7 @@ class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
   }
 
   public function testDuplicateFilenamesAreChanged() {
-    foreach ($this->filenameAndUriDataProvider() as $data) {
+    foreach ($this->getFilenameAndUriTests() as $data) {
       list($expected_filename, $existing_uris) = $data;
 
       $filename = _bracknell_image_import_get_filename('public://foo.jpg', $existing_uris);
@@ -32,7 +32,7 @@ class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
     }
   }
 
-  private function filenameAndUriDataProvider() {
+  private function getFilenameAndUriTests() {
     return array(
       array('public://foo.jpg', array('public://foo.jpg')),
       array('public://foo.jpg', array('s3://foo.jpg')),
