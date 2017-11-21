@@ -577,10 +577,6 @@ if (file_exists($platform_settings)) {
   include $platform_settings;
 }
 
-if (file_exists($app_root . '/' . $site_path . '/platformsh.settings.php')) {
-  include $app_root . '/' . $site_path . '/platformsh.settings.php';
-}
-
 $local_settings = __DIR__ . '/settings.local.php';
 if (file_exists($local_settings)) {
   include $local_settings;
