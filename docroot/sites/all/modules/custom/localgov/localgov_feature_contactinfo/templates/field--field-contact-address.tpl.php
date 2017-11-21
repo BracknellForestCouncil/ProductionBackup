@@ -44,11 +44,11 @@
  * @ingroup themeable
  */
 ?>
-<p class="contact-address">
+<div class="contact-address">
   <?php if (!$label_hidden): ?>
     <span class="element-invisible"<?php print $title_attributes; ?>><?php print $label ?></span>
   <?php endif; ?>
   <?php foreach ($items as $delta => $item): ?>
     <?php print render($item); ?>
   <?php endforeach; ?>
-</p>
+</div>
