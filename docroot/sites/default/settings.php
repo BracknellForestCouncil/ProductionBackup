@@ -572,6 +572,11 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  */
 
 // Automatic Platform.sh settings.
+$platform_settings = __DIR__ . '/platformsh.settings.php';
+if (file_exists($platform_settings)) {
+  include $platform_settings;
+}
+
 if (file_exists($app_root . '/' . $site_path . '/platformsh.settings.php')) {
   include $app_root . '/' . $site_path . '/platformsh.settings.php';
 }
