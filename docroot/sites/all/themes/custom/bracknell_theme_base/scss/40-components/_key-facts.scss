@@ -1,9 +1,12 @@
 // Key facts.
 
 .key-facts {
-  .key-facts-title {
-    h5 {
-      font-size: 1em;
+  .key-facts-title-wrapper {
+    .key-facts-title {
+      font: {
+        size: 1em;
+        weight: 700;
+      }
     }
     margin-bottom: 15px;
   }
@@ -13,7 +16,7 @@
       margin-bottom: 20px;
       position: relative;
 
-      .key-fact-item-title {
+      .key-fact-item-title-wrapper {
         @include applyColour(background-color, color);
         margin: 0;
 
@@ -34,7 +37,7 @@
           }
         }
 
-        h3 {
+        .key-fact-item-title {
           font-size: 1em;
           font-weight: 600;
           margin: 0;
