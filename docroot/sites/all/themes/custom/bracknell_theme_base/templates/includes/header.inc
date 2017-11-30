@@ -53,10 +53,12 @@
   </div>
 </header>
 <?php if (isset($readspeaker_button) && !empty($readspeaker_button)) : ?>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <?php print $readspeaker_button; ?>
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <?php print $readspeaker_button; ?>
+        </div>
       </div>
     </div>
   </div>
