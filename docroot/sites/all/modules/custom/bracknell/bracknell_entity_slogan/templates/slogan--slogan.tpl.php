@@ -30,30 +30,34 @@
 ?>
 <div class="slogan-content <?php print $classes; ?>">
   <div class="slogan-inner">
-    <?php if (isset($content['field_slogan_image'])) : ?>
-      <div class="slogan-image">
-        <?php print render($content['field_slogan_image']); ?>
+    <div class="slogan-top">
+      <?php if (isset($content['field_slogan_image'])) : ?>
+        <div class="slogan-image">
+          <?php print render($content['field_slogan_image']); ?>
+        </div>
+      <?php endif; ?>
+
+      <div class="slogan-text">
+      <?php if (isset($content['field_slogan_title'])) : ?>
+        <h2 class="slogan-title">
+          <?php print render($content['field_slogan_title']); ?>
+        </h2>
+      <?php endif; ?>
+
+      <?php if (isset($content['field_slogan_strapline'])) : ?>
+        <p class="slogan-strapline">
+          <?php print render($content['field_slogan_strapline']); ?>
+        </p>
+      <?php endif; ?>
       </div>
-    <?php endif; ?>
+    </div>
 
-    <div class="slogan-text">
-    <?php if (isset($content['field_slogan_title'])) : ?>
-      <h2 class="slogan-title">
-        <?php print render($content['field_slogan_title']); ?>
-      </h2>
-    <?php endif; ?>
-
-    <?php if (isset($content['field_slogan_strapline'])) : ?>
-      <p class="slogan-strapline">
-        <?php print render($content['field_slogan_strapline']); ?>
-      </p>
-    <?php endif; ?>
-    </div><!-- end .slogan-text -->
-
-    <?php if (isset($content['field_slogan_call_to_action'])) : ?>
-      <div class="slogan-call-to-action">
-        <?php print render($content['field_slogan_call_to_action']); ?>
-      </div><!-- end .slogan-call-to-action -->
-    <?php endif; ?>
-  </div><!-- end .slogan-inner -->
-</div><!-- end .slogan-content -->
+    <div class="slogan-bottom">
+      <?php if (isset($content['field_slogan_call_to_action'])) : ?>
+        <div class="slogan-call-to-action">
+          <?php print render($content['field_slogan_call_to_action']); ?>
+        </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</div>
