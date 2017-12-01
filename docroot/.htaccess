@@ -97,6 +97,7 @@ DirectoryIndex index.php index.html index.htm
   # in the ruleset below.
   RewriteCond %{HTTP_HOST} !^www\.bracknell-forest\.gov.uk$  [NC]
   RewriteCond %{HTTP_HOST} !bracknell.dev$
+  RewriteCond %{HTTP_HOST} !bracknell.docksal$
   RewriteCond %{HTTP_HOST} !dev.bracknell.local$
   RewriteCond %{HTTP_HOST} !^microserve.web-dev.bracknell-forest.gov.uk$ [NC]
   RewriteCond %{HTTP_HOST} !^beta.bracknell-forest.gov.uk$ [NC]
@@ -106,6 +107,7 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteCond %{HTTP_HOST} !bracknell.dev$
+  RewriteCond %{HTTP_HOST} !bracknell.docksal$
   RewriteCond %{HTTP_HOST} !dev.bracknell.local$
   RewriteCond %{HTTP_HOST} !^microserve.web-dev.bracknell-forest.gov.uk$ [NC]
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
