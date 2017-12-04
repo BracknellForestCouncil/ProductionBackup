@@ -151,6 +151,49 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-accordion-field_paragraph_heading_level'.
+  $field_instances['paragraphs_item-accordion-field_paragraph_heading_level'] = array(
+    'bundle' => 'accordion',
+    'default_value' => array(
+      0 => array(
+        'value' => 'h2',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_paragraph_heading_level',
+    'is_property' => 0,
+    'label' => 'Heading level',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 1,
     ),
     'workbench_access_field' => 0,
@@ -251,6 +294,49 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-accordion_pane-field_paragraph_heading_level'.
+  $field_instances['paragraphs_item-accordion_pane-field_paragraph_heading_level'] = array(
+    'bundle' => 'accordion_pane',
+    'default_value' => array(
+      0 => array(
+        'value' => 'h3',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_paragraph_heading_level',
+    'is_property' => 0,
+    'label' => 'Heading level',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 1,
     ),
     'workbench_access_field' => 0,
@@ -2826,6 +2912,49 @@ function localgov_base_paragraphs_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'paragraphs_item-key_fact-field_paragraph_heading_level'.
+  $field_instances['paragraphs_item-key_fact-field_paragraph_heading_level'] = array(
+    'bundle' => 'key_fact',
+    'default_value' => array(
+      0 => array(
+        'value' => 'h2',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Heading level for the title element',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_paragraph_heading_level',
+    'is_property' => 0,
+    'label' => 'Heading level',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
   // 'paragraphs_item-key_fact-field_paragraph_key_fact_content'.
   $field_instances['paragraphs_item-key_fact-field_paragraph_key_fact_content'] = array(
     'bundle' => 'key_fact',
@@ -2972,7 +3101,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 0,
     ),
     'workbench_access_field' => 0,
   );
@@ -3072,6 +3201,49 @@ function localgov_base_paragraphs_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
+  // 'paragraphs_item-key_fact_item-field_paragraph_heading_level'.
+  $field_instances['paragraphs_item-key_fact_item-field_paragraph_heading_level'] = array(
+    'bundle' => 'key_fact_item',
+    'default_value' => array(
+      0 => array(
+        'value' => 'h3',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Heading level for the title element',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'paragraphs_editor_preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'paragraphs_item',
+    'field_name' => 'field_paragraph_heading_level',
+    'is_property' => 0,
+    'label' => 'Heading level',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 1,
     ),
     'workbench_access_field' => 0,
@@ -5897,6 +6069,8 @@ function localgov_base_paragraphs_field_default_field_instances() {
   t('Enter any additional text related to the document(s). In many cases, this will be all text until the next heading tag.');
   t('Enter any additional text related to the link(s). In many cases, this will be all text until the next heading tag.');
   t('Enter any additional text related to the table. In many cases, this will be all text until the next heading tag.');
+  t('Heading level');
+  t('Heading level for the title element');
   t('Icon');
   t('Image');
   t('Image Position');

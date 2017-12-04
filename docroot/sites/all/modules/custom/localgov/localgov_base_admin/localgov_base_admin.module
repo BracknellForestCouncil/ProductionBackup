@@ -58,7 +58,7 @@ function localgov_base_admin_navbar_alter(&$items) {
     $items['administration']['tab']['#title'] = t('Drupal Admin');
   }
   else {
-    unset($items['administration']['tab']);
+    unset($items['administration']);
   }
 }
 

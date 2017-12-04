@@ -26,14 +26,20 @@
  * @see template_process()
  */
 ?>
-<div class='key-facts'>
+<div class="key-facts">
   <?php if (isset($content['field_paragraph_key_fact_title'])): ?>
-    <div class='key-facts-title'>
-      <h3><?php print render($content['field_paragraph_key_fact_title']); ?></h3>
+    <div class="key-facts-title-wrapper">
+      <?php if (isset($content['field_paragraph_heading_level'])): ?>
+          <<?php print $content['field_paragraph_heading_level'][0]['#markup']; ?> class="key-facts-title">
+          <?php print render($content['field_paragraph_key_fact_title']); ?>
+          </<?php print $content['field_paragraph_heading_level'][0]['#markup']; ?>>
+      <?php else: ?>
+        <h2 class="key-facts-title"><?php print render($content['field_paragraph_key_fact_title']); ?></h2>
+      <?php endif; ?>
     </div>
   <?php endif; ?>
   <?php if (isset($content)): ?>
-    <div class='key-facts-items'>
+    <div class="key-facts-items">
       <?php print render($content); ?>
     </div>
   <?php endif; ?>
