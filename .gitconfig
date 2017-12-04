@@ -1,0 +1,12 @@
+[remote "production"]
+        url = git@git.ent.platform.sh:bracknell.git
+        fetch = +refs/heads/*:refs/remotes/production/*
+[remote "staging"]
+        url = git@git.ent.platform.sh:bracknell_stg.git
+        fetch = +refs/heads/*:refs/remotes/staging/*
+[branch "staging"]
+        remote = staging
+        merge = refs/heads/master
+[branch "production"]
+        remote = production
+        merge = refs/heads/master
