@@ -99,6 +99,7 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTP_HOST} !bracknell.dev$
   RewriteCond %{HTTP_HOST} !bracknell.docksal$
   RewriteCond %{HTTP_HOST} !dev.bracknell.local$
+  RewriteCond %{HTTP_HOST} !bracknell.dd:8083$
   RewriteCond %{HTTP_HOST} !^microserve.web-dev.bracknell-forest.gov.uk$ [NC]
   RewriteCond %{HTTP_HOST} !^beta.bracknell-forest.gov.uk$ [NC]
   RewriteRule ^ https://www.bracknell-forest.gov.uk%{REQUEST_URI} [L,R=301]
@@ -109,6 +110,7 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{HTTP_HOST} !bracknell.dev$
   RewriteCond %{HTTP_HOST} !bracknell.docksal$
   RewriteCond %{HTTP_HOST} !dev.bracknell.local$
+  RewriteCond %{HTTP_HOST} !bracknell.dd:8083$
   RewriteCond %{HTTP_HOST} !^microserve.web-dev.bracknell-forest.gov.uk$ [NC]
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
