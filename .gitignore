@@ -6,6 +6,7 @@ acquia-files
 
 config/databases/*
 docroot/sites/default/settings.local.php
+docroot/sites/default/settings.docker.php
 .idea
 **/node_modules/*
 **/bower_components/*
