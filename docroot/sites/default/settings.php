@@ -585,7 +585,7 @@ if (file_exists($local_settings)) {
 /**
  * Include a docker settings file if it exists.
  */
-$docker_settings = dirname(__FILE__) . /settings.docker.php;
+$docker_settings = dirname(__FILE__) . '/settings.docker.php';
 if (file_exists($docker_settings)) {
   include $docker_settings;
 }
