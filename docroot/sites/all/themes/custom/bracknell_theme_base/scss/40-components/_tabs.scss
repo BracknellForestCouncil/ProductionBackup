@@ -21,30 +21,6 @@
   }
 }
 
-.js-accordion-control {
-  border: 1px solid $acc-tabs-control-border-color;
-  border-radius: 0;
-  padding: 10px 20px;
-  margin: 0;
-  font-size: 1.2rem;
-  margin-bottom: -1px;
-  &:not(.js-accordion-control--active) {
-    color: $acc-tabs-control-button-text-color;
-    cursor: pointer;
-    outline: none;
-    text-decoration: underline;
-    font-weight: normal;
-  }
-  &:first-child {
-    border-radius: 3px 3px 0 0;
-  }
-}
-
-.js-accordion-panel {
-  border-radius: 0;
-  margin-bottom: -1px;
-}
-
 .js-acc-tabs-panel {
   margin: 0;
 }
