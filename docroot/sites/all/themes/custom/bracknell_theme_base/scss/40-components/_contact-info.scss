@@ -10,12 +10,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     @include breakpoint($screen-md) {
       flex-direction: row;
     }
+
     h2 {
       margin: 0;
-      font-weight: 600;
     }
   }
 
