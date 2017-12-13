@@ -572,12 +572,21 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  */
 
 // Automatic Platform.sh settings.
-$platform_settings = __DIR__ . '/platformsh.settings.php';
-if (file_exists($platform_settings)) {
-  include $platform_settings;
+$platformsh_settings = __DIR__ . '/platformsh.settings.php';
+if (file_exists($platformsh_settings)) {
+  include $platformsh_settings;
 }
 
 $local_settings = __DIR__ . '/settings.local.php';
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+
+/**
+ * Include a docker settings file if it exists.
+ */
+$docker_settings = dirname(__FILE__) . '/settings.docker.php';
+if (file_exists($docker_settings)) {
+  include $docker_settings;
+}
+

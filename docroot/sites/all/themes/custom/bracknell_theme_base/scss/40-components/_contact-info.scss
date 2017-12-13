@@ -4,15 +4,30 @@
   background-color: $contact-info-bg-color;
   margin-bottom: 1em;
   margin-top: 1em;
-  padding: 1px 15px;
+  padding: 20px;
 
-  @include breakpoint($screen-md) {
+  .contact-info-top {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
+
+    @include breakpoint($screen-md) {
+      flex-direction: row;
+    }
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .contact-info-bottom {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #bbb;
   }
 
   .btn {
-    margin-top: 15px;
+    margin: 0;
   }
 }
 

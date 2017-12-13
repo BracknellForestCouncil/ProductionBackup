@@ -84,31 +84,43 @@
 hide($content);
 ?>
 
-<?php if (!empty($display_mode)) : ?>
+<?php if (!empty($display_mode)): ?>
   <div class="contact-info">
-    <div class="contact-info-content">
-      <h2 class="contact-info-title"><?php print t('Contact Information') ?></h2>
-  <?php if (!empty($content['field_title_display'])) : ?>
+    <div class="contact-info-top">
+      <div class="contact-info-content">
+        <h2 class="contact-info-title"><?php print t('Contact Information') ?></h2>
+
+        <?php if (!empty($content['field_title_display'])): ?>
           <p><?php print render($content['field_title_display']); ?></p>
-  <?php else : ?>
+        <?php else: ?>
           <p><?php print $title; ?></p>
-  <?php endif; ?>
-  <?php if (!empty($display_mode) && $display_mode == 'full') : ?>
-    <?php
-    print render($content['field_contact_telephone']);
-    print render($content['field_contact_address']);
-    ?>
-  <?php endif; ?>
+        <?php endif; ?>
 
-  <?php print render($content['field_contact_additional']); ?>
-    </div><!-- end .contact-info-content -->
+        <?php if (!empty($display_mode) && $display_mode == 'full') : ?>
+          <?php if (isset($content['field_contact_telephone'])): ?>
+            <?php print render($content['field_contact_telephone']); ?>
+          <?php endif; ?>
 
-  <?php if (!empty($content['field_contact_form'])) : ?>
-    <?php print render($content['field_contact_form']); ?>
-  <?php else : ?>
-    <?php if (isset($contact_email)) : ?>
-      <?php print $contact_email; ?>
+          <?php if (isset($content['field_contact_address'])): ?>
+            <?php print render($content['field_contact_address']); ?>
+          <?php endif; ?>
+        <?php endif; ?>
+
+        <?php print render($content['field_contact_additional']); ?>
+      </div>
+
+      <?php if (!empty($content['field_contact_form'])): ?>
+        <?php print render($content['field_contact_form']); ?>
+      <?php else: ?>
+        <?php if (isset($contact_email)): ?>
+          <?php print $contact_email; ?>
+        <?php endif; ?>
+      <?php endif; ?>
+    </div>
+    <?php if (isset($content['field_social_links'])): ?>
+      <div class="contact-info-bottom">
+        <?php print render($content['field_social_links']); ?>
+      </div>
     <?php endif; ?>
-  <?php endif; ?>
   </div>
 <?php endif; ?>
