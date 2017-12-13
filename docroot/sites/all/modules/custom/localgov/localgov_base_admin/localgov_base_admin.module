@@ -56,6 +56,7 @@ function localgov_base_admin_admin_paths() {
 function localgov_base_admin_navbar_alter(&$items) {
   if (user_access('access drupal admin')) {
     $items['administration']['tab']['#title'] = t('Drupal Admin');
+    $items['administration']['#weight'] = -16;
   }
   else {
     unset($items['administration']);

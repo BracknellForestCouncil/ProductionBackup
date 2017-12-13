@@ -77,7 +77,10 @@
   .slogan-strapline {
     line-height: 1.2em;
     margin: 0;
-    font-size: 2.3em;
+    font: {
+      size: 2.3em;
+      weight: 300;
+    }
 
     @media (max-width: $screen-xs-max) {
       font-size: 1.9em;
@@ -85,14 +88,6 @@
 
     @media (max-width: ($screen-xs - 1)) {
       font-size: 1.3em;
-    }
-
-    &.slogan-strapline {
-      font-weight: 300;
-    }
-
-    &.slogan-title {
-      font-weight: 700;
     }
   }
 

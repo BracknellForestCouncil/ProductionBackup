@@ -8,7 +8,7 @@
           panelClass: 'js-accordion-panel',
           panelId: 'js-accordion-panel-',
           panelControlClass: 'js-accordion-control',
-          panelControlActiveClass: 'js-accordion-control-active',
+          panelControlActiveClass: 'js-accordion-control--active',
           panelControlId: 'js-accordion-control-',
           panelTitleClass: 'js-accordion-panel-title'
         });
@@ -18,7 +18,7 @@
 
   Drupal.behaviors.bracknellTabs = {
     attach: function (context, settings) {
-      if ($('.acc-tabs', context).length > 1) {
+      if ($('.acc-tabs', context).length !== 0) {
         ssm.addState({
           id: 'mobile',
           query: '(max-width: 767px)',
@@ -29,7 +29,7 @@
                   defaultPanel: 0,
                   panelClass: 'js-accordion-panel',
                   panelId: 'js-accordion-panel--',
-                  panelControlClass: 'js-accordion-control',
+                  panelControlClass: 'js-accordion-control accordion-pane-title',
                   panelControlActiveClass: 'js-accordion-control--active',
                   panelControlHiddenClass: 'js-accordion-control--hidden',
                   panelControlId: 'js-accordion-control--'
