@@ -398,7 +398,7 @@ function _bracknell_deploy_safe_add_terms($vocab, $term_names = array(), $vocabu
 }
 
 /**
- * Enable the Fontello Module.
+ * Enable the Socialfield and Fontello modules.
  */
 function bracknell_deploy_update_7020(&$sandbox) {
   module_enable(array('socialfield', 'font_icons'));
