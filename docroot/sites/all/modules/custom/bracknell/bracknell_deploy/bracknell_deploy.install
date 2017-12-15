@@ -401,5 +401,5 @@ function _bracknell_deploy_safe_add_terms($vocab, $term_names = array(), $vocabu
  * Enable the Fontello Module.
  */
 function bracknell_deploy_update_7020(&$sandbox) {
-  module_enable(array('font_icons'));
+  module_enable(array('socialfield', 'font_icons'));
 }
