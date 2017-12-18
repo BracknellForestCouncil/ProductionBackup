@@ -29,6 +29,10 @@ function bracknell_image_import_go() {
   foreach ($files as $fid => $uri) {
     $count++;
 
+    // Ensure that spaces in filenames don't prevent the image from being
+    // imported by replacing the space character.
+    $uri = str_replace(' ', '%20', $uri);
+
     if ($verbose) {
       echo "$uri\n $fid\n";
     }
