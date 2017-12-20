@@ -1393,8 +1393,8 @@ function localgov_base_paragraphs_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'public' => 0,
-          's3' => 's3',
+          'public' => 'public',
+          's3' => '0',
           'youtube' => 0,
         ),
         'allowed_types' => array(
@@ -2230,8 +2230,8 @@ function localgov_base_paragraphs_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'public' => 0,
-          's3' => 's3',
+          'public' => 'public',
+          's3' => 0,
           'youtube' => 0,
         ),
         'allowed_types' => array(

@@ -22,7 +22,6 @@ dependencies[] = maxlength
 dependencies[] = media
 dependencies[] = options
 dependencies[] = paragraphs
-dependencies[] = s3fs_cors
 dependencies[] = strongarm
 dependencies[] = tablefield
 dependencies[] = text

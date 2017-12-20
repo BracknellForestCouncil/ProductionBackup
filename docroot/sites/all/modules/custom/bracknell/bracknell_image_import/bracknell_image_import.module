@@ -6,7 +6,7 @@
  */
 function bracknell_image_import_go() {
 
-  $verbose = FALSE;
+  $verbose = TRUE;
 
   $base_path = array(
     's3' => 'http://files.bracknell-forest.gov.uk/sites/bracknell',
@@ -79,5 +79,19 @@ function bracknell_image_import_go() {
     else {
       echo "Couldn't write file " . $save_path . "\n";
     }
+  }
+}
+
+function bracknell_image_import_fix_config() {
+  $results = db_query("select id,data from field_config where data like '%s3%'")->fetchAll();
+  foreach ($results as $result) {
+    $data = unserialize($result->data);
+    $data['settings']['uri_scheme'] = 'public';
+    $data_serialized = serialize($data);
+
+    db_update('field_config')
+        ->fields(array('data' => $data_serialized))
+        ->condition('id', $result->id)
+        ->execute();
   }
 }

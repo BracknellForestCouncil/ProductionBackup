@@ -1,0 +1,15 @@
+<?php
+
+ function bracknell_image_import_update_7001($sandbox) {
+  $results = db_query("select id,data from field_config where data like '%s3%'")->fetchAll();
+  foreach ($results as $result) {
+    $data = unserialize($result->data);
+    $data['settings']['uri_scheme'] = 'public';
+    $data_serialized = serialize($data);
+
+    db_update('field_config')
+        ->fields(array('data' => $data_serialized))
+        ->condition('id', $result->id)
+        ->execute();
+  }
+}
