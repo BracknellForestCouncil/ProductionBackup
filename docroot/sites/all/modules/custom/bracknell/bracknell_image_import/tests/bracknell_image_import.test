@@ -1,0 +1,64 @@
+<?php
+
+class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Bracknell Image Import unit tests',
+      'description' => '',
+      'group' => 'bracknell',
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    drupal_load('module', 'bracknell_image_import');
+
+    parent::setUp();
+  }
+
+  public function testDuplicateFilenamesAreChanged() {
+    foreach ($this->getFilenameAndUriTests() as $data) {
+      list($expected_filename, $existing_uris) = $data;
+
+      $filename = _bracknell_image_import_get_filename('public://foo.jpg', $existing_uris);
+
+      $this->assertEqual($expected_filename, $filename);
+    }
+  }
+
+  public function testS3ReplacedCorectly() {
+    // Use extracted code from bracknell_image_import_update_7000.
+    $result = new stdClass();
+    $result->data = $this->getSerializedStringOriginal();
+    $data = unserialize($result->data);
+    $data['settings']['uri_scheme'] = 'public';
+    $data_serialized = serialize($data);
+    $this->assertEqual($data_serialized, $this->getSerializedStringFixed());
+  }
+
+  private function getFilenameAndUriTests() {
+    return array(
+      array('public://foo.jpg', array('public://foo.jpg')),
+      array('public://foo.jpg', array('s3://foo.jpg')),
+      array('public://foo-0.jpg', array('s3://foo.jpg', 'public://foo.jpg')),
+      array('public://foo-1.jpg', array('public://foo.jpg', 'public://foo.jpg', 's3://foo.jpg')),
+      array('public://foo-1.jpg', array('s3://foo.jpg', 'public://foo.jpg', 's3://foo.jpg')),
+      array('public://foo-2.jpg', array('public://foo.jpg', 'public://bar.jpg', 's3://foo.jpg', 'public://baz.jpg', 'public://foo.jpg', 's3://bar.jpg', 'public://foo.jpg'))
+    );
+  }
+
+  private function getSerializedStringOriginal() {
+    return 'a:7:{s:12:"entity_types";a:0:{}s:7:"indexes";a:1:{s:3:"fid";a:1:{i:0;s:3:"fid";}}s:8:"settings";a:3:{s:15:"display_default";i:0;s:13:"display_field";i:0;s:10:"uri_scheme";s:2:"s3";}s:12:"translatable";i:0;s:7:"storage";a:4:{s:4:"type";s:17:"field_sql_storage";s:8:"settings";a:0:{}s:6:"module";s:17:"field_sql_storage";s:6:"active";s:1:"1";}s:12:"foreign keys";a:1:{s:3:"fid";a:2:{s:5:"table";s:12:"file_managed";s:7:"columns";a:1:{s:3:"fid";s:3:"fid";}}}s:2:"id";s:1:"8";}';
+  }
+
+  private function getSerializedStringFixed() {
+    return 'a:7:{s:12:"entity_types";a:0:{}s:7:"indexes";a:1:{s:3:"fid";a:1:{i:0;s:3:"fid";}}s:8:"settings";a:3:{s:15:"display_default";i:0;s:13:"display_field";i:0;s:10:"uri_scheme";s:6:"public";}s:12:"translatable";i:0;s:7:"storage";a:4:{s:4:"type";s:17:"field_sql_storage";s:8:"settings";a:0:{}s:6:"module";s:17:"field_sql_storage";s:6:"active";s:1:"1";}s:12:"foreign keys";a:1:{s:3:"fid";a:2:{s:5:"table";s:12:"file_managed";s:7:"columns";a:1:{s:3:"fid";s:3:"fid";}}}s:2:"id";s:1:"8";}';
+  }
+
+}

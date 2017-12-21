@@ -5,7 +5,6 @@
  * Once it's been run, this module should be disabled.
  */
 function bracknell_image_import_go() {
-
   $verbose = FALSE;
 
   $base_path = array(
@@ -16,7 +15,7 @@ function bracknell_image_import_go() {
   $files = db_query("SELECT fid,uri FROM file_managed WHERE uri LIKE ? OR uri LIKE ?", array(
     's3://%',
     'public://%',
-      ))->fetchAllKeyed();
+  ))->fetchAllKeyed();
 
   $count = 0;
 
@@ -27,32 +26,38 @@ function bracknell_image_import_go() {
     ),
   ));
 
-  foreach ($files as $fid => $file) {
-
+  foreach ($files as $fid => $uri) {
     $count++;
 
+    // Ensure that spaces in filenames don't prevent the image from being
+    // imported by replacing the space character.
+    $uri = str_replace(' ', '%20', $uri);
+
     if ($verbose) {
-      echo "$file\n $fid\n";
+      echo "$uri\n $fid\n";
     }
 
     // This will either be 's3' or 'public'
-    $location = parse_url($file, PHP_URL_SCHEME);
+    $location = parse_url($uri, PHP_URL_SCHEME);
 
     // 3 here is the length of '://'
-    $real_path = substr($file, strlen($location) + 3);
+    $real_path = substr($uri, strlen($location) + 3);
     $file_name = drupal_basename($real_path);
     $directory = 'public://' . str_replace($file_name, '', $real_path);
     if ($directory != 'public://') {
       file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
     }
+
     $save_path = $directory . $file_name;
+    $save_path = _bracknell_image_import_get_filename($save_path, _bracknell_image_import_get_uris($fid));
+
     $file_path = $base_path[$location] . '/' . $real_path;
 
     // Use @ here to stop file_get_contents spitting out errors for files that don't exist on s3.
     $data = @file_get_contents($file_path, false, $streamContext);
 
     if (!$data) {
-      echo "Couldn't retrieve file " . $file_path . "\n";
+      echo "Couldn't retrieve uri " . $file_path . "\n";
       continue;
     }
 
@@ -60,11 +65,11 @@ function bracknell_image_import_go() {
       echo "save to $save_path\n";
       echo "directory $directory\n";
     }
-    if ($file = file_unmanaged_save_data($data, $save_path)) {
-
+    if ($uri = file_unmanaged_save_data($data, $save_path)) {
       if ($verbose) {
-        echo 'file copied ok' . "\n";
+        echo 'uri copied ok' . "\n";
       }
+
       try {
         db_update('file_managed')
             ->fields(array(
@@ -77,7 +82,34 @@ function bracknell_image_import_go() {
       }
     }
     else {
-      echo "Couldn't write file " . $save_path . "\n";
+      echo "Couldn't write uri " . $save_path . "\n";
     }
   }
+}
+
+function _bracknell_image_import_get_filename($filename, array $existing_uris = array()) {
+  if (!in_array($filename, $existing_uris)) {
+    return $filename;
+  }
+
+  // Count the number of times the filename is found within the existing URIs.
+  $parts = explode('//', $filename);
+  $count = count(preg_grep("#/{2}{$parts[1]}$#", $existing_uris));
+
+  if ($count == 1) {
+    return $filename;
+  }
+
+  // Amend the URI to include the count as part of the filename to ensure that
+  // they are unique.
+  return preg_replace_callback('/(?<filename>.+)(?<extension>\.\w+)$/', function ($matches) use ($count) {
+    $filename = $matches['filename'];
+    $extension = $matches['extension'];
+
+    return vsprintf('%s-%d%s', array($filename, $count - 2, $extension));
+  }, $filename);
+}
+
+function _bracknell_image_import_get_uris($fid) {
+  return db_query('SELECT DISTINCT uri FROM {file_managed}')->fetchCol();
 }

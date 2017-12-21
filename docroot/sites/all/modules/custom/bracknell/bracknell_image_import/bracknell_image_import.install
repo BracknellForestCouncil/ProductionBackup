@@ -5,9 +5,9 @@
  */
  function bracknell_image_import_update_7001($sandbox) {
   $results = db_query("
-    select id,data 
-    from {field_config} 
-    where data like'%s3%'")
+    select id, data
+    from {field_config}
+    where data like '%s3%'")
     ->fetchAll();
   foreach ($results as $result) {
     $data = unserialize($result->data);
