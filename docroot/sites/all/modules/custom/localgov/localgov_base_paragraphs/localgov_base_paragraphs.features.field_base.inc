@@ -976,7 +976,7 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'settings' => array(
       'display_default' => 0,
       'display_field' => 0,
-      'uri_scheme' => 's3',
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
     'type' => 'file',
@@ -1026,7 +1026,7 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'module' => 'image',
     'settings' => array(
       'default_image' => 0,
-      'uri_scheme' => 's3',
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
     'type' => 'image',
@@ -1389,7 +1389,7 @@ function localgov_base_paragraphs_field_default_field_bases() {
     'module' => 'image',
     'settings' => array(
       'default_image' => 0,
-      'uri_scheme' => 's3',
+      'uri_scheme' => 'public',
     ),
     'translatable' => 0,
     'type' => 'image',
