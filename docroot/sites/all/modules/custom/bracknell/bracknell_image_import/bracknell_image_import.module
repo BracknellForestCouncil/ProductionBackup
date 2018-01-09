@@ -52,10 +52,13 @@ function bracknell_image_import_go() {
     $save_path = _bracknell_image_import_get_filename($save_path, _bracknell_image_import_get_uris($fid));
 
     $file_path = $base_path[$location] . '/' . $real_path;
-
+    
+    if ($location == 'public'){
+      continue;
+    }
     // Use @ here to stop file_get_contents spitting out errors for files that don't exist on s3.
     $data = @file_get_contents($file_path, false, $streamContext);
-
+    
     if (!$data) {
       echo "Couldn't retrieve uri " . $file_path . "\n";
       continue;
