@@ -56,6 +56,7 @@ function bracknell_image_import_go() {
     if ($location == 'public'){
       continue;
     }
+    
     // Use @ here to stop file_get_contents spitting out errors for files that don't exist on s3.
     $data = @file_get_contents($file_path, false, $streamContext);
     
