@@ -39,6 +39,10 @@ function bracknell_image_import_go() {
 
     // This will either be 's3' or 'public'
     $location = parse_url($uri, PHP_URL_SCHEME);
+    
+    if ($location == 'public'){
+      continue;
+    }
 
     // 3 here is the length of '://'
     $real_path = substr($uri, strlen($location) + 3);
@@ -52,10 +56,6 @@ function bracknell_image_import_go() {
     $save_path = _bracknell_image_import_get_filename($save_path, _bracknell_image_import_get_uris($fid));
 
     $file_path = $base_path[$location] . '/' . $real_path;
-    
-    if ($location == 'public'){
-      continue;
-    }
     
     // Use @ here to stop file_get_contents spitting out errors for files that don't exist on s3.
     $data = @file_get_contents($file_path, false, $streamContext);
