@@ -32,7 +32,7 @@ class BracknellImageImportFilenameTest extends DrupalUnitTestCase {
     }
   }
 
-  public function testS3ReplacedCorectly() {
+  public function testS3ReplacedCorrectly() {
     // Use extracted code from bracknell_image_import_update_7000.
     $result = new stdClass();
     $result->data = $this->getSerializedStringOriginal();
