@@ -3,7 +3,7 @@
 /**
  * Brute force update of field sources to point to public from S3.  
  */
-function bracknell_image_import_update_7001($sandbox) {
+function bracknell_image_import_update_7002($sandbox) {
   $results = db_query("
     select id, data
     from {field_config}
