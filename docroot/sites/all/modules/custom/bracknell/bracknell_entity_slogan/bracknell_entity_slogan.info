@@ -8,7 +8,6 @@ dependencies[] = eck
 dependencies[] = features
 dependencies[] = image
 dependencies[] = media
-dependencies[] = s3fs_cors
 dependencies[] = text
 dependencies[] = views
 features[ctools][] = views:views_default:3.0

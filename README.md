@@ -23,9 +23,23 @@ Microserve 2017.
 The staging and production sites are hosted on platform.sh. Specifically an "Enterprise" platform.sh environment.
 
 Those environments have specific repos:
+
 `git@git.ent.platform.sh:bracknell.git` (production)
+
 `git@git.ent.platform.sh:bracknell_stg.git` (staging)
 
 For all development the usual workflow can be used. If you wish to deploy to staging or production (be careful of course), merge your work to master and then use the following to push it up to the relevant platform.sh environment.
+
 `git push staging master`
+
 `git push production master`
+
+## SSH Access
+
+Production:
+
+`ssh bracknell@bracknell.ent.platform.sh`
+
+Staging:
+
+`ssh bracknell_stg@bracknell.ent.platform.sh`

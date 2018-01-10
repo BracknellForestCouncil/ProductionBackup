@@ -17,3 +17,4 @@ npm-debug.log*
 # Merge detritus
 *.orig
 
+.DS_Store

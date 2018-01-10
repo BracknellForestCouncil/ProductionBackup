@@ -188,8 +188,8 @@ function localgov_content_promo_field_default_field_instances() {
       'settings' => array(
         'allowed_schemes' => array(
           'private' => 0,
-          'public' => 0,
-          's3' => 's3',
+          'public' => 'public',
+          's3' => 0,
           'youtube' => 0,
         ),
         'allowed_types' => array(
@@ -451,8 +451,8 @@ function localgov_content_promo_field_default_field_instances() {
       'settings' => array(
         'allowed_schemes' => array(
           'private' => 0,
-          'public' => 0,
-          's3' => 's3',
+          'public' => 'public',
+          's3' => 0,
           'youtube' => 'youtube',
         ),
         'allowed_types' => array(
