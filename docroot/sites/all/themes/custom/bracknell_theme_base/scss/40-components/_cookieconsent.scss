@@ -2,3 +2,17 @@
 .cc-window {
   font-family: $font-family-base;
 }
+
+.cc-banner {
+  .cc-message {
+    .cc-link {
+      opacity: 1;
+
+      &:focus,
+      &:active, {
+        background-color: $cookie-link-focus-bg-color;
+        color: $cookie-link-focus-text-color;
+      }
+    }
+  }
+}
