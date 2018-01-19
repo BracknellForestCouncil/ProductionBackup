@@ -102,6 +102,17 @@ function bracknell_base_preprocess_html(&$variables) {
 }
 
 /**
+ * Implements hook_process_html().
+ */
+function bracknell_base_process_html_tag(&$vars) {
+  $element = &$vars['element'];
+
+  // Remove type attribute from style, link, script
+  unset($element['#attributes']['type']);
+}
+
+
+/**
  * Implements hook_menu().
  */
 function bracknell_base_menu() {
