@@ -62,8 +62,9 @@
 .main-menu-btn {
   background: $main-menu-button-bg-color;
   border: {
+    color: transparent;
     radius: 3px;
-    width: 0;
+    width: 5px;
   }
   color: $main-menu-button-text-color;
   display: inline-block;
@@ -71,6 +72,15 @@
   line-height: 1.56;
   margin: 50px 0 0;
   padding: 10px;
+
+  &:focus,
+  &:active {
+    border-color: $main-menu-button-focus-bg-color;
+
+    .button-text {
+      text-decoration: underline;
+    }
+  }
 
   @include breakpoint($screen-sm) {
     position: absolute;
@@ -102,11 +112,6 @@
   }
 
   &-collapsed {
-    &:focus,
-    &:active {
-      background: $main-menu-button-focus-bg-color;
-    }
-
     .icon-bar {
       transition: all 0.2s;
 
