@@ -102,6 +102,11 @@
   }
 
   &-collapsed {
+    &:focus,
+    &:active {
+      background: $main-menu-button-focus-bg-color;
+    }
+
     .icon-bar {
       transition: all 0.2s;
 
