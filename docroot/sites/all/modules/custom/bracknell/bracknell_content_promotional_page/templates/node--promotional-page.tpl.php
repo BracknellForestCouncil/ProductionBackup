@@ -79,7 +79,7 @@
  * @ingroup templates
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php
     // Hide comments, tags, and links now so that we can render them later.
     hide($content['comments']);
@@ -90,4 +90,4 @@
     hide($content['field_related_pages']);
     print render($content);
   ?>
-</article>
+</div>
