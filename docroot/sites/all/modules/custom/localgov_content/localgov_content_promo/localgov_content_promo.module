@@ -22,3 +22,17 @@ foreach (glob(__DIR__ . '/includes/*.inc') as $filename) {
  * Include features code.
  */
 include_once 'localgov_content_promo.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function localgov_content_promo_theme($existing, $type, $theme, $path) {
+  $theme = array();
+  $theme['node__promo'] = array(
+    'render element' => 'content',
+    'base hook' => 'node',
+    'template' => 'node--promo',
+    'path' => drupal_get_path('module', 'localgov_content_promo') . '/templates',
+   );
+  return $theme;
+}

@@ -26,10 +26,10 @@
  * @see template_process()
  */
 ?>
-<section class="content-section-link clearfix">
+<div class="content-section-link clearfix">
   <?php if (array_key_exists('field_paragraph_title', $content)): ?>
     <?php print render($content['field_paragraph_title']); ?>
   <?php endif; ?>
 
   <?php print render($content); ?>
-</section>
+</div>

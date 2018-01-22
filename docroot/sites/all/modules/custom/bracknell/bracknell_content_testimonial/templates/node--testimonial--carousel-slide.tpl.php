@@ -80,14 +80,14 @@
  * @ingroup themeable
  */
 ?>
-<div class='carousel-slide-media'>
+<div class="carousel-slide-media">
     <?php if (isset($content['field_testimonial_video'])): ?>
       <?php print render($content['field_testimonial_video']); ?>
     <?php else: ?>
       <?php print render($content['field_testimonial_image']); ?>
     <?php endif; ?>
 </div>
-<div class='carousel-slide-content'>
+<div class="carousel-slide-content">
     <?php print render($content['body']); ?>
     <?php print render($content['field_testimonial_author']); ?>
     <?php print render($content['field_testimonial_job_title']); ?>

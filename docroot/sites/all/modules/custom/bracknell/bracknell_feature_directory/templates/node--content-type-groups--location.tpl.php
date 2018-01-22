@@ -89,7 +89,7 @@ hide($content['field_promotional_hero']);
 hide($content['field_image']);
 
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if ((!$page && !empty($title)) || !empty($title_prefix) || !empty($title_suffix) || $display_submitted): ?>
     <?php print render($map); ?>
   <?php endif; ?>
@@ -99,4 +99,4 @@ hide($content['field_image']);
   <?php if (isset($directions)): ?>
     <?php print render($directions); ?>
   <?php endif; ?>
-</article>
+</div>

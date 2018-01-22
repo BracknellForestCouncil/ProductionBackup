@@ -85,7 +85,6 @@
 
   <article id="node-<?php print $node->nid; ?>" class="row <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-
     <figure class="col-sm-4">
       <?php if (!empty($content['field_image'])): ?>
         <?php print render($content['field_image']); ?>
@@ -93,7 +92,6 @@
         <?php print drupal_render($default_image); ?>
       <?php endif; ?>
     </figure>
-
 
     <div class="content col-sm-8"<?php print $content_attributes; ?>>
       <header>
