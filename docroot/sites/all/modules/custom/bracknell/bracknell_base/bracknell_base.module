@@ -104,11 +104,13 @@ function bracknell_base_preprocess_html(&$variables) {
 /**
  * Implements hook_process_html().
  */
-function bracknell_base_process_html_tag(&$vars) {
-  $element = &$vars['element'];
+function bracknell_base_process_html_tag(&$variables) {
+  $element = &$variables['element'];
 
-  // Remove type attribute from style, link, script
-  unset($element['#attributes']['type']);
+  // Remove type attribute script
+  if (isset($variables['element']['#attributes']['type']) && $variables['element']['#attributes']['type'] == 'text/javascript') {
+    unset($element['#attributes']['type']);
+  }
 }
 
 
