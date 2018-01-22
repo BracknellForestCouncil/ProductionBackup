@@ -29,12 +29,10 @@
 <div class="key-fact-item">
   <?php if (isset($content['field_key_fact_item_title'])): ?>
     <div class="key-fact-item-title-wrapper">
-      <?php if (isset($content['field_paragraph_heading_level'])): ?>
-          <<?php print $content['field_paragraph_heading_level'][0]['#markup']; ?> class="key-fact-item-title">
-          <?php print trim(render($content['field_key_fact_item_title'])); ?>
-          </<?php print $content['field_paragraph_heading_level'][0]['#markup']; ?>>
-      <?php else: ?>
-        <h3 class="key-fact-item-title"><?php print trim(render($content['field_key_fact_item_title'])); ?></h3>
+      <?php if (!empty($heading_text)): ?>
+        <<?php print $heading_level; ?> class="key-fact-item-title">
+          <?php print $heading_text; ?>
+        </<?php print $heading_level; ?>>
       <?php endif; ?>
     </div>
   <?php endif; ?>
@@ -43,5 +41,4 @@
       <?php print render($content['field_key_fact_item_content']); ?>
     </div>
   <?php endif; ?>
-  <?php print render($content); ?>
 </div>

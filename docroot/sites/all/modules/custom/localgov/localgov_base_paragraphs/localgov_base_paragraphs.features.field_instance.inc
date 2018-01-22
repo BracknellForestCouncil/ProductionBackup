@@ -1394,7 +1394,7 @@ function localgov_base_paragraphs_field_default_field_instances() {
       'settings' => array(
         'allowed_schemes' => array(
           'public' => 'public',
-          's3' => '0',
+          's3' => 0,
           'youtube' => 0,
         ),
         'allowed_types' => array(
@@ -3220,8 +3220,9 @@ function localgov_base_paragraphs_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_default',
         'weight' => 2,
       ),
       'paragraphs_editor_preview' => array(
