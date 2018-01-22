@@ -98,10 +98,10 @@
     </div>
   </div>
   <div class="col-md-6 promotional-area-media">
-    <div class="promo-image">
-      <?php if (!empty($article_image_path)) : ?>
+    <?php if (!empty($article_image_path)) : ?>
+      <div class="promo-image">
         <img alt="<?php print $article_image_alt; ?>" class="img-responsive" src="<?php print $article_image_path; ?>">
-      <?php endif; ?>
-    </div>
+      </div>
+    <?php endif; ?>
   </div>
 </div>
