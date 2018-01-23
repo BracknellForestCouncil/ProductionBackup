@@ -1,13 +1,18 @@
-html, body, .page-wrapper {
+html,
+body,
+.page-wrapper {
   min-height: 100vh;
 }
 
 .page-wrapper {
   display: flex;
   flex-direction: column;
+
   .main-container {
     flex: 1 0 auto;
+    outline: none;
   }
+
   .footer {
     flex-shrink: 0;
   }

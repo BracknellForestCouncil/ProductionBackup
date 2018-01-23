@@ -33,7 +33,7 @@
       // Add some attributes to the button, whch could be in that string up
       // there but this way we can add some overhead to the page load ;)
       els.mainMenuButton.attr({
-        'class': 'main-menu-btn',
+        'class': 'main-menu-btn ' + collapsedClass,
         'aria-expanded': 'false',
         'aria-controls': 'main-nav',
         'data-toggle': 'closed',

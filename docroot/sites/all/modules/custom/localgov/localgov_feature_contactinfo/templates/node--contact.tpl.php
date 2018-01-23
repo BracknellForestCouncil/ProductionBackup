@@ -91,7 +91,7 @@ hide($content);
         <h2 class="contact-info-title"><?php print t('Contact Information') ?></h2>
 
         <?php if (!empty($content['field_title_display'])): ?>
-          <p><?php print render($content['field_title_display']); ?></p>
+          <?php print render($content['field_title_display']); ?>
         <?php else: ?>
           <p><?php print $title; ?></p>
         <?php endif; ?>

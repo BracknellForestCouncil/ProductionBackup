@@ -40,7 +40,7 @@ function bracknell_page_home_theme($existing, $type, $theme, $path) {
  * Implements hook_preprocess_node().
  */
 function bracknell_page_home_preprocess_node(&$variables) {
-  if ($variables['type'] == 'article') {
+  if ($variables['type'] == 'article' || $variables['type'] == 'promo') {
     $article_img = (isset($variables['field_image']) && !empty($variables['field_image'][0])) ? $variables['field_image'][0] : NULL ;
     if (isset($article_img)) {
       $article_img_alt = $article_img['alt'];
@@ -50,5 +50,18 @@ function bracknell_page_home_preprocess_node(&$variables) {
       $variables['article_image_path'] = $article_img_path;
       $variables['article_image_alt'] = $article_img_alt;
     }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function bracknell_page_home_preprocess_page(&$variables) {
+  if (drupal_is_front_page()) {
+    drupal_add_js('//content.govdelivery.com/overlay/js/4037.js', array(
+      'type' => 'external',
+      'scope' => 'footer',
+      'group' => JS_DEFAULT
+    ));
   }
 }
