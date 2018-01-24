@@ -7,6 +7,6 @@
     type: upstream
     upstream: "app:http"
 
-"https://www.bracknell-forest.gov.uk/":
-    type: redirect
-    to: "https://{default}/"
+#"https://www.bracknell-forest.gov.uk/":
+#    type: redirect
+#    to: "https://{default}/"
